@@ -8,7 +8,42 @@ friendly fixtures with the same shot/card/corner detail as league play, plus
 season-level player stats. `soccerdata.FBref.read_team_match_stats()` already
 targets the `all_comps` URL, so this would be a wrapper around that.
 
-## Blocker: FBref can't be scraped from this machine
+## Update 2026-09-02 — Smart App Control OFF, but the scrape still won't run headless-or-agent
+
+The user disabled Smart App Control and restarted. That clears blocker #2 below.
+Chrome-for-Testing now runs. `soccerdata` + seleniumbase-UC **does** get past
+Cloudflare — but only for the first ~10 pages of a session, then it breaks
+systemically and cannot recover:
+
+- seleniumbase UC mode monkeypatches `driver.get` → `uc_special_open_if_cf`,
+  which **disconnects chromedriver and reconnects** to dodge bot detection. After
+  the initial working window the reconnect fails every time:
+  `HTTPConnectionPool(host='localhost', port=…): connection refused` on
+  `/session/…/window/handles`. soccerdata burns its 5 retries (each re-init also
+  dead) and raises `ConnectionError`.
+- Reproduced identically across: headless & non-headless, Python 3.14 & 3.11,
+  soccerdata & raw `seleniumbase.Driver`, `driver.get` & `uc_open_with_reconnect`.
+  Not a Cloudflare problem, not a Defender/SAC problem (no detections, drivers
+  present) — it's UC-mode's reconnect failing in a background/non-interactive
+  context. Likely works in a genuine **interactive foreground terminal** on the
+  user's desktop (real display + focus), which the agent session can't provide.
+- 10 PL 2023-24 schedule pages were cached before it broke; they parse cleanly
+  with `pandas.read_html(..., attrs={"id": "matchlogs_for"})` — **no browser
+  needed to parse, only to fetch.** `Comp` column separates league / cup /
+  European rows exactly as step 1c needs.
+
+**Where this leaves ingestion — pick one:**
+1. User runs `python src/pull_fbref_matchlogs.py` in their own terminal (not via
+   the agent). It's now chunked per (league, season, stat) and resumable via
+   `data/raw/fbref/scrape_progress.json` + the page cache. Multi-hour grind.
+2. worldfootballR mirror for the back-catalogue (2019-20…2023-24 complete), tiny
+   live scrape for the current season only.
+3. **API-Football** (the user already plans to switch to it): a **paid** plan
+   ($19–39/mo) unlocks all historical seasons + cups + lineups + events via clean
+   JSON — no scraping at all, for history *and* ongoing. Free plan is capped to
+   seasons 2021–2023 so it won't cover 2020-21 or 2024-25+.
+
+## Historical blocker detail (pre-2026-09-02)
 
 Hit three compounding problems:
 
