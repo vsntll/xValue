@@ -8,6 +8,11 @@ venv/
 # Data — raw downloads are reproducible; processed tables are build artifacts
 data/raw/
 data/processed/
+# soccerdata cache/config/logs (SOCCERDATA_DIR points here)
+data/soccerdata/
+
+# Local scratch — diagnostic scripts, sample dumps; never committed
+scratch/
 
 # OS
 Thumbs.db
