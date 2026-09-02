@@ -12,3 +12,15 @@ data/processed/
 # OS
 Thumbs.db
 .DS_Store
+
+# Tooling scratch (seleniumbase / webdriver)
+downloaded_files/
+latest_logs/
+assets/
+*.lock
+
+# Unrelated files that OneDrive syncs into this folder — not part of this project
+xValue/
+*Setup*.exe
+*installer*.exe
+chromedriver*.exe
