@@ -4,6 +4,16 @@ Downloads one CSV per (season, division), trims to the columns we care about
 (goals / shots / corners / cards / fouls / result + a slice of odds for the
 step 8 benchmark), and concatenates everything into a single match-features table.
 
+Coverage:
+  * 6 completed seasons (2020-21 .. 2025-26) plus the ongoing 2026-27 season,
+    which grows every time this script is re-run.
+  * Top two tiers of each country: Premier League + Championship (England),
+    Bundesliga + 2. Bundesliga (Germany), La Liga + La Liga 2 (Spain).
+
+NOT covered here: friendlies and knockout cups (FA Cup, DFB-Pokal, Copa del Rey,
+Champions League, ...). football-data.co.uk does not distribute those in any feed.
+They come from FBref match logs instead — see docs/match_features.md.
+
 Run:
     python src/pull_match_archive.py
 
@@ -22,14 +32,19 @@ import requests
 
 BASE_URL = "https://www.football-data.co.uk/mmz4281"
 
-# football-data.co.uk division codes
+# football-data.co.uk division code -> (league name, tier)
 DIVISIONS = {
-    "E0": "Premier League",
-    "D1": "Bundesliga",
-    "SP1": "La Liga",
+    "E0": ("Premier League", 1),
+    "E1": ("Championship", 2),
+    "D1": ("Bundesliga", 1),
+    "D2": ("2. Bundesliga", 2),
+    "SP1": ("La Liga", 1),
+    "SP2": ("La Liga 2", 2),
 }
 
-# Last 6 completed seasons. Codes are the two end-years, e.g. 2020-21 -> "2021".
+# Season code = the two end-years, e.g. 2020-21 -> "2021". The last entry is the
+# ongoing season; football-data.co.uk only publishes matches already played, so
+# re-running the script pulls in whatever has happened since.
 SEASONS = {
     "2021": "2020-21",
     "2122": "2021-22",
@@ -37,6 +52,7 @@ SEASONS = {
     "2324": "2023-24",
     "2425": "2024-25",
     "2526": "2025-26",
+    "2627": "2026-27",  # ongoing — live, updates on re-run
 }
 
 # Columns to keep when present. Not every season carries every odds column, so
@@ -89,7 +105,7 @@ def fetch_csv(season_code: str, div_code: str) -> pd.DataFrame:
     return df
 
 
-def trim_columns(df: pd.DataFrame) -> pd.DataFrame:
+def trim_columns(df: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
     present = [c for c in KEEP_COLS if c in df.columns]
     missing = [c for c in KEEP_COLS if c not in df.columns]
     return df[present], missing
@@ -101,14 +117,23 @@ def main() -> None:
 
     frames: list[pd.DataFrame] = []
     for season_code, season_label in SEASONS.items():
-        for div_code, div_label in DIVISIONS.items():
-            df = fetch_csv(season_code, div_code)
+        for div_code, (div_label, tier) in DIVISIONS.items():
+            try:
+                df = fetch_csv(season_code, div_code)
+            except requests.HTTPError as exc:
+                print(f"{season_label} {div_label:<15} -- skipped ({exc.response.status_code})")
+                continue
+            if df.empty:
+                print(f"{season_label} {div_label:<15} -- no matches yet")
+                continue
+
             trimmed, missing = trim_columns(df)
             trimmed = trimmed.copy()
             trimmed.insert(0, "season", season_label)
             trimmed.insert(1, "league", div_label)
-            # Parse the dd/mm/yy or dd/mm/yyyy date to a real timestamp for later
-            # time-based splits.
+            trimmed.insert(2, "tier", tier)
+            trimmed.insert(3, "competition_type", "league")
+            # Parse dd/mm/yy or dd/mm/yyyy to a real timestamp for time-based splits.
             trimmed["Date"] = pd.to_datetime(
                 trimmed["Date"], dayfirst=True, errors="coerce"
             )
@@ -116,8 +141,8 @@ def main() -> None:
 
             note = f"  missing: {missing}" if missing else ""
             print(
-                f"{season_label} {div_label:<14} "
-                f"{len(trimmed):>3} matches, {trimmed.shape[1]} cols{note}"
+                f"{season_label} {div_label:<15} "
+                f"{len(trimmed):>4} matches, {trimmed.shape[1]} cols{note}"
             )
 
     combined = pd.concat(frames, ignore_index=True)
@@ -126,6 +151,8 @@ def main() -> None:
 
     print(f"\nwrote {OUT_PATH}  ({len(combined)} rows, {combined.shape[1]} cols)")
     print(f"date range: {combined['Date'].min().date()} .. {combined['Date'].max().date()}")
+    by_season = combined.groupby("season").size()
+    print("matches per season:", by_season.to_dict())
 
 
 if __name__ == "__main__":

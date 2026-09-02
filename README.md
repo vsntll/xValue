@@ -37,10 +37,17 @@ python -m pip install -r requirements.txt
 python src/pull_match_archive.py
 ```
 
-Downloads the last 6 completed seasons (2020-21 … 2025-26) for the Premier League
-(E0), Bundesliga (D1) and La Liga (SP1) from football-data.co.uk, keeps the
-goals / shots / corners / cards / fouls / result columns plus Bet365 and market-average
-odds (kept for the step 8 benchmark), and concatenates them into one table.
+Downloads football-data.co.uk season CSVs for the **top two tiers** of England,
+Germany and Spain (E0/E1, D1/D2, SP1/SP2) across the last 6 completed seasons
+**plus the ongoing 2026-27 season** (re-run to refresh). Keeps the
+goals / shots / corners / cards / fouls / result columns plus Bet365 and
+market-average odds (for the step 8 benchmark), and concatenates them into one
+table (~14,470 matches).
 
 - Raw per-season files: `data/raw/football_data/<season>_<div>.csv`
 - Combined table: `data/processed/match_features.csv`
+- Data dictionary + caveats: `docs/match_features.md`
+
+**Friendlies and knockout cups are not in football-data.co.uk** — no feed exists.
+Those come from FBref team match logs in step 2 and union into the same table via
+the `competition_type` column.
