@@ -1,2 +1,10 @@
 pandas>=2.0
 requests>=2.28
+pyarrow>=15          # parquet cache for FBref match logs
+
+# FBref / player stats (step 1 cups, step 2). Needs a browser for Cloudflare —
+# see docs/fbref_ingestion.md.
+soccerdata>=1.9
+
+# Only for the worldfootballR mirror fallback (docs/fbref_ingestion.md):
+# pyreadr>=0.5
