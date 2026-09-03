@@ -1,10 +1,12 @@
 pandas>=2.0
 requests>=2.28
-pyarrow>=15          # parquet cache for FBref match logs
+lxml>=5              # pandas.read_html parses the cached FBref match-log HTML
 
-# FBref / player stats (step 1 cups, step 2). Needs a browser for Cloudflare —
-# see docs/fbref_ingestion.md.
+# FBref match logs + player stats (step 1c, step 2). soccerdata drives a real
+# browser (seleniumbase-UC) to get past Cloudflare — see docs/fbref_ingestion.md.
+# Run src/pull_fbref_matchlogs.py in a foreground terminal with a visible Chrome.
 soccerdata>=1.9
+pyautogui>=0.9       # seleniumbase's Cloudflare-challenge click needs it
 
 # Only for the worldfootballR mirror fallback (docs/fbref_ingestion.md):
 # pyreadr>=0.5
