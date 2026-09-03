@@ -42,10 +42,12 @@ COMPETITION_TYPE = {
     "EFL Cup": "league_cup",
     "Champions Lg": "european", "Europa Lg": "european",
     "Europa Conf Lg": "european", "Conf Lg": "european",
-    "Community Shield": "super_cup", "Supercopa de España": "super_cup",
-    "DFL-Supercup": "super_cup", "UEFA Super Cup": "super_cup", "Super Cup": "super_cup",
+    "Community Shield": "super_cup", "FA Community Shield": "super_cup",
+    "Supercopa de España": "super_cup", "DFL-Supercup": "super_cup",
+    "UEFA Super Cup": "super_cup", "Super Cup": "super_cup",
     "Club Friendlies": "friendly", "Friendlies (M)": "friendly",
-    "Relegation/Promotion Play-offs": "playoff",
+    "Relegation/Promotion Play-offs": "playoff", "Rel/Pro play-offs": "playoff",
+    "Promotion play-offs": "playoff",
 }
 
 
