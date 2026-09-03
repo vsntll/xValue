@@ -33,7 +33,7 @@ SLEEP = 0.5
 _LID = {
     "ENG1": 47, "GER1": 54, "ESP1": 87,
     "UCL": 42, "UEL": 73, "UECL": 10216,
-    "FA": 132, "EFL": 133, "DFB": 209, "CDR": 453,
+    "FA": 132, "EFL": 133, "DFB": 209, "CDR": 138,
 }
 # FotMob "Top stats" title -> (home col, away col) target
 _STAT_TITLES = {
@@ -75,21 +75,22 @@ def _detail(match_id: str) -> dict | None:
         d = _get(f"{BASE}/matchDetails", matchId=match_id)
     except requests.HTTPError:
         return None
-    g = d.get("general", {})
+    g = d.get("general") or {}
     out = {
         "match_id": f"fotmob:{match_id}",
-        "HomeTeam": g.get("homeTeam", {}).get("name"),
-        "AwayTeam": g.get("awayTeam", {}).get("name"),
+        "HomeTeam": (g.get("homeTeam") or {}).get("name"),
+        "AwayTeam": (g.get("awayTeam") or {}).get("name"),
         "Date": (g.get("matchTimeUTCDate") or "")[:10],
         "Time": (g.get("matchTimeUTCDate") or "")[11:16],
     }
-    hteams = d.get("header", {}).get("teams", [])
+    hteams = (d.get("header") or {}).get("teams") or []
     if len(hteams) == 2:
         out["FTHG"], out["FTAG"] = hteams[0].get("score"), hteams[1].get("score")
-    for grp in d.get("content", {}).get("stats", {}).get("Periods", {}).get("All", {}).get("stats", []):
+    periods = (((d.get("content") or {}).get("stats") or {}).get("Periods") or {})
+    for grp in ((periods.get("All") or {}).get("stats") or []):
         if grp.get("title") != "Top stats":
             continue
-        for s in grp.get("stats", []):
+        for s in (grp.get("stats") or []):
             tgt = _STAT_TITLES.get(s.get("title"))
             vals = s.get("stats")
             if tgt and isinstance(vals, list) and len(vals) == 2:
