@@ -33,6 +33,31 @@ shooting + keeper pages back to back with no crash. New scripts:
 Competition ids: PL 9, Championship 10, Bundesliga 20, 2.Bundesliga 33,
 La Liga 12, La Liga 2 (Segunda) 17.
 
+## Match-log scrape COMPLETE 2026-09-03 (~02:15)
+
+Full run: 6 leagues x 7 seasons (2020-21 … 2026-27) x 4 stat types (schedule,
+shooting, keeper, misc) = **~3,380 pages** in `data/raw/fbref/pages/`, ~4 h at
+~5 s/page, one Cloudflare skip (backfilled). nodriver never crashed.
+
+`data/processed/fbref_team_matchlogs.csv`: **~37,500 rows**, 159 teams, one row
+per team per match, schedule+shooting+keeper+misc stitched (54 cols). Stat
+columns ~86 % populated on league rows (the gap is mostly unplayed 2026-27
+fixtures, which FBref lists in full).
+
+    competition_type   rows
+    league            33,158
+    domestic_cup        1,961   (FA Cup, DFB-Pokal, Copa del Rey)
+    european            1,615   (UCL / UEL / UECL)
+    league_cup            696   (EFL Cup)
+    super_cup              75
+    playoff               36    (promotion/relegation)
+
+Next: dedupe the ~4,380 cup/European/etc. rows to one-per-match and union into
+`match_features.csv` (needs FBref<->football-data team-name resolution — step 4).
+Season-level **player** stats (the other half of step 2) are still to pull.
+2026-27 stat pages will fill in as the season plays; re-run the scraper to
+refresh, or switch to API-Football for the live season.
+
 Everything below is the earlier debugging record, kept for context.
 
 ## (obsolete) Update 2026-09-02 — Smart App Control OFF, but the scrape still won't run headless-or-agent
