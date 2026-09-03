@@ -9,5 +9,7 @@ lxml>=5              # pandas.read_html parses the cached FBref match-log HTML
 # Cloudflare challenge reliably. Needs Python 3.11 here (run: py -3.11 ...).
 nodriver>=0.50
 
-# Only for the worldfootballR mirror fallback (docs/fbref_ingestion.md):
-# pyreadr>=0.5
+# worldfootballR data mirror - the advanced (Opta) player stats FBref gates from
+# scrapers: xG/xAG, progressive passing, tackles, possession, GCA. big-5,
+# 2020-21..2022-23. src/pull_wfr_advanced.py. Reads .rds.
+pyreadr>=0.5

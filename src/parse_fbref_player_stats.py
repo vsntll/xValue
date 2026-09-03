@@ -138,6 +138,23 @@ def main() -> None:
     for col in ("Age", "Born"):
         combined[col] = pd.to_numeric(combined[col], errors="coerce")
 
+    # advanced stats FBref gated from the scrape - big-5, 2020-21..2022-23 - come
+    # from the worldfootballR mirror (src/pull_wfr_advanced.py). Left-join what's
+    # there; rows/leagues/seasons the mirror doesn't cover keep NaN advanced cols.
+    wfr = OUT_PATH.parent / "wfr_player_advanced.csv"
+    if wfr.exists():
+        adv = pd.read_csv(wfr)
+        adv["Born"] = pd.to_numeric(adv["Born"], errors="coerce")
+        on = ["season", "src_league", "Player", "Squad", "Born"]
+        adv = adv.drop(columns=[c for c in ("Nation", "Pos", "Age", "fbref_player_id")
+                                if c in adv.columns]).drop_duplicates(subset=on)
+        new = [c for c in adv.columns if c not in combined.columns or c in on]
+        combined = combined.merge(adv[new], on=on, how="left")
+        matched = combined.filter(regex=r"^(passing|defense|possession|gca)__").notna().any(axis=1).sum()
+        print(f"merged worldfootballR advanced stats ({matched} rows got xG/progressive/etc.)")
+    else:
+        print("(no wfr_player_advanced.csv - run pull_wfr_advanced.py for xG etc.)")
+
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     combined.to_csv(OUT_PATH, index=False)
     print(f"wrote {OUT_PATH}  ({len(combined)} rows, {combined.shape[1]} cols)")
