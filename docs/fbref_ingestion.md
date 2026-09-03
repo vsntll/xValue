@@ -8,7 +8,34 @@ friendly fixtures with the same shot/card/corner detail as league play, plus
 season-level player stats. `soccerdata.FBref.read_team_match_stats()` already
 targets the `all_comps` URL, so this would be a wrapper around that.
 
-## Update 2026-09-02 — Smart App Control OFF, but the scrape still won't run headless-or-agent
+## RESOLVED 2026-09-02 (evening) — switched to nodriver
+
+`soccerdata` is dropped for this. Its seleniumbase-UC path drives a patched
+`uc_driver.exe` (undetected-chromedriver 152) that **crashes** on this machine —
+Windows `APPCRASH`, faulting module `uc_driver.exe`, ~2 s after the first
+navigation, repeatedly (confirmed in the Application event log, ~20 crashes while
+debugging; not Defender — no detection events). That's why every soccerdata
+attempt got ~10 pages then `connection refused` forever after.
+
+**`nodriver`** (pure Chrome DevTools Protocol, *no* driver binary) on **Python
+3.11** clears FBref's Cloudflare challenge reliably and fetched schedule +
+shooting + keeper pages back to back with no crash. New scripts:
+
+- `src/pull_fbref_matchlogs.py` — nodriver. Per (league, season): read the squad
+  list off the competition Stats page (`stats_squads_standard_for` table), then
+  GET each `/squads/<id>/<season>/matchlogs/all_comps/<stat>/` and save it to
+  `data/raw/fbref/pages/<COMP>_<season>_<slug>_<stat>.html`. Skips files already
+  on disk → resumable. `--status` for progress.
+- `src/parse_fbref_matchlogs.py` — unchanged in spirit: `pandas.read_html` over
+  the cached pages → `data/processed/fbref_team_matchlogs.csv`, `Comp` mapped to
+  `competition_type`.
+
+Competition ids: PL 9, Championship 10, Bundesliga 20, 2.Bundesliga 33,
+La Liga 12, La Liga 2 (Segunda) 17.
+
+Everything below is the earlier debugging record, kept for context.
+
+## (obsolete) Update 2026-09-02 — Smart App Control OFF, but the scrape still won't run headless-or-agent
 
 The user disabled Smart App Control and restarted. That clears blocker #2 below.
 Chrome-for-Testing now runs. `soccerdata` + seleniumbase-UC **does** get past

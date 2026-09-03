@@ -1,188 +1,191 @@
 """Step 1c + step 2 groundwork - FETCH per-team all-competitions match-log pages
-from FBref via soccerdata.
+from FBref.
 
-This module only *downloads and caches* the raw HTML. Turning it into a table is
-``src/parse_fbref_matchlogs.py`` (browser-free — run it any time to see progress).
-Splitting fetch from parse matters here because soccerdata drives FBref through
-seleniumbase-UC + Cloudflare, whose browser session dies often; we don't want a
-parse quirk to look like a scrape failure, or a scrape failure to lose parsed
-work.
+Uses **nodriver** (pure Chrome DevTools Protocol, no chromedriver binary). The
+seleniumbase-UC path that soccerdata uses relies on a patched ``uc_driver.exe``
+that *crashes* on this machine (Windows APPCRASH, faulting module uc_driver.exe,
+~2 s after the first navigation - see docs/fbref_ingestion.md). nodriver has no
+driver binary to crash and clears FBref's Cloudflare challenge reliably here.
 
-FBref's team "Scores & Fixtures" page scoped to all competitions
-(``/squads/<id>/<season>/matchlogs/all_comps/<stat>/``) lists every fixture a
-team played — league, domestic cup, league cup, European, super cup, friendly —
-each tagged with a ``Comp`` column. ``soccerdata.FBref.read_team_match_stats()``
-targets that URL and caches one HTML page per team per stat type.
+This module only downloads and caches raw HTML. Turning it into a table is
+``src/parse_fbref_matchlogs.py`` (no browser - run it any time to see progress).
 
-Cache / resume:
-* ``SOCCERDATA_DIR`` -> ``data/soccerdata`` — every byte stays in the project tree.
-* Per (stat, league, season) chunking. A chunk that finishes without the browser
-  dying is marked ``done`` in ``data/raw/fbref/scrape_progress.json`` and skipped
-  next run. A chunk that dies part-way is left un-done; re-running resumes, and
-  soccerdata itself skips pages already on disk. **Expect to run this several
-  times** — the UC browser session is not reliable for long runs.
+Flow, per (league, season):
+  1. GET the competition "Stats" page, read the 18-24 squad ids + name slugs
+     from the ``stats_squads_standard_for`` table.
+  2. For each squad x stat type, GET
+     ``/en/squads/<id>/<season>/matchlogs/all_comps/<stat>/`` and save it.
+Everything is skipped if already on disk, so re-running resumes for free.
 
-The scrape needs a real, VISIBLE browser (headless can't solve a fresh Cloudflare
-challenge). Run it in your own terminal, not unattended in the background, and
-keep hands off the mouse while the Chrome window is up.
+Run (Python 3.11 - nodriver needs it here):
+    py -3.11 src/pull_fbref_matchlogs.py --stats schedule     # cups + results first
+    py -3.11 src/pull_fbref_matchlogs.py                       # then every stat type
+    py -3.11 src/pull_fbref_matchlogs.py --leagues "ENG-Premier League" --seasons 2023-24
+    py -3.11 src/pull_fbref_matchlogs.py --status              # progress, no scraping
 
-Run:
-    python src/pull_fbref_matchlogs.py --stats schedule      # cups + results first
-    python src/pull_fbref_matchlogs.py                       # then all stat types
-    python src/pull_fbref_matchlogs.py --leagues "ENG-Premier League" --seasons 2023-24
-    python src/parse_fbref_matchlogs.py                      # build the CSV from cache
+A visible Chrome window opens and drives itself. You can use the machine while it
+runs (nodriver doesn't need mouse focus), just don't close that window.
 
 Output:
-    data/soccerdata/data/FBref/matchlogs_<Team>_<code>_<stat>.html   raw pages
-    data/raw/fbref/scrape_progress.json                              resume state
+    data/raw/fbref/pages/<comp>_<season>_<slug>_<stat>.html    raw match-log pages
+    data/raw/fbref/pages/_squads_<comp>_<season>.json          cached squad lists
 """
 
 from __future__ import annotations
 
 import argparse
+import asyncio
 import json
-import os
-import time
+import random
+import re
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PAGES_DIR = PROJECT_ROOT / "data" / "raw" / "fbref" / "pages"
 
-# Keep every scraped byte inside the project (see the "data stays in project"
-# rule). Must be set before soccerdata is imported.
-os.environ.setdefault("SOCCERDATA_DIR", str(PROJECT_ROOT / "data" / "soccerdata"))
-# Cached pages never expire — this is an archive pull, not a refresh of volatile
-# data. Re-scrape a season by deleting its cached pages.
-os.environ.setdefault("SOCCERDATA_MAXAGE", "3650")
-
-DEFAULT_BROWSER = Path("C:/Users/avasa/chrome-for-testing/chrome-win64/chrome.exe")
-
-# Top two tiers of each country. Second-tier keys resolve via the custom league
-# dict at data/soccerdata/config/league_dict.json.
-DEFAULT_LEAGUES = [
-    "ENG-Premier League",
-    "ENG-Championship",
-    "GER-Bundesliga",
-    "GER-2. Bundesliga",
-    "ESP-La Liga",
-    "ESP-La Liga 2",
-]
+# league key -> (FBref competition id, URL slug, short code for filenames)
+COMPS = {
+    "ENG-Premier League": (9, "Premier-League", "ENG1"),
+    "ENG-Championship": (10, "Championship", "ENG2"),
+    "GER-Bundesliga": (20, "Bundesliga", "GER1"),
+    "GER-2. Bundesliga": (33, "2-Bundesliga", "GER2"),
+    "ESP-La Liga": (12, "La-Liga", "ESP1"),
+    "ESP-La Liga 2": (17, "Segunda-Division", "ESP2"),
+}
+DEFAULT_LEAGUES = list(COMPS)
 DEFAULT_SEASONS = [
     "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27",
 ]
-
-# schedule = Comp/Round/Venue/Result/GF/GA/Opponent/Poss/xG/xGA  (all comps)
-# shooting = Sh/SoT/Dist/FK/PK/PKatt                             (league only)
-# keeper   = GK saves / PSxG / etc.                              (league only)
-# misc     = CrdY/CrdR/Fls/Fld/Off/Crs/Int/OG/PKwon/PKcon        (league only)
 STAT_TYPES = ["schedule", "shooting", "keeper", "misc"]
 
-CACHE_DIR = PROJECT_ROOT / "data" / "soccerdata" / "data" / "FBref"
-RAW_DIR = PROJECT_ROOT / "data" / "raw" / "fbref"
-PROGRESS_PATH = RAW_DIR / "scrape_progress.json"
+BROWSER = r"C:/Users/avasa/chrome-for-testing/chrome-win64/chrome.exe"
+CHALLENGE_MARKERS = ("Just a moment", "Enable JavaScript and cookies")
+NAV_PAUSE = (1.0, 2.5)  # polite random gap between page loads
 
 
-def _season_code(season: str) -> str:
-    """'2023-24' -> '2324' (soccerdata's cache-file season code)."""
+def _season4(season: str) -> str:
+    """'2023-24' -> '2023-2024' (FBref's URL form)."""
     start, end = season.split("-")
-    return start[2:] + end
+    return f"{start}-{start[:2]}{end}"
 
 
-def _cached_pages(season: str, stat: str) -> int:
-    code = _season_code(season)
-    return len(list(CACHE_DIR.glob(f"matchlogs_*_{code}_{stat}.html")))
+def _slug_to_name(slug: str) -> str:
+    return slug.replace("-", " ")
 
 
-def _load_progress() -> dict:
-    if PROGRESS_PATH.exists():
-        return json.loads(PROGRESS_PATH.read_text())
-    return {}
+async def _get_html(browser, url: str, want_sel: str = "table", tries: int = 4) -> str:
+    """Navigate to url (reusing the main tab) and return the DOM once the wanted
+    element is present. Cloudflare's challenge auto-clears in a few seconds; we
+    just wait it out rather than clicking anything."""
+    page = await browser.get(url)
+    for attempt in range(1, tries + 1):
+        try:
+            await page.select(want_sel, timeout=12)
+        except Exception:
+            pass
+        await page.sleep(1.5)
+        html = await page.get_content()
+        if not any(m in html for m in CHALLENGE_MARKERS):
+            return html
+        await page.sleep(4 + 2 * attempt)  # let the challenge finish
+    return html  # caller checks for the table / challenge marker
 
 
-def _save_progress(progress: dict) -> None:
-    RAW_DIR.mkdir(parents=True, exist_ok=True)
-    PROGRESS_PATH.write_text(json.dumps(progress, indent=2, sort_keys=True))
+def _parse_squads(html: str) -> list[tuple[str, str]]:
+    """(squad_id, name_slug) from the squad standard-stats table. FBref hides some
+    secondary tables inside HTML comments, so search the whole doc uncommented."""
+    doc = html.replace("<!--", "").replace("-->", "")
+    m = re.search(r'id="stats_squads_standard_for".*?</table>', doc, re.S)
+    seg = m.group(0) if m else doc
+    pairs = re.findall(r'/en/squads/([0-9a-f]{8})/\d{4}-\d{4}/([A-Za-z0-9\-]+)-Stats', seg)
+    return sorted(set(pairs))
 
 
-def pull(leagues: list[str], seasons: list[str], stats: list[str],
-         browser: str | None, headless: bool, retries: int) -> None:
-    import soccerdata as sd
+async def _squad_list(browser, cid: int, slug: str, season4: str,
+                      cache: Path) -> list[tuple[str, str]]:
+    if cache.exists():
+        return [tuple(x) for x in json.loads(cache.read_text())]
+    url = f"https://fbref.com/en/comps/{cid}/{season4}/{season4}-{slug}-Stats"
+    html = await _get_html(browser, url, want_sel="#stats_squads_standard_for")
+    squads = _parse_squads(html)
+    if squads:
+        cache.write_text(json.dumps(squads))
+    return squads
 
-    RAW_DIR.mkdir(parents=True, exist_ok=True)
-    progress = _load_progress()
 
-    for stat in stats:
+async def scrape(leagues: list[str], seasons: list[str], stats: list[str]) -> None:
+    import nodriver as uc
+
+    PAGES_DIR.mkdir(parents=True, exist_ok=True)
+    browser = await uc.start(browser_executable_path=BROWSER, headless=False)
+    try:
         for league in leagues:
+            cid, slug, code = COMPS[league]
             for season in seasons:
-                key = f"{stat}|{league}|{season}"
-                if progress.get(key, {}).get("status") == "done":
-                    print(f"  skip (done): {key}")
+                s4 = _season4(season)
+                sq_cache = PAGES_DIR / f"_squads_{code}_{season}.json"
+                squads = await _squad_list(browser, cid, slug, s4, sq_cache)
+                if not squads:
+                    print(f"{code} {season}: no squads found (season may not exist yet)")
                     continue
+                print(f"{code} {season}: {len(squads)} squads")
+                for sid, name_slug in squads:
+                    for stat in stats:
+                        out = PAGES_DIR / f"{code}_{season}_{name_slug}_{stat}.html"
+                        if out.exists() and out.stat().st_size > 50_000:
+                            continue
+                        url = (f"https://fbref.com/en/squads/{sid}/{s4}"
+                               f"/matchlogs/all_comps/{stat}/")
+                        html = await _get_html(browser, url, want_sel="#matchlogs_for")
+                        if any(m in html for m in CHALLENGE_MARKERS):
+                            print(f"  !! {name_slug} {stat}: stuck on challenge, skipping")
+                            continue
+                        if 'id="matchlogs_for"' not in html and stat != "schedule":
+                            # some clubs have no keeper/shooting log for a season
+                            out.write_text(html, encoding="utf-8")
+                            print(f"  -  {name_slug} {stat}: no table (saved anyway)")
+                        else:
+                            out.write_text(html, encoding="utf-8")
+                            print(f"  ok {name_slug} {stat}")
+                        await asyncio.sleep(random.uniform(*NAV_PAUSE))
+    finally:
+        browser.stop()
 
-                before = _cached_pages(season, stat)
-                for attempt in range(1, retries + 1):
-                    try:
-                        fb = sd.FBref(
-                            leagues=[league],
-                            seasons=[season],
-                            path_to_browser=browser,
-                            headless=headless,
-                        )
-                        # Fetches + caches one HTML page per team. We ignore the
-                        # parsed return value — parse_fbref_matchlogs.py owns that.
-                        fb.read_team_match_stats(stat_type=stat)
-                        after = _cached_pages(season, stat)
-                        progress[key] = {"status": "done", "pages": after}
-                        _save_progress(progress)
-                        print(f"  done: {key}  ({after} pages cached)")
-                        break
-                    except Exception as exc:  # noqa: BLE001
-                        after = _cached_pages(season, stat)
-                        gained = after - before
-                        progress[key] = {"status": "partial", "pages": after,
-                                         "last_error": f"{type(exc).__name__}: {str(exc)[:120]}"}
-                        _save_progress(progress)
-                        print(f"  FAIL {attempt}/{retries}: {key} "
-                              f"(+{gained} pages this attempt, {after} total) "
-                              f"-- {type(exc).__name__}")
-                        before = after
-                        time.sleep(5 * attempt)
-                else:
-                    print(f"  moving on from {key}; re-run to keep going")
+
+def status() -> None:
+    if not PAGES_DIR.exists():
+        print("no pages yet")
+        return
+    pages = list(PAGES_DIR.glob("*.html"))
+    by_stat: dict[str, int] = {}
+    by_ls: dict[str, int] = {}
+    for p in pages:
+        parts = p.stem.split("_")
+        stat = parts[-1]
+        by_stat[stat] = by_stat.get(stat, 0) + 1
+        by_ls["_".join(parts[:2])] = by_ls.get("_".join(parts[:2]), 0) + 1
+    print(f"{len(pages)} pages cached")
+    print("  by stat:  ", dict(sorted(by_stat.items())))
+    print("  by league-season:")
+    for k, v in sorted(by_ls.items()):
+        print(f"    {k}: {v}")
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("--leagues", nargs="+", default=DEFAULT_LEAGUES)
+    ap.add_argument("--leagues", nargs="+", default=DEFAULT_LEAGUES, choices=list(COMPS))
     ap.add_argument("--seasons", nargs="+", default=DEFAULT_SEASONS)
     ap.add_argument("--stats", nargs="+", default=STAT_TYPES, choices=STAT_TYPES)
-    ap.add_argument("--browser", default=str(DEFAULT_BROWSER),
-                    help="path to chrome.exe (needs a real browser for Cloudflare)")
-    ap.add_argument("--headless", action="store_true",
-                    help="run headless (WARNING: cannot solve a fresh Cloudflare challenge)")
-    ap.add_argument("--retries", type=int, default=3,
-                    help="attempts per (stat, league, season) chunk before moving on")
-    ap.add_argument("--status", action="store_true",
-                    help="print scrape_progress.json summary and exit")
+    ap.add_argument("--status", action="store_true", help="print cache summary and exit")
     args = ap.parse_args()
 
     if args.status:
-        prog = _load_progress()
-        if not prog:
-            print("no progress yet")
-            return
-        done = sum(1 for v in prog.values() if v.get("status") == "done")
-        print(f"{done}/{len(prog)} chunks done, "
-              f"{sum(v.get('pages', 0) for v in prog.values())} pages cached total")
-        for k, v in sorted(prog.items()):
-            print(f"  {v['status']:>7}  {v.get('pages', 0):>3}p  {k}")
+        status()
         return
 
-    browser = args.browser if args.browser and Path(args.browser).exists() else None
-    if browser is None:
-        print(f"WARNING: browser not found at {args.browser} — letting seleniumbase locate one")
-    pull(args.leagues, args.seasons, args.stats, browser, args.headless, args.retries)
-
-    print("\nnow build the table:  python src/parse_fbref_matchlogs.py")
+    import nodriver as uc
+    uc.loop().run_until_complete(scrape(args.leagues, args.seasons, args.stats))
+    print("\nnow build the table:  py -3.11 src/parse_fbref_matchlogs.py")
 
 
 if __name__ == "__main__":

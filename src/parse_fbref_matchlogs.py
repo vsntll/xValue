@@ -1,9 +1,9 @@
 """Parse cached FBref all-competitions match-log HTML into one long table.
 
-Browser-free: reads the raw pages that ``src/pull_fbref_matchlogs.py`` (via
-soccerdata) cached under ``data/soccerdata/data/FBref/matchlogs_*.html`` and turns
-them into ``data/processed/fbref_team_matchlogs.csv`` — one row per team per
-match, league + cup + European + friendly, with the ``Comp`` column mapped to a
+Browser-free: reads the raw pages ``src/pull_fbref_matchlogs.py`` cached under
+``data/raw/fbref/pages/<comp>_<season>_<slug>_<stat>.html`` and turns them into
+``data/processed/fbref_team_matchlogs.csv`` — one row per team per match, league +
+cup + European + friendly, with the ``Comp`` column mapped to a
 ``competition_type`` that unions onto ``match_features.csv``.
 
 Every stat page (schedule / shooting / keeper / misc) exposes its table as
@@ -11,7 +11,7 @@ Every stat page (schedule / shooting / keeper / misc) exposes its table as
 opponent).
 
 Run:
-    python src/parse_fbref_matchlogs.py
+    py -3.11 src/parse_fbref_matchlogs.py
 """
 
 from __future__ import annotations
@@ -23,11 +23,13 @@ from pathlib import Path
 import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-CACHE_DIR = PROJECT_ROOT / "data" / "soccerdata" / "data" / "FBref"
+PAGES_DIR = PROJECT_ROOT / "data" / "raw" / "fbref" / "pages"
 OUT_PATH = PROJECT_ROOT / "data" / "processed" / "fbref_team_matchlogs.csv"
 
-# soccerdata cache filename: matchlogs_<Team Name>_<seasoncode>_<stat>.html
-FNAME_RE = re.compile(r"^matchlogs_(?P<team>.+)_(?P<season>\d{4})_(?P<stat>[a-z]+)\.html$")
+# cache filename: <COMP>_<season>_<name-slug>_<stat>.html  e.g. ENG1_2023-24_Arsenal_schedule.html
+FNAME_RE = re.compile(
+    r"^(?P<comp>[A-Z]{3}\d)_(?P<season>\d{4}-\d{2})_(?P<team>.+)_(?P<stat>[a-z]+)\.html$"
+)
 
 STITCH_KEYS = ["team", "season", "Date", "Comp", "Round", "Opponent"]
 
@@ -41,25 +43,24 @@ COMPETITION_TYPE = {
     "Champions Lg": "european", "Europa Lg": "european",
     "Europa Conf Lg": "european", "Conf Lg": "european",
     "Community Shield": "super_cup", "Supercopa de España": "super_cup",
-    "DFL-Supercup": "super_cup", "UEFA Super Cup": "super_cup",
+    "DFL-Supercup": "super_cup", "UEFA Super Cup": "super_cup", "Super Cup": "super_cup",
     "Club Friendlies": "friendly", "Friendlies (M)": "friendly",
     "Relegation/Promotion Play-offs": "playoff",
 }
 
 
-def _season_label(code: str) -> str:
-    """'2324' -> '2023-24'."""
-    return f"20{code[:2]}-{code[2:]}"
-
-
 def _flatten(df: pd.DataFrame) -> pd.DataFrame:
+    """Flatten FBref's MultiIndex stat columns. The identity block sits under a
+    'For <Team>' (or Unnamed/empty) super-header -> keep just the leaf; real stat
+    groups ('Standard', 'Expected', ...) -> 'Group_Leaf'."""
     if isinstance(df.columns, pd.MultiIndex):
         df = df.copy()
-        df.columns = [
-            c[-1] if (not c[0] or str(c[0]).startswith("Unnamed"))
-            else "_".join(str(p) for p in c).strip("_")
-            for c in df.columns
-        ]
+        def name(top, leaf):
+            top = str(top)
+            if not top or top.startswith(("Unnamed", "For ")):
+                return leaf
+            return f"{top}_{leaf}".strip("_")
+        df.columns = [name(c[0], c[-1]) for c in df.columns]
     return df
 
 
@@ -86,7 +87,7 @@ def _parse_result(df: pd.DataFrame) -> pd.DataFrame:
 
 def load_stat(stat: str) -> pd.DataFrame:
     frames = []
-    for path in sorted(CACHE_DIR.glob(f"matchlogs_*_{stat}.html")):
+    for path in sorted(PAGES_DIR.glob(f"*_{stat}.html")):
         m = FNAME_RE.match(path.name)
         if not m:
             continue
@@ -94,12 +95,12 @@ def load_stat(stat: str) -> pd.DataFrame:
         try:
             tbl = pd.read_html(StringIO(html), attrs={"id": "matchlogs_for"})[0]
         except (ValueError, IndexError):
-            print(f"  no table in {path.name}")
-            continue
+            continue  # club had no log for this stat/season
         tbl = _flatten(tbl)
         tbl = tbl[tbl["Date"].notna() & (tbl["Date"] != "Date")]  # drop repeated headers
-        tbl.insert(0, "team", m["team"])
-        tbl.insert(1, "season", _season_label(m["season"]))
+        tbl.insert(0, "team", m["team"].replace("-", " "))
+        tbl.insert(1, "season", m["season"])
+        tbl.insert(2, "src_league", m["comp"])
         frames.append(tbl)
     if not frames:
         return pd.DataFrame()
@@ -107,8 +108,8 @@ def load_stat(stat: str) -> pd.DataFrame:
 
 
 def main() -> None:
-    if not CACHE_DIR.exists():
-        raise SystemExit(f"no FBref cache at {CACHE_DIR} — run pull_fbref_matchlogs.py first")
+    if not PAGES_DIR.exists():
+        raise SystemExit(f"no FBref cache at {PAGES_DIR} — run pull_fbref_matchlogs.py first")
 
     sched = load_stat("schedule")
     if sched.empty:
