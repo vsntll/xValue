@@ -4,18 +4,23 @@ Built by `src/build_matches_all.py` from every match source. One row per match,
 all competitions, 2020-21 .. 2026-27, top flight of England / Germany / Spain
 plus the cups their clubs play in.
 
-## Composition (9,012 matches as of 2026-09-03)
+## Composition (9,133 matches as of 2026-09-03)
 
 | competition_type | rows | source | stats |
 | --- | --- | --- | --- |
 | league | 6,456 | football-data.co.uk (2020-26) + live sources (2026-27) | shots/SoT/corners/fouls/cards everywhere; **xG 93%** (Understat); possession only 2026-27 |
-| european (UCL/UEL/UECL) | 1,243 | FBref match logs (2020-26) + FotMob (2026-27) | result only for history; full stats + xG for 2026-27 |
-| domestic_cup (FA/DFB/Copa) | 952 | same | same |
-| league_cup (EFL) | 312 | same | same |
+| european (UCL/UEL/UECL) | 1,346 | FBref match logs + ESPN/FotMob (2024-25 on) | result-only history; **xG + shots for 2024-25, 2025-26, 2026-27** |
+| domestic_cup (FA/DFB/Copa) | 1,005 | same | same |
+| league_cup (EFL) | 277 | same | same |
 | super_cup | 37 | same | |
 | playoff | 12 | same | |
 
-Overall: xG 67%, shot stats 73%, possession 2%.
+Overall: **xG 75%**, shots 80%, possession 10%. Cup xG: 0% for 2020-24,
+76-78% for 2024-25 & 2025-26, ~100% for 2026-27.
+
+Cup/European rows are scoped to ties involving a club from ENG1/GER1/ESP1 that
+season (matches FBref). ~10% of the 2024-25/2025-26 live cup rows don't dedupe
+cleanly against the FBref rows yet (team-name drift - step 4).
 
 ## Gaps and how to close them
 
