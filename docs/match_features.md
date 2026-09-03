@@ -5,14 +5,14 @@ One row per match.
 
 ## Coverage
 
-- **Competitions:** top two tiers of each country —
-  Premier League + Championship (England), Bundesliga + 2. Bundesliga (Germany),
-  La Liga + La Liga 2 (Spain). All league play; see "Not included" below.
+- **Competitions:** the top flight of each country — Premier League (England),
+  Bundesliga (Germany), La Liga (Spain). All league play; see "Not included"
+  below. (The three 2nd tiers were in scope until 2026-09-03, then dropped.)
 - **Seasons:** 2020-21 … 2025-26 complete, plus **2026-27 ongoing** (live —
   re-running the script pulls in matches played since the last run).
-- **Rows:** ~14,470. Per completed season: 2386 (380 E0 + 552 E1 + 306 D1 +
-  306 D2 + 380 SP1 + 462 SP2). 2026-27 grows over time.
-- **Date range:** 2020-09-11 … whatever the latest played match is.
+- **Rows:** ~6,455. Per completed season: 1066 (380 E0 + 306 D1 + 380 SP1).
+  2026-27 grows over time.
+- **Date range:** 2020-09-12 … whatever the latest played match is.
 
 ## Columns
 
@@ -20,13 +20,13 @@ One row per match.
 | --- | --- |
 | `season` | e.g. `2024-25` (injected) |
 | `league` | human-readable league name (injected) |
-| `tier` | 1 or 2 (injected) |
+| `tier` | always 1 (injected) — kept for schema stability |
 | `competition_type` | always `league` here — the column exists so cup/friendly rows from another source can be unioned in later |
-| `Div` | football-data division code (`E0`/`E1`/`D1`/`D2`/`SP1`/`SP2`) |
+| `Div` | football-data division code (`E0`/`D1`/`SP1`) |
 | `Date` | match date, ISO (parsed from dd/mm/yy) |
 | `Time` | kickoff local time |
 | `HomeTeam`, `AwayTeam` | football-data team names — **not yet resolved** to FBref names (step 4) |
-| `Referee` | England only (`E0`, `E1`); blank for German/Spanish leagues (source does not provide it) |
+| `Referee` | England only (`E0`); blank for German/Spanish leagues (source does not provide it) |
 | `FTHG`, `FTAG`, `FTR` | full-time home goals, away goals, result (`H`/`D`/`A`) |
 | `HTHG`, `HTAG`, `HTR` | half-time equivalents |
 | `HS`, `AS` | shots |

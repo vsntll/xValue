@@ -30,32 +30,32 @@ shooting + keeper pages back to back with no crash. New scripts:
   the cached pages → `data/processed/fbref_team_matchlogs.csv`, `Comp` mapped to
   `competition_type`.
 
-Competition ids: PL 9, Championship 10, Bundesliga 20, 2.Bundesliga 33,
-La Liga 12, La Liga 2 (Segunda) 17.
+Competition ids: PL 9, Bundesliga 20, La Liga 12. (The three 2nd tiers -
+Championship / 2.Bundesliga / Segunda - were dropped from scope 2026-09-03.)
 
 ## Match-log scrape COMPLETE 2026-09-03 (~02:15)
 
-Full run: 6 leagues x 7 seasons (2020-21 … 2026-27) x 4 stat types (schedule,
-shooting, keeper, misc) = **~3,380 pages** in `data/raw/fbref/pages/`, ~4 h at
+Full run: 3 leagues x 7 seasons (2020-21 … 2026-27) x 4 stat types (schedule,
+shooting, keeper, misc) = **~1,600 pages** in `data/raw/fbref/pages/`, ~4 h at
 ~5 s/page, one Cloudflare skip (backfilled). nodriver never crashed.
 
-`data/processed/fbref_team_matchlogs.csv`: **~37,500 rows**, 159 teams, one row
+`data/processed/fbref_team_matchlogs.csv`: **18,147 rows**, 88 teams, one row
 per team per match, schedule+shooting+keeper+misc stitched (54 cols). Stat
 columns ~86 % populated on league rows (the gap is mostly unplayed 2026-27
 fixtures, which FBref lists in full).
 
     competition_type   rows
-    league            33,158
-    domestic_cup        1,961   (FA Cup, DFB-Pokal, Copa del Rey)
-    european            1,615   (UCL / UEL / UECL)
-    league_cup            696   (EFL Cup)
-    super_cup              75
-    playoff               36    (promotion/relegation)
+    league            14,924
+    european           1,615   (UCL / UEL / UECL)
+    domestic_cup       1,152   (FA Cup, DFB-Pokal, Copa del Rey)
+    league_cup           369   (EFL Cup)
+    super_cup             75
+    playoff              12
 
 ## Player season stats 2026-09-03
 
 `src/pull_fbref_player_stats.py` + `parse_fbref_player_stats.py`. FBref's
-league-wide player-stats pages, 11 categories x 6 leagues x 7 seasons = 462 pages
+league-wide player-stats pages, 11 categories x 3 leagues x 7 seasons = 231 pages
 in `data/raw/fbref/player_stats/`.
 
 **FBref gates its advanced (Opta) tables from scrapers** — passing, passing_types,
@@ -69,11 +69,11 @@ The advanced stats for **PL / Bundesliga / La Liga, 2020-21..2022-23** come from
 the worldfootballR mirror instead — `src/pull_wfr_advanced.py` reads
 `fb_big5_advanced_season_stats/*.rds` (xG/xAG/npxG, progressive passing, tackles,
 possession, GCA). The mirror stopped updating advanced stats after 2022-23, so
-2023-24 onward + the three 2nd tiers wait for API-Football.
+2023-24 onward waits for API-Football.
 
 `data/processed/fbref_player_season_stats.csv` = one row per (player, squad,
-season), **24,081 rows, 274 cols**. Basic stats everywhere; advanced on ~4,150
-big-5 2020-22 rows (84 % of mirror rows joined — name-mismatch losses; a
+season), **11,056 rows, 274 cols**. Basic stats everywhere; advanced on ~4,150
+top-flight 2020-22 rows (84 % of mirror rows joined — name-mismatch losses; a
 player-id join would lift this).
 
 ## Live season -> API-Football
@@ -85,7 +85,7 @@ the `match_features.csv` / player-stats schema.
 
 ## Still to do
 
-- Dedupe the ~4,380 FBref cup/European/etc. rows to one-per-match, union into
+- Dedupe the ~3,220 FBref cup/European/etc. rows to one-per-match, union into
   `match_features.csv` (needs FBref<->football-data name resolution — step 4).
 - Cross-source player id resolution (FBref <-> Transfermarkt) for steps 3/4.
 

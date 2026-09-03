@@ -18,14 +18,13 @@ BROWSER = r"C:/Users/avasa/chrome-for-testing/chrome-win64/chrome.exe"
 CHALLENGE_MARKERS = ("Just a moment", "Enable JavaScript and cookies")
 NAV_PAUSE = (1.0, 2.5)  # polite random gap between page loads
 
-# league key -> (FBref competition id, URL slug, short code for filenames)
+# league key -> (FBref competition id, URL slug, short code for filenames).
+# Top flight only - the three 2nd tiers (Championship / 2.Bundesliga / Segunda)
+# were dropped from scope 2026-09-03.
 COMPS = {
     "ENG-Premier League": (9, "Premier-League", "ENG1"),
-    "ENG-Championship": (10, "Championship", "ENG2"),
     "GER-Bundesliga": (20, "Bundesliga", "GER1"),
-    "GER-2. Bundesliga": (33, "2-Bundesliga", "GER2"),
     "ESP-La Liga": (12, "La-Liga", "ESP1"),
-    "ESP-La Liga 2": (17, "Segunda-Division", "ESP2"),
 }
 DEFAULT_LEAGUES = list(COMPS)
 DEFAULT_SEASONS = [

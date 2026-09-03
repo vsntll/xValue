@@ -32,14 +32,12 @@ import requests
 
 BASE_URL = "https://www.football-data.co.uk/mmz4281"
 
-# football-data.co.uk division code -> (league name, tier)
+# football-data.co.uk division code -> (league name, tier).
+# Top flight only - the three 2nd tiers were dropped from scope 2026-09-03.
 DIVISIONS = {
     "E0": ("Premier League", 1),
-    "E1": ("Championship", 2),
     "D1": ("Bundesliga", 1),
-    "D2": ("2. Bundesliga", 2),
     "SP1": ("La Liga", 1),
-    "SP2": ("La Liga 2", 2),
 }
 
 # Season code = the two end-years, e.g. 2020-21 -> "2021". The last entry is the

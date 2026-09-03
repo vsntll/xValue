@@ -39,12 +39,9 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = PROJECT_ROOT / "data" / "raw" / "api_football"
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 
-# our short code -> API-Football league id (differs from FBref's ids)
-LEAGUE_IDS = {
-    "ENG1": 39, "ENG2": 40,
-    "GER1": 78, "GER2": 79,
-    "ESP1": 140, "ESP2": 141,
-}
+# our short code -> API-Football league id (differs from FBref's ids).
+# Top flight only (2nd tiers dropped 2026-09-03).
+LEAGUE_IDS = {"ENG1": 39, "GER1": 78, "ESP1": 140}
 
 # our competition_type for API-Football's fixture "league" ids we may see in cups
 CUP_LEAGUE_TYPE = {
