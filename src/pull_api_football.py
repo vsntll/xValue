@@ -84,13 +84,29 @@ def _session() -> tuple[requests.Session, str]:
     )
 
 
+class RateLimited(Exception):
+    """Daily/minute request quota hit - stop cleanly and resume later."""
+
+
+class PlanBlocked(Exception):
+    """Season/endpoint not on the current plan."""
+
+
 def _get(s: requests.Session, base: str, path: str, **params) -> dict:
     """One API call, with paging handled by the caller via params['page']."""
     r = s.get(f"{base}/{path}", params=params, timeout=30)
+    if r.status_code == 429:
+        raise RateLimited(f"HTTP 429 on {path}")
     r.raise_for_status()
     body = r.json()
-    if body.get("errors"):
-        raise SystemExit(f"API-Football error on {path} {params}: {body['errors']}")
+    errs = body.get("errors")
+    if errs:
+        blob = json.dumps(errs).lower()
+        if "plan" in blob or "subscription" in blob or "page parameter" in blob:
+            raise PlanBlocked(str(errs))
+        if "limit" in blob or "requests" in blob or "rate" in blob:
+            raise RateLimited(str(errs))
+        raise SystemExit(f"API-Football error on {path} {params}: {errs}")
     time.sleep(RATE_SLEEP)
     return body
 
@@ -159,7 +175,11 @@ def pull_match_stats(leagues: list[str], season: int) -> None:
                 dst = RAW_DIR / f"{ep}_{fid}.json"
                 if dst.exists():
                     continue
-                body = _get(s, base, f"fixtures/{ep}", fixture=fid)
+                try:
+                    body = _get(s, base, f"fixtures/{ep}", fixture=fid)
+                except RateLimited as e:
+                    print(f"{code}: quota hit at fixture {i}/{len(played)} ({e}). Re-run later.")
+                    return
                 dst.write_text(json.dumps(body.get("response", [])))
             if i % 25 == 0:
                 print(f"  {code}: {i}/{len(played)} fixtures")
@@ -167,13 +187,38 @@ def pull_match_stats(leagues: list[str], season: int) -> None:
 
 
 def pull_players(leagues: list[str], season: int) -> None:
-    """Player season stats (paged ~20/player-page)."""
+    """Player season stats. ~51 pages/league (20 players each) - on the free plan
+    that's most of the 100/day budget, so we cache every page and stop cleanly
+    when the quota is hit. Re-run to resume."""
     s, base = _session()
-    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    pdir = RAW_DIR / "players"
+    pdir.mkdir(parents=True, exist_ok=True)
     for code in leagues:
-        resp = _paged(s, base, "players", league=LEAGUE_IDS[code], season=season)
-        (RAW_DIR / f"players_{code}_{season}.json").write_text(json.dumps(resp))
-        print(f"{code}: {len(resp)} player-season records")
+        lid = LEAGUE_IDS[code]
+        page, total = 1, None
+        while total is None or page <= total:
+            dst = pdir / f"{code}_{season}_p{page:03d}.json"
+            if dst.exists():
+                if total is None:  # learn page count from a cached page
+                    total = json.loads(dst.read_text()).get("paging", {}).get("total", 1)
+                page += 1
+                continue
+            try:
+                body = _get(s, base, "players", league=lid, season=season, page=page)
+            except RateLimited as e:
+                print(f"{code} {season}: quota hit at page {page} ({e}). Re-run tomorrow.")
+                return
+            except PlanBlocked as e:
+                print(f"{code} {season}: {e}")
+                print("  The free plan caps pagination at page 3 (60 players) - "
+                      "full rosters need a paid plan.")
+                return
+            dst.write_text(json.dumps(body))
+            total = body.get("paging", {}).get("total", 1)
+            if page % 10 == 0 or page == total:
+                print(f"  {code} {season}: page {page}/{total}")
+            page += 1
+        print(f"{code} {season}: all {total} pages cached")
 
 
 def main() -> None:
@@ -191,8 +236,13 @@ def main() -> None:
         t = datetime.date.today()
         season = t.year if t.month >= 7 else t.year - 1
 
-    {"fixtures": pull_fixtures, "match-stats": pull_match_stats,
-     "players": pull_players}[args.what](args.leagues, season)
+    try:
+        {"fixtures": pull_fixtures, "match-stats": pull_match_stats,
+         "players": pull_players}[args.what](args.leagues, season)
+    except PlanBlocked as e:
+        raise SystemExit(
+            f"Season {season} ({season}-{str(season + 1)[2:]}) is not on your "
+            f"API-Football plan. Free = seasons 2022-2024. {e}")
 
 
 if __name__ == "__main__":
