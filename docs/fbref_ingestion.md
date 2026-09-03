@@ -52,16 +52,29 @@ fixtures, which FBref lists in full).
     super_cup              75
     playoff               36    (promotion/relegation)
 
-## Player season stats COMPLETE 2026-09-03 (~04:30)
+## Player season stats 2026-09-03
 
 `src/pull_fbref_player_stats.py` + `parse_fbref_player_stats.py`. FBref's
-league-wide player-stats pages (one page = a whole league-season for one
-category), 11 categories x 6 leagues x 7 seasons = **462 pages** in
-`data/raw/fbref/player_stats/`, ~55 min, zero failures (incl. 2026-27).
-Categories: standard, shooting, passing, passing_types, gca, defense,
-possession, playing_time, misc, keeper, keeper_adv.
+league-wide player-stats pages, 11 categories x 6 leagues x 7 seasons = 462 pages
+in `data/raw/fbref/player_stats/`.
+
+**FBref gates its advanced (Opta) tables from scrapers** — passing, passing_types,
+defense, possession, gca, keeper_adv come back as empty skeletons (no xG on the
+standard page either). Confirmed across comp/squad/player pages with 10 s settle
+waits. Only the basic tables come through: standard (goals/assists/minutes/cards/
+pens), shooting (Sh/SoT/dist), misc (fouls/offsides/recoveries/aerials), keeper
+(saves/GA/CS), playing_time.
+
+The advanced stats for **PL / Bundesliga / La Liga, 2020-21..2022-23** come from
+the worldfootballR mirror instead — `src/pull_wfr_advanced.py` reads
+`fb_big5_advanced_season_stats/*.rds` (xG/xAG/npxG, progressive passing, tackles,
+possession, GCA). The mirror stopped updating advanced stats after 2022-23, so
+2023-24 onward + the three 2nd tiers wait for API-Football.
+
 `data/processed/fbref_player_season_stats.csv` = one row per (player, squad,
-season), ~200 cols (per-90s + totals) — the value-model input.
+season), **24,081 rows, 274 cols**. Basic stats everywhere; advanced on ~4,150
+big-5 2020-22 rows (84 % of mirror rows joined — name-mismatch losses; a
+player-id join would lift this).
 
 ## Live season -> API-Football
 
