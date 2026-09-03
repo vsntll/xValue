@@ -52,11 +52,29 @@ fixtures, which FBref lists in full).
     super_cup              75
     playoff               36    (promotion/relegation)
 
-Next: dedupe the ~4,380 cup/European/etc. rows to one-per-match and union into
-`match_features.csv` (needs FBref<->football-data team-name resolution — step 4).
-Season-level **player** stats (the other half of step 2) are still to pull.
-2026-27 stat pages will fill in as the season plays; re-run the scraper to
-refresh, or switch to API-Football for the live season.
+## Player season stats COMPLETE 2026-09-03 (~04:30)
+
+`src/pull_fbref_player_stats.py` + `parse_fbref_player_stats.py`. FBref's
+league-wide player-stats pages (one page = a whole league-season for one
+category), 11 categories x 6 leagues x 7 seasons = **462 pages** in
+`data/raw/fbref/player_stats/`, ~55 min, zero failures (incl. 2026-27).
+Categories: standard, shooting, passing, passing_types, gca, defense,
+possession, playing_time, misc, keeper, keeper_adv.
+`data/processed/fbref_player_season_stats.csv` = one row per (player, squad,
+season), ~200 cols (per-90s + totals) — the value-model input.
+
+## Live season -> API-Football
+
+`src/pull_api_football.py` is scaffolded (fixtures / match-stats / players,
+env-var or `.env` auth, league-id map). Needs a **paid** API-Football key (free
+plan is seasons 2021-23 only). Once keyed: run for 2026-27, add a parser onto
+the `match_features.csv` / player-stats schema.
+
+## Still to do
+
+- Dedupe the ~4,380 FBref cup/European/etc. rows to one-per-match, union into
+  `match_features.csv` (needs FBref<->football-data name resolution — step 4).
+- Cross-source player id resolution (FBref <-> Transfermarkt) for steps 3/4.
 
 Everything below is the earlier debugging record, kept for context.
 
