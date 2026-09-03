@@ -136,37 +136,25 @@ def _merge(frames: list[tuple[str, pd.DataFrame]]) -> pd.DataFrame:
     return out.sort_values(["comp_code", "Date"], na_position="last").reset_index(drop=True)
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("--season", default=None, help="e.g. 2026-27 (default: current)")
-    ap.add_argument("--comps", nargs="+", default=DEFAULT_COMPS)
-    ap.add_argument("--sources", nargs="+", default=None,
-                    help=f"subset/order of {list(SOURCES)} (default: available of {DEFAULT_PRIORITY})")
-    ap.add_argument("--no-stats", dest="stats", action="store_false")
-    args = ap.parse_args()
-
-    _load_dotenv()
-    season = args.season or _current_season()
-
-    if args.sources:
-        order = args.sources
-    else:
-        order = [s for s in DEFAULT_PRIORITY
-                 if s != "football-data-org" or os.environ.get("FOOTBALL_DATA_ORG_KEY")]
-    if not order:
-        raise SystemExit("no sources selected")
-    print(f"season {season} | comps {args.comps} | sources {order}")
-
+def _run_season(season: str, comps: list[str], order: list[str], stats: bool) -> None:
+    print(f"\n=== season {season} | comps {comps} | sources {order} ===")
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     frames = []
     for name in order:
         print(f"[{name}]")
         try:
-            df = SOURCES[name](args.comps, season, with_stats=args.stats)
+            df = SOURCES[name](comps, season, with_stats=stats)
         except NotImplementedError as e:
             print(f"  skipped: {e}")
             continue
-        df.to_csv(RAW_DIR / f"{name}_{season}.csv", index=False)
+        # keep any comps already snapshotted for this source/season from a prior
+        # (possibly narrower) run
+        snap = RAW_DIR / f"{name}_{season}.csv"
+        if snap.exists():
+            prev = pd.read_csv(snap)
+            prev = prev[~prev["comp_code"].isin(comps)]
+            df = pd.concat([prev, df], ignore_index=True)
+        df.to_csv(snap, index=False)
         frames.append((name, df))
         print(f"  -> {len(df)} matches")
 
@@ -175,10 +163,34 @@ def main() -> None:
     out = OUT_DIR / f"live_matches_{season}.csv"
     merged.to_csv(out, index=False)
     played = merged["FTHG"].notna().sum() if len(merged) else 0
-    with_stats = merged["HS"].notna().sum() if len(merged) else 0
-    print(f"\nwrote {out}  ({len(merged)} matches, {played} played, {with_stats} with stats)")
-    if len(merged):
-        print(merged.groupby("comp_code").size().to_string())
+    with_xg = merged["HxG"].notna().sum() if len(merged) else 0
+    print(f"wrote {out}  ({len(merged)} matches, {played} played, {with_xg} with xG)")
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("--season", default=None, help="e.g. 2026-27 (default: current)")
+    ap.add_argument("--seasons", nargs="+", default=None,
+                    help="run several seasons in one go (overrides --season)")
+    ap.add_argument("--comps", nargs="+", default=DEFAULT_COMPS)
+    ap.add_argument("--sources", nargs="+", default=None,
+                    help=f"subset/order of {list(SOURCES)} (default: available of {DEFAULT_PRIORITY})")
+    ap.add_argument("--no-stats", dest="stats", action="store_false")
+    args = ap.parse_args()
+
+    _load_dotenv()
+    seasons = args.seasons or [args.season or _current_season()]
+
+    if args.sources:
+        order = args.sources
+    else:
+        order = [s for s in DEFAULT_PRIORITY
+                 if s != "football-data-org" or os.environ.get("FOOTBALL_DATA_ORG_KEY")]
+    if not order:
+        raise SystemExit("no sources selected")
+
+    for season in seasons:
+        _run_season(season, args.comps, order, args.stats)
 
 
 if __name__ == "__main__":

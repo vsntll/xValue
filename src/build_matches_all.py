@@ -98,23 +98,49 @@ def cup_history() -> pd.DataFrame:
     return tm.reindex(columns=COLS)
 
 
-def live_season() -> pd.DataFrame:
-    f = PROC / "live_matches_2026-27.csv"
-    if not f.exists():
-        print("(no live_matches_2026-27.csv - skipping current season)")
+def live_matches() -> pd.DataFrame:
+    """Every played row from every live_matches_<season>.csv (2026-27 + any
+    historical backfill seasons)."""
+    frames = []
+    for f in sorted(PROC.glob("live_matches_*.csv")):
+        lv = pd.read_csv(f)
+        lv = lv[lv["FTHG"].notna()].copy()
+        lv["comp"] = lv["league"]
+        frames.append(lv)
+    if not frames:
         return pd.DataFrame(columns=COLS)
-    lv = pd.read_csv(f)
-    lv = lv[lv["FTHG"].notna()].copy()  # played
-    lv["comp"] = lv["league"]
-    print(f"2026-27 live: {len(lv)} played matches")
-    return lv.reindex(columns=COLS)
+    out = pd.concat(frames, ignore_index=True)
+    print(f"live snapshots: {len(out)} played rows across "
+          f"{sorted(out['season'].unique())}")
+    return out.reindex(columns=COLS)
+
+
+_STAT_FILL = ["HS", "AS", "HST", "AST", "HC", "AC", "HF", "AF", "HY", "AY",
+              "HR", "AR", "HPoss", "APoss", "HxG", "AxG"]
+
+
+def _enrich(allm: pd.DataFrame, live: pd.DataFrame) -> pd.DataFrame:
+    """Fill missing stat/xG fields on allm rows from matching live rows."""
+    if live.empty:
+        return allm
+    live = live.assign(_k=_key(live)).drop_duplicates("_k").set_index("_k")
+    allm = allm.assign(_k=_key(allm))
+    filled = 0
+    for col in _STAT_FILL:
+        need = allm[col].isna() & allm["_k"].isin(live.index)
+        vals = allm.loc[need, "_k"].map(live[col])
+        allm.loc[need, col] = vals
+        filled += vals.notna().sum()
+    print(f"enrich: filled {filled} stat/xG cells from live snapshots")
+    return allm.drop(columns="_k")
 
 
 def main() -> None:
-    parts = [league_history(), cup_history(), live_season()]
-    allm = pd.concat(parts, ignore_index=True)
+    live = live_matches()
+    allm = pd.concat([league_history(), cup_history(), live], ignore_index=True)
     allm["_k"] = _key(allm)
     allm = allm.drop_duplicates(subset="_k").drop(columns="_k")
+    allm = _enrich(allm, live)
     # derive FTR where missing
     h, a = pd.to_numeric(allm["FTHG"], errors="coerce"), pd.to_numeric(allm["FTAG"], errors="coerce")
     allm["FTR"] = allm["FTR"].where(allm["FTR"].notna(),
