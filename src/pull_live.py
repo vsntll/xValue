@@ -29,8 +29,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from live import espn, fotmob, football_data_org, sofascore
-from live.schema import DEFAULT_COMPS, MATCH_COLS, normalize_team
+from live import espn, fotmob, football_data_org, sofascore, understat
+from live.schema import DEFAULT_COMPS, MATCH_COLS, teams_match
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = PROJECT_ROOT / "data" / "raw" / "live"
@@ -39,11 +39,13 @@ OUT_DIR = PROJECT_ROOT / "data" / "processed"
 SOURCES = {
     "football-data-org": football_data_org.fetch,
     "espn": espn.fetch,
+    "understat": understat.fetch,
     "fotmob": fotmob.fetch,
     "sofascore": sofascore.fetch,
 }
-# authority order for filling a merged row
-DEFAULT_PRIORITY = ["football-data-org", "espn"]
+# authority order for filling a merged row: sanctioned results backbone, then
+# ESPN's box-score stats, then Understat's xG (leagues only).
+DEFAULT_PRIORITY = ["football-data-org", "espn", "understat"]
 
 
 def _current_season() -> str:
@@ -62,30 +64,76 @@ def _load_dotenv() -> None:
                 os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
 
+def _missing(v) -> bool:
+    if v is None:
+        return True
+    try:
+        if bool(pd.isna(v)):
+            return True
+    except (TypeError, ValueError):
+        pass
+    return isinstance(v, str) and v == ""
+
+
+def _fill(slot: dict, row: pd.Series) -> None:
+    for c in MATCH_COLS:
+        if _missing(slot.get(c)):
+            v = row.get(c)
+            if not _missing(v):
+                slot[c] = v
+    slot.setdefault("_sources", set()).add(row["source"])
+
+
+def _same_match(slot: dict, row: pd.Series) -> bool:
+    if slot["comp_code"] != row["comp_code"]:
+        return False
+    try:
+        dd = abs((pd.Timestamp(slot["Date"]) - pd.Timestamp(row["Date"])).days)
+    except (ValueError, TypeError):
+        dd = 0
+    if dd > 3:
+        return False
+    h = teams_match(slot["HomeTeam"], row["HomeTeam"])
+    a = teams_match(slot["AwayTeam"], row["AwayTeam"])
+    if h and a:
+        return True
+    if not (h or a):
+        return False
+    # one side matches - accept if the FT score agrees too (covers a garbled name
+    # on the other side, common in ESPN's lower-league cup data)
+    sh, sa = slot.get("FTHG"), slot.get("FTAG")
+    rh, ra = row.get("FTHG"), row.get("FTAG")
+    if not (_missing(sh) or _missing(rh)):
+        return int(sh) == int(rh) and int(sa) == int(ra)
+    return False
+
+
 def _merge(frames: list[tuple[str, pd.DataFrame]]) -> pd.DataFrame:
-    """frames in priority order (most authoritative first). One row per
-    (comp_code, home, away); each field taken from the first source that has it."""
-    merged: dict[tuple, dict] = {}
-    for _src, df in frames:
+    """Spine + enrich. The first source (in priority order) to carry a comp
+    defines that comp's match list; later sources are fuzzy-matched onto those
+    rows (comp + date within 3d + both teams matching) and fill missing fields.
+    A later source's rows for a comp no earlier source had start a new spine."""
+    slots: list[dict] = []
+    by_comp: dict[str, list[dict]] = {}
+    for _name, df in frames:
         if df.empty:
             continue
-        df = df.copy()
-        df["_h"] = df["HomeTeam"].map(normalize_team)
-        df["_a"] = df["AwayTeam"].map(normalize_team)
         for _, r in df.iterrows():
-            key = (r["comp_code"], r["_h"], r["_a"])
-            slot = merged.setdefault(key, {})
-            for c in MATCH_COLS:
-                if slot.get(c) in (None, "") or pd.isna(slot.get(c)):
-                    v = r.get(c)
-                    if v is not None and not (isinstance(v, float) and pd.isna(v)):
-                        slot[c] = v
-            slot.setdefault("_sources", set()).add(r["source"])
-    out = pd.DataFrame(list(merged.values()))
-    if out.empty:
-        return out
+            cc = r["comp_code"]
+            hit = next((s for s in by_comp.get(cc, []) if _same_match(s, r)), None)
+            if hit is None:
+                slot = {"comp_code": cc, "Date": r["Date"],
+                        "HomeTeam": r["HomeTeam"], "AwayTeam": r["AwayTeam"]}
+                slots.append(slot)
+                by_comp.setdefault(cc, []).append(slot)
+                hit = slot
+            _fill(hit, r)
+    if not slots:
+        return pd.DataFrame(columns=MATCH_COLS)
+    out = pd.DataFrame(slots)
     out["source"] = out.pop("_sources").map(lambda s: "+".join(sorted(s)))
-    return out[MATCH_COLS].sort_values(["comp_code", "Date"]).reset_index(drop=True)
+    out = out.reindex(columns=MATCH_COLS)
+    return out.sort_values(["comp_code", "Date"], na_position="last").reset_index(drop=True)
 
 
 def main() -> None:

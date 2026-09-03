@@ -12,13 +12,13 @@ import unicodedata
 
 import pandas as pd
 
-# aligned with data/processed/match_features.csv, plus source/id/possession
+# aligned with data/processed/match_features.csv, plus source/id/possession/xG
 MATCH_COLS = [
     "source", "season", "league", "tier", "competition_type", "comp_code",
     "Date", "Time", "HomeTeam", "AwayTeam", "status",
     "FTHG", "FTAG", "FTR", "HTHG", "HTAG", "HTR",
     "HS", "AS", "HST", "AST", "HC", "AC", "HF", "AF", "HY", "AY", "HR", "AR",
-    "HPoss", "APoss", "match_id",
+    "HPoss", "APoss", "HxG", "AxG", "match_id",
 ]
 
 # our three leagues + the cups their clubs play in. Per-source competition codes;
@@ -76,8 +76,9 @@ def finalize(rows: list[dict], source: str) -> pd.DataFrame:
 
 _DROP_TOKENS = {
     "fc", "cf", "afc", "sc", "ac", "cd", "cp", "ssc", "rc", "sd", "ca", "ud",
-    "club", "de", "futbol", "the", "1", "1899", "1846", "1904", "05", "04", "09",
-    "calcio", "balompie",
+    "sv", "vfb", "vfl", "tsg", "fsv", "sg", "bsc", "kv", "rb",
+    "club", "de", "futbol", "the", "calcio", "balompie", "cp",
+    "1", "07", "05", "04", "09", "08", "06", "1899", "1846", "1904", "1900", "1846",
 }
 _ALIASES = {
     "man united": "manchester united", "man utd": "manchester united",
@@ -94,7 +95,13 @@ _ALIASES = {
     "gladbach": "borussia monchengladbach", "monchengladbach": "borussia monchengladbach",
     "leverkusen": "bayer leverkusen", "hoffenheim": "tsg hoffenheim",
     "frankfurt": "eintracht frankfurt", "koln": "cologne", "fc koln": "cologne",
-    "mainz": "mainz 05", "union berlin": "union berlin", "leipzig": "rb leipzig",
+    "mainz": "mainz 05", "fsv mainz": "mainz 05", "mainz 05": "mainz 05",
+    "rb leipzig": "leipzig", "rasenballsport leipzig": "leipzig",
+    "borussia m gladbach": "borussia monchengladbach",
+    "monchengladbach": "borussia monchengladbach", "gladbach": "borussia monchengladbach",
+    "werder bremen": "werder bremen", "werder": "werder bremen",
+    "elversberg": "elversberg", "paderborn": "paderborn", "hamburg": "hamburger",
+    "hamburg sv": "hamburger", "hamburger sv": "hamburger",
     "st pauli": "st pauli", "heidenheim": "heidenheim",
     "atletico": "atletico madrid", "atletico de madrid": "atletico madrid",
     "athletic": "athletic club", "athletic bilbao": "athletic club",
@@ -117,4 +124,22 @@ def normalize_team(name: str) -> str:
     s = re.sub(r"[^a-z0-9 ]", " ", s)
     toks = [t for t in s.split() if t and t not in _DROP_TOKENS]
     s = " ".join(toks).strip()
-    return _ALIASES.get(s, s)
+    s = _ALIASES.get(s, s)
+    return _ALIASES.get(s, s)  # two hops: alias may map onto another alias key
+
+
+def team_tokens(name: str) -> frozenset:
+    return frozenset(normalize_team(name).split())
+
+
+def teams_match(a: str, b: str) -> bool:
+    """True if two team names plausibly refer to the same club - exact
+    normalized, or a decisive token overlap (handles residual spelling drift)."""
+    na, nb = normalize_team(a), normalize_team(b)
+    if na and na == nb:
+        return True
+    ta, tb = set(na.split()), set(nb.split())
+    if not ta or not tb:
+        return False
+    inter = ta & tb
+    return bool(inter) and len(inter) >= min(len(ta), len(tb))
