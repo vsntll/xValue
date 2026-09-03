@@ -1,4 +1,4 @@
-# premierliga — merged predictor
+# xValue — a football predictor
 
 Two models over a shared feature layer (see `merged_predictor_architecture.png`):
 
