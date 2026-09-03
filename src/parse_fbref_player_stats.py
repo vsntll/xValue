@@ -15,10 +15,21 @@ Run:
 from __future__ import annotations
 
 import re
+import unicodedata
 from io import StringIO
 from pathlib import Path
 
 import pandas as pd
+
+
+def _norm_name(s) -> str:
+    """Loose key for player/club names across sources: no diacritics, no
+    punctuation, lowercase, collapsed spaces."""
+    if not isinstance(s, str):
+        return ""
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
+    s = re.sub(r"[^a-z0-9 ]", " ", s.lower())
+    return " ".join(s.split())
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 STATS_DIR = PROJECT_ROOT / "data" / "raw" / "fbref" / "player_stats"
@@ -154,6 +165,29 @@ def main() -> None:
         print(f"merged worldfootballR advanced stats ({matched} rows got xG/progressive/etc.)")
     else:
         print("(no wfr_player_advanced.csv - run pull_wfr_advanced.py for xG etc.)")
+
+    # xG for every season/league from Understat (src/pull_understat.py). The
+    # mirror above only covers 2020-22; Understat covers 2020-21..now for all
+    # three leagues. Joined on season+league+normalised player+team.
+    us = OUT_PATH.parent / "understat_player_season.csv"
+    if us.exists():
+        ux = pd.read_csv(us)
+        keep = ["season", "src_league", "player", "team", "xg", "np_xg", "xa",
+                "np_goals", "shots", "key_passes", "xg_chain", "xg_buildup"]
+        ux = ux[[c for c in keep if c in ux.columns]].rename(
+            columns={c: f"understat__{c}" for c in keep if c not in ("season", "src_league")})
+        ux["_pk"] = ux["understat__player"].map(_norm_name)
+        ux["_tk"] = ux["understat__team"].map(_norm_name)
+        ux = ux.drop(columns=["understat__player", "understat__team"]).drop_duplicates(
+            subset=["season", "src_league", "_pk", "_tk"])
+        combined["_pk"] = combined["Player"].map(_norm_name)
+        combined["_tk"] = combined["Squad"].map(_norm_name)
+        combined = combined.merge(ux, on=["season", "src_league", "_pk", "_tk"], how="left")
+        got = combined["understat__xg"].notna().sum()
+        combined = combined.drop(columns=["_pk", "_tk"])
+        print(f"merged Understat xG ({got}/{len(combined)} rows)")
+    else:
+        print("(no understat_player_season.csv - run pull_understat.py for xG)")
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     combined.to_csv(OUT_PATH, index=False)

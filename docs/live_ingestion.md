@@ -20,10 +20,16 @@ field from the first source that has it (key: comp_code + normalised home + away
 
 | module | source | key? | gives | status |
 | --- | --- | --- | --- | --- |
-| `live/football_data_org.py` | football-data.org v4 | `FOOTBALL_DATA_ORG_KEY` in `.env` | fixtures, results, HT score — **sanctioned, stable**. No shot/possession. 10 req/min, PL/BL1/PD/CL. | working; skipped if no key |
-| `live/espn.py` | site.api.espn.com | none | fixtures, results, **+ box-score stats** (shots, SoT, corners, fouls, cards, possession) for the 3 leagues + UCL/UEL/UECL + FA/EFL/DFB/Copa. Unofficial. | working |
-| `live/fotmob.py` | fotmob.com/api | none (may need `x-mas`) | + xG | stub — fallback only (ToS restricts) |
-| `live/sofascore.py` | api.sofascore.com | none | + xG | stub — third fallback |
+| `live/football_data_org.py` | football-data.org v4 | `FOOTBALL_DATA_ORG_KEY` in `.env` | fixtures, results, HT score — **sanctioned, stable**. No shot/possession. 10 req/min, PL/BL1/PD/CL. | working |
+| `live/espn.py` | site.api.espn.com | none | fixtures, results, **+ box-score stats** (shots, SoT, corners, fouls, cards, possession) for the 3 leagues + UCL/UEL/UECL + FA/EFL/DFB/Copa. Unofficial. Summaries cached. | working |
+| `live/understat.py` | understat.com (via soccerdata, TLS client) | none | **+ xG** (per-match team xG). The 3 leagues only — no cups. | working |
+| `live/fotmob.py` | fotmob.com/api/data | none (may need `x-mas` later) | **+ xG** for cups/Europe (and leagues). Reads teams+xG from `matchDetails` (fixture-list home/away is unreliable). Details cached. ToS restricts — low volume. | working |
+| `live/sofascore.py` | api.sofascore.com | none | + xG | stub — fallback |
+
+Merge is **spine + fuzzy-match** (`_same_match`): first source to carry a comp
+defines its match list; later sources are matched on comp + date (±3d) + both
+team names (`teams_match`: normalized-equal or decisive token overlap, with a
+score+date fallback for names one source mangles) and fill missing fields.
 
 Comp codes: `ENG1 GER1 ESP1` (leagues) + `UCL UEL UECL FA EFL DFB CDR` (cups).
 Default = leagues + UCL/FA/EFL/DFB/CDR.
@@ -38,8 +44,9 @@ Default = leagues + UCL/FA/EFL/DFB/CDR.
 Output: `data/raw/live/<source>_<season>.csv` (per-source) and
 `data/processed/live_matches_<season>.csv` (merged).
 
-First run (2026-09-03): 1,318 fixtures, 152 played, **100 % stat coverage** on
-played matches. FA Cup / Copa del Rey not started yet (0 events).
+First full run (2026-09-03): **1,594 fixtures** across ENG1/GER1/ESP1 + UCL/UEL/
+UECL/EFL/DFB. 152 played — **100 % shots/possession, 99 % xG** (2 garbled-name
+DFB matches missed xG). FA Cup / Copa del Rey not started yet.
 
 ## Known issues
 
