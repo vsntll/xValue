@@ -38,65 +38,14 @@ import asyncio
 import json
 import random
 import re
-from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-PAGES_DIR = PROJECT_ROOT / "data" / "raw" / "fbref" / "pages"
+from fbref_common import (
+    CHALLENGE_MARKERS, COMPS, DEFAULT_LEAGUES, DEFAULT_SEASONS, FBREF_RAW,
+    BROWSER, NAV_PAUSE, current_season, get_html, season4,
+)
 
-# league key -> (FBref competition id, URL slug, short code for filenames)
-COMPS = {
-    "ENG-Premier League": (9, "Premier-League", "ENG1"),
-    "ENG-Championship": (10, "Championship", "ENG2"),
-    "GER-Bundesliga": (20, "Bundesliga", "GER1"),
-    "GER-2. Bundesliga": (33, "2-Bundesliga", "GER2"),
-    "ESP-La Liga": (12, "La-Liga", "ESP1"),
-    "ESP-La Liga 2": (17, "Segunda-Division", "ESP2"),
-}
-DEFAULT_LEAGUES = list(COMPS)
-DEFAULT_SEASONS = [
-    "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27",
-]
+PAGES_DIR = FBREF_RAW / "pages"
 STAT_TYPES = ["schedule", "shooting", "keeper", "misc"]
-
-BROWSER = r"C:/Users/avasa/chrome-for-testing/chrome-win64/chrome.exe"
-CHALLENGE_MARKERS = ("Just a moment", "Enable JavaScript and cookies")
-NAV_PAUSE = (1.0, 2.5)  # polite random gap between page loads
-
-
-def _season4(season: str) -> str:
-    """'2023-24' -> '2023-2024' (FBref's URL form)."""
-    start, end = season.split("-")
-    return f"{start}-{start[:2]}{end}"
-
-
-def _current_season() -> str:
-    """European football season in progress today, as 'YYYY-YY'."""
-    import datetime
-    t = datetime.date.today()
-    start = t.year if t.month >= 7 else t.year - 1
-    return f"{start}-{str(start + 1)[2:]}"
-
-
-def _slug_to_name(slug: str) -> str:
-    return slug.replace("-", " ")
-
-
-async def _get_html(browser, url: str, want_sel: str = "table", tries: int = 4) -> str:
-    """Navigate to url (reusing the main tab) and return the DOM once the wanted
-    element is present. Cloudflare's challenge auto-clears in a few seconds; we
-    just wait it out rather than clicking anything."""
-    page = await browser.get(url)
-    for attempt in range(1, tries + 1):
-        try:
-            await page.select(want_sel, timeout=12)
-        except Exception:
-            pass
-        await page.sleep(1.5)
-        html = await page.get_content()
-        if not any(m in html for m in CHALLENGE_MARKERS):
-            return html
-        await page.sleep(4 + 2 * attempt)  # let the challenge finish
-    return html  # caller checks for the table / challenge marker
 
 
 def _parse_squads(html: str) -> list[tuple[str, str]]:
@@ -111,16 +60,15 @@ def _parse_squads(html: str) -> list[tuple[str, str]]:
     return sorted(set(pairs))
 
 
-async def _squad_list(browser, cid: int, slug: str, season4: str, is_current: bool,
-                      cache: Path) -> list[tuple[str, str]]:
+async def _squad_list(browser, cid, slug, s4, is_current, cache):
     if cache.exists():
         return [tuple(x) for x in json.loads(cache.read_text())]
-    urls = [f"https://fbref.com/en/comps/{cid}/{season4}/{season4}-{slug}-Stats"]
+    urls = [f"https://fbref.com/en/comps/{cid}/{s4}/{s4}-{slug}-Stats"]
     if is_current:
         # FBref serves the in-progress season at the season-less URL
         urls.append(f"https://fbref.com/en/comps/{cid}/{slug}-Stats")
     for url in urls:
-        html = await _get_html(browser, url, want_sel="#stats_squads_standard_for")
+        html = await get_html(browser, url, want_sel="#stats_squads_standard_for")
         squads = _parse_squads(html)
         if squads:
             cache.write_text(json.dumps(squads))
@@ -132,13 +80,13 @@ async def scrape(leagues: list[str], seasons: list[str], stats: list[str]) -> No
     import nodriver as uc
 
     PAGES_DIR.mkdir(parents=True, exist_ok=True)
-    current = _current_season()
+    current = current_season()
     browser = await uc.start(browser_executable_path=BROWSER, headless=False)
     try:
         for league in leagues:
             cid, slug, code = COMPS[league]
             for season in seasons:
-                s4 = _season4(season)
+                s4 = season4(season)
                 sq_cache = PAGES_DIR / f"_squads_{code}_{season}.json"
                 squads = await _squad_list(browser, cid, slug, s4,
                                            season == current, sq_cache)
@@ -153,7 +101,7 @@ async def scrape(leagues: list[str], seasons: list[str], stats: list[str]) -> No
                             continue
                         url = (f"https://fbref.com/en/squads/{sid}/{s4}"
                                f"/matchlogs/all_comps/{stat}/")
-                        html = await _get_html(browser, url, want_sel="#matchlogs_for")
+                        html = await get_html(browser, url, want_sel="#matchlogs_for")
                         if any(m in html for m in CHALLENGE_MARKERS):
                             print(f"  !! {name_slug} {stat}: stuck on challenge, skipping")
                             continue
