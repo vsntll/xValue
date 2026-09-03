@@ -39,8 +39,11 @@ DEFAULT_SEASONS = [
 ]
 
 
-def _start_year(season: str) -> str:
-    return season.split("-")[0]
+def _sd_season(season: str) -> str:
+    """soccerdata wants an unambiguous form - a bare start year like '2021' is
+    read as the 2020-21 season, not 2021-22. Use YYYY-YYYY."""
+    start = int(season.split("-")[0])
+    return f"{start}-{start + 1}"
 
 
 def pull_matches(seasons: list[str]) -> None:
@@ -50,7 +53,7 @@ def pull_matches(seasons: list[str]) -> None:
     for code, key in LEAGUE_KEY.items():
         for season in seasons:
             try:
-                sch = sd.Understat(leagues=key, seasons=_start_year(season)).read_schedule()
+                sch = sd.Understat(leagues=key, seasons=_sd_season(season)).read_schedule()
             except Exception as e:  # noqa: BLE001
                 print(f"  {code} {season}: {type(e).__name__}: {str(e)[:90]}")
                 continue
@@ -79,7 +82,7 @@ def pull_players(seasons: list[str]) -> None:
     for code, key in LEAGUE_KEY.items():
         for season in seasons:
             try:
-                ps = sd.Understat(leagues=key, seasons=_start_year(season)).read_player_season_stats()
+                ps = sd.Understat(leagues=key, seasons=_sd_season(season)).read_player_season_stats()
             except Exception as e:  # noqa: BLE001
                 print(f"  {code} {season}: {type(e).__name__}: {str(e)[:90]}")
                 continue

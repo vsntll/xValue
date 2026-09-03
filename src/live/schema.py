@@ -108,9 +108,23 @@ _ALIASES = {
     "real sociedad": "real sociedad", "betis": "real betis", "real betis balompie": "real betis",
     "villarreal": "villarreal", "sevilla": "sevilla", "celta": "celta vigo",
     "celta de vigo": "celta vigo", "deportivo alaves": "alaves", "cadiz": "cadiz",
-    "espanyol": "espanyol", "rayo": "rayo vallecano", "girona": "girona",
+    "espanyol": "espanyol", "espanol": "espanyol",
+    "rayo": "rayo vallecano", "vallecano": "rayo vallecano", "girona": "girona",
     "las palmas": "las palmas", "leganes": "leganes", "valladolid": "real valladolid",
     "almeria": "almeria", "getafe": "getafe", "osasuna": "osasuna", "mallorca": "mallorca",
+    # football-data.co.uk short names -> the canonical (Understat-ish) key
+    "ath bilbao": "athletic club", "ath madrid": "atletico madrid",
+    "sociedad": "real sociedad", "celta": "celta vigo", "alaves": "alaves",
+    "man city": "manchester city", "man united": "manchester united",
+    "nottm forest": "nottingham forest", "sheffield united": "sheffield united",
+    "tottenham": "tottenham hotspur", "west ham": "west ham united",
+    "wolves": "wolverhampton wanderers", "leicester": "leicester city",
+    "leeds": "leeds united", "newcastle": "newcastle united",
+    "dortmund": "borussia dortmund", "ein frankfurt": "eintracht frankfurt",
+    "gladbach": "borussia monchengladbach", "leverkusen": "bayer leverkusen",
+    "stuttgart": "stuttgart", "hoffenheim": "tsg hoffenheim", "koln": "cologne",
+    "fc koln": "cologne", "hertha": "hertha berlin", "st pauli": "st pauli",
+    "bielefeld": "arminia bielefeld", "greuther furth": "greuther furth",
 }
 
 

@@ -15,11 +15,15 @@ Run:
 from __future__ import annotations
 
 import re
+import sys
 import unicodedata
 from io import StringIO
 from pathlib import Path
 
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from live.schema import normalize_team  # club-name resolver (alias map + tokens)
 
 
 def _norm_name(s) -> str:
@@ -177,11 +181,11 @@ def main() -> None:
         ux = ux[[c for c in keep if c in ux.columns]].rename(
             columns={c: f"understat__{c}" for c in keep if c not in ("season", "src_league")})
         ux["_pk"] = ux["understat__player"].map(_norm_name)
-        ux["_tk"] = ux["understat__team"].map(_norm_name)
+        ux["_tk"] = ux["understat__team"].map(normalize_team)
         ux = ux.drop(columns=["understat__player", "understat__team"]).drop_duplicates(
             subset=["season", "src_league", "_pk", "_tk"])
         combined["_pk"] = combined["Player"].map(_norm_name)
-        combined["_tk"] = combined["Squad"].map(_norm_name)
+        combined["_tk"] = combined["Squad"].map(normalize_team)
         combined = combined.merge(ux, on=["season", "src_league", "_pk", "_tk"], how="left")
         got = combined["understat__xg"].notna().sum()
         combined = combined.drop(columns=["_pk", "_tk"])

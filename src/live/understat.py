@@ -32,14 +32,15 @@ _LEAGUE_KEY = {
 def fetch(comp_codes: list[str], season: str, with_stats: bool = True) -> "object":
     import soccerdata as sd
 
-    start = season.split("-")[0]  # soccerdata Understat wants the start year
+    y = int(season.split("-")[0])
+    sd_season = f"{y}-{y + 1}"  # a bare year is ambiguous to soccerdata
     rows = []
     for code in comp_codes:
         if code not in _LEAGUE_KEY:
             continue
         cfg = LEAGUES[code]
         try:
-            us = sd.Understat(leagues=_LEAGUE_KEY[code], seasons=start)
+            us = sd.Understat(leagues=_LEAGUE_KEY[code], seasons=sd_season)
             sch = us.read_schedule().reset_index()
         except Exception as e:  # noqa: BLE001
             print(f"  understat {code}: {type(e).__name__}: {str(e)[:100]}")
