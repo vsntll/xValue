@@ -69,6 +69,14 @@ def _season4(season: str) -> str:
     return f"{start}-{start[:2]}{end}"
 
 
+def _current_season() -> str:
+    """European football season in progress today, as 'YYYY-YY'."""
+    import datetime
+    t = datetime.date.today()
+    start = t.year if t.month >= 7 else t.year - 1
+    return f"{start}-{str(start + 1)[2:]}"
+
+
 def _slug_to_name(slug: str) -> str:
     return slug.replace("-", " ")
 
@@ -97,26 +105,34 @@ def _parse_squads(html: str) -> list[tuple[str, str]]:
     doc = html.replace("<!--", "").replace("-->", "")
     m = re.search(r'id="stats_squads_standard_for".*?</table>', doc, re.S)
     seg = m.group(0) if m else doc
-    pairs = re.findall(r'/en/squads/([0-9a-f]{8})/\d{4}-\d{4}/([A-Za-z0-9\-]+)-Stats', seg)
+    # season segment is present on historical pages, absent on the current one
+    pairs = re.findall(
+        r'/en/squads/([0-9a-f]{8})/(?:\d{4}-\d{4}/)?([A-Za-z0-9\-]+)-Stats', seg)
     return sorted(set(pairs))
 
 
-async def _squad_list(browser, cid: int, slug: str, season4: str,
+async def _squad_list(browser, cid: int, slug: str, season4: str, is_current: bool,
                       cache: Path) -> list[tuple[str, str]]:
     if cache.exists():
         return [tuple(x) for x in json.loads(cache.read_text())]
-    url = f"https://fbref.com/en/comps/{cid}/{season4}/{season4}-{slug}-Stats"
-    html = await _get_html(browser, url, want_sel="#stats_squads_standard_for")
-    squads = _parse_squads(html)
-    if squads:
-        cache.write_text(json.dumps(squads))
-    return squads
+    urls = [f"https://fbref.com/en/comps/{cid}/{season4}/{season4}-{slug}-Stats"]
+    if is_current:
+        # FBref serves the in-progress season at the season-less URL
+        urls.append(f"https://fbref.com/en/comps/{cid}/{slug}-Stats")
+    for url in urls:
+        html = await _get_html(browser, url, want_sel="#stats_squads_standard_for")
+        squads = _parse_squads(html)
+        if squads:
+            cache.write_text(json.dumps(squads))
+            return squads
+    return []
 
 
 async def scrape(leagues: list[str], seasons: list[str], stats: list[str]) -> None:
     import nodriver as uc
 
     PAGES_DIR.mkdir(parents=True, exist_ok=True)
+    current = _current_season()
     browser = await uc.start(browser_executable_path=BROWSER, headless=False)
     try:
         for league in leagues:
@@ -124,7 +140,8 @@ async def scrape(leagues: list[str], seasons: list[str], stats: list[str]) -> No
             for season in seasons:
                 s4 = _season4(season)
                 sq_cache = PAGES_DIR / f"_squads_{code}_{season}.json"
-                squads = await _squad_list(browser, cid, slug, s4, sq_cache)
+                squads = await _squad_list(browser, cid, slug, s4,
+                                           season == current, sq_cache)
                 if not squads:
                     print(f"{code} {season}: no squads found (season may not exist yet)")
                     continue
