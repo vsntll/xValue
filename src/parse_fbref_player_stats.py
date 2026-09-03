@@ -34,6 +34,12 @@ CATEGORY_TABLE = {
     "keeper": "stats_keeper", "keeper_adv": "stats_keeper_adv",
 }
 
+# data-stat names FBref renders before the stat numbers load / that carry no signal
+_SKELETON_STATS = {
+    "ranker", "player", "nationality", "position", "team", "age", "birth_year",
+    "minutes_90s", "games", "matches", "assists",
+}
+
 # identity columns present in every category table
 ID_COLS = ["Player", "Nation", "Pos", "Squad", "Age", "Born"]
 JOIN_KEYS = ["season", "src_league", "Player", "Squad", "Born"]
@@ -65,18 +71,34 @@ def _player_ids(html_doc: str, table_id: str) -> dict[tuple[str, str], str]:
     return out
 
 
+def _page_has_stats(doc: str, table_id: str) -> bool:
+    """FBref serves the advanced (Opta-derived) player tables as empty skeletons
+    to scrapers - real numbers appear in >=6 distinct non-skeleton stat columns."""
+    m = re.search(rf'id="{table_id}".*?</table>', doc, re.S)
+    if not m:
+        return False
+    got = set(re.findall(r'data-stat="([a-z_0-9]+)"[^>]*>\s*[\d.]', m.group(0)))
+    return len(got - _SKELETON_STATS) >= 6
+
+
 def load_category(cat: str) -> pd.DataFrame:
     table_id = CATEGORY_TABLE[cat]
-    frames = []
+    frames, empty = [], 0
     for path in sorted(STATS_DIR.glob(f"*_{cat}.html")):
         m = FNAME_RE.match(path.name)
         if not m:
             continue
         doc = path.read_text(encoding="utf-8").replace("<!--", "").replace("-->", "")
+        if not _page_has_stats(doc, table_id):
+            empty += 1
+            continue
         try:
-            df = pd.read_html(StringIO(doc), attrs={"id": table_id})[0]
+            cands = pd.read_html(StringIO(doc), attrs={"id": table_id})
         except (ValueError, IndexError):
             continue
+        # FBref ships some tables twice (visible + a copy for its export widget);
+        # uncommenting exposes both under the same id. Keep the fuller one.
+        df = max(cands, key=lambda t: t.notna().to_numpy().sum())
         df = _flatten(df)
         df = df[df["Player"].notna() & (df["Player"] != "Player")]
         df = df[~df["Squad"].astype(str).str.contains("Squads", na=False)]  # drop league-total rows
@@ -87,6 +109,8 @@ def load_category(cat: str) -> pd.DataFrame:
                if c not in (ID_COLS + ["season", "src_league", "Rk", "Matches"])}
         df = df.rename(columns=ren).drop(columns=["Rk", "Matches"], errors="ignore")
         frames.append(df)
+    if empty:
+        print(f"  ({cat}: {empty} pages had an empty/skeleton table - skipped)")
     return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
 
 

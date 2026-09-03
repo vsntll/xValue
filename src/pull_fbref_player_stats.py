@@ -32,6 +32,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import random
+import re
 
 from fbref_common import (
     CHALLENGE_MARKERS, COMPS, DEFAULT_LEAGUES, DEFAULT_SEASONS, FBREF_RAW,
@@ -62,6 +63,43 @@ def _url(cid: int, s4: str, slug: str, segment: str, is_current: bool) -> str:
     return f"https://fbref.com/en/comps/{cid}/{s4}/{segment}/{s4}-{slug}-Stats"
 
 
+_ID_STATS_JS = ("ranker player nationality position team age birth_year "
+                "minutes_90s games matches").split()
+
+
+def _settle_js(table_id: str) -> str:
+    """Truthy once the table's *stat* cells (not the identity columns, which
+    render first) have filled in - FBref populates advanced tables a beat late."""
+    ids = ",".join(f"'{s}'" for s in _ID_STATS_JS)
+    return (
+        f"(() => {{const t=document.getElementById('{table_id}');"
+        f"if(!t)return false;const skip=new Set([{ids}]);"
+        f"const c=t.querySelectorAll('tbody td[data-stat]');let n=0;"
+        f"for(const x of c){{if(!skip.has(x.getAttribute('data-stat'))"
+        f"&&x.textContent.trim())n++;}}"
+        f"return n>50;}})()"
+    )
+
+
+# cells present even before the stat numbers load - don't count these
+_ID_STATS = {
+    "ranker", "player", "nationality", "position", "team", "age", "birth_year",
+    "minutes_90s", "games", "matches", "assists",
+}
+
+
+def _has_data(html: str, table_id: str) -> bool:
+    """True once the table has real numbers in a spread of stat columns (FBref
+    serves the skeleton, then some pages fill their advanced columns a beat
+    later - or not at all if we grabbed the DOM too soon)."""
+    doc = html.replace("<!--", "").replace("-->", "")
+    m = re.search(rf'id="{table_id}".*?</table>', doc, re.S)
+    if not m:
+        return False
+    filled = set(re.findall(r'data-stat="([a-z_0-9]+)"[^>]*>\s*[\d.]', m.group(0)))
+    return len(filled - _ID_STATS) >= 6
+
+
 async def scrape(leagues: list[str], seasons: list[str], cats: list[str]) -> None:
     import nodriver as uc
 
@@ -77,10 +115,11 @@ async def scrape(leagues: list[str], seasons: list[str], cats: list[str]) -> Non
                 for cat in cats:
                     segment, table_id = CATEGORIES[cat]
                     out = STATS_DIR / f"{code}_{season}_{cat}.html"
-                    if out.exists() and out.stat().st_size > 40_000:
+                    if out.exists() and _has_data(out.read_text(encoding="utf-8"), table_id):
                         continue
                     url = _url(cid, s4, slug, segment, is_current)
-                    html = await get_html(browser, url, want_sel=f"#{table_id}")
+                    html = await get_html(browser, url, want_sel=f"#{table_id}",
+                                          settle_js=_settle_js(table_id))
                     if any(m in html for m in CHALLENGE_MARKERS):
                         print(f"  !! {code} {season} {cat}: stuck on challenge")
                         continue
@@ -88,9 +127,10 @@ async def scrape(leagues: list[str], seasons: list[str], cats: list[str]) -> Non
                     if f'id="{table_id}"' not in doc:
                         print(f"  -  {code} {season} {cat}: no table (season/category absent)")
                         continue
+                    if not _has_data(html, table_id):
+                        print(f"  ?? {code} {season} {cat}: table still unfilled, saving anyway")
                     out.write_text(html, encoding="utf-8")
-                    n = doc[doc.find(f'id="{table_id}"'):].count('data-append-csv=')
-                    print(f"  ok {code} {season} {cat}  (~{n} players)")
+                    print(f"  ok {code} {season} {cat}")
                     await asyncio.sleep(random.uniform(*NAV_PAUSE))
     finally:
         browser.stop()

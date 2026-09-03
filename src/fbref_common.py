@@ -50,11 +50,14 @@ def slug_to_name(slug: str) -> str:
     return slug.replace("-", " ")
 
 
-async def get_html(browser, url: str, want_sel: str = "table", tries: int = 4) -> str:
+async def get_html(browser, url: str, want_sel: str = "table", tries: int = 4,
+                   settle_js: str | None = None) -> str:
     """Navigate to url (reusing the main tab) and return the DOM once the wanted
-    element is present. Cloudflare's challenge auto-clears in a few seconds; we
-    wait it out rather than clicking anything. Caller checks the result for a
-    CHALLENGE_MARKER / the table it wanted."""
+    element is present and (if ``settle_js`` is given) that JS expression returns
+    truthy - FBref renders some stat-table skeletons before filling the numbers,
+    so we poll for real content. Cloudflare's challenge auto-clears in a few
+    seconds; we wait it out rather than clicking. Caller still checks the result
+    for a CHALLENGE_MARKER / the table it wanted."""
     page = await browser.get(url)
     html = ""
     for attempt in range(1, tries + 1):
@@ -62,7 +65,15 @@ async def get_html(browser, url: str, want_sel: str = "table", tries: int = 4) -
             await page.select(want_sel, timeout=12)
         except Exception:
             pass
-        await page.sleep(1.5)
+        for _ in range(8):
+            await page.sleep(1.2)
+            if settle_js is None:
+                break
+            try:
+                if await page.evaluate(settle_js):
+                    break
+            except Exception:
+                pass
         html = await page.get_content()
         if not any(m in html for m in CHALLENGE_MARKERS):
             return html
