@@ -214,6 +214,29 @@ def main() -> None:
     else:
         print("(no tm_player_values.csv - run pull_transfermarkt.py for the value target)")
 
+    # Sofascore fills the value for the current season (Transfermarkt mirror stops
+    # at 2022-23; Sofascore has no history so it's current-season only).
+    sf = OUT_PATH.parent / "sofascore_values.csv"
+    if sf.exists():
+        sv = pd.read_csv(sf)[["season", "src_league", "player_name", "club",
+                              "sofascore_id", "market_value_eur"]].rename(
+            columns={"market_value_eur": "_sf_value"})
+        sv["_pk"] = sv["player_name"].map(_norm_name)
+        sv["_tk"] = sv["club"].map(normalize_team)
+        sv = sv.drop(columns=["player_name", "club"]).drop_duplicates(
+            subset=["season", "src_league", "_pk", "_tk"])
+        combined["_pk"] = combined["Player"].map(_norm_name)
+        combined["_tk"] = combined["Squad"].map(normalize_team)
+        combined = combined.merge(sv, on=["season", "src_league", "_pk", "_tk"], how="left")
+        if "market_value_eur" not in combined.columns:
+            combined["market_value_eur"] = pd.NA
+        combined["market_value_eur"] = combined["market_value_eur"].fillna(combined["_sf_value"])
+        got = combined["_sf_value"].notna().sum()
+        combined = combined.drop(columns=["_pk", "_tk", "_sf_value"])
+        print(f"merged Sofascore value ({got} rows, current season)")
+    else:
+        print("(no sofascore_values.csv - run pull_sofascore_values.py)")
+
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     combined.to_csv(OUT_PATH, index=False)
     print(f"wrote {OUT_PATH}  ({len(combined)} rows, {combined.shape[1]} cols)")
