@@ -7,7 +7,10 @@ venv/
 
 # Data — raw downloads are reproducible; processed tables are build artifacts
 data/raw/
-data/processed/
+data/processed/*
+# health_check.json is tiny and the point is for the dashboard / repo history
+# to show the latest source-health report - see .github/workflows/health-check.yml
+!data/processed/health_check.json
 # soccerdata caches (SOCCERDATA_DIR points into these)
 data/soccerdata/
 data/understat_cache/

@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-09-04T17:36:34+00:00",
+  "results": {
+    "fbref (browser scrape)": {
+      "status": "blocked (known)",
+      "detail": "HTTP 403 - Cloudflare bot-blocks plain requests, as always",
+      "seconds": 0.2
+    },
+    "transfermarkt (browser scrape)": {
+      "status": "blocked (known)",
+      "detail": "HTTP 405 - the standing non-browser block",
+      "seconds": 0.2
+    },
+    "worldfootballR mirror": {
+      "status": "ok",
+      "detail": "1.9 MB",
+      "seconds": 0.2
+    },
+    "espn": {
+      "status": "ok",
+      "detail": "380 rows",
+      "n": 380,
+      "seconds": 0.6
+    },
+    "fotmob": {
+      "status": "ok",
+      "detail": "20 rows",
+      "n": 20,
+      "seconds": 0.7
+    },
+    "understat (live match schema)": {
+      "status": "ok",
+      "detail": "380 rows",
+      "n": 380,
+      "seconds": 2.3
+    },
+    "football-data.org": {
+      "status": "ok",
+      "detail": "380 rows",
+      "n": 380,
+      "seconds": 7.3
+    },
+    "football-data.co.uk": {
+      "status": "ok",
+      "detail": "10309 bytes",
+      "seconds": 0.7
+    },
+    "sofascore (values API)": {
+      "status": "blocked (known)",
+      "detail": "403 - Sofascore IP-blocks this network sometimes (CI especially)",
+      "seconds": 0.2
+    }
+  }
+}

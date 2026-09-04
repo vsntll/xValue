@@ -1,0 +1,52 @@
+name: Data source health check
+
+# Probes every upstream source (FBref/Transfermarkt reachability, and a real
+# call to each JSON-API source) daily. The job goes red the moment a source's
+# response shape drifts or a normally-nonempty pull comes back empty, instead
+# of that surfacing three weeks later as a stale squad rollup. See
+# src/health_check.py for exactly what each probe checks and why a given
+# status (ok / blocked (known) / DEGRADED / ERROR) isn't a false alarm.
+
+on:
+  schedule:
+    - cron: "30 6 * * *"        # daily, 06:30 UTC (ahead of the Monday full refresh)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      FOOTBALL_DATA_ORG_KEY: ${{ secrets.FOOTBALL_DATA_ORG_KEY }}
+      PYTHONIOENCODING: utf-8
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run health check
+        id: hc
+        run: python src/health_check.py
+
+      - name: Commit the report (even on failure, so the dashboard shows why)
+        if: always()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/processed/health_check.json
+          if git diff --cached --quiet; then
+            echo "report unchanged - nothing to commit"
+          else
+            git commit -m "Health check report ($(date -u +%Y-%m-%d))"
+            git pull --rebase --autostash origin master
+            git push
+          fi
