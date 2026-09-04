@@ -4,14 +4,44 @@ A single self-contained HTML page (`site/index.html`) with the season's player
 stats, the value model's predictions, next-fixture odds, and club pages, across
 the Premier League, La Liga and Bundesliga — no server, no fetch, data is
 embedded inline. A league chip filter in the top bar (All / Premier League /
-La Liga / Bundesliga) scopes the player table and the fixture grid. Three tabs:
-Players, Fixtures & Odds, Teams.
+La Liga / Bundesliga) scopes the player table, fixture grid and leaderboard.
+Four tabs: Players, Fixtures & Odds, Teams, How It Works.
+
+The **Players** tab opens with a "Biggest bargains" / "Most overpriced"
+leaderboard (`build_value_leaderboard`) above the search table - the value
+model's predicted-vs-listed gap, both directions, gated to players with 180+
+minutes and a EUR1.5M+ listed value so it isn't dominated by noisy fringe
+players with nominal Transfermarkt listings.
+
+The **Fixtures** tab's team names now carry a generated crest (a colour hashed
+from the club name, initials on top - no external assets) and a 5-match form
+strip, both client-side (`crest()`, `formPills()` in the template).
 
 The **Teams** tab (a club picker, searchable, grouped by league) shows: current
-league position, last 8 results in any competition (score, venue, competition,
-shots/possession/xG where available), the full roster (reusing the Players
-data - clicking a name jumps to their row on the Players tab), league position
-by season back to 2020-21, and cup finals the club reached.
+league position with crest + form strip in the header, last 8 results in any
+competition (score, venue, competition, shots/possession/xG where available),
+a **projected final table** (below), the full roster (reusing the Players data
+- clicking a name jumps to their row on the Players tab), league position by
+season back to 2020-21, and cup finals the club reached.
+
+The **projected final table** (`build_projected_table`) takes each team's
+current 2026-27 points and adds *expected* points from every remaining
+fixture that season - `3*P(win) + 1*P(draw)` per game, via the same
+Dixon-Coles model as the match odds (`build_full_schedule` pulls every
+remaining SCHEDULED/TIMED fixture per team, not just the next one). It's an
+expected-value sum, not a season simulation - no single simulated result ever
+gets played out - and obviously can't see injuries, transfers, or a manager
+getting sacked in November.
+
+The **How It Works** tab is the point of transparency: six cards, one per
+"kind of conclusion" (match odds, player props, value model, pace projection,
+standings/projected table, cup finals), each with a plain-language explanation
+and - for the three model-driven ones - the *actual arithmetic*, run on one
+real upcoming fixture and one real player (`build_methodology_example`): the
+Dixon-Coles attack/defence ratings and resulting expected goals for that
+fixture, the anytime-goalscorer share-of-xG breakdown for its top-attack
+player, and the value model's inputs/output for the single most expensive
+player in the dataset (picked for recognisability, not cherry-picked results).
 
 ## Data (`src/export_site_data.py` -> `site/data.json`)
 
@@ -73,6 +103,15 @@ to cover another top-5 league already in the underlying data.
   competitions in overlapping seasons ("Champions Lg" vs "Champions League",
   etc.) - `COMP_ALIASES` normalises them before grouping, otherwise a team's
   run could be split across two differently-labelled "competitions."
+- **Value leaderboard** (`build_value_leaderboard`): top 8 biggest predicted-vs-listed
+  gaps each direction, min 180 minutes + EUR1.5M listed value.
+- **Projected table** (`build_full_schedule` + `build_projected_table`): see above.
+- **Methodology example** (`build_methodology_example`): the earliest upcoming
+  fixture where both teams are in the fitted Dixon-Coles model's team index
+  (falls back gracefully - `methodology_example: null` - if somehow none
+  qualify), its top-attacking-weight home player for the prop-odds worked
+  example, and the highest-listed-value player across all three leagues for
+  the value-model worked example.
 
 Watch for: `fbref_player_season_stats.csv`, `value_model_predictions.csv`,
 `live_matches_2026-27.csv`, `matches_all.csv` and `squad_season_features.csv`

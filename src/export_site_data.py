@@ -13,6 +13,10 @@ Covers the Premier League, La Liga and Bundesliga. Combines:
   - per-team pages: roster (from `players`), last 8 results (any competition),
     full league tables per season (computed from results), and cup finals -
     each inferred as the last-dated match of that season/competition
+  - a projected final table (current points + expected points from each team's
+    remaining fixtures, via the same Dixon-Coles model)
+  - a value-model leaderboard (biggest predicted-vs-listed gaps, both ways)
+  - one fully worked example (real fixture + real player) for the Methodology tab
 
 Run: py -3.11 src/export_site_data.py   (or plain python3 - no nodriver needed)
 Output: site/data.json
@@ -407,6 +411,133 @@ def player_props_for_fixture(blended_df: pd.DataFrame, team_key: str, lam_team: 
     return props
 
 
+def build_full_schedule(asof: pd.Timestamp) -> dict[str, list[dict]]:
+    """Every remaining 2026-27 league fixture per team (not just the next one) -
+    fuel for the projected final table."""
+    sched: dict[str, list[dict]] = {}
+    for league_name in LEAGUES.values():
+        live = load_upcoming_fixtures(asof, league_name)
+        for _, r in live.iterrows():
+            sched.setdefault(r["h"], []).append({"opp_key": r["a"], "home": True})
+            sched.setdefault(r["a"], []).append({"opp_key": r["h"], "home": False})
+    return sched
+
+
+def _team_exp_points(model, tk: str, fx: dict) -> float:
+    """Expected points from one remaining fixture, from `tk`'s perspective:
+    3*P(win) + 1*P(draw), using the same Dixon-Coles model as the match odds."""
+    if fx["home"]:
+        pA, pD, pH = match_probs(model, tk, fx["opp_key"])
+        return float(3 * pH + pD)
+    pA, pD, pH = match_probs(model, fx["opp_key"], tk)
+    return float(3 * pA + pD)
+
+
+def build_projected_table(model, standings: list[dict], schedule: dict) -> list[dict]:
+    """Current 2026-27 points + expected points (not simulated results) from
+    each team's remaining fixtures, run through the match-odds model."""
+    tables = []
+    for t in standings:
+        if t["season"] != "2026-27":
+            continue
+        rows = []
+        for row in t["rows"]:
+            tk = row["team_key"]
+            remaining = schedule.get(tk, [])
+            exp_pts = sum(_team_exp_points(model, tk, fx) for fx in remaining) if model is not None else 0.0
+            rows.append({
+                "team_key": tk, "name": row["name"], "current_pts": row["pts"],
+                "current_rank": row["rank"], "played": row["played"],
+                "games_remaining": len(remaining), "projected_pts": round(row["pts"] + exp_pts, 1),
+            })
+        rows.sort(key=lambda r: -r["projected_pts"])
+        for i, r in enumerate(rows):
+            r["projected_rank"] = i + 1
+        tables.append({"league": t["league"], "rows": rows})
+    return tables
+
+
+MIN_LISTED_FOR_LEADERBOARD = 1_500_000  # floor so a nominal sub-1M TM listing can't produce a 10x+ "bargain"
+
+
+def build_value_leaderboard(all_players: list[dict], n: int = 8) -> dict:
+    """Biggest gaps between the model's predicted value and the listed value,
+    both directions - a live demo of the value model, not just a single-player tile."""
+    pool = [p for p in all_players if p.get("value") and (p["current"]["min"] or 0) >= MIN_MIN_PROJECT
+            and (p["value"]["listed_value_eur"] or 0) >= MIN_LISTED_FOR_LEADERBOARD]
+
+    def slim(p: dict) -> dict:
+        return {
+            "player": p["player"], "squad": p["squad"], "league": p["league"], "pos": p["pos"],
+            "listed_value_eur": p["value"]["listed_value_eur"], "predicted_eur": p["value"]["predicted_eur"],
+            "ratio": p["value"]["ratio"],
+        }
+    bargains = sorted(pool, key=lambda p: p["value"]["ratio"], reverse=True)[:n]
+    overpriced = sorted(pool, key=lambda p: p["value"]["ratio"])[:n]
+    return {"bargains": [slim(p) for p in bargains], "overpriced": [slim(p) for p in overpriced]}
+
+
+def build_methodology_example(model, fixtures: list[dict], blended_df: pd.DataFrame,
+                               all_players: list[dict]) -> dict | None:
+    """A fully worked example of every number on the site, computed for one real
+    upcoming fixture and one real player, so 'how was this made' has an actual
+    answer instead of just a paragraph."""
+    fx = None
+    for c in sorted(fixtures, key=lambda f: f["date"]):
+        if model is not None and c["home_key"] in model["idx"] and c["away_key"] in model["idx"]:
+            fx = c
+            break
+    if fx is None:
+        return None
+    h, a = fx["home_key"], fx["away_key"]
+    att_h, def_h = float(model["att"][model["idx"][h]]), float(model["dfn"][model["idx"][h]])
+    att_a, def_a = float(model["att"][model["idx"][a]]), float(model["dfn"][model["idx"][a]])
+    home_adv, rho = float(model["home"]), float(model["rho"])
+    lh, la = expected_goals(model, h, a)
+    pA, pD, pH = match_probs(model, h, a)
+
+    squad = blended_df[blended_df["team_key"] == h].copy()
+    med = squad["min_pct"].median()
+    squad["minute_frac"] = (squad["min_pct"].fillna(med if pd.notna(med) else 50.0) / 100.0).clip(0.05, 1.0)
+    squad["atk_weight"] = squad["npxg90"].fillna(0).clip(lower=0) * squad["minute_frac"]
+    atk_total = float(squad["atk_weight"].sum())
+    prop_example = None
+    if len(squad) and atk_total > 0:
+        top = squad.sort_values("atk_weight", ascending=False).iloc[0]
+        share = float(top["atk_weight"] / atk_total)
+        lam_player = lh * share
+        prop_example = {
+            "player": top["player"], "team": fx["home"],
+            "npxg90_blended": _num(top["npxg90"]), "minute_frac": _num(top["minute_frac"]),
+            "atk_weight": _num(top["atk_weight"]), "squad_atk_total": _num(atk_total),
+            "share": _num(share), "team_lambda": _num(lh),
+            "lambda_player": _num(lam_player), "p_anytime_goal": _num(1 - np.exp(-lam_player)),
+        }
+
+    withval = [p for p in all_players if p.get("value")]
+    value_example = None
+    if withval:
+        vp = max(withval, key=lambda p: p["value"]["listed_value_eur"] or 0)
+        value_example = {
+            "player": vp["player"], "squad": vp["squad"], "league": vp["league"], "age": vp["age"],
+            "current": vp["current"], "listed_value_eur": vp["value"]["listed_value_eur"],
+            "predicted_eur": vp["value"]["predicted_eur"], "ratio": vp["value"]["ratio"],
+            "season": vp["value"]["as_of_season"],
+        }
+
+    return {
+        "fixture": {
+            "home": fx["home"], "away": fx["away"], "league": fx["league"], "date": fx["date"],
+            "att_home": _num(att_h), "def_home": _num(def_h), "att_away": _num(att_a), "def_away": _num(def_a),
+            "home_adv": _num(home_adv), "rho": _num(rho),
+            "lambda_home": _num(lh), "lambda_away": _num(la),
+            "p_home": _num(pH), "p_draw": _num(pD), "p_away": _num(pA),
+        },
+        "prop_example": prop_example,
+        "value_example": value_example,
+    }
+
+
 def main() -> None:
     # Dixon-Coles is fit once, combined across all competitions (league + cup +
     # European) - that's what lets Bundesliga/La Liga/Premier League teams share
@@ -449,6 +580,11 @@ def main() -> None:
     standings = build_standings(all_matches)
     cup_finals = build_cup_finals(all_matches)
 
+    full_schedule = build_full_schedule(asof)
+    projected_table = build_projected_table(model, standings, full_schedule)
+    value_leaderboard = build_value_leaderboard(all_players)
+    methodology_example = build_methodology_example(model, fixtures, blended_df, all_players)
+
     payload = {
         "generated_asof": asof.strftime("%Y-%m-%d"),
         "leagues": list(LEAGUES.values()),
@@ -458,6 +594,9 @@ def main() -> None:
         "recent_matches": recent_matches,
         "standings": standings,
         "cup_finals": cup_finals,
+        "projected_table": projected_table,
+        "value_leaderboard": value_leaderboard,
+        "methodology_example": methodology_example,
         "notes": {
             "current_stats": "2026-27 FBref season-to-date stats (min 45 minutes played).",
             "last_season": "2025-26 full-season stats for the same player, where available.",
@@ -467,12 +606,15 @@ def main() -> None:
             "player_props": "Anytime goal/assist odds: team's Dixon-Coles expected goals split across the matchday squad by each player's (non-penalty xG90 or xA90, shrunk toward last season's rate early in the current season) x season minutes-share, then Poisson P(>=1).",
             "cup_finals": "Each competition's final is inferred as the last-dated match of that season/competition in the results data - not read from an official bracket. When it ended level (decided on penalties/extra time not recorded here), no winner is shown. The in-progress 2026-27 season is excluded.",
             "standings": "Full league tables computed directly from match results (3 pts/win). The 2026-27 table is the live in-progress standing.",
+            "projected_table": "Current points + expected points (3xP(win)+P(draw) per game, not simulated results) from each team's remaining fixtures, using the same Dixon-Coles model as the match odds. A projection, not a guarantee - form, injuries and transfers between now and kickoff aren't in it.",
+            "value_leaderboard": "The value model's biggest gaps between predicted and listed value, both directions, among players with at least 180 minutes this season.",
         },
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=None, separators=(",", ":")), encoding="utf-8")
     print(f"wrote {OUT}  ({len(all_players)} players, {len(fixtures)} fixtures, {len(teams)} teams, "
-          f"{len(standings)} standings tables, {len(cup_finals)} cup finals)  size={OUT.stat().st_size/1024:.0f} KB")
+          f"{len(standings)} standings tables, {len(cup_finals)} cup finals, "
+          f"{len(projected_table)} projected tables)  size={OUT.stat().st_size/1024:.0f} KB")
 
 
 if __name__ == "__main__":
