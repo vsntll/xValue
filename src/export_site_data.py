@@ -36,6 +36,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+from build_match_model_table import _elo_update, _res  # noqa: E402
 from dixon_coles import fit, match_probs  # noqa: E402
 from live.schema import normalize_team  # noqa: E402
 
@@ -485,6 +486,83 @@ def build_value_leaderboard(all_players: list[dict], n: int = 8) -> dict:
     return {"bargains": [slim(p) for p in bargains], "overpriced": [slim(p) for p in overpriced]}
 
 
+def build_team_elo_rankings(teams_list: list[dict]) -> list[dict]:
+    """Goals-based team Elo (all competitions), taken from the same trajectory
+    build_match_model_table.py fits for the outcome model - reused, not
+    recomputed. match_model_table.csv only stores PRE-match elo_h/elo_a, so
+    each team's last row is advanced one more update (its own actual result)
+    to get the current, post-match rating - the exact update
+    build_match_model_table.py's own loop would have made next."""
+    mm = pd.read_csv(PROC / "match_model_table.csv", encoding="utf-8")
+    mm = _fix_names(mm, ["HomeTeam", "AwayTeam"])
+    mm["Date"] = pd.to_datetime(mm["Date"], errors="coerce")
+    mm = mm.dropna(subset=["Date"]).sort_values("Date")
+    mm["h_key"] = mm["HomeTeam"].map(normalize_team)
+    mm["a_key"] = mm["AwayTeam"].map(normalize_team)
+
+    latest: dict[str, tuple[float, pd.Timestamp]] = {}
+    for r in mm.itertuples(index=False):
+        eh2, ea2 = _elo_update(r.elo_h, r.elo_a, _res(r.FTHG, r.FTAG), r.FTHG - r.FTAG)
+        latest[r.h_key] = (eh2, r.Date)
+        latest[r.a_key] = (ea2, r.Date)
+
+    key2name = {t["team_key"]: t["name"] for t in teams_list}
+    key2league = {t["team_key"]: t["league"] for t in teams_list}
+    rows = [
+        {"team_key": tk, "name": key2name[tk], "league": key2league[tk],
+         "elo": _num(v[0]), "as_of": v[1].strftime("%Y-%m-%d")}
+        for tk, v in latest.items() if tk in key2name  # only current-season clubs
+    ]
+    rows.sort(key=lambda r: -r["elo"])
+    for i, r in enumerate(rows):
+        r["rank"] = i + 1
+    return rows
+
+
+PLAYER_ELO_MIN_APPEARANCES = 5    # need a real sample before a rating means anything
+PLAYER_ELO_RECENT_SEASONS = {"2025-26", "2026-27"}  # exclude anyone who's drifted out of the window
+PLAYER_ELO_HISTORY_N = 10          # points kept per player for the sparkline
+PLAYER_ELO_TOP_N = 30              # overall leaderboard size
+PLAYER_ELO_TOP_N_POS = 15          # per-position leaderboard size
+
+
+def build_player_elo_leaderboard(teams_list: list[dict]) -> dict | None:
+    """Current rating + a short recent-rating trend per player, from
+    src/build_player_elo.py's opponent-adjusted, no-value-model-inputs Elo.
+    Capped to keep the JSON payload small - this is a leaderboard, not a
+    full database dump (see data/processed/player_elo.csv for the rest)."""
+    p = PROC / "player_elo.csv"
+    if not p.exists():
+        return None
+    pe = pd.read_csv(p, encoding="utf-8")
+    pe = _fix_names(pe, ["player"])
+    pe = pe.sort_values("date")
+    counts = pe.groupby("player_id").size()
+    latest = pe.drop_duplicates(subset="player_id", keep="last")
+    latest = latest[latest["player_id"].map(counts) >= PLAYER_ELO_MIN_APPEARANCES]
+    latest = latest[latest["season"].isin(PLAYER_ELO_RECENT_SEASONS)]
+
+    key2name = {t["team_key"]: t["name"] for t in teams_list}
+    key2league = {t["team_key"]: t["league"] for t in teams_list}
+    latest = latest[latest["team_key"].isin(key2name)]  # only current-season clubs
+
+    def slim(row) -> dict:
+        hist = pe[pe["player_id"] == row["player_id"]].tail(PLAYER_ELO_HISTORY_N)
+        return {
+            "player": row["player"], "squad": key2name.get(row["team_key"], row["team_key"]),
+            "team_key": row["team_key"], "league": key2league.get(row["team_key"], ""),
+            "pos_group": row["pos_group"], "rating": _num(row["rating_after"]),
+            "history": [{"d": h["date"], "r": _num(h["rating_after"])} for _, h in hist.iterrows()],
+        }
+
+    overall = [slim(r) for _, r in latest.nlargest(PLAYER_ELO_TOP_N, "rating_after").iterrows()]
+    by_pos = {}
+    for pos in ["GK", "DF", "MF", "FW"]:
+        pool = latest[latest["pos_group"] == pos]
+        by_pos[pos] = [slim(r) for _, r in pool.nlargest(PLAYER_ELO_TOP_N_POS, "rating_after").iterrows()]
+    return {"overall": overall, "by_position": by_pos}
+
+
 def build_methodology_example(model, fixtures: list[dict], blended_df: pd.DataFrame,
                                all_players: list[dict]) -> dict | None:
     """A fully worked example of every number on the site, computed for one real
@@ -719,6 +797,8 @@ def main() -> None:
     full_schedule = build_full_schedule(asof)
     projected_table = build_projected_table(model, standings, full_schedule)
     value_leaderboard = build_value_leaderboard(all_players)
+    team_elo_rankings = build_team_elo_rankings(teams)
+    player_elo_leaderboard = build_player_elo_leaderboard(teams)
     methodology_example = build_methodology_example(model, fixtures, blended_df, all_players)
     games = build_games_data(model, blended_df, all_matches, teams, all_players)
 
@@ -733,6 +813,8 @@ def main() -> None:
         "cup_finals": cup_finals,
         "projected_table": projected_table,
         "value_leaderboard": value_leaderboard,
+        "team_elo_rankings": team_elo_rankings,
+        "player_elo_leaderboard": player_elo_leaderboard,
         "methodology_example": methodology_example,
         "games": games,
         "notes": {
@@ -746,15 +828,19 @@ def main() -> None:
             "standings": "Full league tables computed directly from match results (3 pts/win). The 2026-27 table is the live in-progress standing.",
             "projected_table": "Current points + expected points (3xP(win)+P(draw) per game, not simulated results) from each team's remaining fixtures, using the same Dixon-Coles model as the match odds. A projection, not a guarantee - form, injuries and transfers between now and kickoff aren't in it.",
             "value_leaderboard": "The value model's biggest gaps between predicted and listed value, both directions, among players with at least 180 minutes this season.",
+            "team_elo": "Goals-based Elo (all competitions - league, cup, European), the same rating the outcome model uses. Everyone starts at 1500; a win moves a team's rating up by K x a margin-of-victory factor x (1 - their pre-match win probability), a loss moves it down the same way, draws split the difference - and a quarter of each team's gap from 1500 reverts at the start of a new season.",
+            "player_elo": "A separate, from-scratch Elo for individual players - no market value anywhere in it. Built purely from real match output (non-penalty xG + 0.7x xA per appearance) vs. an opponent-adjusted expectation, over the last three seasons; a player's own rating feeds back into next match's bar, same as a team's does. Needs at least 5 appearances in that window to show up.",
         },
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     payload_json = json.dumps(payload, indent=None, separators=(",", ":"))
     OUT.write_text(payload_json, encoding="utf-8")
+    n_pe = len(player_elo_leaderboard["overall"]) if player_elo_leaderboard else 0
     print(f"wrote {OUT}  ({len(all_players)} players, {len(fixtures)} fixtures, {len(teams)} teams, "
           f"{len(standings)} standings tables, {len(cup_finals)} cup finals, "
           f"{len(projected_table)} projected tables, {len(games['sim']['teams'])} sim teams / "
-          f"{len(games['streak']['fixtures'])} streak matches)  size={OUT.stat().st_size/1024:.0f} KB")
+          f"{len(games['streak']['fixtures'])} streak matches, {len(team_elo_rankings)} team Elo rankings, "
+          f"{n_pe} player Elo leaderboard)  size={OUT.stat().st_size/1024:.0f} KB")
 
     splice_index_html(payload_json)
 

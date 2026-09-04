@@ -271,6 +271,13 @@
   .lb-card.bargains .lb-ratio{ color:var(--win); }
   .lb-card.overpriced .lb-ratio{ color:var(--loss); }
 
+  /* ---------- rankings tab (team Elo + player Elo) ---------- */
+  .rk-layout{ display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:18px; align-items:start; }
+  .rk-col h3{ font-size:15px; margin-bottom:10px; }
+  .rk-col .chipset{ margin-bottom:10px; }
+  .spark{ display:block; }
+  .spark-empty{ color:var(--text-faint); }
+
   /* ---------- methodology tab ---------- */
   .method-intro{ max-width:70ch; color:var(--text-dim); font-size:14.5px; margin-bottom:22px; }
   .method-card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
@@ -411,6 +418,7 @@
       <button class="tab-btn active" data-tab="players">Players</button>
       <button class="tab-btn" data-tab="fixtures">Fixtures &amp; Odds</button>
       <button class="tab-btn" data-tab="teams">Teams</button>
+      <button class="tab-btn" data-tab="rankings">Rankings</button>
       <button class="tab-btn" data-tab="sim">Match Sim</button>
       <button class="tab-btn" data-tab="streak">Streak</button>
       <button class="tab-btn" data-tab="method">How It Works</button>
@@ -423,9 +431,11 @@
   <header class="hero">
     <p id="heroText">Every player's season stats next to what the models think happens next: market value,
       win odds, and who's most likely to score — across the Premier League, La Liga and Bundesliga, plus
-      club form, rosters, honours, and a full projected final table. Play the models too: <b>Match Sim</b>
-      runs any matchup with goalscorers, <b>Streak</b> dares you to call a whole real season. Curious how
-      any of it's computed? The <b>How It Works</b> tab shows the actual math.</p>
+      club form, rosters, honours, and a full projected final table. <b>Rankings</b> has two from-scratch
+      Elo systems — team power rankings and a player rating built purely from recent output, no market
+      value involved. Play the models too: <b>Match Sim</b> runs any matchup with goalscorers, <b>Streak</b>
+      dares you to call a whole real season. Curious how any of it's computed? The <b>How It Works</b> tab
+      shows the actual math.</p>
   </header>
 
   <div class="tiles" id="tiles"></div>
@@ -484,6 +494,36 @@
     <div id="teamPanel"></div>
   </section>
 
+  <section id="tab-rankings" hidden>
+    <p class="method-intro">Two separate Elo systems, both fit purely from real match results and output - no
+      market value anywhere in either. <b>Team Power Rankings</b> is a goals-based Elo across every competition
+      (the same rating the outcome model uses). <b>Player Elo</b> rates individual output (non-penalty xG + 0.7&times;
+      xA per appearance) against an opponent-adjusted expectation, over the last three seasons only - who's
+      playing well <i>now</i>, not a career peak.</p>
+    <div class="rk-layout">
+      <div class="rk-col">
+        <h3>Team Power Rankings (Elo)</h3>
+        <div class="table-wrap">
+          <table id="teamEloTable">
+            <thead><tr><th>#</th><th>Team</th><th>League</th><th class="num-col">Elo</th></tr></thead>
+            <tbody id="teamEloBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="rk-col">
+        <h3>Player Elo Leaderboard</h3>
+        <div class="chipset" id="posEloChips"></div>
+        <div class="table-wrap">
+          <table id="playerEloTable">
+            <thead><tr><th>#</th><th>Player</th><th>Squad</th><th>Pos</th><th class="num-col">Rating</th><th>Trend</th></tr></thead>
+            <tbody id="playerEloBody"></tbody>
+          </table>
+        </div>
+        <div class="empty" id="playerEloEmpty" hidden>No qualifying players in this league/position yet.</div>
+      </div>
+    </div>
+  </section>
+
   <section id="tab-sim" hidden>
     <p class="method-intro">Pick any two current clubs — across leagues if you like — and play the match out.
       Goals are drawn from a Poisson on the Dixon-Coles expected goals for the matchup; each goal goes to a
@@ -534,7 +574,7 @@
     leagueChips.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});
     b.classList.add('active');
     leagueState.league = b.getAttribute('data-league');
-    renderTiles(); renderPlayers(); renderFixtures(); renderLeaderboard();
+    renderTiles(); renderPlayers(); renderFixtures(); renderLeaderboard(); renderRankings();
   });
   function inLeague(item){ return leagueState.league==='ALL' || item.league===leagueState.league; }
 
@@ -557,11 +597,12 @@
       tabBtns.forEach(function(x){x.classList.remove('active');});
       b.classList.add('active');
       var t = b.getAttribute('data-tab');
-      ['players','fixtures','teams','sim','streak','method'].forEach(function(name){
+      ['players','fixtures','teams','rankings','sim','streak','method'].forEach(function(name){
         document.getElementById('tab-'+name).hidden = t!==name;
       });
       if(t==='sim' && !simInited){ simInited = true; initSim(); }
       if(t==='streak' && !streakInited){ streakInited = true; initStreak(); }
+      if(t==='rankings' && !rankingsInited){ rankingsInited = true; initRankings(); }
     });
   });
 
@@ -1165,6 +1206,65 @@
   }
   renderMethodology();
 
+  // ================= RANKINGS =================
+  var rankingsInited = false;
+  var renderRankings = function(){};   // reassigned by initRankings() once the tab's opened
+  var rankingsState = { pos: 'ALL' };
+
+  function sparkline(history){
+    if(!history || history.length<2) return '<span class="spark-empty">&mdash;</span>';
+    var vals = history.map(function(h){return h.r;});
+    var min = Math.min.apply(null, vals), max = Math.max.apply(null, vals);
+    var span = (max-min) || 1;
+    var w = 72, h = 22, n = vals.length;
+    var pts = vals.map(function(v,i){
+      var x = n===1 ? 0 : (i/(n-1))*w;
+      var y = h - ((v-min)/span)*h;
+      return x.toFixed(1)+','+y.toFixed(1);
+    }).join(' ');
+    var up = vals[vals.length-1] >= vals[0];
+    return '<svg class="spark" viewBox="0 0 '+w+' '+h+'" width="'+w+'" height="'+h+'" aria-hidden="true">' +
+      '<polyline points="'+pts+'" fill="none" stroke="'+(up?'#1f9d55':'#d64545')+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  }
+
+  function initRankings(){
+    var teamElo = DATA.team_elo_rankings || [];
+    var playerElo = DATA.player_elo_leaderboard || {overall:[], by_position:{}};
+
+    var posOpts = ['ALL','GK','DF','MF','FW'];
+    var chipset = document.getElementById('posEloChips');
+    chipset.innerHTML = posOpts.map(function(p,i){
+      return '<button class="chip'+(i===0?' active':'')+'" data-pos="'+p+'">'+(p==='ALL'?'All positions':p)+'</button>';
+    }).join('');
+    chipset.addEventListener('click', function(e){
+      var b = e.target.closest('.chip'); if(!b) return;
+      chipset.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active');
+      rankingsState.pos = b.getAttribute('data-pos');
+      renderRankings();
+    });
+
+    function renderTeamElo(){
+      var rows = teamElo.filter(inLeague);
+      document.getElementById('teamEloBody').innerHTML = rows.map(function(r,i){
+        return '<tr><td>'+(i+1)+'</td><td>'+crest(r.name,18)+' '+esc(teamShort(r.name))+'</td>' +
+          '<td><span class="pos-badge">'+esc(r.league)+'</span></td><td class="num-col">'+num(r.elo,0)+'</td></tr>';
+      }).join('');
+    }
+
+    function renderPlayerElo(){
+      var pool = (rankingsState.pos==='ALL' ? playerElo.overall : (playerElo.by_position[rankingsState.pos]||[])).filter(inLeague);
+      document.getElementById('playerEloEmpty').hidden = pool.length>0;
+      document.getElementById('playerEloBody').innerHTML = pool.map(function(r,i){
+        return '<tr><td>'+(i+1)+'</td><td>'+esc(r.player)+'</td><td>'+esc(r.squad)+'</td>' +
+          '<td><span class="pos-badge">'+esc(r.pos_group)+'</span></td><td class="num-col">'+num(r.rating,0)+'</td><td>'+sparkline(r.history)+'</td></tr>';
+      }).join('');
+    }
+
+    renderRankings = function(){ renderTeamElo(); renderPlayerElo(); };
+    renderRankings();
+  }
+
   // ================= GAMES =================
   var GAMES = DATA.games || {};
   var simInited = false, streakInited = false;
@@ -1487,6 +1587,8 @@
     '<div><b>Standings</b> — '+esc(notes.standings)+'</div>' +
     '<div><b>Projected table</b> — '+esc(notes.projected_table)+'</div>' +
     '<div><b>Value leaderboard</b> — '+esc(notes.value_leaderboard)+'</div>' +
+    '<div><b>Team power rankings</b> — '+esc(notes.team_elo)+'</div>' +
+    '<div><b>Player Elo</b> — '+esc(notes.player_elo)+'</div>' +
     '<div><b>Cup finals</b> — '+esc(notes.cup_finals)+'</div>' +
     (GAMES.notes ? '<div><b>Match Sim</b> — '+esc(GAMES.notes.sim)+'</div>' +
                    '<div><b>Streak</b> — '+esc(GAMES.notes.streak)+'</div>' : '');
