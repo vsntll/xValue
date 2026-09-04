@@ -64,13 +64,19 @@ tar czf pipeline-seed.tar.gz data/processed data/raw/football_data/_elo_warmup.c
 gh release create pipeline-seed pipeline-seed.tar.gz -t "pipeline data seed"
 ```
 
-**Manual (for the FBref counting stats the workflow can't touch):** re-run the
-browser scrapes now and then, since goals / assists / minutes and the
-Transfermarkt scrape values need a real Chrome window:
+**Manual (goals / assists / minutes — needs a real Chrome window):** run this
+every week or two; it re-scrapes the current season's FBref player stats,
+rebuilds the tables, retrains the value model and regenerates the page.
 
 ```
-py -3.11 src/pull_fbref_player_stats.py       # + parse_fbref_player_stats.py
+py -3.11 refresh_player_stats.py            # scrape + rebuild; you commit
+py -3.11 refresh_player_stats.py --commit   # also commit + push (fires the Pages deploy)
+```
+
+**Manual (less often — cup xG and Transfermarkt scrape values):**
+
+```
 py -3.11 src/pull_fbref_matchlogs.py --stats schedule
 py -3.11 src/pull_transfermarkt_scrape.py     # click the WAF captcha once
-# then re-run steps 2-4
+# then re-run steps 2-4 (or refresh_player_stats.py)
 ```
