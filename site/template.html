@@ -379,11 +379,13 @@
   @keyframes fmpop{ to{ transform:scale(1) } }
   .fermin-card .kick{ font-family:var(--font-display); font-weight:700; font-size:34px; letter-spacing:2px; margin-top:14px; }
   .fermin-card .sub2{ font-size:13px; opacity:.85; margin-top:4px; }
-  .fermin-portrait{ width:190px; height:230px; filter:drop-shadow(0 12px 30px rgba(0,0,0,.5)); }
+  .fermin-portrait{ width:190px; height:230px; border-radius:14px; filter:drop-shadow(0 12px 30px rgba(0,0,0,.5)); }
+  img.fermin-portrait{ object-fit:cover; }
   .fermin-badge{ position:fixed; right:14px; bottom:14px; z-index:900; display:flex; align-items:center; gap:8px;
       background:linear-gradient(135deg,#a50044,#004d98); color:#fff; font-size:12px; font-weight:700;
       padding:7px 12px 7px 8px; border-radius:999px; box-shadow:0 6px 20px -6px rgba(0,0,0,.5); }
-  .fermin-badge svg{ width:26px; height:26px; }
+  .fermin-badge-img{ width:26px; height:26px; border-radius:50%; flex:none; }
+  img.fermin-badge-img{ object-fit:cover; }
   .fermin-tag{ display:inline-block; margin-left:6px; font-size:11px; color:#a50044; }
 
   [hidden]{ display:none !important; }
@@ -509,6 +511,7 @@
 </div>
 
 <script id="site-data" type="application/json">__SITE_DATA_JSON__</script>
+<img id="ferminImg" src="__FERMIN_IMG__" alt="" hidden>
 <script>
 (function(){
   "use strict";
@@ -1510,6 +1513,14 @@
       '<path d="M150 140 l6 5 -2 8 -8 0 -2 -8 Z" fill="#0b1512"/>' +
       '<text x="95" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="1" fill="#fff">FERMÍN LÓPEZ</text>' +
     '</svg>';
+  // the real photo if one was baked in (site/fermin.png at export time), else the SVG above
+  var _ferminSrc = (document.getElementById('ferminImg') || {}).src || '';
+  function ferminPortraitHtml(cls){
+    if(_ferminSrc && _ferminSrc.indexOf('data:') === 0){
+      return '<img class="'+cls+'" src="'+_ferminSrc+'" alt="Fermín López">';
+    }
+    return FERMIN_SVG.replace('class="fermin-portrait"', 'class="'+cls+'"');
+  }
 
   function ferminEgg(){
     if(FERMIN) return;
@@ -1557,7 +1568,7 @@
 
     var splash = document.createElement('div');
     splash.className = 'fermin-splash';
-    splash.innerHTML = '<div class="fermin-card">' + FERMIN_SVG +
+    splash.innerHTML = '<div class="fermin-card">' + ferminPortraitHtml('fermin-portrait') +
       '<div class="kick">FERMÍN MODE</div>' +
       '<div class="sub2">El Peque takes over. Every stat, every goal, every model &mdash; his now. Refresh to undo.</div></div>';
     document.body.appendChild(splash);
@@ -1567,11 +1578,7 @@
 
     var badge = document.createElement('div');
     badge.className = 'fermin-badge';
-    badge.innerHTML =
-      '<svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" fill="#fff"/>' +
-        '<circle cx="16" cy="13" r="7" fill="#e8b58c"/>' +
-        '<path d="M4 30 C5 20 11 17 16 17 C21 17 27 20 28 30 Z" fill="#a50044"/>' +
-        '<text x="16" y="30" text-anchor="middle" font-size="9" font-weight="700" fill="#004d98">16</text></svg>' +
+    badge.innerHTML = ferminPortraitHtml('fermin-badge-img') +
       '<span>FERMÍN MODE &middot; refresh to undo</span>';
     document.body.appendChild(badge);
   }

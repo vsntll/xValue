@@ -25,6 +25,7 @@ committed, self-contained site/index.html - both written by this one run.
 
 from __future__ import annotations
 
+import base64
 import json
 import sys
 from pathlib import Path
@@ -43,6 +44,8 @@ OUT = ROOT / "site" / "data.json"
 TEMPLATE = ROOT / "site" / "template.html"
 INDEX = ROOT / "site" / "index.html"
 PLACEHOLDER = "__SITE_DATA_JSON__"
+FERMIN_IMG = ROOT / "site" / "fermin.png"       # easter egg portrait (webp bytes, .png name)
+FERMIN_PLACEHOLDER = "__FERMIN_IMG__"
 LEAGUES = {"ENG1": "Premier League", "ESP1": "La Liga", "GER1": "Bundesliga"}
 MIN_MIN_CURRENT = 45   # min minutes this season to trust current-season rates
 MIN_MIN_PROJECT = 180  # min minutes to publish a pace projection / prop odds
@@ -764,7 +767,17 @@ def splice_index_html(payload_json: str) -> None:
     if PLACEHOLDER not in template:
         raise RuntimeError(f"{TEMPLATE} is missing the {PLACEHOLDER} placeholder - can't splice data in")
     safe_json = payload_json.replace("</script", "<\\/script")
-    INDEX.write_text(template.replace(PLACEHOLDER, safe_json), encoding="utf-8")
+    template = template.replace(PLACEHOLDER, safe_json)
+
+    if FERMIN_PLACEHOLDER in template:
+        if FERMIN_IMG.exists():
+            b64 = base64.b64encode(FERMIN_IMG.read_bytes()).decode("ascii")
+            data_uri = f"data:image/webp;base64,{b64}"
+        else:
+            data_uri = ""  # easter egg falls back to its SVG portrait
+        template = template.replace(FERMIN_PLACEHOLDER, data_uri)
+
+    INDEX.write_text(template, encoding="utf-8")
     print(f"wrote {INDEX}  size={INDEX.stat().st_size/1024:.0f} KB")
 
 
