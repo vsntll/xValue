@@ -1,10 +1,17 @@
 # Player / odds website ("xValue"; `src/export_site_data.py`, `site/`)
 
 A single self-contained HTML page (`site/index.html`) with the season's player
-stats, the value model's predictions, and next-fixture odds across the Premier
-League, La Liga and Bundesliga — no server, no fetch, data is embedded inline.
-A league chip filter in the top bar (All / Premier League / La Liga /
-Bundesliga) scopes both the player table and the fixture grid.
+stats, the value model's predictions, next-fixture odds, and club pages, across
+the Premier League, La Liga and Bundesliga — no server, no fetch, data is
+embedded inline. A league chip filter in the top bar (All / Premier League /
+La Liga / Bundesliga) scopes the player table and the fixture grid. Three tabs:
+Players, Fixtures & Odds, Teams.
+
+The **Teams** tab (a club picker, searchable, grouped by league) shows: current
+league position, last 8 results in any competition (score, venue, competition,
+shots/possession/xG where available), the full roster (reusing the Players
+data - clicking a name jumps to their row on the Players tab), league position
+by season back to 2020-21, and cup finals the club reached.
 
 ## Data (`src/export_site_data.py` -> `site/data.json`)
 
@@ -37,11 +44,35 @@ to cover another top-5 league already in the underlying data.
   toward last season's rate while the current season is small-sample) x season
   minutes-share, then `P(>=1) = 1 - exp(-lambda)`. A transparent heuristic, not a
   trained per-player model — there isn't one in this pipeline yet.
+- **Recent results** (`build_recent_matches`): last 8 matches per team, any
+  competition, from both sides of `matches_all.csv` (each match produces one
+  row for each team's perspective).
+- **League standings** (`build_standings`): a full table per (league, season),
+  computed directly from match results (3 pts/win) - not scraped from anywhere,
+  so it's exactly consistent with `recent_matches`/the model's training data.
+  The 2026-27 table is simply the live in-progress standing.
+- **Cup finals** (`build_cup_finals`): for each domestic cup / league cup /
+  European competition, the **last-dated match of that season+competition** is
+  treated as the final - there's no round/stage column to identify it properly.
+  Spot-checked against several known real finals (2021-22 UCL: Real Madrid 1-0
+  Liverpool; 2023-24 Copa del Rey: Athletic Club 1-1 Mallorca, correctly
+  flagged as penalties; etc.) and it held up, but it's an inference, not sourced
+  from an official bracket - a season/competition with under 2 recorded matches
+  is skipped rather than guessed, and **when the final finished level, no winner
+  is shown** (penalty-shootout results aren't in this data). The in-progress
+  2026-27 season is excluded entirely (its cups haven't reached a final).
+  `matches_all.csv` also carries two source labels for the same European
+  competitions in overlapping seasons ("Champions Lg" vs "Champions League",
+  etc.) - `COMP_ALIASES` normalises them before grouping, otherwise a team's
+  run could be split across two differently-labelled "competitions."
 
-Watch for: `fbref_player_season_stats.csv`, `value_model_predictions.csv` and
-`live_matches_2026-27.csv` are **latin-1**, not utf-8 (accented player/team
-names mojibake under the default encoding) - `matches_all.csv` is fine as-is
-(its team names are already ASCII).
+Watch for: `fbref_player_season_stats.csv`, `value_model_predictions.csv`,
+`live_matches_2026-27.csv`, `matches_all.csv` and `squad_season_features.csv`
+are all **latin-1**, not utf-8 (accented player/team/competition names mojibake
+under the default encoding - e.g. "Supercopa de España" in `matches_all.csv`'s
+`comp` column). Also: current-season (2026-27) `Age` is unpopulated upstream
+for every row - `build_players_payload` falls back to last season's age + 1;
+players with no 2025-26 record (new signings, debutants) still show no age.
 
 Run: `python src/export_site_data.py` (regenerates `site/data.json`), then splice
 it into `site/template.html` to produce `site/index.html` (the `__SITE_DATA_JSON__`

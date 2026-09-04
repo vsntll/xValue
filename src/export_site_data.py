@@ -9,6 +9,9 @@ Covers the Premier League, La Liga and Bundesliga. Combines:
   - per-player anytime goal / assist odds for that next fixture, from a
     share-of-team-expected-goals split (player npxG90 * minutes-share, normalised
     within the matchday squad) fed through a Poisson
+  - per-team pages: roster (from `players`), last 8 results (any competition),
+    full league tables per season (computed from results), and cup finals -
+    each inferred as the last-dated match of that season/competition
 
 Run: py -3.11 src/export_site_data.py   (or plain python3 - no nodriver needed)
 Output: site/data.json
@@ -129,10 +132,15 @@ def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict]
             "xag90": _blend_rate(r["min"], r["xag90"], p_row["xag90"] if p_row is not None else np.nan),
         })
 
+        # current-season Age is unpopulated upstream for every 2026-27 row - fall
+        # back to last season's age + 1 rather than showing a blank
+        age = r["age"]
+        if pd.isna(age) and p_row is not None and pd.notna(p_row.get("age")):
+            age = p_row["age"] + 1
         rec = {
             "player": r["player"], "squad": r["squad"], "team_key": r["team_key"],
             "league": league_name,
-            "pos": r["pos"], "age": _num(r["age"]),
+            "pos": r["pos"], "age": _num(age),
             "current": {
                 "mp": _num(r["mp"]), "starts": _num(r["starts"]), "min": _num(r["min"]),
                 "gls": _num(r["gls"]), "ast": _num(r["ast"]), "npg": _num(r["npg"]),
@@ -204,7 +212,7 @@ def next_fixture_per_team(live: pd.DataFrame) -> pd.DataFrame:
 
 
 def prep_dc_matches() -> pd.DataFrame:
-    m = pd.read_csv(PROC / "matches_all.csv")
+    m = pd.read_csv(PROC / "matches_all.csv", encoding="latin-1")
     m["Date"] = pd.to_datetime(m["Date"], errors="coerce")
     m = m.dropna(subset=["Date", "FTHG", "FTAG"])
     m["h"] = m["HomeTeam"].map(normalize_team)
@@ -226,6 +234,125 @@ def expected_goals(model, home: str, away: str) -> tuple[float, float]:
     lh = float(np.exp(model["att"][h] + model["dfn"][a] + model["home"]))
     la = float(np.exp(model["att"][a] + model["dfn"][h]))
     return lh, la
+
+
+# ---------------------------------------------------------------------------
+# team pages: rosters (reuses `players`), recent results, league tables, cup finals
+# ---------------------------------------------------------------------------
+
+RECENT_N = 8   # matches shown per team's recent-results list
+# matches_all.csv mixes two source labels for the same European competitions
+# across overlapping seasons - normalise before grouping by competition.
+COMP_ALIASES = {
+    "Champions Lg": "Champions League",
+    "Europa Lg": "Europa League",
+    "Conf Lg": "Europa Conference League",
+}
+CUP_TYPES = {"domestic_cup", "european", "league_cup", "super_cup"}
+COMPLETE_SEASONS = {"2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26"}  # excludes in-progress 2026-27
+
+
+def load_all_matches() -> pd.DataFrame:
+    # also latin-1 (accented competition names like "Supercopa de España" mojibake)
+    m = pd.read_csv(PROC / "matches_all.csv", encoding="latin-1")
+    m["Date"] = pd.to_datetime(m["Date"], errors="coerce")
+    m = m.dropna(subset=["Date", "FTHG", "FTAG"])
+    m["h"] = m["HomeTeam"].map(normalize_team)
+    m["a"] = m["AwayTeam"].map(normalize_team)
+    m["comp"] = m["comp"].replace(COMP_ALIASES)
+    return m.sort_values("Date")
+
+
+def build_teams_list() -> list[dict]:
+    sq = pd.read_csv(PROC / "squad_season_features.csv", encoding="latin-1")
+    sq = sq[sq["src_league"].isin(LEAGUES)].copy()
+    sq["league"] = sq["src_league"].map(LEAGUES)
+    latest = sq.sort_values("season").groupby(["team_key", "league"], as_index=False).last()
+    return [
+        {"team_key": r["team_key"], "name": r["team"], "league": r["league"]}
+        for _, r in latest.iterrows()
+    ]
+
+
+def build_recent_matches(m: pd.DataFrame) -> dict[str, list[dict]]:
+    recent: dict[str, list[dict]] = {}
+    for _, r in m.sort_values("Date", ascending=False).iterrows():
+        legs = (
+            (r["h"], r["a"], r["HomeTeam"], r["AwayTeam"], r["FTHG"], r["FTAG"],
+             r.get("HS"), r.get("AS"), r.get("HPoss"), r.get("APoss"), r.get("HxG"), r.get("AxG"), True),
+            (r["a"], r["h"], r["AwayTeam"], r["HomeTeam"], r["FTAG"], r["FTHG"],
+             r.get("AS"), r.get("HS"), r.get("APoss"), r.get("HPoss"), r.get("AxG"), r.get("HxG"), False),
+        )
+        for team_key, opp_key, _team_name, opp_name, gf, ga, sf, sa, pf, pa, xgf, xga, is_home in legs:
+            lst = recent.setdefault(team_key, [])
+            if len(lst) >= RECENT_N:
+                continue
+            result = "W" if gf > ga else "L" if gf < ga else "D"
+            lst.append({
+                "date": r["Date"].strftime("%Y-%m-%d"), "opponent": opp_name, "opponent_key": opp_key,
+                "home": is_home, "comp": r["comp"], "competition_type": r["competition_type"],
+                "gf": _num(gf), "ga": _num(ga), "result": result,
+                "shots_for": _num(sf), "shots_against": _num(sa),
+                "poss_for": _num(pf), "xg_for": _num(xgf), "xg_against": _num(xga),
+            })
+    return recent
+
+
+def build_standings(m: pd.DataFrame) -> list[dict]:
+    lg = m[m["competition_type"] == "league"]
+    tables = []
+    for (season, comp), grp in lg.groupby(["season", "comp"]):
+        stats: dict[str, dict] = {}
+        for _, r in grp.iterrows():
+            h, a, gh, ga_ = r["h"], r["a"], r["FTHG"], r["FTAG"]
+            sh = stats.setdefault(h, {"name": r["HomeTeam"], "p": 0, "w": 0, "d": 0, "l": 0, "gf": 0.0, "ga": 0.0})
+            sa = stats.setdefault(a, {"name": r["AwayTeam"], "p": 0, "w": 0, "d": 0, "l": 0, "gf": 0.0, "ga": 0.0})
+            sh["p"] += 1; sa["p"] += 1
+            sh["gf"] += gh; sh["ga"] += ga_
+            sa["gf"] += ga_; sa["ga"] += gh
+            if gh > ga_: sh["w"] += 1; sa["l"] += 1
+            elif gh < ga_: sa["w"] += 1; sh["l"] += 1
+            else: sh["d"] += 1; sa["d"] += 1
+        rows = []
+        for tk, s in stats.items():
+            rows.append({
+                "team_key": tk, "name": s["name"], "played": s["p"], "w": s["w"], "d": s["d"], "l": s["l"],
+                "gf": _num(s["gf"]), "ga": _num(s["ga"]), "gd": _num(s["gf"] - s["ga"]),
+                "pts": s["w"] * 3 + s["d"],
+            })
+        rows.sort(key=lambda x: (-x["pts"], -x["gd"], -x["gf"]))
+        for i, row in enumerate(rows):
+            row["rank"] = i + 1
+        # for competition_type=='league' rows, `comp` is already the league display name
+        tables.append({"season": season, "league": comp, "rows": rows})
+    return tables
+
+
+def build_cup_finals(m: pd.DataFrame) -> list[dict]:
+    cups = m[m["competition_type"].isin(CUP_TYPES) & m["season"].isin(COMPLETE_SEASONS)]
+    finals = []
+    for (season, comp), grp in cups.groupby(["season", "comp"]):
+        if len(grp) < 2:
+            continue  # too little coverage to trust "last match" as the final
+        last = grp.sort_values("Date").iloc[-1]
+        gh, ga_ = last["FTHG"], last["FTAG"]
+        decided_by_pens = gh == ga_
+        winner_key = None if decided_by_pens else (last["h"] if gh > ga_ else last["a"])
+        winner_name = None
+        if winner_key == last["h"]:
+            winner_name = last["HomeTeam"]
+        elif winner_key == last["a"]:
+            winner_name = last["AwayTeam"]
+        finals.append({
+            "season": season, "comp": comp, "competition_type": last["competition_type"],
+            "date": last["Date"].strftime("%Y-%m-%d"),
+            "home": last["HomeTeam"], "away": last["AwayTeam"],
+            "home_key": last["h"], "away_key": last["a"],
+            "score": f"{int(gh)}-{int(ga_)}",
+            "decided_by_penalties": bool(decided_by_pens),
+            "winner_key": winner_key, "winner_name": winner_name,
+        })
+    return finals
 
 
 def player_props_for_fixture(blended_df: pd.DataFrame, team_key: str, lam_team: float) -> list[dict]:
@@ -290,11 +417,21 @@ def main() -> None:
             }
             fixtures.append(fx)
 
+    all_matches = load_all_matches()
+    teams = build_teams_list()
+    recent_matches = build_recent_matches(all_matches)
+    standings = build_standings(all_matches)
+    cup_finals = build_cup_finals(all_matches)
+
     payload = {
         "generated_asof": asof.strftime("%Y-%m-%d"),
         "leagues": list(LEAGUES.values()),
         "players": all_players,
         "fixtures": fixtures,
+        "teams": teams,
+        "recent_matches": recent_matches,
+        "standings": standings,
+        "cup_finals": cup_finals,
         "notes": {
             "current_stats": "2026-27 FBref season-to-date stats (min 45 minutes played).",
             "last_season": "2025-26 full-season stats for the same player, where available.",
@@ -302,11 +439,14 @@ def main() -> None:
             "value": "Predicted market value from the trained value-regression model (2025-26 season, HGB, R2(log) 0.82) vs listed market value.",
             "match_odds": "Win/draw/loss odds from a Dixon-Coles attack/defence model fit on all competitions through the date above.",
             "player_props": "Anytime goal/assist odds: team's Dixon-Coles expected goals split across the matchday squad by each player's (non-penalty xG90 or xA90, shrunk toward last season's rate early in the current season) x season minutes-share, then Poisson P(>=1).",
+            "cup_finals": "Each competition's final is inferred as the last-dated match of that season/competition in the results data - not read from an official bracket. When it ended level (decided on penalties/extra time not recorded here), no winner is shown. The in-progress 2026-27 season is excluded.",
+            "standings": "Full league tables computed directly from match results (3 pts/win). The 2026-27 table is the live in-progress standing.",
         },
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=None, separators=(",", ":")), encoding="utf-8")
-    print(f"wrote {OUT}  ({len(all_players)} players, {len(fixtures)} fixtures)  size={OUT.stat().st_size/1024:.0f} KB")
+    print(f"wrote {OUT}  ({len(all_players)} players, {len(fixtures)} fixtures, {len(teams)} teams, "
+          f"{len(standings)} standings tables, {len(cup_finals)} cup finals)  size={OUT.stat().st_size/1024:.0f} KB")
 
 
 if __name__ == "__main__":

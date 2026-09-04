@@ -203,6 +203,41 @@
   .prop-legend{ font-size:10.5px; color:var(--text-faint); margin-top:10px; }
   .prop-empty{ font-size:12px; color:var(--text-faint); padding:10px 0; }
 
+  /* ---------- teams ---------- */
+  .linkbtn{ border:none; background:none; padding:0; font:inherit; font-weight:600; color:var(--text);
+            cursor:pointer; }
+  .linkbtn:hover{ color:var(--accent); text-decoration:underline; }
+  .team-header{ display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:16px;
+                flex-wrap:wrap; }
+  .team-header h2{ font-size:28px; line-height:1.1; }
+  .team-header .lg{ font-size:12px; color:var(--text-dim); font-weight:600; margin-top:2px; }
+  .team-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:14px; margin-bottom:14px; }
+  .team-card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+              box-shadow:var(--shadow); padding:16px 18px; }
+  .team-card h3{ font-size:15px; margin-bottom:10px; }
+  .match-row{ display:flex; align-items:center; gap:10px; padding:7px 0; border-bottom:1px solid var(--border);
+              font-size:12.5px; }
+  .match-row:last-child{ border-bottom:none; }
+  .result-badge{ width:20px; height:20px; border-radius:5px; display:flex; align-items:center;
+                 justify-content:center; font-size:10.5px; font-weight:800; color:#fff; flex:none; }
+  .result-badge.W{ background:var(--win); } .result-badge.L{ background:var(--loss); }
+  .result-badge.D{ background:var(--draw); color:#1a1400; }
+  .match-row .opp{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+                    font-weight:600; }
+  .match-row .score{ font-weight:700; }
+  .match-row .meta{ color:var(--text-faint); font-size:10px; text-align:right; line-height:1.4; flex:none;
+                     width:96px; }
+  .trophy-row{ display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--border);
+               font-size:12.5px; }
+  .trophy-row:last-child{ border-bottom:none; }
+  .trophy-row .comp{ flex:1; min-width:0; font-weight:500; }
+  .trophy-row .season{ color:var(--text-faint); font-size:11px; flex:none; width:52px; }
+  .trophy-outcome{ font-size:10.5px; font-weight:700; padding:3px 8px; border-radius:999px; flex:none;
+                    white-space:nowrap; }
+  .trophy-outcome.won{ background:color-mix(in srgb, var(--win) 16%, transparent); color:var(--win); }
+  .trophy-outcome.runnerup{ background:var(--chip-bg); color:var(--text-dim); }
+  .trophy-outcome.pens{ background:color-mix(in srgb, var(--draw) 16%, transparent); color:var(--draw); }
+
   footer{ margin-top:44px; padding-top:18px; border-top:1px solid var(--border); font-size:11.5px;
           color:var(--text-faint); line-height:1.7; }
   footer b{ color:var(--text-dim); }
@@ -227,6 +262,7 @@
     <div class="tabs">
       <button class="tab-btn active" data-tab="players">Players</button>
       <button class="tab-btn" data-tab="fixtures">Fixtures &amp; Odds</button>
+      <button class="tab-btn" data-tab="teams">Teams</button>
     </div>
     <span class="asof" id="asofLabel"></span>
   </div>
@@ -235,7 +271,8 @@
 <div class="shell">
   <header class="hero">
     <p id="heroText">Season-to-date stats against the model's projections, next-match win probabilities, and
-      anytime goal/assist odds across the Premier League, La Liga and Bundesliga.</p>
+      anytime goal/assist odds across the Premier League, La Liga and Bundesliga — plus club-by-club
+      recent form, rosters, league history and cup finals.</p>
   </header>
 
   <div class="tiles" id="tiles"></div>
@@ -280,6 +317,17 @@
   <section id="tab-fixtures" hidden>
     <div class="fx-grid" id="fxGrid"></div>
     <div class="empty" id="fxEmpty" hidden>No modelled fixtures for this league right now.</div>
+  </section>
+
+  <section id="tab-teams" hidden>
+    <div class="controls">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="teamSearchInput" placeholder="Search a club&hellip;">
+      </div>
+      <select class="sortsel" id="teamSelect"></select>
+    </div>
+    <div id="teamPanel"></div>
   </section>
 
   <footer id="footerNotes"></footer>
@@ -330,6 +378,7 @@
       var t = b.getAttribute('data-tab');
       document.getElementById('tab-players').hidden = t!=='players';
       document.getElementById('tab-fixtures').hidden = t!=='fixtures';
+      document.getElementById('tab-teams').hidden = t!=='teams';
     });
   });
 
@@ -596,6 +645,137 @@
     });
   }
 
+  // ---------- teams ----------
+  var teamsList = DATA.teams || [];
+  var recentMatches = DATA.recent_matches || {};
+  var standings = DATA.standings || [];
+  var cupFinals = DATA.cup_finals || [];
+  var teamSelect = document.getElementById('teamSelect');
+  var teamState = { key: null };
+
+  function populateTeamSelect(q){
+    q = (q||'').toLowerCase();
+    var byLeague = {};
+    teamsList.forEach(function(t){ (byLeague[t.league] = byLeague[t.league]||[]).push(t); });
+    var html = '';
+    leagueOpts.slice(1).forEach(function(lg){
+      var list = (byLeague[lg]||[]).filter(function(t){ return !q || t.name.toLowerCase().indexOf(q)>=0; })
+        .sort(function(a,b){ return a.name<b.name?-1:a.name>b.name?1:0; });
+      if(!list.length) return;
+      html += '<optgroup label="'+esc(lg)+'">' + list.map(function(t){
+        return '<option value="'+esc(t.team_key)+'"'+(teamState.key===t.team_key?' selected':'')+'>'+esc(t.name)+'</option>';
+      }).join('') + '</optgroup>';
+    });
+    teamSelect.innerHTML = html || '<option value="">No clubs match</option>';
+  }
+
+  function matchRowHtml(m){
+    return (
+      '<div class="match-row"><span class="result-badge '+m.result+'">'+m.result+'</span>' +
+        '<span class="opp">'+(m.home?'vs ':'@ ')+esc(teamShort(m.opponent))+'</span>' +
+        '<span class="score num">'+num(m.gf)+'&ndash;'+num(m.ga)+'</span>' +
+        '<span class="meta">'+esc(m.comp)+'<br>'+esc(m.date)+'</span></div>'
+    );
+  }
+
+  function trophyRowHtml(f, teamKey){
+    var isHome = f.home_key===teamKey, opp = isHome ? f.away : f.home;
+    var outcomeClass = 'runnerup', outcomeTxt = 'Runner-up';
+    if(f.decided_by_penalties){ outcomeClass='pens'; outcomeTxt='Penalties (n/a)'; }
+    else if(f.winner_key===teamKey){ outcomeClass='won'; outcomeTxt='Won'; }
+    return (
+      '<div class="trophy-row">' +
+        '<span class="comp">'+esc(f.comp)+' final vs '+esc(teamShort(opp))+' ('+esc(f.score)+')</span>' +
+        '<span class="season">'+esc(f.season)+'</span>' +
+        '<span class="trophy-outcome '+outcomeClass+'">'+esc(outcomeTxt)+'</span>' +
+      '</div>'
+    );
+  }
+
+  function rosterTableHtml(roster){
+    return (
+      '<div class="table-wrap" style="border:none;box-shadow:none;"><table><thead><tr>' +
+        '<th>Player</th><th class="num-col">Age</th><th class="num-col">Min</th><th class="num-col">Gls</th>' +
+        '<th class="num-col">Ast</th><th class="num-col">npxG/90</th></tr></thead><tbody>' +
+      roster.map(function(p){
+        return (
+          '<tr><td><button type="button" class="playerlink linkbtn" data-player="'+esc(p.player)+'" data-team="'+esc(p.team_key)+'">'+esc(p.player)+'</button> <span class="pos-badge">'+esc(p.pos)+'</span></td>' +
+          '<td class="num num-col">'+num(p.age)+'</td><td class="num num-col">'+num(p.current.min)+'</td>' +
+          '<td class="num num-col">'+num(p.current.gls)+'</td><td class="num num-col">'+num(p.current.ast)+'</td>' +
+          '<td class="num num-col">'+num(p.current.npxg90,2)+'</td></tr>'
+        );
+      }).join('') +
+      '</tbody></table></div>'
+    );
+  }
+
+  function renderTeamPanel(){
+    var panel = document.getElementById('teamPanel');
+    var team = teamsList.find(function(t){ return t.team_key===teamState.key; });
+    if(!team){
+      panel.innerHTML = '<div class="empty">Pick a club to see its recent form, roster and honours.</div>';
+      return;
+    }
+    var roster = players.filter(function(p){ return p.team_key===team.team_key && p.league===team.league; })
+      .sort(function(a,b){ return (b.current.min||0)-(a.current.min||0); });
+    var matches = recentMatches[team.team_key] || [];
+    var myFinals = cupFinals.filter(function(f){ return f.home_key===team.team_key || f.away_key===team.team_key; })
+      .sort(function(a,b){ return a.date<b.date?1:-1; });
+    var mySeasons = standings.filter(function(s){ return s.league===team.league; })
+      .map(function(s){
+        var row = s.rows.find(function(r){ return r.team_key===team.team_key; });
+        return row ? {season:s.season, row:row} : null;
+      }).filter(Boolean).sort(function(a,b){ return a.season<b.season?1:-1; });
+    var cur = mySeasons[0];
+
+    var html = '<div class="team-header"><div><h2>'+esc(team.name)+'</h2><div class="lg">'+esc(team.league)+'</div></div>';
+    if(cur) html += '<div class="tile" style="margin:0;min-width:180px;"><div class="k">'+esc(cur.season)+' position</div>' +
+      '<div class="v">#'+cur.row.rank+'</div><div class="d">'+cur.row.played+' played &middot; '+cur.row.pts+' pts</div></div>';
+    html += '</div>';
+
+    html += '<div class="team-grid">';
+    html += '<div class="team-card"><h3>Recent results</h3>' +
+      (matches.length ? matches.map(matchRowHtml).join('') : '<div class="prop-empty">No recent results in the modelled data.</div>') +
+      '</div>';
+    html += '<div class="team-card"><h3>Cup finals &amp; honours</h3>' +
+      (myFinals.length ? myFinals.map(function(f){ return trophyRowHtml(f, team.team_key); }).join('') : '<div class="prop-empty">No cup finals reached in the modelled seasons (2020-21 to 2025-26).</div>') +
+      '</div>';
+    html += '</div>';
+
+    if(mySeasons.length){
+      html += '<div class="team-card" style="margin-bottom:14px;"><h3>League position by season</h3>' +
+        '<div class="table-wrap" style="border:none;box-shadow:none;"><table><thead><tr>' +
+        '<th>Season</th><th class="num-col">Pos</th><th class="num-col">Pld</th><th class="num-col">W</th>' +
+        '<th class="num-col">D</th><th class="num-col">L</th><th class="num-col">GD</th><th class="num-col">Pts</th></tr></thead><tbody>' +
+        mySeasons.map(function(m){
+          return '<tr><td>'+esc(m.season)+'</td><td class="num num-col">#'+m.row.rank+'</td><td class="num num-col">'+m.row.played+'</td>' +
+            '<td class="num num-col">'+m.row.w+'</td><td class="num num-col">'+m.row.d+'</td><td class="num num-col">'+m.row.l+'</td>' +
+            '<td class="num num-col">'+(m.row.gd>0?'+':'')+m.row.gd+'</td><td class="num num-col">'+m.row.pts+'</td></tr>';
+        }).join('') + '</tbody></table></div></div>';
+    }
+
+    html += '<div class="team-card"><h3>Roster ('+roster.length+')</h3>' +
+      (roster.length ? rosterTableHtml(roster) : '<div class="prop-empty">No players meet the minutes threshold yet this season.</div>') +
+      '</div>';
+
+    panel.innerHTML = html;
+    panel.querySelectorAll('.playerlink').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        goToPlayer(btn.getAttribute('data-player'), btn.getAttribute('data-team'));
+      });
+    });
+  }
+
+  teamSelect.addEventListener('change', function(){ teamState.key = teamSelect.value; renderTeamPanel(); });
+  document.getElementById('teamSearchInput').addEventListener('input', function(e){
+    populateTeamSelect(e.target.value);
+    if(teamSelect.value && teamSelect.value !== teamState.key){ teamState.key = teamSelect.value; renderTeamPanel(); }
+  });
+
+  populateTeamSelect('');
+  if(!teamState.key && teamSelect.options.length){ teamState.key = teamSelect.options[0].value; }
+  renderTeamPanel();
+
   renderTiles();
   renderFixtures();
 
@@ -605,6 +785,8 @@
     '<div><b>Value model</b> — '+esc(notes.value)+'</div>' +
     '<div><b>Pace projection</b> — '+esc(notes.projected_38)+'</div>' +
     '<div><b>Match odds</b> — '+esc(notes.match_odds)+'</div>' +
-    '<div><b>Player props</b> — '+esc(notes.player_props)+'</div>';
+    '<div><b>Player props</b> — '+esc(notes.player_props)+'</div>' +
+    '<div><b>Standings</b> — '+esc(notes.standings)+'</div>' +
+    '<div><b>Cup finals</b> — '+esc(notes.cup_finals)+'</div>';
 })();
 </script>
