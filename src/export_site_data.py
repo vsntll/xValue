@@ -19,7 +19,8 @@ Covers the Premier League, La Liga and Bundesliga. Combines:
   - one fully worked example (real fixture + real player) for the Methodology tab
 
 Run: py -3.11 src/export_site_data.py   (or plain python3 - no nodriver needed)
-Output: site/data.json
+Output: site/data.json, then spliced into site/template.html to produce the
+committed, self-contained site/index.html - both written by this one run.
 """
 
 from __future__ import annotations
@@ -39,6 +40,9 @@ from live.schema import normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 OUT = ROOT / "site" / "data.json"
+TEMPLATE = ROOT / "site" / "template.html"
+INDEX = ROOT / "site" / "index.html"
+PLACEHOLDER = "__SITE_DATA_JSON__"
 LEAGUES = {"ENG1": "Premier League", "ESP1": "La Liga", "GER1": "Bundesliga"}
 MIN_MIN_CURRENT = 45   # min minutes this season to trust current-season rates
 MIN_MIN_PROJECT = 180  # min minutes to publish a pace projection / prop odds
@@ -51,10 +55,12 @@ def _num(x):
 
 
 def _fix_names(df: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
-    """The processed CSVs mix latin-1 rows with rows that were actually utf-8 but
-    got mis-decoded as latin-1 by an earlier scraper run (different names show up
-    broken in different, incompatible ways). Reading as latin-1 fixes the first
-    group; ftfy detects and repairs the second group and leaves the first alone."""
+    """Files are read as utf-8 (the correct encoding for this pipeline as of the
+    parse_fbref_player_stats.py rewrite). This is a defense-in-depth pass, not the
+    primary fix: ftfy.fix_text() is a no-op on already-correct text (verified - 0
+    rows changed across every processed CSV) but repairs the rare still-mangled
+    row (e.g. "HÃ¥vard Nordtveit" -> "Håvard Nordtveit") if one slips through from
+    an older cached file or a future regression."""
     for c in cols:
         if c in df.columns:
             df[c] = df[c].map(lambda s: ftfy.fix_text(s) if isinstance(s, str) else s)
@@ -62,8 +68,9 @@ def _fix_names(df: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
 
 
 def load_players(src_league: str) -> pd.DataFrame:
-    # source CSV is actually latin-1 (accented names mojibake under the utf-8 default)
-    df = pd.read_csv(PROC / "fbref_player_season_stats.csv", low_memory=False, encoding="latin-1")
+    # utf-8 (the correct encoding here - see the module docstring); _fix_names()
+    # is the defense-in-depth pass for any row that slipped through mis-encoded
+    df = pd.read_csv(PROC / "fbref_player_season_stats.csv", low_memory=False, encoding="utf-8")
     df = df[df["src_league"] == src_league].copy()
     keep = {
         "season": "season", "Player": "player", "Squad": "squad", "Pos": "pos", "Age": "age",
@@ -101,7 +108,7 @@ def load_players(src_league: str) -> pd.DataFrame:
 
 
 def load_value_predictions(src_league: str) -> pd.DataFrame:
-    v = pd.read_csv(PROC / "value_model_predictions.csv", encoding="latin-1")
+    v = pd.read_csv(PROC / "value_model_predictions.csv", encoding="utf-8")
     v = v[(v["src_league"] == src_league) & v["season"].isin(["2025-26", "2026-27"])].copy()
     v = _fix_names(v, ["Player", "Squad"])  # must match load_players()'s names for the join in build_players_payload
     v["team_key"] = v["Squad"].map(normalize_team)
@@ -205,8 +212,7 @@ def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict]
 
 
 def load_upcoming_fixtures(asof: pd.Timestamp, league_name: str) -> pd.DataFrame:
-    # also latin-1 (accented ESPN team names mojibake under the utf-8 default)
-    live = pd.read_csv(PROC / "live_matches_2026-27.csv", encoding="latin-1")
+    live = pd.read_csv(PROC / "live_matches_2026-27.csv", encoding="utf-8")
     live = live[live["league"] == league_name].copy()
     live = _fix_names(live, ["HomeTeam", "AwayTeam"])
     live["Date"] = pd.to_datetime(live["Date"], errors="coerce")
@@ -234,7 +240,7 @@ def next_fixture_per_team(live: pd.DataFrame) -> pd.DataFrame:
 
 
 def prep_dc_matches() -> pd.DataFrame:
-    m = pd.read_csv(PROC / "matches_all.csv", encoding="latin-1")
+    m = pd.read_csv(PROC / "matches_all.csv", encoding="utf-8")
     m = _fix_names(m, ["HomeTeam", "AwayTeam"])  # a mis-decoded name can normalize to the wrong team_key
     m["Date"] = pd.to_datetime(m["Date"], errors="coerce")
     m = m.dropna(subset=["Date", "FTHG", "FTAG"])
@@ -276,8 +282,7 @@ COMPLETE_SEASONS = {"2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025
 
 
 def load_all_matches() -> pd.DataFrame:
-    # also latin-1 (accented competition names like "Supercopa de España" mojibake)
-    m = pd.read_csv(PROC / "matches_all.csv", encoding="latin-1")
+    m = pd.read_csv(PROC / "matches_all.csv", encoding="utf-8")
     m = _fix_names(m, ["HomeTeam", "AwayTeam", "comp"])
     m["Date"] = pd.to_datetime(m["Date"], errors="coerce")
     m = m.dropna(subset=["Date", "FTHG", "FTAG"])
@@ -288,7 +293,7 @@ def load_all_matches() -> pd.DataFrame:
 
 
 def build_teams_list() -> list[dict]:
-    sq = pd.read_csv(PROC / "squad_season_features.csv", encoding="latin-1")
+    sq = pd.read_csv(PROC / "squad_season_features.csv", encoding="utf-8")
     sq = _fix_names(sq, ["team"])
     # recompute team_key from the now-fixed name rather than trust the CSV's own
     # team_key column - that one was normalized upstream from the raw (possibly
@@ -611,10 +616,25 @@ def main() -> None:
         },
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(payload, indent=None, separators=(",", ":")), encoding="utf-8")
+    payload_json = json.dumps(payload, indent=None, separators=(",", ":"))
+    OUT.write_text(payload_json, encoding="utf-8")
     print(f"wrote {OUT}  ({len(all_players)} players, {len(fixtures)} fixtures, {len(teams)} teams, "
           f"{len(standings)} standings tables, {len(cup_finals)} cup finals, "
           f"{len(projected_table)} projected tables)  size={OUT.stat().st_size/1024:.0f} KB")
+
+    splice_index_html(payload_json)
+
+
+def splice_index_html(payload_json: str) -> None:
+    """site/template.html + this run's data -> the committed, self-contained
+    site/index.html. Escaping </script so a name/comp string can't break out of
+    the embedded JSON <script> block (e.g. a club literally named "</script>")."""
+    template = TEMPLATE.read_text(encoding="utf-8")
+    if PLACEHOLDER not in template:
+        raise RuntimeError(f"{TEMPLATE} is missing the {PLACEHOLDER} placeholder - can't splice data in")
+    safe_json = payload_json.replace("</script", "<\\/script")
+    INDEX.write_text(template.replace(PLACEHOLDER, safe_json), encoding="utf-8")
+    print(f"wrote {INDEX}  size={INDEX.stat().st_size/1024:.0f} KB")
 
 
 if __name__ == "__main__":
