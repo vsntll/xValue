@@ -1,0 +1,109 @@
+name: Weekly site refresh
+
+# Pulls the data that does NOT need a browser (live fixtures + match stats via
+# ESPN / football-data.org / FotMob / Understat, and market values via Sofascore),
+# rebuilds the match table, retrains both models, regenerates site/index.html and
+# commits it.
+#
+# NOT refreshed here: FBref counting stats (goals / assists / minutes) and
+# Transfermarkt scrape values - those need a real Chrome window (nodriver) and a
+# one-off WAF-captcha click, so run `run_pipeline.md` step 1 locally now and then
+# and commit the resulting site/index.html the same way.
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"        # Mondays 07:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      FOOTBALL_DATA_ORG_KEY: ${{ secrets.FOOTBALL_DATA_ORG_KEY }}
+      PYTHONIOENCODING: utf-8
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # data/ is gitignored - carry the built tables + soccerdata caches between
+      # runs. The rotating key always writes a fresh entry; restore-keys falls
+      # back to the newest previous one.
+      - name: Restore data cache
+        id: datacache
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/processed
+            data/understat_cache
+            data/soccerdata
+            data/raw/live
+            data/raw/tm
+            data/raw/football_data/_elo_warmup.csv
+          key: pipeline-data-${{ github.run_id }}
+          restore-keys: |
+            pipeline-data-
+
+      # cold start only: pull the seed the maintainer published once with
+      #   tar czf pipeline-seed.tar.gz data/processed data/raw/football_data/_elo_warmup.csv
+      #   gh release create pipeline-seed pipeline-seed.tar.gz -t "pipeline data seed"
+      - name: Seed data (first run)
+        if: ${{ hashFiles('data/processed/fbref_player_season_stats.csv') == '' }}
+        run: |
+          gh release download pipeline-seed --pattern "pipeline-seed.tar.gz" --output seed.tar.gz
+          tar xzf seed.tar.gz
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Pull league results + odds (football-data.co.uk)
+        continue-on-error: true
+        run: python src/pull_match_archive.py
+
+      - name: Pull live fixtures + match stats (ESPN / football-data.org / FotMob / Understat)
+        continue-on-error: true
+        run: python src/pull_live.py
+
+      - name: Pull current-season market values (Sofascore)
+        continue-on-error: true
+        run: python src/pull_sofascore_values.py
+
+      - name: Rebuild tables
+        run: |
+          python src/build_matches_all.py
+          python src/build_squad_features.py
+          python src/build_match_model_table.py
+          python src/build_value_history.py
+
+      - name: Retrain models
+        run: |
+          python src/train_value_model.py
+          python src/train_outcome_model.py --hybrid
+
+      - name: Regenerate the site
+        run: python src/export_site_data.py
+
+      - name: Commit site/index.html
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/index.html
+          if git diff --cached --quiet; then
+            echo "site unchanged - nothing to commit"
+          else
+            git commit -m "Weekly site refresh: fixtures, odds, market values ($(date -u +%Y-%m-%d))"
+            git push
+          fi
