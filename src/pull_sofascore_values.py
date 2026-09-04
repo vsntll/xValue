@@ -27,6 +27,13 @@ import tls_requests
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 OUT = PROJECT_ROOT / "data" / "processed" / "sofascore_values.csv"
 API = "https://api.sofascore.com/api/v1"
+HEADERS = {
+    "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                   "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"),
+    "Accept": "application/json",
+    "Referer": "https://www.sofascore.com/",
+    "Origin": "https://www.sofascore.com",
+}
 
 # our code -> Sofascore unique-tournament id + {season year: season id}
 LEAGUES = {
@@ -37,16 +44,28 @@ LEAGUES = {
 SLEEP = 0.6
 
 
+class Blocked(Exception):
+    """Sofascore refused us (403/429/5xx) after retries - usually an IP block on
+    datacenter ranges (GitHub Actions, most VPS). Locally it's fine."""
+
+
 def _get(path: str) -> dict:
-    for attempt in range(4):
-        r = tls_requests.get(f"{API}/{path}", timeout=25)
-        if r.status_code == 429:
+    last = None
+    for attempt in range(5):
+        try:
+            r = tls_requests.get(f"{API}/{path}", headers=HEADERS, timeout=25)
+        except Exception as exc:  # noqa: BLE001 - transport hiccup, retry
+            last = exc
+            time.sleep(3 * (attempt + 1))
+            continue
+        if r.status_code in (403, 429) or r.status_code >= 500:
+            last = f"{r.status_code} on {path}"
             time.sleep(5 * (attempt + 1))
             continue
         r.raise_for_status()
         time.sleep(SLEEP)
         return r.json()
-    raise RuntimeError(f"429 loop on {path}")
+    raise Blocked(str(last))
 
 
 def _season_label(y: str) -> str:
@@ -67,17 +86,27 @@ def main() -> None:
         year = f"{str(s)[2:]}/{str(s + 1)[2:]}"
 
     rows = []
+    blocked = []
     for code, (utid, seasons) in LEAGUES.items():
         sid = seasons.get(year)
         if not sid:
             print(f"{code}: no season id for {year}")
             continue
-        st = _get(f"unique-tournament/{utid}/season/{sid}/standings/total")
-        teams = [(r["team"]["name"], r["team"]["id"])
-                 for r in st["standings"][0]["rows"]]
+        try:
+            st = _get(f"unique-tournament/{utid}/season/{sid}/standings/total")
+            teams = [(r["team"]["name"], r["team"]["id"])
+                     for r in st["standings"][0]["rows"]]
+        except Blocked as exc:
+            print(f"{code} {year}: BLOCKED ({exc}) - skipping this league")
+            blocked.append(code)
+            continue
         print(f"{code} {year}: {len(teams)} clubs")
         for tname, tid in teams:
-            squad = _get(f"team/{tid}/players").get("players", [])
+            try:
+                squad = _get(f"team/{tid}/players").get("players", [])
+            except Blocked as exc:
+                print(f"  {tname}: BLOCKED ({exc}) - skipping")
+                continue
             for entry in squad:
                 p = entry["player"]
                 mv = (p.get("proposedMarketValueRaw") or {}).get("value")
@@ -96,6 +125,13 @@ def main() -> None:
                     "market_value_eur": mv,
                 })
     out = pd.DataFrame(rows)
+    # Sofascore IP-blocks datacenter ranges, so a CI run often gets little or
+    # nothing - never clobber the last good file with a partial/empty scrape.
+    if OUT.exists() and (blocked or len(out) < 1200):
+        n_prev = len(pd.read_csv(OUT))
+        print(f"\nonly got {len(out)} rows (blocked: {blocked or 'none'}) - keeping "
+              f"the existing {OUT.name} ({n_prev} rows) unchanged.")
+        return
     OUT.parent.mkdir(parents=True, exist_ok=True)
     out.to_csv(OUT, index=False)
     print(f"\nwrote {OUT}  ({len(out)} players, "
