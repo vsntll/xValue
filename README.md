@@ -4,8 +4,9 @@ Two models over a shared data layer for the **top flight of England, Germany and
 Spain, 2020-21 → 2026-27** (+ the cups those clubs play in):
 
 - **Value regression** — predicts a player's market value from his season + value
-  history. HGB, R²(log) **0.88**, MAE **€5.5M**, within-2× **90%** on a
-  2024-26 holdout.
+  history. Stacked trees, R²(log) **0.90**, MAE **€5.1M**, within-2× **92%** on a
+  2024-26 holdout (**0.93** for players with a prior-season value; cold-start
+  arrivals from outside the big-5 are the ceiling).
 - **Outcome classifier** — pre-match home-win / draw / away-win. Poisson-Skellam
   on Elo + form + xG, log-loss **0.978** (pure) / **0.975** (with market odds),
   vs Bet365 closing 0.973.
@@ -36,7 +37,7 @@ going dark is swapped without touching anything downstream.
 | 4 | Cross-source name resolution | alias map + transliteration in `src/live/schema.py`, fuzzy value fill in the parser (~95%) | — |
 | 5 | Unified match table | `build_matches_all.py` | `matches_all.csv` (9.1k matches, all comps) |
 | 6 | Squad rollup | `build_squad_features.py` | `squad_season_features.csv` |
-| 7 | Value model | `train_value_model.py` | `models/value_model.pkl` |
+| 7 | Value model | `build_value_history.py` → `train_value_model.py` | `models/value_model.pkl` |
 | 8 | Outcome model | `build_match_model_table.py` → `train_outcome_model.py` | `outcome_model_predictions*.csv` |
 
 ## Setup

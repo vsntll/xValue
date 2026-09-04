@@ -25,15 +25,16 @@ py -3.11 src/pull_live.py --seasons 2024-25 2025-26 --comps UCL UEL UECL FA EFL 
 ```
 py -3.11 src/parse_fbref_matchlogs.py       -> fbref_team_matchlogs.csv
 py -3.11 src/parse_fbref_player_stats.py    -> fbref_player_season_stats.csv   (folds in xG + values)
-py -3.11 src/build_matches_all.py           -> matches_all.csv                 (9.1k matches, all comps)
+py -3.11 src/build_matches_all.py           -> matches_all.csv                 (9k matches, all comps)
 py -3.11 src/build_squad_features.py        -> squad_season_features.csv
 py -3.11 src/build_match_model_table.py     -> match_model_table.csv           (Elo, form, odds)
+py -3.11 src/build_value_history.py         -> value_history.csv               (prev-value lags: big-5 mirror 2015-22 + scrape + Sofascore)
 ```
 
 ## 3. Train
 
 ```
-py -3.11 src/train_value_model.py           -> models/value_model.pkl, value_model_predictions.csv
+py -3.11 src/train_value_model.py           -> models/value_model.pkl, value_model_predictions.csv  (R2(log) 0.90)
 py -3.11 src/train_outcome_model.py         -> outcome_model_predictions.csv          (pure, log-loss 0.988)
 py -3.11 src/train_outcome_model.py --hybrid -> outcome_model_predictions_hybrid.csv  (+ market odds, 0.975)
 ```
