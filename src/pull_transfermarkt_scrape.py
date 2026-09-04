@@ -116,6 +116,24 @@ async def scrape(seasons: list[str]) -> None:
         browser.stop()
 
 
+_POSITIONS = [
+    "Goalkeeper", "Centre-Back", "Left-Back", "Right-Back", "Sweeper",
+    "Defensive Midfield", "Central Midfield", "Attacking Midfield",
+    "Left Midfield", "Right Midfield", "Left Winger", "Right Winger",
+    "Second Striker", "Centre-Forward", "Defender", "Midfielder", "Midfield",
+    "Forward", "Attack", "midfielder", "defender",
+]
+_POS_RE = re.compile(r"\s*(" + "|".join(re.escape(p) for p in _POSITIONS) + r")\s*$")
+
+
+def _strip_pos(name: str) -> str:
+    prev = None
+    while prev != name:
+        prev = name
+        name = _POS_RE.sub("", name).strip()
+    return name
+
+
 def parse() -> None:
     rows = []
     for path in sorted(SQUAD_DIR.glob("*.html")):
@@ -126,25 +144,26 @@ def parse() -> None:
         except (ValueError, IndexError):
             continue
         tbl.columns = [str(c[-1]) if isinstance(c, tuple) else str(c) for c in tbl.columns]
-        # player id + name in document order, aligned to the value column
-        ids = re.findall(r'/profil/spieler/(\d+)"\s+id="\d+">', html) \
-            or re.findall(r'href="/[^"]+/profil/spieler/(\d+)"', html)
-        val_col = next((c for c in tbl.columns if "market value" in c.lower()
-                        or c.lower() in ("mv", "value")), tbl.columns[-1])
-        name_col = next((c for c in tbl.columns if c.lower() in ("player", "name")), None)
-        vals = tbl[val_col].astype(str).tolist()
-        names = tbl[name_col].astype(str).tolist() if name_col else [None] * len(vals)
-        for i, v in enumerate(vals):
-            mv = _value_eur(v)
+        val_col = next((c for c in tbl.columns if "market value" in c.lower()), tbl.columns[-1])
+        name_col = next((c for c in tbl.columns if c.lower() == "player"), tbl.columns[1])
+        real = tbl[tbl[val_col].notna() & (tbl[val_col].astype(str) != "-")].copy()
+
+        # squad-table profile links come before the page's sidebars; take them in
+        # order (best-effort - the name+club join below doesn't depend on this)
+        body = html.split('class="responsive-table"', 1)[-1]
+        ids = list(dict.fromkeys(re.findall(r"/profil/spieler/(\d+)", body)))
+        for i, (_, r) in enumerate(real.iterrows()):
+            mv = _value_eur(str(r[val_col]))
             if mv is None:
                 continue
             rows.append({
                 "season": season, "src_league": code, "squad_slug": slug,
                 "tm_player_id": ids[i] if i < len(ids) else None,
-                "player_name": names[i] if i < len(names) else None,
+                "player_name": _strip_pos(str(r[name_col])),
                 "market_value_eur": mv,
             })
-    df = pd.DataFrame(rows)
+    df = pd.DataFrame(rows).drop_duplicates(
+        subset=["season", "src_league", "squad_slug", "player_name"])
     OUT.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(OUT, index=False)
     print(f"\nwrote {OUT}  ({len(df)} player-values)")

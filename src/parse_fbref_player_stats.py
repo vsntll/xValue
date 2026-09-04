@@ -193,26 +193,37 @@ def main() -> None:
     else:
         print("(no understat_player_season.csv - run pull_understat.py for xG)")
 
-    # Transfermarkt market value - the value model's TARGET (src/pull_transfermarkt.py).
-    # Mirror only covers 2020-21..2022-23.
-    tm = OUT_PATH.parent / "tm_player_values.csv"
-    if tm.exists():
-        tv = pd.read_csv(tm)
-        tv = tv[["season", "src_league", "player_name", "squad", "tm_player_id",
-                 "player_dob", "player_foot", "market_value_eur"]].rename(
-            columns={"player_dob": "tm_dob", "player_foot": "tm_foot"})
+    # Transfermarkt market value - the value model's TARGET.
+    #   tm_player_values.csv    worldfootballR mirror, 2020-21..2022-23
+    #   tm_values_scraped.csv   nodriver scrape, 2023-24..2025-26
+    tm_parts = []
+    mv = OUT_PATH.parent / "tm_player_values.csv"
+    if mv.exists():
+        m = pd.read_csv(mv)
+        tm_parts.append(m[["season", "src_league", "player_name", "squad",
+                           "tm_player_id", "player_dob", "player_foot",
+                           "market_value_eur"]].rename(
+            columns={"squad": "club", "player_dob": "tm_dob", "player_foot": "tm_foot"}))
+    sc = OUT_PATH.parent / "tm_values_scraped.csv"
+    if sc.exists():
+        s = pd.read_csv(sc)
+        s["club"] = s["squad_slug"].str.replace("-", " ")
+        tm_parts.append(s[["season", "src_league", "player_name", "club",
+                           "tm_player_id", "market_value_eur"]])
+    if tm_parts:
+        tv = pd.concat(tm_parts, ignore_index=True)
         tv["_pk"] = tv["player_name"].map(_norm_name)
-        tv["_tk"] = tv["squad"].map(normalize_team)
-        tv = tv.drop(columns=["player_name", "squad"]).drop_duplicates(
+        tv["_tk"] = tv["club"].map(normalize_team)
+        tv = tv.drop(columns=["player_name", "club"]).drop_duplicates(
             subset=["season", "src_league", "_pk", "_tk"])
         combined["_pk"] = combined["Player"].map(_norm_name)
         combined["_tk"] = combined["Squad"].map(normalize_team)
         combined = combined.merge(tv, on=["season", "src_league", "_pk", "_tk"], how="left")
         got = combined["market_value_eur"].notna().sum()
         combined = combined.drop(columns=["_pk", "_tk"])
-        print(f"merged Transfermarkt value ({got}/{len(combined)} rows; 2020-23 only)")
+        print(f"merged Transfermarkt value ({got}/{len(combined)} rows, 2020-26)")
     else:
-        print("(no tm_player_values.csv - run pull_transfermarkt.py for the value target)")
+        print("(no tm value files - run pull_transfermarkt*.py)")
 
     # Sofascore fills the value for the current season (Transfermarkt mirror stops
     # at 2022-23; Sofascore has no history so it's current-season only).
