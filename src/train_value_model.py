@@ -65,6 +65,12 @@ FLAT = {
 }
 
 
+def _norm_team(s):
+    import re as _re
+    s = str(s).lower()
+    return _re.sub(r"[^a-z0-9 ]", " ", s).strip()
+
+
 def _pos_group(p: str) -> str:
     p = str(p).split(",")[0]
     return {"GK": "GK", "DF": "DF", "MF": "MF", "FW": "FW"}.get(p, "MF")
@@ -99,7 +105,22 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
                                + "-01-01", errors="coerce")
     d["contract_years"] = ((d["_ce"] - d["_ref"]).dt.days / 365).clip(-1, 6)
 
+    # club strength + how central the player is to the squad's attack
+    sq_path = SRC.parent / "squad_season_features.csv"
+    if sq_path.exists():
+        sq = pd.read_csv(sq_path).rename(columns={"team": "Squad"})
+        d = d.merge(sq[["season", "src_league", "Squad", "squad_xg"]],
+                    on=["season", "src_league", "Squad"], how="left")
+        # PREVIOUS season's squad value - club spending power, non-circular
+        sq["_ord"] = sq["season"].map(_SEASON_ORDER) + 1
+        d = d.merge(sq[["_ord", "src_league", "Squad", "squad_value_eur"]].rename(
+            columns={"squad_value_eur": "prev_squad_value"}),
+            on=["_ord", "src_league", "Squad"], how="left")
+    else:
+        d["prev_squad_value"], d["squad_xg"] = np.nan, np.nan
+
     d = d[(d["mv"].notna()) & (d["n90"] >= 8) & (d["pos"] != "GK") & d["age"].notna()]
+    d["_xg"] = pd.to_numeric(d.get("understat__xg"), errors="coerce")
     out = pd.DataFrame({
         "season": d["season"], "src_league": d["src_league"],
         "Player": d["Player"], "Squad": d["Squad"],
@@ -113,6 +134,8 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
         "has_prev": d["prev1_mv"].notna().astype(int),
         "contract_years": d["contract_years"],
         "minutes_trend": np.log1p(d["_min"]) - np.log1p(d["prev1_min"]),
+        "club_log_value": np.log1p(d["prev_squad_value"]),
+        "xg_share": d["_xg"] / (pd.to_numeric(d["squad_xg"], errors="coerce") + 1),
         "y": np.log1p(d["mv"]),
         "market_value_eur": d["mv"],
     })
@@ -146,13 +169,15 @@ def main() -> None:
     hgb_pre = ColumnTransformer([
         ("cat", OneHotEncoder(handle_unknown="ignore"), feat_cat),
     ], remainder="passthrough")
+    def _hgb(**kw):
+        return Pipeline([("pre", hgb_pre), ("m", HistGradientBoostingRegressor(
+            random_state=0, early_stopping=False, **kw))])
     models = {
         "ridge": Pipeline([("pre", ridge_pre),
                            ("m", RidgeCV(alphas=np.logspace(-2, 3, 30)))]),
-        "hgb": Pipeline([("pre", hgb_pre),
-                         ("m", HistGradientBoostingRegressor(
-                             max_depth=4, learning_rate=0.05, max_iter=400,
-                             l2_regularization=1.0))]),
+        "hgb": _hgb(max_depth=3, learning_rate=0.03, max_iter=700,
+                    l2_regularization=2.0, min_samples_leaf=25,
+                    max_leaf_nodes=31),
     }
 
     def _prep(frame):
@@ -164,26 +189,40 @@ def main() -> None:
 
     from sklearn.model_selection import cross_val_predict
 
-    results = {}
+    def _score(name, pred, cal):
+        pl = np.log1p(np.clip(pred, 0, None))
+        act = te["market_value_eur"].to_numpy()
+        r2 = r2_score(te["y"], pl)
+        mae = mean_absolute_error(act, pred) / 1e6
+        ape = np.median(np.abs(pred - act) / act)
+        w2 = np.mean((np.maximum(pred, act) / np.minimum(pred, act)) <= 2)
+        print(f"  {name:8}  R2(log)={r2:.3f}  MAE=EUR{mae:.1f}M  medAPE={ape:.0%}  "
+              f"within-2x={w2:.0%}" + (f"  (cal {cal[0]:+.2f},{cal[1]:.2f})" if cal else ""))
+        return r2
+
+    results, oofs = {}, {}
     for name, pipe in models.items():
-        # de-shrink calibration from out-of-fold train predictions
         oof = cross_val_predict(pipe, Xtr, tr["y"], cv=4)
         b1, b0 = np.polyfit(oof, tr["y"], 1)
         pipe.fit(Xtr, tr["y"])
-        pred_log = b0 + b1 * pipe.predict(Xte)
-        pred = np.expm1(pred_log)
-        act = te["market_value_eur"].to_numpy()
-        r2 = r2_score(te["y"], pred_log)
-        mae = mean_absolute_error(act, pred) / 1e6
-        med_ape = np.median(np.abs(pred - act) / act)
-        within2x = np.mean((np.maximum(pred, act) / np.minimum(pred, act)) <= 2)
+        pred = np.expm1(b0 + b1 * pipe.predict(Xte))
+        oofs[name] = np.expm1(b0 + b1 * oof)
         results[name] = (pipe, pred, (b0, b1))
-        print(f"  {name:6}  R2(log)={r2:.3f}  MAE=EUR{mae:.1f}M  "
-              f"medAPE={med_ape:.0%}  within-2x={within2x:.0%}  (cal {b0:+.2f},{b1:.2f})")
+        _score(name, pred, (b0, b1))
 
-    best_name = max(results, key=lambda n: r2_score(
-        te["y"], np.log1p(np.clip(results[n][1], 0, None))))
-    best_pipe, best_pred, _cal = results[best_name]
+    # ridge/hgb ensemble, weight chosen on OOF (kept only if it beats hgb)
+    from scipy.optimize import minimize_scalar
+    a = minimize_scalar(lambda a: -r2_score(
+        tr["y"], np.log1p(a * oofs["hgb"] + (1 - a) * oofs["ridge"])),
+        bounds=(0, 1), method="bounded").x
+    ens = a * results["hgb"][1] + (1 - a) * results["ridge"][1]
+    r2_ens = _score(f"ens(a={a:.2f})", ens, None)
+
+    if r2_ens > r2_score(te["y"], np.log1p(np.clip(results["hgb"][1], 0, None))):
+        best_name, best_pred = "ensemble", ens
+    else:
+        best_name, best_pred = "hgb", results["hgb"][1]
+    best_pipe = results["hgb"][0]
     print(f"\nbest: {best_name}")
 
     te_out = te[["season", "src_league", "Player", "Squad", "pos", "age",
