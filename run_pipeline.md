@@ -18,6 +18,7 @@ py -3.11 src/pull_transfermarkt_scrape.py               # market values 2023-26 
 py -3.11 src/pull_sofascore_values.py                   # current-season values    (Sofascore)
 py -3.11 src/pull_live.py --season 2026-27              # live season, all comps   (ESPN+fdorg+Understat+FotMob)
 py -3.11 src/pull_live.py --seasons 2024-25 2025-26 --comps UCL UEL UECL FA EFL DFB CDR --sources espn fotmob
+py -3.11 src/pull_understat_player_matches.py           # per-player per-match xG/xA (Understat, ~1-1.5h, resumable)
 ```
 
 ## 2. Build the modelling tables
@@ -27,7 +28,7 @@ py -3.11 src/parse_fbref_matchlogs.py       -> fbref_team_matchlogs.csv
 py -3.11 src/parse_fbref_player_stats.py    -> fbref_player_season_stats.csv   (folds in xG + values)
 py -3.11 src/build_matches_all.py           -> matches_all.csv                 (9k matches, all comps)
 py -3.11 src/build_squad_features.py        -> squad_season_features.csv
-py -3.11 src/build_match_model_table.py     -> match_model_table.csv           (Elo, form, odds)
+py -3.11 src/build_match_model_table.py     -> match_model_table.csv           (Elo, form, odds, momentum if squad_momentum.csv exists yet)
 py -3.11 src/build_value_history.py         -> value_history.csv               (prev-value lags: big-5 mirror 2015-22 + scrape + Sofascore)
 ```
 
@@ -35,7 +36,8 @@ py -3.11 src/build_value_history.py         -> value_history.csv               (
 
 ```
 py -3.11 src/train_value_model.py           -> models/value_model.pkl, value_model_predictions.csv  (R2(log) 0.89; predicts every player/season incl. current)
-py -3.11 src/train_outcome_model.py         -> outcome_model_predictions.csv          (pure, log-loss 0.988)
+py -3.11 src/build_form_momentum.py         -> squad_momentum.csv    (peer-baseline value vs. actual recent output - needs value_model_predictions.csv above, so run this after it; re-run build_match_model_table.py once more to fold it in)
+py -3.11 src/train_outcome_model.py         -> outcome_model_predictions.csv          (pure, log-loss 0.988; + O/U, BTTS, correct-score)
 py -3.11 src/train_outcome_model.py --hybrid -> outcome_model_predictions_hybrid.csv  (+ market odds, 0.975)
 ```
 
@@ -47,6 +49,17 @@ py -3.11 src/export_site_data.py   -> site/data.json + site/index.html
 
 `export_site_data.py` now splices the payload into `site/template.html` itself;
 `site/index.html` is the committed, self-contained deliverable.
+
+## 5. Dashboard + source health (optional, local)
+
+```
+py -3.11 -m streamlit run src/dashboard.py   # predictions vs results, value leaderboard, source health
+py -3.11 src/health_check.py                 # probes every scrape source, writes health_check.json
+```
+
+`.github/workflows/health-check.yml` runs the health check daily and commits
+the report, so the dashboard's "Source health" tab stays current without a
+local run.
 
 ## Refresh the current season
 

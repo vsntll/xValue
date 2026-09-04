@@ -82,6 +82,12 @@ jobs:
         continue-on-error: true
         run: python src/pull_sofascore_values.py
 
+      - name: Pull per-player per-match contributions (Understat) - only the live season is re-pulled
+        continue-on-error: true
+        run: python src/pull_understat_player_matches.py --seasons ${{ env.PL_SEASON }}
+        env:
+          PL_SEASON: "2026-27"   # bump each August; older seasons are cached and skipped
+
       - name: Rebuild tables
         run: |
           python src/build_matches_all.py
@@ -92,6 +98,8 @@ jobs:
       - name: Retrain models
         run: |
           python src/train_value_model.py
+          python src/build_form_momentum.py
+          python src/build_match_model_table.py
           python src/train_outcome_model.py --hybrid
 
       - name: Regenerate the site
