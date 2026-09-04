@@ -108,6 +108,7 @@ jobs:
             echo "site unchanged - nothing to commit"
           else
             git commit -m "Weekly site refresh: fixtures, odds, market values ($(date -u +%Y-%m-%d))"
+            git pull --rebase --autostash origin master
             git push
             # a GITHUB_TOKEN push doesn't trigger deploy-pages.yml's push event
             gh workflow run deploy-pages.yml || echo "(no deploy-pages workflow / Pages not enabled yet)"
