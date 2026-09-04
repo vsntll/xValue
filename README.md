@@ -19,13 +19,15 @@ Two models over a shared feature layer (see `merged_predictor_architecture.png`)
 ## Pipeline steps
 
 1. ✅ **Match archive** — `pull_match_archive.py`
-2. ✅ **Player stats** — `fbref_player_season_stats.csv` (11k players, xG, TM value)
-3. 🔨 **Market values** — mirror gives 2020-23; recent seasons blocked
-4. ⬜ Name resolution across sources (partial: alias map in `live/schema.py`)
-5. 🔨 **Match table** — `build_matches_all.py` → `matches_all.csv` (9.1k matches, xG 75%)
-6. ⬜ Squad rollup
-7. ⬜ Train value regression
-8. ⬜ Train outcome classifier
+2. ✅ **Player stats** — `fbref_player_season_stats.csv` (11k players, xG, value)
+3. ✅ **Market values** — mirror 2020-23 + TM scrape 2023-26 + Sofascore 2026-27
+4. 🔨 Name resolution across sources (alias map in `live/schema.py`, ~90%)
+5. ✅ **Match table** — `build_matches_all.py` → `matches_all.csv` (9.1k, xG 75%)
+6. ✅ **Squad rollup** — `build_squad_features.py`
+7. ✅ **Value regression** — `train_value_model.py` (R²(log) 0.70)
+8. ✅ **Outcome classifier** — `train_outcome_model.py` (log-loss 1.01 vs book 0.97)
+
+See `docs/models.md` for model detail.
 
 See `docs/` for per-source detail.
 
