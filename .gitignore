@@ -15,6 +15,10 @@ data/understat_cache/
 # Local scratch — diagnostic scripts, sample dumps; never committed
 scratch/
 
+# site/data.json is a regenerated build artifact (src/export_site_data.py);
+# site/index.html embeds a frozen snapshot of it and is the committed deliverable
+site/data.json
+
 # Secrets
 .env
 

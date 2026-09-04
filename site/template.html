@@ -1,0 +1,491 @@
+<title>Matchday Edge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --bg:#f3f6f1; --surface:#ffffff; --surface-2:#eaf0e7; --surface-3:#dfe8da;
+    --border:#d7e0d2; --border-strong:#c2cfbc;
+    --text:#14201a; --text-dim:#57685e; --text-faint:#8a978f;
+    --accent:#1f9d5c; --accent-ink:#ffffff; --accent-2:#b5811f; --accent-2-ink:#ffffff;
+    --win:#1f9d5c; --draw:#a3821f; --loss:#c14634;
+    --chip-bg:#eaf0e7; --shadow: 0 1px 2px rgba(20,32,26,.06), 0 8px 24px -12px rgba(20,32,26,.18);
+    --radius-lg:14px; --radius-md:10px; --radius-sm:7px;
+    --font-display:'Big Shoulders Display', 'Arial Narrow', sans-serif;
+    --font-body:'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0b1512; --surface:#111d18; --surface-2:#16241e; --surface-3:#1c2e26;
+      --border:#233a2f; --border-strong:#2e4a3c;
+      --text:#eaf3ee; --text-dim:#9db3a7; --text-faint:#71897c;
+      --accent:#3ddc84; --accent-ink:#06170f; --accent-2:#e8b23d; --accent-2-ink:#26190a;
+      --win:#3ddc84; --draw:#e8b23d; --loss:#f0806c;
+      --chip-bg:#16241e; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px -14px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0b1512; --surface:#111d18; --surface-2:#16241e; --surface-3:#1c2e26;
+    --border:#233a2f; --border-strong:#2e4a3c;
+    --text:#eaf3ee; --text-dim:#9db3a7; --text-faint:#71897c;
+    --accent:#3ddc84; --accent-ink:#06170f; --accent-2:#e8b23d; --accent-2-ink:#26190a;
+    --win:#3ddc84; --draw:#e8b23d; --loss:#f0806c;
+    --chip-bg:#16241e; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px -14px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;}
+  body{ background:var(--bg); color:var(--text); font-family:var(--font-body);
+        font-size:14px; line-height:1.5; }
+  ::selection{ background:var(--accent); color:var(--accent-ink); }
+  h1,h2,h3{ font-family:var(--font-display); font-weight:800; text-wrap:balance; margin:0; letter-spacing:.2px; }
+  .num{ font-variant-numeric:tabular-nums; font-feature-settings:"tnum" 1; }
+  button{ font-family:inherit; }
+  a{ color:inherit; }
+
+  /* ---------- shell ---------- */
+  .shell{ max-width:1180px; margin:0 auto; padding:0 20px 64px; }
+  .topbar{ position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent);
+           backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
+  .topbar-inner{ max-width:1180px; margin:0 auto; padding:14px 20px; display:flex; align-items:center;
+                 gap:18px; flex-wrap:wrap; }
+  .brand{ display:flex; align-items:baseline; gap:9px; margin-right:auto; }
+  .brand .mark{ width:11px; height:11px; border-radius:3px; background:var(--accent);
+                box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); flex:none; }
+  .brand h1{ font-size:22px; letter-spacing:.3px; }
+  .brand .sub{ font-size:11.5px; color:var(--text-faint); text-transform:uppercase; letter-spacing:1.1px;
+               font-weight:600; }
+  .tabs{ display:flex; gap:4px; background:var(--surface-2); padding:4px; border-radius:999px;
+         border:1px solid var(--border); }
+  .tab-btn{ border:none; background:transparent; color:var(--text-dim); padding:8px 16px; border-radius:999px;
+            font-size:13px; font-weight:600; cursor:pointer; transition:background .15s,color .15s; }
+  .tab-btn:hover{ color:var(--text); }
+  .tab-btn.active{ background:var(--accent); color:var(--accent-ink); }
+  .asof{ font-size:11.5px; color:var(--text-faint); white-space:nowrap; }
+
+  header.hero{ padding:28px 0 22px; }
+  header.hero p{ margin:6px 0 0; color:var(--text-dim); max-width:62ch; font-size:14.5px; }
+
+  /* ---------- summary tiles ---------- */
+  .tiles{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:18px 0 26px; }
+  .tile{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+         padding:16px 18px; box-shadow:var(--shadow); }
+  .tile .k{ font-size:10.5px; text-transform:uppercase; letter-spacing:1.1px; color:var(--text-faint);
+            font-weight:700; }
+  .tile .v{ font-family:var(--font-display); font-size:25px; font-weight:700; margin-top:4px;
+            line-height:1.15; }
+  .tile .d{ font-size:12px; color:var(--text-dim); margin-top:3px; }
+
+  section{ margin-top:8px; }
+
+  /* ---------- controls ---------- */
+  .controls{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:14px; }
+  .search{ position:relative; flex:1 1 220px; min-width:180px; }
+  .search input{ width:100%; background:var(--surface); border:1px solid var(--border);
+                 border-radius:var(--radius-md); padding:9px 12px 9px 32px; font-size:13.5px; color:var(--text);
+                 font-family:inherit; }
+  .search input:focus{ outline:2px solid var(--accent); outline-offset:-1px; }
+  .search svg{ position:absolute; left:10px; top:50%; transform:translateY(-50%); width:14px; height:14px;
+               color:var(--text-faint); }
+  .chipset{ display:flex; gap:6px; flex-wrap:wrap; }
+  .chip{ border:1px solid var(--border); background:var(--surface); color:var(--text-dim); font-size:12.5px;
+         font-weight:600; padding:7px 12px; border-radius:999px; cursor:pointer; transition:.15s; }
+  .chip:hover{ border-color:var(--border-strong); color:var(--text); }
+  .chip.active{ background:var(--text); color:var(--bg); border-color:var(--text); }
+  select.sortsel{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md);
+                  padding:8px 10px; font-size:12.5px; color:var(--text); font-family:inherit; font-weight:600; }
+
+  /* ---------- table ---------- */
+  .table-wrap{ overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius-lg);
+               background:var(--surface); box-shadow:var(--shadow); }
+  table{ border-collapse:collapse; width:100%; min-width:900px; }
+  thead th{ position:sticky; top:0; background:var(--surface-2); text-align:left; font-size:10.5px;
+            text-transform:uppercase; letter-spacing:.8px; color:var(--text-faint); font-weight:700;
+            padding:10px 12px; border-bottom:1px solid var(--border); white-space:nowrap; cursor:pointer;
+            user-select:none; }
+  thead th:hover{ color:var(--text); }
+  thead th.num-col, tbody td.num-col{ text-align:right; }
+  thead th.sorted{ color:var(--accent); }
+  tbody td{ padding:9px 12px; border-bottom:1px solid var(--border); font-size:13px; white-space:nowrap; }
+  tbody tr.prow{ cursor:pointer; transition:background .12s; }
+  tbody tr.prow:hover{ background:var(--surface-2); }
+  tbody tr.prow.open{ background:var(--surface-2); }
+  .pname{ font-weight:600; }
+  .psquad{ color:var(--text-dim); font-size:11.5px; }
+  .pos-badge{ display:inline-block; font-size:10px; font-weight:700; padding:2px 6px; border-radius:5px;
+              background:var(--chip-bg); color:var(--text-dim); letter-spacing:.3px; }
+  .ratio-badge{ display:inline-flex; align-items:center; gap:4px; font-size:11.5px; font-weight:700;
+                padding:3px 8px; border-radius:999px; }
+  .ratio-badge.bargain{ background:color-mix(in srgb, var(--win) 16%, transparent); color:var(--win); }
+  .ratio-badge.fair{ background:var(--chip-bg); color:var(--text-dim); }
+  .ratio-badge.rich{ background:color-mix(in srgb, var(--loss) 16%, transparent); color:var(--loss); }
+  .detail-row td{ background:var(--surface-2); padding:0; }
+  .detail{ padding:16px 20px 20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+           gap:16px; white-space:normal; }
+  .detail .blk .k{ font-size:10.5px; text-transform:uppercase; letter-spacing:.8px; color:var(--text-faint);
+                   font-weight:700; margin-bottom:6px; }
+  .detail .blk .row{ display:flex; justify-content:space-between; font-size:12.5px; padding:2px 0;
+                      color:var(--text-dim); }
+  .detail .blk .row b{ color:var(--text); font-weight:600; }
+  .detail .note{ font-size:11px; color:var(--text-faint); margin-top:6px; font-style:italic; }
+  .valuebar{ height:6px; border-radius:3px; background:var(--surface-3); overflow:hidden; margin-top:6px;
+             position:relative; }
+  .valuebar i{ position:absolute; top:0; bottom:0; width:2px; background:var(--text); }
+  .valuebar b{ display:block; height:100%; background:var(--accent-2); border-radius:3px; }
+
+  .empty{ padding:40px 20px; text-align:center; color:var(--text-faint); font-size:13.5px; }
+
+  /* ---------- fixtures ---------- */
+  .fx-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); gap:14px; }
+  .fx-card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+            box-shadow:var(--shadow); overflow:hidden; }
+  .fx-head{ padding:14px 16px 4px; display:flex; justify-content:space-between; align-items:baseline; }
+  .fx-date{ font-size:11px; color:var(--text-faint); font-weight:600; text-transform:uppercase;
+            letter-spacing:.6px; }
+  .fx-teams{ padding:6px 16px 14px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
+             gap:10px; }
+  .fx-team{ font-family:var(--font-display); font-weight:700; font-size:17px; line-height:1.15; }
+  .fx-team.away{ text-align:right; }
+  .fx-vs{ font-size:11px; color:var(--text-faint); font-weight:700; }
+  .fx-xg{ font-size:11px; color:var(--text-dim); margin-top:2px; font-weight:500; }
+  .oddsbar{ margin:0 16px 12px; height:26px; border-radius:7px; overflow:hidden; display:flex;
+            border:1px solid var(--border); }
+  .oddsbar div{ display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700;
+                color:#fff; min-width:0; }
+  .oddsbar .h{ background:var(--win); }
+  .oddsbar .d{ background:var(--draw); color:#1a1400; }
+  .oddsbar .a{ background:var(--loss); }
+  .oddslabels{ display:flex; justify-content:space-between; margin:-6px 16px 12px; font-size:10px;
+               color:var(--text-faint); font-weight:600; text-transform:uppercase; letter-spacing:.5px; }
+  .fx-toggle{ width:100%; border:none; border-top:1px solid var(--border); background:var(--surface-2);
+              color:var(--text-dim); font-size:12px; font-weight:600; padding:9px; cursor:pointer;
+              display:flex; align-items:center; justify-content:center; gap:6px; }
+  .fx-toggle:hover{ color:var(--text); }
+  .fx-toggle svg{ width:11px; height:11px; transition:transform .15s; }
+  .fx-toggle.open svg{ transform:rotate(180deg); }
+  .props{ display:none; padding:14px 16px 16px; border-top:1px solid var(--border); }
+  .props.show{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .props .side .st{ font-size:10.5px; text-transform:uppercase; letter-spacing:.8px; color:var(--text-faint);
+                     font-weight:700; margin-bottom:8px; }
+  .prop-row{ display:flex; align-items:center; gap:8px; padding:5px 0; }
+  .prop-row .pn{ font-size:12px; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis;
+                 white-space:nowrap; }
+  .prop-row .pp{ font-size:12px; font-weight:700; width:38px; text-align:right; color:var(--text); }
+  .prop-bar{ width:44px; height:5px; border-radius:3px; background:var(--surface-3); overflow:hidden; flex:none; }
+  .prop-bar b{ display:block; height:100%; background:var(--accent); border-radius:3px; }
+  .prop-legend{ font-size:10.5px; color:var(--text-faint); margin-top:8px; }
+
+  footer{ margin-top:44px; padding-top:18px; border-top:1px solid var(--border); font-size:11.5px;
+          color:var(--text-faint); line-height:1.7; }
+  footer b{ color:var(--text-dim); }
+
+  [hidden]{ display:none !important; }
+  @media (max-width:640px){
+    .brand h1{ font-size:19px; } .tile .v{ font-size:21px; }
+    .props.show{ grid-template-columns:1fr; }
+  }
+</style>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="mark"></span>
+      <div>
+        <h1>Matchday Edge</h1>
+      </div>
+      <span class="sub" id="leagueLabel">Premier League</span>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="players">Players</button>
+      <button class="tab-btn" data-tab="fixtures">Fixtures &amp; Odds</button>
+    </div>
+    <span class="asof" id="asofLabel"></span>
+  </div>
+</div>
+
+<div class="shell">
+  <header class="hero">
+    <p id="heroText">Season-to-date stats against the model's projections, next-match win probabilities, and
+      anytime goal/assist odds for the current Premier League squads.</p>
+  </header>
+
+  <div class="tiles" id="tiles"></div>
+
+  <section id="tab-players">
+    <div class="controls">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="searchInput" placeholder="Search player or squad&hellip;">
+      </div>
+      <div class="chipset" id="posChips"></div>
+      <select class="sortsel" id="sortSel">
+        <option value="min">Sort: Minutes</option>
+        <option value="gls">Sort: Goals</option>
+        <option value="ast">Sort: Assists</option>
+        <option value="npxg90">Sort: npxG/90</option>
+        <option value="xag90">Sort: xA/90</option>
+        <option value="ratio">Sort: Value gap</option>
+        <option value="predicted_eur">Sort: Predicted value</option>
+      </select>
+    </div>
+    <div class="table-wrap">
+      <table id="playerTable">
+        <thead>
+          <tr>
+            <th data-k="player">Player</th>
+            <th class="num-col" data-k="min">Min</th>
+            <th class="num-col" data-k="gls">Gls</th>
+            <th class="num-col" data-k="ast">Ast</th>
+            <th class="num-col" data-k="npxg90">npxG/90</th>
+            <th class="num-col" data-k="xag90">xA/90</th>
+            <th class="num-col" data-k="predicted_eur">Predicted value</th>
+            <th class="num-col" data-k="ratio">vs listed</th>
+          </tr>
+        </thead>
+        <tbody id="playerBody"></tbody>
+      </table>
+      <div class="empty" id="playerEmpty" hidden>No players match that search/filter.</div>
+    </div>
+  </section>
+
+  <section id="tab-fixtures" hidden>
+    <div class="fx-grid" id="fxGrid"></div>
+  </section>
+
+  <footer id="footerNotes"></footer>
+</div>
+
+<script id="site-data" type="application/json">__SITE_DATA_JSON__</script>
+<script>
+(function(){
+  "use strict";
+  var DATA = JSON.parse(document.getElementById('site-data').textContent);
+  var players = DATA.players, fixtures = DATA.fixtures, notes = DATA.notes;
+
+  document.getElementById('leagueLabel').textContent = DATA.league;
+  document.getElementById('asofLabel').textContent = 'Data as of ' + DATA.generated_asof;
+
+  // ---------- helpers ----------
+  function eur(v){
+    if(v==null) return '—';
+    if(v>=1e6) return '€' + (v/1e6).toFixed(1) + 'M';
+    if(v>=1e3) return '€' + (v/1e3).toFixed(0) + 'k';
+    return '€' + v.toFixed(0);
+  }
+  function num(v, d){ return v==null ? '—' : Number(v).toFixed(d==null?0:d); }
+  function pct(v){ return v==null ? '—' : Math.round(v*100) + '%'; }
+  function esc(s){ return (s==null?'':String(s)).replace(/[&<>]/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+
+  // ---------- tabs ----------
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  tabBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      tabBtns.forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active');
+      var t = b.getAttribute('data-tab');
+      document.getElementById('tab-players').hidden = t!=='players';
+      document.getElementById('tab-fixtures').hidden = t!=='fixtures';
+    });
+  });
+
+  // ---------- summary tiles ----------
+  (function(){
+    var tiles = document.getElementById('tiles');
+    var topScorer = players.slice().sort(function(a,b){return (b.current.gls||0)-(a.current.gls||0);})[0];
+    var withVal = players.filter(function(p){return p.value;});
+    var bargain = withVal.slice().sort(function(a,b){return (b.value.ratio||0)-(a.value.ratio||0);})[0];
+    var nextFx = fixtures.slice().sort(function(a,b){return a.date<b.date?-1:1;})[0];
+    var items = [];
+    if(topScorer) items.push({k:'Top scorer', v:topScorer.player, d:topScorer.squad + ' — ' + num(topScorer.current.gls) + ' goals in ' + num(topScorer.current.min) + ' min'});
+    if(bargain) items.push({k:'Biggest value gap', v:bargain.player, d:'Model: ' + eur(bargain.value.predicted_eur) + ' vs listed ' + eur(bargain.value.listed_value_eur)});
+    if(nextFx) items.push({k:'Next up', v: nextFx.home.replace(' FC','').replace(' AFC','') + ' vs ' + nextFx.away.replace(' FC','').replace(' AFC',''), d: nextFx.date.slice(0,10) + ' — ' + pct(nextFx.p_home_win) + ' / ' + pct(nextFx.p_draw) + ' / ' + pct(nextFx.p_away_win)});
+    items.push({k:'Coverage', v: players.length + ' players', d: fixtures.length + ' upcoming fixtures modelled'});
+    tiles.innerHTML = items.map(function(it){
+      return '<div class="tile"><div class="k">'+esc(it.k)+'</div><div class="v">'+esc(it.v)+'</div><div class="d">'+esc(it.d)+'</div></div>';
+    }).join('');
+  })();
+
+  // ---------- players table ----------
+  var posChips = document.getElementById('posChips');
+  var POS = ['ALL','FW','MF','DF','GK'];
+  posChips.innerHTML = POS.map(function(p,i){return '<button class="chip'+(i===0?' active':'')+'" data-pos="'+p+'">'+p+'</button>';}).join('');
+  var state = { q:'', pos:'ALL', sort:'min', dir:-1, openKey:null };
+
+  posChips.addEventListener('click', function(e){
+    var b = e.target.closest('.chip'); if(!b) return;
+    posChips.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});
+    b.classList.add('active');
+    state.pos = b.getAttribute('data-pos');
+    renderPlayers();
+  });
+  document.getElementById('searchInput').addEventListener('input', function(e){
+    state.q = e.target.value.trim().toLowerCase(); renderPlayers();
+  });
+  document.getElementById('sortSel').addEventListener('change', function(e){
+    state.sort = e.target.value; renderPlayers();
+  });
+  document.querySelectorAll('#playerTable thead th[data-k]').forEach(function(th){
+    th.addEventListener('click', function(){
+      var k = th.getAttribute('data-k');
+      if(state.sort===k) state.dir *= -1; else { state.sort = k; state.dir = -1; }
+      document.getElementById('sortSel').value = ['min','gls','ast','npxg90','xag90','ratio','predicted_eur'].indexOf(k)>=0 ? k : document.getElementById('sortSel').value;
+      renderPlayers();
+    });
+  });
+
+  function sortVal(p, k){
+    if(k==='player') return p.player.toLowerCase();
+    if(k==='min'||k==='gls'||k==='ast'||k==='npxg90'||k==='xag90') return p.current[k]==null?-1:p.current[k];
+    if(k==='ratio') return p.value ? p.value.ratio : -1;
+    if(k==='predicted_eur') return p.value ? p.value.predicted_eur : -1;
+    return 0;
+  }
+
+  function playerRowHtml(p, key){
+    var v = p.value;
+    var ratioClass = 'fair', ratioTxt = '—';
+    if(v && v.ratio!=null){
+      ratioTxt = (v.ratio>=1?'+':'') + Math.round((v.ratio-1)*100) + '%';
+      if(v.ratio>=1.15) ratioClass='bargain'; else if(v.ratio<=0.85) ratioClass='rich';
+    }
+    return (
+      '<tr class="prow'+(state.openKey===key?' open':'')+'" data-key="'+key+'">' +
+        '<td><div class="pname">'+esc(p.player)+' <span class="pos-badge">'+esc(p.pos)+'</span></div><div class="psquad">'+esc(p.squad)+'</div></td>' +
+        '<td class="num num-col">'+num(p.current.min)+'</td>' +
+        '<td class="num num-col">'+num(p.current.gls)+'</td>' +
+        '<td class="num num-col">'+num(p.current.ast)+'</td>' +
+        '<td class="num num-col">'+num(p.current.npxg90,2)+'</td>' +
+        '<td class="num num-col">'+num(p.current.xag90,2)+'</td>' +
+        '<td class="num num-col">'+(v?eur(v.predicted_eur):'—')+'</td>' +
+        '<td class="num-col"><span class="ratio-badge '+ratioClass+'">'+ratioTxt+'</span></td>' +
+      '</tr>'
+    );
+  }
+
+  function detailHtml(p){
+    var ls = p.last_season, pj = p.projected_38, v = p.value;
+    var blocks = [];
+    blocks.push('<div class="blk"><div class="k">This season</div>' +
+      '<div class="row"><span>Starts / apps</span><b>'+num(p.current.starts)+' / '+num(p.current.mp)+'</b></div>' +
+      '<div class="row"><span>Shots (on target)</span><b>'+num(p.current.shots)+' ('+num(p.current.sot)+')</b></div>' +
+      '<div class="row"><span>npxG / xA (total)</span><b>'+num(p.current.npxg,2)+' / '+num(p.current.xag,2)+'</b></div></div>');
+    if(ls){
+      blocks.push('<div class="blk"><div class="k">Last season (2025-26)</div>' +
+        '<div class="row"><span>Minutes</span><b>'+num(ls.min)+'</b></div>' +
+        '<div class="row"><span>Goals / Assists</span><b>'+num(ls.gls)+' / '+num(ls.ast)+'</b></div>' +
+        '<div class="row"><span>npxG / xA</span><b>'+num(ls.npxg,2)+' / '+num(ls.xag,2)+'</b></div></div>');
+    }
+    if(pj){
+      blocks.push('<div class="blk"><div class="k">38-game pace</div>' +
+        '<div class="row"><span>Projected minutes</span><b>'+num(pj.proj_min)+'</b></div>' +
+        '<div class="row"><span>Goals / Assists</span><b>'+num(pj.gls,1)+' / '+num(pj.ast,1)+'</b></div>' +
+        '<div class="note">Pace projection from current per-90 rate — not a trained model.</div></div>');
+    }
+    if(v){
+      var pct2 = Math.max(0, Math.min(100, (v.predicted_eur / Math.max(v.predicted_eur, v.listed_value_eur, 1)) * 100));
+      var lo = Math.min(v.predicted_eur, v.listed_value_eur), hi = Math.max(v.predicted_eur, v.listed_value_eur);
+      var span = hi>0?hi:1;
+      blocks.push('<div class="blk"><div class="k">Market value (model, 2025-26)</div>' +
+        '<div class="row"><span>Predicted</span><b>'+eur(v.predicted_eur)+'</b></div>' +
+        '<div class="row"><span>Listed</span><b>'+eur(v.listed_value_eur)+'</b></div>' +
+        '<div class="valuebar"><b style="width:'+((v.predicted_eur/span)*100).toFixed(0)+'%"></b><i style="left:'+((v.listed_value_eur/span)*100).toFixed(0)+'%"></i></div>' +
+        '<div class="note">Bar = model prediction; line = listed value.</div></div>');
+    }
+    return '<div class="detail">'+blocks.join('')+'</div>';
+  }
+
+  function renderPlayers(){
+    var list = players.filter(function(p){
+      if(state.pos!=='ALL' && p.pos.indexOf(state.pos)<0) return false;
+      if(state.q && (p.player.toLowerCase().indexOf(state.q)<0 && p.squad.toLowerCase().indexOf(state.q)<0)) return false;
+      return true;
+    });
+    list.sort(function(a,b){
+      var av = sortVal(a,state.sort), bv = sortVal(b,state.sort);
+      if(typeof av==='string') return av<bv?-1*state.dir:av>bv?1*state.dir:0;
+      return (av-bv) * (state.dir);
+    });
+    document.querySelectorAll('#playerTable thead th').forEach(function(th){th.classList.remove('sorted');});
+    var activeTh = document.querySelector('#playerTable thead th[data-k="'+state.sort+'"]');
+    if(activeTh) activeTh.classList.add('sorted');
+
+    var body = document.getElementById('playerBody');
+    document.getElementById('playerEmpty').hidden = list.length>0;
+    var html = '';
+    list.forEach(function(p, i){
+      var key = p.player+'|'+p.team_key;
+      html += playerRowHtml(p, key);
+      if(state.openKey===key){
+        html += '<tr class="detail-row"><td colspan="8">'+detailHtml(p)+'</td></tr>';
+      }
+    });
+    body.innerHTML = html;
+    body.querySelectorAll('tr.prow').forEach(function(tr){
+      tr.addEventListener('click', function(){
+        var key = tr.getAttribute('data-key');
+        state.openKey = state.openKey===key ? null : key;
+        renderPlayers();
+      });
+    });
+  }
+  renderPlayers();
+
+  // ---------- fixtures ----------
+  function teamShort(n){ return n.replace(' FC','').replace(' AFC','').replace(' United',' Utd'); }
+
+  function propRow(pr){
+    return '<div class="prop-row"><span class="pn">'+esc(pr.player)+'</span>' +
+      '<div class="prop-bar"><b style="width:'+Math.min(100,(pr.p_anytime_goal||0)*100)+'%"></b></div>' +
+      '<span class="pp">'+pct(pr.p_anytime_goal)+'</span></div>';
+  }
+
+  function fxCardHtml(fx, idx){
+    var hp = Math.round(fx.p_home_win*100), dp = Math.round(fx.p_draw*100), ap = 100-hp-dp;
+    var homeTop = (fx.home_props||[]).slice(0,5);
+    var awayTop = (fx.away_props||[]).slice(0,5);
+    return (
+      '<div class="fx-card">' +
+        '<div class="fx-head"><span class="fx-date">'+esc(fx.date.slice(0,10))+'</span></div>' +
+        '<div class="fx-teams">' +
+          '<div class="fx-team home">'+esc(teamShort(fx.home))+'<div class="fx-xg">xG '+num(fx.exp_goals_home,2)+'</div></div>' +
+          '<div class="fx-vs">vs</div>' +
+          '<div class="fx-team away">'+esc(teamShort(fx.away))+'<div class="fx-xg">xG '+num(fx.exp_goals_away,2)+'</div></div>' +
+        '</div>' +
+        '<div class="oddsbar">' +
+          '<div class="h" style="width:'+hp+'%">'+(hp>=10?hp+'%':'')+'</div>' +
+          '<div class="d" style="width:'+dp+'%">'+(dp>=10?dp+'%':'')+'</div>' +
+          '<div class="a" style="width:'+ap+'%">'+(ap>=10?ap+'%':'')+'</div>' +
+        '</div>' +
+        '<div class="oddslabels"><span>Home win</span><span>Draw</span><span>Away win</span></div>' +
+        '<button class="fx-toggle" data-idx="'+idx+'">Anytime goalscorer odds ' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>' +
+        '<div class="props" id="props-'+idx+'">' +
+          '<div class="side"><div class="st">'+esc(teamShort(fx.home))+'</div>' + homeTop.map(propRow).join('') + '</div>' +
+          '<div class="side"><div class="st">'+esc(teamShort(fx.away))+'</div>' + awayTop.map(propRow).join('') + '</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  (function(){
+    var grid = document.getElementById('fxGrid');
+    var sorted = fixtures.slice().sort(function(a,b){return a.date<b.date?-1:1;});
+    grid.innerHTML = sorted.map(fxCardHtml).join('');
+    grid.querySelectorAll('.fx-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var idx = btn.getAttribute('data-idx');
+        var panel = document.getElementById('props-'+idx);
+        var open = panel.classList.toggle('show');
+        btn.classList.toggle('open', open);
+      });
+    });
+  })();
+
+  // ---------- footer ----------
+  document.getElementById('footerNotes').innerHTML =
+    '<div><b>Current stats</b> — '+esc(notes.current_stats)+'</div>' +
+    '<div><b>Value model</b> — '+esc(notes.value)+'</div>' +
+    '<div><b>Pace projection</b> — '+esc(notes.projected_38)+'</div>' +
+    '<div><b>Match odds</b> — '+esc(notes.match_odds)+'</div>' +
+    '<div><b>Player props</b> — '+esc(notes.player_props)+'</div>';
+})();
+</script>
