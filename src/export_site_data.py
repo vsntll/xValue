@@ -23,6 +23,7 @@ import json
 import sys
 from pathlib import Path
 
+import ftfy
 import numpy as np
 import pandas as pd
 
@@ -42,6 +43,17 @@ def _num(x):
     if x is None or (isinstance(x, float) and np.isnan(x)):
         return None
     return round(float(x), 3)
+
+
+def _fix_names(df: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
+    """The processed CSVs mix latin-1 rows with rows that were actually utf-8 but
+    got mis-decoded as latin-1 by an earlier scraper run (different names show up
+    broken in different, incompatible ways). Reading as latin-1 fixes the first
+    group; ftfy detects and repairs the second group and leaves the first alone."""
+    for c in cols:
+        if c in df.columns:
+            df[c] = df[c].map(lambda s: ftfy.fix_text(s) if isinstance(s, str) else s)
+    return df
 
 
 def load_players(src_league: str) -> pd.DataFrame:
@@ -67,6 +79,7 @@ def load_players(src_league: str) -> pd.DataFrame:
         "understat__np_xg": "us_npxg", "understat__xa": "us_xa", "understat__xg": "us_xg",
     }
     df = df[list(keep)].rename(columns=keep)
+    df = _fix_names(df, ["player", "squad"])
     for c in ["mp", "starts", "min", "min_pct", "gls", "ast", "npg", "cy", "cr", "shots",
               "sot", "xg", "npxg", "xag", "gls90", "ast90", "xg90", "npxg90", "xag90",
               "age", "market_value_eur", "us_npxg", "us_xa", "us_xg"]:
@@ -85,6 +98,7 @@ def load_players(src_league: str) -> pd.DataFrame:
 def load_value_predictions(src_league: str) -> pd.DataFrame:
     v = pd.read_csv(PROC / "value_model_predictions.csv", encoding="latin-1")
     v = v[(v["src_league"] == src_league) & (v["season"] == "2025-26")].copy()
+    v = _fix_names(v, ["Player", "Squad"])  # must match load_players()'s names for the join in build_players_payload
     v["team_key"] = v["Squad"].map(normalize_team)
     return v[["Player", "team_key", "predicted_eur", "market_value_eur", "ratio"]].rename(
         columns={"Player": "player", "market_value_eur": "listed_value_eur"})
@@ -187,6 +201,7 @@ def load_upcoming_fixtures(asof: pd.Timestamp, league_name: str) -> pd.DataFrame
     # also latin-1 (accented ESPN team names mojibake under the utf-8 default)
     live = pd.read_csv(PROC / "live_matches_2026-27.csv", encoding="latin-1")
     live = live[live["league"] == league_name].copy()
+    live = _fix_names(live, ["HomeTeam", "AwayTeam"])
     live["Date"] = pd.to_datetime(live["Date"], errors="coerce")
     scheduled = {"SCHEDULED", "TIMED"}
     live = live[live["status"].isin(scheduled) & live["Date"].notna() & (live["Date"] >= asof)]
@@ -213,6 +228,7 @@ def next_fixture_per_team(live: pd.DataFrame) -> pd.DataFrame:
 
 def prep_dc_matches() -> pd.DataFrame:
     m = pd.read_csv(PROC / "matches_all.csv", encoding="latin-1")
+    m = _fix_names(m, ["HomeTeam", "AwayTeam"])  # a mis-decoded name can normalize to the wrong team_key
     m["Date"] = pd.to_datetime(m["Date"], errors="coerce")
     m = m.dropna(subset=["Date", "FTHG", "FTAG"])
     m["h"] = m["HomeTeam"].map(normalize_team)
@@ -255,6 +271,7 @@ COMPLETE_SEASONS = {"2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025
 def load_all_matches() -> pd.DataFrame:
     # also latin-1 (accented competition names like "Supercopa de España" mojibake)
     m = pd.read_csv(PROC / "matches_all.csv", encoding="latin-1")
+    m = _fix_names(m, ["HomeTeam", "AwayTeam", "comp"])
     m["Date"] = pd.to_datetime(m["Date"], errors="coerce")
     m = m.dropna(subset=["Date", "FTHG", "FTAG"])
     m["h"] = m["HomeTeam"].map(normalize_team)
@@ -265,6 +282,12 @@ def load_all_matches() -> pd.DataFrame:
 
 def build_teams_list() -> list[dict]:
     sq = pd.read_csv(PROC / "squad_season_features.csv", encoding="latin-1")
+    sq = _fix_names(sq, ["team"])
+    # recompute team_key from the now-fixed name rather than trust the CSV's own
+    # team_key column - that one was normalized upstream from the raw (possibly
+    # still-mojibake) name, and would then disagree with every team_key computed
+    # in this script from matches_all.csv / fbref_player_season_stats.csv
+    sq["team_key"] = sq["team"].map(normalize_team)
     sq = sq[sq["src_league"].isin(LEAGUES)].copy()
     sq["league"] = sq["src_league"].map(LEAGUES)
     latest = sq.sort_values("season").groupby(["team_key", "league"], as_index=False).last()

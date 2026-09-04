@@ -68,11 +68,24 @@ to cover another top-5 league already in the underlying data.
 
 Watch for: `fbref_player_season_stats.csv`, `value_model_predictions.csv`,
 `live_matches_2026-27.csv`, `matches_all.csv` and `squad_season_features.csv`
-are all **latin-1**, not utf-8 (accented player/team/competition names mojibake
-under the default encoding - e.g. "Supercopa de España" in `matches_all.csv`'s
-`comp` column). Also: current-season (2026-27) `Age` is unpopulated upstream
-for every row - `build_players_payload` falls back to last season's age + 1;
-players with no 2025-26 record (new signings, debutants) still show no age.
+are read as **latin-1**, not utf-8 (accented names mojibake under the default
+encoding - e.g. "Supercopa de España" in `matches_all.csv`'s `comp` column).
+That alone isn't quite enough, though: some *individual rows* within these same
+files are actually utf-8 that a different, earlier scraper run mis-decoded as
+latin-1 before writing them back out - reading the whole file as latin-1 fixes
+the majority but doubly-mangles those rows the other way (e.g. a name with "ć"
+or "š" survives as two garbage characters instead of one). `_fix_names()` runs
+`ftfy.fix_text()` over every name/team/competition column after loading -
+it detects and repairs exactly that double-encoding mismatch and leaves
+already-correct text untouched. This matters for more than display: an
+unrepaired name normalizes (`normalize_team`) to the *wrong* `team_key`,
+which would silently split one real team's matches/roster/standings row across
+two different keys - so `build_teams_list` also recomputes `team_key` locally
+from the fixed name rather than trusting `squad_season_features.csv`'s own
+(possibly pre-fix) `team_key` column. Also: current-season (2026-27) `Age` is
+unpopulated upstream for every row - `build_players_payload` falls back to last
+season's age + 1; players with no 2025-26 record (new signings, debutants)
+still show no age.
 
 Run: `python src/export_site_data.py` (regenerates `site/data.json`), then splice
 it into `site/template.html` to produce `site/index.html` (the `__SITE_DATA_JSON__`

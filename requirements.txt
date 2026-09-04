@@ -13,3 +13,8 @@ nodriver>=0.50
 # scrapers: xG/xAG, progressive passing, tackles, possession, GCA. big-5,
 # 2020-21..2022-23. src/pull_wfr_advanced.py. Reads .rds.
 pyreadr>=0.5
+
+# processed CSVs mix latin-1 and (mis-decoded-as-latin-1) utf-8 rows across
+# different scraper runs - ftfy repairs the double-encoded ones and leaves
+# already-correct text untouched. src/export_site_data.py.
+ftfy>=6.1
