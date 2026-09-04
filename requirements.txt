@@ -27,3 +27,6 @@ curl_cffi>=0.7          # browser-impersonation fallback used while probing sour
 # CSVs are utf-8; ftfy is a verified no-op on correct text, in case a future
 # scraper run reintroduces a mis-decoded row).
 ftfy>=6.1
+
+streamlit>=1.38          # src/dashboard.py - run with: streamlit run src/dashboard.py
+plotly>=5.22              # charts in the dashboard
