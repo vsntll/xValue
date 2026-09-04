@@ -112,6 +112,7 @@ def build() -> pd.DataFrame:
             "season": seas, "comp": r["comp"], "competition_type": r["competition_type"],
             "Date": r["Date"], "HomeTeam": r["HomeTeam"], "AwayTeam": r["AwayTeam"],
             "FTR": r["FTR"], "FTHG": r["FTHG"], "FTAG": r["FTAG"],
+            "HxG": r["HxG"], "AxG": r["AxG"],
             "elo_h": elo[h], "elo_a": elo[a], "elo_diff": elo[h] - elo[a] + HFA,
             "xelo_h": xelo[h], "xelo_a": xelo[a], "xelo_diff": xelo[h] - xelo[a] + HFA,
             "fh_pts": _roll_mean((h, "home"), 0), "fh_gf": _roll_mean((h, "home"), 1),

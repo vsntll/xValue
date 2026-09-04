@@ -53,10 +53,14 @@ def _order(clf, p):
     return p[:, idx]
 
 
-_H_FEATS = ["elo_diff", "xelo_diff", "elo_exp_h", "fh_xgf", "fa_xga", "fh_gf",
-            "fa_ga", "all_h_xgd", "value_log_ratio", "h_att", "promoted_a"]
-_A_FEATS = ["elo_diff", "xelo_diff", "elo_exp_h", "fa_xgf", "fh_xga", "fa_gf",
-            "fh_ga", "all_a_xgd", "value_log_ratio", "a_att", "promoted_h"]
+_H_FEATS = ["elo_diff", "xelo_diff", "elo_exp_h", "xelo_exp_h",
+            "fh_xgf", "fa_xga", "fh_gf", "fa_ga", "fh_pts", "fa_pts",
+            "all_h_xgd", "all_a_xgd", "all_h_pts", "value_log_ratio",
+            "h_att", "a_att", "promoted_h", "promoted_a", "days_rest_h", "h2h_h_pts"]
+_A_FEATS = ["elo_diff", "xelo_diff", "elo_exp_h", "xelo_exp_h",
+            "fa_xgf", "fh_xga", "fa_gf", "fh_ga", "fa_pts", "fh_pts",
+            "all_a_xgd", "all_h_xgd", "all_a_pts", "value_log_ratio",
+            "a_att", "h_att", "promoted_a", "promoted_h", "days_rest_a", "h2h_h_pts"]
 MAXG = 8
 
 
@@ -171,20 +175,39 @@ def main() -> None:
     print(f"{'poisson':14}{accuracy_score(yte, LABELS_pred(preds['poisson'])):7.3f}"
           f"{_ll(yte, preds['poisson']):10.3f}")
 
-    blocks_va = [preds_va["poisson"], preds_va["logreg"]]
-    blocks_te = [preds["poisson"], preds["logreg"]]
+    # a second Poisson fitted to xG (a smoother scoring-rate estimate), blended in
+    if "HxG" in tr.columns:
+        trx = tr.dropna(subset=["HxG", "AxG"])
+        wtx = 0.5 ** ((trx["Date"].max() - trx["Date"]).dt.days / 730).to_numpy()
+        yhx, yax = trx["HxG"].astype(float), trx["AxG"].astype(float)
+        preds["poisson"] = 0.6 * preds["poisson"] + 0.4 * poisson_probs(
+            trx, te, yhx, yax, rho=rho, alpha=alpha, w=wtx)
+        preds_va["poisson"] = 0.6 * preds_va["poisson"] + 0.4 * poisson_probs(
+            trx, va, yhx, yax, rho=rho, alpha=alpha, w=wtx)
+        print(f"{'poisson+xg':14}{accuracy_score(yte, LABELS_pred(preds['poisson'])):7.3f}"
+              f"{_ll(yte, preds['poisson']):10.3f}")
+
+    # geometric blend of poisson + logreg, weight tuned on val (keeps if it helps)
+    def _gblend(ps, w):
+        z = np.exp(sum(wi * np.log(np.clip(p, 1e-6, 1)) for wi, p in zip(w, ps)))
+        return z / z.sum(1, keepdims=True)
+    from scipy.optimize import minimize_scalar
+    a = minimize_scalar(lambda a: _ll(yva, _gblend(
+        [preds_va["poisson"], preds_va["logreg"]], [a, 1 - a])),
+        bounds=(0.3, 1.0), method="bounded").x
+    pf_va = _gblend([preds_va["poisson"], preds_va["logreg"]], [a, 1 - a])
+    pf = _gblend([preds["poisson"], preds["logreg"]], [a, 1 - a])
+    print(f"{'blend(a=%.2f)' % a:14}{accuracy_score(yte, LABELS_pred(pf)):7.3f}{_ll(yte, pf):10.3f}")
+
     if args.hybrid and {"mkt_pA", "mkt_pD", "mkt_pH"}.issubset(df.columns):
-        mk_va = va[["mkt_pA", "mkt_pD", "mkt_pH"]].to_numpy()
-        mk_te = te[["mkt_pA", "mkt_pD", "mkt_pH"]].to_numpy()
-        # rows with no odds (rare in leagues) fall back to the poisson prob
-        mk_va = np.where(np.isnan(mk_va), preds_va["poisson"], mk_va)
-        mk_te = np.where(np.isnan(mk_te), preds["poisson"], mk_te)
-        blocks_va.append(mk_va)
-        blocks_te.append(mk_te)
-    meta = LogisticRegression(max_iter=3000, C=0.5)
-    meta.fit(np.column_stack(blocks_va), yva)
-    pf = _order(meta, meta.predict_proba(np.column_stack(blocks_te)))
-    print(f"{'blend':14}{accuracy_score(yte, LABELS_pred(pf)):7.3f}{_ll(yte, pf):10.3f}")
+        mk_va = np.where(np.isnan(va[["mkt_pA", "mkt_pD", "mkt_pH"]].to_numpy()),
+                         pf_va, va[["mkt_pA", "mkt_pD", "mkt_pH"]].to_numpy())
+        mk_te = np.where(np.isnan(te[["mkt_pA", "mkt_pD", "mkt_pH"]].to_numpy()),
+                         pf, te[["mkt_pA", "mkt_pD", "mkt_pH"]].to_numpy())
+        b = minimize_scalar(lambda b: _ll(yva, _gblend([mk_va, pf_va], [b, 1 - b])),
+                            bounds=(0.3, 1.0), method="bounded").x
+        pf = _gblend([mk_te, pf], [b, 1 - b])
+        print(f"{'hybrid(b=%.2f)' % b:14}{accuracy_score(yte, LABELS_pred(pf)):7.3f}{_ll(yte, pf):10.3f}")
 
     bp = _book(df)
     if bp is not None:
@@ -196,8 +219,10 @@ def main() -> None:
         print(f"{'bookmaker':14}{accuracy_score(j['FTR'], LABELS_pred(pb)):7.3f}"
               f"{_ll(j['FTR'], pb):10.3f}   ({len(j)}/{len(te)})")
 
+    # pure output = the best single model (poisson+xg); hybrid = the market blend
+    final = pf if args.hybrid else preds["poisson"]
     out = te[["season", "comp", "Date", "HomeTeam", "AwayTeam", "FTR"]].copy()
-    out[["p_away", "p_draw", "p_home"]] = pf.round(4)
+    out[["p_away", "p_draw", "p_home"]] = np.round(final, 4)
     name = "outcome_model_predictions_hybrid.csv" if args.hybrid else "outcome_model_predictions.csv"
     out.to_csv(PROC / name, index=False)
     print(f"\nwrote {PROC / name}")
