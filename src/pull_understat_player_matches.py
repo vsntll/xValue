@@ -32,6 +32,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 import pandas as pd  # noqa: E402
 
+from fbref_common import current_season  # noqa: E402
 from live.schema import deaccent  # noqa: E402
 
 PROCESSED = PROJECT_ROOT / "data" / "processed"
@@ -78,6 +79,7 @@ def main() -> None:
     ap.add_argument("--force", action="store_true", help="re-pull seasons already in the output file")
     args = ap.parse_args()
 
+    live_season = current_season()
     have = set()
     prior = None
     if OUT.exists() and not args.force:
@@ -88,7 +90,9 @@ def main() -> None:
     t0 = time.time()
     for code, key in LEAGUE_KEY.items():
         for season in args.seasons:
-            if (code, season) in have:
+            # a completed season never changes once pulled, but the season in
+            # progress gains new matches every week - always re-pull that one
+            if (code, season) in have and season != live_season:
                 print(f"  {code} {season}: already have it, skipping (--force to redo)")
                 continue
             try:
