@@ -4,9 +4,13 @@
 
 | | value model | outcome (pure) | outcome (hybrid) |
 | --- | --- | --- | --- |
-| metric | R²(log) **0.835**, MAE **€6.2M**, within-2x **84%**, medAPE 27% | log-loss **0.990**, acc **0.523** | log-loss **0.977**, acc **0.532** |
+| metric | R²(log) **0.87**, MAE **€5.8M**, within-2x **89%**, medAPE 27% | log-loss **0.988**, acc **0.523** | log-loss **0.975**, acc **0.529** |
 | v1 was | 0.70 / €9.1M / 68% | 1.014 / 0.511 | — |
 | reference | — | Bet365 closing 0.973 / 0.537 | (uses market opening odds as a feature) |
+
+Trajectory: value R²(log) 0.70 → 0.82 (prev-value) → 0.835 (contract/minutes) →
+**0.87** (prev-season club value + xG-share). Outcome 1.014 → 0.997 (Elo) → 0.990
+(Poisson-Skellam) → **0.988** (+ xG-Poisson). Hybrid **0.975** ≈ bookmaker.
 
 "Hybrid" (`train_outcome_model.py --hybrid`) blends market-consensus **opening**
 odds into the stack - it beats the opening line and lands ~level with the

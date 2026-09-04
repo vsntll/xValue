@@ -24,8 +24,8 @@ Two models over a shared feature layer (see `merged_predictor_architecture.png`)
 4. 🔨 Name resolution across sources (alias map in `live/schema.py`, ~90%)
 5. ✅ **Match table** — `build_matches_all.py` → `matches_all.csv` (9.1k, xG 75%)
 6. ✅ **Squad rollup** — `build_squad_features.py`
-7. ✅ **Value regression** — `train_value_model.py` (R²(log) 0.82)
-8. ✅ **Outcome classifier** — `train_outcome_model.py` (log-loss 0.99 vs book 0.97)
+7. ✅ **Value regression** — `train_value_model.py` (R²(log) 0.87)
+8. ✅ **Outcome classifier** — `train_outcome_model.py` (0.988 pure, 0.975 hybrid vs book 0.973)
 
 See `docs/models.md` for model detail.
 
