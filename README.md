@@ -8,22 +8,26 @@ Two models over a shared feature layer (see `merged_predictor_architecture.png`)
 
 ## Data sources
 
-| Source | What | Used by |
+| Source | What | Script |
 | --- | --- | --- |
-| football-data.co.uk | Match archive CSVs (E0, D1, SP1) | Match features |
-| FBref | Season player stats + per-match starting XIs | Player features, squad rollup |
-| Transfermarkt | Market value per player per season | Value model target |
+| football-data.co.uk | league match archive (E0/D1/SP1), 2020-26 | `pull_match_archive.py` |
+| FBref (nodriver) | player season stats, all-comps team match logs | `pull_fbref_*.py` |
+| Understat | per-match + per-player xG, 3 leagues, 2020-now | `pull_understat.py` |
+| ESPN / FotMob / football-data.org | current season + cup stats/xG | `pull_live.py`, `src/live/` |
+| worldfootballR mirror | advanced player stats (2020-22), Transfermarkt values (2020-23) | `pull_wfr_advanced.py`, `pull_transfermarkt.py` |
 
 ## Pipeline steps
 
-1. **Match archive** — `src/pull_match_archive.py` → `data/processed/match_features.csv`
-2. Player stats + lineups (FBref)
-3. Market values (Transfermarkt)
-4. Name resolution across sources
-5. Build the three feature tables
-6. Squad rollup
-7. Train value regression
-8. Train outcome classifier
+1. ✅ **Match archive** — `pull_match_archive.py`
+2. ✅ **Player stats** — `fbref_player_season_stats.csv` (11k players, xG, TM value)
+3. 🔨 **Market values** — mirror gives 2020-23; recent seasons blocked
+4. ⬜ Name resolution across sources (partial: alias map in `live/schema.py`)
+5. 🔨 **Match table** — `build_matches_all.py` → `matches_all.csv` (9.1k matches, xG 75%)
+6. ⬜ Squad rollup
+7. ⬜ Train value regression
+8. ⬜ Train outcome classifier
+
+See `docs/` for per-source detail.
 
 ## Setup
 
