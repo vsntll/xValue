@@ -10,11 +10,11 @@
 
 Trajectory: value R²(log) 0.70 → 0.82 (prev-value) → 0.835 (contract/minutes) →
 0.87 (prev-season club value + xG-share) → 0.88 (name-resolution, coverage
-81 → 95%) → 0.90 (`value_history.csv`: big-5 mirror back to 2015 + cross-league;
-4-model stack + spline recalibration) → **0.89** (goalkeepers folded in and the
-test set widened to include transferred players carried across on a stale value -
-a more representative number over a now-complete population). Outcome 1.014 →
-0.997 → 0.990 → 0.988 → **0.978** (cleaner team keys). Hybrid **0.975** ≈ bookmaker.
+81 → 95%) → 0.90 (`value_history.csv`: big-5 mirror back to 2015 + cross-league)
+→ **0.89** (goalkeepers folded in, test set widened to transferred players, and a
+direct + change-from-last-value blend with a €220M cap that fixes the elite tail
+at a ~0.005 cost to overall R²). Outcome 1.014 → 0.997 → 0.990 → 0.988 → **0.978**
+(cleaner team keys). Hybrid **0.975** ≈ bookmaker.
 
 The value model splits cleanly by whether a prior-season value exists:
 **R²(log) 0.93** for the 77% that have one, **0.72** for cold-start arrivals from
@@ -22,6 +22,15 @@ outside the big-5 (promoted-club squads, Eredivisie/Primeira/Championship
 signings, academy graduates). Keepers score **0.88**. Closing the cold-start gap -
 and pushing past 0.90 - needs data we don't have: lower-league value history,
 transfer fees, or salaries.
+
+**The ceiling and the high end**: Transfermarkt caps listings near **€220M**, so
+predictions are clipped there in log space and the elite gravitate toward it
+(2025-26: Yamal €200M→€220M, Haaland €200M→€209M, Bellingham €130M→€139M).
+`medAPE` for the **€100M+ band is 12%** (was ~30-40% before — the trees squashed
+the tail toward the mean). Mid-range predictions carry a **median bias of ~4%**
+(pred/listed 1.04) but individual scatter stays ~24% — that's roughly how much a
+crowd-sourced value moves between updates, and the season stats don't explain the
+revisions, so "every mid-range player within 10%" is not reachable from this data.
 
 **Coverage guarantee**: `parse_fbref_player_stats.py` gives every player with
 minutes a `market_value_eur` - a real feed value, else the player's most recent
@@ -59,12 +68,16 @@ Predicts a player's market value from his season + his value history.
 - **Target**: `log1p(market_value_eur)`. **Split**: train 2020-24, test 2024-26.
   Fit + eval only on real values (peer-median imputations excluded); age falls
   back to (season year - birth year) when FBref leaves it blank early in a season.
-- **Model**: a ridge stack over four base learners (two HGB fits, ExtraTrees,
-  ridge), then a monotone cubic-spline recalibration on OOF predictions to undo
-  the trees' regression-to-the-mean squeeze.
-- **Result**: R2(log) **0.89**, MAE **EUR4.9M**, medAPE **23%**, within-2x
-  **91%** (0.93 with a prior value, 0.72 cold-start, 0.88 keepers). Still ~0.3-0.5x
-  on the EUR150M+ tail (Mbappe: no in-window prev) - ~15 rows, barely moves R².
+- **Model**: two ridge stacks (each over two HGB fits + ExtraTrees + ridge) -
+  one predicts `log1p(value)` directly, the other predicts the *change* from the
+  player's last known value (a small, bounded quantity; the anchor passes through
+  at slope 1 so a €200M prior isn't shrunk toward the mean). The two are
+  de-shrunk on OOF and blended `0.5 / 0.5`, then clipped to €220M in log space.
+  Rows with < 8 full-90s this season (all of the current season, early on) skip
+  the models and predict the last known value along a light age curve.
+- **Result**: R2(log) **0.89**, MAE **EUR4.8M**, medAPE **23%**, within-2x
+  **91%** (0.93 with a prior value, 0.72 cold-start, 0.88 keepers). €100M+ band
+  medAPE **12%**, median pred/listed **1.00**.
 - Output: `value_model_predictions.csv` (**every player, every season incl. the
   current one**, with `value_imputed` flag), `models/value_model.pkl`
   (`{bases, meta, cal, features}`).
