@@ -29,14 +29,15 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from live.schema import deaccent  # noqa: E402
+from sklearn.base import clone
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import ExtraTreesRegressor, HistGradientBoostingRegressor
 from sklearn.impute import SimpleImputer
-from sklearn.linear_model import LinearRegression, RidgeCV
+from sklearn.linear_model import RidgeCV
 from sklearn.metrics import mean_absolute_error, r2_score
 from sklearn.model_selection import KFold, cross_val_predict
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, SplineTransformer, StandardScaler
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data" / "processed" / "fbref_player_season_stats.csv"
@@ -45,6 +46,9 @@ MODEL = ROOT / "models" / "value_model.pkl"
 
 TRAIN_SEASONS = ["2020-21", "2021-22", "2022-23", "2023-24"]
 TEST_SEASONS = ["2024-25", "2025-26"]
+
+CAP_EUR = 220_000_000    # Transfermarkt's effective ceiling - predictions clip here
+BLEND_W = 0.5            # weight on the change-from-last-value view vs. the direct one
 
 # raw column -> feature name (per-90 unless noted). We divide the totals by 90s.
 PER90 = {
@@ -260,67 +264,94 @@ def main() -> None:
     Xtr, Xte = _prep(tr), _prep(te)
     cv = KFold(n_splits=5, shuffle=True, random_state=0)
 
-    def _score(name, pred):
-        pl = np.log1p(np.clip(pred, 0, None))
-        act = te["market_value_eur"].to_numpy()
-        r2 = r2_score(te["y"], pl)
-        mae = mean_absolute_error(act, pred) / 1e6
-        ape = np.median(np.abs(pred - act) / act)
-        w2 = np.mean((np.maximum(pred, act) / np.minimum(pred, act)) <= 2)
-        print(f"  {name:12}  R2(log)={r2:.3f}  MAE=EUR{mae:.1f}M  medAPE={ape:.0%}  "
-              f"within-2x={w2:.0%}")
-        return r2
+    ytr = tr["y"].to_numpy()
+    # Transfermarkt caps its listings near this; the best players sit just under
+    # it. Predictions are squeezed into (~0, CAP] so no one is valued above it
+    # and the elite gravitate toward it.
+    CAP_LOG = float(np.log1p(CAP_EUR))
+    anchor_fill = float(np.nanmedian(tr["prev_log_value"].to_numpy()))
 
-    oof, pred = {}, {}
-    for name, pipe in bases.items():
-        oof[name] = cross_val_predict(pipe, Xtr, tr["y"], cv=cv, n_jobs=-1)
-        pipe.fit(Xtr, tr["y"])
-        pred[name] = pipe.predict(Xte)
-        _score(name, np.expm1(pred[name]))
+    def _anchor(frame):
+        return frame["prev_log_value"].fillna(anchor_fill).to_numpy()
 
-    # stack: a ridge meta-model over the base OOF predictions, then a monotone
-    # spline recalibration (removes the trees' regression-to-the-mean squeeze).
-    meta = RidgeCV(alphas=np.logspace(-3, 2, 20))
-    S_tr = np.column_stack([oof[n] for n in bases])
-    S_te = np.column_stack([pred[n] for n in bases])
-    meta.fit(S_tr, tr["y"])
-    cal = Pipeline([("s", SplineTransformer(n_knots=6, degree=3)),
-                    ("l", LinearRegression())])
-    cal.fit(meta.predict(S_tr).reshape(-1, 1), tr["y"])
+    def _train_stack(target):
+        """Fit the base learners + a ridge meta-model on `target`. Returns the
+        fitted {name: pipe} dict + meta model, and the OOF meta prediction."""
+        bs = {n: clone(p) for n, p in bases.items()}
+        oof_ = {}
+        for n, p in bs.items():
+            oof_[n] = cross_val_predict(p, Xtr, target, cv=cv, n_jobs=-1)
+            p.fit(Xtr, target)
+        cols = list(bs)
+        mt = RidgeCV(alphas=np.logspace(-3, 2, 20)).fit(
+            np.column_stack([oof_[n] for n in cols]), target)
+        return {"bases": bs, "meta": mt, "cols": cols}, \
+            mt.predict(np.column_stack([oof_[n] for n in cols]))
 
-    def _stack_predict(S):
-        return np.expm1(cal.predict(meta.predict(S).reshape(-1, 1)))
+    def _stack_pred(st, Xf):
+        return st["meta"].predict(
+            np.column_stack([st["bases"][n].predict(Xf) for n in st["cols"]]))
 
-    stack_pred = _stack_predict(S_te)
-    print()
-    r2_stack = _score("stack", stack_pred)
-    r2_single = {n: r2_score(te["y"], np.log1p(np.clip(np.expm1(pred[n]), 0, None)))
-                 for n in bases}
-    best_single = max(r2_single, key=r2_single.get)
-    if r2_stack >= r2_single[best_single]:
-        best_name, best_pred = "stack", stack_pred
-    else:
-        best_name, best_pred = best_single, np.expm1(pred[best_single])
-    print(f"\nbest: {best_name}")
+    # two views of the target: predict log-value directly, and predict the
+    # *change* from the last known value (small, bounded - keeps mid-range tight
+    # and lets a superstar's prediction climb back toward his prior value).
+    direct_st, direct_oof = _train_stack(ytr)
+    anch_tr = _anchor(tr)
+    resid_tgt = ytr - anch_tr
+    resid_st, resid_oof = _train_stack(resid_tgt)
 
-    def _stack_from_frame(frame):
+    # de-shrink the DIRECT view against y; de-shrink only the residual *delta*
+    # (the anchor passes through at slope 1, so a EUR200M prior stays near EUR200M).
+    da1, da0 = np.polyfit(direct_oof, ytr, 1)
+    ra1, ra0 = np.polyfit(resid_oof, resid_tgt, 1)
+
+    # small age curve for carrying a value forward: flat through the mid-20s,
+    # about -6%/yr after 30, +4%/yr for U21 (fit loosely to how TM values age)
+    def _age_adj(frame):
+        a = pd.to_numeric(frame["age"], errors="coerce").fillna(26).to_numpy()
+        return np.where(a >= 30, -0.06 * (a - 30),
+                        np.where(a <= 21, 0.04 * (21 - a), 0.0))
+
+    def _predict_eur(frame):
         Xf = _prep(frame)
-        Sf = np.column_stack([bases[n].predict(Xf) for n in bases])
-        return np.clip(_stack_predict(Sf), 0, None)
+        d = da0 + da1 * _stack_pred(direct_st, Xf)
+        r = _anchor(frame) + ra0 + ra1 * _stack_pred(resid_st, Xf)
+        blended = np.clip(BLEND_W * r + (1 - BLEND_W) * d, None, CAP_LOG)
+        # too few minutes this season for any form signal - the best estimate is
+        # simply last known value, nudged along an age curve.
+        n90 = pd.to_numeric(frame["n90"], errors="coerce").fillna(0).to_numpy()
+        carried = np.clip(_anchor(frame) + _age_adj(frame), None, CAP_LOG)
+        thin = n90 < 8
+        log_v = np.where(thin, carried, blended)
+        return np.clip(np.expm1(log_v), 1e4, CAP_EUR)
 
-    # segment diagnostics on the test set
+    best_pred = _predict_eur(te)
+    act = te["market_value_eur"].to_numpy()
+    r2 = r2_score(te["y"], np.log1p(best_pred))
+    ape = np.abs(best_pred - act) / act
+    print(f"\n  blend(w={BLEND_W}, cap EUR{CAP_EUR/1e6:.0f}M)  R2(log)={r2:.3f}  "
+          f"MAE=EUR{mean_absolute_error(act, best_pred)/1e6:.1f}M  "
+          f"medAPE={np.median(ape):.0%}  within-2x="
+          f"{np.mean(np.maximum(best_pred, act) / np.minimum(best_pred, act) <= 2):.0%}")
+
+    # segment diagnostics - error by value band and by group
     for lbl, m in [("outfield", (te["pos"] != "GK").to_numpy()),
                    ("goalkeepers", (te["pos"] == "GK").to_numpy()),
                    ("with prev value", te["prev1_log_value"].notna().to_numpy()),
-                   ("cold start (no prior)", te["prev1_log_value"].isna().to_numpy())]:
+                   ("cold start", te["prev1_log_value"].isna().to_numpy()),
+                   ("mid  EUR3-40M", ((act >= 3e6) & (act < 40e6))),
+                   ("high EUR40-100M", ((act >= 40e6) & (act < 100e6))),
+                   ("elite EUR100M+", (act >= 100e6))]:
         if m.sum():
-            print(f"  [{lbl:22}] n={m.sum():4d}  "
-                  f"R2(log)={r2_score(te['y'][m], np.log1p(np.clip(best_pred[m], 0, None))):.3f}")
+            bias = np.median(best_pred[m] / act[m])
+            print(f"  [{lbl:16}] n={m.sum():4d}  R2(log)="
+                  f"{r2_score(te['y'][m], np.log1p(best_pred[m])):.3f}  "
+                  f"medAPE={np.median(ape[m]):.0%}  pred/listed(med)={bias:.2f}")
 
     # predictions for EVERY eligible row (all seasons incl. 2026-27, GK included,
     # peer-imputed rows flagged) so the site has a value for every current player.
     allp = df.copy()
-    allp["predicted_eur"] = _stack_from_frame(allp).round(0)
+    allp["predicted_eur"] = _predict_eur(allp).round(0)
     out = allp[["season", "src_league", "Player", "Squad", "pos", "age",
                 "market_value_eur", "predicted_eur", "imputed"]].rename(
         columns={"imputed": "value_imputed"})
@@ -331,13 +362,15 @@ def main() -> None:
 
     MODEL.parent.mkdir(exist_ok=True)
     with MODEL.open("wb") as fh:
-        pickle.dump({"bases": bases, "meta": meta, "cal": cal,
+        pickle.dump({"direct": direct_st, "resid": resid_st,
+                     "anchor_fill": anchor_fill, "blend_w": BLEND_W,
+                     "cap_eur": CAP_EUR, "cal": (da0, da1, ra0, ra1),
                      "features": feat_num + feat_cat}, fh)
     print(f"wrote {MODEL}")
 
     print("\nbiggest over/under-valuations by the model (test set):")
     show = te[["season", "Player", "Squad", "market_value_eur"]].copy()
-    show["predicted_eur"] = np.clip(best_pred, 0, None).round(0)
+    show["predicted_eur"] = best_pred.round(0)
     show["err_m"] = (show["predicted_eur"] - show["market_value_eur"]) / 1e6
     print(show.nlargest(5, "err_m").to_string())
     print(show.nsmallest(5, "err_m").to_string())
