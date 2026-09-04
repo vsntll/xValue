@@ -89,11 +89,14 @@ def main() -> None:
         _simple(PROC / "tm_values_scraped.csv", "player_name"),
         _simple(PROC / "sofascore_values.csv", "player_name"),
     ]
-    # the final labelled column carries every fuzzy fill from the parser
+    # the parser's own column carries the fuzzy fills and carried-forward values,
+    # but NOT its peer-median imputations (those would feed a circular lag).
     fb = PROC / "fbref_player_season_stats.csv"
     if fb.exists():
         d = pd.read_csv(fb, low_memory=False)
         d = d[d["market_value_eur"].notna()]
+        if "market_value_imputed" in d.columns:
+            d = d[pd.to_numeric(d["market_value_imputed"], errors="coerce").fillna(0) == 0]
         parts.append(pd.DataFrame({
             "player_key": d["player_slug"].map(_key),
             "season": d["season"],
