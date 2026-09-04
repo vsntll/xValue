@@ -82,11 +82,15 @@ jobs:
         continue-on-error: true
         run: python src/pull_sofascore_values.py
 
-      - name: Pull per-player per-match contributions (Understat) - only the live season is re-pulled
+      # --force + all 3 covers build_player_elo.py's WINDOW_SEASONS every run - cheap once
+      # data/understat_cache is warm (a cache hit, same as the local backfill this was verified
+      # against), and guarantees player_id/team_id are there even before the persisted CI cache
+      # has ever seen a pull done after those columns were added.
+      - name: Pull per-player per-match contributions (Understat) - last 3 seasons, live one always fresh
         continue-on-error: true
-        run: python src/pull_understat_player_matches.py --seasons ${{ env.PL_SEASON }}
+        run: python src/pull_understat_player_matches.py --seasons ${{ env.WINDOW_SEASONS }} --force
         env:
-          PL_SEASON: "2026-27"   # bump each August; older seasons are cached and skipped
+          WINDOW_SEASONS: "2024-25 2025-26 2026-27"   # keep in sync with build_player_elo.py's WINDOW_SEASONS
 
       - name: Rebuild tables
         run: |
@@ -101,6 +105,10 @@ jobs:
           python src/build_form_momentum.py
           python src/build_match_model_table.py
           python src/train_outcome_model.py --hybrid
+
+      - name: Build player Elo (no market-value inputs - last 3 seasons of real output)
+        continue-on-error: true
+        run: python src/build_player_elo.py
 
       - name: Regenerate the site
         run: python src/export_site_data.py

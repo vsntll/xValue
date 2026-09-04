@@ -128,8 +128,18 @@ def _opponent_elo_lookup() -> pd.DataFrame:
 
 
 def main() -> None:
-    pm = pd.read_csv(PROC / "understat_player_matches.csv")
+    pm_path = PROC / "understat_player_matches.csv"
+    mm_path = PROC / "match_model_table.csv"
+    if not pm_path.exists():
+        raise SystemExit(f"{pm_path} not found - run src/pull_understat_player_matches.py first")
+    if not mm_path.exists():
+        raise SystemExit(f"{mm_path} not found - run src/build_match_model_table.py first")
+
+    pm = pd.read_csv(pm_path)
     pm = pm[pm["season"].isin(WINDOW_SEASONS)].copy()
+    if "player_id" not in pm.columns or pm["player_id"].isna().all():
+        raise SystemExit(f"{pm_path} has no player_id for {WINDOW_SEASONS} - re-pull with "
+                         f"`py -3.11 src/pull_understat_player_matches.py --seasons {' '.join(WINDOW_SEASONS)} --force`")
     pm = pm.dropna(subset=["player_id"])  # every WINDOW_SEASONS row has it (backfilled)
     pm["player_id"] = pm["player_id"].astype("int64")
     pm["date"] = pd.to_datetime(pm["date"], errors="coerce")

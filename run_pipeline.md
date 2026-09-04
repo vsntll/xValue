@@ -44,6 +44,7 @@ py -3.11 src/train_outcome_model.py --hybrid -> outcome_model_predictions_hybrid
 ## 4. Build the site
 
 ```
+py -3.11 src/build_player_elo.py   -> player_elo.csv  (genuine, no-value-model player Elo, last 3 seasons - needs match_model_table.csv + understat_player_matches.csv from steps 1-2)
 py -3.11 src/export_site_data.py   -> site/data.json + site/index.html
 ```
 
