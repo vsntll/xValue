@@ -145,29 +145,35 @@ def main() -> None:
                              l2_regularization=1.0))]),
     }
 
-    Xtr = tr[feat_num + feat_cat].copy()
-    Xte = te[feat_num + feat_cat].copy()
-    for c in feat_num:
-        Xtr[c] = pd.to_numeric(Xtr[c], errors="coerce")
-        Xte[c] = pd.to_numeric(Xte[c], errors="coerce")
+    def _prep(frame):
+        X = frame[feat_num + feat_cat].copy()
+        for c in feat_num:
+            X[c] = pd.to_numeric(X[c], errors="coerce")
+        return X
+    Xtr, Xte = _prep(tr), _prep(te)
+
+    from sklearn.model_selection import cross_val_predict
 
     results = {}
     for name, pipe in models.items():
+        # de-shrink calibration from out-of-fold train predictions
+        oof = cross_val_predict(pipe, Xtr, tr["y"], cv=4)
+        b1, b0 = np.polyfit(oof, tr["y"], 1)
         pipe.fit(Xtr, tr["y"])
-        pred_log = pipe.predict(Xte)
+        pred_log = b0 + b1 * pipe.predict(Xte)
         pred = np.expm1(pred_log)
         act = te["market_value_eur"].to_numpy()
         r2 = r2_score(te["y"], pred_log)
         mae = mean_absolute_error(act, pred) / 1e6
         med_ape = np.median(np.abs(pred - act) / act)
         within2x = np.mean((np.maximum(pred, act) / np.minimum(pred, act)) <= 2)
-        results[name] = (pipe, pred)
+        results[name] = (pipe, pred, (b0, b1))
         print(f"  {name:6}  R2(log)={r2:.3f}  MAE=EUR{mae:.1f}M  "
-              f"medAPE={med_ape:.0%}  within-2x={within2x:.0%}")
+              f"medAPE={med_ape:.0%}  within-2x={within2x:.0%}  (cal {b0:+.2f},{b1:.2f})")
 
     best_name = max(results, key=lambda n: r2_score(
         te["y"], np.log1p(np.clip(results[n][1], 0, None))))
-    best_pipe, best_pred = results[best_name]
+    best_pipe, best_pred, _cal = results[best_name]
     print(f"\nbest: {best_name}")
 
     te_out = te[["season", "src_league", "Player", "Squad", "pos", "age",
