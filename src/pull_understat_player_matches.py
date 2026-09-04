@@ -14,8 +14,15 @@ Run (Python 3.11):
 
 Output:
     data/processed/understat_player_matches.csv
-        season, src_league, date, game_id, team, player, position, minutes,
-        goals, assists, xg, xa, key_passes, shots
+        season, src_league, date, game_id, team, player, player_id, team_id,
+        position, minutes, goals, assists, xg, xa, key_passes, shots
+
+player_id/team_id are Understat's own numeric ids - the real identity key.
+Two different real players can share a normalized name (verified: a Sevilla
+keeper and an unrelated Real Madrid full-back both "Alvaro Fernandez" once
+accents are stripped) and _pk alone would silently fuse their histories in
+anything that tracks a player over time (src/build_player_elo.py). Use
+player_id wherever available; _pk stays as a name-based fallback/display key.
 """
 
 from __future__ import annotations
@@ -30,6 +37,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 os.environ.setdefault("SOCCERDATA_DIR", str(PROJECT_ROOT / "data" / "understat_cache"))
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
+import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
 from fbref_common import current_season  # noqa: E402
@@ -41,8 +49,8 @@ LEAGUE_KEY = {"ENG1": "ENG-Premier League", "GER1": "GER-Bundesliga", "ESP1": "E
 DEFAULT_SEASONS = [
     "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27",
 ]
-KEEP = ["season", "src_league", "date", "game_id", "team", "player", "position",
-        "minutes", "goals", "assists", "xg", "xa", "key_passes", "shots"]
+KEEP = ["season", "src_league", "date", "game_id", "team", "player", "player_id", "team_id",
+        "position", "minutes", "goals", "assists", "xg", "xa", "key_passes", "shots"]
 
 
 def _sd_season(season: str) -> str:
@@ -80,19 +88,20 @@ def main() -> None:
     args = ap.parse_args()
 
     live_season = current_season()
-    have = set()
-    prior = None
-    if OUT.exists() and not args.force:
-        prior = pd.read_csv(OUT)
-        have = set(zip(prior["src_league"], prior["season"]))
+    prior = pd.read_csv(OUT) if OUT.exists() else None
+    have = set(zip(prior["src_league"], prior["season"])) if prior is not None else set()
 
-    frames = [prior] if prior is not None else []
+    fresh_frames = []
+    refreshed: set[tuple[str, str]] = set()  # (code, season) pairs actually (re)pulled this run
     t0 = time.time()
     for code, key in LEAGUE_KEY.items():
         for season in args.seasons:
             # a completed season never changes once pulled, but the season in
-            # progress gains new matches every week - always re-pull that one
-            if (code, season) in have and season != live_season:
+            # progress gains new matches every week - always re-pull that one;
+            # --force re-pulls whatever's in --seasons, without touching any
+            # OTHER season already on disk (fixed - this used to drop the
+            # entire file down to just --seasons when --force was passed)
+            if (code, season) in have and season != live_season and not args.force:
                 print(f"  {code} {season}: already have it, skipping (--force to redo)")
                 continue
             try:
@@ -105,18 +114,33 @@ def main() -> None:
                 continue
             df["_pk"] = df["player"].map(_norm)
             df["_tk"] = df["team"].map(_norm)
-            frames.append(df[KEEP + ["_pk", "_tk"]])
+            fresh_frames.append(df[KEEP + ["_pk", "_tk"]])
+            refreshed.add((code, season))
             elapsed = time.time() - t0
             print(f"  {code} {season}: {len(df)} player-match rows "
                   f"({df['game_id'].nunique()} matches)  [{elapsed / 60:.1f} min elapsed]")
 
-    if not frames:
+    if not fresh_frames and prior is None:
         raise SystemExit("no player-match data pulled")
+    if prior is not None and refreshed:
+        keep_mask = ~prior.set_index(["src_league", "season"]).index.isin(refreshed)
+        prior = prior[keep_mask]
+    frames = ([prior] if prior is not None else []) + fresh_frames
     out = pd.concat(frames, ignore_index=True)
-    # a match sometimes gets re-pulled across seasons of the same run - keep one
-    out = out.drop_duplicates(subset=["src_league", "season", "game_id", "player_id"]
-                              if "player_id" in out.columns
-                              else ["src_league", "season", "game_id", "player", "team"])
+    # a match sometimes gets re-pulled across seasons of the same run - keep one.
+    # player_id is missing (NaN) for any season not yet backfilled with it, and
+    # pandas treats NaN == NaN as a match - deduping straight on a partly-NaN
+    # player_id column collapsed an entire match's rows into one (real bug, since
+    # fixed). Build one dedup key per row instead: player_id where we have it,
+    # else the name/team fallback - never mixed within a single comparison.
+    if "player_id" in out.columns:
+        has_id = out["player_id"].notna()
+        out["_dedup_id"] = np.where(has_id, "id:" + out["player_id"].astype("Int64").astype(str),
+                                    "nm:" + out["player"].astype(str) + "|" + out["team"].astype(str))
+    else:
+        out["_dedup_id"] = "nm:" + out["player"].astype(str) + "|" + out["team"].astype(str)
+    out = out.drop_duplicates(subset=["src_league", "season", "game_id", "_dedup_id"])
+    out = out.drop(columns=["_dedup_id"])
     PROCESSED.mkdir(parents=True, exist_ok=True)
     out.to_csv(OUT, index=False)
     print(f"\nwrote {OUT}  ({len(out)} player-match rows, "
