@@ -137,7 +137,7 @@ def main() -> None:
     sq.to_csv(PROC / "squad_momentum.csv", index=False)
     print(f"wrote {PROC / 'squad_momentum.csv'}  ({len(sq)} team-match rows, "
           f"{sq['team_key'].nunique()} teams, seasons {sorted(sq['season'].unique())}, "
-          f"from {have['_pk'].nunique()} player-match rows with a baseline)")
+          f"from {len(have)} player-match rows ({have['_pk'].nunique()} players) with a baseline)")
 
 
 if __name__ == "__main__":
