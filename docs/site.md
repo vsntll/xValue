@@ -27,8 +27,16 @@ to cover another top-5 league already in the underlying data.
 - **Last season** (2025-26) line shown alongside, where the player has one.
 - **Projected 38-game pace**: current per-90 rate x projected minutes over a full
   season. A simple pace projection, not a trained model — labelled as such in the UI.
-- **Predicted market value**: from `value_model_predictions.csv` (2025-26 season,
-  the trained HGB regressor, R2(log) 0.82) vs the player's listed value.
+- **Predicted market value**: from `value_model_predictions.csv` (the trained
+  regressor, R2(log) 0.89 / MAE EUR4.9M / within-2x 91%) vs the player's listed
+  value. `value_model_predictions.csv` now covers every season 2020-21..2026-27
+  (it used to stop at 2025-26); `load_value_predictions` prefers the *current*
+  season's row per player+team and falls back to 2025-26 for anyone not yet
+  covered there (below the model's minutes threshold so far this season) - so
+  `value.as_of_season` on a player record varies, it's not always "2025-26"
+  anymore. The file also gained a `value_imputed` flag (true when
+  `market_value_eur` itself was filled in rather than sourced) that isn't
+  currently surfaced in the UI.
 - **Next-fixture odds**: a *single* Dixon-Coles attack/defence model
   (`src/dixon_coles.py`, fit once on all competitions through today, 900-day
   window - not per-league) gives P(home/draw/away) and expected goals for each

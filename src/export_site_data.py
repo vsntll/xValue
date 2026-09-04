@@ -2,7 +2,8 @@
 
 Covers the Premier League, La Liga and Bundesliga. Combines:
   - current-season (2026-27) + last-season (2025-26) FBref stats per player
-  - the value model's predicted market value (2025-26, `value_model_predictions.csv`)
+  - the value model's predicted market value (`value_model_predictions.csv`,
+    current season preferred, falls back to last season)
   - a simple full-season pace projection from current per-90 rates
   - next-fixture win/draw/loss odds per team, from a Dixon-Coles model
     (`src/dixon_coles.py`) fit on all competitions through today
@@ -97,10 +98,12 @@ def load_players(src_league: str) -> pd.DataFrame:
 
 def load_value_predictions(src_league: str) -> pd.DataFrame:
     v = pd.read_csv(PROC / "value_model_predictions.csv", encoding="latin-1")
-    v = v[(v["src_league"] == src_league) & (v["season"] == "2025-26")].copy()
+    v = v[(v["src_league"] == src_league) & v["season"].isin(["2025-26", "2026-27"])].copy()
     v = _fix_names(v, ["Player", "Squad"])  # must match load_players()'s names for the join in build_players_payload
     v["team_key"] = v["Squad"].map(normalize_team)
-    return v[["Player", "team_key", "predicted_eur", "market_value_eur", "ratio"]].rename(
+    # prefer the current season's prediction over last season's, per player+team
+    v = v.sort_values("season").drop_duplicates(subset=["Player", "team_key"], keep="last")
+    return v[["Player", "team_key", "season", "predicted_eur", "market_value_eur", "ratio"]].rename(
         columns={"Player": "player", "market_value_eur": "listed_value_eur"})
 
 
@@ -191,7 +194,7 @@ def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict]
                 "listed_value_eur": _num(vr["listed_value_eur"]),
                 "predicted_eur": _num(vr["predicted_eur"]),
                 "ratio": _num(vr["ratio"]),
-                "as_of_season": "2025-26",
+                "as_of_season": vr["season"],
             }
         out.append(rec)
     return out, team_display, pd.DataFrame(blended_rows)
@@ -459,7 +462,7 @@ def main() -> None:
             "current_stats": "2026-27 FBref season-to-date stats (min 45 minutes played).",
             "last_season": "2025-26 full-season stats for the same player, where available.",
             "projected_38": "Simple pace projection: current per-90 rate x projected minutes over a 38-game season. Not a trained model.",
-            "value": "Predicted market value from the trained value-regression model (2025-26 season, HGB, R2(log) 0.82) vs listed market value.",
+            "value": "Predicted market value from the trained value-regression model (current season preferred, else last season; R2(log) 0.89, MAE EUR4.9M, within-2x 91%) vs listed market value.",
             "match_odds": "Win/draw/loss odds from a Dixon-Coles attack/defence model fit on all competitions through the date above.",
             "player_props": "Anytime goal/assist odds: team's Dixon-Coles expected goals split across the matchday squad by each player's (non-penalty xG90 or xA90, shrunk toward last season's rate early in the current season) x season minutes-share, then Poisson P(>=1).",
             "cup_finals": "Each competition's final is inferred as the last-dated match of that season/competition in the results data - not read from an official bracket. When it ended level (decided on penalties/extra time not recorded here), no winner is shown. The in-progress 2026-27 season is excluded.",
