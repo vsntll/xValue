@@ -20,17 +20,23 @@ Output:
 from __future__ import annotations
 
 import pickle
+import re
+import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from live.schema import deaccent  # noqa: E402
 from sklearn.compose import ColumnTransformer
-from sklearn.ensemble import HistGradientBoostingRegressor
+from sklearn.ensemble import ExtraTreesRegressor, HistGradientBoostingRegressor
 from sklearn.impute import SimpleImputer
-from sklearn.linear_model import RidgeCV
+from sklearn.linear_model import LinearRegression, RidgeCV
 from sklearn.metrics import mean_absolute_error, r2_score
+from sklearn.model_selection import KFold, cross_val_predict
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.preprocessing import OneHotEncoder, SplineTransformer, StandardScaler
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data" / "processed" / "fbref_player_season_stats.csv"
@@ -66,9 +72,15 @@ FLAT = {
 
 
 def _norm_team(s):
-    import re as _re
     s = str(s).lower()
-    return _re.sub(r"[^a-z0-9 ]", " ", s).strip()
+    return re.sub(r"[^a-z0-9 ]", " ", s).strip()
+
+
+def _key(s) -> str:
+    """Player key matching value_history.csv / _norm_name(player_slug)."""
+    if not isinstance(s, str):
+        return ""
+    return " ".join(re.sub(r"[^a-z0-9 ]", " ", deaccent(s).lower().replace("'", "")).split())
 
 
 def _pos_group(p: str) -> str:
@@ -87,17 +99,43 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
     d["pos"] = d["Pos"].map(_pos_group)
     d["mv"] = pd.to_numeric(d["market_value_eur"], errors="coerce")
 
-    # prior-season value for the same player (value is strongly autocorrelated)
-    d["_pk"] = d["Player"].astype(str).str.lower().str.replace(r"[^a-z ]", "", regex=True)
+    # prior-season value (value is strongly autocorrelated - the biggest lever).
+    # value_history.csv unions the big-5 mirror (2015-22, so 2020-21 rows and
+    # cross-league movers get a lag) + scrape + Sofascore + every fuzzy fill.
+    d["_pk"] = d["player_slug"].map(_key)
     d["_ord"] = d["season"].map(_SEASON_ORDER)
     d["_min"] = pd.to_numeric(d["standard__Playing Time_Min"], errors="coerce")
-    hist = d[["_pk", "src_league", "_ord", "mv", "_min"]].drop_duplicates()
+
+    vh_path = SRC.parent / "value_history.csv"
+    if vh_path.exists():
+        vh = pd.read_csv(vh_path)
+        vh["_pk"] = vh["player_key"].map(_key)
+        vh["_ord"] = vh["season"].map(_SEASON_ORDER)
+        vh = vh.dropna(subset=["_ord"]).groupby(["_pk", "_ord"], as_index=False)[
+            "market_value_eur"].max().rename(columns={"market_value_eur": "mv"})
+    else:
+        vh = d[["_pk", "_ord", "mv"]].dropna().drop_duplicates()
+
     for lag in (1, 2):
-        p = hist.copy()
+        p = vh.rename(columns={"mv": f"prev{lag}_mv"}).copy()
         p["_ord"] = p["_ord"] + lag
-        d = d.merge(p[["_pk", "src_league", "_ord", "mv", "_min"]].rename(
-            columns={"mv": f"prev{lag}_mv", "_min": f"prev{lag}_min"}),
-            on=["_pk", "src_league", "_ord"], how="left")
+        d = d.merge(p, on=["_pk", "_ord"], how="left")
+
+    # as-of join: the most recent value known *strictly before* the target
+    # season, plus how many seasons stale it is (a debutant gets prev_any = NaN)
+    tgt = d[["_pk", "_ord"]].drop_duplicates()
+    aj = tgt.merge(vh.rename(columns={"_ord": "_vord", "mv": "prev_any_mv"}),
+                   on="_pk", how="left")
+    aj = aj[aj["_vord"] < aj["_ord"]].sort_values("_vord")
+    aj = aj.groupby(["_pk", "_ord"], as_index=False).last()
+    aj["prev_staleness"] = aj["_ord"] - aj["_vord"]
+    d = d.merge(aj[["_pk", "_ord", "prev_any_mv", "prev_staleness"]],
+                on=["_pk", "_ord"], how="left")
+
+    # prev-season minutes for the minutes-trend feature (our data only)
+    mn = d.dropna(subset=["_min"]).groupby(["_pk", "_ord"], as_index=False)["_min"].max()
+    mn["_ord"] = mn["_ord"] + 1
+    d = d.merge(mn.rename(columns={"_min": "prev1_min"}), on=["_pk", "_ord"], how="left")
 
     # contract years remaining at the season's midpoint (Jan 1 of the end year)
     d["_ce"] = pd.to_datetime(d.get("contract_expiry"), errors="coerce")
@@ -121,17 +159,29 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
 
     d = d[(d["mv"].notna()) & (d["n90"] >= 8) & (d["pos"] != "GK") & d["age"].notna()]
     d["_xg"] = pd.to_numeric(d.get("understat__xg"), errors="coerce")
+
+    # the workhorse: log of the last known value. prev1 (season-1) if we have it,
+    # else the as-of value carried forward, with staleness so the model can
+    # discount it. Only ~5% of rows (true debutants) end up with neither.
+    p1 = np.log1p(d["prev1_mv"])
+    pany = np.log1p(d["prev_any_mv"])
+    prev_best = p1.fillna(pany)
+    stale = d["prev_staleness"].where(p1.isna(), 1).fillna(0)
     out = pd.DataFrame({
         "season": d["season"], "src_league": d["src_league"],
         "Player": d["Player"], "Squad": d["Squad"],
         "age": d["age"], "age_sq": d["age"] ** 2,
         "peak_dist": (d["age"] - 26).abs(),
         "pos": d["pos"],
-        "prev_log_value": np.log1p(d["prev1_mv"]),
+        "prev_log_value": prev_best,
+        "prev1_log_value": p1,
         "prev2_log_value": np.log1p(d["prev2_mv"]),
-        "value_momentum": np.log1p(d["prev1_mv"]) - np.log1p(d["prev2_mv"]),
-        "prev_x_youth": np.log1p(d["prev1_mv"]) * (25 - d["age"]).clip(-8, 8),
+        "prev_staleness": stale,
+        "value_momentum": (p1.fillna(pany) - np.log1p(d["prev2_mv"])),
+        "prev_x_youth": prev_best * (25 - d["age"]).clip(-8, 8),
+        "prev_x_age": prev_best * (d["age"] - 26),
         "has_prev": d["prev1_mv"].notna().astype(int),
+        "has_any_prev": d["prev_any_mv"].notna().astype(int),
         "contract_years": d["contract_years"],
         "minutes_trend": np.log1p(d["_min"]) - np.log1p(d["prev1_min"]),
         "club_log_value": np.log1p(d["prev_squad_value"]),
@@ -166,18 +216,25 @@ def main() -> None:
                           ("sc", StandardScaler())]), feat_num),
         ("cat", OneHotEncoder(handle_unknown="ignore"), feat_cat),
     ])
-    hgb_pre = ColumnTransformer([
+    ohe_pre = ColumnTransformer([
         ("cat", OneHotEncoder(handle_unknown="ignore"), feat_cat),
     ], remainder="passthrough")
-    def _hgb(**kw):
-        return Pipeline([("pre", hgb_pre), ("m", HistGradientBoostingRegressor(
-            random_state=0, early_stopping=False, **kw))])
-    models = {
+
+    # base learners - two boosted-tree fits at different depth/shrinkage, a
+    # bagged tree, and a linear model. Their errors are only partly correlated
+    # so a stack of them beats any one.
+    bases = {
+        "hgb_shallow": Pipeline([("pre", ohe_pre), ("m", HistGradientBoostingRegressor(
+            random_state=0, max_depth=3, learning_rate=0.03, max_iter=700,
+            l2_regularization=2.0, min_samples_leaf=25, max_leaf_nodes=31))]),
+        "hgb_deep": Pipeline([("pre", ohe_pre), ("m", HistGradientBoostingRegressor(
+            random_state=0, learning_rate=0.02, max_iter=1500, l2_regularization=1.0,
+            min_samples_leaf=15, max_leaf_nodes=63, early_stopping=True,
+            validation_fraction=0.15, n_iter_no_change=40))]),
+        "extratrees": Pipeline([("pre", ohe_pre), ("m", ExtraTreesRegressor(
+            n_estimators=600, min_samples_leaf=3, n_jobs=-1, random_state=0))]),
         "ridge": Pipeline([("pre", ridge_pre),
                            ("m", RidgeCV(alphas=np.logspace(-2, 3, 30)))]),
-        "hgb": _hgb(max_depth=3, learning_rate=0.03, max_iter=700,
-                    l2_regularization=2.0, min_samples_leaf=25,
-                    max_leaf_nodes=31),
     }
 
     def _prep(frame):
@@ -186,63 +243,70 @@ def main() -> None:
             X[c] = pd.to_numeric(X[c], errors="coerce")
         return X
     Xtr, Xte = _prep(tr), _prep(te)
+    cv = KFold(n_splits=5, shuffle=True, random_state=0)
 
-    from sklearn.model_selection import cross_val_predict
-
-    def _score(name, pred, cal):
+    def _score(name, pred):
         pl = np.log1p(np.clip(pred, 0, None))
         act = te["market_value_eur"].to_numpy()
         r2 = r2_score(te["y"], pl)
         mae = mean_absolute_error(act, pred) / 1e6
         ape = np.median(np.abs(pred - act) / act)
         w2 = np.mean((np.maximum(pred, act) / np.minimum(pred, act)) <= 2)
-        print(f"  {name:8}  R2(log)={r2:.3f}  MAE=EUR{mae:.1f}M  medAPE={ape:.0%}  "
-              f"within-2x={w2:.0%}" + (f"  (cal {cal[0]:+.2f},{cal[1]:.2f})" if cal else ""))
+        print(f"  {name:12}  R2(log)={r2:.3f}  MAE=EUR{mae:.1f}M  medAPE={ape:.0%}  "
+              f"within-2x={w2:.0%}")
         return r2
 
-    results, oofs = {}, {}
-    for name, pipe in models.items():
-        oof = cross_val_predict(pipe, Xtr, tr["y"], cv=4)
-        b1, b0 = np.polyfit(oof, tr["y"], 1)
+    oof, pred = {}, {}
+    for name, pipe in bases.items():
+        oof[name] = cross_val_predict(pipe, Xtr, tr["y"], cv=cv, n_jobs=-1)
         pipe.fit(Xtr, tr["y"])
-        pred = np.expm1(b0 + b1 * pipe.predict(Xte))
-        oofs[name] = np.expm1(b0 + b1 * oof)
-        results[name] = (pipe, pred, (b0, b1))
-        _score(name, pred, (b0, b1))
+        pred[name] = pipe.predict(Xte)
+        _score(name, np.expm1(pred[name]))
 
-    # ridge/hgb ensemble, weight chosen on OOF (kept only if it beats hgb)
-    from scipy.optimize import minimize_scalar
-    a = minimize_scalar(lambda a: -r2_score(
-        tr["y"], np.log1p(a * oofs["hgb"] + (1 - a) * oofs["ridge"])),
-        bounds=(0, 1), method="bounded").x
-    ens = a * results["hgb"][1] + (1 - a) * results["ridge"][1]
-    r2_ens = _score(f"ens(a={a:.2f})", ens, None)
+    # stack: a ridge meta-model over the base OOF predictions, then a monotone
+    # spline recalibration (removes the trees' regression-to-the-mean squeeze).
+    meta = RidgeCV(alphas=np.logspace(-3, 2, 20))
+    S_tr = np.column_stack([oof[n] for n in bases])
+    S_te = np.column_stack([pred[n] for n in bases])
+    meta.fit(S_tr, tr["y"])
+    cal = Pipeline([("s", SplineTransformer(n_knots=6, degree=3)),
+                    ("l", LinearRegression())])
+    cal.fit(meta.predict(S_tr).reshape(-1, 1), tr["y"])
 
-    if r2_ens > r2_score(te["y"], np.log1p(np.clip(results["hgb"][1], 0, None))):
-        best_name, best_pred = "ensemble", ens
+    def _stack_predict(S):
+        return np.expm1(cal.predict(meta.predict(S).reshape(-1, 1)))
+
+    stack_pred = _stack_predict(S_te)
+    print()
+    r2_stack = _score("stack", stack_pred)
+    r2_single = {n: r2_score(te["y"], np.log1p(np.clip(np.expm1(pred[n]), 0, None)))
+                 for n in bases}
+    best_single = max(r2_single, key=r2_single.get)
+    if r2_stack >= r2_single[best_single]:
+        best_name, best_pred = "stack", stack_pred
     else:
-        best_name, best_pred = "hgb", results["hgb"][1]
-    best_pipe = results["hgb"][0]
+        best_name, best_pred = best_single, np.expm1(pred[best_single])
     print(f"\nbest: {best_name}")
+
+    # segment diagnostics - where the error lives
+    has_p1 = te["prev1_log_value"].notna().to_numpy()
+    for lbl, m in [("with prev value", has_p1), ("cold start (no prior)", ~has_p1)]:
+        if m.sum():
+            print(f"  [{lbl:22}] n={m.sum():4d}  "
+                  f"R2(log)={r2_score(te['y'][m], np.log1p(np.clip(best_pred[m], 0, None))):.3f}")
 
     te_out = te[["season", "src_league", "Player", "Squad", "pos", "age",
                  "market_value_eur"]].copy()
-    te_out["predicted_eur"] = best_pred.round(0)
+    te_out["predicted_eur"] = np.clip(best_pred, 0, None).round(0)
     te_out["ratio"] = (te_out["predicted_eur"] / te_out["market_value_eur"]).round(2)
     te_out.sort_values("market_value_eur", ascending=False).to_csv(PRED, index=False)
     print(f"wrote {PRED}")
 
     MODEL.parent.mkdir(exist_ok=True)
     with MODEL.open("wb") as fh:
-        pickle.dump({"pipeline": best_pipe, "features": feat_num + feat_cat}, fh)
+        pickle.dump({"bases": bases, "meta": meta, "cal": cal,
+                     "features": feat_num + feat_cat}, fh)
     print(f"wrote {MODEL}")
-
-    if best_name == "ridge":
-        pre_f = best_pipe.named_steps["pre"]
-        names = feat_num + list(pre_f.named_transformers_["cat"].get_feature_names_out(feat_cat))
-        coefs = pd.Series(best_pipe.named_steps["m"].coef_, index=names).sort_values()
-        print("\ntop negative / positive coefficients (on log value):")
-        print(pd.concat([coefs.head(6), coefs.tail(8)]).round(3).to_string())
 
     print("\nbiggest over/under-valuations by the model (test set):")
     show = te_out.assign(err_m=((te_out.predicted_eur - te_out.market_value_eur) / 1e6))
