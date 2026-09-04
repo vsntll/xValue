@@ -39,6 +39,9 @@ from live.schema import normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 OUT = ROOT / "site" / "data.json"
+TEMPLATE = ROOT / "site" / "template.html"
+PAGE = ROOT / "site" / "index.html"          # committed deliverable, data inlined
+DATA_PLACEHOLDER = "__SITE_DATA_JSON__"
 LEAGUES = {"ENG1": "Premier League", "ESP1": "La Liga", "GER1": "Bundesliga"}
 MIN_MIN_CURRENT = 45   # min minutes this season to trust current-season rates
 MIN_MIN_PROJECT = 180  # min minutes to publish a pace projection / prop odds
@@ -62,8 +65,7 @@ def _fix_names(df: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
 
 
 def load_players(src_league: str) -> pd.DataFrame:
-    # source CSV is actually latin-1 (accented names mojibake under the utf-8 default)
-    df = pd.read_csv(PROC / "fbref_player_season_stats.csv", low_memory=False, encoding="latin-1")
+    df = pd.read_csv(PROC / "fbref_player_season_stats.csv", low_memory=False)
     df = df[df["src_league"] == src_league].copy()
     keep = {
         "season": "season", "Player": "player", "Squad": "squad", "Pos": "pos", "Age": "age",
@@ -100,14 +102,20 @@ def load_players(src_league: str) -> pd.DataFrame:
     return df
 
 
+VALUE_SEASON = "2026-27"  # value predictions are now written for every season
+
+
 def load_value_predictions(src_league: str) -> pd.DataFrame:
     v = pd.read_csv(PROC / "value_model_predictions.csv", encoding="latin-1")
-    v = v[(v["src_league"] == src_league) & v["season"].isin(["2025-26", "2026-27"])].copy()
+    v = v[(v["src_league"] == src_league) & v["season"].isin(["2025-26", VALUE_SEASON])].copy()
     v = _fix_names(v, ["Player", "Squad"])  # must match load_players()'s names for the join in build_players_payload
     v["team_key"] = v["Squad"].map(normalize_team)
+    if "value_imputed" not in v.columns:
+        v["value_imputed"] = 0
     # prefer the current season's prediction over last season's, per player+team
     v = v.sort_values("season").drop_duplicates(subset=["Player", "team_key"], keep="last")
-    return v[["Player", "team_key", "season", "predicted_eur", "market_value_eur", "ratio"]].rename(
+    return v[["Player", "team_key", "season", "predicted_eur", "market_value_eur", "ratio",
+              "value_imputed"]].rename(
         columns={"Player": "player", "market_value_eur": "listed_value_eur"})
 
 
@@ -198,7 +206,8 @@ def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict]
                 "listed_value_eur": _num(vr["listed_value_eur"]),
                 "predicted_eur": _num(vr["predicted_eur"]),
                 "ratio": _num(vr["ratio"]),
-                "as_of_season": vr["season"],
+                "listed_is_estimate": bool(vr.get("value_imputed", 0)),
+                "as_of_season": vr.get("season", VALUE_SEASON),
             }
         out.append(rec)
     return out, team_display, pd.DataFrame(blended_rows)
@@ -611,10 +620,23 @@ def main() -> None:
         },
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(payload, indent=None, separators=(",", ":")), encoding="utf-8")
+    blob = json.dumps(payload, indent=None, separators=(",", ":"))
+    OUT.write_text(blob, encoding="utf-8")
     print(f"wrote {OUT}  ({len(all_players)} players, {len(fixtures)} fixtures, {len(teams)} teams, "
           f"{len(standings)} standings tables, {len(cup_finals)} cup finals, "
-          f"{len(projected_table)} projected tables)  size={OUT.stat().st_size/1024:.0f} KB")
+          f"{len(projected_table)} projected tables)  "
+          f"size={OUT.stat().st_size/1024:.0f} KB")
+
+    # splice the payload into the template -> the self-contained committed page.
+    # "</" is escaped so a name can't break out of the <script> block.
+    if TEMPLATE.exists():
+        safe = blob.replace("</", "<\\/")
+        PAGE.write_text(
+            TEMPLATE.read_text(encoding="utf-8").replace(DATA_PLACEHOLDER, safe),
+            encoding="utf-8")
+        print(f"wrote {PAGE}  ({PAGE.stat().st_size/1024:.0f} KB)")
+    else:
+        print(f"(no {TEMPLATE.name} - skipped building index.html)")
 
 
 if __name__ == "__main__":

@@ -76,8 +76,9 @@ def finalize(rows: list[dict], source: str) -> pd.DataFrame:
 
 _DROP_TOKENS = {
     "fc", "cf", "afc", "sc", "ac", "cd", "cp", "ssc", "rc", "sd", "ca", "ud",
-    "sv", "vfb", "vfl", "tsg", "fsv", "sg", "bsc", "kv", "rb",
+    "sv", "vfb", "vfl", "tsg", "fsv", "sg", "bsc", "kv", "rb", "spvgg", "rcd",
     "club", "de", "futbol", "the", "calcio", "balompie", "cp",
+    "amp",  # residue of an unescaped "&amp;" (e.g. Transfermarkt slug "brighton-amp-hove-albion")
     "1", "07", "05", "04", "09", "08", "06", "1899", "1846", "1904", "1900", "1846",
 }
 _ALIASES = {
@@ -125,7 +126,52 @@ _ALIASES = {
     "stuttgart": "stuttgart", "hoffenheim": "tsg hoffenheim", "koln": "cologne",
     "fc koln": "cologne", "hertha": "hertha berlin", "st pauli": "st pauli",
     "bielefeld": "arminia bielefeld", "greuther furth": "greuther furth",
+    # FBref squad spellings vs. the fuller names the value feeds (Transfermarkt /
+    # Sofascore) carry - both sides must land on one key for the parser join.
+    "manchester utd": "manchester united", "man united": "manchester united",
+    "west brom": "west bromwich albion", "west bromwich": "west bromwich albion",
+    "arminia": "arminia bielefeld",
+    "espanyol barcelona": "espanyol", "espanol barcelona": "espanyol",
+    "betis": "real betis", "real betis balompie": "real betis",
+    "real betis sevilla": "real betis",
+    "real sociedad san sebastian": "real sociedad", "sociedad": "real sociedad",
+    "oviedo": "real oviedo",
+    "dep a coruna": "deportivo a coruna", "deportivo la coruna": "deportivo a coruna",
+    "la coruna": "deportivo a coruna", "depor": "deportivo a coruna",
+    "racing sant": "real racing", "racing santander": "real racing",
+    "real racing club": "real racing",
 }
+
+
+# Latin letters that carry no canonical NFKD decomposition, so `NFKD -> encode
+# ascii ignore` would silently DROP them ("Odegaard" from one source, "degaard"
+# from another -> the join misses). Transliterate them the way FBref builds its
+# URL slugs (verified against fbref_player_season_stats.csv): odegaard, gross,
+# hojlund, bayindir, djordje, musialowski ...
+_TRANSLIT = str.maketrans({
+    "ø": "o", "Ø": "o",       # o slash
+    "ß": "ss", "ẞ": "ss",     # sharp s
+    "ł": "l", "Ł": "l",       # l stroke
+    "ı": "i", "İ": "i",       # dotless / dotted-capital i (Turkish)
+    "đ": "dj", "Đ": "dj",     # d stroke (Serbian/Croatian) -> "dj"
+    "æ": "ae", "Æ": "ae",     # ae ligature
+    "œ": "oe", "Œ": "oe",     # oe ligature
+    "ð": "d", "Ð": "d",       # eth
+    "þ": "th", "Þ": "th",     # thorn
+    "ħ": "h", "Ħ": "h",       # h bar (Maltese)
+    "ŧ": "t", "Ŧ": "t",       # t bar
+    "ŋ": "n", "Ŋ": "n",       # eng
+})
+
+
+def deaccent(s) -> str:
+    """Fold a Latin-script name to bare ascii the way FBref's URL slugs do -
+    transliterate the letters NFKD won't (o slash, sharp s, l stroke, dotless i,
+    d stroke ...), then strip the combining marks NFKD does split off."""
+    if not isinstance(s, str) or not s:
+        return ""
+    s = s.translate(_TRANSLIT)
+    return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
 
 
 def normalize_team(name: str) -> str:
@@ -133,8 +179,8 @@ def normalize_team(name: str) -> str:
     no corporate tokens. Not a display name."""
     if not name:
         return ""
-    s = unicodedata.normalize("NFKD", str(name)).encode("ascii", "ignore").decode()
-    s = s.lower().replace("&", " and ").replace("-", " ").replace(".", " ")
+    s = deaccent(str(name)).lower().replace("'", "")   # Nott'm -> nottm, O'Brien -> obrien
+    s = s.replace("&", " and ").replace("-", " ").replace(".", " ")
     s = re.sub(r"[^a-z0-9 ]", " ", s)
     toks = [t for t in s.split() if t and t not in _DROP_TOKENS]
     s = " ".join(toks).strip()

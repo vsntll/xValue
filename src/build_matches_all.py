@@ -38,14 +38,43 @@ COMP_TO_CODE = {"Premier League": "ENG1", "Bundesliga": "GER1", "La Liga": "ESP1
 
 
 def _key(df: pd.DataFrame) -> pd.Series:
-    d = pd.to_datetime(df["Date"], errors="coerce").dt.strftime("%Y-%m-%d")
+    """season | competition_type | home | away. No date - sources disagree on
+    kickoff day by a timezone, and a given pair meets at most once per comp per
+    season per venue (two-legged ties differ by which side is home)."""
     h = df["HomeTeam"].map(normalize_team)
     a = df["AwayTeam"].map(normalize_team)
-    return df["season"].astype(str) + "|" + df["competition_type"].astype(str) + "|" + d + "|" + h + "|" + a
+    return (df["season"].astype(str) + "|" + df["competition_type"].astype(str)
+            + "|" + h + "|" + a)
 
 
 def _clean_opponent(s: pd.Series) -> pd.Series:
     return s.astype("string").str.replace(r"^[a-z]{2,3} ", "", regex=True)
+
+
+def _tracked_by_season() -> dict[str, set]:
+    """{season: {normalized club names that played in ENG1/GER1/ESP1 that year}}.
+    Scopes cup/European rows to ties involving one of our clubs - matching FBref."""
+    mf = pd.read_csv(PROC / "match_features.csv")
+    out: dict[str, set] = {}
+    for seas, g in mf.groupby("season"):
+        clubs = set(g["HomeTeam"].map(normalize_team)) | set(g["AwayTeam"].map(normalize_team))
+        out[str(seas)] = clubs
+    # current season from Understat (football-data 2026-27 is thin early on)
+    try:
+        um = pd.read_csv(PROC / "understat_matches.csv")
+        for seas, g in um.groupby("season"):
+            out.setdefault(str(seas), set()).update(
+                set(g["home_team"].map(normalize_team)) | set(g["away_team"].map(normalize_team)))
+    except FileNotFoundError:
+        pass
+    return out
+
+
+def _involves_tracked(df: pd.DataFrame, tracked: dict[str, set]) -> pd.Series:
+    h = df["HomeTeam"].map(normalize_team)
+    a = df["AwayTeam"].map(normalize_team)
+    return df.apply(lambda r: h[r.name] in tracked.get(str(r["season"]), set())
+                    or a[r.name] in tracked.get(str(r["season"]), set()), axis=1)
 
 
 def league_history() -> pd.DataFrame:
@@ -98,9 +127,9 @@ def cup_history() -> pd.DataFrame:
     return tm.reindex(columns=COLS)
 
 
-def live_matches() -> pd.DataFrame:
-    """Every played row from every live_matches_<season>.csv (2026-27 + any
-    historical backfill seasons)."""
+def live_matches(tracked: dict[str, set]) -> pd.DataFrame:
+    """Every played row from every live_matches_<season>.csv, scoped to matches
+    involving one of our clubs (drops e.g. PSG-Porto in the UCL)."""
     frames = []
     for f in sorted(PROC.glob("live_matches_*.csv")):
         lv = pd.read_csv(f)
@@ -109,9 +138,10 @@ def live_matches() -> pd.DataFrame:
         frames.append(lv)
     if not frames:
         return pd.DataFrame(columns=COLS)
-    out = pd.concat(frames, ignore_index=True)
-    print(f"live snapshots: {len(out)} played rows across "
-          f"{sorted(out['season'].unique())}")
+    out = pd.concat(frames, ignore_index=True).reset_index(drop=True)
+    lg = out["competition_type"].eq("league")
+    out = out[lg | _involves_tracked(out, tracked)]
+    print(f"live snapshots: {len(out)} rows across {sorted(out['season'].unique())}")
     return out.reindex(columns=COLS)
 
 
@@ -136,7 +166,8 @@ def _enrich(allm: pd.DataFrame, live: pd.DataFrame) -> pd.DataFrame:
 
 
 def main() -> None:
-    live = live_matches()
+    tracked = _tracked_by_season()
+    live = live_matches(tracked)
     allm = pd.concat([league_history(), cup_history(), live], ignore_index=True)
     allm["_k"] = _key(allm)
     allm = allm.drop_duplicates(subset="_k").drop(columns="_k")

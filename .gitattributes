@@ -1,0 +1,4 @@
+# Keep LF in files that break with CRLF regardless of the checkout platform
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.sh    text eol=lf

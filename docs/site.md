@@ -62,11 +62,9 @@ to cover another top-5 league already in the underlying data.
   value. `value_model_predictions.csv` now covers every season 2020-21..2026-27
   (it used to stop at 2025-26); `load_value_predictions` prefers the *current*
   season's row per player+team and falls back to 2025-26 for anyone not yet
-  covered there (below the model's minutes threshold so far this season) - so
-  `value.as_of_season` on a player record varies, it's not always "2025-26"
-  anymore. The file also gained a `value_imputed` flag (true when
-  `market_value_eur` itself was filled in rather than sourced) that isn't
-  currently surfaced in the UI.
+  covered there (below the model's minutes threshold so far this season), so
+  `value.as_of_season` on a player record varies by player. `listed_is_estimate`
+  is set when the listed value is a peer-median fill rather than a real feed value.
 - **Next-fixture odds**: a *single* Dixon-Coles attack/defence model
   (`src/dixon_coles.py`, fit once on all competitions through today, 900-day
   window - not per-league) gives P(home/draw/away) and expected goals for each
@@ -134,9 +132,21 @@ unpopulated upstream for every row - `build_players_payload` falls back to last
 season's age + 1; players with no 2025-26 record (new signings, debutants)
 still show no age.
 
-Run: `python src/export_site_data.py` (regenerates `site/data.json`), then splice
-it into `site/template.html` to produce `site/index.html` (the `__SITE_DATA_JSON__`
-placeholder).
+Run: `python src/export_site_data.py` — regenerates `site/data.json` **and**
+splices it into `site/template.html` to produce `site/index.html` (the committed,
+self-contained page; `__SITE_DATA_JSON__` placeholder).
+
+## Weekly auto-refresh
+
+`.github/workflows/weekly-refresh.yml` (Mondays 07:00 UTC + manual dispatch)
+re-pulls every browser-free source, rebuilds `matches_all`, retrains both models,
+regenerates `site/index.html` and commits it. It does **not** refresh the FBref
+counting stats or the Transfermarkt scrape values (those need Chrome + a WAF
+captcha) — run those locally now and then per `run_pipeline.md`.
+
+Setup: repo secret `FOOTBALL_DATA_ORG_KEY`, plus a one-off `pipeline-seed`
+GitHub Release holding `data/processed/` (the workflow's cache fallback -
+`data/` is gitignored). Command in `run_pipeline.md`.
 
 ## Known data-scope note
 
