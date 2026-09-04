@@ -19,6 +19,7 @@ import sys
 from io import StringIO
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -58,6 +59,13 @@ _SKELETON_STATS = {
 # identity columns present in every category table
 ID_COLS = ["Player", "Nation", "Pos", "Squad", "Age", "Born"]
 JOIN_KEYS = ["season", "src_league", "Player", "Squad", "Born"]
+
+_SEASON_ORD = {f"{y}-{str(y + 1)[-2:]}": y for y in range(2013, 2028)}
+
+
+def _pos1(p) -> str:
+    return {"GK": "GK", "DF": "DF", "MF": "MF", "FW": "FW"}.get(
+        str(p).split(",")[0], "MF")
 
 
 def _flatten(df: pd.DataFrame) -> pd.DataFrame:
@@ -372,6 +380,103 @@ def main() -> None:
             combined.loc[list(fills), "market_value_eur"] = pd.Series(fills)
         print(f"fuzzy-filled {newv['xfer']} (transfer / name-form) + "
               f"{newv['surname']} (same-club surname) more values")
+
+    # ---------------------------------------------------------------------------
+    # Guarantee a value for everyone who played. Two last-resort passes:
+    #   3. carry a player's most recent known value forward - across a transfer
+    #      or a season the feeds skipped (Adeyemi, Anthony Gordon, Rodri, keepers
+    #      the name join missed).
+    #   4. peer-median impute so no one with minutes is left blank - EXCEPT
+    #      players on a club promoted into the league this season, who may
+    #      genuinely have no market history.
+    # ---------------------------------------------------------------------------
+    combined["market_value_imputed"] = 0
+    combined["_ord"] = combined["season"].map(_SEASON_ORD)
+    combined["_pk"] = combined["player_slug"].map(_norm_name)
+    combined["_tk"] = combined["Squad"].map(normalize_team)
+    combined["_min"] = pd.to_numeric(
+        combined.get("standard__Playing Time_Min"), errors="coerce")
+
+    # value history: full big-5 mirror (2015-22, all leagues) + scrape + Sofascore
+    # + every value we have so far - one number per (player, season).
+    hist = []
+    try:
+        from build_value_history import _from_mirror
+        mh = _from_mirror().rename(columns={"player_key": "_pk", "market_value_eur": "v"})
+        mh["_pk"] = mh["_pk"].map(_norm_name)
+        hist.append(mh[["_pk", "season", "v"]])
+    except Exception as exc:  # noqa: BLE001 - mirror is optional
+        print(f"(carry-forward: no full mirror - {exc})")
+    for path, namecol in [(sc, "player_name"), (sf, "player_name")]:
+        if path.exists():
+            p = pd.read_csv(path)
+            if "market_value_eur" in p.columns:
+                p = p[p["market_value_eur"].notna()]
+                hist.append(pd.DataFrame({"_pk": p[namecol].map(_norm_name),
+                                          "season": p["season"],
+                                          "v": p["market_value_eur"]}))
+    have = combined.loc[combined["market_value_eur"].notna(), ["_pk", "season", "market_value_eur"]]
+    hist.append(have.rename(columns={"market_value_eur": "v"}))
+    H = pd.concat(hist, ignore_index=True)
+    H = H[(H["_pk"] != "") & H["v"].notna()].copy()
+    H["_ord"] = H["season"].map(_SEASON_ORD)
+    H = H.dropna(subset=["_ord"]).groupby(["_pk", "_ord"], as_index=False)["v"].max()
+
+    need = combined["market_value_eur"].isna() & combined["_pk"].ne("") & combined["_ord"].notna()
+    carried = 0
+    if need.any():
+        by_pk = {k: g.sort_values("_ord") for k, g in H.groupby("_pk")}
+        fills = {}
+        for idx, pk, o in zip(combined.index[need], combined.loc[need, "_pk"],
+                              combined.loc[need, "_ord"]):
+            g = by_pk.get(pk)
+            if g is None:
+                continue
+            prior = g[g["_ord"] < o]
+            if len(prior):
+                fills[idx] = float(prior.iloc[-1]["v"])
+        if fills:
+            combined.loc[list(fills), "market_value_eur"] = pd.Series(fills)
+            carried = len(fills)
+    print(f"carried a prior value forward for {carried} players (transfers / feed gaps)")
+
+    # clubs new to their league this season - their lower-division arrivals are
+    # the one group allowed to stay unvalued. (Not applied to the earliest
+    # season, where every club looks new for lack of a prior year.)
+    seen = set(zip(combined["_ord"], combined["_tk"]))
+    ords = set(combined["_ord"].dropna())
+    newcomer = {(o, tk) for o, tk in seen
+                if (o - 1) in ords and (o - 1, tk) not in seen}
+
+    lab = combined[combined["market_value_eur"].notna()].copy()
+    lab["_pos"] = lab["Pos"].map(_pos1)
+    lab["_ab"] = (pd.to_numeric(lab["Age"], errors="coerce") // 3).clip(6, 12)
+    lab["_lv"] = np.log1p(lab["market_value_eur"])
+    med3 = lab.groupby(["src_league", "_pos", "_ab"])["_lv"].median()
+    med2 = lab.groupby(["src_league", "_pos"])["_lv"].median()
+    med1 = lab.groupby("src_league")["_lv"].median()
+
+    need = (combined["market_value_eur"].isna() & (combined["_min"] > 0)
+            & combined["_pk"].ne("") & combined["_ord"].notna())
+    imp = {}
+    for idx, r in combined.loc[need].iterrows():
+        if (r["_ord"], r["_tk"]) in newcomer:
+            continue  # promoted-club newcomer - allowed to have no value
+        pos, ab = _pos1(r["Pos"]), np.clip(pd.to_numeric(r["Age"], errors="coerce") // 3, 6, 12)
+        lv = med3.get((r["src_league"], pos, ab))
+        if pd.isna(lv):
+            lv = med2.get((r["src_league"], pos), med1.get(r["src_league"]))
+        if pd.notna(lv):
+            imp[idx] = float(np.expm1(lv))
+    if imp:
+        combined.loc[list(imp), "market_value_eur"] = pd.Series(imp)
+        combined.loc[list(imp), "market_value_imputed"] = 1
+    print(f"peer-median imputed {len(imp)} more (non-promoted players with minutes)")
+
+    still = combined["market_value_eur"].isna() & (combined["_min"] > 0)
+    print(f"remaining unvalued with minutes: {still.sum()} "
+          f"(promoted-club arrivals with no market history)")
+    combined = combined.drop(columns=["_ord", "_pk", "_tk", "_min"])
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     combined.to_csv(OUT_PATH, index=False)
