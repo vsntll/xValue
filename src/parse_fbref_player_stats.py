@@ -115,13 +115,23 @@ def load_category(cat: str) -> pd.DataFrame:
         # uncommenting exposes both under the same id. Keep the fuller one.
         df = max(cands, key=lambda t: t.notna().to_numpy().sum())
         df = _flatten(df)
+        # FBref's served HTML mangles accented display names ("Mbapp�"); the
+        # href slug is clean - use it as the join key.
+        seg = re.search(rf'id="{table_id}".*?</table>', doc, re.S)
+        slugs = re.findall(
+            r'data-append-csv="[0-9a-f]+"[^>]*>\s*<a href="/en/players/[0-9a-f]+/([A-Za-z0-9-]+)"',
+            seg.group(0) if seg else doc)
         df = df[df["Player"].notna() & (df["Player"] != "Player")]
         df = df[~df["Squad"].astype(str).str.contains("Squads", na=False)]  # drop league-total rows
+        if len(slugs) == len(df):
+            df.insert(0, "player_slug", [s.replace("-", " ") for s in slugs])
+        else:
+            df.insert(0, "player_slug", df["Player"].astype(str))
         df.insert(0, "season", m["season"])
         df.insert(1, "src_league", m["comp"])
         # non-identity stat columns get a category prefix to stay distinct
         ren = {c: f"{cat}__{c}" for c in df.columns
-               if c not in (ID_COLS + ["season", "src_league", "Rk", "Matches"])}
+               if c not in (ID_COLS + ["season", "src_league", "player_slug", "Rk", "Matches"])}
         df = df.rename(columns=ren).drop(columns=["Rk", "Matches"], errors="ignore")
         frames.append(df)
     if empty:
@@ -146,7 +156,8 @@ def main() -> None:
             print(f"({cat}: no pages, skipping)")
             continue
         on = [k for k in JOIN_KEYS if k in df.columns and k in combined.columns]
-        drop_dupe_ids = [c for c in ID_COLS if c not in on and c in df.columns]
+        drop_dupe_ids = [c for c in ID_COLS + ["player_slug"]
+                         if c not in on and c in df.columns]
         df = df.drop(columns=drop_dupe_ids).drop_duplicates(subset=on)
         combined = combined.merge(df, on=on, how="left")
 
@@ -184,7 +195,7 @@ def main() -> None:
         ux["_tk"] = ux["understat__team"].map(normalize_team)
         ux = ux.drop(columns=["understat__player", "understat__team"]).drop_duplicates(
             subset=["season", "src_league", "_pk", "_tk"])
-        combined["_pk"] = combined["Player"].map(_norm_name)
+        combined["_pk"] = combined["player_slug"].map(_norm_name)
         combined["_tk"] = combined["Squad"].map(normalize_team)
         combined = combined.merge(ux, on=["season", "src_league", "_pk", "_tk"], how="left")
         got = combined["understat__xg"].notna().sum()
@@ -216,7 +227,7 @@ def main() -> None:
         tv["_tk"] = tv["club"].map(normalize_team)
         tv = tv.drop(columns=["player_name", "club"]).drop_duplicates(
             subset=["season", "src_league", "_pk", "_tk"])
-        combined["_pk"] = combined["Player"].map(_norm_name)
+        combined["_pk"] = combined["player_slug"].map(_norm_name)
         combined["_tk"] = combined["Squad"].map(normalize_team)
         combined = combined.merge(tv, on=["season", "src_league", "_pk", "_tk"], how="left")
         got = combined["market_value_eur"].notna().sum()
@@ -236,7 +247,7 @@ def main() -> None:
         sv["_tk"] = sv["club"].map(normalize_team)
         sv = sv.drop(columns=["player_name", "club"]).drop_duplicates(
             subset=["season", "src_league", "_pk", "_tk"])
-        combined["_pk"] = combined["Player"].map(_norm_name)
+        combined["_pk"] = combined["player_slug"].map(_norm_name)
         combined["_tk"] = combined["Squad"].map(normalize_team)
         combined = combined.merge(sv, on=["season", "src_league", "_pk", "_tk"], how="left")
         if "market_value_eur" not in combined.columns:

@@ -148,18 +148,25 @@ def parse() -> None:
         name_col = next((c for c in tbl.columns if c.lower() == "player"), tbl.columns[1])
         real = tbl[tbl[val_col].notna() & (tbl[val_col].astype(str) != "-")].copy()
 
-        # squad-table profile links come before the page's sidebars; take them in
-        # order (best-effort - the name+club join below doesn't depend on this)
+        # id/slug from the squad-table profile links, deduped in document order.
+        # NB read_html's row order and this list can drift on odd pages - if the
+        # counts don't line up we keep the (mojibake-prone) read_html name and
+        # skip the id rather than mis-attach.
         body = html.split('class="responsive-table"', 1)[-1]
-        ids = list(dict.fromkeys(re.findall(r"/profil/spieler/(\d+)", body)))
+        pairs = list(dict.fromkeys(
+            re.findall(r'href="/([a-z0-9-]+)/profil/spieler/(\d+)"', body)))
+        aligned = len(pairs) == len(real)
         for i, (_, r) in enumerate(real.iterrows()):
             mv = _value_eur(str(r[val_col]))
             if mv is None:
                 continue
+            nm = _strip_pos(str(r[name_col]))
+            if aligned:
+                nm = pairs[i][0].replace("-", " ")
             rows.append({
                 "season": season, "src_league": code, "squad_slug": slug,
-                "tm_player_id": ids[i] if i < len(ids) else None,
-                "player_name": _strip_pos(str(r[name_col])),
+                "tm_player_id": pairs[i][1] if aligned else None,
+                "player_name": nm,
                 "market_value_eur": mv,
             })
     df = pd.DataFrame(rows).drop_duplicates(

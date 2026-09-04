@@ -46,6 +46,9 @@ def main() -> None:
     df["src_league"] = df["comp_name"].map(COMP_CODE)
     df["season"] = df["season_start_year"].map(SEASON)
     df["tm_player_id"] = df["player_url"].astype(str).str.extract(r"/spieler/(\d+)")
+    # TM's served names are mojibake'd for accents; the URL slug is clean
+    slug = df["player_url"].astype(str).str.extract(r"transfermarkt\.com/([a-z0-9-]+)/profil")[0]
+    df["player_name"] = slug.str.replace("-", " ").fillna(df["player_name"])
 
     keep = ["season", "src_league", "squad", "player_name", "tm_player_id",
             "player_position", "player_dob", "player_age", "player_nationality",

@@ -70,21 +70,41 @@ def _pos_group(p: str) -> str:
     return {"GK": "GK", "DF": "DF", "MF": "MF", "FW": "FW"}.get(p, "MF")
 
 
+_SEASON_ORDER = {s: i for i, s in enumerate(
+    ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27"])}
+
+
 def build_xy(df: pd.DataFrame) -> pd.DataFrame:
     d = df.copy()
     d["n90"] = pd.to_numeric(d["standard__Playing Time_90s"], errors="coerce")
     d["age"] = pd.to_numeric(d["Age"], errors="coerce")
     d["pos"] = d["Pos"].map(_pos_group)
-    d = d[(d["market_value_eur"].notna()) & (d["n90"] >= 8) & (d["pos"] != "GK")
-          & d["age"].notna()]
+    d["mv"] = pd.to_numeric(d["market_value_eur"], errors="coerce")
+
+    # prior-season value for the same player (value is strongly autocorrelated)
+    d["_pk"] = d["Player"].astype(str).str.lower().str.replace(r"[^a-z ]", "", regex=True)
+    d["_ord"] = d["season"].map(_SEASON_ORDER)
+    val_hist = d.dropna(subset=["mv"])[["_pk", "src_league", "_ord", "mv"]].drop_duplicates()
+    for lag in (1, 2):
+        p = val_hist.copy()
+        p["_ord"] = p["_ord"] + lag
+        d = d.merge(p.rename(columns={"mv": f"prev{lag}_mv"}),
+                    on=["_pk", "src_league", "_ord"], how="left")
+
+    d = d[(d["mv"].notna()) & (d["n90"] >= 8) & (d["pos"] != "GK") & d["age"].notna()]
     out = pd.DataFrame({
         "season": d["season"], "src_league": d["src_league"],
         "Player": d["Player"], "Squad": d["Squad"],
         "age": d["age"], "age_sq": d["age"] ** 2,
-        "peak_dist": (d["age"] - 26).abs(),  # distance from ~peak-value age
+        "peak_dist": (d["age"] - 26).abs(),
         "pos": d["pos"],
-        "y": np.log1p(d["market_value_eur"]),
-        "market_value_eur": d["market_value_eur"],
+        "prev_log_value": np.log1p(d["prev1_mv"]),
+        "prev2_log_value": np.log1p(d["prev2_mv"]),
+        "value_momentum": np.log1p(d["prev1_mv"]) - np.log1p(d["prev2_mv"]),
+        "prev_x_youth": np.log1p(d["prev1_mv"]) * (25 - d["age"]).clip(-8, 8),
+        "has_prev": d["prev1_mv"].notna().astype(int),
+        "y": np.log1p(d["mv"]),
+        "market_value_eur": d["mv"],
     })
     for col, name in PER90.items():
         out[name] = pd.to_numeric(d.get(col), errors="coerce") / d["n90"]
