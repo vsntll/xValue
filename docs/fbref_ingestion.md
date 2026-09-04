@@ -82,18 +82,24 @@ All joins key on `(_norm_name(player_slug), normalize_team(Squad))`, folded to
 bare ascii the way FBref builds its URL slugs — `live.schema.deaccent`
 transliterates the letters `NFKD → encode ascii` would drop (ø→o, ß→ss, ł→l,
 ı→i, đ→dj, æ→ae) so "Ødegaard" from FBref and "degaard" from Transfermarkt no
-longer miss. After the keyed merge the parser runs a **two-pass fuzzy fill**:
+longer miss. After the keyed merge the parser runs four fallback passes:
 
-1. league-wide, same season: same token set (name reordering — "Son Heung-min"
-   vs "Heung-min Son") or exactly one name apart ("Thiago" vs "Thiago Alcantara",
-   "Hojbjerg" vs "Pierre-Emile Hojbjerg"), taken only when the value is unique;
-2. team-scoped: same player by surname under first-name drift ("Andy" vs
-   "Andrew Robertson", "Max" vs "Maximilian Kilman", "Isi Palazon" vs "Isaac
-   Palazon Camacho"), guarded so a shared *first* name or a common Spanish
-   surname (García, Rodríguez, …) can't carry a value on its own.
+1. **fuzzy, league-wide**: same token set (name reordering — "Son Heung-min" vs
+   "Heung-min Son") or exactly one name apart ("Thiago" vs "Thiago Alcantara"),
+   taken only when the value is unique;
+2. **fuzzy, team-scoped**: same player by surname under first-name drift ("Andy"
+   vs "Andrew Robertson", "Isi Palazon" vs "Isaac Palazon Camacho"), guarded so
+   a shared *first* name or a common Spanish surname can't carry a value alone;
+3. **carry-forward**: the player's most recent value from any prior season / club
+   (full big-5 mirror 2015-22 + scrape + Sofascore) — covers transfers and the
+   seasons a feed skipped (Adeyemi, Anthony Gordon, keepers the name join missed);
+4. **peer-median impute**: for anyone still blank *who has minutes*, the
+   position × league × age-band median (flagged `market_value_imputed`, never
+   used to fit the value model).
 
-Coverage: **95 %** of season-rows labelled (81 % before), 98 % outside 2022-23
-where the worldfootballR TM mirror is thin.
+The only players left unvalued are arrivals on a just-promoted club with no
+market history anywhere. Coverage: **~99 %** of rows with minutes (81 % before);
+GK **97 %** → complete bar promoted-club edge cases.
 
 ## Live season -> API-Football
 

@@ -4,22 +4,32 @@
 
 | | value model | outcome (pure) | outcome (hybrid) |
 | --- | --- | --- | --- |
-| metric | R²(log) **0.90**, MAE **€5.1M**, within-2x **92%**, medAPE 23% | log-loss **0.978**, acc **0.532** | log-loss **0.975**, acc **0.531** |
+| metric | R²(log) **0.89**, MAE **€4.9M**, within-2x **91%**, medAPE 23% | log-loss **0.978**, acc **0.532** | log-loss **0.975**, acc **0.531** |
 | v1 was | 0.70 / €9.1M / 68% | 1.014 / 0.511 | — |
 | reference | — | Bet365 closing 0.973 / 0.537 | (uses market opening odds as a feature) |
 
 Trajectory: value R²(log) 0.70 → 0.82 (prev-value) → 0.835 (contract/minutes) →
-0.87 (prev-season club value + xG-share) → 0.88 (name-resolution fixes,
-market-value coverage 81 → 95%) → **0.90** (`value_history.csv`: big-5 mirror
-back to 2015 + cross-league, so prev-value coverage 54 → 77%; 4-model stack +
-spline recalibration). Outcome 1.014 → 0.997 (Elo) → 0.990 (Poisson-Skellam) →
-0.988 (+ xG-Poisson) → **0.978** (cleaner team keys). Hybrid **0.975** ≈ bookmaker.
+0.87 (prev-season club value + xG-share) → 0.88 (name-resolution, coverage
+81 → 95%) → 0.90 (`value_history.csv`: big-5 mirror back to 2015 + cross-league;
+4-model stack + spline recalibration) → **0.89** (goalkeepers folded in and the
+test set widened to include transferred players carried across on a stale value -
+a more representative number over a now-complete population). Outcome 1.014 →
+0.997 → 0.990 → 0.988 → **0.978** (cleaner team keys). Hybrid **0.975** ≈ bookmaker.
 
 The value model splits cleanly by whether a prior-season value exists:
-**R²(log) 0.93** for the 77% that have one, **0.76** for cold-start arrivals from
+**R²(log) 0.93** for the 77% that have one, **0.72** for cold-start arrivals from
 outside the big-5 (promoted-club squads, Eredivisie/Primeira/Championship
-signings, academy graduates). Closing that gap - and pushing toward 0.95 - needs
-data we don't have: lower-league value history, transfer fees, or salaries.
+signings, academy graduates). Keepers score **0.88**. Closing the cold-start gap -
+and pushing past 0.90 - needs data we don't have: lower-league value history,
+transfer fees, or salaries.
+
+**Coverage guarantee**: `parse_fbref_player_stats.py` gives every player with
+minutes a `market_value_eur` - a real feed value, else the player's most recent
+value carried forward across a transfer, else a position × league × age
+peer-median (flagged `market_value_imputed`, never used to fit the model). The
+only players left unvalued are arrivals on a just-promoted club with no market
+history. `value_model_predictions.csv` is written for every season including the
+current one, so the site has a value and a prediction for every current player.
 
 "Hybrid" (`train_outcome_model.py --hybrid`) blends market-consensus **opening**
 odds into the stack - it beats the opening line and lands ~level with the
@@ -30,10 +40,10 @@ bookmaker's own **closing**-odds performance. The pure model uses only data.
 
 Predicts a player's market value from his season + his value history.
 
-- **Data**: `fbref_player_season_stats.csv`, outfield players with a
-  Transfermarkt/Sofascore value and >= 8 full-90s. ~3,870 train / ~1,970 test.
-  Value coverage is 95% of season-rows (98% outside 2022-23, where the
-  worldfootballR TM mirror is thin and a real 2022-23 scrape is still owed).
+- **Data**: `fbref_player_season_stats.csv`, players (outfield **and keepers**)
+  with a real value and >= 8 full-90s. ~4,160 train / ~2,070 test. Value coverage
+  is ~99% of season-rows that have minutes (81% before this work); the gap is
+  2022-23 (thin TM mirror) and just-promoted clubs.
 - **Prev-value lags** (`build_value_history.py` → `value_history.csv`): the model
   is dominated by last season's value, so coverage of that lag caps accuracy.
   The history table unions the worldfootballR big-5 mirror **back to 2015-16 and
@@ -46,15 +56,18 @@ Predicts a player's market value from his season + his value history.
   minutes-trend; per-90 goals / assists / npg / shots / SoT / xG / npxG / xA /
   key passes / xG-chain / fouls; prev-season squad value; xG-share; contract
   years remaining; one-hot position + league.
-- **Target**: `log1p(market_value_eur)`. **Split**: train 2020-24 (~3,780), test
-  2024-26 (~1,910). GK excluded.
+- **Target**: `log1p(market_value_eur)`. **Split**: train 2020-24, test 2024-26.
+  Fit + eval only on real values (peer-median imputations excluded); age falls
+  back to (season year - birth year) when FBref leaves it blank early in a season.
 - **Model**: a ridge stack over four base learners (two HGB fits, ExtraTrees,
   ridge), then a monotone cubic-spline recalibration on OOF predictions to undo
   the trees' regression-to-the-mean squeeze.
-- **Result**: R2(log) **0.90**, MAE **EUR5.1M**, medAPE **23%**, within-2x
-  **92%**. Still ~0.3-0.5x on the EUR150M+ tail (Mbappe: no in-window prev, was
-  Ligue 1) - but that tail is only ~15 rows and barely moves R².
-- Output: `data/processed/value_model_predictions.csv`, `models/value_model.pkl`.
+- **Result**: R2(log) **0.89**, MAE **EUR4.9M**, medAPE **23%**, within-2x
+  **91%** (0.93 with a prior value, 0.72 cold-start, 0.88 keepers). Still ~0.3-0.5x
+  on the EUR150M+ tail (Mbappe: no in-window prev) - ~15 rows, barely moves R².
+- Output: `value_model_predictions.csv` (**every player, every season incl. the
+  current one**, with `value_imputed` flag), `models/value_model.pkl`
+  (`{bases, meta, cal, features}`).
 
 ## Step 6 - squad rollup  (`src/build_squad_features.py`)
 
