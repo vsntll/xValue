@@ -543,6 +543,134 @@ def build_methodology_example(model, fixtures: list[dict], blended_df: pd.DataFr
     }
 
 
+# ---------------------------------------------------------------------------
+# Games (see site/template.html): a match simulator and a "predict the season"
+# streak game, both fed entirely by data already computed above.
+# ---------------------------------------------------------------------------
+
+STREAK_SEASONS = ["2020-21", "2021-22", "2022-23", "2023-24", "2024-25",
+                  "2025-26", "2026-27"]
+SIM_SQUAD_N = 16   # players kept per team for the goalscorer draw
+
+
+def build_games_data(model, blended_df: pd.DataFrame, all_matches: pd.DataFrame,
+                     teams_list: list[dict], all_players: list[dict]) -> dict:
+    key2league = {t["team_key"]: t["league"] for t in teams_list}
+    key2name = {t["team_key"]: t["name"] for t in teams_list}
+    # every club with a 2026-27 player in the site data - these are "current"
+    current_keys = {p["team_key"] for p in all_players}
+    _NAME_FIX = {"leipzig": "RB Leipzig", "cologne": "FC Koln", "hamburger": "Hamburger SV",
+                 "arminia bielefeld": "Arminia", "greuther furth": "Greuther Furth"}
+
+    def _name(k: str) -> str:
+        nm = key2name.get(k)
+        if nm and "�" not in nm:
+            return nm
+        return _NAME_FIX.get(k) or k.replace("_", " ").title()
+
+    # --- Game 1: match simulator -------------------------------------------
+    # ONLY teams with a current-season squad (a relegated club has a stale
+    # rating but no 2026-27 players to score the goals). Each gets its
+    # Dixon-Coles attack/defence rating and its goalscorer weights (the same
+    # npxG90 x minutes-share recipe as the anytime-goal props).
+    squads: dict[str, list[dict]] = {}
+    for tk, sq in blended_df.groupby("team_key"):
+        med = sq["min_pct"].median()
+        mf = (sq["min_pct"].fillna(med if pd.notna(med) else 50.0) / 100.0).clip(0.05, 1.0)
+        w = (sq["npxg90"].fillna(0).clip(lower=0).to_numpy() * mf.to_numpy())
+        tot = float(w.sum())
+        if tot <= 0:
+            continue
+        rows = sorted(
+            ({"p": r["player"], "pos": r["pos"], "w": round(float(ww / tot), 4)}
+             for (_, r), ww in zip(sq.iterrows(), w)),
+            key=lambda x: -x["w"])[:SIM_SQUAD_N]
+        squads[tk] = rows
+
+    # a club just promoted this season may have no player over the 45-minute
+    # cut yet - build its squad straight from the raw table (any minutes) so
+    # it still shows up in the simulator.
+    missing = current_keys - set(squads)
+    if missing:
+        raw = pd.read_csv(PROC / "fbref_player_season_stats.csv",
+                          low_memory=False, encoding="latin-1")
+        raw = _fix_names(raw, ["Player", "Squad"])
+        raw = raw[raw["season"] == "2026-27"].copy()
+        raw["tk"] = raw["Squad"].map(normalize_team)
+        raw["mn"] = pd.to_numeric(raw["standard__Playing Time_Min"], errors="coerce")
+        raw["nx"] = pd.to_numeric(raw.get("understat__np_xg"), errors="coerce").fillna(0)
+        raw["gl"] = pd.to_numeric(raw.get("standard__Performance_Gls"), errors="coerce").fillna(0)
+        for tk in missing:
+            r = raw[(raw["tk"] == tk) & (raw["mn"] > 0)]
+            if r.empty:
+                continue
+            wcol = (r["nx"] + 0.4 * r["gl"] + 0.02 * r["mn"] / 90.0)
+            tot = float(wcol.sum())
+            if tot <= 0:
+                continue
+            squads[tk] = sorted(
+                ({"p": rr["Player"], "pos": str(rr["Pos"]).split(",")[0],
+                  "w": round(float(ww / tot), 4)}
+                 for (_, rr), ww in zip(r.iterrows(), wcol)),
+                key=lambda x: -x["w"])[:SIM_SQUAD_N]
+
+    sim_teams = []
+    for tk in sorted(squads):
+        if model is None or tk not in model["idx"] or tk not in current_keys:
+            continue
+        i = model["idx"][tk]
+        sim_teams.append({
+            "key": tk, "name": _name(tk), "league": key2league.get(tk, ""),
+            "att": round(float(model["att"][i]), 4),
+            "def": round(float(model["dfn"][i]), 4),
+        })
+    squads = {t["key"]: squads[t["key"]] for t in sim_teams}
+    sim = {
+        "home_adv": round(float(model["home"]), 4) if model else 0.25,
+        "rho": round(float(model["rho"]), 4) if model else -0.05,
+        "teams": sim_teams, "squads": squads,
+    }
+
+    # --- Game 2: "predict the season" streak game -------------------------
+    # every league match, in date order, with the actual score and the
+    # leak-free Dixon-Coles model's pre-match W/D/L probabilities.
+    dc = pd.read_csv(PROC / "dixon_coles_probs.csv", encoding="utf-8")
+    lg = all_matches[all_matches["competition_type"] == "league"].merge(
+        dc[["season", "HomeTeam", "AwayTeam", "dc_pH", "dc_pD", "dc_pA"]],
+        on=["season", "HomeTeam", "AwayTeam"], how="left")
+    lg = lg[lg["season"].isin(STREAK_SEASONS)].sort_values("Date")
+
+    tks = sorted(set(lg["h"]) | set(lg["a"]))
+    tk_idx = {k: i for i, k in enumerate(tks)}
+    streak_teams = [[k, _name(k), key2league.get(k, "")] for k in tks]
+    fixtures = []
+    for r in lg.itertuples(index=False):
+        pH = r.dc_pH if pd.notna(r.dc_pH) else 0.45
+        pD = r.dc_pD if pd.notna(r.dc_pD) else 0.26
+        pA = r.dc_pA if pd.notna(r.dc_pA) else 0.29
+        fixtures.append([
+            STREAK_SEASONS.index(r.season), tk_idx[r.h], tk_idx[r.a],
+            int(r.FTHG), int(r.FTAG),
+            round(float(pH), 3), round(float(pD), 3), round(float(pA), 3),
+        ])
+    streak = {"seasons": STREAK_SEASONS, "teams": streak_teams, "fixtures": fixtures}
+
+    return {
+        "sim": sim,
+        "streak": streak,
+        "notes": {
+            "sim": "Draws each team's goals from a Poisson on the Dixon-Coles "
+                   "expected goals for the matchup, then hands each goal to a "
+                   "player picked by his npxG-per-90 x minutes share. Random "
+                   "single game - hit re-run, or simulate 1,000 for the spread.",
+            "streak": "Predict a real team's whole season one match at a time. "
+                      "The reveal shows the actual result and what the leak-free "
+                      "Dixon-Coles model (fitted only on earlier matches) gave "
+                      "pre-match. One wrong call ends the run.",
+        },
+    }
+
+
 def main() -> None:
     # Dixon-Coles is fit once, combined across all competitions (league + cup +
     # European) - that's what lets Bundesliga/La Liga/Premier League teams share
@@ -589,6 +717,7 @@ def main() -> None:
     projected_table = build_projected_table(model, standings, full_schedule)
     value_leaderboard = build_value_leaderboard(all_players)
     methodology_example = build_methodology_example(model, fixtures, blended_df, all_players)
+    games = build_games_data(model, blended_df, all_matches, teams, all_players)
 
     payload = {
         "generated_asof": asof.strftime("%Y-%m-%d"),
@@ -602,6 +731,7 @@ def main() -> None:
         "projected_table": projected_table,
         "value_leaderboard": value_leaderboard,
         "methodology_example": methodology_example,
+        "games": games,
         "notes": {
             "current_stats": "2026-27 FBref season-to-date stats (min 45 minutes played).",
             "last_season": "2025-26 full-season stats for the same player, where available.",
@@ -620,7 +750,8 @@ def main() -> None:
     OUT.write_text(payload_json, encoding="utf-8")
     print(f"wrote {OUT}  ({len(all_players)} players, {len(fixtures)} fixtures, {len(teams)} teams, "
           f"{len(standings)} standings tables, {len(cup_finals)} cup finals, "
-          f"{len(projected_table)} projected tables)  size={OUT.stat().st_size/1024:.0f} KB")
+          f"{len(projected_table)} projected tables, {len(games['sim']['teams'])} sim teams / "
+          f"{len(games['streak']['fixtures'])} streak matches)  size={OUT.stat().st_size/1024:.0f} KB")
 
     splice_index_html(payload_json)
 
