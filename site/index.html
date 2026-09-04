@@ -364,6 +364,28 @@
   .streak-over{ text-align:center; padding:20px; }
   .streak-over .verdict{ font-family:var(--font-display); font-weight:700; font-size:26px; margin-bottom:6px; }
 
+  /* ---------- easter egg: Fermín mode ---------- */
+  body.fermin{ background:
+      radial-gradient(1200px 500px at 50% -120px, rgba(165,0,68,.16), transparent 70%),
+      radial-gradient(1200px 500px at 50% -120px, rgba(0,77,152,.14), transparent 60%), var(--bg); }
+  body.fermin .topbar{ border-bottom-color:#a5004420; }
+  .fermin-row{ box-shadow:inset 3px 0 0 #a50044, inset 0 0 24px rgba(165,0,68,.10); }
+  .fermin-row .pname{ color:#a50044; font-weight:800; }
+  .fermin-splash{ position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center;
+      background:rgba(6,12,10,.72); backdrop-filter:blur(3px); animation:fmfade .25s ease; cursor:pointer; }
+  .fermin-splash.out{ opacity:0; transition:opacity .4s ease; pointer-events:none; }
+  @keyframes fmfade{ from{opacity:0} to{opacity:1} }
+  .fermin-card{ text-align:center; color:#fff; transform:scale(.85); animation:fmpop .35s cubic-bezier(.2,1.4,.4,1) forwards; }
+  @keyframes fmpop{ to{ transform:scale(1) } }
+  .fermin-card .kick{ font-family:var(--font-display); font-weight:700; font-size:34px; letter-spacing:2px; margin-top:14px; }
+  .fermin-card .sub2{ font-size:13px; opacity:.85; margin-top:4px; }
+  .fermin-portrait{ width:190px; height:230px; filter:drop-shadow(0 12px 30px rgba(0,0,0,.5)); }
+  .fermin-badge{ position:fixed; right:14px; bottom:14px; z-index:900; display:flex; align-items:center; gap:8px;
+      background:linear-gradient(135deg,#a50044,#004d98); color:#fff; font-size:12px; font-weight:700;
+      padding:7px 12px 7px 8px; border-radius:999px; box-shadow:0 6px 20px -6px rgba(0,0,0,.5); }
+  .fermin-badge svg{ width:26px; height:26px; }
+  .fermin-tag{ display:inline-block; margin-left:6px; font-size:11px; color:#a50044; }
+
   [hidden]{ display:none !important; }
   @media (max-width:640px){
     .brand h1{ font-size:19px; } .tile .v{ font-size:21px; }
@@ -493,6 +515,8 @@
   var DATA = JSON.parse(document.getElementById('site-data').textContent);
   var players = DATA.players, fixtures = DATA.fixtures, notes = DATA.notes;
   var leagues = DATA.leagues || [];
+  var FERMIN = false;                        // easter egg — see the bottom of this script
+  var FERMIN_NAME = 'Fermin López', FERMIN_KEY = 'barcelona';
 
   document.getElementById('asofLabel').textContent = 'Data as of ' + DATA.generated_asof;
 
@@ -521,6 +545,7 @@
   function num(v, d){ return v==null ? '—' : Number(v).toFixed(d==null?0:d); }
   function pct(v){ return v==null ? '—' : Math.round(v*100) + '%'; }
   function esc(s){ return (s==null?'':String(s)).replace(/[&<>]/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+  function isFermin(p){ return p && typeof p.player==='string' && p.player.toLowerCase().indexOf('fermin l')===0; }
 
   // ---------- tabs ----------
   var tabBtns = document.querySelectorAll('.tab-btn');
@@ -546,6 +571,10 @@
     var bargain = withVal.slice().sort(function(a,b){return (b.value.ratio||0)-(a.value.ratio||0);})[0];
     var nextFx = fl.slice().sort(function(a,b){return a.date<b.date?-1:1;})[0];
     var items = [];
+    if(FERMIN){
+      var fp = players.filter(isFermin)[0];
+      items.push({k:'⚽ Player of the everything', v:'Fermín López', d: fp ? 'Barcelona — ' + num(fp.current.gls) + ' goals, model value ' + eur(fp.value && fp.value.predicted_eur) : 'Barcelona'});
+    }
     if(topScorer) items.push({k:'Top scorer', v:topScorer.player, d:topScorer.squad + ' — ' + num(topScorer.current.gls) + ' goals in ' + num(topScorer.current.min) + ' min'});
     if(bargain) items.push({k:'Biggest value gap', v:bargain.player, d:'Model: ' + eur(bargain.value.predicted_eur) + ' vs listed ' + eur(bargain.value.listed_value_eur)});
     if(nextFx) items.push({k:'Next up', v: teamShort(nextFx.home) + ' vs ' + teamShort(nextFx.away), d: nextFx.date.slice(0,10) + ' (' + nextFx.league + ') — ' + pct(nextFx.p_home_win) + ' / ' + pct(nextFx.p_draw) + ' / ' + pct(nextFx.p_away_win)});
@@ -598,9 +627,10 @@
       ratioTxt = (v.ratio>=1?'+':'') + Math.round((v.ratio-1)*100) + '%';
       if(v.ratio>=1.15) ratioClass='bargain'; else if(v.ratio<=0.85) ratioClass='rich';
     }
+    var ferm = FERMIN && isFermin(p);
     return (
-      '<tr class="prow'+(state.openKey===key?' open':'')+'" data-key="'+key+'">' +
-        '<td><div class="pname">'+esc(p.player)+' <span class="pos-badge">'+esc(p.pos)+'</span></div><div class="psquad">'+esc(p.squad)+' &middot; '+esc(p.league)+'</div></td>' +
+      '<tr class="prow'+(state.openKey===key?' open':'')+(ferm?' fermin-row':'')+'" data-key="'+key+'">' +
+        '<td><div class="pname">'+(ferm?'🐐 ':'')+esc(p.player)+' <span class="pos-badge">'+esc(p.pos)+'</span></div><div class="psquad">'+esc(p.squad)+' &middot; '+esc(p.league)+'</div></td>' +
         '<td class="num num-col">'+num(p.current.min)+'</td>' +
         '<td class="num num-col">'+num(p.current.gls)+'</td>' +
         '<td class="num num-col">'+num(p.current.ast)+'</td>' +
@@ -656,6 +686,7 @@
       if(typeof av==='string') return av<bv?-1*state.dir:av>bv?1*state.dir:0;
       return (av-bv) * (state.dir);
     });
+    if(FERMIN){ for(var fz=0;fz<list.length;fz++){ if(isFermin(list[fz])){ list.unshift(list.splice(fz,1)[0]); break; } } }
     document.querySelectorAll('#playerTable thead th').forEach(function(th){th.classList.remove('sorted');});
     var activeTh = document.querySelector('#playerTable thead th[data-k="'+state.sort+'"]');
     if(activeTh) activeTh.classList.add('sorted');
@@ -687,10 +718,15 @@
     var pool = players.filter(inLeague).filter(function(p){
       return p.value && (p.current.min||0) >= LB_MIN_MIN && (p.value.listed_value_eur||0) >= LB_MIN_LISTED;
     });
-    return {
+    var lb = {
       bargains: pool.slice().sort(function(a,b){ return b.value.ratio - a.value.ratio; }).slice(0,8),
       overpriced: pool.slice().sort(function(a,b){ return a.value.ratio - b.value.ratio; }).slice(0,8),
     };
+    if(FERMIN){
+      var fp = players.filter(isFermin)[0];
+      if(fp) lb.bargains = [fp].concat(lb.bargains.filter(function(p){ return !isFermin(p); })).slice(0,8);
+    }
+    return lb;
   }
   function lbRowHtml(p, i){
     var pct2 = (p.value.ratio>=1?'+':'') + Math.round((p.value.ratio-1)*100) + '%';
@@ -1208,17 +1244,18 @@
       var h = byKey[document.getElementById('simHome').value];
       var a = byKey[document.getElementById('simAway').value];
       var adv = document.getElementById('simHomeAdv').checked ? S.home_adv : 0;
-      return {
-        h: h, a: a,
-        lh: clampL(Math.exp(h.att + a['def'] + adv)),
-        la: clampL(Math.exp(a.att + h['def'])),
-      };
+      var lh = Math.exp(h.att + a['def'] + adv), la = Math.exp(a.att + h['def']);
+      if(FERMIN){ if(h.key===FERMIN_KEY) lh *= 2.4; if(a.key===FERMIN_KEY) la *= 2.4; }
+      return { h: h, a: a, lh: clampL(lh), la: clampL(la) };
     }
     function simOne(L){
       var gh = poissonSample(L.lh), ga = poissonSample(L.la);
       var hs = (GAMES.sim.squads[L.h.key]||[]), as = (GAMES.sim.squads[L.a.key]||[]);
       function score(n, sq){
-        return goalMinutes(n).map(function(m){ var p = pickScorer(sq); return { p: p?p.p:'—', min: m }; });
+        return goalMinutes(n).map(function(m){
+          if(FERMIN) return { p: FERMIN_NAME, min: m };   // every goal is Fermín's
+          var p = pickScorer(sq); return { p: p?p.p:'—', min: m };
+        });
       }
       return { gh: gh, ga: ga, hScorers: score(gh, hs), aScorers: score(ga, as) };
     }
@@ -1340,6 +1377,7 @@
       var actual = gf>ga ? 'W' : gf<ga ? 'L' : 'D';
       var pW = home ? f[5] : f[7], pD = f[6], pL = home ? f[7] : f[5];
       var mp = pW>=pD && pW>=pL ? 'W' : pD>=pL ? 'D' : 'L';
+      if(FERMIN && teams[st.teamIdx][0]===FERMIN_KEY){ mp = 'W'; pW = 0.97; pD = 0.02; pL = 0.01; }
       return { home:home, opp:teams[oppIdx][1], gf:gf, ga:ga, actual:actual,
                pW:pW, pD:pD, pL:pL, modelPick:mp };
     }
@@ -1449,5 +1487,103 @@
     '<div><b>Cup finals</b> — '+esc(notes.cup_finals)+'</div>' +
     (GAMES.notes ? '<div><b>Match Sim</b> — '+esc(GAMES.notes.sim)+'</div>' +
                    '<div><b>Streak</b> — '+esc(GAMES.notes.streak)+'</div>' : '');
+
+  // ================= easter egg: type "fermin" =================
+  var FERMIN_SVG =
+    '<svg class="fermin-portrait" viewBox="0 0 190 230" xmlns="http://www.w3.org/2000/svg">' +
+      '<defs><linearGradient id="fmkit" x1="0" y1="0" x2="1" y2="1">' +
+        '<stop offset="0" stop-color="#a50044"/><stop offset="1" stop-color="#004d98"/></linearGradient></defs>' +
+      '<rect x="4" y="4" width="182" height="222" rx="18" fill="#0b1512" stroke="url(#fmkit)" stroke-width="3"/>' +
+      // shoulders / shirt
+      '<path d="M30 210 C34 150 60 130 95 130 C130 130 156 150 160 210 Z" fill="url(#fmkit)"/>' +
+      '<path d="M78 130 h34 l-8 16 h-18 Z" fill="#0b1512"/>' +
+      '<g stroke="#0b1512" stroke-width="6" opacity="0.55">' +
+        '<line x1="70" y1="140" x2="62" y2="210"/><line x1="95" y1="140" x2="95" y2="210"/><line x1="120" y1="140" x2="128" y2="210"/></g>' +
+      '<text x="95" y="192" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-weight="700" font-size="30" fill="#fff">16</text>' +
+      // head
+      '<circle cx="95" cy="86" r="40" fill="#e8b58c"/>' +
+      '<path d="M55 78 C58 40 132 40 135 78 C135 60 120 44 95 44 C70 44 55 60 55 78 Z" fill="#2a1a12"/>' +
+      '<circle cx="80" cy="86" r="4.5" fill="#2a1a12"/><circle cx="110" cy="86" r="4.5" fill="#2a1a12"/>' +
+      '<path d="M80 104 Q95 116 110 104" stroke="#2a1a12" stroke-width="4" fill="none" stroke-linecap="round"/>' +
+      // ball
+      '<circle cx="150" cy="150" r="15" fill="#fff" stroke="#0b1512" stroke-width="2"/>' +
+      '<path d="M150 140 l6 5 -2 8 -8 0 -2 -8 Z" fill="#0b1512"/>' +
+      '<text x="95" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="1" fill="#fff">FERMÍN LÓPEZ</text>' +
+    '</svg>';
+
+  function ferminEgg(){
+    if(FERMIN) return;
+    FERMIN = true;
+    document.body.classList.add('fermin');
+
+    // bend the runtime data toward him (source data untouched — refresh undoes it)
+    var fp = players.filter(isFermin)[0];
+    if(fp){
+      fp.current.min = Math.max(fp.current.min||0, 900);
+      fp.current.gls = (fp.current.gls||0) + 30;
+      fp.current.ast = (fp.current.ast||0) + 22;
+      fp.current.npg = fp.current.gls;
+      fp.current.npxg90 = 2.6; fp.current.xag90 = 1.9;
+      fp.current.npxg = 42; fp.current.xag = 31;
+      if(fp.value){ fp.value.predicted_eur = 900000000; fp.value.ratio = 900000000 / (fp.value.listed_value_eur || 1e8); }
+      if(fp.projected_38){ fp.projected_38.gls = 58; fp.projected_38.ast = 42; fp.projected_38.proj_min = 3400; }
+      players = players.filter(function(p){ return !isFermin(p); }); players.unshift(fp);
+      DATA.players = players;
+    }
+    fixtures.forEach(function(fx){
+      var homeB = fx.home_key===FERMIN_KEY, awayB = fx.away_key===FERMIN_KEY;
+      if(!homeB && !awayB) return;
+      if(homeB){ fx.p_home_win = 0.97; fx.p_draw = 0.02; fx.p_away_win = 0.01; fx.exp_goals_home = 4.4; }
+      else { fx.p_away_win = 0.97; fx.p_draw = 0.02; fx.p_home_win = 0.01; fx.exp_goals_away = 4.4; }
+      var props = homeB ? fx.home_props : fx.away_props;
+      if(props) props.forEach(function(pr){
+        if(pr.player && pr.player.toLowerCase().indexOf('fermin l')===0){ pr.p_anytime_goal = 0.99; pr.p_anytime_assist = 0.88; }
+      });
+      if(props) props.sort(function(a,b){
+        return (b.player.toLowerCase().indexOf('fermin l')===0?1:0) - (a.player.toLowerCase().indexOf('fermin l')===0?1:0);
+      });
+    });
+    var bteam = (GAMES.sim && GAMES.sim.teams || []).filter(function(t){ return t.key===FERMIN_KEY; })[0];
+    if(bteam){ bteam.att += 1.7; bteam['def'] -= 0.9; }
+    var bsq = GAMES.sim && GAMES.sim.squads[FERMIN_KEY];
+    if(bsq) bsq.forEach(function(x){ x.w = (x.p.toLowerCase().indexOf('fermin l')===0) ? 40 : 0.02; });
+
+    try { renderTiles(); renderPlayers(); renderFixtures(); renderLeaderboard(); } catch(e){}
+    ['sim','streak'].forEach(function(name){
+      var wasVisible = !document.getElementById('tab-'+name).hidden;
+      if(name==='sim') simInited = false; else streakInited = false;
+      if(wasVisible) document.querySelector('.tab-btn[data-tab="'+name+'"]').click();
+    });
+
+    var splash = document.createElement('div');
+    splash.className = 'fermin-splash';
+    splash.innerHTML = '<div class="fermin-card">' + FERMIN_SVG +
+      '<div class="kick">FERMÍN MODE</div>' +
+      '<div class="sub2">El Peque takes over. Every stat, every goal, every model &mdash; his now. Refresh to undo.</div></div>';
+    document.body.appendChild(splash);
+    var dismiss = function(){ splash.classList.add('out'); setTimeout(function(){ splash.remove(); }, 450); };
+    splash.addEventListener('click', dismiss);
+    setTimeout(dismiss, 4200);
+
+    var badge = document.createElement('div');
+    badge.className = 'fermin-badge';
+    badge.innerHTML =
+      '<svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" fill="#fff"/>' +
+        '<circle cx="16" cy="13" r="7" fill="#e8b58c"/>' +
+        '<path d="M4 30 C5 20 11 17 16 17 C21 17 27 20 28 30 Z" fill="#a50044"/>' +
+        '<text x="16" y="30" text-anchor="middle" font-size="9" font-weight="700" fill="#004d98">16</text></svg>' +
+      '<span>FERMÍN MODE &middot; refresh to undo</span>';
+    document.body.appendChild(badge);
+  }
+
+  var _fbuf = '';
+  window.addEventListener('keydown', function(e){
+    if(e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = (e.key || '').toLowerCase();
+    if(k.length !== 1) return;
+    _fbuf = (_fbuf + k).slice(-8);
+    if(_fbuf.indexOf('fermin') >= 0) ferminEgg();
+  });
+  if(/fermin/i.test(location.hash) || /fermin/i.test(location.search)){ ferminEgg(); }
 })();
 </script>
