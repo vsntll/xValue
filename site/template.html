@@ -303,10 +303,73 @@
           color:var(--text-faint); line-height:1.7; }
   footer b{ color:var(--text-dim); }
 
+  /* ---------- games (Match Sim + Streak) ---------- */
+  .game-wrap{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+              box-shadow:var(--shadow); padding:18px; }
+  .game-wrap + .game-wrap{ margin-top:16px; }
+  .game-controls{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+  .game-controls select{ font:inherit; font-size:13px; padding:7px 10px; border-radius:var(--radius-sm);
+              border:1px solid var(--border); background:var(--surface); color:var(--text); }
+  .game-btn{ font:inherit; font-size:13px; font-weight:600; padding:8px 16px; border-radius:var(--radius-sm);
+             border:1px solid var(--accent); background:var(--accent); color:var(--accent-ink); cursor:pointer; }
+  .game-btn.ghost{ background:transparent; color:var(--accent); }
+  .game-btn:disabled{ opacity:.45; cursor:not-allowed; }
+  .game-btn.big{ font-size:15px; padding:12px 22px; }
+
+  .sim-head{ display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
+             margin:18px 0 6px; }
+  .sim-team{ display:flex; align-items:center; gap:8px; font-family:var(--font-display); font-weight:700; font-size:19px; }
+  .sim-score{ font-family:var(--font-display); font-weight:700; font-size:44px; letter-spacing:1px;
+              min-width:120px; text-align:center; }
+  .sim-score.pending{ color:var(--text-faint); }
+  .sim-line{ text-align:center; color:var(--text-dim); font-size:12.5px; margin-bottom:14px; }
+  .sim-scorers{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:6px; }
+  .sim-scorers .col{ background:var(--surface-2); border-radius:var(--radius-md); padding:12px 14px; }
+  .sim-scorers .col h4{ font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--text-faint);
+             margin-bottom:8px; }
+  .sim-scorers .g{ font-size:13.5px; padding:3px 0; }
+  .sim-scorers .g .min{ color:var(--text-faint); font-family:var(--font-mono); font-size:11.5px; margin-right:6px; }
+  .sim-scorers .none{ color:var(--text-faint); font-size:12.5px; }
+  .odds-bar{ display:flex; height:26px; border-radius:var(--radius-sm); overflow:hidden; margin:12px 0 4px;
+             font-size:11px; font-weight:700; }
+  .odds-bar span{ display:flex; align-items:center; justify-content:center; color:#fff; min-width:0; }
+  .odds-bar .h{ background:var(--win); } .odds-bar .d{ background:var(--draw); } .odds-bar .a{ background:var(--loss); }
+  .sim-agg{ margin-top:14px; border-top:1px solid var(--border); padding-top:12px; font-size:13px; }
+  .sim-agg table{ width:100%; font-size:12.5px; }
+  .sim-agg td{ padding:3px 6px; } .sim-agg td:last-child{ text-align:right; font-family:var(--font-mono); }
+
+  .streak-hud{ display:flex; gap:22px; align-items:baseline; margin:16px 0 10px; flex-wrap:wrap; }
+  .streak-hud .big{ font-family:var(--font-display); font-weight:700; font-size:38px; line-height:1; }
+  .streak-hud .lbl{ font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--text-faint); }
+  .streak-fix{ text-align:center; margin:20px 0; }
+  .streak-fix .mw{ font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--text-faint); }
+  .streak-fix .matchup{ font-family:var(--font-display); font-weight:700; font-size:24px; margin:6px 0; }
+  .streak-fix .venue{ color:var(--text-dim); font-size:13px; }
+  .pick-row{ display:flex; gap:10px; justify-content:center; margin:16px 0; }
+  .pick-btn{ font:inherit; font-size:15px; font-weight:700; padding:12px 26px; border-radius:var(--radius-sm);
+             border:1px solid var(--border-strong); background:var(--surface-2); color:var(--text); cursor:pointer;
+             min-width:96px; }
+  .pick-btn:hover:not(:disabled){ border-color:var(--accent); color:var(--accent); }
+  .pick-btn.correct{ background:var(--win); color:#fff; border-color:var(--win); }
+  .pick-btn.wrong{ background:var(--loss); color:#fff; border-color:var(--loss); }
+  .pick-btn.model{ box-shadow:inset 0 0 0 2px var(--accent-2); }
+  .reveal{ text-align:center; margin:14px 0; }
+  .reveal .rscore{ font-family:var(--font-display); font-weight:700; font-size:30px; }
+  .reveal .rmodel{ font-size:12px; color:var(--text-dim); margin-top:4px; }
+  .streak-history{ display:flex; flex-wrap:wrap; gap:4px; margin-top:16px; }
+  .streak-history .pip{ width:22px; height:22px; border-radius:5px; display:flex; align-items:center;
+             justify-content:center; font-size:11px; font-weight:700; color:#fff; }
+  .streak-history .pip.hit{ background:var(--win); } .streak-history .pip.miss{ background:var(--loss); }
+  .streak-history .pip.model-only{ opacity:.4; }
+  .streak-over{ text-align:center; padding:20px; }
+  .streak-over .verdict{ font-family:var(--font-display); font-weight:700; font-size:26px; margin-bottom:6px; }
+
   [hidden]{ display:none !important; }
   @media (max-width:640px){
     .brand h1{ font-size:19px; } .tile .v{ font-size:21px; }
     .props{ grid-template-columns:1fr; }
+    .sim-scorers{ grid-template-columns:1fr; }
+    .sim-score{ font-size:34px; }
   }
 </style>
 
@@ -324,6 +387,8 @@
       <button class="tab-btn active" data-tab="players">Players</button>
       <button class="tab-btn" data-tab="fixtures">Fixtures &amp; Odds</button>
       <button class="tab-btn" data-tab="teams">Teams</button>
+      <button class="tab-btn" data-tab="sim">Match Sim</button>
+      <button class="tab-btn" data-tab="streak">Streak</button>
       <button class="tab-btn" data-tab="method">How It Works</button>
     </div>
     <span class="asof" id="asofLabel"></span>
@@ -334,8 +399,9 @@
   <header class="hero">
     <p id="heroText">Every player's season stats next to what the models think happens next: market value,
       win odds, and who's most likely to score — across the Premier League, La Liga and Bundesliga, plus
-      club form, rosters, honours, and a full projected final table. Curious how any of it's computed?
-      The <b>How It Works</b> tab shows the actual math, run on today's real fixtures.</p>
+      club form, rosters, honours, and a full projected final table. Play the models too: <b>Match Sim</b>
+      runs any matchup with goalscorers, <b>Streak</b> dares you to call a whole real season. Curious how
+      any of it's computed? The <b>How It Works</b> tab shows the actual math.</p>
   </header>
 
   <div class="tiles" id="tiles"></div>
@@ -394,6 +460,22 @@
     <div id="teamPanel"></div>
   </section>
 
+  <section id="tab-sim" hidden>
+    <p class="method-intro">Pick any two current clubs — across leagues if you like — and play the match out.
+      Goals are drawn from a Poisson on the Dixon-Coles expected goals for the matchup; each goal goes to a
+      player weighted by his non-penalty xG per 90 and minutes share. Re-run for a different night, or
+      simulate a thousand for the spread.</p>
+    <div id="simBody"></div>
+  </section>
+
+  <section id="tab-streak" hidden>
+    <p class="method-intro">Pick a real team and a real season, then call every one of their league matches
+      — win, draw or loss — one at a time. The reveal shows the actual result and what the leak-free
+      Dixon-Coles model (fitted only on earlier matches) predicted. One wrong call ends the run. Chasing
+      38&ndash;0.</p>
+    <div id="streakBody"></div>
+  </section>
+
   <section id="tab-method" hidden>
     <p class="method-intro">Every number on this page traces back to real matches, real stats and one
       fitted model per task — no black box. Below is the exact arithmetic, run on today's actual data:
@@ -447,10 +529,11 @@
       tabBtns.forEach(function(x){x.classList.remove('active');});
       b.classList.add('active');
       var t = b.getAttribute('data-tab');
-      document.getElementById('tab-players').hidden = t!=='players';
-      document.getElementById('tab-fixtures').hidden = t!=='fixtures';
-      document.getElementById('tab-teams').hidden = t!=='teams';
-      document.getElementById('tab-method').hidden = t!=='method';
+      ['players','fixtures','teams','sim','streak','method'].forEach(function(name){
+        document.getElementById('tab-'+name).hidden = t!==name;
+      });
+      if(t==='sim' && !simInited){ simInited = true; initSim(); }
+      if(t==='streak' && !streakInited){ streakInited = true; initStreak(); }
     });
   });
 
@@ -1027,9 +1110,329 @@
       'than 2 recorded matches is skipped rather than guessed at, and when the final finished level, no winner is shown: '+
       'penalty-shootout results are not in this data. The in-progress 2026-27 season is excluded entirely.</p></div>';
 
+    html += '<div class="method-card">' +
+      '<h3><span class="num-tag">7</span>The two games</h3>' +
+      '<p><b>Match Sim</b> uses the same Dixon-Coles ratings as card 1. For the chosen matchup it computes ' +
+      '<code>&lambda;<sub>home</sub> = exp(att<sub>home</sub> + def<sub>away</sub> + home)</code> and the mirror for the away side, ' +
+      'draws each team\'s goals from <code>Poisson(&lambda;)</code>, then hands every goal to a player picked in proportion to ' +
+      'his <code>non-penalty xG per 90 &times; minutes share</code> — the same weights behind the anytime-goalscorer odds. ' +
+      'One random game; <i>Simulate &times;1,000</i> replays it for the win/draw/loss split and the common scorelines.</p>' +
+      '<p><b>Streak</b> replays a real team\'s real league season. For each match it already knows the actual result and, ' +
+      'from <code>dixon_coles_probs.csv</code>, what a Dixon-Coles model <i>fitted only on matches before that date</i> ' +
+      'gave for W/D/L — so &ldquo;the model, same run&rdquo; is a genuine leak-free benchmark, not hindsight. Your best ' +
+      'streak per team-season is kept in your browser only.</p></div>';
+
     body.innerHTML = html;
   }
   renderMethodology();
+
+  // ================= GAMES =================
+  var GAMES = DATA.games || {};
+  var simInited = false, streakInited = false;
+
+  // shared: Poisson sampler (Knuth) + Dixon-Coles W/D/L grid
+  function poissonSample(lam){
+    if(lam <= 0) return 0;
+    var L = Math.exp(-lam), k = 0, p = 1;
+    do { k++; p *= Math.random(); } while (p > L);
+    return k - 1;
+  }
+  function poissonPmf(k, lam){
+    var lp = -lam + k*Math.log(lam);
+    for(var i=2;i<=k;i++) lp -= Math.log(i);
+    return Math.exp(lp);
+  }
+  function dcGrid(lh, la, rho){
+    var G = 8, pH = 0, pD = 0, pA = 0, best = [0,0], bestP = -1;
+    for(var i=0;i<G;i++) for(var j=0;j<G;j++){
+      var t = 1;
+      if(i===0 && j===0) t = 1 - lh*la*rho;
+      else if(i===0 && j===1) t = 1 + lh*rho;
+      else if(i===1 && j===0) t = 1 + la*rho;
+      else if(i===1 && j===1) t = 1 - rho;
+      var pr = poissonPmf(i,lh) * poissonPmf(j,la) * Math.max(t, 0);
+      if(i>j) pH += pr; else if(i===j) pD += pr; else pA += pr;
+      if(pr > bestP){ bestP = pr; best = [i,j]; }
+    }
+    var s = pH + pD + pA;
+    return { pH: pH/s, pD: pD/s, pA: pA/s, top: best };
+  }
+  function pickScorer(squad){
+    if(!squad || !squad.length) return null;
+    var r = Math.random(), acc = 0, tot = 0, k;
+    for(k=0;k<squad.length;k++) tot += squad[k].w;
+    r *= tot;
+    for(k=0;k<squad.length;k++){ acc += squad[k].w; if(r <= acc) return squad[k]; }
+    return squad[squad.length-1];
+  }
+  function goalMinutes(n){
+    var out = [];
+    for(var i=0;i<n;i++) out.push(1 + Math.floor(Math.random()*95));
+    return out.sort(function(a,b){return a-b;});
+  }
+
+  // ---------- Game 1: Match Sim ----------
+  function initSim(){
+    var S = GAMES.sim;
+    var body = document.getElementById('simBody');
+    if(!S || !S.teams || !S.teams.length){ body.innerHTML = '<div class="empty">Simulator data unavailable.</div>'; return; }
+    var byKey = {}; S.teams.forEach(function(t){ byKey[t.key] = t; });
+    var byLeague = {};
+    S.teams.slice().sort(function(a,b){return a.name<b.name?-1:1;})
+      .forEach(function(t){ (byLeague[t.league]=byLeague[t.league]||[]).push(t); });
+    function opts(sel){
+      return Object.keys(byLeague).sort().map(function(lg){
+        return '<optgroup label="'+esc(lg)+'">'+byLeague[lg].map(function(t){
+          return '<option value="'+esc(t.key)+'"'+(t.key===sel?' selected':'')+'>'+esc(t.name)+'</option>';
+        }).join('')+'</optgroup>';
+      }).join('');
+    }
+    var d = S.teams;
+    var homeSel = d[Math.floor(Math.random()*d.length)].key;
+    var awaySel = d[Math.floor(Math.random()*d.length)].key;
+    body.innerHTML =
+      '<div class="game-wrap">' +
+        '<div class="game-controls">' +
+          '<select id="simHome">'+opts(homeSel)+'</select>' +
+          '<span style="color:var(--text-faint);font-weight:700;">vs</span>' +
+          '<select id="simAway">'+opts(awaySel)+'</select>' +
+          '<label style="font-size:12.5px;color:var(--text-dim);display:flex;align-items:center;gap:5px;">' +
+            '<input type="checkbox" id="simHomeAdv" checked> home advantage</label>' +
+          '<button class="game-btn" id="simRun">Kick off</button>' +
+          '<button class="game-btn ghost" id="simRun1k">Simulate &times;1,000</button>' +
+        '</div>' +
+        '<div id="simOut"></div>' +
+      '</div>';
+    function clampL(x){ return Math.max(0.15, Math.min(5, x)); }
+    function lambdas(){
+      var h = byKey[document.getElementById('simHome').value];
+      var a = byKey[document.getElementById('simAway').value];
+      var adv = document.getElementById('simHomeAdv').checked ? S.home_adv : 0;
+      return {
+        h: h, a: a,
+        lh: clampL(Math.exp(h.att + a['def'] + adv)),
+        la: clampL(Math.exp(a.att + h['def'])),
+      };
+    }
+    function simOne(L){
+      var gh = poissonSample(L.lh), ga = poissonSample(L.la);
+      var hs = (GAMES.sim.squads[L.h.key]||[]), as = (GAMES.sim.squads[L.a.key]||[]);
+      function score(n, sq){
+        return goalMinutes(n).map(function(m){ var p = pickScorer(sq); return { p: p?p.p:'—', min: m }; });
+      }
+      return { gh: gh, ga: ga, hScorers: score(gh, hs), aScorers: score(ga, as) };
+    }
+    function renderResult(){
+      var L = lambdas();
+      var r = simOne(L);
+      var grid = dcGrid(L.lh, L.la, S.rho);
+      function scoreList(arr){
+        if(!arr.length) return '<div class="none">no goals</div>';
+        return arr.map(function(g){ return '<div class="g"><span class="min">'+g.min+'′</span>'+esc(g.p)+'</div>'; }).join('');
+      }
+      document.getElementById('simOut').innerHTML =
+        '<div class="sim-head">' +
+          '<span class="sim-team">'+crest(L.h.name,20)+esc(L.h.name)+'</span>' +
+          '<span class="sim-score">'+r.gh+'–'+r.ga+'</span>' +
+          '<span class="sim-team">'+esc(L.a.name)+crest(L.a.name,20)+'</span>' +
+        '</div>' +
+        '<div class="sim-line">expected goals '+L.lh.toFixed(2)+' – '+L.la.toFixed(2)+
+          ' &nbsp;·&nbsp; most likely score '+grid.top[0]+'–'+grid.top[1]+'</div>' +
+        '<div class="odds-bar">' +
+          '<span class="h" style="flex:'+Math.max(grid.pH,0.001)+'">'+Math.round(grid.pH*100)+'%</span>' +
+          '<span class="d" style="flex:'+Math.max(grid.pD,0.001)+'">'+Math.round(grid.pD*100)+'%</span>' +
+          '<span class="a" style="flex:'+Math.max(grid.pA,0.001)+'">'+Math.round(grid.pA*100)+'%</span>' +
+        '</div>' +
+        '<div class="sim-line" style="margin-top:2px;">'+esc(teamShort(L.h.name))+' win / draw / '+esc(teamShort(L.a.name))+' win</div>' +
+        '<div class="sim-scorers">' +
+          '<div class="col"><h4>'+esc(L.h.name)+' scorers</h4>'+scoreList(r.hScorers)+'</div>' +
+          '<div class="col"><h4>'+esc(L.a.name)+' scorers</h4>'+scoreList(r.aScorers)+'</div>' +
+        '</div>';
+    }
+    function renderMany(){
+      var L = lambdas(), N = 1000, hw=0, dr=0, aw=0, gf=0, ga=0, lines={};
+      for(var k=0;k<N;k++){
+        var gh = poissonSample(L.lh), gaN = poissonSample(L.la);
+        if(gh>gaN) hw++; else if(gh===gaN) dr++; else aw++;
+        gf += gh; ga += gaN;
+        var key = Math.min(gh,6)+'-'+Math.min(gaN,6); lines[key] = (lines[key]||0)+1;
+      }
+      var top = Object.keys(lines).sort(function(a,b){return lines[b]-lines[a];}).slice(0,4);
+      document.getElementById('simOut').innerHTML =
+        '<div class="sim-agg"><b>'+N.toLocaleString()+' simulations</b> — '+esc(teamShort(L.h.name))+' vs '+esc(teamShort(L.a.name))+
+        '<table>' +
+          '<tr><td>'+esc(L.h.name)+' win</td><td>'+Math.round(hw/N*100)+'%</td></tr>' +
+          '<tr><td>Draw</td><td>'+Math.round(dr/N*100)+'%</td></tr>' +
+          '<tr><td>'+esc(L.a.name)+' win</td><td>'+Math.round(aw/N*100)+'%</td></tr>' +
+          '<tr><td>Average score</td><td>'+(gf/N).toFixed(2)+' – '+(ga/N).toFixed(2)+'</td></tr>' +
+          '<tr><td>Most common scores</td><td>'+top.map(function(s){return s.replace('-','–')+' ('+Math.round(lines[s]/N*100)+'%)';}).join(', ')+'</td></tr>' +
+        '</table></div>';
+    }
+    document.getElementById('simRun').addEventListener('click', renderResult);
+    document.getElementById('simRun1k').addEventListener('click', renderMany);
+    document.getElementById('simHome').addEventListener('change', renderResult);
+    document.getElementById('simAway').addEventListener('change', renderResult);
+    document.getElementById('simHomeAdv').addEventListener('change', renderResult);
+    renderResult();
+  }
+
+  // ---------- Game 2: Streak ----------
+  function initStreak(){
+    var K = GAMES.streak;
+    var body = document.getElementById('streakBody');
+    if(!K || !K.fixtures || !K.fixtures.length){ body.innerHTML = '<div class="empty">Streak data unavailable.</div>'; return; }
+    var teams = K.teams;  // [key, name, league]
+    var st = { key:null, seasonIdx:null, matches:[], i:0, streak:0, best:0, model:0, history:[] };
+
+    function teamsInSeason(sIdx){
+      var set = {};
+      K.fixtures.forEach(function(f){ if(f[0]===sIdx){ set[f[1]]=1; set[f[2]]=1; } });
+      return Object.keys(set).map(function(idx){ return { idx:+idx, name:teams[+idx][1], league:teams[+idx][2] }; })
+        .sort(function(a,b){return a.name<b.name?-1:1;});
+    }
+    function bestKey(){ return 'streak38_' + st.key + '_' + st.seasonIdx; }
+    function loadBest(){ try { return +localStorage.getItem(bestKey()) || 0; } catch(e){ return 0; } }
+    function saveBest(v){ try { localStorage.setItem(bestKey(), v); } catch(e){} }
+
+    body.innerHTML =
+      '<div class="game-wrap">' +
+        '<div class="game-controls">' +
+          '<select id="stkLeague"></select>' +
+          '<select id="stkSeason"></select>' +
+          '<select id="stkTeam"></select>' +
+          '<button class="game-btn" id="stkStart">Start run</button>' +
+        '</div>' +
+        '<div id="stkOut"><div class="empty">Pick a league, season and team, then predict every one of their league matches in order.</div></div>' +
+      '</div>';
+
+    var lgSel = document.getElementById('stkLeague'),
+        seSel = document.getElementById('stkSeason'),
+        tmSel = document.getElementById('stkTeam');
+    var lgOpts = leagues.slice();
+    lgSel.innerHTML = lgOpts.map(function(l){return '<option>'+esc(l)+'</option>';}).join('');
+    seSel.innerHTML = K.seasons.slice().reverse().map(function(s,i){
+      return '<option value="'+(K.seasons.length-1-i)+'">'+esc(s)+(s==='2026-27'?' (live)':'')+'</option>';
+    }).join('');
+    function fillTeams(){
+      var lg = lgSel.value, sIdx = +seSel.value;
+      var list = teamsInSeason(sIdx).filter(function(t){ return t.league===lg; });
+      tmSel.innerHTML = list.length
+        ? list.map(function(t){return '<option value="'+t.idx+'">'+esc(t.name)+'</option>';}).join('')
+        : '<option value="">no teams</option>';
+    }
+    lgSel.addEventListener('change', fillTeams);
+    seSel.addEventListener('change', fillTeams);
+    fillTeams();
+
+    document.getElementById('stkStart').addEventListener('click', function(){
+      var tIdx = +tmSel.value; if(isNaN(tIdx) || tmSel.value==='') return;
+      var sIdx = +seSel.value;
+      st.key = teams[tIdx][0]; st.seasonIdx = sIdx; st.teamIdx = tIdx;
+      st.matches = K.fixtures.filter(function(f){ return f[0]===sIdx && (f[1]===tIdx || f[2]===tIdx); });
+      st.i = 0; st.streak = 0; st.model = 0; st.history = []; st.best = loadBest();
+      renderStreak();
+    });
+
+    function perspective(f){
+      var home = f[1]===st.teamIdx;
+      var oppIdx = home ? f[2] : f[1];
+      var gf = home ? f[3] : f[4], ga = home ? f[4] : f[3];
+      var actual = gf>ga ? 'W' : gf<ga ? 'L' : 'D';
+      var pW = home ? f[5] : f[7], pD = f[6], pL = home ? f[7] : f[5];
+      var mp = pW>=pD && pW>=pL ? 'W' : pD>=pL ? 'D' : 'L';
+      return { home:home, opp:teams[oppIdx][1], gf:gf, ga:ga, actual:actual,
+               pW:pW, pD:pD, pL:pL, modelPick:mp };
+    }
+
+    function modelSeasonRecord(){
+      var n = 0;
+      st.matches.forEach(function(f){ var v = perspective(f); if(v.modelPick===v.actual) n++; });
+      return n;
+    }
+    function renderStreak(){
+      var out = document.getElementById('stkOut');
+      var total = st.matches.length;
+      if(st.i >= total){
+        var caughtUp = K.seasons[st.seasonIdx]==='2026-27';
+        var knockedOut = st.streak < total && st.history.length && !st.history[st.history.length-1].hit;
+        var verdict = st.streak===total ? 'Perfect — '+total+'–0 🏆'
+                    : knockedOut ? 'Out at match '+(st.streak+1)
+                    : caughtUp ? "Caught up — that's every match played so far"
+                    : 'Season done';
+        out.innerHTML = '<div class="streak-over">' +
+          '<div class="verdict">'+verdict+'</div>' +
+          '<div style="color:var(--text-dim);font-size:14px;">Your streak: <b>'+st.streak+'</b>'+
+            (st.streak>=st.best ? ' — your best for '+esc(teams[st.teamIdx][1])+' '+esc(K.seasons[st.seasonIdx]) : ' (best: '+st.best+')')+'.</div>' +
+          '<div style="color:var(--text-dim);font-size:13px;margin-top:4px;">The Dixon-Coles model called '+
+            modelSeasonRecord()+' of the '+total+' matches right this season'+
+            (caughtUp ? ' so far' : '')+'.</div>' +
+          historyHtml() +
+          '<div style="margin-top:16px;"><button class="game-btn" id="stkAgain">New run</button></div>' +
+        '</div>';
+        document.getElementById('stkAgain').addEventListener('click', function(){
+          st.matches=[]; st.i=0;
+          document.getElementById('stkOut').innerHTML = '<div class="empty">Pick a league, season and team, then hit Start run.</div>';
+        });
+        return;
+      }
+      var f = st.matches[st.i], v = perspective(f);
+      out.innerHTML =
+        '<div class="streak-hud">' +
+          '<div><div class="big">'+st.streak+'</div><div class="lbl">current streak</div></div>' +
+          '<div><div class="big" style="color:var(--text-faint);">'+st.best+'</div><div class="lbl">your best</div></div>' +
+          '<div><div class="big" style="color:var(--accent-2);">'+st.model+'</div><div class="lbl">model, same run</div></div>' +
+        '</div>' +
+        '<div class="streak-fix">' +
+          '<div class="mw">'+esc(teams[st.teamIdx][1])+' · '+esc(K.seasons[st.seasonIdx])+' · match '+(st.i+1)+' of '+total+'</div>' +
+          '<div class="matchup">'+esc(teams[st.teamIdx][1])+' '+(v.home?'vs':'@')+' '+esc(v.opp)+'</div>' +
+          '<div class="venue">'+(v.home?'home':'away')+' · model: '+Math.round(v.pW*100)+'% W / '+Math.round(v.pD*100)+'% D / '+Math.round(v.pL*100)+'% L</div>' +
+        '</div>' +
+        '<div class="pick-row">' +
+          '<button class="pick-btn'+(v.modelPick==='W'?' model':'')+'" data-p="W">Win</button>' +
+          '<button class="pick-btn'+(v.modelPick==='D'?' model':'')+'" data-p="D">Draw</button>' +
+          '<button class="pick-btn'+(v.modelPick==='L'?' model':'')+'" data-p="L">Loss</button>' +
+        '</div>' +
+        '<div class="venue" style="text-align:center;font-size:11px;">gold outline = the model’s pick</div>' +
+        historyHtml();
+      out.querySelectorAll('.pick-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){ submitPick(btn.getAttribute('data-p'), v, btn); });
+      });
+    }
+    function historyHtml(){
+      if(!st.history.length) return '';
+      return '<div class="streak-history">' + st.history.map(function(h){
+        return '<span class="pip '+(h.hit?'hit':'miss')+'" title="'+esc(h.label)+'">'+(h.hit?'✓':'✗')+'</span>';
+      }).join('') + '</div>';
+    }
+    function submitPick(pick, v, btn){
+      var over = document.querySelectorAll('.pick-btn');
+      over.forEach(function(b){ b.disabled = true; });
+      var hit = pick===v.actual;
+      var modelHit = v.modelPick===v.actual;
+      if(modelHit) st.model++;
+      btn.classList.add(hit ? 'correct' : 'wrong');
+      if(!hit){
+        over.forEach(function(b){ if(b.getAttribute('data-p')===v.actual) b.classList.add('correct'); });
+      }
+      st.history.push({ hit:hit, label:(v.home?'vs ':'@ ')+v.opp+'  '+v.gf+'-'+v.ga+' ('+v.actual+')' });
+      var reveal = document.createElement('div');
+      reveal.className = 'reveal';
+      reveal.innerHTML = '<div class="rscore">'+v.gf+'–'+v.ga+' '+
+        (v.actual==='W'?'win':v.actual==='D'?'draw':'loss')+'</div>' +
+        '<div class="rmodel">model predicted '+(v.modelPick==='W'?'win':v.modelPick==='D'?'draw':'loss')+
+          ' &mdash; '+(modelHit?'right':'wrong')+'</div>' +
+        (hit
+          ? '<div style="margin-top:10px;"><button class="game-btn" id="stkNext">Next match</button></div>'
+          : '<div style="margin-top:10px;color:var(--loss);font-weight:700;">Wrong call — run over at '+st.streak+'.</div>'+
+            '<div style="margin-top:8px;"><button class="game-btn" id="stkNext">See how it ends</button></div>');
+      btn.closest('.pick-row').after(reveal);
+      if(hit){ st.streak++; if(st.streak>st.best){ st.best=st.streak; saveBest(st.best); } }
+      document.getElementById('stkNext').addEventListener('click', function(){
+        if(hit){ st.i++; renderStreak(); }
+        else { st.i = st.matches.length; renderStreak(); }
+      });
+    }
+  }
 
   // ---------- footer ----------
   document.getElementById('footerNotes').innerHTML =
@@ -1043,6 +1446,8 @@
     '<div><b>Standings</b> — '+esc(notes.standings)+'</div>' +
     '<div><b>Projected table</b> — '+esc(notes.projected_table)+'</div>' +
     '<div><b>Value leaderboard</b> — '+esc(notes.value_leaderboard)+'</div>' +
-    '<div><b>Cup finals</b> — '+esc(notes.cup_finals)+'</div>';
+    '<div><b>Cup finals</b> — '+esc(notes.cup_finals)+'</div>' +
+    (GAMES.notes ? '<div><b>Match Sim</b> — '+esc(GAMES.notes.sim)+'</div>' +
+                   '<div><b>Streak</b> — '+esc(GAMES.notes.streak)+'</div>' : '');
 })();
 </script>
