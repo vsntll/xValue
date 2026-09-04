@@ -1,15 +1,20 @@
+# Python 3.11 (nodriver + soccerdata's TLS client need it; run everything as `py -3.11 ...`)
+
 pandas>=2.0
+numpy>=1.26
 requests>=2.28
-lxml>=5              # pandas.read_html parses the cached FBref match-log HTML
+lxml>=5                 # pandas.read_html over cached FBref / Transfermarkt HTML
 
-# FBref match logs + cup rows (step 1c) and player stats (step 2).
-# nodriver = pure Chrome DevTools Protocol, no chromedriver binary. soccerdata's
-# seleniumbase-UC path uses a patched uc_driver.exe that CRASHES on this machine
-# (see docs/fbref_ingestion.md); nodriver has no such binary and clears FBref's
-# Cloudflare challenge reliably. Needs Python 3.11 here (run: py -3.11 ...).
-nodriver>=0.50
+scikit-learn>=1.5       # value + outcome models
+scipy>=1.11             # Poisson-Skellam, blend weight search
 
-# worldfootballR data mirror - the advanced (Opta) player stats FBref gates from
-# scrapers: xG/xAG, progressive passing, tackles, possession, GCA. big-5,
-# 2020-21..2022-23. src/pull_wfr_advanced.py. Reads .rds.
-pyreadr>=0.5
+# --- scrapers / ingestion ---
+nodriver>=0.50          # FBref + Transfermarkt: pure CDP, no chromedriver binary
+                        # (soccerdata's seleniumbase-UC path crashes here - docs/fbref_ingestion.md)
+soccerdata>=1.9         # Understat (per-match + per-player xG) and Sofascore readers;
+                        # pulls tls-requests (TLS-fingerprint HTTP client)
+pyreadr>=0.5            # reads the worldfootballR mirror .rds (advanced stats, TM values 2020-23)
+curl_cffi>=0.7          # browser-impersonation fallback used while probing sources
+
+# Optional - only if you get a paid API-Football key (src/pull_api_football.py):
+#   nothing extra; it uses `requests`.
