@@ -161,18 +161,47 @@
               display:flex; align-items:center; justify-content:center; gap:6px; }
   .fx-toggle:hover{ color:var(--text); }
   .fx-toggle svg{ width:11px; height:11px; transition:transform .15s; }
-  .fx-toggle.open svg{ transform:rotate(180deg); }
-  .props{ display:none; padding:14px 16px 16px; border-top:1px solid var(--border); }
-  .props.show{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-  .props .side .st{ font-size:10.5px; text-transform:uppercase; letter-spacing:.8px; color:var(--text-faint);
-                     font-weight:700; margin-bottom:8px; }
-  .prop-row{ display:flex; align-items:center; gap:8px; padding:5px 0; }
-  .prop-row .pn{ font-size:12px; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis;
-                 white-space:nowrap; }
-  .prop-row .pp{ font-size:12px; font-weight:700; width:38px; text-align:right; color:var(--text); }
-  .prop-bar{ width:44px; height:5px; border-radius:3px; background:var(--surface-3); overflow:hidden; flex:none; }
-  .prop-bar b{ display:block; height:100%; background:var(--accent); border-radius:3px; }
-  .prop-legend{ font-size:10.5px; color:var(--text-faint); margin-top:8px; }
+  .fx-card.open .fx-toggle{ background:var(--accent); color:var(--accent-ink); }
+  .fx-card.open .fx-toggle svg{ transform:rotate(180deg); }
+
+  /* full-width expanded goalscorer/assist panel - spans the whole fx-grid row */
+  .fx-expand{ grid-column:1/-1; background:var(--surface); border:1px solid var(--accent);
+              border-radius:var(--radius-lg); box-shadow:var(--shadow); overflow:hidden;
+              animation:expandIn .15s ease-out; }
+  @keyframes expandIn{ from{ opacity:0; transform:translateY(-4px); } to{ opacity:1; transform:none; } }
+  .fx-expand-head{ display:flex; align-items:center; justify-content:space-between; gap:12px;
+                    padding:14px 20px; border-bottom:1px solid var(--border); background:var(--surface-2); }
+  .fx-expand-head h3{ font-size:19px; }
+  .fx-expand-head .sub{ font-size:11.5px; color:var(--text-dim); margin-top:2px; font-weight:500; }
+  .fx-close{ border:1px solid var(--border); background:var(--surface); color:var(--text-dim);
+             width:28px; height:28px; border-radius:8px; cursor:pointer; display:flex; align-items:center;
+             justify-content:center; flex:none; }
+  .fx-close:hover{ color:var(--text); border-color:var(--border-strong); }
+  .fx-close svg{ width:14px; height:14px; }
+  .props{ padding:16px 20px 20px; display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .props .side .st{ font-size:11px; text-transform:uppercase; letter-spacing:.8px; color:var(--text-faint);
+                     font-weight:700; margin-bottom:2px; }
+  .prop-table-head, .prop-row{ display:grid; grid-template-columns:1fr 34px 56px 56px; align-items:center;
+                                gap:10px; }
+  .prop-table-head{ padding:10px 0 6px; font-size:9.5px; text-transform:uppercase; letter-spacing:.6px;
+                     color:var(--text-faint); font-weight:700; border-bottom:1px solid var(--border); }
+  .prop-table-head span:not(:first-child){ text-align:center; }
+  .prop-row{ padding:7px 0; border-bottom:1px solid var(--border); }
+  .prop-row:last-child{ border-bottom:none; }
+  .prop-row .pn{ font-size:12.5px; min-width:0; display:flex; align-items:center; gap:7px; }
+  .prop-row .pn button{ border:none; background:none; padding:0; color:var(--text); font-family:inherit;
+                         font-size:12.5px; font-weight:600; cursor:pointer; text-align:left;
+                         overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .prop-row .pn button:hover{ color:var(--accent); text-decoration:underline; }
+  .prop-row > .pos-badge{ justify-self:center; }
+  .prop-cell{ display:flex; flex-direction:column; align-items:center; gap:3px; }
+  .prop-cell .pp{ font-size:11.5px; font-weight:700; color:var(--text); }
+  .prop-cell.assist .pp{ color:var(--text-dim); }
+  .prop-bar{ width:40px; height:4px; border-radius:2px; background:var(--surface-3); overflow:hidden; flex:none; }
+  .prop-bar b{ display:block; height:100%; background:var(--accent); border-radius:2px; }
+  .prop-bar.assist b{ background:var(--accent-2); }
+  .prop-legend{ font-size:10.5px; color:var(--text-faint); margin-top:10px; }
+  .prop-empty{ font-size:12px; color:var(--text-faint); padding:10px 0; }
 
   footer{ margin-top:44px; padding-top:18px; border-top:1px solid var(--border); font-size:11.5px;
           color:var(--text-faint); line-height:1.7; }
@@ -181,7 +210,7 @@
   [hidden]{ display:none !important; }
   @media (max-width:640px){
     .brand h1{ font-size:19px; } .tile .v{ font-size:21px; }
-    .props.show{ grid-template-columns:1fr; }
+    .props{ grid-template-columns:1fr; }
   }
 </style>
 
@@ -450,19 +479,52 @@
 
   // ---------- fixtures ----------
   function teamShort(n){ return n.replace(' FC','').replace(' AFC','').replace(' United',' Utd'); }
+  function fxKey(fx){ return fx.home_key+'|'+fx.away_key+'|'+fx.date; }
+  var fxState = { openKey: null };
 
-  function propRow(pr){
-    return '<div class="prop-row"><span class="pn">'+esc(pr.player)+'</span>' +
-      '<div class="prop-bar"><b style="width:'+Math.min(100,(pr.p_anytime_goal||0)*100)+'%"></b></div>' +
-      '<span class="pp">'+pct(pr.p_anytime_goal)+'</span></div>';
+  function propRow(pr, teamKey){
+    return (
+      '<div class="prop-row">' +
+        '<div class="pn"><button type="button" class="playerlink" data-player="'+esc(pr.player)+'" data-team="'+esc(teamKey)+'">'+esc(pr.player)+'</button></div>' +
+        '<span class="pos-badge">'+esc(pr.pos)+'</span>' +
+        '<div class="prop-cell"><div class="prop-bar"><b style="width:'+Math.min(100,(pr.p_anytime_goal||0)*100)+'%"></b></div><span class="pp">'+pct(pr.p_anytime_goal)+'</span></div>' +
+        '<div class="prop-cell assist"><div class="prop-bar assist"><b style="width:'+Math.min(100,(pr.p_anytime_assist||0)*100)+'%"></b></div><span class="pp">'+pct(pr.p_anytime_assist)+'</span></div>' +
+      '</div>'
+    );
   }
 
-  function fxCardHtml(fx, idx){
-    var hp = Math.round(fx.p_home_win*100), dp = Math.round(fx.p_draw*100), ap = 100-hp-dp;
-    var homeTop = (fx.home_props||[]).slice(0,5);
-    var awayTop = (fx.away_props||[]).slice(0,5);
+  function propListHtml(list, teamKey, teamName){
+    if(!list || !list.length) return '<div class="prop-empty">No modelled players for '+esc(teamName)+' yet.</div>';
     return (
-      '<div class="fx-card">' +
+      '<div class="prop-table-head"><span>Player</span><span>Pos</span><span>Goal</span><span>Assist</span></div>' +
+      list.map(function(pr){ return propRow(pr, teamKey); }).join('')
+    );
+  }
+
+  function fxExpandHtml(fx){
+    return (
+      '<div class="fx-expand">' +
+        '<div class="fx-expand-head">' +
+          '<div><h3>'+esc(teamShort(fx.home))+' vs '+esc(teamShort(fx.away))+'</h3>' +
+            '<div class="sub">'+esc(fx.date.slice(0,10))+' &middot; '+esc(fx.league)+' &middot; xG '+num(fx.exp_goals_home,2)+'&ndash;'+num(fx.exp_goals_away,2)+'</div></div>' +
+          '<button type="button" class="fx-close" aria-label="Close">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6L6 18"/></svg></button>' +
+        '</div>' +
+        '<div class="props">' +
+          '<div class="side"><div class="st">'+esc(teamShort(fx.home))+' &mdash; anytime goal / assist</div>' + propListHtml(fx.home_props, fx.home_key, fx.home) + '</div>' +
+          '<div class="side"><div class="st">'+esc(teamShort(fx.away))+' &mdash; anytime goal / assist</div>' + propListHtml(fx.away_props, fx.away_key, fx.away) + '</div>' +
+        '</div>' +
+        '<div class="prop-legend" style="padding:0 20px 16px;">'+esc(notes.player_props)+'</div>' +
+      '</div>'
+    );
+  }
+
+  function fxCardHtml(fx){
+    var key = fxKey(fx);
+    var isOpen = fxState.openKey === key;
+    var hp = Math.round(fx.p_home_win*100), dp = Math.round(fx.p_draw*100), ap = 100-hp-dp;
+    return (
+      '<div class="fx-card'+(isOpen?' open':'')+'">' +
         '<div class="fx-head"><span class="fx-date">'+esc(fx.date.slice(0,10))+'</span><span class="pos-badge">'+esc(fx.league)+'</span></div>' +
         '<div class="fx-teams">' +
           '<div class="fx-team home">'+esc(teamShort(fx.home))+'<div class="fx-xg">xG '+num(fx.exp_goals_home,2)+'</div></div>' +
@@ -475,12 +537,8 @@
           '<div class="a" style="width:'+ap+'%">'+(ap>=10?ap+'%':'')+'</div>' +
         '</div>' +
         '<div class="oddslabels"><span>Home win</span><span>Draw</span><span>Away win</span></div>' +
-        '<button class="fx-toggle" data-idx="'+idx+'">Anytime goalscorer odds ' +
+        '<button type="button" class="fx-toggle" data-key="'+esc(key)+'">'+(isOpen?'Hide':'Show')+' anytime goalscorer &amp; assist odds ' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>' +
-        '<div class="props" id="props-'+idx+'">' +
-          '<div class="side"><div class="st">'+esc(teamShort(fx.home))+'</div>' + homeTop.map(propRow).join('') + '</div>' +
-          '<div class="side"><div class="st">'+esc(teamShort(fx.away))+'</div>' + awayTop.map(propRow).join('') + '</div>' +
-        '</div>' +
       '</div>'
     );
   }
@@ -489,16 +547,55 @@
     var grid = document.getElementById('fxGrid');
     var sorted = fixtures.filter(inLeague).sort(function(a,b){return a.date<b.date?-1:1;});
     document.getElementById('fxEmpty').hidden = sorted.length>0;
-    grid.innerHTML = sorted.map(fxCardHtml).join('');
+    var openStillVisible = sorted.some(function(fx){ return fxKey(fx)===fxState.openKey; });
+    if(!openStillVisible) fxState.openKey = null;
+    var html = '';
+    sorted.forEach(function(fx){
+      html += fxCardHtml(fx);
+      if(fxState.openKey === fxKey(fx)) html += fxExpandHtml(fx);
+    });
+    grid.innerHTML = html;
     grid.querySelectorAll('.fx-toggle').forEach(function(btn){
       btn.addEventListener('click', function(){
-        var idx = btn.getAttribute('data-idx');
-        var panel = document.getElementById('props-'+idx);
-        var open = panel.classList.toggle('show');
-        btn.classList.toggle('open', open);
+        var key = btn.getAttribute('data-key');
+        var wasOpen = fxState.openKey === key;
+        fxState.openKey = wasOpen ? null : key;   // only one fixture's odds open at a time
+        renderFixtures();
+        if(!wasOpen){
+          requestAnimationFrame(function(){
+            var el = document.querySelector('.fx-expand');
+            if(el) el.scrollIntoView({behavior:'smooth', block:'nearest'});
+          });
+        }
+      });
+    });
+    var closeBtn = grid.querySelector('.fx-close');
+    if(closeBtn) closeBtn.addEventListener('click', function(){ fxState.openKey = null; renderFixtures(); });
+    grid.querySelectorAll('.playerlink').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        goToPlayer(btn.getAttribute('data-player'), btn.getAttribute('data-team'));
       });
     });
   }
+
+  // jump from a fixture's goalscorer odds to that player's row in the Players tab
+  function goToPlayer(name, teamKey){
+    document.querySelector('.tab-btn[data-tab="players"]').click();
+    leagueState.league = 'ALL';
+    leagueChips.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('active', x.getAttribute('data-league')==='ALL');});
+    state.pos = 'ALL';
+    posChips.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('active', x.getAttribute('data-pos')==='ALL');});
+    state.q = name.toLowerCase();
+    document.getElementById('searchInput').value = name;
+    state.openKey = name+'|'+teamKey;
+    renderTiles();
+    renderPlayers();
+    requestAnimationFrame(function(){
+      var row = document.querySelector('#playerBody tr.prow.open');
+      if(row) row.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  }
+
   renderTiles();
   renderFixtures();
 
