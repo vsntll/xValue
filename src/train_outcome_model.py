@@ -321,6 +321,33 @@ def main() -> None:
         print(f"{'bookmaker':14}{accuracy_score(j['FTR'], LABELS_pred(pb)):7.3f}"
               f"{_ll(j['FTR'], pb):10.3f}   ({len(j)}/{len(te)})")
 
+    # a second pass, scoring EVERY row (not just the temporal test split) with
+    # the same trained-on-`tr`-only models, so the dashboard has a prediction
+    # for every match including this week's - genuinely out-of-sample for
+    # 2023-26 (val/test/live), in-sample (optimistic) for <=2022-23 (train).
+    # This is what lets "predictions next to results as they land" exist at all.
+    split = np.select(
+        [df["season"] <= "2022-23", df["season"] == "2023-24", df["season"].isin(["2024-25", "2025-26"])],
+        ["train", "val", "test"], default="live")
+    grid_all = _fit_grid(tr, df, tr["FTHG"].astype(float), tr["FTAG"].astype(float),
+                         rho=rho, alpha=alpha, w=wt)
+    if "HxG" in tr.columns:
+        grid_all = 0.6 * grid_all + 0.4 * _fit_grid(trx, df, yhx, yax, rho=rho, alpha=alpha, w=wtx)
+    p1x2_all = grid_1x2(grid_all)
+    all_out = df[["season", "comp", "Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR"]].copy()
+    all_out["split"] = split
+    all_out[["p_away", "p_draw", "p_home"]] = np.round(p1x2_all, 4)
+    ou_all, btts_all, cs_all = grid_over_under(grid_all), grid_btts(grid_all), grid_correct_score(grid_all)
+    all_out["p_over25"] = np.round(ou_all[:, 0], 4)
+    all_out["p_under25"] = np.round(ou_all[:, 1], 4)
+    all_out["p_btts_yes"] = np.round(btts_all[:, 0], 4)
+    all_out["p_btts_no"] = np.round(btts_all[:, 1], 4)
+    for score, p in cs_all.items():
+        all_out[f"p_cs_{score.replace('-', '_')}"] = np.round(p, 4)
+    all_out.to_csv(PROC / "outcome_model_predictions_all.csv", index=False)
+    print(f"wrote {PROC / 'outcome_model_predictions_all.csv'}  ({len(all_out)} rows, "
+          f"{(split == 'live').sum()} live/2026-27)")
+
     # pure output = the best single model (poisson+xg); hybrid = the market blend
     # for 1X2. O/U, BTTS and correct score aren't touched by --hybrid - there's
     # no market opening line for them to blend against, only the Bet365 O/U
