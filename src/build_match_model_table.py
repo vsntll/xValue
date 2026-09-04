@@ -194,6 +194,21 @@ def build() -> pd.DataFrame:
     df["a_att"] = df[["fa_xgf", "all_a_xgd"]].mean(axis=1)
     df["form_pts_gap"] = df["all_h_pts"] - df["all_a_pts"]
 
+    # market-consensus opening odds as features (published days ahead - not
+    # leakage; lets the model blend its view with the market's)
+    mf = pd.read_csv(PROC / "match_features.csv")
+    oc = [c for c in ("AvgH", "AvgD", "AvgA") if c in mf] or ["B365H", "B365D", "B365A"]
+    mf = mf.dropna(subset=oc)
+    mf["_k"] = (mf["season"] + "|" + pd.to_datetime(mf["Date"]).dt.strftime("%Y-%m-%d")
+                + "|" + mf["HomeTeam"].map(normalize_team) + "|" + mf["AwayTeam"].map(normalize_team))
+    inv = 1 / mf[oc].to_numpy()
+    inv = inv / inv.sum(1, keepdims=True)
+    omap = {k: v for k, v in zip(mf["_k"], inv)}
+    dk = (df["season"] + "|" + df["Date"].dt.strftime("%Y-%m-%d") + "|"
+          + df["HomeTeam"].map(normalize_team) + "|" + df["AwayTeam"].map(normalize_team))
+    om = np.array([omap.get(k, [np.nan] * 3) for k in dk])
+    df["mkt_pH"], df["mkt_pD"], df["mkt_pA"] = om[:, 0], om[:, 1], om[:, 2]
+
     out = df[df["competition_type"] == "league"].drop(columns=["_lk"]).reset_index(drop=True)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     out.to_csv(OUT, index=False)

@@ -102,11 +102,23 @@ def _book(df: pd.DataFrame) -> pd.DataFrame | None:
 
 
 def main() -> None:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--hybrid", action="store_true",
+                    help="add market-consensus opening odds as features")
+    args = ap.parse_args()
+
     df = pd.read_csv(PROC / "match_model_table.csv")
     df["Date"] = pd.to_datetime(df["Date"])
     df["promoted_h"] = df["promoted_h"].fillna(0)
     df["promoted_a"] = df["promoted_a"].fillna(0)
     df = df.dropna(subset=["elo_diff", "fh_pts", "fa_pts"])
+
+    feats = list(FEATURES)
+    if args.hybrid:
+        feats += ["mkt_pH", "mkt_pD", "mkt_pA"]
+        print("[hybrid: + market opening odds]")
+    globals()["FEATURES"] = feats
 
     tr = df[df["season"] <= "2022-23"]
     va = df[df["season"] == "2023-24"]
@@ -159,10 +171,19 @@ def main() -> None:
     print(f"{'poisson':14}{accuracy_score(yte, LABELS_pred(preds['poisson'])):7.3f}"
           f"{_ll(yte, preds['poisson']):10.3f}")
 
-    parts = ["poisson", "logreg"]
+    blocks_va = [preds_va["poisson"], preds_va["logreg"]]
+    blocks_te = [preds["poisson"], preds["logreg"]]
+    if args.hybrid and {"mkt_pA", "mkt_pD", "mkt_pH"}.issubset(df.columns):
+        mk_va = va[["mkt_pA", "mkt_pD", "mkt_pH"]].to_numpy()
+        mk_te = te[["mkt_pA", "mkt_pD", "mkt_pH"]].to_numpy()
+        # rows with no odds (rare in leagues) fall back to the poisson prob
+        mk_va = np.where(np.isnan(mk_va), preds_va["poisson"], mk_va)
+        mk_te = np.where(np.isnan(mk_te), preds["poisson"], mk_te)
+        blocks_va.append(mk_va)
+        blocks_te.append(mk_te)
     meta = LogisticRegression(max_iter=3000, C=0.5)
-    meta.fit(np.column_stack([preds_va[p] for p in parts]), yva)
-    pf = _order(meta, meta.predict_proba(np.column_stack([preds[p] for p in parts])))
+    meta.fit(np.column_stack(blocks_va), yva)
+    pf = _order(meta, meta.predict_proba(np.column_stack(blocks_te)))
     print(f"{'blend':14}{accuracy_score(yte, LABELS_pred(pf)):7.3f}{_ll(yte, pf):10.3f}")
 
     bp = _book(df)
@@ -177,8 +198,9 @@ def main() -> None:
 
     out = te[["season", "comp", "Date", "HomeTeam", "AwayTeam", "FTR"]].copy()
     out[["p_away", "p_draw", "p_home"]] = pf.round(4)
-    out.to_csv(PROC / "outcome_model_predictions.csv", index=False)
-    print(f"\nwrote {PROC / 'outcome_model_predictions.csv'}")
+    name = "outcome_model_predictions_hybrid.csv" if args.hybrid else "outcome_model_predictions.csv"
+    out.to_csv(PROC / name, index=False)
+    print(f"\nwrote {PROC / name}")
 
 
 def LABELS_pred(p):

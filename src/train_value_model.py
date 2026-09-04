@@ -84,12 +84,20 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
     # prior-season value for the same player (value is strongly autocorrelated)
     d["_pk"] = d["Player"].astype(str).str.lower().str.replace(r"[^a-z ]", "", regex=True)
     d["_ord"] = d["season"].map(_SEASON_ORDER)
-    val_hist = d.dropna(subset=["mv"])[["_pk", "src_league", "_ord", "mv"]].drop_duplicates()
+    d["_min"] = pd.to_numeric(d["standard__Playing Time_Min"], errors="coerce")
+    hist = d[["_pk", "src_league", "_ord", "mv", "_min"]].drop_duplicates()
     for lag in (1, 2):
-        p = val_hist.copy()
+        p = hist.copy()
         p["_ord"] = p["_ord"] + lag
-        d = d.merge(p.rename(columns={"mv": f"prev{lag}_mv"}),
-                    on=["_pk", "src_league", "_ord"], how="left")
+        d = d.merge(p[["_pk", "src_league", "_ord", "mv", "_min"]].rename(
+            columns={"mv": f"prev{lag}_mv", "_min": f"prev{lag}_min"}),
+            on=["_pk", "src_league", "_ord"], how="left")
+
+    # contract years remaining at the season's midpoint (Jan 1 of the end year)
+    d["_ce"] = pd.to_datetime(d.get("contract_expiry"), errors="coerce")
+    d["_ref"] = pd.to_datetime(d["season"].str[:4].astype(float).add(1).astype("Int64").astype(str)
+                               + "-01-01", errors="coerce")
+    d["contract_years"] = ((d["_ce"] - d["_ref"]).dt.days / 365).clip(-1, 6)
 
     d = d[(d["mv"].notna()) & (d["n90"] >= 8) & (d["pos"] != "GK") & d["age"].notna()]
     out = pd.DataFrame({
@@ -103,6 +111,8 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
         "value_momentum": np.log1p(d["prev1_mv"]) - np.log1p(d["prev2_mv"]),
         "prev_x_youth": np.log1p(d["prev1_mv"]) * (25 - d["age"]).clip(-8, 8),
         "has_prev": d["prev1_mv"].notna().astype(int),
+        "contract_years": d["contract_years"],
+        "minutes_trend": np.log1p(d["_min"]) - np.log1p(d["prev1_min"]),
         "y": np.log1p(d["mv"]),
         "market_value_eur": d["mv"],
     })

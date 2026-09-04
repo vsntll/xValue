@@ -211,16 +211,18 @@ def main() -> None:
     mv = OUT_PATH.parent / "tm_player_values.csv"
     if mv.exists():
         m = pd.read_csv(mv)
+        m["contract_expiry"] = pd.to_datetime(m.get("contract_expiry"), errors="coerce")
         tm_parts.append(m[["season", "src_league", "player_name", "squad",
                            "tm_player_id", "player_dob", "player_foot",
-                           "market_value_eur"]].rename(
+                           "contract_expiry", "market_value_eur"]].rename(
             columns={"squad": "club", "player_dob": "tm_dob", "player_foot": "tm_foot"}))
     sc = OUT_PATH.parent / "tm_values_scraped.csv"
     if sc.exists():
         s = pd.read_csv(sc)
         s["club"] = s["squad_slug"].str.replace("-", " ")
+        s["contract_expiry"] = pd.NaT
         tm_parts.append(s[["season", "src_league", "player_name", "club",
-                           "tm_player_id", "market_value_eur"]])
+                           "tm_player_id", "contract_expiry", "market_value_eur"]])
     if tm_parts:
         tv = pd.concat(tm_parts, ignore_index=True)
         tv["_pk"] = tv["player_name"].map(_norm_name)
@@ -241,7 +243,7 @@ def main() -> None:
     sf = OUT_PATH.parent / "sofascore_values.csv"
     if sf.exists():
         sv = pd.read_csv(sf)[["season", "src_league", "player_name", "club",
-                              "sofascore_id", "market_value_eur"]].rename(
+                              "sofascore_id", "contract_until", "market_value_eur"]].rename(
             columns={"market_value_eur": "_sf_value"})
         sv["_pk"] = sv["player_name"].map(_norm_name)
         sv["_tk"] = sv["club"].map(normalize_team)
@@ -253,6 +255,9 @@ def main() -> None:
         if "market_value_eur" not in combined.columns:
             combined["market_value_eur"] = pd.NA
         combined["market_value_eur"] = combined["market_value_eur"].fillna(combined["_sf_value"])
+        if "contract_expiry" in combined.columns:
+            combined["contract_expiry"] = combined["contract_expiry"].fillna(
+                pd.to_datetime(combined["contract_until"], errors="coerce"))
         got = combined["_sf_value"].notna().sum()
         combined = combined.drop(columns=["_pk", "_tk", "_sf_value"])
         print(f"merged Sofascore value ({got} rows, current season)")
