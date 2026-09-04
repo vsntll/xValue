@@ -39,11 +39,38 @@ py -3.11 src/train_outcome_model.py         -> outcome_model_predictions.csv    
 py -3.11 src/train_outcome_model.py --hybrid -> outcome_model_predictions_hybrid.csv  (+ market odds, 0.975)
 ```
 
-## Refresh the current season (weekly)
+## 4. Build the site
 
 ```
-py -3.11 src/pull_live.py                    # current season
-py -3.11 src/pull_understat.py --seasons 2026-27
-py -3.11 src/pull_sofascore_values.py
-# then re-run step 2 + step 3
+py -3.11 src/export_site_data.py   -> site/data.json + site/index.html
+```
+
+`export_site_data.py` now splices the payload into `site/template.html` itself;
+`site/index.html` is the committed, self-contained deliverable.
+
+## Refresh the current season
+
+**Automatic (weekly):** `.github/workflows/weekly-refresh.yml` runs every Monday
+(and on manual dispatch). It pulls everything that doesn't need a browser -
+football-data.co.uk results, live fixtures + match stats (ESPN / football-data.org
+/ FotMob / Understat), Sofascore market values - then rebuilds the match table,
+retrains both models, regenerates `site/index.html` and commits it.
+
+Setup: add repo secret `FOOTBALL_DATA_ORG_KEY`; seed the (gitignored) data cache
+once with a GitHub Release the workflow can fall back to:
+
+```
+tar czf pipeline-seed.tar.gz data/processed data/raw/football_data/_elo_warmup.csv
+gh release create pipeline-seed pipeline-seed.tar.gz -t "pipeline data seed"
+```
+
+**Manual (for the FBref counting stats the workflow can't touch):** re-run the
+browser scrapes now and then, since goals / assists / minutes and the
+Transfermarkt scrape values need a real Chrome window:
+
+```
+py -3.11 src/pull_fbref_player_stats.py       # + parse_fbref_player_stats.py
+py -3.11 src/pull_fbref_matchlogs.py --stats schedule
+py -3.11 src/pull_transfermarkt_scrape.py     # click the WAF captcha once
+# then re-run steps 2-4
 ```

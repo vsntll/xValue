@@ -20,8 +20,10 @@ to cover another top-5 league already in the underlying data.
 - **Last season** (2025-26) line shown alongside, where the player has one.
 - **Projected 38-game pace**: current per-90 rate x projected minutes over a full
   season. A simple pace projection, not a trained model — labelled as such in the UI.
-- **Predicted market value**: from `value_model_predictions.csv` (2025-26 season,
-  the trained HGB regressor, R2(log) 0.82) vs the player's listed value.
+- **Predicted market value**: from `value_model_predictions.csv` (current-season
+  rows, the trained stacked regressor, R2(log) 0.89 / 12% median error in the
+  €100M+ band, capped at €220M) vs the player's listed value. `listed_is_estimate`
+  is set when the listed value is a peer-median fill rather than a real feed value.
 - **Next-fixture odds**: a *single* Dixon-Coles attack/defence model
   (`src/dixon_coles.py`, fit once on all competitions through today, 900-day
   window - not per-league) gives P(home/draw/away) and expected goals for each
@@ -38,14 +40,26 @@ to cover another top-5 league already in the underlying data.
   minutes-share, then `P(>=1) = 1 - exp(-lambda)`. A transparent heuristic, not a
   trained per-player model — there isn't one in this pipeline yet.
 
-Watch for: `fbref_player_season_stats.csv`, `value_model_predictions.csv` and
-`live_matches_2026-27.csv` are **latin-1**, not utf-8 (accented player/team
-names mojibake under the default encoding) - `matches_all.csv` is fine as-is
-(its team names are already ASCII).
+Encoding: `fbref_player_season_stats.csv` and `value_model_predictions.csv` are
+UTF-8 (they carry accented names correctly since the deaccent/slug work);
+`live_matches_2026-27.csv` is still read latin-1 (ESPN team names mojibake under
+UTF-8).
 
-Run: `python src/export_site_data.py` (regenerates `site/data.json`), then splice
-it into `site/template.html` to produce `site/index.html` (the `__SITE_DATA_JSON__`
-placeholder).
+Run: `python src/export_site_data.py` — regenerates `site/data.json` **and**
+splices it into `site/template.html` to produce `site/index.html` (the committed,
+self-contained page; `__SITE_DATA_JSON__` placeholder).
+
+## Weekly auto-refresh
+
+`.github/workflows/weekly-refresh.yml` (Mondays 07:00 UTC + manual dispatch)
+re-pulls every browser-free source, rebuilds `matches_all`, retrains both models,
+regenerates `site/index.html` and commits it. It does **not** refresh the FBref
+counting stats or the Transfermarkt scrape values (those need Chrome + a WAF
+captcha) — run those locally now and then per `run_pipeline.md`.
+
+Setup: repo secret `FOOTBALL_DATA_ORG_KEY`, plus a one-off `pipeline-seed`
+GitHub Release holding `data/processed/` (the workflow's cache fallback -
+`data/` is gitignored). Command in `run_pipeline.md`.
 
 ## Known data-scope note
 

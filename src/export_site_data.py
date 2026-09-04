@@ -2,7 +2,7 @@
 
 Covers the Premier League, La Liga and Bundesliga. Combines:
   - current-season (2026-27) + last-season (2025-26) FBref stats per player
-  - the value model's predicted market value (2025-26, `value_model_predictions.csv`)
+  - the value model's predicted market value (current season, `value_model_predictions.csv`)
   - a simple full-season pace projection from current per-90 rates
   - next-fixture win/draw/loss odds per team, from a Dixon-Coles model
     (`src/dixon_coles.py`) fit on all competitions through today
@@ -308,7 +308,7 @@ def main() -> None:
             "current_stats": "2026-27 FBref season-to-date stats (min 45 minutes played).",
             "last_season": "2025-26 full-season stats for the same player, where available.",
             "projected_38": "Simple pace projection: current per-90 rate x projected minutes over a 38-game season. Not a trained model.",
-            "value": "Predicted market value from the trained value-regression model (2025-26 season, HGB, R2(log) 0.82) vs listed market value.",
+            "value": "Predicted market value from the trained value-regression model (stacked trees, R2(log) 0.89, capped at Transfermarkt's ~EUR220M ceiling) vs listed market value.",
             "match_odds": "Win/draw/loss odds from a Dixon-Coles attack/defence model fit on all competitions through the date above.",
             "player_props": "Anytime goal/assist odds: team's Dixon-Coles expected goals split across the matchday squad by each player's (non-penalty xG90 or xA90, shrunk toward last season's rate early in the current season) x season minutes-share, then Poisson P(>=1).",
         },
