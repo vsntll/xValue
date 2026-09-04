@@ -4,13 +4,16 @@
 
 | | value model | outcome (pure) | outcome (hybrid) |
 | --- | --- | --- | --- |
-| metric | R²(log) **0.87**, MAE **€5.8M**, within-2x **89%**, medAPE 27% | log-loss **0.988**, acc **0.523** | log-loss **0.975**, acc **0.529** |
+| metric | R²(log) **0.88**, MAE **€5.5M**, within-2x **90%**, medAPE 26% | log-loss **0.978**, acc **0.532** | log-loss **0.975**, acc **0.531** |
 | v1 was | 0.70 / €9.1M / 68% | 1.014 / 0.511 | — |
 | reference | — | Bet365 closing 0.973 / 0.537 | (uses market opening odds as a feature) |
 
 Trajectory: value R²(log) 0.70 → 0.82 (prev-value) → 0.835 (contract/minutes) →
-**0.87** (prev-season club value + xG-share). Outcome 1.014 → 0.997 (Elo) → 0.990
-(Poisson-Skellam) → **0.988** (+ xG-Poisson). Hybrid **0.975** ≈ bookmaker.
+0.87 (prev-season club value + xG-share) → **0.88** (name-resolution fixes lifted
+market-value coverage 81% → 95%, so ~570 more labelled players train). Outcome
+1.014 → 0.997 (Elo) → 0.990 (Poisson-Skellam) → 0.988 (+ xG-Poisson) → **0.978**
+(cleaner team keys = better cup-match dedup and Elo continuity). Hybrid **0.975**
+≈ bookmaker.
 
 "Hybrid" (`train_outcome_model.py --hybrid`) blends market-consensus **opening**
 odds into the stack - it beats the opening line and lands ~level with the
@@ -22,7 +25,9 @@ bookmaker's own **closing**-odds performance. The pure model uses only data.
 Predicts a player's market value from his season + his value history.
 
 - **Data**: `fbref_player_season_stats.csv`, outfield players with a
-  Transfermarkt/Sofascore value and >= 8 full-90s. ~3,300 train / ~1,570 test.
+  Transfermarkt/Sofascore value and >= 8 full-90s. ~3,870 train / ~1,970 test.
+  Value coverage is 95% of season-rows (98% outside 2022-23, where the
+  worldfootballR TM mirror is thin and a real 2022-23 scrape is still owed).
 - **Features** (~23): **prev-season value + 2-seasons-ago value + momentum +
   prev*youth interaction** (value is strongly autocorrelated - the biggest
   lever); age / age^2 / distance-from-26; minutes, starts; per-90 goals /

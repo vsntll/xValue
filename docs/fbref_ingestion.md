@@ -72,9 +72,28 @@ possession, GCA). The mirror stopped updating advanced stats after 2022-23, so
 2023-24 onward waits for API-Football.
 
 `data/processed/fbref_player_season_stats.csv` = one row per (player, squad,
-season), **11,056 rows, 274 cols**. Basic stats everywhere; advanced on ~4,150
+season), **11,056 rows, 290 cols**. Basic stats everywhere; advanced on ~4,150
 top-flight 2020-22 rows (84 % of mirror rows joined — name-mismatch losses; a
 player-id join would lift this).
+
+### Market-value join (step 3 target)
+
+All joins key on `(_norm_name(player_slug), normalize_team(Squad))`, folded to
+bare ascii the way FBref builds its URL slugs — `live.schema.deaccent`
+transliterates the letters `NFKD → encode ascii` would drop (ø→o, ß→ss, ł→l,
+ı→i, đ→dj, æ→ae) so "Ødegaard" from FBref and "degaard" from Transfermarkt no
+longer miss. After the keyed merge the parser runs a **two-pass fuzzy fill**:
+
+1. league-wide, same season: same token set (name reordering — "Son Heung-min"
+   vs "Heung-min Son") or exactly one name apart ("Thiago" vs "Thiago Alcantara",
+   "Hojbjerg" vs "Pierre-Emile Hojbjerg"), taken only when the value is unique;
+2. team-scoped: same player by surname under first-name drift ("Andy" vs
+   "Andrew Robertson", "Max" vs "Maximilian Kilman", "Isi Palazon" vs "Isaac
+   Palazon Camacho"), guarded so a shared *first* name or a common Spanish
+   surname (García, Rodríguez, …) can't carry a value on its own.
+
+Coverage: **95 %** of season-rows labelled (81 % before), 98 % outside 2022-23
+where the worldfootballR TM mirror is thin.
 
 ## Live season -> API-Football
 

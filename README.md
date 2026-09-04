@@ -4,10 +4,10 @@ Two models over a shared data layer for the **top flight of England, Germany and
 Spain, 2020-21 → 2026-27** (+ the cups those clubs play in):
 
 - **Value regression** — predicts a player's market value from his season + value
-  history. HGB, R²(log) **0.87**, MAE **€5.8M**, within-2× **89%** on a
+  history. HGB, R²(log) **0.88**, MAE **€5.5M**, within-2× **90%** on a
   2024-26 holdout.
 - **Outcome classifier** — pre-match home-win / draw / away-win. Poisson-Skellam
-  on Elo + form + xG, log-loss **0.988** (pure) / **0.975** (with market odds),
+  on Elo + form + xG, log-loss **0.978** (pure) / **0.975** (with market odds),
   vs Bet365 closing 0.973.
 
 `docs/models.md` has the full model detail; `run_pipeline.md` is the runbook.
@@ -32,8 +32,8 @@ going dark is swapped without touching anything downstream.
 | --- | --- | --- | --- |
 | 1 | Match archive | `pull_match_archive.py` | `match_features.csv` |
 | 2 | Player stats + xG + value | `pull_fbref_player_stats.py` → `parse_fbref_player_stats.py` | `fbref_player_season_stats.csv` (11k rows, 290 cols) |
-| 3 | Market values | `pull_transfermarkt*.py`, `pull_sofascore_values.py` | folded into step 2 (8.9k labelled) |
-| 4 | Cross-source name resolution | alias map in `src/live/schema.py` (~90%) | — |
+| 3 | Market values | `pull_transfermarkt*.py`, `pull_sofascore_values.py` | folded into step 2 (10.5k / 95% labelled) |
+| 4 | Cross-source name resolution | alias map + transliteration in `src/live/schema.py`, fuzzy value fill in the parser (~95%) | — |
 | 5 | Unified match table | `build_matches_all.py` | `matches_all.csv` (9.1k matches, all comps) |
 | 6 | Squad rollup | `build_squad_features.py` | `squad_season_features.csv` |
 | 7 | Value model | `train_value_model.py` | `models/value_model.pkl` |
