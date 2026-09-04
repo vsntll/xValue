@@ -88,14 +88,16 @@ def _pos_group(p: str) -> str:
     return {"GK": "GK", "DF": "DF", "MF": "MF", "FW": "FW"}.get(p, "MF")
 
 
-_SEASON_ORDER = {s: i for i, s in enumerate(
-    ["2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27"])}
+_SEASON_ORDER = {f"{y}-{str(y + 1)[-2:]}": y - 2013 for y in range(2013, 2028)}
 
 
 def build_xy(df: pd.DataFrame) -> pd.DataFrame:
     d = df.copy()
     d["n90"] = pd.to_numeric(d["standard__Playing Time_90s"], errors="coerce")
     d["age"] = pd.to_numeric(d["Age"], errors="coerce")
+    # FBref leaves Age blank early in a season - fall back to (start year - birth year)
+    _by = pd.to_numeric(d["Born"], errors="coerce")
+    d["age"] = d["age"].fillna(d["season"].str[:4].astype(float) - _by)
     d["pos"] = d["Pos"].map(_pos_group)
     d["mv"] = pd.to_numeric(d["market_value_eur"], errors="coerce")
 
@@ -157,7 +159,11 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
     else:
         d["prev_squad_value"], d["squad_xg"] = np.nan, np.nan
 
-    d = d[(d["mv"].notna()) & (d["n90"] >= 8) & (d["pos"] != "GK") & d["age"].notna()]
+    d["imputed"] = pd.to_numeric(d.get("market_value_imputed"), errors="coerce").fillna(0)
+    # keep anyone with a value or any minutes (the n90 >= 8 cut for fit/eval is
+    # applied in main; current-season rows have few minutes but still need a
+    # predicted value for the site)
+    d = d[((d["mv"].notna()) | (d["_min"].fillna(0) > 0)) & d["age"].notna()]
     d["_xg"] = pd.to_numeric(d.get("understat__xg"), errors="coerce")
 
     # the workhorse: log of the last known value. prev1 (season-1) if we have it,
@@ -188,6 +194,8 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
         "xg_share": d["_xg"] / (pd.to_numeric(d["squad_xg"], errors="coerce") + 1),
         "y": np.log1p(d["mv"]),
         "market_value_eur": d["mv"],
+        "imputed": d["imputed"].astype(int),
+        "n90": d["n90"],
     })
     for col, name in PER90.items():
         out[name] = pd.to_numeric(d.get(col), errors="coerce") / d["n90"]
@@ -200,15 +208,20 @@ def main() -> None:
     df = build_xy(pd.read_csv(SRC, low_memory=False))
     feat_num = [c for c in df.columns
                 if c not in ("season", "src_league", "Player", "Squad", "pos", "y",
-                             "market_value_eur")]
+                             "market_value_eur", "imputed", "n90")]
     feat_cat = ["pos", "src_league"]
 
-    tr = df[df["season"].isin(TRAIN_SEASONS)]
-    te = df[df["season"].isin(TEST_SEASONS)]
+    # fit + evaluate only on rows with a *real* value and a real sample of the
+    # season (>= 8 full 90s); never on the parser's peer-median imputations.
+    # Predictions are still written for every row, current season included.
+    fit_ok = (df["imputed"] == 0) & (df["y"].notna()) & (df["n90"] >= 8)
+    tr = df[fit_ok & df["season"].isin(TRAIN_SEASONS)]
+    te = df[fit_ok & df["season"].isin(TEST_SEASONS)]
     # drop features that are mostly missing in the training window
     feat_num = [c for c in feat_num
                 if pd.to_numeric(tr[c], errors="coerce").notna().mean() > 0.5]
-    print(f"train {len(tr)} (seasons {TRAIN_SEASONS})  |  test {len(te)} ({TEST_SEASONS})")
+    print(f"train {len(tr)} (seasons {TRAIN_SEASONS})  |  test {len(te)} ({TEST_SEASONS})"
+          f"  |  GK in train: {(tr['pos'] == 'GK').sum()}")
     print(f"features: {len(feat_num)} numeric + {feat_cat}")
 
     ridge_pre = ColumnTransformer([
@@ -241,6 +254,8 @@ def main() -> None:
         X = frame[feat_num + feat_cat].copy()
         for c in feat_num:
             X[c] = pd.to_numeric(X[c], errors="coerce")
+        # low-minute current-season rows can blow a per-90 rate up to inf
+        X[feat_num] = X[feat_num].replace([np.inf, -np.inf], np.nan)
         return X
     Xtr, Xte = _prep(tr), _prep(te)
     cv = KFold(n_splits=5, shuffle=True, random_state=0)
@@ -288,19 +303,31 @@ def main() -> None:
         best_name, best_pred = best_single, np.expm1(pred[best_single])
     print(f"\nbest: {best_name}")
 
-    # segment diagnostics - where the error lives
-    has_p1 = te["prev1_log_value"].notna().to_numpy()
-    for lbl, m in [("with prev value", has_p1), ("cold start (no prior)", ~has_p1)]:
+    def _stack_from_frame(frame):
+        Xf = _prep(frame)
+        Sf = np.column_stack([bases[n].predict(Xf) for n in bases])
+        return np.clip(_stack_predict(Sf), 0, None)
+
+    # segment diagnostics on the test set
+    for lbl, m in [("outfield", (te["pos"] != "GK").to_numpy()),
+                   ("goalkeepers", (te["pos"] == "GK").to_numpy()),
+                   ("with prev value", te["prev1_log_value"].notna().to_numpy()),
+                   ("cold start (no prior)", te["prev1_log_value"].isna().to_numpy())]:
         if m.sum():
             print(f"  [{lbl:22}] n={m.sum():4d}  "
                   f"R2(log)={r2_score(te['y'][m], np.log1p(np.clip(best_pred[m], 0, None))):.3f}")
 
-    te_out = te[["season", "src_league", "Player", "Squad", "pos", "age",
-                 "market_value_eur"]].copy()
-    te_out["predicted_eur"] = np.clip(best_pred, 0, None).round(0)
-    te_out["ratio"] = (te_out["predicted_eur"] / te_out["market_value_eur"]).round(2)
-    te_out.sort_values("market_value_eur", ascending=False).to_csv(PRED, index=False)
-    print(f"wrote {PRED}")
+    # predictions for EVERY eligible row (all seasons incl. 2026-27, GK included,
+    # peer-imputed rows flagged) so the site has a value for every current player.
+    allp = df.copy()
+    allp["predicted_eur"] = _stack_from_frame(allp).round(0)
+    out = allp[["season", "src_league", "Player", "Squad", "pos", "age",
+                "market_value_eur", "predicted_eur", "imputed"]].rename(
+        columns={"imputed": "value_imputed"})
+    out["ratio"] = (out["predicted_eur"] / out["market_value_eur"]).round(2)
+    out.sort_values(["season", "market_value_eur"], ascending=[True, False]).to_csv(
+        PRED, index=False)
+    print(f"wrote {PRED}  ({len(out)} rows, seasons {sorted(out['season'].unique())})")
 
     MODEL.parent.mkdir(exist_ok=True)
     with MODEL.open("wb") as fh:
@@ -309,9 +336,11 @@ def main() -> None:
     print(f"wrote {MODEL}")
 
     print("\nbiggest over/under-valuations by the model (test set):")
-    show = te_out.assign(err_m=((te_out.predicted_eur - te_out.market_value_eur) / 1e6))
-    print(show.nlargest(5, "err_m")[["season", "Player", "Squad", "market_value_eur", "predicted_eur"]].to_string())
-    print(show.nsmallest(5, "err_m")[["season", "Player", "Squad", "market_value_eur", "predicted_eur"]].to_string())
+    show = te[["season", "Player", "Squad", "market_value_eur"]].copy()
+    show["predicted_eur"] = np.clip(best_pred, 0, None).round(0)
+    show["err_m"] = (show["predicted_eur"] - show["market_value_eur"]) / 1e6
+    print(show.nlargest(5, "err_m").to_string())
+    print(show.nsmallest(5, "err_m").to_string())
 
 
 if __name__ == "__main__":
