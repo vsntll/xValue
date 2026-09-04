@@ -187,6 +187,23 @@ def build() -> pd.DataFrame:
     df["days_rest_h"] = df["days_rest_h"].clip(0, 14)
     df["days_rest_a"] = df["days_rest_a"].clip(0, 14)
 
+    # form/momentum: value-model-implied output vs. recent actual output
+    # (src/build_form_momentum.py) - the dynamic counterpart to value_log_ratio
+    # above. Per-match, not season-level, and only as good as the coverage of
+    # understat_player_matches.csv - missing rows fall back to NaN (median-
+    # imputed downstream like any other partial feature).
+    mom_path = PROC / "squad_momentum.csv"
+    if mom_path.exists():
+        mom = pd.read_csv(mom_path)
+        mom["_k"] = mom["team_key"] + "|" + pd.to_datetime(mom["date"]).dt.strftime("%Y-%m-%d")
+        mmap = mom.set_index("_k")["squad_momentum"].to_dict()
+        dstr = df["Date"].dt.strftime("%Y-%m-%d")
+        df["h_momentum"] = (df["HomeTeam"].map(normalize_team) + "|" + dstr).map(mmap)
+        df["a_momentum"] = (df["AwayTeam"].map(normalize_team) + "|" + dstr).map(mmap)
+    else:
+        df["h_momentum"] = np.nan
+        df["a_momentum"] = np.nan
+
     # Elo -> expected home score (a calibrated starting point for the classifier)
     df["elo_exp_h"] = 1 / (1 + 10 ** (-df["elo_diff"] / 400))
     df["xelo_exp_h"] = 1 / (1 + 10 ** (-df["xelo_diff"] / 400))
