@@ -79,11 +79,17 @@ def load_players(src_league: str) -> pd.DataFrame:
     return df
 
 
+VALUE_SEASON = "2026-27"  # value predictions are now written for every season
+
+
 def load_value_predictions(src_league: str) -> pd.DataFrame:
     v = pd.read_csv(PROC / "value_model_predictions.csv", encoding="latin-1")
-    v = v[(v["src_league"] == src_league) & (v["season"] == "2025-26")].copy()
+    v = v[(v["src_league"] == src_league) & (v["season"] == VALUE_SEASON)].copy()
     v["team_key"] = v["Squad"].map(normalize_team)
-    return v[["Player", "team_key", "predicted_eur", "market_value_eur", "ratio"]].rename(
+    if "value_imputed" not in v.columns:
+        v["value_imputed"] = 0
+    return v[["Player", "team_key", "predicted_eur", "market_value_eur", "ratio",
+              "value_imputed"]].rename(
         columns={"Player": "player", "market_value_eur": "listed_value_eur"})
 
 
@@ -169,7 +175,8 @@ def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict]
                 "listed_value_eur": _num(vr["listed_value_eur"]),
                 "predicted_eur": _num(vr["predicted_eur"]),
                 "ratio": _num(vr["ratio"]),
-                "as_of_season": "2025-26",
+                "listed_is_estimate": bool(vr.get("value_imputed", 0)),
+                "as_of_season": VALUE_SEASON,
             }
         out.append(rec)
     return out, team_display, pd.DataFrame(blended_rows)
