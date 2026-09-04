@@ -113,28 +113,34 @@ to cover another top-5 league already in the underlying data.
 
 Watch for: `fbref_player_season_stats.csv`, `value_model_predictions.csv`,
 `live_matches_2026-27.csv`, `matches_all.csv` and `squad_season_features.csv`
-are read as **latin-1**, not utf-8 (accented names mojibake under the default
-encoding - e.g. "Supercopa de España" in `matches_all.csv`'s `comp` column).
-That alone isn't quite enough, though: some *individual rows* within these same
-files are actually utf-8 that a different, earlier scraper run mis-decoded as
-latin-1 before writing them back out - reading the whole file as latin-1 fixes
-the majority but doubly-mangles those rows the other way (e.g. a name with "ć"
-or "š" survives as two garbage characters instead of one). `_fix_names()` runs
-`ftfy.fix_text()` over every name/team/competition column after loading -
-it detects and repairs exactly that double-encoding mismatch and leaves
-already-correct text untouched. This matters for more than display: an
-unrepaired name normalizes (`normalize_team`) to the *wrong* `team_key`,
-which would silently split one real team's matches/roster/standings row across
-two different keys - so `build_teams_list` also recomputes `team_key` locally
-from the fixed name rather than trusting `squad_season_features.csv`'s own
-(possibly pre-fix) `team_key` column. Also: current-season (2026-27) `Age` is
-unpopulated upstream for every row - `build_players_payload` falls back to last
-season's age + 1; players with no 2025-26 record (new signings, debutants)
-still show no age.
+are **utf-8** (confirmed 2026-09-04: `parse_fbref_player_stats.py`'s rewrite
+made this correct at the source - plain utf-8 decodes every one of these files
+without error, and disagrees with a latin-1 read on real names like "Håvard
+Nordtveit" and "Šime Vrsaljko", which only the utf-8 read gets right). Read as
+latin-1 instead - as this script did until 2026-09-04 - and most names still
+look fine (`ftfy.fix_text()` repairs the common single-encoding mismatch), but
+a handful don't: ftfy's heuristics didn't catch every case, so a small number
+of names stayed silently wrong. `_fix_names()` still runs `ftfy.fix_text()`
+after the (now correct) utf-8 read, as a defense-in-depth no-op safety net -
+verified to change 0 rows across every processed CSV once the encoding is
+right, so it costs nothing and catches a future regression. This matters for
+more than display: a mis-decoded name normalizes (`normalize_team`) to the
+*wrong* `team_key`, which would silently split one real team's
+matches/roster/standings row across two different keys - so `build_teams_list`
+also recomputes `team_key` locally from the loaded name rather than trusting
+`squad_season_features.csv`'s own (baked-in-earlier) `team_key` column. Also:
+current-season (2026-27) `Age` is unpopulated upstream for every row -
+`build_players_payload` falls back to last season's age + 1; players with no
+2025-26 record (new signings, debutants) still show no age.
 
 Run: `python src/export_site_data.py` — regenerates `site/data.json` **and**
 splices it into `site/template.html` to produce `site/index.html` (the committed,
-self-contained page; `__SITE_DATA_JSON__` placeholder).
+self-contained page; `__SITE_DATA_JSON__` placeholder), in one run
+(`splice_index_html()`, called at the end of `main()`). This is what
+`weekly-refresh.yml`'s "Regenerate the site" step relies on - before
+2026-09-04 the script only wrote `data.json`, so that CI step silently did
+nothing to `site/index.html` and the commit-and-deploy step downstream always
+saw "site unchanged."
 
 ## Weekly auto-refresh
 
