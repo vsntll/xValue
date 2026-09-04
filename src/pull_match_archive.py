@@ -70,6 +70,8 @@ ODDS_COLS = [
     "B365CH", "B365CD", "B365CA",     # Bet365 closing
     "AvgH", "AvgD", "AvgA",           # market average pre-match
     "AvgCH", "AvgCD", "AvgCA",        # market average closing
+    "B365>2.5", "B365<2.5",           # Bet365 over/under 2.5 goals, pre-match
+    "B365C>2.5", "B365C<2.5",         # Bet365 over/under 2.5 goals, closing
 ]
 KEEP_COLS = IDENTITY_COLS + RESULT_COLS + MATCH_STAT_COLS + ODDS_COLS
 
