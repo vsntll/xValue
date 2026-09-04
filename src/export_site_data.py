@@ -30,6 +30,9 @@ from live.schema import normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 OUT = ROOT / "site" / "data.json"
+TEMPLATE = ROOT / "site" / "template.html"
+PAGE = ROOT / "site" / "index.html"          # committed deliverable, data inlined
+DATA_PLACEHOLDER = "__SITE_DATA_JSON__"
 LEAGUES = {"ENG1": "Premier League", "ESP1": "La Liga", "GER1": "Bundesliga"}
 MIN_MIN_CURRENT = 45   # min minutes this season to trust current-season rates
 MIN_MIN_PROJECT = 180  # min minutes to publish a pace projection / prop odds
@@ -311,8 +314,21 @@ def main() -> None:
         },
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(payload, indent=None, separators=(",", ":")), encoding="utf-8")
-    print(f"wrote {OUT}  ({len(all_players)} players, {len(fixtures)} fixtures)  size={OUT.stat().st_size/1024:.0f} KB")
+    blob = json.dumps(payload, indent=None, separators=(",", ":"))
+    OUT.write_text(blob, encoding="utf-8")
+    print(f"wrote {OUT}  ({len(all_players)} players, {len(fixtures)} fixtures)  "
+          f"size={OUT.stat().st_size/1024:.0f} KB")
+
+    # splice the payload into the template -> the self-contained committed page.
+    # "</" is escaped so a name can't break out of the <script> block.
+    if TEMPLATE.exists():
+        safe = blob.replace("</", "<\\/")
+        PAGE.write_text(
+            TEMPLATE.read_text(encoding="utf-8").replace(DATA_PLACEHOLDER, safe),
+            encoding="utf-8")
+        print(f"wrote {PAGE}  ({PAGE.stat().st_size/1024:.0f} KB)")
+    else:
+        print(f"(no {TEMPLATE.name} - skipped building index.html)")
 
 
 if __name__ == "__main__":
