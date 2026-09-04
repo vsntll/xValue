@@ -16,23 +16,23 @@ from __future__ import annotations
 
 import re
 import sys
-import unicodedata
 from io import StringIO
 from pathlib import Path
 
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from live.schema import normalize_team  # club-name resolver (alias map + tokens)
+from live.schema import deaccent, normalize_team  # name folding + club resolver
 
 
 def _norm_name(s) -> str:
-    """Loose key for player/club names across sources: no diacritics, no
+    """Loose key for player/club names across sources: transliterated to bare
+    ascii (o slash -> o, sharp s -> ss ... - see live.schema.deaccent), no
     punctuation, lowercase, collapsed spaces."""
     if not isinstance(s, str):
         return ""
-    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
-    s = re.sub(r"[^a-z0-9 ]", " ", s.lower())
+    s = deaccent(s).lower().replace("'", "")  # O'Shea -> oshea, to match the FBref slug
+    s = re.sub(r"[^a-z0-9 ]", " ", s)
     return " ".join(s.split())
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -263,6 +263,115 @@ def main() -> None:
         print(f"merged Sofascore value ({got} rows, current season)")
     else:
         print("(no sofascore_values.csv - run pull_sofascore_values.py)")
+
+    # Fallback for the still-unmatched: mostly (a) mid-season transfers / loans -
+    # FBref splits the season row by club, the value feeds carry one club - and
+    # (b) name-form drift: "Thiago" vs "Thiago Alcantara", "Son Heung-min" vs
+    # "Heung-min Son", "Andy Robertson" vs "Andrew Robertson", "Max Kilman" vs
+    # "Maximilian Kilman", "Illia Zabarnyi" vs "Ilya Zabarnyi". Fill from a
+    # pooled feed, only where the value comes out unambiguous.
+    if combined["market_value_eur"].isna().any():
+        pool = []
+        for path, club_col in [(mv, "squad"), (sc, "squad_slug"), (sf, "club")]:
+            if not path.exists():
+                continue
+            p = pd.read_csv(path)
+            if "market_value_eur" not in p.columns or club_col not in p.columns:
+                continue
+            p = p[p["market_value_eur"].notna()]
+            pool.append(pd.DataFrame({
+                "season": p["season"], "src_league": p["src_league"],
+                "_pk": p["player_name"].map(_norm_name),
+                "_tk": p[club_col].map(lambda c: normalize_team(str(c).replace("-", " "))),
+                "v": p["market_value_eur"]}))
+        vp = pd.concat(pool, ignore_index=True)
+        vp = vp[vp["_pk"] != ""]
+        vp["_toks"] = vp["_pk"].map(lambda s: s.split())
+        vp["_sig"] = vp["_toks"].map(frozenset)
+        vp_sl = {k: g for k, g in vp.groupby(["season", "src_league"])}
+        vp_slt = {k: g for k, g in vp.groupby(["season", "src_league", "_tk"])}
+
+        # too common to identify a player on their own (Jose Luis Garcia Vaya
+        # must not collect German Garcia's value just because both end ...garcia)
+        _COMMON = {
+            "garcia", "rodriguez", "fernandez", "gonzalez", "lopez", "perez",
+            "sanchez", "martinez", "gomez", "diaz", "martin", "jimenez", "ruiz",
+            "hernandez", "moreno", "alvarez", "romero", "alonso", "torres",
+            "navarro", "dominguez", "vazquez", "ramos", "serrano", "castro",
+            "silva", "santos", "costa", "pereira", "ferreira", "oliveira",
+        }
+
+        def _one_value(g) -> "float | None":
+            vals = g["v"].unique()
+            return float(vals[0]) if len(vals) == 1 else None
+
+        def _same_person(fb: list, fd: list) -> bool:
+            """fb = FBref slug tokens, fd = feed name tokens - same player under
+            first-name drift (Andy/Andrew, Max/Maximilian) or a mononym feed
+            name (Thiago, Emerson). Requires the surnames to line up, so
+            "James Bree" never grabs "James Ward-Prowse"."""
+            if not fb or not fd:
+                return False
+            if frozenset(fb) == frozenset(fd):
+                return True
+            if len(fd) == 1:                       # feed is a mononym
+                return fd[0] == fb[0] or fd[0] == fb[-1]
+            if len(fb) == 1:
+                return fb[0] == fd[0] or fb[0] == fd[-1]
+            if fb[-1] == fd[-1]:                   # shared surname
+                return True
+            if fb[0] == fd[0] and (fb[-1] in fd or fd[-1] in fb):  # shared first + surname nested
+                return True
+            # a shared non-leading name of real length: "Isi Palazon" vs
+            # "Isaac Palazon Camacho", "Gabri Veiga" vs "Gabriel Veiga". The
+            # leading token is excluded so "James Bree" can't seize "James ...".
+            if any(len(t) >= 5 and t not in _COMMON
+                   for t in set(fb[1:]) & set(fd[1:])):
+                return True
+            return False
+
+        need = combined["market_value_eur"].isna() & combined["player_slug"].notna()
+        newv = {"xfer": 0, "surname": 0}
+        fills: dict = {}
+        for idx, slug, tk, s, lg in zip(combined.index[need],
+                                        combined.loc[need, "player_slug"],
+                                        combined.loc[need, "Squad"].map(normalize_team),
+                                        combined.loc[need, "season"],
+                                        combined.loc[need, "src_league"]):
+            fb = _norm_name(slug).split()
+            rt = frozenset(fb)
+            if not fb:
+                continue
+            # (b) league-wide: same token set (reordered) or exactly one name apart
+            g = vp_sl.get((s, lg))
+            if g is not None:
+                sigs = list(g["_sig"])
+
+                def _near(ct: frozenset) -> bool:
+                    if ct == rt:
+                        return True
+                    if not (ct <= rt or rt <= ct) or len(ct ^ rt) > 1:
+                        return False
+                    if ct < rt:  # feed carries a mononym - only if nothing extends it
+                        return not any(ct < o for o in sigs)
+                    return True
+                v = _one_value(g[g["_sig"].map(_near)])
+                if v is not None:
+                    fills[idx] = v
+                    newv["xfer"] += 1
+                    continue
+            # (a) team-scoped: same player by surname, unique value within that squad
+            gt = vp_slt.get((s, lg, tk))
+            if gt is not None:
+                hit = gt[gt["_toks"].map(lambda fd: _same_person(fb, fd))]
+                v = _one_value(hit)
+                if v is not None:
+                    fills[idx] = v
+                    newv["surname"] += 1
+        if fills:
+            combined.loc[list(fills), "market_value_eur"] = pd.Series(fills)
+        print(f"fuzzy-filled {newv['xfer']} (transfer / name-form) + "
+              f"{newv['surname']} (same-club surname) more values")
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     combined.to_csv(OUT_PATH, index=False)
