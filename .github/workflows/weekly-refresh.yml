@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  actions: write        # to kick deploy-pages.yml after committing
 
 concurrency:
   group: weekly-refresh
@@ -96,7 +97,9 @@ jobs:
       - name: Regenerate the site
         run: python src/export_site_data.py
 
-      - name: Commit site/index.html
+      - name: Commit site/index.html and deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -106,4 +109,6 @@ jobs:
           else
             git commit -m "Weekly site refresh: fixtures, odds, market values ($(date -u +%Y-%m-%d))"
             git push
+            # a GITHUB_TOKEN push doesn't trigger deploy-pages.yml's push event
+            gh workflow run deploy-pages.yml || echo "(no deploy-pages workflow / Pages not enabled yet)"
           fi
