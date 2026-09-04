@@ -1,4 +1,4 @@
-<title>Matchday Edge</title>
+<title>xValue</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
@@ -190,10 +190,11 @@
     <div class="brand">
       <span class="mark"></span>
       <div>
-        <h1>Matchday Edge</h1>
+        <h1>xValue</h1>
       </div>
-      <span class="sub" id="leagueLabel">Premier League</span>
+      <span class="sub">Big 3</span>
     </div>
+    <div class="chipset" id="leagueChips"></div>
     <div class="tabs">
       <button class="tab-btn active" data-tab="players">Players</button>
       <button class="tab-btn" data-tab="fixtures">Fixtures &amp; Odds</button>
@@ -205,7 +206,7 @@
 <div class="shell">
   <header class="hero">
     <p id="heroText">Season-to-date stats against the model's projections, next-match win probabilities, and
-      anytime goal/assist odds for the current Premier League squads.</p>
+      anytime goal/assist odds across the Premier League, La Liga and Bundesliga.</p>
   </header>
 
   <div class="tiles" id="tiles"></div>
@@ -249,6 +250,7 @@
 
   <section id="tab-fixtures" hidden>
     <div class="fx-grid" id="fxGrid"></div>
+    <div class="empty" id="fxEmpty" hidden>No modelled fixtures for this league right now.</div>
   </section>
 
   <footer id="footerNotes"></footer>
@@ -260,9 +262,24 @@
   "use strict";
   var DATA = JSON.parse(document.getElementById('site-data').textContent);
   var players = DATA.players, fixtures = DATA.fixtures, notes = DATA.notes;
+  var leagues = DATA.leagues || [];
 
-  document.getElementById('leagueLabel').textContent = DATA.league;
   document.getElementById('asofLabel').textContent = 'Data as of ' + DATA.generated_asof;
+
+  var leagueState = { league: 'ALL' };
+  var leagueChips = document.getElementById('leagueChips');
+  var leagueOpts = ['ALL'].concat(leagues);
+  leagueChips.innerHTML = leagueOpts.map(function(l,i){
+    return '<button class="chip'+(i===0?' active':'')+'" data-league="'+esc(l)+'">'+(l==='ALL'?'All leagues':esc(l))+'</button>';
+  }).join('');
+  leagueChips.addEventListener('click', function(e){
+    var b = e.target.closest('.chip'); if(!b) return;
+    leagueChips.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});
+    b.classList.add('active');
+    leagueState.league = b.getAttribute('data-league');
+    renderTiles(); renderPlayers(); renderFixtures();
+  });
+  function inLeague(item){ return leagueState.league==='ALL' || item.league===leagueState.league; }
 
   // ---------- helpers ----------
   function eur(v){
@@ -288,21 +305,22 @@
   });
 
   // ---------- summary tiles ----------
-  (function(){
+  function renderTiles(){
     var tiles = document.getElementById('tiles');
-    var topScorer = players.slice().sort(function(a,b){return (b.current.gls||0)-(a.current.gls||0);})[0];
-    var withVal = players.filter(function(p){return p.value;});
+    var pl = players.filter(inLeague), fl = fixtures.filter(inLeague);
+    var topScorer = pl.slice().sort(function(a,b){return (b.current.gls||0)-(a.current.gls||0);})[0];
+    var withVal = pl.filter(function(p){return p.value;});
     var bargain = withVal.slice().sort(function(a,b){return (b.value.ratio||0)-(a.value.ratio||0);})[0];
-    var nextFx = fixtures.slice().sort(function(a,b){return a.date<b.date?-1:1;})[0];
+    var nextFx = fl.slice().sort(function(a,b){return a.date<b.date?-1:1;})[0];
     var items = [];
     if(topScorer) items.push({k:'Top scorer', v:topScorer.player, d:topScorer.squad + ' — ' + num(topScorer.current.gls) + ' goals in ' + num(topScorer.current.min) + ' min'});
     if(bargain) items.push({k:'Biggest value gap', v:bargain.player, d:'Model: ' + eur(bargain.value.predicted_eur) + ' vs listed ' + eur(bargain.value.listed_value_eur)});
-    if(nextFx) items.push({k:'Next up', v: nextFx.home.replace(' FC','').replace(' AFC','') + ' vs ' + nextFx.away.replace(' FC','').replace(' AFC',''), d: nextFx.date.slice(0,10) + ' — ' + pct(nextFx.p_home_win) + ' / ' + pct(nextFx.p_draw) + ' / ' + pct(nextFx.p_away_win)});
-    items.push({k:'Coverage', v: players.length + ' players', d: fixtures.length + ' upcoming fixtures modelled'});
+    if(nextFx) items.push({k:'Next up', v: teamShort(nextFx.home) + ' vs ' + teamShort(nextFx.away), d: nextFx.date.slice(0,10) + ' (' + nextFx.league + ') — ' + pct(nextFx.p_home_win) + ' / ' + pct(nextFx.p_draw) + ' / ' + pct(nextFx.p_away_win)});
+    items.push({k:'Coverage', v: pl.length + ' players', d: fl.length + ' upcoming fixtures modelled'});
     tiles.innerHTML = items.map(function(it){
       return '<div class="tile"><div class="k">'+esc(it.k)+'</div><div class="v">'+esc(it.v)+'</div><div class="d">'+esc(it.d)+'</div></div>';
     }).join('');
-  })();
+  }
 
   // ---------- players table ----------
   var posChips = document.getElementById('posChips');
@@ -349,7 +367,7 @@
     }
     return (
       '<tr class="prow'+(state.openKey===key?' open':'')+'" data-key="'+key+'">' +
-        '<td><div class="pname">'+esc(p.player)+' <span class="pos-badge">'+esc(p.pos)+'</span></div><div class="psquad">'+esc(p.squad)+'</div></td>' +
+        '<td><div class="pname">'+esc(p.player)+' <span class="pos-badge">'+esc(p.pos)+'</span></div><div class="psquad">'+esc(p.squad)+' &middot; '+esc(p.league)+'</div></td>' +
         '<td class="num num-col">'+num(p.current.min)+'</td>' +
         '<td class="num num-col">'+num(p.current.gls)+'</td>' +
         '<td class="num num-col">'+num(p.current.ast)+'</td>' +
@@ -395,6 +413,7 @@
 
   function renderPlayers(){
     var list = players.filter(function(p){
+      if(!inLeague(p)) return false;
       if(state.pos!=='ALL' && p.pos.indexOf(state.pos)<0) return false;
       if(state.q && (p.player.toLowerCase().indexOf(state.q)<0 && p.squad.toLowerCase().indexOf(state.q)<0)) return false;
       return true;
@@ -444,7 +463,7 @@
     var awayTop = (fx.away_props||[]).slice(0,5);
     return (
       '<div class="fx-card">' +
-        '<div class="fx-head"><span class="fx-date">'+esc(fx.date.slice(0,10))+'</span></div>' +
+        '<div class="fx-head"><span class="fx-date">'+esc(fx.date.slice(0,10))+'</span><span class="pos-badge">'+esc(fx.league)+'</span></div>' +
         '<div class="fx-teams">' +
           '<div class="fx-team home">'+esc(teamShort(fx.home))+'<div class="fx-xg">xG '+num(fx.exp_goals_home,2)+'</div></div>' +
           '<div class="fx-vs">vs</div>' +
@@ -466,9 +485,10 @@
     );
   }
 
-  (function(){
+  function renderFixtures(){
     var grid = document.getElementById('fxGrid');
-    var sorted = fixtures.slice().sort(function(a,b){return a.date<b.date?-1:1;});
+    var sorted = fixtures.filter(inLeague).sort(function(a,b){return a.date<b.date?-1:1;});
+    document.getElementById('fxEmpty').hidden = sorted.length>0;
     grid.innerHTML = sorted.map(fxCardHtml).join('');
     grid.querySelectorAll('.fx-toggle').forEach(function(btn){
       btn.addEventListener('click', function(){
@@ -478,7 +498,9 @@
         btn.classList.toggle('open', open);
       });
     });
-  })();
+  }
+  renderTiles();
+  renderFixtures();
 
   // ---------- footer ----------
   document.getElementById('footerNotes').innerHTML =

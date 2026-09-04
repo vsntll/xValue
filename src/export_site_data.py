@@ -1,7 +1,7 @@
 """Export a self-contained JSON payload for the player/odds website.
 
-Combines:
-  - current-season (2026-27) + last-season (2025-26) FBref stats per EPL player
+Covers the Premier League, La Liga and Bundesliga. Combines:
+  - current-season (2026-27) + last-season (2025-26) FBref stats per player
   - the value model's predicted market value (2025-26, `value_model_predictions.csv`)
   - a simple full-season pace projection from current per-90 rates
   - next-fixture win/draw/loss odds per team, from a Dixon-Coles model
@@ -30,8 +30,7 @@ from live.schema import normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 OUT = ROOT / "site" / "data.json"
-LEAGUE = "Premier League"
-SRC_LEAGUE = "ENG1"
+LEAGUES = {"ENG1": "Premier League", "ESP1": "La Liga", "GER1": "Bundesliga"}
 MIN_MIN_CURRENT = 45   # min minutes this season to trust current-season rates
 MIN_MIN_PROJECT = 180  # min minutes to publish a pace projection / prop odds
 
@@ -42,10 +41,10 @@ def _num(x):
     return round(float(x), 3)
 
 
-def load_players() -> pd.DataFrame:
+def load_players(src_league: str) -> pd.DataFrame:
     # source CSV is actually latin-1 (accented names mojibake under the utf-8 default)
     df = pd.read_csv(PROC / "fbref_player_season_stats.csv", low_memory=False, encoding="latin-1")
-    df = df[df["src_league"] == SRC_LEAGUE].copy()
+    df = df[df["src_league"] == src_league].copy()
     keep = {
         "season": "season", "Player": "player", "Squad": "squad", "Pos": "pos", "Age": "age",
         "standard__Playing Time_MP": "mp", "standard__Playing Time_Starts": "starts",
@@ -80,9 +79,9 @@ def load_players() -> pd.DataFrame:
     return df
 
 
-def load_value_predictions() -> pd.DataFrame:
+def load_value_predictions(src_league: str) -> pd.DataFrame:
     v = pd.read_csv(PROC / "value_model_predictions.csv", encoding="latin-1")
-    v = v[(v["src_league"] == SRC_LEAGUE) & (v["season"] == "2025-26")].copy()
+    v = v[(v["src_league"] == src_league) & (v["season"] == "2025-26")].copy()
     v["team_key"] = v["Squad"].map(normalize_team)
     return v[["Player", "team_key", "predicted_eur", "market_value_eur", "ratio"]].rename(
         columns={"Player": "player", "market_value_eur": "listed_value_eur"})
@@ -107,9 +106,9 @@ def _blend_rate(cur_min, cur_rate, prior_rate):
     return float(w * cur_rate + (1 - w) * prior_rate)
 
 
-def build_players_payload() -> tuple[list[dict], dict[str, str]]:
-    df = load_players()
-    vpred = load_value_predictions()
+def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict], dict[str, str], pd.DataFrame]:
+    df = load_players(src_league)
+    vpred = load_value_predictions(src_league)
 
     cur = df[df["season"] == "2026-27"]
     prev = df[df["season"] == "2025-26"].set_index(["player", "team_key"])
@@ -132,6 +131,7 @@ def build_players_payload() -> tuple[list[dict], dict[str, str]]:
 
         rec = {
             "player": r["player"], "squad": r["squad"], "team_key": r["team_key"],
+            "league": league_name,
             "pos": r["pos"], "age": _num(r["age"]),
             "current": {
                 "mp": _num(r["mp"]), "starts": _num(r["starts"]), "min": _num(r["min"]),
@@ -175,9 +175,10 @@ def build_players_payload() -> tuple[list[dict], dict[str, str]]:
     return out, team_display, pd.DataFrame(blended_rows)
 
 
-def load_upcoming_fixtures(asof: pd.Timestamp) -> pd.DataFrame:
-    live = pd.read_csv(PROC / "live_matches_2026-27.csv")
-    live = live[live["league"] == LEAGUE].copy()
+def load_upcoming_fixtures(asof: pd.Timestamp, league_name: str) -> pd.DataFrame:
+    # also latin-1 (accented ESPN team names mojibake under the utf-8 default)
+    live = pd.read_csv(PROC / "live_matches_2026-27.csv", encoding="latin-1")
+    live = live[live["league"] == league_name].copy()
     live["Date"] = pd.to_datetime(live["Date"], errors="coerce")
     scheduled = {"SCHEDULED", "TIMED"}
     live = live[live["status"].isin(scheduled) & live["Date"].notna() & (live["Date"] >= asof)]
@@ -254,34 +255,45 @@ def player_props_for_fixture(blended_df: pd.DataFrame, team_key: str, lam_team: 
 
 
 def main() -> None:
-    players, team_display, blended_df = build_players_payload()
-
+    # Dixon-Coles is fit once, combined across all competitions (league + cup +
+    # European) - that's what lets Bundesliga/La Liga/Premier League teams share
+    # a single attack/defence scale via their Champions/Europa League meetings.
     dc_matches = prep_dc_matches()
     asof = dc_matches["Date"].max() + pd.Timedelta(days=1)
     model = fit(dc_matches, asof)
 
-    live = load_upcoming_fixtures(asof)
-    nxt = next_fixture_per_team(live)
+    all_players: list[dict] = []
+    all_blended = []
+    for src_league, league_name in LEAGUES.items():
+        players, _, blended_df = build_players_payload(src_league, league_name)
+        all_players.extend(players)
+        blended_df["league"] = league_name
+        all_blended.append(blended_df)
+    blended_df = pd.concat(all_blended, ignore_index=True)
 
     fixtures = []
-    for _, r in nxt.iterrows():
-        lh, la = expected_goals(model, r["h"], r["a"])
-        pA, pD, pH = match_probs(model, r["h"], r["a"])
-        fx = {
-            "date": r["Date"].strftime("%Y-%m-%d %H:%M"),
-            "home": r["HomeTeam"], "away": r["AwayTeam"],
-            "home_key": r["h"], "away_key": r["a"],
-            "p_home_win": _num(pH), "p_draw": _num(pD), "p_away_win": _num(pA),
-            "exp_goals_home": _num(lh), "exp_goals_away": _num(la),
-            "home_props": player_props_for_fixture(blended_df, r["h"], lh),
-            "away_props": player_props_for_fixture(blended_df, r["a"], la),
-        }
-        fixtures.append(fx)
+    for src_league, league_name in LEAGUES.items():
+        live = load_upcoming_fixtures(asof, league_name)
+        nxt = next_fixture_per_team(live)
+        for _, r in nxt.iterrows():
+            lh, la = expected_goals(model, r["h"], r["a"])
+            pA, pD, pH = match_probs(model, r["h"], r["a"])
+            fx = {
+                "date": r["Date"].strftime("%Y-%m-%d %H:%M"),
+                "league": league_name,
+                "home": r["HomeTeam"], "away": r["AwayTeam"],
+                "home_key": r["h"], "away_key": r["a"],
+                "p_home_win": _num(pH), "p_draw": _num(pD), "p_away_win": _num(pA),
+                "exp_goals_home": _num(lh), "exp_goals_away": _num(la),
+                "home_props": player_props_for_fixture(blended_df, r["h"], lh),
+                "away_props": player_props_for_fixture(blended_df, r["a"], la),
+            }
+            fixtures.append(fx)
 
     payload = {
         "generated_asof": asof.strftime("%Y-%m-%d"),
-        "league": LEAGUE,
-        "players": players,
+        "leagues": list(LEAGUES.values()),
+        "players": all_players,
         "fixtures": fixtures,
         "notes": {
             "current_stats": "2026-27 FBref season-to-date stats (min 45 minutes played).",
@@ -294,7 +306,7 @@ def main() -> None:
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=None, separators=(",", ":")), encoding="utf-8")
-    print(f"wrote {OUT}  ({len(players)} players, {len(fixtures)} fixtures)  size={OUT.stat().st_size/1024:.0f} KB")
+    print(f"wrote {OUT}  ({len(all_players)} players, {len(fixtures)} fixtures)  size={OUT.stat().st_size/1024:.0f} KB")
 
 
 if __name__ == "__main__":
