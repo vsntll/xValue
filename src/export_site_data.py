@@ -42,8 +42,7 @@ def _num(x):
 
 
 def load_players(src_league: str) -> pd.DataFrame:
-    # source CSV is actually latin-1 (accented names mojibake under the utf-8 default)
-    df = pd.read_csv(PROC / "fbref_player_season_stats.csv", low_memory=False, encoding="latin-1")
+    df = pd.read_csv(PROC / "fbref_player_season_stats.csv", low_memory=False)
     df = df[df["src_league"] == src_league].copy()
     keep = {
         "season": "season", "Player": "player", "Squad": "squad", "Pos": "pos", "Age": "age",
@@ -83,7 +82,7 @@ VALUE_SEASON = "2026-27"  # value predictions are now written for every season
 
 
 def load_value_predictions(src_league: str) -> pd.DataFrame:
-    v = pd.read_csv(PROC / "value_model_predictions.csv", encoding="latin-1")
+    v = pd.read_csv(PROC / "value_model_predictions.csv")
     v = v[(v["src_league"] == src_league) & (v["season"] == VALUE_SEASON)].copy()
     v["team_key"] = v["Squad"].map(normalize_team)
     if "value_imputed" not in v.columns:
