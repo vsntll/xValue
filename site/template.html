@@ -1,7 +1,7 @@
 <title>xValue</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
   :root{
     --bg:#f3f6f1; --surface:#ffffff; --surface-2:#eaf0e7; --surface-3:#dfe8da;
@@ -13,6 +13,7 @@
     --radius-lg:14px; --radius-md:10px; --radius-sm:7px;
     --font-display:'Big Shoulders Display', 'Arial Narrow', sans-serif;
     --font-body:'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
+    --font-mono:'IBM Plex Mono', ui-monospace, 'SF Mono', Consolas, monospace;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
@@ -144,7 +145,11 @@
   .fx-teams{ padding:6px 16px 14px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
              gap:10px; }
   .fx-team{ font-family:var(--font-display); font-weight:700; font-size:17px; line-height:1.15; }
+  .fx-team-row{ display:flex; align-items:center; gap:7px; }
   .fx-team.away{ text-align:right; }
+  .fx-team.away .fx-team-row{ flex-direction:row-reverse; }
+  .fx-team .form-pills{ margin-top:5px; }
+  .fx-team.away .form-pills{ flex-direction:row-reverse; }
   .fx-vs{ font-size:11px; color:var(--text-faint); font-weight:700; }
   .fx-xg{ font-size:11px; color:var(--text-dim); margin-top:2px; font-weight:500; }
   .oddsbar{ margin:0 16px 12px; height:26px; border-radius:7px; overflow:hidden; display:flex;
@@ -203,6 +208,97 @@
   .prop-legend{ font-size:10.5px; color:var(--text-faint); margin-top:10px; }
   .prop-empty{ font-size:12px; color:var(--text-faint); padding:10px 0; }
 
+  /* ---------- teams ---------- */
+  .linkbtn{ border:none; background:none; padding:0; font:inherit; font-weight:600; color:var(--text);
+            cursor:pointer; }
+  .linkbtn:hover{ color:var(--accent); text-decoration:underline; }
+  .team-header{ display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:16px;
+                flex-wrap:wrap; }
+  .team-header h2{ font-size:28px; line-height:1.1; }
+  .team-header .lg{ font-size:12px; color:var(--text-dim); font-weight:600; margin-top:2px; }
+  .team-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:14px; margin-bottom:14px; }
+  .team-card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+              box-shadow:var(--shadow); padding:16px 18px; }
+  .team-card h3{ font-size:15px; margin-bottom:10px; }
+  .match-row{ display:flex; align-items:center; gap:10px; padding:7px 0; border-bottom:1px solid var(--border);
+              font-size:12.5px; }
+  .match-row:last-child{ border-bottom:none; }
+  .result-badge{ width:20px; height:20px; border-radius:5px; display:flex; align-items:center;
+                 justify-content:center; font-size:10.5px; font-weight:800; color:#fff; flex:none; }
+  .result-badge.W{ background:var(--win); } .result-badge.L{ background:var(--loss); }
+  .result-badge.D{ background:var(--draw); color:#1a1400; }
+  .match-row .opp{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+                    font-weight:600; }
+  .match-row .score{ font-weight:700; }
+  .match-row .meta{ color:var(--text-faint); font-size:10px; text-align:right; line-height:1.4; flex:none;
+                     width:96px; }
+  .trophy-row{ display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--border);
+               font-size:12.5px; }
+  .trophy-row:last-child{ border-bottom:none; }
+  .trophy-row .comp{ flex:1; min-width:0; font-weight:500; }
+  .trophy-row .season{ color:var(--text-faint); font-size:11px; flex:none; width:52px; }
+  .trophy-outcome{ font-size:10.5px; font-weight:700; padding:3px 8px; border-radius:999px; flex:none;
+                    white-space:nowrap; }
+  .trophy-outcome.won{ background:color-mix(in srgb, var(--win) 16%, transparent); color:var(--win); }
+  .trophy-outcome.runnerup{ background:var(--chip-bg); color:var(--text-dim); }
+  .trophy-outcome.pens{ background:color-mix(in srgb, var(--draw) 16%, transparent); color:var(--draw); }
+
+  /* ---------- crests + form pills ---------- */
+  .crest{ display:inline-flex; align-items:center; justify-content:center; border-radius:7px;
+          color:#fff; font-family:var(--font-display); font-weight:700; flex:none; letter-spacing:.2px;
+          text-shadow:0 1px 1px rgba(0,0,0,.25); }
+  .form-pills{ display:inline-flex; gap:3px; vertical-align:middle; }
+  .form-pill{ width:17px; height:17px; border-radius:4px; display:inline-flex; align-items:center;
+              justify-content:center; font-size:9px; font-weight:800; color:#fff; flex:none; }
+  .form-pill.W{ background:var(--win); } .form-pill.L{ background:var(--loss); }
+  .form-pill.D{ background:var(--draw); color:#1a1400; }
+  .form-empty{ font-size:11px; color:var(--text-faint); }
+
+  /* ---------- leaderboard (Players tab spotlight) ---------- */
+  .lb-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:14px; margin-bottom:18px; }
+  .lb-card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+            box-shadow:var(--shadow); padding:16px 18px; }
+  .lb-card h3{ font-size:15px; margin-bottom:2px; }
+  .lb-card .sub{ font-size:11.5px; color:var(--text-faint); margin-bottom:10px; }
+  .lb-row{ display:flex; align-items:center; gap:10px; padding:7px 0; border-bottom:1px solid var(--border);
+           font-size:12.5px; }
+  .lb-row:last-child{ border-bottom:none; }
+  .lb-rank{ width:16px; text-align:right; color:var(--text-faint); font-weight:700; font-size:11px; flex:none; }
+  .lb-name{ flex:1; min-width:0; }
+  .lb-name .p{ font-weight:600; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .lb-name .s{ font-size:11px; color:var(--text-dim); }
+  .lb-ratio{ font-family:var(--font-mono); font-weight:600; font-size:12.5px; flex:none; }
+  .lb-card.bargains .lb-ratio{ color:var(--win); }
+  .lb-card.overpriced .lb-ratio{ color:var(--loss); }
+
+  /* ---------- methodology tab ---------- */
+  .method-intro{ max-width:70ch; color:var(--text-dim); font-size:14.5px; margin-bottom:22px; }
+  .method-card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+                box-shadow:var(--shadow); padding:20px 22px; margin-bottom:16px; }
+  .method-card .num-tag{ display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px;
+                          border-radius:8px; background:var(--chip-bg); color:var(--text-dim);
+                          font-family:var(--font-display); font-weight:700; font-size:13px; margin-right:10px; }
+  .method-card h3{ display:inline-flex; align-items:center; font-size:18px; }
+  .method-card p{ color:var(--text-dim); font-size:13.5px; max-width:74ch; margin:10px 0 0; line-height:1.65; }
+  .method-card p code{ font-family:var(--font-mono); background:var(--chip-bg); padding:1px 5px;
+                        border-radius:4px; font-size:12px; color:var(--text); }
+  .worked{ margin-top:14px; background:var(--surface-2); border:1px solid var(--border);
+           border-radius:var(--radius-md); padding:14px 16px; }
+  .worked .wt{ font-size:10.5px; text-transform:uppercase; letter-spacing:.8px; color:var(--text-faint);
+               font-weight:700; margin-bottom:10px; }
+  .wrow{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; padding:4px 0;
+         font-family:var(--font-mono); font-size:12.5px; border-bottom:1px dashed var(--border); }
+  .wrow:last-child{ border-bottom:none; }
+  .wrow .wl{ color:var(--text-dim); font-family:var(--font-body); font-size:12.5px; }
+  .wrow .wv{ color:var(--text); font-weight:600; white-space:nowrap; }
+  .wrow.hl .wv{ color:var(--accent); font-size:14px; }
+  .wrow.result .wv{ color:var(--accent-2); font-size:14px; }
+  .method-note{ font-size:11.5px; color:var(--text-faint); margin-top:10px; font-style:italic; }
+
+  /* ---------- projected table ---------- */
+  .proj-move{ font-size:10.5px; font-weight:700; font-family:var(--font-mono); }
+  .proj-move.up{ color:var(--win); } .proj-move.down{ color:var(--loss); } .proj-move.same{ color:var(--text-faint); }
+
   footer{ margin-top:44px; padding-top:18px; border-top:1px solid var(--border); font-size:11.5px;
           color:var(--text-faint); line-height:1.7; }
   footer b{ color:var(--text-dim); }
@@ -227,6 +323,8 @@
     <div class="tabs">
       <button class="tab-btn active" data-tab="players">Players</button>
       <button class="tab-btn" data-tab="fixtures">Fixtures &amp; Odds</button>
+      <button class="tab-btn" data-tab="teams">Teams</button>
+      <button class="tab-btn" data-tab="method">How It Works</button>
     </div>
     <span class="asof" id="asofLabel"></span>
   </div>
@@ -234,13 +332,16 @@
 
 <div class="shell">
   <header class="hero">
-    <p id="heroText">Season-to-date stats against the model's projections, next-match win probabilities, and
-      anytime goal/assist odds across the Premier League, La Liga and Bundesliga.</p>
+    <p id="heroText">Every player's season stats next to what the models think happens next: market value,
+      win odds, and who's most likely to score — across the Premier League, La Liga and Bundesliga, plus
+      club form, rosters, honours, and a full projected final table. Curious how any of it's computed?
+      The <b>How It Works</b> tab shows the actual math, run on today's real fixtures.</p>
   </header>
 
   <div class="tiles" id="tiles"></div>
 
   <section id="tab-players">
+    <div class="lb-grid" id="lbGrid"></div>
     <div class="controls">
       <div class="search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -282,6 +383,24 @@
     <div class="empty" id="fxEmpty" hidden>No modelled fixtures for this league right now.</div>
   </section>
 
+  <section id="tab-teams" hidden>
+    <div class="controls">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="teamSearchInput" placeholder="Search a club&hellip;">
+      </div>
+      <select class="sortsel" id="teamSelect"></select>
+    </div>
+    <div id="teamPanel"></div>
+  </section>
+
+  <section id="tab-method" hidden>
+    <p class="method-intro">Every number on this page traces back to real matches, real stats and one
+      fitted model per task — no black box. Below is the exact arithmetic, run on today's actual data:
+      a real upcoming fixture, a real player, a real valuation.</p>
+    <div id="methodBody"></div>
+  </section>
+
   <footer id="footerNotes"></footer>
 </div>
 
@@ -306,7 +425,7 @@
     leagueChips.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});
     b.classList.add('active');
     leagueState.league = b.getAttribute('data-league');
-    renderTiles(); renderPlayers(); renderFixtures();
+    renderTiles(); renderPlayers(); renderFixtures(); renderLeaderboard();
   });
   function inLeague(item){ return leagueState.league==='ALL' || item.league===leagueState.league; }
 
@@ -330,6 +449,8 @@
       var t = b.getAttribute('data-tab');
       document.getElementById('tab-players').hidden = t!=='players';
       document.getElementById('tab-fixtures').hidden = t!=='fixtures';
+      document.getElementById('tab-teams').hidden = t!=='teams';
+      document.getElementById('tab-method').hidden = t!=='method';
     });
   });
 
@@ -431,7 +552,7 @@
       var pct2 = Math.max(0, Math.min(100, (v.predicted_eur / Math.max(v.predicted_eur, v.listed_value_eur, 1)) * 100));
       var lo = Math.min(v.predicted_eur, v.listed_value_eur), hi = Math.max(v.predicted_eur, v.listed_value_eur);
       var span = hi>0?hi:1;
-      blocks.push('<div class="blk"><div class="k">Market value (model, 2025-26)</div>' +
+      blocks.push('<div class="blk"><div class="k">Market value (model, '+esc(v.as_of_season)+')</div>' +
         '<div class="row"><span>Predicted</span><b>'+eur(v.predicted_eur)+'</b></div>' +
         '<div class="row"><span>Listed</span><b>'+eur(v.listed_value_eur)+'</b></div>' +
         '<div class="valuebar"><b style="width:'+((v.predicted_eur/span)*100).toFixed(0)+'%"></b><i style="left:'+((v.listed_value_eur/span)*100).toFixed(0)+'%"></i></div>' +
@@ -477,8 +598,60 @@
   }
   renderPlayers();
 
+  // ---------- value leaderboard ----------
+  var LB_MIN_MIN = 180, LB_MIN_LISTED = 1500000;
+  function computeLeaderboard(){
+    var pool = players.filter(inLeague).filter(function(p){
+      return p.value && (p.current.min||0) >= LB_MIN_MIN && (p.value.listed_value_eur||0) >= LB_MIN_LISTED;
+    });
+    return {
+      bargains: pool.slice().sort(function(a,b){ return b.value.ratio - a.value.ratio; }).slice(0,8),
+      overpriced: pool.slice().sort(function(a,b){ return a.value.ratio - b.value.ratio; }).slice(0,8),
+    };
+  }
+  function lbRowHtml(p, i){
+    var pct2 = (p.value.ratio>=1?'+':'') + Math.round((p.value.ratio-1)*100) + '%';
+    return '<div class="lb-row"><span class="lb-rank">'+(i+1)+'</span>'+crest(p.squad,26)+
+      '<div class="lb-name"><span class="p">'+esc(p.player)+'</span><span class="s">'+esc(p.squad)+' &middot; '+esc(p.league)+'</span></div>' +
+      '<span class="lb-ratio">'+pct2+'</span></div>';
+  }
+  function renderLeaderboard(){
+    var lb = computeLeaderboard();
+    var grid = document.getElementById('lbGrid');
+    grid.innerHTML =
+      '<div class="lb-card bargains"><h3>Biggest bargains</h3><div class="sub">Model thinks they are worth more than the market says</div>' +
+        (lb.bargains.length ? lb.bargains.map(lbRowHtml).join('') : '<div class="prop-empty">No qualifying players in this league.</div>') + '</div>' +
+      '<div class="lb-card overpriced"><h3>Most overpriced</h3><div class="sub">Model thinks the market is paying too much</div>' +
+        (lb.overpriced.length ? lb.overpriced.map(lbRowHtml).join('') : '<div class="prop-empty">No qualifying players in this league.</div>') + '</div>';
+  }
+  renderLeaderboard();
+
   // ---------- fixtures ----------
   function teamShort(n){ return n.replace(' FC','').replace(' AFC','').replace(' United',' Utd'); }
+
+  function teamColor(name){
+    var hash = 0;
+    for (var i=0;i<name.length;i++){ hash = (hash*31 + name.charCodeAt(i)) >>> 0; }
+    return 'hsl(' + (hash % 360) + ' 60% 40%)';
+  }
+  function initials(name){
+    var words = teamShort(name).replace(/[^A-Za-z0-9 ]/g,'').split(' ').filter(Boolean);
+    if(!words.length) return '?';
+    if(words.length===1) return words[0].slice(0,2).toUpperCase();
+    return (words[0][0]+words[words.length-1][0]).toUpperCase();
+  }
+  function crest(name, size){
+    size = size || 22;
+    return '<span class="crest" style="width:'+size+'px;height:'+size+'px;font-size:'+Math.round(size*0.42)+'px;background:'+teamColor(name)+'">'+esc(initials(name))+'</span>';
+  }
+  function formPills(matches, n){
+    n = n || 5;
+    var recent = (matches||[]).slice(0, n).slice().reverse();  // oldest-to-newest, left-to-right
+    if(!recent.length) return '<span class="form-empty">no recent matches</span>';
+    return '<span class="form-pills">' + recent.map(function(m){
+      return '<span class="form-pill '+m.result+'" title="'+esc(m.result)+' vs '+esc(teamShort(m.opponent))+' ('+esc(m.date)+', '+esc(m.comp)+')">'+m.result+'</span>';
+    }).join('') + '</span>';
+  }
   function fxKey(fx){ return fx.home_key+'|'+fx.away_key+'|'+fx.date; }
   var fxState = { openKey: null };
 
@@ -527,9 +700,11 @@
       '<div class="fx-card'+(isOpen?' open':'')+'">' +
         '<div class="fx-head"><span class="fx-date">'+esc(fx.date.slice(0,10))+'</span><span class="pos-badge">'+esc(fx.league)+'</span></div>' +
         '<div class="fx-teams">' +
-          '<div class="fx-team home">'+esc(teamShort(fx.home))+'<div class="fx-xg">xG '+num(fx.exp_goals_home,2)+'</div></div>' +
+          '<div class="fx-team home"><div class="fx-team-row">'+crest(fx.home,24)+'<span>'+esc(teamShort(fx.home))+'</span></div>' +
+            '<div class="fx-xg">xG '+num(fx.exp_goals_home,2)+'</div>'+formPills(recentMatches[fx.home_key])+'</div>' +
           '<div class="fx-vs">vs</div>' +
-          '<div class="fx-team away">'+esc(teamShort(fx.away))+'<div class="fx-xg">xG '+num(fx.exp_goals_away,2)+'</div></div>' +
+          '<div class="fx-team away"><div class="fx-team-row">'+crest(fx.away,24)+'<span>'+esc(teamShort(fx.away))+'</span></div>' +
+            '<div class="fx-xg">xG '+num(fx.exp_goals_away,2)+'</div>'+formPills(recentMatches[fx.away_key])+'</div>' +
         '</div>' +
         '<div class="oddsbar">' +
           '<div class="h" style="width:'+hp+'%">'+(hp>=10?hp+'%':'')+'</div>' +
@@ -596,15 +771,278 @@
     });
   }
 
+  // ---------- teams ----------
+  var teamsList = DATA.teams || [];
+  var recentMatches = DATA.recent_matches || {};
+  var standings = DATA.standings || [];
+  var cupFinals = DATA.cup_finals || [];
+  var projectedTable = DATA.projected_table || [];
+  var teamSelect = document.getElementById('teamSelect');
+  var teamState = { key: null };
+
+  function populateTeamSelect(q){
+    q = (q||'').toLowerCase();
+    var byLeague = {};
+    teamsList.forEach(function(t){ (byLeague[t.league] = byLeague[t.league]||[]).push(t); });
+    var html = '';
+    leagueOpts.slice(1).forEach(function(lg){
+      var list = (byLeague[lg]||[]).filter(function(t){ return !q || t.name.toLowerCase().indexOf(q)>=0; })
+        .sort(function(a,b){ return a.name<b.name?-1:a.name>b.name?1:0; });
+      if(!list.length) return;
+      html += '<optgroup label="'+esc(lg)+'">' + list.map(function(t){
+        return '<option value="'+esc(t.team_key)+'"'+(teamState.key===t.team_key?' selected':'')+'>'+esc(t.name)+'</option>';
+      }).join('') + '</optgroup>';
+    });
+    teamSelect.innerHTML = html || '<option value="">No clubs match</option>';
+  }
+
+  function matchRowHtml(m){
+    return (
+      '<div class="match-row"><span class="result-badge '+m.result+'">'+m.result+'</span>' +
+        '<span class="opp">'+(m.home?'vs ':'@ ')+esc(teamShort(m.opponent))+'</span>' +
+        '<span class="score num">'+num(m.gf)+'&ndash;'+num(m.ga)+'</span>' +
+        '<span class="meta">'+esc(m.comp)+'<br>'+esc(m.date)+'</span></div>'
+    );
+  }
+
+  function trophyRowHtml(f, teamKey){
+    var isHome = f.home_key===teamKey, opp = isHome ? f.away : f.home;
+    var outcomeClass = 'runnerup', outcomeTxt = 'Runner-up';
+    if(f.decided_by_penalties){ outcomeClass='pens'; outcomeTxt='Penalties (n/a)'; }
+    else if(f.winner_key===teamKey){ outcomeClass='won'; outcomeTxt='Won'; }
+    return (
+      '<div class="trophy-row">' +
+        '<span class="comp">'+esc(f.comp)+' final vs '+esc(teamShort(opp))+' ('+esc(f.score)+')</span>' +
+        '<span class="season">'+esc(f.season)+'</span>' +
+        '<span class="trophy-outcome '+outcomeClass+'">'+esc(outcomeTxt)+'</span>' +
+      '</div>'
+    );
+  }
+
+  function rosterTableHtml(roster){
+    return (
+      '<div class="table-wrap" style="border:none;box-shadow:none;"><table><thead><tr>' +
+        '<th>Player</th><th class="num-col">Age</th><th class="num-col">Min</th><th class="num-col">Gls</th>' +
+        '<th class="num-col">Ast</th><th class="num-col">npxG/90</th></tr></thead><tbody>' +
+      roster.map(function(p){
+        return (
+          '<tr><td><button type="button" class="playerlink linkbtn" data-player="'+esc(p.player)+'" data-team="'+esc(p.team_key)+'">'+esc(p.player)+'</button> <span class="pos-badge">'+esc(p.pos)+'</span></td>' +
+          '<td class="num num-col">'+num(p.age)+'</td><td class="num num-col">'+num(p.current.min)+'</td>' +
+          '<td class="num num-col">'+num(p.current.gls)+'</td><td class="num num-col">'+num(p.current.ast)+'</td>' +
+          '<td class="num num-col">'+num(p.current.npxg90,2)+'</td></tr>'
+        );
+      }).join('') +
+      '</tbody></table></div>'
+    );
+  }
+
+  function renderTeamPanel(){
+    var panel = document.getElementById('teamPanel');
+    var team = teamsList.find(function(t){ return t.team_key===teamState.key; });
+    if(!team){
+      panel.innerHTML = '<div class="empty">Pick a club to see its recent form, roster and honours.</div>';
+      return;
+    }
+    var roster = players.filter(function(p){ return p.team_key===team.team_key && p.league===team.league; })
+      .sort(function(a,b){ return (b.current.min||0)-(a.current.min||0); });
+    var matches = recentMatches[team.team_key] || [];
+    var myFinals = cupFinals.filter(function(f){ return f.home_key===team.team_key || f.away_key===team.team_key; })
+      .sort(function(a,b){ return a.date<b.date?1:-1; });
+    var mySeasons = standings.filter(function(s){ return s.league===team.league; })
+      .map(function(s){
+        var row = s.rows.find(function(r){ return r.team_key===team.team_key; });
+        return row ? {season:s.season, row:row} : null;
+      }).filter(Boolean).sort(function(a,b){ return a.season<b.season?1:-1; });
+    var cur = mySeasons[0];
+
+    var html = '<div class="team-header"><div style="display:flex;align-items:center;gap:12px;">'+crest(team.name,44)+
+      '<div><h2>'+esc(team.name)+'</h2><div class="lg">'+esc(team.league)+'</div>'+formPills(matches)+'</div></div>';
+    if(cur) html += '<div class="tile" style="margin:0;min-width:180px;"><div class="k">'+esc(cur.season)+' position</div>' +
+      '<div class="v">#'+cur.row.rank+'</div><div class="d">'+cur.row.played+' played &middot; '+cur.row.pts+' pts</div></div>';
+    html += '</div>';
+
+    html += '<div class="team-grid">';
+    html += '<div class="team-card"><h3>Recent results</h3>' +
+      (matches.length ? matches.map(matchRowHtml).join('') : '<div class="prop-empty">No recent results in the modelled data.</div>') +
+      '</div>';
+    html += '<div class="team-card"><h3>Cup finals &amp; honours</h3>' +
+      (myFinals.length ? myFinals.map(function(f){ return trophyRowHtml(f, team.team_key); }).join('') : '<div class="prop-empty">No cup finals reached in the modelled seasons (2020-21 to 2025-26).</div>') +
+      '</div>';
+    html += '</div>';
+
+    if(mySeasons.length){
+      html += '<div class="team-card" style="margin-bottom:14px;"><h3>League position by season</h3>' +
+        '<div class="table-wrap" style="border:none;box-shadow:none;"><table><thead><tr>' +
+        '<th>Season</th><th class="num-col">Pos</th><th class="num-col">Pld</th><th class="num-col">W</th>' +
+        '<th class="num-col">D</th><th class="num-col">L</th><th class="num-col">GD</th><th class="num-col">Pts</th></tr></thead><tbody>' +
+        mySeasons.map(function(m){
+          return '<tr><td>'+esc(m.season)+'</td><td class="num num-col">#'+m.row.rank+'</td><td class="num num-col">'+m.row.played+'</td>' +
+            '<td class="num num-col">'+m.row.w+'</td><td class="num num-col">'+m.row.d+'</td><td class="num num-col">'+m.row.l+'</td>' +
+            '<td class="num num-col">'+(m.row.gd>0?'+':'')+m.row.gd+'</td><td class="num num-col">'+m.row.pts+'</td></tr>';
+        }).join('') + '</tbody></table></div></div>';
+    }
+
+    var projTable = projectedTable.find(function(t){ return t.league===team.league; });
+    if(projTable){
+      html += '<div class="team-card" style="margin-bottom:14px;"><h3>Projected final table</h3>' +
+        '<div class="sub" style="margin:-4px 0 10px;font-size:11.5px;color:var(--text-faint);">Current points + expected points from remaining fixtures, via the match-odds model &mdash; not a simulation.</div>' +
+        '<div class="table-wrap" style="border:none;box-shadow:none;"><table><thead><tr>' +
+        '<th class="num-col">Proj.</th><th>Club</th><th class="num-col">Now</th><th class="num-col">GP left</th>' +
+        '<th class="num-col">Proj. pts</th></tr></thead><tbody>' +
+        projTable.rows.map(function(r){
+          var mine = r.team_key===team.team_key;
+          var moveCls = r.projected_rank<r.current_rank ? 'up' : r.projected_rank>r.current_rank ? 'down' : 'same';
+          var moveTxt = r.projected_rank===r.current_rank ? '&mdash;' : (r.projected_rank<r.current_rank?'&uarr;':'&darr;')+Math.abs(r.projected_rank-r.current_rank);
+          return '<tr style="'+(mine?'font-weight:700;background:var(--surface-3);':'')+'"><td class="num num-col">#'+r.projected_rank+'</td>' +
+            '<td>'+crest(r.name,16)+' '+esc(teamShort(r.name))+' <span class="proj-move '+moveCls+'">'+moveTxt+'</span></td>' +
+            '<td class="num num-col">#'+r.current_rank+' &middot; '+r.current_pts+'</td>' +
+            '<td class="num num-col">'+r.games_remaining+'</td><td class="num num-col">'+r.projected_pts+'</td></tr>';
+        }).join('') + '</tbody></table></div></div>';
+    }
+
+    html += '<div class="team-card"><h3>Roster ('+roster.length+')</h3>' +
+      (roster.length ? rosterTableHtml(roster) : '<div class="prop-empty">No players meet the minutes threshold yet this season.</div>') +
+      '</div>';
+
+    panel.innerHTML = html;
+    panel.querySelectorAll('.playerlink').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        goToPlayer(btn.getAttribute('data-player'), btn.getAttribute('data-team'));
+      });
+    });
+  }
+
+  teamSelect.addEventListener('change', function(){ teamState.key = teamSelect.value; renderTeamPanel(); });
+  document.getElementById('teamSearchInput').addEventListener('input', function(e){
+    populateTeamSelect(e.target.value);
+    if(teamSelect.value && teamSelect.value !== teamState.key){ teamState.key = teamSelect.value; renderTeamPanel(); }
+  });
+
+  populateTeamSelect('');
+  if(!teamState.key && teamSelect.options.length){ teamState.key = teamSelect.options[0].value; }
+  renderTeamPanel();
+
   renderTiles();
   renderFixtures();
 
+  // ---------- methodology ----------
+  var methodEx = DATA.methodology_example;
+  function wrow(label, val){ return '<div class="wrow"><span class="wl">'+label+'</span><span class="wv">'+val+'</span></div>'; }
+  function wrowHl(label, val){ return '<div class="wrow hl"><span class="wl">'+label+'</span><span class="wv">'+val+'</span></div>'; }
+  function wrowResult(label, val){ return '<div class="wrow result"><span class="wl">'+label+'</span><span class="wv">'+val+'</span></div>'; }
+
+  function renderMethodology(){
+    var body = document.getElementById('methodBody');
+    var html = '';
+
+    if(methodEx){
+      var fx = methodEx.fixture, pe = methodEx.prop_example, ve = methodEx.value_example;
+      html += '<div class="method-card">' +
+        '<h3><span class="num-tag">1</span>Next-match win odds</h3>' +
+        '<p>Every club gets an <b>attack</b> and a <b>defence</b> rating from a Dixon-Coles model, fit on every league, cup '+
+        'and European result across all three leagues from the last ~900 days (recency-weighted, so last month counts '+
+        'more than two years ago). A fixture\'s expected goals: <code>exp(attack_home + defence_away + home_advantage)</code> '+
+        'for the home side, <code>exp(attack_away + defence_home)</code> for the away side. Those feed a Poisson scoreline '+
+        'grid (with a small correction for low-scoring games) to get Win / Draw / Loss.</p>' +
+        '<div class="worked"><div class="wt">Worked on '+esc(fx.date.slice(0,10))+' &mdash; '+esc(fx.league)+'</div>' +
+        wrow(esc(fx.home)+' attack rating', num(fx.att_home,3)) +
+        wrow(esc(fx.home)+' defence rating', num(fx.def_home,3)) +
+        wrow(esc(fx.away)+' attack rating', num(fx.att_away,3)) +
+        wrow(esc(fx.away)+' defence rating', num(fx.def_away,3)) +
+        wrow('Home advantage', num(fx.home_adv,3)) +
+        wrow('Low-score correction (&rho;)', num(fx.rho,3)) +
+        wrowHl(esc(fx.home)+' expected goals', num(fx.lambda_home,2)) +
+        wrowHl(esc(fx.away)+' expected goals', num(fx.lambda_away,2)) +
+        wrowResult('Home win / Draw / Away win', pct(fx.p_home)+' / '+pct(fx.p_draw)+' / '+pct(fx.p_away)) +
+        '</div></div>';
+
+      if(pe){
+        html += '<div class="method-card">' +
+          '<h3><span class="num-tag">2</span>Anytime goalscorer &amp; assist odds</h3>' +
+          '<p>The fixture\'s expected goals (above) gets split across the matchday squad by attacking output: each '+
+          'player\'s blended non-penalty xG per 90 (their current-season rate, shrunk toward last season\'s while the '+
+          'sample is small) times their share of the team\'s minutes this season. Bigger share of the team\'s attacking '+
+          'output = bigger share of the team\'s expected goals for this match, then <code>P(scores) = 1 - e^(-that '+
+          'player\'s expected goals)</code> &mdash; the standard Poisson "at least one" formula.</p>' +
+          '<div class="worked"><div class="wt">Worked for '+esc(pe.player)+' ('+esc(pe.team)+')</div>' +
+          wrow('Blended npxG per 90', num(pe.npxg90_blended,3)) +
+          wrow('Minutes-share this season', pct(pe.minute_frac)) +
+          wrow('Attacking weight (npxG/90 &times; minutes-share)', num(pe.atk_weight,3)) +
+          wrow('Squad total attacking weight', num(pe.squad_atk_total,3)) +
+          wrowHl('Share of team attack', pct(pe.share)) +
+          wrow('Team expected goals (from card 1)', num(pe.team_lambda,2)) +
+          wrowHl('Player expected goals', num(pe.lambda_player,3)) +
+          wrowResult('P(scores anytime)', pct(pe.p_anytime_goal)) +
+          '</div></div>';
+      }
+
+      if(ve){
+        html += '<div class="method-card">' +
+          '<h3><span class="num-tag">3</span>Predicted market value</h3>' +
+          '<p>A gradient-boosted regression trained on prior-season value (the single biggest lever), age, minutes, and '+
+          'per-90 output (goals, assists, xG, xA, shots, key passes) predicts <code>log(market value)</code>, then a '+
+          'calibration step corrects the model\'s tendency to under/over-shrink at the extremes. Test-set '+
+          'R&sup2;(log) 0.89, median error 23%, within 2&times; the true value 91% of the time.</p>' +
+          '<div class="worked"><div class="wt">Worked for '+esc(ve.player)+' ('+esc(ve.squad)+', '+esc(ve.season)+')</div>' +
+          wrow('Age', num(ve.age)) +
+          wrow('Minutes this season', num(ve.current.min)) +
+          wrow('Goals / Assists', num(ve.current.gls)+' / '+num(ve.current.ast)) +
+          wrow('npxG / xA', num(ve.current.npxg,2)+' / '+num(ve.current.xag,2)) +
+          wrow('Listed value', eur(ve.listed_value_eur)) +
+          wrowResult('Model-predicted value', eur(ve.predicted_eur)) +
+          '</div><div class="method-note">Ratio '+num(ve.ratio,2)+'&times; listed &mdash; below 1&times; means the model '+
+          'thinks the market is paying a premium (reputation, marketability, potential) over what this season\'s output '+
+          'alone would suggest. The biggest tail cases (global superstars, teenage prospects) are exactly where the '+
+          'model is least calibrated.</div></div>';
+      }
+    } else {
+      html += '<div class="empty">No worked example available in this data snapshot.</div>';
+    }
+
+    html += '<div class="method-card">' +
+      '<h3><span class="num-tag">4</span>38-game pace projection</h3>' +
+      '<p>Not a trained model &mdash; just arithmetic, and labelled as such everywhere it appears. ' +
+      '<code>projected minutes = min(90, minutes per appearance) &times; 38 &times; season minutes-share</code>, then ' +
+      '<code>projected goals = current goals-per-90 &times; (projected minutes / 90)</code>, same for assists. Shown ' +
+      'once a player has 180+ minutes this season; early in a season this mostly measures a hot or cold start, not a ' +
+      'stable rate.</p></div>';
+
+    html += '<div class="method-card">' +
+      '<h3><span class="num-tag">5</span>League tables &amp; the projected final table</h3>' +
+      '<p>The <b>current table</b> (Teams tab) is plain arithmetic over match results &mdash; 3 points a win, 1 a draw, ' +
+      'ranked by points then goal difference then goals for &mdash; computed directly from the same results feeding ' +
+      'every model on this page, not scraped from anywhere else.</p>' +
+      '<p>The <b>projected final table</b> takes each team\'s current points and adds <b>expected</b> points from every ' +
+      'remaining fixture this season: <code>3 &times; P(win) + 1 &times; P(draw)</code> per game, from the exact same ' +
+      'Dixon-Coles model as card 1. It is not a season simulation &mdash; no single simulated result gets played out, ' +
+      'just the sum of probabilities &mdash; and it knows nothing about injuries, transfers, or a manager getting sacked ' +
+      'in November.</p></div>';
+
+    html += '<div class="method-card">' +
+      '<h3><span class="num-tag">6</span>Cup finals &amp; honours</h3>' +
+      '<p>There is no round-by-round bracket in this data, so a competition\'s final is <b>inferred</b> as the '+
+      'last-dated match recorded for that season + competition. Checked against several real finals (2021-22 Champions '+
+      'League: Real Madrid 1-0 Liverpool; 2023-24 Copa del Rey: Athletic Club 1-1 Mallorca, correctly flagged as a '+
+      'shootout) and it held up &mdash; but it is an inference, not an official record. A season/competition with fewer '+
+      'than 2 recorded matches is skipped rather than guessed at, and when the final finished level, no winner is shown: '+
+      'penalty-shootout results are not in this data. The in-progress 2026-27 season is excluded entirely.</p></div>';
+
+    body.innerHTML = html;
+  }
+  renderMethodology();
+
   // ---------- footer ----------
   document.getElementById('footerNotes').innerHTML =
+    '<div style="margin-bottom:8px;">The full arithmetic behind every number here, worked on real fixtures and '+
+    'players, lives on the <b>How It Works</b> tab.</div>' +
     '<div><b>Current stats</b> — '+esc(notes.current_stats)+'</div>' +
     '<div><b>Value model</b> — '+esc(notes.value)+'</div>' +
     '<div><b>Pace projection</b> — '+esc(notes.projected_38)+'</div>' +
     '<div><b>Match odds</b> — '+esc(notes.match_odds)+'</div>' +
-    '<div><b>Player props</b> — '+esc(notes.player_props)+'</div>';
+    '<div><b>Player props</b> — '+esc(notes.player_props)+'</div>' +
+    '<div><b>Standings</b> — '+esc(notes.standings)+'</div>' +
+    '<div><b>Projected table</b> — '+esc(notes.projected_table)+'</div>' +
+    '<div><b>Value leaderboard</b> — '+esc(notes.value_leaderboard)+'</div>' +
+    '<div><b>Cup finals</b> — '+esc(notes.cup_finals)+'</div>';
 })();
 </script>

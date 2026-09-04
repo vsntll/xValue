@@ -2,13 +2,21 @@
 
 Covers the Premier League, La Liga and Bundesliga. Combines:
   - current-season (2026-27) + last-season (2025-26) FBref stats per player
-  - the value model's predicted market value (current season, `value_model_predictions.csv`)
+  - the value model's predicted market value (`value_model_predictions.csv`,
+    current season preferred, falls back to last season)
   - a simple full-season pace projection from current per-90 rates
   - next-fixture win/draw/loss odds per team, from a Dixon-Coles model
     (`src/dixon_coles.py`) fit on all competitions through today
   - per-player anytime goal / assist odds for that next fixture, from a
     share-of-team-expected-goals split (player npxG90 * minutes-share, normalised
     within the matchday squad) fed through a Poisson
+  - per-team pages: roster (from `players`), last 8 results (any competition),
+    full league tables per season (computed from results), and cup finals -
+    each inferred as the last-dated match of that season/competition
+  - a projected final table (current points + expected points from each team's
+    remaining fixtures, via the same Dixon-Coles model)
+  - a value-model leaderboard (biggest predicted-vs-listed gaps, both ways)
+  - one fully worked example (real fixture + real player) for the Methodology tab
 
 Run: py -3.11 src/export_site_data.py   (or plain python3 - no nodriver needed)
 Output: site/data.json
@@ -20,6 +28,7 @@ import json
 import sys
 from pathlib import Path
 
+import ftfy
 import numpy as np
 import pandas as pd
 
@@ -30,9 +39,6 @@ from live.schema import normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 OUT = ROOT / "site" / "data.json"
-TEMPLATE = ROOT / "site" / "template.html"
-PAGE = ROOT / "site" / "index.html"          # committed deliverable, data inlined
-DATA_PLACEHOLDER = "__SITE_DATA_JSON__"
 LEAGUES = {"ENG1": "Premier League", "ESP1": "La Liga", "GER1": "Bundesliga"}
 MIN_MIN_CURRENT = 45   # min minutes this season to trust current-season rates
 MIN_MIN_PROJECT = 180  # min minutes to publish a pace projection / prop odds
@@ -44,8 +50,20 @@ def _num(x):
     return round(float(x), 3)
 
 
+def _fix_names(df: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
+    """The processed CSVs mix latin-1 rows with rows that were actually utf-8 but
+    got mis-decoded as latin-1 by an earlier scraper run (different names show up
+    broken in different, incompatible ways). Reading as latin-1 fixes the first
+    group; ftfy detects and repairs the second group and leaves the first alone."""
+    for c in cols:
+        if c in df.columns:
+            df[c] = df[c].map(lambda s: ftfy.fix_text(s) if isinstance(s, str) else s)
+    return df
+
+
 def load_players(src_league: str) -> pd.DataFrame:
-    df = pd.read_csv(PROC / "fbref_player_season_stats.csv", low_memory=False)
+    # source CSV is actually latin-1 (accented names mojibake under the utf-8 default)
+    df = pd.read_csv(PROC / "fbref_player_season_stats.csv", low_memory=False, encoding="latin-1")
     df = df[df["src_league"] == src_league].copy()
     keep = {
         "season": "season", "Player": "player", "Squad": "squad", "Pos": "pos", "Age": "age",
@@ -66,6 +84,7 @@ def load_players(src_league: str) -> pd.DataFrame:
         "understat__np_xg": "us_npxg", "understat__xa": "us_xa", "understat__xg": "us_xg",
     }
     df = df[list(keep)].rename(columns=keep)
+    df = _fix_names(df, ["player", "squad"])
     for c in ["mp", "starts", "min", "min_pct", "gls", "ast", "npg", "cy", "cr", "shots",
               "sot", "xg", "npxg", "xag", "gls90", "ast90", "xg90", "npxg90", "xag90",
               "age", "market_value_eur", "us_npxg", "us_xa", "us_xg"]:
@@ -81,17 +100,14 @@ def load_players(src_league: str) -> pd.DataFrame:
     return df
 
 
-VALUE_SEASON = "2026-27"  # value predictions are now written for every season
-
-
 def load_value_predictions(src_league: str) -> pd.DataFrame:
-    v = pd.read_csv(PROC / "value_model_predictions.csv")
-    v = v[(v["src_league"] == src_league) & (v["season"] == VALUE_SEASON)].copy()
+    v = pd.read_csv(PROC / "value_model_predictions.csv", encoding="latin-1")
+    v = v[(v["src_league"] == src_league) & v["season"].isin(["2025-26", "2026-27"])].copy()
+    v = _fix_names(v, ["Player", "Squad"])  # must match load_players()'s names for the join in build_players_payload
     v["team_key"] = v["Squad"].map(normalize_team)
-    if "value_imputed" not in v.columns:
-        v["value_imputed"] = 0
-    return v[["Player", "team_key", "predicted_eur", "market_value_eur", "ratio",
-              "value_imputed"]].rename(
+    # prefer the current season's prediction over last season's, per player+team
+    v = v.sort_values("season").drop_duplicates(subset=["Player", "team_key"], keep="last")
+    return v[["Player", "team_key", "season", "predicted_eur", "market_value_eur", "ratio"]].rename(
         columns={"Player": "player", "market_value_eur": "listed_value_eur"})
 
 
@@ -137,10 +153,15 @@ def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict]
             "xag90": _blend_rate(r["min"], r["xag90"], p_row["xag90"] if p_row is not None else np.nan),
         })
 
+        # current-season Age is unpopulated upstream for every 2026-27 row - fall
+        # back to last season's age + 1 rather than showing a blank
+        age = r["age"]
+        if pd.isna(age) and p_row is not None and pd.notna(p_row.get("age")):
+            age = p_row["age"] + 1
         rec = {
             "player": r["player"], "squad": r["squad"], "team_key": r["team_key"],
             "league": league_name,
-            "pos": r["pos"], "age": _num(r["age"]),
+            "pos": r["pos"], "age": _num(age),
             "current": {
                 "mp": _num(r["mp"]), "starts": _num(r["starts"]), "min": _num(r["min"]),
                 "gls": _num(r["gls"]), "ast": _num(r["ast"]), "npg": _num(r["npg"]),
@@ -177,8 +198,7 @@ def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict]
                 "listed_value_eur": _num(vr["listed_value_eur"]),
                 "predicted_eur": _num(vr["predicted_eur"]),
                 "ratio": _num(vr["ratio"]),
-                "listed_is_estimate": bool(vr.get("value_imputed", 0)),
-                "as_of_season": VALUE_SEASON,
+                "as_of_season": vr["season"],
             }
         out.append(rec)
     return out, team_display, pd.DataFrame(blended_rows)
@@ -188,6 +208,7 @@ def load_upcoming_fixtures(asof: pd.Timestamp, league_name: str) -> pd.DataFrame
     # also latin-1 (accented ESPN team names mojibake under the utf-8 default)
     live = pd.read_csv(PROC / "live_matches_2026-27.csv", encoding="latin-1")
     live = live[live["league"] == league_name].copy()
+    live = _fix_names(live, ["HomeTeam", "AwayTeam"])
     live["Date"] = pd.to_datetime(live["Date"], errors="coerce")
     scheduled = {"SCHEDULED", "TIMED"}
     live = live[live["status"].isin(scheduled) & live["Date"].notna() & (live["Date"] >= asof)]
@@ -213,7 +234,8 @@ def next_fixture_per_team(live: pd.DataFrame) -> pd.DataFrame:
 
 
 def prep_dc_matches() -> pd.DataFrame:
-    m = pd.read_csv(PROC / "matches_all.csv")
+    m = pd.read_csv(PROC / "matches_all.csv", encoding="latin-1")
+    m = _fix_names(m, ["HomeTeam", "AwayTeam"])  # a mis-decoded name can normalize to the wrong team_key
     m["Date"] = pd.to_datetime(m["Date"], errors="coerce")
     m = m.dropna(subset=["Date", "FTHG", "FTAG"])
     m["h"] = m["HomeTeam"].map(normalize_team)
@@ -235,6 +257,132 @@ def expected_goals(model, home: str, away: str) -> tuple[float, float]:
     lh = float(np.exp(model["att"][h] + model["dfn"][a] + model["home"]))
     la = float(np.exp(model["att"][a] + model["dfn"][h]))
     return lh, la
+
+
+# ---------------------------------------------------------------------------
+# team pages: rosters (reuses `players`), recent results, league tables, cup finals
+# ---------------------------------------------------------------------------
+
+RECENT_N = 8   # matches shown per team's recent-results list
+# matches_all.csv mixes two source labels for the same European competitions
+# across overlapping seasons - normalise before grouping by competition.
+COMP_ALIASES = {
+    "Champions Lg": "Champions League",
+    "Europa Lg": "Europa League",
+    "Conf Lg": "Europa Conference League",
+}
+CUP_TYPES = {"domestic_cup", "european", "league_cup", "super_cup"}
+COMPLETE_SEASONS = {"2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26"}  # excludes in-progress 2026-27
+
+
+def load_all_matches() -> pd.DataFrame:
+    # also latin-1 (accented competition names like "Supercopa de España" mojibake)
+    m = pd.read_csv(PROC / "matches_all.csv", encoding="latin-1")
+    m = _fix_names(m, ["HomeTeam", "AwayTeam", "comp"])
+    m["Date"] = pd.to_datetime(m["Date"], errors="coerce")
+    m = m.dropna(subset=["Date", "FTHG", "FTAG"])
+    m["h"] = m["HomeTeam"].map(normalize_team)
+    m["a"] = m["AwayTeam"].map(normalize_team)
+    m["comp"] = m["comp"].replace(COMP_ALIASES)
+    return m.sort_values("Date")
+
+
+def build_teams_list() -> list[dict]:
+    sq = pd.read_csv(PROC / "squad_season_features.csv", encoding="latin-1")
+    sq = _fix_names(sq, ["team"])
+    # recompute team_key from the now-fixed name rather than trust the CSV's own
+    # team_key column - that one was normalized upstream from the raw (possibly
+    # still-mojibake) name, and would then disagree with every team_key computed
+    # in this script from matches_all.csv / fbref_player_season_stats.csv
+    sq["team_key"] = sq["team"].map(normalize_team)
+    sq = sq[sq["src_league"].isin(LEAGUES)].copy()
+    sq["league"] = sq["src_league"].map(LEAGUES)
+    latest = sq.sort_values("season").groupby(["team_key", "league"], as_index=False).last()
+    return [
+        {"team_key": r["team_key"], "name": r["team"], "league": r["league"]}
+        for _, r in latest.iterrows()
+    ]
+
+
+def build_recent_matches(m: pd.DataFrame) -> dict[str, list[dict]]:
+    recent: dict[str, list[dict]] = {}
+    for _, r in m.sort_values("Date", ascending=False).iterrows():
+        legs = (
+            (r["h"], r["a"], r["HomeTeam"], r["AwayTeam"], r["FTHG"], r["FTAG"],
+             r.get("HS"), r.get("AS"), r.get("HPoss"), r.get("APoss"), r.get("HxG"), r.get("AxG"), True),
+            (r["a"], r["h"], r["AwayTeam"], r["HomeTeam"], r["FTAG"], r["FTHG"],
+             r.get("AS"), r.get("HS"), r.get("APoss"), r.get("HPoss"), r.get("AxG"), r.get("HxG"), False),
+        )
+        for team_key, opp_key, _team_name, opp_name, gf, ga, sf, sa, pf, pa, xgf, xga, is_home in legs:
+            lst = recent.setdefault(team_key, [])
+            if len(lst) >= RECENT_N:
+                continue
+            result = "W" if gf > ga else "L" if gf < ga else "D"
+            lst.append({
+                "date": r["Date"].strftime("%Y-%m-%d"), "opponent": opp_name, "opponent_key": opp_key,
+                "home": is_home, "comp": r["comp"], "competition_type": r["competition_type"],
+                "gf": _num(gf), "ga": _num(ga), "result": result,
+                "shots_for": _num(sf), "shots_against": _num(sa),
+                "poss_for": _num(pf), "xg_for": _num(xgf), "xg_against": _num(xga),
+            })
+    return recent
+
+
+def build_standings(m: pd.DataFrame) -> list[dict]:
+    lg = m[m["competition_type"] == "league"]
+    tables = []
+    for (season, comp), grp in lg.groupby(["season", "comp"]):
+        stats: dict[str, dict] = {}
+        for _, r in grp.iterrows():
+            h, a, gh, ga_ = r["h"], r["a"], r["FTHG"], r["FTAG"]
+            sh = stats.setdefault(h, {"name": r["HomeTeam"], "p": 0, "w": 0, "d": 0, "l": 0, "gf": 0.0, "ga": 0.0})
+            sa = stats.setdefault(a, {"name": r["AwayTeam"], "p": 0, "w": 0, "d": 0, "l": 0, "gf": 0.0, "ga": 0.0})
+            sh["p"] += 1; sa["p"] += 1
+            sh["gf"] += gh; sh["ga"] += ga_
+            sa["gf"] += ga_; sa["ga"] += gh
+            if gh > ga_: sh["w"] += 1; sa["l"] += 1
+            elif gh < ga_: sa["w"] += 1; sh["l"] += 1
+            else: sh["d"] += 1; sa["d"] += 1
+        rows = []
+        for tk, s in stats.items():
+            rows.append({
+                "team_key": tk, "name": s["name"], "played": s["p"], "w": s["w"], "d": s["d"], "l": s["l"],
+                "gf": _num(s["gf"]), "ga": _num(s["ga"]), "gd": _num(s["gf"] - s["ga"]),
+                "pts": s["w"] * 3 + s["d"],
+            })
+        rows.sort(key=lambda x: (-x["pts"], -x["gd"], -x["gf"]))
+        for i, row in enumerate(rows):
+            row["rank"] = i + 1
+        # for competition_type=='league' rows, `comp` is already the league display name
+        tables.append({"season": season, "league": comp, "rows": rows})
+    return tables
+
+
+def build_cup_finals(m: pd.DataFrame) -> list[dict]:
+    cups = m[m["competition_type"].isin(CUP_TYPES) & m["season"].isin(COMPLETE_SEASONS)]
+    finals = []
+    for (season, comp), grp in cups.groupby(["season", "comp"]):
+        if len(grp) < 2:
+            continue  # too little coverage to trust "last match" as the final
+        last = grp.sort_values("Date").iloc[-1]
+        gh, ga_ = last["FTHG"], last["FTAG"]
+        decided_by_pens = gh == ga_
+        winner_key = None if decided_by_pens else (last["h"] if gh > ga_ else last["a"])
+        winner_name = None
+        if winner_key == last["h"]:
+            winner_name = last["HomeTeam"]
+        elif winner_key == last["a"]:
+            winner_name = last["AwayTeam"]
+        finals.append({
+            "season": season, "comp": comp, "competition_type": last["competition_type"],
+            "date": last["Date"].strftime("%Y-%m-%d"),
+            "home": last["HomeTeam"], "away": last["AwayTeam"],
+            "home_key": last["h"], "away_key": last["a"],
+            "score": f"{int(gh)}-{int(ga_)}",
+            "decided_by_penalties": bool(decided_by_pens),
+            "winner_key": winner_key, "winner_name": winner_name,
+        })
+    return finals
 
 
 def player_props_for_fixture(blended_df: pd.DataFrame, team_key: str, lam_team: float) -> list[dict]:
@@ -261,6 +409,133 @@ def player_props_for_fixture(blended_df: pd.DataFrame, team_key: str, lam_team: 
         })
     props.sort(key=lambda p: p["p_anytime_goal"] or 0, reverse=True)
     return props
+
+
+def build_full_schedule(asof: pd.Timestamp) -> dict[str, list[dict]]:
+    """Every remaining 2026-27 league fixture per team (not just the next one) -
+    fuel for the projected final table."""
+    sched: dict[str, list[dict]] = {}
+    for league_name in LEAGUES.values():
+        live = load_upcoming_fixtures(asof, league_name)
+        for _, r in live.iterrows():
+            sched.setdefault(r["h"], []).append({"opp_key": r["a"], "home": True})
+            sched.setdefault(r["a"], []).append({"opp_key": r["h"], "home": False})
+    return sched
+
+
+def _team_exp_points(model, tk: str, fx: dict) -> float:
+    """Expected points from one remaining fixture, from `tk`'s perspective:
+    3*P(win) + 1*P(draw), using the same Dixon-Coles model as the match odds."""
+    if fx["home"]:
+        pA, pD, pH = match_probs(model, tk, fx["opp_key"])
+        return float(3 * pH + pD)
+    pA, pD, pH = match_probs(model, fx["opp_key"], tk)
+    return float(3 * pA + pD)
+
+
+def build_projected_table(model, standings: list[dict], schedule: dict) -> list[dict]:
+    """Current 2026-27 points + expected points (not simulated results) from
+    each team's remaining fixtures, run through the match-odds model."""
+    tables = []
+    for t in standings:
+        if t["season"] != "2026-27":
+            continue
+        rows = []
+        for row in t["rows"]:
+            tk = row["team_key"]
+            remaining = schedule.get(tk, [])
+            exp_pts = sum(_team_exp_points(model, tk, fx) for fx in remaining) if model is not None else 0.0
+            rows.append({
+                "team_key": tk, "name": row["name"], "current_pts": row["pts"],
+                "current_rank": row["rank"], "played": row["played"],
+                "games_remaining": len(remaining), "projected_pts": round(row["pts"] + exp_pts, 1),
+            })
+        rows.sort(key=lambda r: -r["projected_pts"])
+        for i, r in enumerate(rows):
+            r["projected_rank"] = i + 1
+        tables.append({"league": t["league"], "rows": rows})
+    return tables
+
+
+MIN_LISTED_FOR_LEADERBOARD = 1_500_000  # floor so a nominal sub-1M TM listing can't produce a 10x+ "bargain"
+
+
+def build_value_leaderboard(all_players: list[dict], n: int = 8) -> dict:
+    """Biggest gaps between the model's predicted value and the listed value,
+    both directions - a live demo of the value model, not just a single-player tile."""
+    pool = [p for p in all_players if p.get("value") and (p["current"]["min"] or 0) >= MIN_MIN_PROJECT
+            and (p["value"]["listed_value_eur"] or 0) >= MIN_LISTED_FOR_LEADERBOARD]
+
+    def slim(p: dict) -> dict:
+        return {
+            "player": p["player"], "squad": p["squad"], "league": p["league"], "pos": p["pos"],
+            "listed_value_eur": p["value"]["listed_value_eur"], "predicted_eur": p["value"]["predicted_eur"],
+            "ratio": p["value"]["ratio"],
+        }
+    bargains = sorted(pool, key=lambda p: p["value"]["ratio"], reverse=True)[:n]
+    overpriced = sorted(pool, key=lambda p: p["value"]["ratio"])[:n]
+    return {"bargains": [slim(p) for p in bargains], "overpriced": [slim(p) for p in overpriced]}
+
+
+def build_methodology_example(model, fixtures: list[dict], blended_df: pd.DataFrame,
+                               all_players: list[dict]) -> dict | None:
+    """A fully worked example of every number on the site, computed for one real
+    upcoming fixture and one real player, so 'how was this made' has an actual
+    answer instead of just a paragraph."""
+    fx = None
+    for c in sorted(fixtures, key=lambda f: f["date"]):
+        if model is not None and c["home_key"] in model["idx"] and c["away_key"] in model["idx"]:
+            fx = c
+            break
+    if fx is None:
+        return None
+    h, a = fx["home_key"], fx["away_key"]
+    att_h, def_h = float(model["att"][model["idx"][h]]), float(model["dfn"][model["idx"][h]])
+    att_a, def_a = float(model["att"][model["idx"][a]]), float(model["dfn"][model["idx"][a]])
+    home_adv, rho = float(model["home"]), float(model["rho"])
+    lh, la = expected_goals(model, h, a)
+    pA, pD, pH = match_probs(model, h, a)
+
+    squad = blended_df[blended_df["team_key"] == h].copy()
+    med = squad["min_pct"].median()
+    squad["minute_frac"] = (squad["min_pct"].fillna(med if pd.notna(med) else 50.0) / 100.0).clip(0.05, 1.0)
+    squad["atk_weight"] = squad["npxg90"].fillna(0).clip(lower=0) * squad["minute_frac"]
+    atk_total = float(squad["atk_weight"].sum())
+    prop_example = None
+    if len(squad) and atk_total > 0:
+        top = squad.sort_values("atk_weight", ascending=False).iloc[0]
+        share = float(top["atk_weight"] / atk_total)
+        lam_player = lh * share
+        prop_example = {
+            "player": top["player"], "team": fx["home"],
+            "npxg90_blended": _num(top["npxg90"]), "minute_frac": _num(top["minute_frac"]),
+            "atk_weight": _num(top["atk_weight"]), "squad_atk_total": _num(atk_total),
+            "share": _num(share), "team_lambda": _num(lh),
+            "lambda_player": _num(lam_player), "p_anytime_goal": _num(1 - np.exp(-lam_player)),
+        }
+
+    withval = [p for p in all_players if p.get("value")]
+    value_example = None
+    if withval:
+        vp = max(withval, key=lambda p: p["value"]["listed_value_eur"] or 0)
+        value_example = {
+            "player": vp["player"], "squad": vp["squad"], "league": vp["league"], "age": vp["age"],
+            "current": vp["current"], "listed_value_eur": vp["value"]["listed_value_eur"],
+            "predicted_eur": vp["value"]["predicted_eur"], "ratio": vp["value"]["ratio"],
+            "season": vp["value"]["as_of_season"],
+        }
+
+    return {
+        "fixture": {
+            "home": fx["home"], "away": fx["away"], "league": fx["league"], "date": fx["date"],
+            "att_home": _num(att_h), "def_home": _num(def_h), "att_away": _num(att_a), "def_away": _num(def_a),
+            "home_adv": _num(home_adv), "rho": _num(rho),
+            "lambda_home": _num(lh), "lambda_away": _num(la),
+            "p_home": _num(pH), "p_draw": _num(pD), "p_away": _num(pA),
+        },
+        "prop_example": prop_example,
+        "value_example": value_example,
+    }
 
 
 def main() -> None:
@@ -299,36 +574,47 @@ def main() -> None:
             }
             fixtures.append(fx)
 
+    all_matches = load_all_matches()
+    teams = build_teams_list()
+    recent_matches = build_recent_matches(all_matches)
+    standings = build_standings(all_matches)
+    cup_finals = build_cup_finals(all_matches)
+
+    full_schedule = build_full_schedule(asof)
+    projected_table = build_projected_table(model, standings, full_schedule)
+    value_leaderboard = build_value_leaderboard(all_players)
+    methodology_example = build_methodology_example(model, fixtures, blended_df, all_players)
+
     payload = {
         "generated_asof": asof.strftime("%Y-%m-%d"),
         "leagues": list(LEAGUES.values()),
         "players": all_players,
         "fixtures": fixtures,
+        "teams": teams,
+        "recent_matches": recent_matches,
+        "standings": standings,
+        "cup_finals": cup_finals,
+        "projected_table": projected_table,
+        "value_leaderboard": value_leaderboard,
+        "methodology_example": methodology_example,
         "notes": {
             "current_stats": "2026-27 FBref season-to-date stats (min 45 minutes played).",
             "last_season": "2025-26 full-season stats for the same player, where available.",
             "projected_38": "Simple pace projection: current per-90 rate x projected minutes over a 38-game season. Not a trained model.",
-            "value": "Predicted market value from the trained value-regression model (stacked trees, R2(log) 0.89, capped at Transfermarkt's ~EUR220M ceiling) vs listed market value.",
+            "value": "Predicted market value from the trained value-regression model (current season preferred, else last season; R2(log) 0.89, MAE EUR4.9M, within-2x 91%) vs listed market value.",
             "match_odds": "Win/draw/loss odds from a Dixon-Coles attack/defence model fit on all competitions through the date above.",
             "player_props": "Anytime goal/assist odds: team's Dixon-Coles expected goals split across the matchday squad by each player's (non-penalty xG90 or xA90, shrunk toward last season's rate early in the current season) x season minutes-share, then Poisson P(>=1).",
+            "cup_finals": "Each competition's final is inferred as the last-dated match of that season/competition in the results data - not read from an official bracket. When it ended level (decided on penalties/extra time not recorded here), no winner is shown. The in-progress 2026-27 season is excluded.",
+            "standings": "Full league tables computed directly from match results (3 pts/win). The 2026-27 table is the live in-progress standing.",
+            "projected_table": "Current points + expected points (3xP(win)+P(draw) per game, not simulated results) from each team's remaining fixtures, using the same Dixon-Coles model as the match odds. A projection, not a guarantee - form, injuries and transfers between now and kickoff aren't in it.",
+            "value_leaderboard": "The value model's biggest gaps between predicted and listed value, both directions, among players with at least 180 minutes this season.",
         },
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    blob = json.dumps(payload, indent=None, separators=(",", ":"))
-    OUT.write_text(blob, encoding="utf-8")
-    print(f"wrote {OUT}  ({len(all_players)} players, {len(fixtures)} fixtures)  "
-          f"size={OUT.stat().st_size/1024:.0f} KB")
-
-    # splice the payload into the template -> the self-contained committed page.
-    # "</" is escaped so a name can't break out of the <script> block.
-    if TEMPLATE.exists():
-        safe = blob.replace("</", "<\\/")
-        PAGE.write_text(
-            TEMPLATE.read_text(encoding="utf-8").replace(DATA_PLACEHOLDER, safe),
-            encoding="utf-8")
-        print(f"wrote {PAGE}  ({PAGE.stat().st_size/1024:.0f} KB)")
-    else:
-        print(f"(no {TEMPLATE.name} - skipped building index.html)")
+    OUT.write_text(json.dumps(payload, indent=None, separators=(",", ":")), encoding="utf-8")
+    print(f"wrote {OUT}  ({len(all_players)} players, {len(fixtures)} fixtures, {len(teams)} teams, "
+          f"{len(standings)} standings tables, {len(cup_finals)} cup finals, "
+          f"{len(projected_table)} projected tables)  size={OUT.stat().st_size/1024:.0f} KB")
 
 
 if __name__ == "__main__":
