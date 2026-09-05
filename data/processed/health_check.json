@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-04T17:36:34+00:00",
+  "checked_at": "2026-09-05T10:52:20+00:00",
   "results": {
     "fbref (browser scrape)": {
       "status": "blocked (known)",
@@ -7,48 +7,47 @@
       "seconds": 0.2
     },
     "transfermarkt (browser scrape)": {
-      "status": "blocked (known)",
-      "detail": "HTTP 405 - the standing non-browser block",
+      "status": "ERROR",
+      "detail": "unexpected HTTP 202",
       "seconds": 0.2
     },
     "worldfootballR mirror": {
       "status": "ok",
       "detail": "1.9 MB",
-      "seconds": 0.2
+      "seconds": 0.6
     },
     "espn": {
-      "status": "ok",
-      "detail": "380 rows",
-      "n": 380,
-      "seconds": 0.6
+      "status": "DEGRADED",
+      "detail": "returned 0 rows for the current season's top flight",
+      "seconds": 0.1
     },
     "fotmob": {
       "status": "ok",
-      "detail": "20 rows",
-      "n": 20,
-      "seconds": 0.7
+      "detail": "21 rows",
+      "n": 21,
+      "seconds": 1.0
     },
     "understat (live match schema)": {
       "status": "ok",
       "detail": "380 rows",
       "n": 380,
-      "seconds": 2.3
+      "seconds": 5.6
     },
     "football-data.org": {
       "status": "ok",
       "detail": "380 rows",
       "n": 380,
-      "seconds": 7.3
+      "seconds": 7.4
     },
     "football-data.co.uk": {
       "status": "ok",
       "detail": "10309 bytes",
-      "seconds": 0.7
+      "seconds": 0.5
     },
     "sofascore (values API)": {
       "status": "blocked (known)",
       "detail": "403 - Sofascore IP-blocks this network sometimes (CI especially)",
-      "seconds": 0.2
+      "seconds": 0.1
     }
   }
 }
