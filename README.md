@@ -56,4 +56,5 @@ Then follow `run_pipeline.md`.
 - **Python 3.11** — `nodriver` and soccerdata's TLS client don't work on 3.14 here.
 - Browser scrapes (FBref, Transfermarkt) open a visible Chrome window; TM needs
   its AWS-WAF captcha clicked once per session.
-- `data/` is gitignored (raw caches are large and reproducible).
+- `data/processed/` is committed (built tables + pulled sources); `data/raw/`
+  and the fetch caches are gitignored (large and reproducible).

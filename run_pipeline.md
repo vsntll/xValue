@@ -70,15 +70,13 @@ schema drift (`DEGRADED` / `ERROR`) does.
 (and on manual dispatch). It pulls everything that doesn't need a browser -
 football-data.co.uk results, live fixtures + match stats (ESPN / football-data.org
 / FotMob / Understat), Sofascore market values - then rebuilds the match table,
-retrains both models, regenerates `site/index.html` and commits it.
+retrains both models, regenerates `site/index.html`, and commits the refreshed
+`data/processed/` **and** `site/index.html` back to `master`.
 
-Setup: add repo secret `FOOTBALL_DATA_ORG_KEY`; seed the (gitignored) data cache
-once with a GitHub Release the workflow can fall back to:
-
-```
-tar czf pipeline-seed.tar.gz data/processed data/raw/football_data/_elo_warmup.csv
-gh release create pipeline-seed pipeline-seed.tar.gz -t "pipeline data seed"
-```
+`data/processed/` is committed (checkout brings it, `git pull` gets you the
+latest weekly data locally). `data/raw/` + the soccerdata/Understat fetch caches
+stay gitignored - CI keeps them in a non-load-bearing `actions/cache` blob only
+to skip re-downloading. Setup: just add repo secret `FOOTBALL_DATA_ORG_KEY`.
 
 **Manual (goals / assists / minutes — needs a real Chrome window):** run this
 every week or two; it re-scrapes the current season's FBref player stats,

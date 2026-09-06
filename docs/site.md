@@ -146,13 +146,14 @@ saw "site unchanged."
 
 `.github/workflows/weekly-refresh.yml` (Mondays 07:00 UTC + manual dispatch)
 re-pulls every browser-free source, rebuilds `matches_all`, retrains both models,
-regenerates `site/index.html` and commits it. It does **not** refresh the FBref
-counting stats or the Transfermarkt scrape values (those need Chrome + a WAF
-captcha) — run those locally now and then per `run_pipeline.md`.
+regenerates `site/index.html`, and commits the refreshed `data/processed/` **and**
+`site/index.html` back to `master`. It does **not** refresh the FBref counting
+stats or the Transfermarkt scrape values (those need Chrome + a WAF captcha) —
+run those locally now and then per `run_pipeline.md`.
 
-Setup: repo secret `FOOTBALL_DATA_ORG_KEY`, plus a one-off `pipeline-seed`
-GitHub Release holding `data/processed/` (the workflow's cache fallback -
-`data/` is gitignored). Command in `run_pipeline.md`.
+Setup: just the repo secret `FOOTBALL_DATA_ORG_KEY`. `data/processed/` is
+committed, so there's no seed release to maintain; `data/raw/` and the fetch
+caches stay gitignored (CI keeps them in a throwaway `actions/cache` blob).
 
 ## Known data-scope note
 

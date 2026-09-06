@@ -2,3 +2,8 @@
 *.yml   text eol=lf
 *.yaml  text eol=lf
 *.sh    text eol=lf
+
+# Committed pipeline data: pandas writes LF, CI (Linux) rewrites these weekly.
+# -text stops any CRLF munging on Windows checkouts (would show the whole file
+# as modified and thrash the weekly diff); no textual diff for multi-MB CSVs.
+data/processed/*.csv  -text

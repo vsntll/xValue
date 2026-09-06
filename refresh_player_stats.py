@@ -66,12 +66,12 @@ def main() -> None:
     run("train outcome model (hybrid)", "src/train_outcome_model.py", "--hybrid")
     run("regenerate site/index.html", "src/export_site_data.py")
 
-    subprocess.run(["git", "add", "site/index.html"], cwd=ROOT)
+    subprocess.run(["git", "add", "data/processed", "site/index.html"], cwd=ROOT)
     unchanged = subprocess.run(["git", "diff", "--cached", "--quiet"],
                                cwd=ROOT).returncode == 0
     print()
     if unchanged:
-        print("site/index.html is unchanged - nothing to commit.")
+        print("data/processed + site/index.html unchanged - nothing to commit.")
     elif args.commit:
         subprocess.run(["git", "commit", "-m",
                         f"Refresh FBref player stats ({season})"], cwd=ROOT, check=True)
@@ -79,7 +79,7 @@ def main() -> None:
         subprocess.run(["git", "push"], cwd=ROOT, check=True)
         print("committed + pushed - GitHub Pages will redeploy.")
     else:
-        print("site/index.html updated. Review it, then:")
+        print("data/processed + site/index.html updated. Review, then:")
         print(f'  git commit -m "Refresh FBref player stats ({season})" && git push')
 
 
