@@ -283,6 +283,7 @@
   table.elo-table{ min-width:0; }
   table.elo-table tbody td{ padding:7px 10px; font-size:12.5px; }
   table.elo-table thead th{ padding:8px 10px; }
+  .elo-note{ font-size:11.5px; color:var(--text-faint); margin:0 2px 10px; line-height:1.5; }
   .spark{ display:block; }
   .spark-empty{ color:var(--text-faint); }
 
@@ -526,6 +527,7 @@
       <div class="rk-col">
         <h3>Player Elo<span class="rk-sub" id="playerEloSub"></span></h3>
         <div class="chipset" id="posEloChips"></div>
+        <div class="elo-note" id="playerEloNote" hidden></div>
         <div class="table-wrap">
           <table id="playerEloTable" class="elo-table">
             <thead><tr><th>#</th><th>Player</th><th>Squad</th><th>Pos</th><th class="num-col">Rating</th><th>Trend</th></tr></thead>
@@ -1304,6 +1306,14 @@
       document.getElementById('playerEloEmpty').hidden = pool.length>0;
       document.getElementById('playerEloSub').textContent = rankingsState.season==='overall'
         ? '— current form, last 3 seasons' : '— ' + rankingsState.season + ' final';
+      var missing = b.leagues_missing || [];
+      var note = document.getElementById('playerEloNote');
+      if(missing.length && rankingsState.season!=='overall'){
+        note.hidden = false;
+        note.textContent = 'A player needs two appearances to make the ' + rankingsState.season
+          + ' ladder — not enough of the ' + missing.join(' or the ')
+          + ' has been played yet (Understat data lags early in a season).';
+      } else { note.hidden = true; }
       document.getElementById('playerEloBody').innerHTML = pool.map(function(r,i){
         return '<tr><td>'+(i+1)+'</td><td>'+esc(r.player)+'</td><td>'+esc(teamShort(r.squad))+'</td>' +
           '<td><span class="pos-badge">'+esc(r.pos_group)+'</span></td><td class="num-col">'+num(r.rating,0)+'</td><td>'+sparkline(r.history)+'</td></tr>';

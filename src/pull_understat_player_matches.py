@@ -65,6 +65,34 @@ def _norm(s) -> str:
     return " ".join(re.sub(r"[^a-z0-9 ]", " ", deaccent(s).lower().replace("'", "")).split())
 
 
+def _match_stats_resilient(u, ids: list[int]) -> pd.DataFrame:
+    """read_player_match_stats over `ids`. Understat occasionally serves one match
+    malformed (soccerdata then raises deep in its parser, e.g. "'list' object has
+    no attribute 'values'" - seen on GER1 2024-25 game 27930); one such match
+    should not lose the whole league-season, so fall back to chunks then singles
+    and drop only the offenders."""
+    try:
+        return u.read_player_match_stats(match_id=ids)
+    except Exception:  # noqa: BLE001 - fall through to the resilient path
+        pass
+    frames, bad = [], []
+    for i in range(0, len(ids), 20):
+        chunk = ids[i:i + 20]
+        try:
+            frames.append(u.read_player_match_stats(match_id=chunk))
+            continue
+        except Exception:  # noqa: BLE001
+            pass
+        for mid in chunk:
+            try:
+                frames.append(u.read_player_match_stats(match_id=[mid]))
+            except Exception:  # noqa: BLE001 - a single unparseable match
+                bad.append(mid)
+    if bad:
+        print(f"    skipped {len(bad)} match(es) understat served malformed: {bad}")
+    return pd.concat(frames) if frames else pd.DataFrame()
+
+
 def pull_one(code: str, key: str, season: str) -> pd.DataFrame | None:
     import soccerdata as sd
 
@@ -72,7 +100,9 @@ def pull_one(code: str, key: str, season: str) -> pd.DataFrame | None:
     sch = u.read_schedule(include_matches_without_data=False).reset_index()
     if sch.empty:
         return None
-    df = u.read_player_match_stats(match_id=sch["game_id"].astype(int).tolist())
+    df = _match_stats_resilient(u, sch["game_id"].astype(int).tolist())
+    if df.empty:
+        return None
     df = df.reset_index()
     dates = sch.set_index("game_id")["date"]
     df["date"] = df["game_id"].map(dates)
