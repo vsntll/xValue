@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import os
 import time
 from pathlib import Path
 
@@ -43,17 +44,25 @@ LEAGUES = {
 }
 SLEEP = 0.6
 
+# Sofascore's Varnish edge 403s any non-browser TLS fingerprint (tls_requests
+# handles that) and additionally IP-blocks datacenter ranges - GitHub Actions,
+# most VPS. From a residential IP it's fine. Set SOFASCORE_PROXY to a
+# residential/rotating proxy URL (http://user:pass@host:port) to route around a
+# CI IP block; unset, requests go direct.
+PROXY = os.environ.get("SOFASCORE_PROXY") or None
+
 
 class Blocked(Exception):
     """Sofascore refused us (403/429/5xx) after retries - usually an IP block on
-    datacenter ranges (GitHub Actions, most VPS). Locally it's fine."""
+    datacenter ranges (GitHub Actions, most VPS). Locally it's fine; in CI, set
+    SOFASCORE_PROXY to a residential proxy or let the last good CSV stand."""
 
 
 def _get(path: str) -> dict:
     last = None
     for attempt in range(5):
         try:
-            r = tls_requests.get(f"{API}/{path}", headers=HEADERS, timeout=25)
+            r = tls_requests.get(f"{API}/{path}", headers=HEADERS, timeout=25, proxy=PROXY)
         except Exception as exc:  # noqa: BLE001 - transport hiccup, retry
             last = exc
             time.sleep(3 * (attempt + 1))

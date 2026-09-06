@@ -29,6 +29,10 @@ jobs:
     timeout-minutes: 45
     env:
       FOOTBALL_DATA_ORG_KEY: ${{ secrets.FOOTBALL_DATA_ORG_KEY }}
+      # optional: a residential/rotating proxy URL to route the Sofascore pull
+      # around GitHub's datacenter IP block. Unset -> the pull goes direct and
+      # falls back to the last good sofascore_values.csv when the IP is blocked.
+      SOFASCORE_PROXY: ${{ secrets.SOFASCORE_PROXY }}
       PYTHONIOENCODING: utf-8
 
     steps:
