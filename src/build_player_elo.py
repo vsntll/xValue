@@ -12,7 +12,11 @@ at that level to gain more, not just clear a fixed bar forever.
 Windowed to the last three seasons (WINDOW_SEASONS below): this is about who
 is playing well NOW, not a decade-old peak, and every player starts near the
 population mean at the top of the window rather than dragging in a rating
-from a different team, league, or level of first-team involvement.
+from a different team, league, or level of first-team involvement. Between
+seasons the rating sheds half its gap from 1500 (REVERT); a player who stops
+featuring - injury, benched, or transferred out of these leagues - decays
+toward 1500 for every match his club plays without him, after a two-match
+grace (DECAY_GRACE / DECAY_RATE), so a stale rating doesn't sit frozen.
 
 "Expected" per match = position-group baseline output/90 (purely empirical,
 computed from this same windowed data - nothing from train_value_model.py or
@@ -55,7 +59,14 @@ OUT = PROC / "player_elo.csv"
 WINDOW_SEASONS = ["2024-25", "2025-26", "2026-27"]  # last 2-3 seasons, per design
 MIN_MATCH_MINUTES = 10
 START_RATING = 1500.0
-REVERT = 0.25          # fraction reverted to 1500 between seasons - matches team Elo
+REVERT = 0.5           # fraction of the gap from 1500 shed between seasons (seed =
+                       # 1500 + 0.5*(last season's final - 1500)) - matches the team
+                       # season-scoped Elo's SEASON_CARRY in build_match_model_table.py
+DECAY_GRACE = 2        # team matches a player can miss with no penalty (rotation, a knock)
+DECAY_RATE = 0.03      # each further missed match pulls the rating this fraction toward
+                       # 1500 - ~23 missed matches to halve the gap, so a month out barely
+                       # moves it but a lost season, or leaving the league entirely, bleeds
+DECAY_TARGET = START_RATING
 K = 20.0
 OPP_SCALE = 1000.0     # opponent-strength exponent divisor (gentler than classical Elo's 400 -
                        # output varies ~2x facing a good vs. bad defence, not 10x)
@@ -187,41 +198,93 @@ def main() -> None:
 
     pm = pm.sort_values(["player_id", "date"]).reset_index(drop=True)
 
+    # each team's league-match calendar in the window: (date, season) pairs. Used
+    # to charge a player for matches his team played while he sat out - injured,
+    # benched, or transferred away (his last club keeps playing, he keeps bleeding).
+    mm = pd.read_csv(mm_path)
+    mm = mm[mm["season"].isin(WINDOW_SEASONS)].copy()
+    mm["d"] = pd.to_datetime(mm["Date"], errors="coerce").dt.normalize()
+    mm = mm.dropna(subset=["d"])
+    cal = pd.concat([
+        mm[["d", "season"]].assign(team_key=mm["HomeTeam"].map(normalize_team)),
+        mm[["d", "season"]].assign(team_key=mm["AwayTeam"].map(normalize_team)),
+    ]).drop_duplicates()
+    team_cal: dict[str, list] = {
+        tk: sorted(zip(g["d"], g["season"])) for tk, g in cal.groupby("team_key")
+    }
+
     rating: dict[int, float] = {}
-    last_season: dict[int, str] = {}
+    cur_season: dict[int, str] = {}
     rows = []
-    for r in pm.itertuples(index=False):
-        pid = r.player_id
-        if pid not in rating:
-            rating[pid] = START_RATING
-        elif last_season.get(pid) != r.season:
+
+    def _advance_season(pid: int, seas: str) -> None:
+        if cur_season.get(pid) is not None and cur_season[pid] != seas:
             rating[pid] = START_RATING + (1 - REVERT) * (rating[pid] - START_RATING)
-        last_season[pid] = r.season
+        cur_season[pid] = seas
 
-        rp = rating[pid]
-        opp_mult = np.clip(10 ** ((START_RATING - r.opp_elo) / OPP_SCALE), *MULT_CLIP)
-        form_mult = np.clip(10 ** ((rp - START_RATING) / FORM_SCALE), *MULT_CLIP)
-        expected = baseline90[r.pos_group] * (r.minutes / 90.0) * opp_mult * form_mult
-        actual = r.contribution
-        std = resid_std[r.pos_group]
-        delta = float(np.clip(K * (actual - expected) / std, -DELTA_CLIP, DELTA_CLIP))
-        rating[pid] = rp + delta
+    def _decay(pid, missed, player, team_key, pos_group):
+        """`missed` = (date, season) team matches the player sat out since his last
+        appearance. The first DECAY_GRACE are free (rotation); each one after that
+        pulls the rating DECAY_RATE of the way to 1500. Emitted as minutes=0 rows
+        so the decline shows on the sparkline."""
+        for i, (d, seas) in enumerate(missed):
+            _advance_season(pid, seas)
+            if i < DECAY_GRACE:
+                continue
+            if abs(rating[pid] - DECAY_TARGET) < 3.0:
+                break  # already back at the population mean - nothing left to shed
+            before = rating[pid]
+            rating[pid] += DECAY_RATE * (DECAY_TARGET - before)
+            rows.append({
+                "season": seas, "src_league": None, "date": d.strftime("%Y-%m-%d"),
+                "game_id": None, "player": player, "player_id": pid, "team_key": team_key,
+                "opp_key": None, "pos_group": pos_group, "minutes": 0,
+                "actual": None, "expected": None, "opp_elo": None,
+                "rating_before": round(before, 1), "rating_after": round(rating[pid], 1),
+            })
 
-        rows.append({
-            "season": r.season, "src_league": r.src_league, "date": r.d, "game_id": r.game_id,
-            "player": r.player, "player_id": pid, "team_key": r.team_key, "opp_key": r.opp_key,
-            "pos_group": r.pos_group, "minutes": r.minutes,
-            "actual": round(actual, 4), "expected": round(expected, 4),
-            "opp_elo": round(r.opp_elo, 1),
-            "rating_before": round(rp, 1), "rating_after": round(rating[pid], 1),
-        })
+    for pid, g in pm.groupby("player_id", sort=False):
+        g = g.sort_values("date")
+        rating[pid] = START_RATING
+        prev_date = team_rec = pos_rec = name_rec = None
+
+        for r in g.itertuples(index=False):
+            here = pd.Timestamp(r.date).normalize()
+            if team_rec is not None:
+                _decay(pid, [(d, s) for d, s in team_cal.get(team_rec, [])
+                             if prev_date < d < here], name_rec, team_rec, pos_rec)
+            _advance_season(pid, r.season)
+
+            rp = rating[pid]
+            opp_mult = np.clip(10 ** ((START_RATING - r.opp_elo) / OPP_SCALE), *MULT_CLIP)
+            form_mult = np.clip(10 ** ((rp - START_RATING) / FORM_SCALE), *MULT_CLIP)
+            expected = baseline90[r.pos_group] * (r.minutes / 90.0) * opp_mult * form_mult
+            actual = r.contribution
+            std = resid_std[r.pos_group]
+            delta = float(np.clip(K * (actual - expected) / std, -DELTA_CLIP, DELTA_CLIP))
+            rating[pid] = rp + delta
+
+            rows.append({
+                "season": r.season, "src_league": r.src_league, "date": r.d, "game_id": r.game_id,
+                "player": r.player, "player_id": pid, "team_key": r.team_key, "opp_key": r.opp_key,
+                "pos_group": r.pos_group, "minutes": r.minutes,
+                "actual": round(actual, 4), "expected": round(expected, 4),
+                "opp_elo": round(r.opp_elo, 1),
+                "rating_before": round(rp, 1), "rating_after": round(rating[pid], 1),
+            })
+            prev_date, team_rec, pos_rec, name_rec = here, r.team_key, r.pos_group, r.player
+
+        if team_rec is not None:  # trailing decay past the last appearance
+            _decay(pid, [(d, s) for d, s in team_cal.get(team_rec, []) if d > prev_date],
+                   name_rec, team_rec, pos_rec)
 
     out = pd.DataFrame(rows)
     out.to_csv(OUT, index=False)
 
+    played = out[out["minutes"] > 0]
     latest = out.sort_values("date").drop_duplicates(subset="player_id", keep="last")
-    print(f"\nwrote {OUT}  ({len(out)} player-match rows, {out['player_id'].nunique()} players, "
-          f"seasons {WINDOW_SEASONS})")
+    print(f"\nwrote {OUT}  ({len(played)} player-match rows + {len(out) - len(played)} "
+          f"inactivity-decay rows, {out['player_id'].nunique()} players, seasons {WINDOW_SEASONS})")
     print("\ntop 10 current ratings:")
     print(latest.nlargest(10, "rating_after")[["player", "team_key", "pos_group", "rating_after"]]
          .to_string(index=False))

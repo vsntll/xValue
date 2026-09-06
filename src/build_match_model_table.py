@@ -5,8 +5,13 @@ Built from `matches_all.csv` (all competitions, so Elo/form pick up midweek
 European games) + `squad_season_features.csv`.
 
 Features:
-  elo_h, elo_a, elo_diff        goals-based Elo (all comps), pre-match
+  elo_h, elo_a, elo_diff        goals-based Elo (all comps), continuous across
+                                 seasons (25% reverted each summer), pre-match
   xelo_h, xelo_a, xelo_diff     same but updated on xG, not goals
+  elo_*_s, xelo_*_s, *_diff_s   season-scoped twins: a fresh ladder each season,
+                                 seeded at 1500 + 0.5*(last season's final-1500).
+                                 Emitted for the Rankings view; the outcome model
+                                 uses the continuous columns above, not these.
   form_* (home/away split)      rolling-6 pts / GF / GA / xGF / xGA, split by venue
   gf/ga/xg rolling (all venues) rolling-8
   value_log_ratio, age_gap      squad strength
@@ -33,8 +38,13 @@ OUT = PROC / "match_model_table.csv"
 
 HFA = 65.0            # home-field advantage in Elo points
 K = 24.0
-REVERT = 0.25         # fraction reverted to 1500 between seasons
-PROMOTED_ELO = 1400.0
+REVERT = 0.25         # continuous ("overall") Elo: fraction reverted to 1500 between seasons
+SEASON_CARRY = 0.5    # season-scoped Elo: fraction of last season's final deviation kept as this
+                      # season's seed (1500 + 0.5*(final-1500)); the rest resets. Harder reset
+                      # than the continuous track - a fresh ladder per season you can view on its own.
+PROMOTED_ELO = 1400.0  # season-scoped seed for a team with no final in the previous season
+                       # (promoted, or otherwise absent) - except in the very first season of the
+                       # dataset, where everyone starts at 1500.
 
 
 def _elo_update(eh: float, ea: float, res_h: float, gd: float) -> tuple[float, float]:
@@ -81,6 +91,13 @@ def build() -> pd.DataFrame:
 
     elo: dict[str, float] = defaultdict(lambda: 1500.0)
     xelo: dict[str, float] = defaultdict(lambda: 1500.0)
+    # season-scoped twins: plain dicts (no default) - a team's entry is (re)seeded
+    # explicitly at each season boundary from its previous season's final.
+    selo: dict[str, float] = {}
+    sxelo: dict[str, float] = {}
+    s_prev_final: dict[str, float] = {}   # team -> its goals-Elo at the end of its last season
+    sx_prev_final: dict[str, float] = {}  # team -> its xElo at the end of its last season
+    first_season = m["season"].min()
     last_season: dict[str, str] = {}
     # rolling deques keyed by (team, 'home'|'away'|'all')
     roll: dict[tuple, deque] = defaultdict(lambda: deque(maxlen=8))
@@ -98,6 +115,16 @@ def build() -> pd.DataFrame:
             if last_season.get(t) != seas:
                 elo[t] = 1500 + (1 - REVERT) * (elo[t] - 1500)
                 xelo[t] = 1500 + (1 - REVERT) * (xelo[t] - 1500)
+                # season-scoped: whatever selo[t] holds right now is last season's
+                # final for t - stash it, then reseed from it at SEASON_CARRY.
+                if t in selo:
+                    s_prev_final[t], sx_prev_final[t] = selo[t], sxelo[t]
+                pf, pfx = s_prev_final.get(t), sx_prev_final.get(t)
+                if pf is not None:
+                    selo[t] = 1500 + SEASON_CARRY * (pf - 1500)
+                    sxelo[t] = 1500 + SEASON_CARRY * (pfx - 1500)
+                else:
+                    selo[t] = sxelo[t] = 1500.0 if seas == first_season else PROMOTED_ELO
                 last_season[t] = seas
 
         promoted_h = promoted_a = np.nan
@@ -116,6 +143,8 @@ def build() -> pd.DataFrame:
             "HxG": r["HxG"], "AxG": r["AxG"],
             "elo_h": elo[h], "elo_a": elo[a], "elo_diff": elo[h] - elo[a] + HFA,
             "xelo_h": xelo[h], "xelo_a": xelo[a], "xelo_diff": xelo[h] - xelo[a] + HFA,
+            "elo_h_s": selo[h], "elo_a_s": selo[a], "elo_diff_s": selo[h] - selo[a] + HFA,
+            "xelo_h_s": sxelo[h], "xelo_a_s": sxelo[a], "xelo_diff_s": sxelo[h] - sxelo[a] + HFA,
             "fh_pts": _roll_mean((h, "home"), 0), "fh_gf": _roll_mean((h, "home"), 1),
             "fh_ga": _roll_mean((h, "home"), 2), "fh_xgf": _roll_mean((h, "home"), 3),
             "fh_xga": _roll_mean((h, "home"), 4),
@@ -135,10 +164,13 @@ def build() -> pd.DataFrame:
         # --- post-match updates ---
         gh, ga_, xh, xa_ = r["FTHG"], r["FTAG"], r["HxG"], r["AxG"]
         elo[h], elo[a] = _elo_update(elo[h], elo[a], _res(gh, ga_), gh - ga_)
+        selo[h], selo[a] = _elo_update(selo[h], selo[a], _res(gh, ga_), gh - ga_)
         if pd.notna(xh) and pd.notna(xa_):
             xelo[h], xelo[a] = _elo_update(xelo[h], xelo[a], _res(xh, xa_), xh - xa_)
+            sxelo[h], sxelo[a] = _elo_update(sxelo[h], sxelo[a], _res(xh, xa_), xh - xa_)
         else:
             xelo[h], xelo[a] = _elo_update(xelo[h], xelo[a], _res(gh, ga_), gh - ga_)
+            sxelo[h], sxelo[a] = _elo_update(sxelo[h], sxelo[a], _res(gh, ga_), gh - ga_)
         ph, pa = _res(gh, ga_) * 3 - (gh == ga_), _res(ga_, gh) * 3 - (gh == ga_)
         ph = 3 if gh > ga_ else 1 if gh == ga_ else 0
         pa = 3 if ga_ > gh else 1 if gh == ga_ else 0
