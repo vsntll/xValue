@@ -66,6 +66,10 @@ jobs:
       # cold start only: pull the seed the maintainer published once with
       #   tar czf pipeline-seed.tar.gz data/processed data/raw/football_data/_elo_warmup.csv
       #   gh release create pipeline-seed pipeline-seed.tar.gz -t "pipeline data seed"
+      # Re-cut it whenever a new always-on input appears - in particular it should
+      # carry data/processed/understat_player_matches.csv (all seasons) so the
+      # first run doesn't cold-pull four historical Understat seasons.
+      #   gh release upload pipeline-seed pipeline-seed.tar.gz --clobber
       - name: Seed data (first run)
         if: ${{ hashFiles('data/processed/fbref_player_season_stats.csv') == '' }}
         run: |
@@ -86,13 +90,18 @@ jobs:
         continue-on-error: true
         run: python src/pull_sofascore_values.py
 
-      # --force + all 3 covers build_player_elo.py's WINDOW_SEASONS every run - cheap once
-      # data/understat_cache is warm (a cache hit, same as the local backfill this was verified
-      # against), and guarantees player_id/team_id are there even before the persisted CI cache
-      # has ever seen a pull done after those columns were added.
-      - name: Pull per-player per-match contributions (Understat) - last 3 seasons, live one always fresh
+      # Two pulls. The historical seasons (2020-21..2023-24) never change and are
+      # pulled ONCE, then skipped on every later run - they exist so
+      # build_form_momentum.py covers the outcome model's training era (train is
+      # seasons <= 2022-23); without them h_momentum/a_momentum are all-NaN in
+      # train and train_outcome_model.py's median imputer silently drops both.
+      # The WINDOW_SEASONS pull is --force every run: covers build_player_elo.py's
+      # window, keeps the live season fresh, guarantees player_id/team_id.
+      - name: Pull per-player per-match contributions (Understat) - full history once, last 3 always fresh
         continue-on-error: true
-        run: python src/pull_understat_player_matches.py --seasons ${{ env.WINDOW_SEASONS }} --force
+        run: |
+          python src/pull_understat_player_matches.py --seasons 2020-21 2021-22 2022-23 2023-24
+          python src/pull_understat_player_matches.py --seasons ${{ env.WINDOW_SEASONS }} --force
         env:
           WINDOW_SEASONS: "2024-25 2025-26 2026-27"   # keep in sync with build_player_elo.py's WINDOW_SEASONS
 
