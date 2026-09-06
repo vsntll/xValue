@@ -9,11 +9,17 @@ monthly for those. Between those runs this script rewrites ONLY the current seas
 and ONLY the volatile counting columns, keeping each player's birth year,
 nationality, position and last-known deep stats from the most recent FBref parse.
 
+Also drops any club that has not been top-flight during the settled window
+(2020-21 .. last complete season) - promoted / relegated churn is often wrong in
+the current season's feeds and 2nd-tier sides aren't in scope. See
+fbref_common.top_flight_clubs().
+
 Sources (all browser-free, pulled in the same workflow):
   understat_player_season.csv    goals / np_goals / assists / xg / np_xg / xa /
                                  shots / key_passes / cards / xg_chain / xg_buildup
   understat_player_matches.csv   per-appearance rows -> Starts (position != 'Sub')
-  understat_matches.csv          played-match count per club -> Min%
+  understat_matches.csv          played-match count per club -> Min%, and the
+                                 top-flight club list
 
 Run:  py -3.11 src/build_current_season_stats.py
 Output: data/processed/fbref_player_season_stats.csv  (current-season rows only)
@@ -29,7 +35,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
-from fbref_common import current_season  # noqa: E402
+from fbref_common import current_season, top_flight_clubs  # noqa: E402
 from live.schema import deaccent, normalize_team  # noqa: E402
 from parse_fbref_player_stats import _norm_name  # noqa: E402
 
@@ -94,13 +100,15 @@ def build() -> pd.DataFrame:
     us["tk"] = us["team"].map(normalize_team)
     us = us.drop_duplicates(subset=["pk", "tk"], keep="last")
 
-    # Understat's squads are chaos for a week or two after the window - a club
-    # with a stub roster isn't ready, so don't spawn new rows from it (its real
-    # players still get refreshed via an existing FBref row).
-    ready = {tk for tk, n in us.groupby("tk").size().items() if n >= 16}
-    if len(us) < 900:
-        print(f"  understat {cur} has only {len(us)} players - too early/incomplete, "
-              f"refreshing existing rows only, adding none")
+    # Understat lists exactly the players who have appeared - which is the right
+    # current-season universe: a transfer out of the big three (Salah -> Saudi),
+    # an all-season injury (Saliba), or an unused squad player genuinely has no
+    # current stats. Trust it; the only safety check is a sanity floor in case a
+    # pull half-failed.
+    add_ok = len(us) >= 600
+    if not add_ok:
+        print(f"  understat {cur} has only {len(us)} players - looks like a partial "
+              f"pull, refreshing existing rows only and adding none")
 
     starts = _starts(cur)
     club_mp = _club_matches(cur)
@@ -160,16 +168,17 @@ def build() -> pd.DataFrame:
         rows.append(row)
 
     # 2. Understat players FBref has no current row for at all -> new rows.
-    # Skip anyone whose name already exists in a current FBref row under any club
-    # (Understat mislabels squads badly during the transfer window - a real
-    # Newcastle player showing up as "Arsenal" must not become a duplicate).
-    add_ok = len(us) >= 900
+    # Understat lists whoever actually played, so a name it has and FBref doesn't
+    # is a real signing (Bruno Guimaraes -> Arsenal) or a debutant - add them, as
+    # long as the club is a genuine top-flight side (top_flight_clubs()) and the
+    # pull isn't obviously partial.
+    top = top_flight_clubs()
     for k in us_by_k.index:
-        if k in used or k in fcur_names or not add_ok:
+        if k in used or not add_ok:
             continue
         u = us_by_k.loc[k]
         tk = normalize_team(u["team"])
-        if tk not in ready:                       # club's Understat roster is a stub
+        if tk not in top:
             continue
         row = {c: np.nan for c in f.columns}
         p = prior.loc[u["nk"]] if u["nk"] in prior.index else None
@@ -183,21 +192,31 @@ def build() -> pd.DataFrame:
         rows.append(row)
 
     updated = pd.DataFrame(rows)[f.columns]
-    # a transfer-window mislabel can leave the same player under two clubs - keep
-    # the one with more minutes (the real club), drop the ghost.
+    # a stale FBref club + Understat's current one can leave a player under two
+    # clubs - keep the row with more minutes (the club they actually play for).
     updated["_m"] = pd.to_numeric(updated["standard__Playing Time_Min"], errors="coerce").fillna(0)
     updated = (updated.sort_values("_m", ascending=False)
                       .drop_duplicates("player_slug", keep="first").drop(columns="_m"))
+    # drop 2nd-tier clubs that leak into the current-season feeds, unless the club
+    # has actually been top-flight during the observed window
+    keep = updated["Squad"].map(normalize_team).isin(top)
+    if (~keep).any():
+        print(f"  dropped {int((~keep).sum())} current rows at non-top-flight clubs: "
+              f"{sorted(updated.loc[~keep, 'Squad'].dropna().unique())}")
+    updated = updated[keep]
     # FBref leaves Age blank all of the current season - derive it from Born for
     # every current row (kept or refreshed), matching build_xy's own fallback.
     born = pd.to_numeric(updated["Born"], errors="coerce")
     updated["Age"] = updated["Age"].where(updated["Age"].notna(), yr - born)
+    # apply the same top-flight filter to finished seasons (a club relegated
+    # years ago but top-flight sometime in 2020-26 stays; one that never was goes)
+    hist = hist[hist["Squad"].map(normalize_team).isin(top)]
     out = pd.concat([hist, updated], ignore_index=True)
     out.to_csv(FBREF, index=False)
-    n_ref = len(used)
-    print(f"{cur}: {len(fcur)} FBref rows kept ({n_ref} refreshed from Understat), "
-          f"{len(updated) - len(fcur)} new Understat-only rows, "
-          f"{len(hist)} earlier-season rows untouched -> {FBREF.name}")
+    n_new = max(0, len(updated) - fcur["Squad"].map(normalize_team).isin(top).sum())
+    print(f"{cur}: {len(updated)} rows ({len(used)} refreshed from Understat, "
+          f"~{n_new} new Understat-only), {len(hist)} earlier-season rows kept "
+          f"-> {FBREF.name}")
     return out
 
 

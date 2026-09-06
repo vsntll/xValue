@@ -45,6 +45,30 @@ def current_season() -> str:
     return f"{start}-{str(start + 1)[2:]}"
 
 
+_TOP_FLIGHT_CLUBS: set[str] | None = None
+
+
+def top_flight_clubs() -> set[str]:
+    """normalize_team keys for every club that played a top-flight season in the
+    settled historical window (2020-21 .. last complete season). Understat's
+    match list covers exactly the three top flights, so it is the authority.
+
+    Used to drop 2nd-tier clubs that leak into the CURRENT season's feeds -
+    promoted / relegated churn is frequently wrong in the first few weeks, and a
+    club that has never been top-flight in the observed period isn't wanted."""
+    global _TOP_FLIGHT_CLUBS
+    if _TOP_FLIGHT_CLUBS is None:
+        import sys
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import pandas as pd
+        from live.schema import normalize_team
+        um = pd.read_csv(PROJECT_ROOT / "data" / "processed" / "understat_matches.csv")
+        settled = um[um["season"] < current_season()]
+        names = set(settled["home_team"]) | set(settled["away_team"])
+        _TOP_FLIGHT_CLUBS = {normalize_team(n) for n in names}
+    return _TOP_FLIGHT_CLUBS
+
+
 def slug_to_name(slug: str) -> str:
     return slug.replace("-", " ")
 
