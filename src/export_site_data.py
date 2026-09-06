@@ -552,7 +552,9 @@ def build_team_elo_rankings(teams_list: list[dict]) -> dict:
 
 
 PLAYER_ELO_MIN_APPEARANCES = 5    # real appearances (window) before a current rating means anything
-PLAYER_ELO_SEASON_MIN = 3         # real appearances within a season to make that season's ladder
+PLAYER_ELO_SEASON_MIN = 2         # real appearances within a season to make that season's ladder
+                                  # (2, not 3 - understat coverage for the in-progress season and
+                                  # some older Bundesliga seasons is thin; 3 shut whole leagues out)
 PLAYER_ELO_RECENT_SEASONS = {"2025-26", "2026-27"}  # "current" board: last real game in one of these
 PLAYER_ELO_HISTORY_N = 10          # points kept per player for the sparkline
 PLAYER_ELO_TOP_N = 30              # overall leaderboard size
@@ -594,13 +596,19 @@ def build_player_elo_leaderboard(teams_list: list[dict]) -> dict | None:
         }
 
     def board(latest_df: pd.DataFrame, season=None) -> dict:
-        latest_df = latest_df[latest_df["team_key"].isin(key2name)]  # a club we cover now
+        latest_df = latest_df[latest_df["team_key"].isin(key2name)].copy()  # a club we cover now
+        latest_df["league"] = latest_df["team_key"].map(key2league)
         overall = [slim(r, season) for _, r in latest_df.nlargest(PLAYER_ELO_TOP_N, "rating_after").iterrows()]
         by_pos = {}
         for pos in ["GK", "DF", "MF", "FW"]:
             pool = latest_df[latest_df["pos_group"] == pos]
             by_pos[pos] = [slim(r, season) for _, r in pool.nlargest(PLAYER_ELO_TOP_N_POS, "rating_after").iterrows()]
-        return {"overall": overall, "by_position": by_pos}
+        # which of the covered leagues actually have a qualifying player - the
+        # in-progress season and older Bundesliga are patchy in understat, and a
+        # league with nobody would otherwise just look broken on the site
+        present = sorted(set(latest_df["league"].dropna()) & set(LEAGUES.values()))
+        return {"overall": overall, "by_position": by_pos,
+                "leagues_missing": [lg for lg in LEAGUES.values() if lg not in present]}
 
     real_counts = played.groupby("player_id").size()
     last_real = played.drop_duplicates("player_id", keep="last").set_index("player_id")
