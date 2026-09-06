@@ -62,9 +62,14 @@ def build_baseline() -> Pipeline:
     full historical player-season panel (real values only)."""
     v = pd.read_csv(PROC / "value_model_predictions.csv")
     v = v[v["value_imputed"] == 0]
-    s = pd.read_csv(PROC / "fbref_player_season_stats.csv", low_memory=False)
+    # fbref_player_season_stats.csv is hundreds of columns wide - read only the
+    # nine we touch, so the derived-column inserts below don't fragment it.
+    want = {"season", "src_league", "Player", "Squad", "Pos", "Age",
+            "standard__Playing Time_90s", "understat__np_xg", "understat__xa"}
+    s = pd.read_csv(PROC / "fbref_player_season_stats.csv", low_memory=False,
+                    usecols=lambda c: c in want)
     s["_n90"] = pd.to_numeric(s["standard__Playing Time_90s"], errors="coerce")
-    s = s[s["_n90"] >= 3]  # need a real sample before trusting a season rate
+    s = s[s["_n90"] >= 3].copy()  # need a real sample before trusting a season rate
     s["contribution_per90"] = (
         pd.to_numeric(s["understat__np_xg"], errors="coerce").fillna(0)
         + 0.7 * pd.to_numeric(s["understat__xa"], errors="coerce").fillna(0)
@@ -72,7 +77,7 @@ def build_baseline() -> Pipeline:
 
     j = s.merge(v[["season", "src_league", "Player", "Squad", "predicted_eur"]],
                on=["season", "src_league", "Player", "Squad"], how="inner")
-    j = j.dropna(subset=["contribution_per90", "predicted_eur", "Age"])
+    j = j.dropna(subset=["contribution_per90", "predicted_eur", "Age"]).copy()
     j["pos"] = j["Pos"].astype(str).str.split(",").str[0].replace({"": "MF"})
     j["log_value"] = np.log1p(j["predicted_eur"])
 

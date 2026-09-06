@@ -58,7 +58,8 @@ def _warmup() -> pd.DataFrame:
     if not f.exists():
         return pd.DataFrame()
     w = pd.read_csv(f)
-    w["Date"] = pd.to_datetime(w["Date"], dayfirst=True, errors="coerce")
+    # football-data.co.uk mixes dd/mm/yy and dd/mm/yyyy within the same file
+    w["Date"] = pd.to_datetime(w["Date"], dayfirst=True, format="mixed", errors="coerce")
     w["comp"] = w["Div"].map(DIV_COMP)
     w["competition_type"] = "league"
     w["HxG"] = np.nan
