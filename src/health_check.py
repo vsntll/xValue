@@ -156,11 +156,12 @@ def check_football_data_org() -> dict:
 def check_football_data_co_uk() -> dict:
     season = current_season()
     yy = season.replace("-", "")[2:]
-    url = f"https://www.football-data.co.uk/mmz4281/{yy}/E0.csv"
+    # apex host, not www - see the BASE_URL note in pull_match_archive.py: the
+    # www vhost's nginx proxy backend drops for hours, the apex Apache stays up.
+    url = f"https://football-data.co.uk/mmz4281/{yy}/E0.csv"
     r = requests.get(url, headers=UA, timeout=TIMEOUT)
     if r.status_code >= 500:
-        # football-data.co.uk throws intermittent 503s (often a short 489-byte
-        # error page) and recovers within the hour - transient, not our problem.
+        # still possible even on the apex - a 5xx here is the site, not us.
         return _result("unreachable", f"HTTP {r.status_code}, {len(r.content)} bytes - upstream 5xx, transient")
     if r.status_code != 200 or len(r.content) < 1000:
         return _result("ERROR", f"HTTP {r.status_code}, {len(r.content)} bytes")

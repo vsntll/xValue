@@ -30,7 +30,11 @@ from pathlib import Path
 import pandas as pd
 import requests
 
-BASE_URL = "https://www.football-data.co.uk/mmz4281"
+# Apex host, not www: football-data.co.uk's www vhost sits behind an nginx
+# reverse proxy whose backend goes down for hours at a time (stock 503 "page
+# temporarily unavailable"), while the apex is served straight off Apache and
+# stays up. Same files, one is just reliable.
+BASE_URL = "https://football-data.co.uk/mmz4281"
 
 # football-data.co.uk division code -> (league name, tier).
 # Top flight only - the three 2nd tiers were dropped from scope 2026-09-03.
