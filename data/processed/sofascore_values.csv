@@ -1,0 +1,1592 @@
+season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,country,contract_until,market_value_eur
+2026-27,ENG1,Manchester City,Erling Haaland,839956,F,2000-07-20,Left,195.0,Norway,2034-06-29,240000000.0
+2026-27,ENG1,Manchester City,Phil Foden,859765,M,2000-05-27,Left,171.0,England,2030-06-29,66000000.0
+2026-27,ENG1,Manchester City,Enzo Fernández,974505,M,2001-01-16,Right,177.0,Argentina,2031-06-29,97000000.0
+2026-27,ENG1,Manchester City,Antoine Semenyo,934354,M,2000-01-06,Right,185.0,Ghana,2031-06-29,85000000.0
+2026-27,ENG1,Manchester City,Rayan Cherki,979128,M,2003-08-16,Both,176.0,France,2030-06-29,98000000.0
+2026-27,ENG1,Manchester City,Jérémy Doku,934386,M,2002-05-26,Right,173.0,Belgium,2031-06-29,70000000.0
+2026-27,ENG1,Manchester City,Iliman Ndiaye,914309,M,2000-03-05,Right,180.0,Senegal,2031-06-29,53000000.0
+2026-27,ENG1,Manchester City,Ayyoub Bouaddi,1564180,M,2007-10-01,Right,185.0,Morocco,2031-06-29,87000000.0
+2026-27,ENG1,Manchester City,Mateo Kovačić,136710,M,1994-05-05,Right,178.0,Croatia,2027-06-29,9700000.0
+2026-27,ENG1,Manchester City,Elliot Anderson,994546,M,2002-11-05,Right,179.0,England,2031-06-29,100000000.0
+2026-27,ENG1,Manchester City,Allan,1835889,M,2004-04-18,Left,175.0,Brazil,2031-06-29,22000000.0
+2026-27,ENG1,Manchester City,Ryan McAidoo,1826151,M,2008-06-23,Left,174.0,England,,
+2026-27,ENG1,Manchester City,Abdukodir Khusanov,1194333,D,2004-02-28,Right,186.0,Uzbekistan,2031-06-29,47000000.0
+2026-27,ENG1,Manchester City,Joško Gvardiol,964994,D,2002-01-22,Left,186.0,Croatia,2031-06-29,64000000.0
+2026-27,ENG1,Manchester City,Rayan Aït-Nouri,931278,D,2001-06-05,Left,179.0,Algeria,2030-06-29,39000000.0
+2026-27,ENG1,Manchester City,Rúben Dias,318941,D,1997-05-13,Right,188.0,Portugal,2029-06-29,60000000.0
+2026-27,ENG1,Manchester City,Nico O'Reilly,1142703,D,2005-03-20,Left,193.0,England,2030-06-29,76000000.0
+2026-27,ENG1,Manchester City,Marc Guéhi,877994,D,2000-07-12,Right,182.0,England,2031-06-29,66000000.0
+2026-27,ENG1,Manchester City,Matheus Nunes,945122,D,1998-08-26,Right,183.0,Portugal,2028-06-29,48000000.0
+2026-27,ENG1,Manchester City,Rico Lewis,1136731,D,2004-11-20,Right,170.0,England,2030-06-29,26000000.0
+2026-27,ENG1,Manchester City,Vitor Reis,1485300,D,2006-01-11,Right,186.0,Brazil,2029-06-29,31000000.0
+2026-27,ENG1,Manchester City,Josh Wilson-Esbrand,1017915,D,2002-12-25,Left,176.0,England,2027-06-29,2400000.0
+2026-27,ENG1,Manchester City,Gianluigi Donnarumma,824509,G,1999-02-24,Right,196.0,Italy,2030-06-29,46000000.0
+2026-27,ENG1,Manchester City,Gerónimo Rulli,128383,G,1992-05-19,Right,189.0,Argentina,2028-06-29,5800000.0
+2026-27,ENG1,Manchester City,Marcus Bettinelli,257993,G,1992-05-23,Right,194.0,England,2027-06-29,320000.0
+2026-27,ENG1,Arsenal,Viktor Gyökeres,804508,F,1998-06-03,Right,187.0,Sweden,2030-06-29,61000000.0
+2026-27,ENG1,Arsenal,Bukayo Saka,934235,F,2001-09-04,Left,178.0,England,2030-06-29,115000000.0
+2026-27,ENG1,Arsenal,Kai Havertz,836705,F,1999-06-10,Left,193.0,Germany,2028-06-29,53000000.0
+2026-27,ENG1,Arsenal,Noni Madueke,966547,F,2002-03-09,Left,182.0,England,2030-06-29,54000000.0
+2026-27,ENG1,Arsenal,Martin Ødegaard,547410,M,1998-12-16,Left,178.0,Norway,2028-06-29,77000000.0
+2026-27,ENG1,Arsenal,Declan Rice,856714,M,1999-01-13,Right,188.0,England,2028-06-29,114000000.0
+2026-27,ENG1,Arsenal,Eberechi Eze,864921,M,1998-06-28,Right,178.0,England,2029-06-29,69000000.0
+2026-27,ENG1,Arsenal,Bruno Guimarães,866469,M,1997-11-15,Right,182.0,Brazil,2030-06-29,72000000.0
+2026-27,ENG1,Arsenal,Mikel Merino,592010,M,1996-06-21,Left,188.0,Spain,2028-06-29,26000000.0
+2026-27,ENG1,Arsenal,Christos Tzolis,1031259,M,2002-01-29,Right,180.0,Greece,2031-06-29,42000000.0
+2026-27,ENG1,Arsenal,Max Dowman,1917626,M,2009-12-30,Left,183.0,England,,31000000.0
+2026-27,ENG1,Arsenal,Martín Zubimendi,966837,M,1999-02-01,Right,180.0,Spain,2030-06-29,77000000.0
+2026-27,ENG1,Arsenal,Gabriel Magalhães,869792,D,1997-12-18,Left,190.0,Brazil,2029-06-29,70000000.0
+2026-27,ENG1,Arsenal,William Saliba,941168,D,2001-03-23,Right,193.0,France,2030-06-29,94000000.0
+2026-27,ENG1,Arsenal,Piero Hincapié,1002837,D,2002-01-08,Left,184.0,Ecuador,2031-06-29,46000000.0
+2026-27,ENG1,Arsenal,Jurriën Timber,958959,D,2001-06-16,Right,179.0,Netherlands,2028-06-29,73000000.0
+2026-27,ENG1,Arsenal,Riccardo Calafiori,957602,D,2002-05-18,Left,188.0,Italy,2029-06-29,53000000.0
+2026-27,ENG1,Arsenal,Cristhian Mosquera,1144630,D,2004-06-26,Right,191.0,Spain,2030-06-29,38000000.0
+2026-27,ENG1,Arsenal,Myles Lewis-Skelly,1423711,D,2006-09-25,Left,178.0,England,2030-06-29,48000000.0
+2026-27,ENG1,Arsenal,Ben White,846036,D,1997-10-07,Right,186.0,England,2028-06-29,27000000.0
+2026-27,ENG1,Arsenal,Ezri Konsa,827679,D,1997-10-22,Right,183.0,England,,47000000.0
+2026-27,ENG1,Arsenal,David Raya,581310,G,1995-09-14,Right,183.0,Spain,2028-06-29,33000000.0
+2026-27,ENG1,Arsenal,Kepa Arrizabalaga,232422,G,1994-10-02,Right,188.0,Spain,2028-06-29,5300000.0
+2026-27,ENG1,Arsenal,Illan Meslier,906076,G,2000-03-01,Left,196.0,France,2028-06-29,7500000.0
+2026-27,ENG1,Hull City,Robinio Vaz,1514800,F,2007-02-16,Right,185.0,France,2027-06-29,18700000.0
+2026-27,ENG1,Hull City,Mohamed Ali Cho,1063235,F,2004-01-18,Left,182.0,France,2031-06-29,14500000.0
+2026-27,ENG1,Hull City,Oli McBurnie,367228,F,1996-06-03,Right,188.0,Scotland,2028-06-29,5400000.0
+2026-27,ENG1,Hull City,Ilyas Ansah,1462742,F,2004-11-07,Right,197.0,Germany,2031-06-29,12900000.0
+2026-27,ENG1,Hull City,David Akintola,798676,F,1996-01-12,Right,178.0,Nigeria,2027-06-29,1100000.0
+2026-27,ENG1,Hull City,Mohamed Belloumi,1125839,M,2002-05-31,Both,177.0,Algeria,2028-06-29,5700000.0
+2026-27,ENG1,Hull City,Christos Mouzakitis,1416540,M,2006-12-24,Left,178.0,Greece,2031-06-29,26000000.0
+2026-27,ENG1,Hull City,Hidemasa Morita,926560,M,1995-05-09,Right,177.0,Japan,2028-06-29,7400000.0
+2026-27,ENG1,Hull City,Lucas Gourna-Douath,1012657,M,2003-08-04,Right,185.0,France,2031-06-29,5600000.0
+2026-27,ENG1,Hull City,Óscar Zambrano,1145130,M,2004-04-19,Right,176.0,Ecuador,2030-06-29,1600000.0
+2026-27,ENG1,Hull City,Brooke Norton-Cuffy,1087514,M,2004-01-11,Right,181.0,England,2031-06-29,15500000.0
+2026-27,ENG1,Hull City,Jens Hjertø-Dahl,1427971,M,2005-10-30,Both,193.0,Norway,2031-06-29,9600000.0
+2026-27,ENG1,Hull City,Joe Gelhardt,945806,M,2002-05-03,Left,179.0,England,2030-06-29,15000000.0
+2026-27,ENG1,Hull City,Elliot Stroud,1383695,M,2002-06-21,Left,185.0,Sweden,2030-06-29,8400000.0
+2026-27,ENG1,Hull City,Tim Iroegbunam,1085950,M,2003-06-29,Right,182.0,England,2031-06-29,18500000.0
+2026-27,ENG1,Hull City,Darko Gyabi,1067117,M,2004-02-16,Right,196.0,England,2028-06-29,1900000.0
+2026-27,ENG1,Hull City,Abdülkadir Ömür,826155,M,1999-06-24,Left,168.0,Türkiye,2027-06-29,1400000.0
+2026-27,ENG1,Hull City,Sorba Thomas,911039,M,1999-01-24,Right,185.0,Wales,2030-06-29,14500000.0
+2026-27,ENG1,Hull City,Eliot Matazo,1046150,M,2002-02-14,Right,174.0,Belgium,2028-06-29,1500000.0
+2026-27,ENG1,Hull City,Regan Slater,864474,M,1999-09-10,Right,173.0,England,2027-06-29,5100000.0
+2026-27,ENG1,Hull City,Kieran Dowell,784503,M,1997-10-09,Left,183.0,England,2027-06-29,550000.0
+2026-27,ENG1,Hull City,Matt Crooks,140479,M,1994-01-19,Right,193.0,England,2027-06-29,725000.0
+2026-27,ENG1,Hull City,Nobel Mendy,1458073,D,2004-08-15,Left,187.0,Senegal,2031-06-29,7700000.0
+2026-27,ENG1,Hull City,Semi Ajayi,307274,D,1993-11-08,Right,193.0,Nigeria,2027-06-29,650000.0
+2026-27,ENG1,Hull City,Lucas Herrington,1646783,D,2007-09-04,Right,193.0,Australia,2031-06-29,8800000.0
+2026-27,ENG1,Hull City,Matt Targett,368134,D,1995-09-17,Left,183.0,England,2028-06-29,2800000.0
+2026-27,ENG1,Hull City,Ryan Giles,931304,D,2000-01-25,Left,179.0,England,2027-06-29,10900000.0
+2026-27,ENG1,Hull City,Charlie Hughes,1138398,D,2003-10-15,Right,185.0,England,2028-06-29,9100000.0
+2026-27,ENG1,Hull City,John Egan,100578,D,1992-10-19,Right,185.0,Ireland,2027-06-29,970000.0
+2026-27,ENG1,Hull City,Paddy McNair,592876,D,1995-04-26,Right,187.0,Northern Ireland,2027-06-29,1500000.0
+2026-27,ENG1,Hull City,Lewie Coyle,827587,D,1995-10-14,Right,173.0,England,2029-06-29,1300000.0
+2026-27,ENG1,Hull City,Konstantinos Tzolakis,953414,G,2002-11-07,Right,193.0,Greece,2031-06-29,17200000.0
+2026-27,ENG1,Hull City,Jack Butland,98448,G,1993-03-09,Right,196.0,England,2028-06-29,1500000.0
+2026-27,ENG1,Hull City,Dillon Phillips,377166,G,1995-06-10,Right,188.0,England,2027-06-29,195000.0
+2026-27,ENG1,Chelsea,João Pedro,975079,F,2001-09-25,Right,186.0,Brazil,2034-06-29,74000000.0
+2026-27,ENG1,Chelsea,Emmanuel Emegha,1048333,F,2003-02-02,Right,195.0,Netherlands,2033-06-29,26000000.0
+2026-27,ENG1,Chelsea,Danny Welbeck,33902,F,1990-11-25,Right,185.0,England,2028-06-29,3100000.0
+2026-27,ENG1,Chelsea,Cole Palmer,982780,M,2002-05-05,Left,185.0,England,2033-06-29,92000000.0
+2026-27,ENG1,Chelsea,Estêvão,1597265,M,2007-04-23,Left,176.0,Brazil,2033-06-29,82000000.0
+2026-27,ENG1,Chelsea,Moisés Caicedo,987650,M,2001-11-01,Right,178.0,Ecuador,2033-06-29,104000000.0
+2026-27,ENG1,Chelsea,Pedro Neto,879349,M,2000-03-08,Left,172.0,Portugal,2031-06-29,58000000.0
+2026-27,ENG1,Chelsea,Morgan Rogers,948261,M,2002-07-25,Right,187.0,England,2033-06-29,105000000.0
+2026-27,ENG1,Chelsea,Valentín Barco,1127057,M,2004-07-22,Left,172.0,Argentina,2033-06-29,44000000.0
+2026-27,ENG1,Chelsea,Jamie Gittens,1140599,M,2004-08-07,Right,178.0,England,2032-06-29,29000000.0
+2026-27,ENG1,Chelsea,Kendry Páez,1464025,M,2007-05-03,Left,177.0,Ecuador,2033-06-29,8300000.0
+2026-27,ENG1,Chelsea,Roméo Lavia,1069488,M,2004-01-05,Right,181.0,Belgium,2030-06-29,21000000.0
+2026-27,ENG1,Chelsea,Geovany Quenda,1403165,M,2007-04-29,Left,172.0,Portugal,2034-06-29,45000000.0
+2026-27,ENG1,Chelsea,Marco Palestra,1397736,M,2005-03-02,Right,186.0,Italy,2033-06-29,36000000.0
+2026-27,ENG1,Chelsea,Jordan Henderson,42694,M,1990-06-16,Right,183.0,England,2028-06-29,1300000.0
+2026-27,ENG1,Chelsea,Reece James,885908,D,1999-12-07,Right,180.0,England,2032-06-29,63000000.0
+2026-27,ENG1,Chelsea,Malo Gusto,996958,D,2003-05-18,Right,179.0,France,2030-06-29,36000000.0
+2026-27,ENG1,Chelsea,Levi Colwill,996911,D,2003-02-25,Left,187.0,England,2029-06-29,55000000.0
+2026-27,ENG1,Chelsea,Maxence Lacroix,879674,D,2000-04-05,Right,192.0,France,2032-06-29,54000000.0
+2026-27,ENG1,Chelsea,Jorrel Hato,1153079,D,2006-03-06,Left,182.0,Netherlands,2032-06-29,41000000.0
+2026-27,ENG1,Chelsea,Wesley Fofana,923894,D,2000-12-16,Right,186.0,France,2029-06-29,29000000.0
+2026-27,ENG1,Chelsea,Josh Acheampong,1403050,D,2006-05-04,Right,190.0,England,2029-06-29,24000000.0
+2026-27,ENG1,Chelsea,Aarón Anselmino,1500263,D,2005-04-28,Right,186.0,Argentina,2031-06-29,10600000.0
+2026-27,ENG1,Chelsea,Pep Chavarría,1010421,D,1998-04-09,Left,174.0,Spain,2031-06-29,9700000.0
+2026-27,ENG1,Chelsea,Emiliano Martínez,158263,G,1992-09-01,Right,195.0,Argentina,2029-06-29,11500000.0
+2026-27,ENG1,Chelsea,Mike Penders,1149148,G,2005-07-30,Left,199.0,Belgium,2032-06-29,24000000.0
+2026-27,ENG1,Chelsea,Gabriel Słonina,978787,G,2004-05-14,Right,193.0,USA,2028-06-29,3300000.0
+2026-27,ENG1,Chelsea,Teddy Sharman-Lowe,1009762,G,2003-03-29,Right,194.0,England,2028-06-29,465000.0
+2026-27,ENG1,Brentford,Igor Thiago,1016907,F,2001-06-25,Right,191.0,Brazil,2031-06-29,68000000.0
+2026-27,ENG1,Brentford,Fabio Carvalho,991604,F,2002-08-29,Right,170.0,Portugal,2029-06-29,7800000.0
+2026-27,ENG1,Brentford,Callum Wilson,113956,F,1992-02-26,Right,180.0,England,2027-06-29,4300000.0
+2026-27,ENG1,Brentford,Gustavo Nunes,1514747,F,2005-11-19,Right,173.0,Brazil,2030-06-29,8199999.0
+2026-27,ENG1,Brentford,Kaye Furo,1403098,F,2007-02-05,Right,190.0,Belgium,2031-06-29,7600000.0
+2026-27,ENG1,Brentford,Dango Ouattara,1106451,M,2002-02-10,Left,177.0,Burkina Faso,2030-06-29,36000000.0
+2026-27,ENG1,Brentford,Mamadou Sangare,1064697,M,2002-06-25,Left,181.0,Mali,2031-06-29,39000000.0
+2026-27,ENG1,Brentford,Kevin Schade,1006387,M,2001-11-26,Both,183.0,Germany,2028-06-29,36000000.0
+2026-27,ENG1,Brentford,Mikkel Damsgaard,907072,M,2000-07-02,Right,180.0,Denmark,2030-06-29,29000000.0
+2026-27,ENG1,Brentford,Yehor Yarmoliuk,1031258,M,2004-02-29,Right,180.0,Ukraine,2031-06-29,30000000.0
+2026-27,ENG1,Brentford,Antoni Milambo,1126692,M,2005-04-02,Right,179.0,Netherlands,2030-06-29,15500000.0
+2026-27,ENG1,Brentford,Jaidon Anthony,1020680,M,1999-11-30,Right,177.0,England,2030-06-29,19400000.0
+2026-27,ENG1,Brentford,Mathias Jensen,799251,M,1995-12-31,Both,180.0,Denmark,2027-06-29,10400000.0
+2026-27,ENG1,Brentford,Vitaly Janelt,814873,M,1998-05-09,Left,184.0,Germany,2030-06-29,16600000.0
+2026-27,ENG1,Brentford,Josh Dasilva,856260,M,1998-10-22,Left,184.0,England,2027-06-29,1500000.0
+2026-27,ENG1,Brentford,El Hadji Malick Diouf,1471764,D,2004-12-27,Left,183.0,Senegal,2031-06-29,29000000.0
+2026-27,ENG1,Brentford,Michael Kayode,1137431,D,2004-07-09,Right,179.0,Italy,2032-06-29,39000000.0
+2026-27,ENG1,Brentford,Kristoffer Ajer,576384,D,1998-04-16,Right,196.0,Norway,2030-06-29,24000000.0
+2026-27,ENG1,Brentford,Sepp van den Berg,924378,D,2001-12-19,Right,192.0,Netherlands,2029-06-29,33000000.0
+2026-27,ENG1,Brentford,Nathan Collins,958916,D,2001-04-29,Right,193.0,Ireland,2029-06-29,29000000.0
+2026-27,ENG1,Brentford,Kim Ji-Soo,1185061,D,2004-12-23,Both,192.0,South Korea,2027-06-29,1900000.0
+2026-27,ENG1,Brentford,Keane Lewis-Potter,972421,D,2001-02-21,Right,170.0,England,2031-06-29,24000000.0
+2026-27,ENG1,Brentford,Benjamin Fredrick,1470532,D,2005-05-27,Right,187.0,Nigeria,2030-06-29,560000.0
+2026-27,ENG1,Brentford,Aaron Hickey,966869,D,2002-06-09,Both,185.0,Scotland,2028-06-29,16500000.0
+2026-27,ENG1,Brentford,Rico Henry,599128,D,1997-07-07,Left,175.0,Jamaica,2027-06-29,13800000.0
+2026-27,ENG1,Brentford,Jannik Schuster,1474198,D,2006-05-15,Right,190.0,Austria,2031-06-29,16500000.0
+2026-27,ENG1,Brentford,Caoimhin Kelleher,827362,G,1998-11-22,Right,188.0,Ireland,2030-06-29,25000000.0
+2026-27,ENG1,Brentford,Hákon Rafn Valdimarsson,1005959,G,2001-10-12,Right,195.0,Iceland,2030-06-29,2600000.0
+2026-27,ENG1,Brentford,Ellery Balcombe,860205,G,1999-10-14,Right,190.0,England,2029-06-29,410000.0
+2026-27,ENG1,Newcastle United,Yoane Wissa,805123,F,1996-09-02,Right,176.0,DR Congo,2029-06-29,23000000.0
+2026-27,ENG1,Newcastle United,Anthony Elanga,979232,F,2002-04-26,Right,178.0,Sweden,2030-06-29,31000000.0
+2026-27,ENG1,Newcastle United,William Osula,1122603,F,2003-08-03,Right,191.0,Denmark,2029-06-29,26000000.0
+2026-27,ENG1,Newcastle United,Harvey Barnes,855647,F,1997-12-08,Right,181.0,England,,35000000.0
+2026-27,ENG1,Newcastle United,Matías Fernández-Pardo,1149144,F,2005-02-02,Right,183.0,Belgium,,38000000.0
+2026-27,ENG1,Newcastle United,Jacob Murphy,372336,F,1995-02-23,Right,176.0,England,2027-06-29,11000000.0
+2026-27,ENG1,Newcastle United,Nico González,954056,M,2002-01-02,Right,186.0,Spain,,43000000.0
+2026-27,ENG1,Newcastle United,Joelinton,560128,M,1996-08-13,Right,186.0,Brazil,2028-06-29,27000000.0
+2026-27,ENG1,Newcastle United,Bazoumana Touré,1568123,M,2006-03-01,Left,175.0,Côte d'Ivoire,2031-06-29,48000000.0
+2026-27,ENG1,Newcastle United,Lewis Miley,1400650,M,2006-04-30,Right,188.0,England,2032-06-29,27000000.0
+2026-27,ENG1,Newcastle United,Jacob Ramsey,975937,M,2001-05-27,Right,180.0,England,2030-06-29,36000000.0
+2026-27,ENG1,Newcastle United,Joe Willock,888550,M,1999-08-19,Right,186.0,England,2027-06-29,14500000.0
+2026-27,ENG1,Newcastle United,Aladji Bamba,1868591,M,2006-07-13,Right,194.0,France,2031-06-29,16700000.0
+2026-27,ENG1,Newcastle United,Sean Steur,1859920,M,2008-01-10,Right,183.0,Netherlands,2031-06-29,6800000.0
+2026-27,ENG1,Newcastle United,Amar Dedić,1102791,D,2002-08-17,Both,180.0,Bosnia & Herzegovina,2031-06-29,19400000.0
+2026-27,ENG1,Newcastle United,Malick Thiaw,1014286,D,2001-08-07,Right,194.0,Germany,2029-06-29,41000000.0
+2026-27,ENG1,Newcastle United,Lewis Hall,1136730,D,2004-09-07,Left,179.0,England,2029-06-29,38000000.0
+2026-27,ENG1,Newcastle United,Dan Burn,99090,D,1992-05-08,Left,201.0,England,2027-06-29,4099999.0
+2026-27,ENG1,Newcastle United,Tino Livramento,980634,D,2002-11-11,Right,181.0,England,2028-06-29,44000000.0
+2026-27,ENG1,Newcastle United,Sven Botman,910046,D,2000-01-11,Left,193.0,Netherlands,2030-06-29,33000000.0
+2026-27,ENG1,Newcastle United,Fabian Schär,101882,D,1991-12-19,Right,186.0,Switzerland,2027-06-29,3900000.0
+2026-27,ENG1,Newcastle United,Leo Shahar,1479682,D,2007-03-17,Right,179.0,England,,
+2026-27,ENG1,Newcastle United,Nick Pope,162653,G,1992-04-18,Right,198.0,England,2027-06-29,4800000.0
+2026-27,ENG1,Newcastle United,Lukáš Horníček,963744,G,2002-07-12,Right,194.0,Czechia,2031-06-29,16900000.0
+2026-27,ENG1,Newcastle United,Ewen Jaouen,1154665,G,2005-12-28,Right,197.0,France,2030-06-29,12700000.0
+2026-27,ENG1,Newcastle United,Mark Gillespie,108508,G,1992-03-26,Right,190.0,England,2027-06-29,105000.0
+2026-27,ENG1,Everton,Tyrique George,1403061,F,2006-02-03,Right,181.0,England,2030-06-29,21000000.0
+2026-27,ENG1,Everton,Brennan Johnson,1085180,F,2001-05-22,Right,186.0,Wales,2030-06-29,32000000.0
+2026-27,ENG1,Everton,Thierno Barry,1395746,F,2002-10-20,Right,195.0,France,2029-06-29,31000000.0
+2026-27,ENG1,Everton,Jack Grealish,189061,M,1995-09-09,Right,180.0,England,2027-06-29,21000000.0
+2026-27,ENG1,Everton,Christian Nørgaard,135256,M,1994-03-09,Right,185.0,Denmark,2028-06-29,4800000.0
+2026-27,ENG1,Everton,Kiernan Dewsbury-Hall,861970,M,1998-09-05,Left,178.0,England,2030-06-29,38000000.0
+2026-27,ENG1,Everton,Carlos Alcaraz,1017392,M,2002-11-29,Right,183.0,Argentina,2027-06-29,14600000.0
+2026-27,ENG1,Everton,James Garner,927361,M,2001-03-12,Right,182.0,England,2030-06-29,48000000.0
+2026-27,ENG1,Everton,Tyler Dibling,1174472,M,2006-02-16,Left,178.0,England,2029-06-29,15700000.0
+2026-27,ENG1,Everton,Hayden Hackney,1008471,M,2002-06-25,Right,178.0,England,2031-06-29,35000000.0
+2026-27,ENG1,Everton,Merlin Röhl,1064082,M,2002-07-04,Both,191.0,Germany,2029-06-29,14700000.0
+2026-27,ENG1,Everton,Harrison Armstrong,1627560,M,2007-01-18,Right,185.0,England,2028-06-29,12400000.0
+2026-27,ENG1,Everton,Vitaliy Mykolenko,876643,D,1999-05-28,Left,180.0,Ukraine,2029-06-29,26000000.0
+2026-27,ENG1,Everton,Jarrad Branthwaite,979563,D,2002-06-26,Left,195.0,England,2030-06-29,41000000.0
+2026-27,ENG1,Everton,James Tarkowski,145188,D,1992-11-18,Right,185.0,England,2028-06-29,5200000.0
+2026-27,ENG1,Everton,Ainsley Maitland-Niles,352768,D,1997-08-28,Right,178.0,England,,10900000.0
+2026-27,ENG1,Everton,Jake O'Brien,998253,D,2001-05-14,Right,197.0,Ireland,2028-06-29,16500000.0
+2026-27,ENG1,Everton,Michael Keane,110846,D,1993-01-10,Right,188.0,England,2027-06-29,2800000.0
+2026-27,ENG1,Everton,Jordan Pickford,138530,G,1994-03-06,Left,185.0,England,2029-06-29,13900000.0
+2026-27,ENG1,Everton,Mark Travers,856720,G,1999-05-17,Right,191.0,Ireland,2029-06-29,2800000.0
+2026-27,ENG1,Everton,Tom King,603922,G,1995-03-08,Right,186.0,Wales,2027-06-29,96000.0
+2026-27,ENG1,Everton,George Pickford,2725919,G,2007-02-05,Right,188.0,England,,
+2026-27,ENG1,Leeds United,Noah Okafor,865523,F,2000-05-23,Right,185.0,Switzerland,2029-06-29,27000000.0
+2026-27,ENG1,Leeds United,Dominic Calvert-Lewin,372344,F,1997-03-15,Right,187.0,England,2028-06-29,24000000.0
+2026-27,ENG1,Leeds United,Brenden Aaronson,973431,F,2000-10-21,Right,178.0,USA,2029-06-29,23000000.0
+2026-27,ENG1,Leeds United,Lukas Nmecha,803185,F,1998-12-13,Right,185.0,Germany,2027-06-29,9100000.0
+2026-27,ENG1,Leeds United,Jean-Mattéo Bahoya,1146148,F,2005-05-06,Right,180.0,France,2027-06-29,24000000.0
+2026-27,ENG1,Leeds United,Mateo Joseph,1170693,F,2003-10-18,Right,180.0,Spain,2028-06-29,3700000.0
+2026-27,ENG1,Leeds United,Ao Tanaka,871886,M,1998-09-09,Right,180.0,Japan,2028-06-29,14000000.0
+2026-27,ENG1,Leeds United,Harry Wilson,355528,M,1997-03-21,Left,173.0,Wales,2030-06-29,27000000.0
+2026-27,ENG1,Leeds United,Daniel James,828639,M,1997-11-09,Right,172.0,Wales,2029-06-29,10600000.0
+2026-27,ENG1,Leeds United,Ethan Ampadu,847097,M,2000-09-13,Right,182.0,Wales,2030-06-29,28000000.0
+2026-27,ENG1,Leeds United,Ilia Gruev,911679,M,2000-05-05,Left,185.0,Bulgaria,2027-06-29,11000000.0
+2026-27,ENG1,Leeds United,Anton Stach,889861,M,1998-11-14,Both,192.0,Germany,2029-06-29,27000000.0
+2026-27,ENG1,Leeds United,Sean Longstaff,866191,M,1997-10-29,Right,187.0,England,2029-06-29,14400000.0
+2026-27,ENG1,Leeds United,Jayden Bogle,929132,M,2000-07-26,Right,178.0,England,2030-06-29,16000000.0
+2026-27,ENG1,Leeds United,Tarik Muharemović,1118177,D,2003-02-27,Left,193.0,Bosnia & Herzegovina,2031-06-29,38000000.0
+2026-27,ENG1,Leeds United,Jaka Bijol,886930,D,1999-02-04,Right,192.0,Slovenia,2030-06-29,18500000.0
+2026-27,ENG1,Leeds United,Gabriel Gudmundsson,834308,D,1999-04-28,Left,181.0,Sweden,2029-06-29,21000000.0
+2026-27,ENG1,Leeds United,Nico Elvedi,282229,D,1996-09-29,Right,188.0,Switzerland,2029-06-29,7300000.0
+2026-27,ENG1,Leeds United,James Justin,827681,D,1998-02-22,Right,183.0,England,2029-06-29,12400000.0
+2026-27,ENG1,Leeds United,Joe Rodon,828640,D,1997-10-21,Right,193.0,Wales,2030-06-29,18800000.0
+2026-27,ENG1,Leeds United,Melvin Bard,906075,D,2000-11-05,Left,173.0,France,2027-06-29,10300000.0
+2026-27,ENG1,Leeds United,James Trafford,980643,G,2002-10-09,Right,197.0,England,2031-06-29,27000000.0
+2026-27,ENG1,Leeds United,Michael Zetterer,190161,G,1995-07-11,Both,187.0,Germany,2029-06-29,4099999.0
+2026-27,ENG1,Leeds United,Alex Cairns,162417,G,1993-01-03,Right,183.0,England,2028-06-29,46000.0
+2026-27,ENG1,Brighton & Hove Albion,Evan Ferguson,999231,F,2004-10-18,Right,188.0,Ireland,2029-06-29,21000000.0
+2026-27,ENG1,Brighton & Hove Albion,Charalampos Kostoulas,1416535,F,2007-05-29,Right,185.0,Greece,2030-06-29,27000000.0
+2026-27,ENG1,Brighton & Hove Albion,Promise David,1119328,F,2001-07-02,Both,196.0,Canada,2027-06-29,18100000.0
+2026-27,ENG1,Brighton & Hove Albion,Zadok Yohanna,2189496,F,2007-06-28,Left,184.0,Nigeria,2031-06-29,16500000.0
+2026-27,ENG1,Brighton & Hove Albion,Stefanos Tzimas,1155321,F,2006-01-05,Both,184.0,Greece,2030-06-29,18500000.0
+2026-27,ENG1,Brighton & Hove Albion,Kaoru Mitoma,936849,M,1997-05-19,Right,178.0,Japan,2027-06-29,20000000.0
+2026-27,ENG1,Brighton & Hove Albion,Diego Gómez,1065588,M,2003-03-26,Right,185.0,Paraguay,2031-06-29,27000000.0
+2026-27,ENG1,Brighton & Hove Albion,Yasin Ayari,1036269,M,2003-10-05,Right,172.0,Sweden,2027-06-29,36000000.0
+2026-27,ENG1,Brighton & Hove Albion,Chema Andrés,1464641,M,2005-04-24,Right,193.0,Spain,2031-06-29,19400000.0
+2026-27,ENG1,Brighton & Hove Albion,Yankuba Minteh,1400106,M,2004-07-21,Left,180.0,Gambia,2029-06-29,42000000.0
+2026-27,ENG1,Brighton & Hove Albion,Pascal Groß,48480,M,1991-06-14,Right,181.0,Germany,2027-06-29,2300000.0
+2026-27,ENG1,Brighton & Hove Albion,Matt O'Riley,891829,M,2000-11-20,Left,187.0,Denmark,2029-06-29,16500000.0
+2026-27,ENG1,Brighton & Hove Albion,Georginio Rutter,946695,M,2002-04-19,Left,182.0,France,2028-06-29,31000000.0
+2026-27,ENG1,Brighton & Hove Albion,Jack Hinshelwood,1142315,M,2005-04-10,Right,182.0,England,2029-06-29,27000000.0
+2026-27,ENG1,Brighton & Hove Albion,Malick Yalcouyé,1568186,M,2005-11-17,Right,171.0,Côte d'Ivoire,2029-06-29,12600000.0
+2026-27,ENG1,Brighton & Hove Albion,Ibrahim Osman,1471095,M,2004-11-28,Right,177.0,Ghana,2029-06-29,7400000.0
+2026-27,ENG1,Brighton & Hove Albion,Femi Azeez,1007093,M,2001-06-04,Left,181.0,Nigeria,2030-06-29,14500000.0
+2026-27,ENG1,Brighton & Hove Albion,Shane Nti,2725924,M,2007-05-06,,,England,,
+2026-27,ENG1,Brighton & Hove Albion,Ferdi Kadıoğlu,825844,D,1999-10-06,Right,174.0,Türkiye,2028-06-29,36000000.0
+2026-27,ENG1,Brighton & Hove Albion,Luka Vušković,1405212,D,2007-02-23,Right,193.0,Croatia,2031-06-29,64000000.0
+2026-27,ENG1,Brighton & Hove Albion,Jaouen Hadjam,1049534,D,2003-03-25,Left,184.0,Algeria,2031-06-29,6600000.0
+2026-27,ENG1,Brighton & Hove Albion,Maxim De Cuyper,997152,D,2000-12-21,Left,183.0,Belgium,2030-06-29,21000000.0
+2026-27,ENG1,Brighton & Hove Albion,Mats Wieffer,959628,D,1999-11-15,Right,188.0,Netherlands,2029-06-29,24000000.0
+2026-27,ENG1,Brighton & Hove Albion,Lewis Dunk,115365,D,1991-11-20,Right,190.0,England,2027-06-29,3600000.0
+2026-27,ENG1,Brighton & Hove Albion,Pascal Struijk,836675,D,1999-08-10,Left,190.0,Netherlands,2031-06-29,23000000.0
+2026-27,ENG1,Brighton & Hove Albion,Olivier Boscagli,788784,D,1997-11-17,Left,181.0,France,2030-06-29,13900000.0
+2026-27,ENG1,Brighton & Hove Albion,Costinha,988333,D,2000-03-25,Right,181.0,Portugal,2031-06-29,6400000.0
+2026-27,ENG1,Brighton & Hove Albion,Michael Svoboda,888340,D,1998-10-14,Right,195.0,Austria,2030-06-29,3400000.0
+2026-27,ENG1,Brighton & Hove Albion,Bart Verbruggen,994363,G,2002-08-17,Right,193.0,Netherlands,2028-06-29,37000000.0
+2026-27,ENG1,Brighton & Hove Albion,Jason Steele,31867,G,1990-08-17,Right,188.0,England,2027-06-29,480000.0
+2026-27,ENG1,Brighton & Hove Albion,Tom McGill,1007073,G,2000-03-24,Right,185.0,Canada,2027-06-29,515000.0
+2026-27,ENG1,Manchester United,Marcus Rashford,814590,F,1997-10-30,Right,188.0,England,2028-06-29,38000000.0
+2026-27,ENG1,Manchester United,Bryan Mbeumo,927083,F,1999-08-06,Left,173.0,Cameroon,2030-06-29,73000000.0
+2026-27,ENG1,Manchester United,Benjamin Šeško,986397,F,2003-05-30,Right,195.0,Slovenia,2030-06-29,78000000.0
+2026-27,ENG1,Manchester United,Matheus Cunha,886363,F,1999-05-26,Right,184.0,Brazil,2030-06-29,79000000.0
+2026-27,ENG1,Manchester United,Joshua Zirkzee,917007,F,2001-05-21,Right,193.0,Netherlands,2029-06-29,21000000.0
+2026-27,ENG1,Manchester United,Tynan Thompson,1899445,F,2008-04-16,Left,187.0,England,,
+2026-27,ENG1,Manchester United,Bruno Fernandes,288205,M,1994-09-07,Right,179.0,Portugal,2027-06-29,32000000.0
+2026-27,ENG1,Manchester United,Amad Diallo,971037,M,2002-07-10,Left,173.0,Côte d'Ivoire,2030-06-29,44000000.0
+2026-27,ENG1,Manchester United,Kobbie Mainoo,1142175,M,2005-04-18,Right,184.0,England,2031-06-29,72000000.0
+2026-27,ENG1,Manchester United,Mason Mount,836694,M,1999-01-09,Right,181.0,England,2028-06-29,23000000.0
+2026-27,ENG1,Manchester United,Andrey Santos,1105779,M,2004-05-02,Right,180.0,Brazil,2031-06-29,39000000.0
+2026-27,ENG1,Manchester United,Carlos Baleba,1199043,M,2004-01-02,Left,179.0,Cameroon,2031-06-29,53000000.0
+2026-27,ENG1,Manchester United,Patrick Dorgu,1397168,M,2004-10-25,Left,185.0,Denmark,2030-06-29,33000000.0
+2026-27,ENG1,Manchester United,Youri Tielemans,331737,M,1997-05-06,Right,177.0,Belgium,2031-06-29,43000000.0
+2026-27,ENG1,Manchester United,Manuel Ugarte,846425,M,2001-04-10,Right,182.0,Uruguay,2029-06-29,24000000.0
+2026-27,ENG1,Manchester United,Shea Lacey,1465865,M,2007-04-13,Left,175.0,England,2029-06-29,5200000.0
+2026-27,ENG1,Manchester United,Harry Amass,1461595,M,2007-03-15,Left,181.0,England,2027-06-29,7200000.0
+2026-27,ENG1,Manchester United,Jack Fletcher,1402726,M,2007-03-18,Left,180.0,England,2027-06-29,1600000.0
+2026-27,ENG1,Manchester United,Tyler Fletcher,1402850,M,2007-03-18,Right,184.0,Scotland,2027-06-29,1600000.0
+2026-27,ENG1,Manchester United,Noussair Mazraoui,847030,D,1997-11-13,Right,183.0,Morocco,2028-06-29,17500000.0
+2026-27,ENG1,Manchester United,Lisandro Martínez,859999,D,1998-01-17,Left,175.0,Argentina,2027-06-29,48000000.0
+2026-27,ENG1,Manchester United,Matthijs de Ligt,803031,D,1999-08-11,Right,188.0,Netherlands,2029-06-29,32000000.0
+2026-27,ENG1,Manchester United,Harry Maguire,149380,D,1993-03-04,Right,194.0,England,2027-06-29,8600000.0
+2026-27,ENG1,Manchester United,Diogo Dalot,843200,D,1999-03-17,Right,184.0,Portugal,2028-06-29,28000000.0
+2026-27,ENG1,Manchester United,Leny Yoro,1153315,D,2005-11-12,Right,190.0,France,2029-06-29,46000000.0
+2026-27,ENG1,Manchester United,Luke Shaw,190839,D,1995-07-11,Left,178.0,England,2027-06-29,7500000.0
+2026-27,ENG1,Manchester United,Ayden Heaven,1445799,D,2006-09-21,Left,189.0,England,2029-06-29,32000000.0
+2026-27,ENG1,Manchester United,Senne Lammens,964753,G,2002-07-06,Right,193.0,Belgium,2030-06-29,38000000.0
+2026-27,ENG1,Manchester United,Tom Heaton,18122,G,1986-04-14,Right,188.0,England,2027-06-29,94000.0
+2026-27,ENG1,Manchester United,Karl Darlow,123689,G,1990-10-07,Right,185.0,Wales,2028-06-29,210000.0
+2026-27,ENG1,Manchester United,Dermot Mee,1005664,G,2002-11-19,Right,183.0,Northern Ireland,2028-06-29,210000.0
+2026-27,ENG1,Manchester United,Fred Heath,2725912,G,2007-09-24,Right,201.0,England,,
+2026-27,ENG1,Sunderland,Wilson Isidor,877980,F,2000-08-26,Right,184.0,Haiti,2030-06-29,18500000.0
+2026-27,ENG1,Sunderland,Brian Brobbey,910048,F,2002-01-31,Right,180.0,Netherlands,2029-06-29,42000000.0
+2026-27,ENG1,Sunderland,Romaine Mundle,1094440,F,2003-04-23,Right,177.0,England,2030-06-29,6800000.0
+2026-27,ENG1,Sunderland,Juan Riquelme Angulo,2057385,F,2008-01-10,Left,193.0,Ecuador,,
+2026-27,ENG1,Sunderland,Granit Xhaka,117777,M,1992-09-26,Left,185.0,Switzerland,2028-06-29,8500000.0
+2026-27,ENG1,Sunderland,Chemsdine Talbi,1142675,M,2005-05-08,Right,175.0,Morocco,2030-06-29,23000000.0
+2026-27,ENG1,Sunderland,Noah Sadiki,1171539,M,2004-12-16,Right,173.0,DR Congo,2030-06-29,37000000.0
+2026-27,ENG1,Sunderland,Habib Diarra,1128532,M,2004-01-02,Right,179.0,Senegal,2030-06-29,37000000.0
+2026-27,ENG1,Sunderland,Malick Fofana,1195784,M,2005-03-30,Right,169.0,Belgium,,29000000.0
+2026-27,ENG1,Sunderland,Nilson Angulo,1116571,M,2003-06-18,Right,182.0,Ecuador,2030-06-29,16500000.0
+2026-27,ENG1,Sunderland,Enzo Le Fée,984014,M,2000-02-02,Right,173.0,France,2029-06-29,26000000.0
+2026-27,ENG1,Sunderland,Chris Rigg,1394089,M,2007-06-17,Left,177.0,England,2030-06-29,24000000.0
+2026-27,ENG1,Sunderland,Jules Ahoka,2137673,M,2006-05-07,Right,178.0,DR Congo,2031-06-29,290000.0
+2026-27,ENG1,Sunderland,Dayann Methalie,1894003,M,2006-02-14,Left,186.0,France,2031-06-29,19700000.0
+2026-27,ENG1,Sunderland,Jocelin Ta Bi,2138729,M,2005-02-08,Left,175.0,Côte d'Ivoire,2030-06-29,2600000.0
+2026-27,ENG1,Sunderland,Abdoullah Ba,1000139,M,2003-07-30,Both,180.0,France,2027-06-29,1400000.0
+2026-27,ENG1,Sunderland,Alan Browne,247459,M,1995-04-14,Right,179.0,Ireland,2027-06-29,2100000.0
+2026-27,ENG1,Sunderland,Reinildo Mandava,831424,D,1994-01-20,Left,180.0,Mozambique,2027-06-29,4099999.0
+2026-27,ENG1,Sunderland,Omar Alderete,805137,D,1996-12-25,Left,187.0,Paraguay,2029-06-29,13800000.0
+2026-27,ENG1,Sunderland,Nordi Mukiele,780014,D,1997-10-31,Right,185.0,France,2029-06-29,15200000.0
+2026-27,ENG1,Sunderland,Daniel Ballard,958878,D,1999-09-21,Right,187.0,Northern Ireland,2029-06-29,22000000.0
+2026-27,ENG1,Sunderland,Kevin Danso,794953,D,1998-09-18,Right,190.0,Austria,2027-06-29,19400000.0
+2026-27,ENG1,Sunderland,Thomas Meunier,128587,D,1991-09-11,Right,190.0,Belgium,2028-06-29,1400000.0
+2026-27,ENG1,Sunderland,Trai Hume,989034,D,2002-03-17,Right,180.0,Northern Ireland,2030-06-29,20000000.0
+2026-27,ENG1,Sunderland,Luke O'Nien,365812,D,1994-11-20,Right,174.0,England,2027-06-29,660000.0
+2026-27,ENG1,Sunderland,Aji Alese,934228,D,2001-01-16,Left,192.0,England,2027-06-29,680000.0
+2026-27,ENG1,Sunderland,Robin Roefs,1012928,G,2003-01-16,Left,193.0,Netherlands,2031-06-29,29000000.0
+2026-27,ENG1,Sunderland,Melker Ellborg,1099795,G,2003-05-21,Right,191.0,Sweden,2030-06-29,2800000.0
+2026-27,ENG1,Sunderland,Simon Moore,95461,G,1990-05-18,Right,191.0,England,2027-06-29,81000.0
+2026-27,ENG1,Ipswich Town,Daizen Maeda,832420,F,1997-10-19,Right,173.0,Japan,2029-06-29,12600000.0
+2026-27,ENG1,Ipswich Town,Zian Flemming,875137,F,1998-07-31,Right,183.0,Netherlands,2030-06-29,12600000.0
+2026-27,ENG1,Ipswich Town,Chuba Akpom,190867,F,1995-10-08,Right,186.0,England,2029-06-29,3400000.0
+2026-27,ENG1,Ipswich Town,Emersonn,1128844,F,2004-07-15,Right,186.0,Brazil,2031-06-29,7700000.0
+2026-27,ENG1,Ipswich Town,Anis Mehmeti,1007072,F,2001-01-08,Right,180.0,Albania,2029-06-29,14600000.0
+2026-27,ENG1,Ipswich Town,Julio Enciso,973556,M,2004-01-22,Right,173.0,Paraguay,2031-06-29,24000000.0
+2026-27,ENG1,Ipswich Town,Exequiel Palacios,822600,M,1998-10-04,Right,177.0,Argentina,2030-06-29,26000000.0
+2026-27,ENG1,Ipswich Town,Abdul Fatawu Issahaku,1103589,M,2004-03-07,Left,180.0,Ghana,2031-06-29,21000000.0
+2026-27,ENG1,Ipswich Town,Jaden Philogene-Bidace,1014461,M,2002-02-07,Right,181.0,England,2029-06-29,18800000.0
+2026-27,ENG1,Ipswich Town,Marcelino Núñez,1014801,M,2000-02-29,Right,173.0,Chile,2029-06-29,14900000.0
+2026-27,ENG1,Ipswich Town,Florentino Luís,855845,M,1999-08-18,Right,184.0,Portugal,2031-06-29,15500000.0
+2026-27,ENG1,Ipswich Town,Saša Lukić,371222,M,1996-08-12,Right,183.0,Serbia,2030-06-29,9400000.0
+2026-27,ENG1,Ipswich Town,Jack Clarke,921005,M,2000-11-22,Right,181.0,England,2029-06-29,21000000.0
+2026-27,ENG1,Ipswich Town,Sindre Walle Egeli,1154598,M,2006-06-20,Left,182.0,Norway,2030-06-29,15900000.0
+2026-27,ENG1,Ipswich Town,Abdoul Ouattara,1930811,M,2005-10-21,Right,180.0,Côte d'Ivoire,2031-06-29,13800000.0
+2026-27,ENG1,Ipswich Town,Kasey McAteer,1065134,M,2001-11-21,Right,177.0,Ireland,2029-06-29,10300000.0
+2026-27,ENG1,Ipswich Town,Azor Matusiwa,856495,M,1998-04-27,Right,173.0,Netherlands,2029-06-29,12800000.0
+2026-27,ENG1,Ipswich Town,Jack Taylor,856669,M,1998-06-22,Right,185.0,Ireland,2028-06-29,3200000.0
+2026-27,ENG1,Ipswich Town,Issa Diop,825719,D,1997-01-08,Right,194.0,Morocco,2030-06-29,8199999.0
+2026-27,ENG1,Ipswich Town,Leif Davis,963493,D,1999-12-30,Left,182.0,England,2029-06-29,21000000.0
+2026-27,ENG1,Ipswich Town,Dara O'Shea,856719,D,1999-03-03,Right,188.0,Ireland,2030-06-29,17000000.0
+2026-27,ENG1,Ipswich Town,Cédric Kipré,886802,D,1996-12-08,Right,196.0,Côte d'Ivoire,2028-06-29,1800000.0
+2026-27,ENG1,Ipswich Town,Jacob Greaves,990821,D,2000-09-11,Left,193.0,England,2029-06-29,13400000.0
+2026-27,ENG1,Ipswich Town,Darnell Furlong,786022,D,1995-10-30,Right,180.0,England,2028-06-29,2400000.0
+2026-27,ENG1,Ipswich Town,Kjell Scherpen,852394,G,2000-01-22,Right,205.0,Netherlands,2030-06-29,7700000.0
+2026-27,ENG1,Ipswich Town,Alex Palmer,796143,G,1996-08-09,Right,190.0,England,2028-06-29,905000.0
+2026-27,ENG1,Ipswich Town,Christian Walton,198038,G,1995-11-08,Left,196.0,England,2028-06-29,2600000.0
+2026-27,ENG1,Ipswich Town,David Button,32673,G,1989-02-26,Right,191.0,England,,48000.0
+2026-27,ENG1,Liverpool FC,Alexander Isak,823941,F,1999-09-20,Right,193.0,Sweden,2031-06-29,88000000.0
+2026-27,ENG1,Liverpool FC,Hugo Ekitiké,1048422,F,2002-06-19,Right,190.0,France,2031-06-29,77000000.0
+2026-27,ENG1,Liverpool FC,Bradley Barcola,996952,F,2002-09-01,Right,182.0,France,2031-06-29,87000000.0
+2026-27,ENG1,Liverpool FC,Federico Chiesa,845386,F,1997-10-24,Right,175.0,Italy,2028-06-29,11900000.0
+2026-27,ENG1,Liverpool FC,Rio Ngumoha,1881902,F,2008-08-28,Right,170.0,England,2028-06-29,29000000.0
+2026-27,ENG1,Liverpool FC,Víctor Muñoz,1145642,F,2003-07-12,Right,173.0,Spain,2032-06-29,29000000.0
+2026-27,ENG1,Liverpool FC,Florian Wirtz,1019322,M,2003-05-02,Right,175.0,Germany,2030-06-29,95000000.0
+2026-27,ENG1,Liverpool FC,Dominik Szoboszlai,869856,M,2000-10-24,Right,187.0,Hungary,2031-06-29,91000000.0
+2026-27,ENG1,Liverpool FC,Alexis Mac Allister,895324,M,1998-12-23,Right,176.0,Argentina,2028-06-29,77000000.0
+2026-27,ENG1,Liverpool FC,Cody Gakpo,862967,M,1999-05-06,Right,193.0,Netherlands,2030-06-29,58000000.0
+2026-27,ENG1,Liverpool FC,Ryan Gravenberch,904897,M,2002-05-15,Right,190.0,Netherlands,2032-06-29,87000000.0
+2026-27,ENG1,Liverpool FC,Wataru Endo,143040,M,1993-02-08,Right,178.0,Japan,2027-06-29,3700000.0
+2026-27,ENG1,Liverpool FC,Trey Nyoni,1445945,M,2007-06-29,Right,180.0,England,2030-06-29,8500000.0
+2026-27,ENG1,Liverpool FC,Ronald Araújo,925097,D,1999-03-06,Right,191.0,Uruguay,2027-06-29,22000000.0
+2026-27,ENG1,Liverpool FC,Virgil van Dijk,151545,D,1991-07-07,Right,195.0,Netherlands,2027-06-29,15500000.0
+2026-27,ENG1,Liverpool FC,Jeremie Frimpong,970361,D,2000-12-09,Right,171.0,Netherlands,2030-06-29,36000000.0
+2026-27,ENG1,Liverpool FC,Miloš Kerkez,1097425,D,2003-11-06,Left,180.0,Hungary,2030-06-29,36000000.0
+2026-27,ENG1,Liverpool FC,Conor Bradley,1008402,D,2003-07-08,Right,181.0,Northern Ireland,2029-06-29,27000000.0
+2026-27,ENG1,Liverpool FC,Kostas Tsimikas,786259,D,1996-05-11,Left,178.0,Greece,2027-06-29,4400000.0
+2026-27,ENG1,Liverpool FC,Jérémy Jacquet,1445625,D,2005-07-12,Right,191.0,France,2031-06-29,57000000.0
+2026-27,ENG1,Liverpool FC,Giovanni Leoni,1473137,D,2006-12-20,Right,196.0,Italy,2031-06-29,27000000.0
+2026-27,ENG1,Liverpool FC,Joe Gomez,318927,D,1997-05-22,Right,188.0,England,2027-06-29,12600000.0
+2026-27,ENG1,Liverpool FC,Alisson,243609,G,1992-10-01,Right,193.0,Brazil,2027-06-29,16500000.0
+2026-27,ENG1,Liverpool FC,Giorgi Mamardashvili,930997,G,2000-09-28,Left,200.0,Georgia,2031-06-29,29000000.0
+2026-27,ENG1,Liverpool FC,Freddie Woodman,284417,G,1997-03-03,Right,187.0,England,2029-06-29,3100000.0
+2026-27,ENG1,Liverpool FC,Vítězslav Jaroš,927359,G,2001-07-22,Right,190.0,Czechia,2028-06-29,5300000.0
+2026-27,ENG1,Liverpool FC,Harvey Davies,1008403,G,2003-09-02,Left,190.0,England,2027-06-29,470000.0
+2026-27,ENG1,Bournemouth,Eli Junior Kroupi,1426228,F,2006-06-22,Right,179.0,France,2030-06-29,72000000.0
+2026-27,ENG1,Bournemouth,Álvaro Rodriguez,1154587,F,2004-07-13,Left,193.0,Uruguay,,9100000.0
+2026-27,ENG1,Bournemouth,Evanilson,998490,F,1999-10-05,Both,181.0,Brazil,2029-06-29,33000000.0
+2026-27,ENG1,Bournemouth,Daniel Jebbison,1096136,F,2003-07-10,Right,190.0,Canada,2028-06-29,5800000.0
+2026-27,ENG1,Bournemouth,Rayan,1464966,M,2006-08-02,Left,185.0,Brazil,2031-06-29,58000000.0
+2026-27,ENG1,Bournemouth,Amine Adli,991478,M,2000-05-09,Left,174.0,Morocco,2030-06-29,18100000.0
+2026-27,ENG1,Bournemouth,Justin Kluivert,851596,M,1999-05-04,Right,171.0,Netherlands,2028-06-29,24000000.0
+2026-27,ENG1,Bournemouth,Ben Gannon-Doak,1154861,M,2005-11-10,Right,174.0,Scotland,2030-06-29,14600000.0
+2026-27,ENG1,Bournemouth,Alex Scott,1104986,M,2003-08-20,Right,178.0,England,2028-06-29,53000000.0
+2026-27,ENG1,Bournemouth,Alex Tóth,1476524,M,2005-10-22,Right,181.0,Hungary,2031-06-29,13100000.0
+2026-27,ENG1,Bournemouth,Tyler Adams,800419,M,1999-02-13,Right,175.0,USA,2028-06-29,26000000.0
+2026-27,ENG1,Bournemouth,Marcus Tavernier,895576,M,1999-03-21,Left,178.0,England,2029-06-29,23000000.0
+2026-27,ENG1,Bournemouth,Ryan Christie,322391,M,1995-02-21,Left,178.0,Scotland,2029-06-29,8600000.0
+2026-27,ENG1,Bournemouth,David Brooks,855731,M,1997-07-07,Left,173.0,Wales,2029-06-29,11000000.0
+2026-27,ENG1,Bournemouth,Juanlu Sánchez,1010655,M,2003-08-14,Right,186.0,Spain,,9700000.0
+2026-27,ENG1,Bournemouth,Lewis Cook,548188,M,1997-02-02,Right,175.0,England,2028-06-29,11600000.0
+2026-27,ENG1,Bournemouth,Ben Winterburn,2007889,M,2004-09-03,Right,185.0,England,2027-06-29,320000.0
+2026-27,ENG1,Bournemouth,António Silva,1006069,D,2003-10-29,Right,187.0,Portugal,2031-06-29,27000000.0
+2026-27,ENG1,Bournemouth,Julián Araujo,978150,D,2001-08-12,Right,175.0,Mexico,2029-06-29,8199999.0
+2026-27,ENG1,Bournemouth,Julio Soler,1201520,D,2005-02-15,Left,175.0,Argentina,2029-06-29,8300000.0
+2026-27,ENG1,Bournemouth,Veljko Milosavljević,1406130,D,2007-06-27,Right,192.0,Serbia,2030-06-29,18600000.0
+2026-27,ENG1,Bournemouth,Adrien Truffert,999028,D,2001-11-19,Left,176.0,France,2030-06-29,28000000.0
+2026-27,ENG1,Bournemouth,Bafodé Diakité,962408,D,2001-01-05,Right,182.0,France,2030-06-29,23000000.0
+2026-27,ENG1,Bournemouth,Max Aarons,943645,D,2000-01-03,Right,178.0,England,2029-06-29,2400000.0
+2026-27,ENG1,Bournemouth,James Hill,1156586,D,2002-01-09,Right,184.0,England,2029-06-29,24000000.0
+2026-27,ENG1,Bournemouth,Adam Smith,44566,D,1991-04-28,Right,180.0,England,2027-06-29,310000.0
+2026-27,ENG1,Bournemouth,Đorđe Petrović,882604,G,1999-10-07,Right,194.0,Serbia,2030-06-29,29000000.0
+2026-27,ENG1,Bournemouth,Michele Di Gregorio,844609,G,1997-07-26,Right,187.0,Italy,2027-06-29,9600000.0
+2026-27,ENG1,Bournemouth,Fraser Forster,19314,G,1988-03-16,Right,201.0,England,2027-06-29,440000.0
+2026-27,ENG1,Nottingham Forest,Liam Delap,997087,F,2003-02-07,Right,186.0,England,2031-06-29,26000000.0
+2026-27,ENG1,Nottingham Forest,Igor Jesus,981619,F,2001-02-24,Right,179.0,Brazil,2029-06-29,26000000.0
+2026-27,ENG1,Nottingham Forest,Chris Wood,50480,F,1991-12-06,Right,191.0,New Zealand,2027-06-29,5200000.0
+2026-27,ENG1,Nottingham Forest,Arnaud Kalimuendo,954061,F,2002-01-19,Right,175.0,France,2030-06-29,24000000.0
+2026-27,ENG1,Nottingham Forest,Daniel Muñoz,870360,M,1996-05-25,Right,183.0,Colombia,2029-06-29,23000000.0
+2026-27,ENG1,Nottingham Forest,Ibrahim Sangaré,843754,M,1997-12-01,Right,191.0,Côte d'Ivoire,2029-06-29,21000000.0
+2026-27,ENG1,Nottingham Forest,James McAtee,1003334,M,2002-10-17,Left,180.0,England,2030-06-29,16200000.0
+2026-27,ENG1,Nottingham Forest,Callum Hudson Odoi,867442,M,2000-11-06,Right,177.0,England,2028-06-29,32000000.0
+2026-27,ENG1,Nottingham Forest,Morgan Gibbs-White,865912,M,2000-01-26,Right,171.0,England,2028-06-29,67000000.0
+2026-27,ENG1,Nottingham Forest,Dan Ndoye,944327,M,2000-10-24,Right,184.0,Switzerland,2030-06-29,31000000.0
+2026-27,ENG1,Nottingham Forest,Nicolás Domínguez,871765,M,1998-06-27,Right,179.0,Argentina,2028-06-29,13800000.0
+2026-27,ENG1,Nottingham Forest,Xaver Schlager,791079,M,1997-09-27,Left,174.0,Austria,2028-06-29,9500000.0
+2026-27,ENG1,Nottingham Forest,Ryan Yates,846252,M,1997-11-20,Right,190.0,England,2028-06-29,7200000.0
+2026-27,ENG1,Nottingham Forest,Murillo,1199282,D,2002-07-03,Left,180.0,Brazil,2030-06-29,49000000.0
+2026-27,ENG1,Nottingham Forest,Ousmane Diomande,1394342,D,2003-12-03,Right,190.0,Côte d'Ivoire,2030-06-29,44000000.0
+2026-27,ENG1,Nottingham Forest,Nikola Milenković,836168,D,1997-10-11,Right,195.0,Serbia,2029-06-29,26000000.0
+2026-27,ENG1,Nottingham Forest,Ola Aina,800417,D,1996-10-07,Right,182.0,Nigeria,2028-06-29,16399999.0
+2026-27,ENG1,Nottingham Forest,Neco Williams,927356,D,2001-04-12,Right,183.0,Wales,2029-06-29,26000000.0
+2026-27,ENG1,Nottingham Forest,Jair,1170722,D,2005-03-06,Both,198.0,Brazil,2030-06-29,15500000.0
+2026-27,ENG1,Nottingham Forest,Nicolò Savona,1010220,D,2003-03-18,Right,192.0,Italy,2030-06-29,14600000.0
+2026-27,ENG1,Nottingham Forest,Luca Netz,979144,D,2003-05-14,Left,180.0,Germany,2030-06-29,7700000.0
+2026-27,ENG1,Nottingham Forest,John Victor,840103,G,1996-02-12,Right,197.0,Brazil,2028-06-29,4900000.0
+2026-27,ENG1,Nottingham Forest,Matz Sels,78152,G,1992-02-25,Right,188.0,Belgium,2028-06-29,3700000.0
+2026-27,ENG1,Nottingham Forest,Steven Benda,860764,G,1998-09-30,Both,192.0,Germany,2027-06-29,1100000.0
+2026-27,ENG1,Fulham,Gonzalo García,1402716,F,2004-03-23,Right,182.0,Spain,2031-06-29,31000000.0
+2026-27,ENG1,Fulham,Rodrigo Muniz,1015256,F,2001-05-03,Right,184.0,Brazil,2030-06-29,22000000.0
+2026-27,ENG1,Fulham,Jonah Kusi-Asare,1503757,F,2007-07-03,Both,196.0,Sweden,2031-06-29,3300000.0
+2026-27,ENG1,Fulham,Aidan Evans,2350446,F,2008-10-31,,160.0,Canada,,
+2026-27,ENG1,Fulham,Oscar Bobb,1065216,M,2003-07-11,Left,174.0,Norway,2031-06-29,27000000.0
+2026-27,ENG1,Fulham,César Palacios,1402688,M,2004-11-10,Right,181.0,Spain,2031-06-29,6800000.0
+2026-27,ENG1,Fulham,Manuel Ángel Morán,1142683,M,2004-03-14,Right,168.0,Spain,2029-06-29,4600000.0
+2026-27,ENG1,Fulham,Alex Iwobi,352770,M,1996-05-02,Right,183.0,Nigeria,2028-06-29,21000000.0
+2026-27,ENG1,Fulham,Emile Smith Rowe,867445,M,2000-07-27,Right,182.0,England,2029-06-29,18300000.0
+2026-27,ENG1,Fulham,Kevin,1112879,M,2003-01-03,Right,176.0,Brazil,2030-06-29,26000000.0
+2026-27,ENG1,Fulham,Sander Berge,793167,M,1998-02-13,Right,195.0,Norway,2029-06-29,26000000.0
+2026-27,ENG1,Fulham,Hugo Larsson,1142211,M,2004-06-26,Right,187.0,Sweden,2027-06-29,30000000.0
+2026-27,ENG1,Fulham,Joshua King,1546231,M,2007-01-02,Right,172.0,England,2029-06-29,26000000.0
+2026-27,ENG1,Fulham,Shea Charles,1131449,M,2003-11-04,Right,189.0,Northern Ireland,2031-06-29,14500000.0
+2026-27,ENG1,Fulham,Tom Cairney,82566,M,1991-01-19,Left,185.0,Scotland,2027-06-29,530000.0
+2026-27,ENG1,Fulham,Harrison Reed,365802,M,1995-01-26,Right,176.0,England,2027-06-29,2100000.0
+2026-27,ENG1,Fulham,Calvin Bassey,861972,D,1999-12-30,Left,185.0,Nigeria,2027-06-29,29000000.0
+2026-27,ENG1,Fulham,Antonee Robinson,803174,D,1997-08-07,Left,183.0,USA,2028-06-29,24000000.0
+2026-27,ENG1,Fulham,Timothy Castagne,329417,D,1995-12-04,Right,185.0,Belgium,2027-06-29,7600000.0
+2026-27,ENG1,Fulham,Joachim Andersen,362682,D,1996-05-30,Right,190.0,Denmark,2029-06-29,21000000.0
+2026-27,ENG1,Fulham,Ryan Sessegnon,836698,D,2000-05-17,Left,178.0,England,2027-06-29,21000000.0
+2026-27,ENG1,Fulham,David Affengruber,988672,D,2001-03-18,Right,185.0,Austria,2030-06-29,18100000.0
+2026-27,ENG1,Fulham,Kenny Tete,190877,D,1995-10-08,Right,180.0,Netherlands,2028-06-29,8700000.0
+2026-27,ENG1,Fulham,Luc De Fougerolles,1413129,D,2005-10-11,Right,183.0,Canada,2029-06-29,5200000.0
+2026-27,ENG1,Fulham,Jorge Cuenca,868715,D,1999-11-16,Left,190.0,Spain,2028-06-29,8600000.0
+2026-27,ENG1,Fulham,Bernd Leno,103335,G,1992-03-03,Right,190.0,Germany,2027-06-29,5500000.0
+2026-27,ENG1,Fulham,Benjamin Lecomte,123207,G,1991-04-25,Left,186.0,France,2027-06-29,825000.0
+2026-27,ENG1,Fulham,Alex Borto,1173363,G,2003-11-05,,188.0,USA,2027-06-29,
+2026-27,ENG1,Coventry City,Sidiki Cherif,1514916,F,2006-12-14,Right,188.0,Guinea,,16900000.0
+2026-27,ENG1,Coventry City,Brandon Thomas-Asante,846061,F,1998-12-28,Right,180.0,Ghana,2028-06-29,16500000.0
+2026-27,ENG1,Coventry City,Taiwo Awoniyi,359664,F,1997-08-11,Right,183.0,Nigeria,,7600000.0
+2026-27,ENG1,Coventry City,Haji Wright,818391,F,1998-03-26,Right,193.0,USA,2027-06-29,16600000.0
+2026-27,ENG1,Coventry City,Ellis Simms,991614,F,2001-01-04,Right,190.0,England,2027-06-29,11500000.0
+2026-27,ENG1,Coventry City,Caleb Yirenkyi,1986794,M,2006-01-14,Right,182.0,Ghana,,18700000.0
+2026-27,ENG1,Coventry City,Frank Onyeka,885864,M,1997-12-31,Right,183.0,Nigeria,2030-06-29,7700000.0
+2026-27,ENG1,Coventry City,Loum Tchaouna,1004505,M,2003-09-07,Left,180.0,France,2031-06-29,13800000.0
+2026-27,ENG1,Coventry City,Tatsuhiro Sakamoto,978927,M,1996-10-21,Left,170.0,Japan,2027-06-29,4300000.0
+2026-27,ENG1,Coventry City,Ephron Mason-Clark,861315,M,1999-08-24,Right,178.0,Jamaica,2028-06-29,17200000.0
+2026-27,ENG1,Coventry City,Gustavo Hamer,837495,M,1997-06-23,Right,169.0,Netherlands,,14700000.0
+2026-27,ENG1,Coventry City,Jack Rudoni,979565,M,2001-06-13,Left,185.0,England,2028-06-29,21000000.0
+2026-27,ENG1,Coventry City,Victor Torp,837011,M,1999-07-29,Right,178.0,Denmark,,14500000.0
+2026-27,ENG1,Coventry City,Matt Grimes,340713,M,1995-07-14,Left,178.0,England,2028-06-29,5200000.0
+2026-27,ENG1,Coventry City,Josh Eccles,944245,M,2000-04-05,Right,181.0,England,2028-06-29,9600000.0
+2026-27,ENG1,Coventry City,Harri Laidler,2578092,M,2008-10-15,,,Wales,,
+2026-27,ENG1,Coventry City,Stephen Mfuni,1402791,D,2008-02-11,Left,193.0,England,2027-06-29,1400000.0
+2026-27,ENG1,Coventry City,Ethan Pinnock,855864,D,1993-05-28,Left,194.0,Jamaica,,2800000.0
+2026-27,ENG1,Coventry City,Milan van Ewijk,948723,D,2000-09-07,Right,175.0,Netherlands,2027-06-29,23000000.0
+2026-27,ENG1,Coventry City,Aurèle Amenda,999276,D,2003-07-30,Right,194.0,Switzerland,,10300000.0
+2026-27,ENG1,Coventry City,Joel Latibeaudiere,859763,D,2000-01-05,Right,180.0,Jamaica,2027-06-29,3300000.0
+2026-27,ENG1,Coventry City,Bobby Thomas,1033352,D,2001-01-29,Right,186.0,England,2029-06-29,16500000.0
+2026-27,ENG1,Coventry City,Kaine Kesler-Hayden,1099074,D,2002-10-22,Right,175.0,England,2029-06-29,3200000.0
+2026-27,ENG1,Coventry City,Jay DaSilva,791985,D,1998-04-21,Left,170.0,Wales,2027-06-29,8700000.0
+2026-27,ENG1,Coventry City,Luke Woolfenden,893478,D,1998-10-20,Right,193.0,England,2028-06-29,2100000.0
+2026-27,ENG1,Coventry City,Jake Bidwell,103115,D,1993-03-20,Left,183.0,England,2027-06-29,580000.0
+2026-27,ENG1,Coventry City,Carl Rushworth,1005800,G,2001-07-01,Left,191.0,England,,15500000.0
+2026-27,ENG1,Coventry City,Daniel Bentley,101367,G,1993-07-12,Right,188.0,England,2028-06-29,730000.0
+2026-27,ENG1,Coventry City,Ben Wilson,216590,G,1992-08-08,Right,186.0,England,2027-06-29,290000.0
+2026-27,ENG1,Crystal Palace,Ismaïla Sarr,845286,F,1998-02-24,Right,185.0,Senegal,2029-06-29,43000000.0
+2026-27,ENG1,Crystal Palace,Jean-Philippe Mateta,848276,F,1997-06-27,Right,192.0,France,2027-06-29,29000000.0
+2026-27,ENG1,Crystal Palace,Yéremy Pino,984624,F,2002-10-19,Right,172.0,Spain,2030-06-29,27000000.0
+2026-27,ENG1,Crystal Palace,Jørgen Strand Larsen,876599,F,2000-02-05,Right,193.0,Norway,2030-06-29,41000000.0
+2026-27,ENG1,Crystal Palace,Eddie Nketiah,858194,F,1999-05-29,Right,175.0,England,2029-06-29,10300000.0
+2026-27,ENG1,Crystal Palace,Evann Guessand,930245,F,2001-06-30,Right,185.0,Côte d'Ivoire,2027-06-29,24000000.0
+2026-27,ENG1,Crystal Palace,Matheus França,1116593,F,2004-03-31,Right,184.0,Brazil,2028-06-29,6200000.0
+2026-27,ENG1,Crystal Palace,Darío Osorio,1106824,M,2004-01-23,Left,182.0,Chile,2027-06-29,14600000.0
+2026-27,ENG1,Crystal Palace,Quinten Timber,959805,M,2001-06-16,Right,177.0,Netherlands,2031-06-29,24000000.0
+2026-27,ENG1,Crystal Palace,Daichi Kamada,794338,M,1996-08-04,Right,184.0,Japan,2027-06-29,10300000.0
+2026-27,ENG1,Crystal Palace,Adam Wharton,1109771,M,2004-02-05,Left,182.0,England,2029-06-29,74000000.0
+2026-27,ENG1,Crystal Palace,Jefferson Lerma,355796,M,1994-10-24,Right,179.0,Colombia,2027-06-29,5500000.0
+2026-27,ENG1,Crystal Palace,Óscar Mingueza,859773,M,1999-05-12,Right,184.0,Spain,2030-06-29,18700000.0
+2026-27,ENG1,Crystal Palace,Anan Khalaili,1403362,M,2004-09-02,Right,183.0,Israel,2031-06-29,24000000.0
+2026-27,ENG1,Crystal Palace,Dwight McNeil,935543,M,1999-11-21,Left,183.0,England,2030-06-29,18800000.0
+2026-27,ENG1,Crystal Palace,Tyrick Mitchell,988275,M,1999-08-31,Left,174.0,England,2027-06-29,23000000.0
+2026-27,ENG1,Crystal Palace,Cheick Doucouré,906047,M,2000-01-07,Right,181.0,Mali,2029-06-29,10600000.0
+2026-27,ENG1,Crystal Palace,Jesurun Rak-Sakyi,1101362,M,2002-10-04,Left,178.0,Ghana,2027-06-29,5600000.0
+2026-27,ENG1,Crystal Palace,Will Hughes,193554,M,1995-04-16,Left,185.0,England,2027-06-29,4600000.0
+2026-27,ENG1,Crystal Palace,Zavier Gozo,1578999,M,2007-03-21,Right,180.0,USA,2031-06-29,6400000.0
+2026-27,ENG1,Crystal Palace,Chadi Riad,1064218,D,2003-03-16,Left,186.0,Morocco,2029-06-29,19400000.0
+2026-27,ENG1,Crystal Palace,Takehiro Tomiyasu,804434,D,1998-11-04,Right,188.0,Japan,,5400000.0
+2026-27,ENG1,Crystal Palace,Axel Disasi,827243,D,1998-03-10,Right,190.0,France,2027-05-30,15500000.0
+2026-27,ENG1,Crystal Palace,Ben Chilwell,802695,D,1996-12-20,Left,181.0,England,,9200000.0
+2026-27,ENG1,Crystal Palace,Honest Ahanor,1634980,D,2008-02-22,Left,184.0,Italy,2027-06-29,31000000.0
+2026-27,ENG1,Crystal Palace,Chris Richards,931844,D,2000-03-27,Right,188.0,USA,2027-06-29,25000000.0
+2026-27,ENG1,Crystal Palace,Jaydee Canvot,1471671,D,2006-07-28,Right,188.0,France,2029-06-29,25000000.0
+2026-27,ENG1,Crystal Palace,Dean Henderson,788134,G,1997-03-11,Right,188.0,England,2028-06-29,29000000.0
+2026-27,ENG1,Crystal Palace,Walter Benítez,249859,G,1993-01-18,Right,193.0,Argentina,2028-06-29,3700000.0
+2026-27,ENG1,Crystal Palace,Remi Matthews,581610,G,1994-02-09,Right,184.0,England,2027-06-29,220000.0
+2026-27,ENG1,Aston Villa,Alejandro Garnacho,1135873,F,2004-06-30,Right,180.0,Argentina,2027-06-29,26000000.0
+2026-27,ENG1,Aston Villa,Nicolas Jackson,1085381,F,2001-06-19,Right,186.0,Senegal,2031-06-29,39000000.0
+2026-27,ENG1,Aston Villa,Ibrahim Mbaye,1590918,F,2008-01-23,Right,175.0,Senegal,,29000000.0
+2026-27,ENG1,Aston Villa,Tammy Abraham,610766,F,1997-10-01,Right,195.0,England,2030-06-29,16500000.0
+2026-27,ENG1,Aston Villa,Brian Madjo,2070311,F,2009-01-11,Right,193.0,England,2032-06-29,12600000.0
+2026-27,ENG1,Aston Villa,João Gomes,1015267,M,2001-02-11,Right,176.0,Brazil,2031-06-29,36000000.0
+2026-27,ENG1,Aston Villa,Johan Manzambi,1518931,M,2005-10-13,Right,182.0,Switzerland,,71000000.0
+2026-27,ENG1,Aston Villa,Leon Goretzka,184661,M,1995-02-05,Right,189.0,Germany,2028-06-29,10900000.0
+2026-27,ENG1,Aston Villa,Emiliano Buendía,783126,M,1996-12-24,Right,170.0,Argentina,2027-06-29,14600000.0
+2026-27,ENG1,Aston Villa,Amadou Onana,923973,M,2001-08-15,Both,195.0,Belgium,2029-06-29,41000000.0
+2026-27,ENG1,Aston Villa,John McGinn,250223,M,1994-10-17,Left,175.0,Scotland,2028-06-29,12600000.0
+2026-27,ENG1,Aston Villa,Boubacar Kamara,826204,M,1999-11-22,Right,184.0,France,2030-06-29,39000000.0
+2026-27,ENG1,Aston Villa,Alysson,1631879,M,2006-05-04,Left,184.0,Brazil,2031-06-29,10800000.0
+2026-27,ENG1,Aston Villa,Ross Barkley,98435,M,1993-12-04,Right,188.0,England,2027-06-29,3600000.0
+2026-27,ENG1,Aston Villa,George Hemmings,1398204,M,2007-03-03,Both,182.0,England,,860000.0
+2026-27,ENG1,Aston Villa,Lamare Bogarde,1089388,M,2004-01-04,Right,183.0,Netherlands,2028-06-29,17500000.0
+2026-27,ENG1,Aston Villa,Aaron Wan-Bissaka,863653,D,1997-11-25,Right,183.0,DR Congo,2027-06-29,14100000.0
+2026-27,ENG1,Aston Villa,Matty Cash,833956,D,1997-08-06,Right,185.0,Poland,2029-06-29,19800000.0
+2026-27,ENG1,Aston Villa,Victor Lindelöf,143334,D,1994-07-16,Right,187.0,Sweden,2027-06-29,4800000.0
+2026-27,ENG1,Aston Villa,Ian Maatsen,976263,D,2002-03-09,Left,178.0,Netherlands,2030-06-29,28000000.0
+2026-27,ENG1,Aston Villa,Pau Torres,864169,D,1997-01-15,Left,192.0,Spain,2028-06-29,21000000.0
+2026-27,ENG1,Aston Villa,Matteo Ruggeri,965011,D,2002-07-10,Left,187.0,Italy,,27000000.0
+2026-27,ENG1,Aston Villa,Tyrone Mings,303638,D,1993-03-12,Left,195.0,England,2027-06-29,3200000.0
+2026-27,ENG1,Aston Villa,Taylor Harwood-Bellis,980637,D,2002-01-28,Right,188.0,England,,22000000.0
+2026-27,ENG1,Aston Villa,Modou Kéba Cissé,1944705,D,2005-08-03,Right,191.0,Senegal,2029-06-29,5400000.0
+2026-27,ENG1,Aston Villa,Zion Suzuki,905351,G,2002-08-20,Right,189.0,Japan,,31000000.0
+2026-27,ENG1,Aston Villa,Marco Bizot,100390,G,1991-03-09,Right,194.0,Netherlands,2027-06-29,1400000.0
+2026-27,ENG1,Aston Villa,Owen Asemota,2725908,G,2008-04-11,,,England,,
+2026-27,ENG1,Tottenham Hotspur,Omar Marmoush,873554,F,1999-02-06,Right,183.0,Egypt,2027-06-29,55000000.0
+2026-27,ENG1,Tottenham Hotspur,Richarlison,840217,F,1997-05-09,Right,184.0,Brazil,2027-06-29,24000000.0
+2026-27,ENG1,Tottenham Hotspur,Mathys Tel,1048888,F,2005-04-26,Right,183.0,France,2031-06-29,23000000.0
+2026-27,ENG1,Tottenham Hotspur,Dominic Solanke,361420,F,1997-09-13,Right,186.0,England,2030-06-29,31000000.0
+2026-27,ENG1,Tottenham Hotspur,Wilson Odobert,1142679,F,2004-11-27,Right,182.0,France,2029-06-29,18500000.0
+2026-27,ENG1,Tottenham Hotspur,Reiss Elliot-Parris,2725921,F,2007-04-10,Right,179.0,England,,
+2026-27,ENG1,Tottenham Hotspur,Mohammed Kudus,905163,M,2000-08-01,Left,176.0,Ghana,2031-06-29,54000000.0
+2026-27,ENG1,Tottenham Hotspur,Mykhailo Mudryk,958966,M,2001-01-04,Right,175.0,Ukraine,2027-06-29,42000000.0
+2026-27,ENG1,Tottenham Hotspur,Sávio,1046795,M,2004-04-09,Left,176.0,Brazil,,37000000.0
+2026-27,ENG1,Tottenham Hotspur,Xavi Simons,997183,M,2003-04-20,Right,179.0,Netherlands,2030-06-29,43000000.0
+2026-27,ENG1,Tottenham Hotspur,Sandro Tonali,892673,M,2000-05-07,Right,181.0,Italy,2032-06-29,74000000.0
+2026-27,ENG1,Tottenham Hotspur,Conor Gallagher,904970,M,2000-02-05,Right,182.0,England,2031-06-29,31000000.0
+2026-27,ENG1,Tottenham Hotspur,James Maddison,356398,M,1996-11-22,Right,175.0,England,2028-06-29,19400000.0
+2026-27,ENG1,Tottenham Hotspur,Dejan Kulusevski,928124,M,2000-04-24,Left,186.0,Sweden,2028-06-29,16500000.0
+2026-27,ENG1,Tottenham Hotspur,Lucas Bergvall,1391251,M,2006-02-01,Right,186.0,Sweden,2031-06-29,36000000.0
+2026-27,ENG1,Tottenham Hotspur,Rodrigo Bentancur,791190,M,1997-06-24,Both,187.0,Uruguay,2029-06-29,19300000.0
+2026-27,ENG1,Tottenham Hotspur,Mateus Fernandes,1142562,M,2004-07-09,Right,178.0,Portugal,2031-06-29,49000000.0
+2026-27,ENG1,Tottenham Hotspur,Archie Gray,1142335,M,2006-03-11,Right,187.0,England,2030-06-29,34000000.0
+2026-27,ENG1,Tottenham Hotspur,Andy Robertson,262911,D,1994-03-10,Left,178.0,Scotland,2030-06-29,7500000.0
+2026-27,ENG1,Tottenham Hotspur,Pedro Porro,913654,D,1999-09-12,Right,173.0,Spain,2031-06-29,42000000.0
+2026-27,ENG1,Tottenham Hotspur,Micky van de Ven,998247,D,2001-04-18,Left,193.0,Netherlands,2031-06-29,49000000.0
+2026-27,ENG1,Tottenham Hotspur,Marcos Senesi,830659,D,1997-05-09,Left,184.0,Argentina,2030-06-29,23000000.0
+2026-27,ENG1,Tottenham Hotspur,Tosin Adarabioyo,352668,D,1997-09-23,Right,196.0,England,,16500000.0
+2026-27,ENG1,Tottenham Hotspur,Jan Paul van Hecke,962012,D,2000-06-07,Right,189.0,Netherlands,,65000000.0
+2026-27,ENG1,Tottenham Hotspur,Destiny Udogie,983572,D,2002-11-27,Left,186.0,Italy,2030-06-29,28000000.0
+2026-27,ENG1,Tottenham Hotspur,Ben Davies,94758,D,1993-04-23,Left,181.0,Wales,2027-06-29,2800000.0
+2026-27,ENG1,Tottenham Hotspur,Antonín Kinský,1031251,G,2003-03-12,Right,190.0,Czechia,2031-06-29,15700000.0
+2026-27,ENG1,Tottenham Hotspur,Martin Dúbravka,42209,G,1989-01-14,Right,190.0,Slovakia,2027-06-29,485000.0
+2026-27,ENG1,Tottenham Hotspur,Brandon Austin,859896,G,1999-01-07,Right,188.0,England,2029-06-29,530000.0
+2026-27,GER1,FC Bayern München,Harry Kane,108579,F,1993-07-27,Right,188.0,England,2027-06-29,65000000.0
+2026-27,GER1,FC Bayern München,Michael Olise,978838,M,2001-12-11,Left,184.0,France,2029-06-29,164000000.0
+2026-27,GER1,FC Bayern München,Luis Díaz,883537,M,1997-01-12,Right,178.0,Colombia,2029-06-29,76000000.0
+2026-27,GER1,FC Bayern München,Jamal Musiala,1010231,M,2003-02-25,Right,184.0,Germany,2030-06-29,97000000.0
+2026-27,GER1,FC Bayern München,Ismael Saibari,1063767,M,2001-01-27,Right,185.0,Morocco,2031-06-29,60000000.0
+2026-27,GER1,FC Bayern München,Joshua Kimmich,259117,M,1995-02-07,Right,176.0,Germany,2029-06-29,38000000.0
+2026-27,GER1,FC Bayern München,Lennart Karl,1861975,M,2008-02-21,Left,168.0,Germany,2029-06-29,63000000.0
+2026-27,GER1,FC Bayern München,Serge Gnabry,187433,M,1995-07-13,Right,176.0,Germany,2028-06-29,18900000.0
+2026-27,GER1,FC Bayern München,Aleksandar Pavlović,1142251,M,2004-05-02,Both,186.0,Germany,2029-06-29,96000000.0
+2026-27,GER1,FC Bayern München,Bara Sapoko Ndiaye,2427970,M,2007-12-30,Right,180.0,Senegal,2031-06-29,3700000.0
+2026-27,GER1,FC Bayern München,Tom Bischof,1129935,M,2005-06-27,Left,176.0,Germany,2029-06-29,39000000.0
+2026-27,GER1,FC Bayern München,Alphonso Davies,843665,D,2000-11-01,Left,185.0,Canada,2030-06-29,39000000.0
+2026-27,GER1,FC Bayern München,Dayot Upamecano,798583,D,1998-10-26,Right,185.0,France,2030-06-29,69000000.0
+2026-27,GER1,FC Bayern München,Kim Min-jae,896569,D,1996-11-14,Right,190.0,South Korea,2028-06-29,21000000.0
+2026-27,GER1,FC Bayern München,Sacha Boey,980418,D,2000-09-12,Right,178.0,France,2028-06-29,9200000.0
+2026-27,GER1,FC Bayern München,Jonathan Tah,227672,D,1996-02-10,Right,194.0,Germany,2029-06-29,26000000.0
+2026-27,GER1,FC Bayern München,Josip Stanišić,927407,D,2000-04-01,Right,186.0,Croatia,2029-06-29,39000000.0
+2026-27,GER1,FC Bayern München,Konrad Laimer,355492,D,1997-05-26,Right,180.0,Austria,2029-06-29,31000000.0
+2026-27,GER1,FC Bayern München,Nathaniel Brown,1159759,D,2003-06-15,Left,179.0,Germany,2031-06-29,46000000.0
+2026-27,GER1,FC Bayern München,Hiroki Itō,873106,D,1999-05-11,Left,188.0,Japan,2028-06-29,19800000.0
+2026-27,GER1,FC Bayern München,Manuel Neuer,8959,G,1986-03-26,Right,193.0,Germany,2027-06-29,4099999.0
+2026-27,GER1,FC Bayern München,Jonas Urbig,1130647,G,2003-08-07,Both,189.0,Germany,2029-06-29,19600000.0
+2026-27,GER1,FC Bayern München,Sven Ulreich,26768,G,1988-08-02,Right,192.0,Germany,2027-06-29,515000.0
+2026-27,GER1,SC Freiburg,Igor Matanović,1019321,F,2003-03-30,Right,197.0,Croatia,,21000000.0
+2026-27,GER1,SC Freiburg,Keisuke Goto,1391315,F,2005-06-02,Right,191.0,Japan,,9300000.0
+2026-27,GER1,SC Freiburg,Lucas Höler,280009,F,1994-07-09,Right,184.0,Germany,,2900000.0
+2026-27,GER1,SC Freiburg,Derry Scherhant,1131002,F,2002-11-09,Right,184.0,Germany,,7300000.0
+2026-27,GER1,SC Freiburg,Cyriaque Irié,1508537,M,2005-06-19,Left,184.0,Burkina Faso,,8199999.0
+2026-27,GER1,SC Freiburg,Yuito Suzuki,1020422,M,2001-10-24,Right,175.0,Japan,,25000000.0
+2026-27,GER1,SC Freiburg,Vincenzo Grifo,171961,M,1993-04-06,Right,181.0,Italy,,3700000.0
+2026-27,GER1,SC Freiburg,Jan-Niklas Beste,836711,M,1999-01-03,Left,177.0,Germany,2030-06-29,10800000.0
+2026-27,GER1,SC Freiburg,Florent Muslija,882019,M,1998-07-05,Right,172.0,Kosovo,2028-06-29,1900000.0
+2026-27,GER1,SC Freiburg,Rihito Yamamoto,1030211,M,2001-12-11,Left,179.0,Japan,,7400000.0
+2026-27,GER1,SC Freiburg,Maximilian Eggestein,569784,M,1996-12-07,Right,181.0,Germany,,10500000.0
+2026-27,GER1,SC Freiburg,Yannick Engelhardt,990209,M,2001-02-06,Right,184.0,Germany,,6500000.0
+2026-27,GER1,SC Freiburg,Patrick Osterhage,914755,M,2000-01-31,Left,183.0,Germany,,11600000.0
+2026-27,GER1,SC Freiburg,Rouven Tarnutzer,2217897,M,2007-07-23,Right,181.0,Switzerland,2027-06-29,380000.0
+2026-27,GER1,SC Freiburg,Matthias Ginter,142259,D,1994-01-18,Right,189.0,Germany,2027-06-29,4800000.0
+2026-27,GER1,SC Freiburg,Philipp Lienhart,576266,D,1996-07-10,Right,189.0,Austria,,9600000.0
+2026-27,GER1,SC Freiburg,Jordy Makengo,1131339,D,2001-08-01,Left,191.0,France,2028-06-29,5800000.0
+2026-27,GER1,SC Freiburg,Berkay Yılmaz,1195724,D,2005-02-24,Left,182.0,Türkiye,,6300000.0
+2026-27,GER1,SC Freiburg,Christian Günter,142231,D,1993-02-27,Left,184.0,Germany,,1900000.0
+2026-27,GER1,SC Freiburg,Bruno Ogbus,1596573,D,2005-12-16,Right,188.0,Switzerland,,14000000.0
+2026-27,GER1,SC Freiburg,Maximilian Rosenfelder,1131337,D,2003-02-09,Right,186.0,Germany,,6300000.0
+2026-27,GER1,SC Freiburg,Lukas Kübler,142525,D,1992-08-29,Right,183.0,Germany,,1500000.0
+2026-27,GER1,SC Freiburg,Philipp Treu,979820,D,2000-12-02,Right,172.0,Germany,,15900000.0
+2026-27,GER1,SC Freiburg,Anthony Jung,103442,D,1991-11-02,Left,186.0,Germany,2027-06-29,580000.0
+2026-27,GER1,SC Freiburg,Mio Backhaus,1083390,G,2004-04-15,Right,194.0,Germany,,14400000.0
+2026-27,GER1,SC Freiburg,Florian Müller,842858,G,1997-11-12,Left,190.0,Germany,,1200000.0
+2026-27,GER1,SC Freiburg,Jannik Huth,174341,G,1994-04-14,Right,185.0,Germany,,435000.0
+2026-27,GER1,RB Leipzig,Christopher Nkunku,769333,F,1997-11-13,Right,175.0,France,2027-06-29,26000000.0
+2026-27,GER1,RB Leipzig,Marc Guiu,1414933,F,2006-01-03,Right,187.0,Spain,2031-06-29,11200000.0
+2026-27,GER1,RB Leipzig,Antonio Nusa,1121923,F,2005-04-16,Right,180.0,Norway,2029-06-29,31000000.0
+2026-27,GER1,RB Leipzig,Johan Bakayoko,1088896,F,2003-04-19,Left,179.0,Belgium,2030-06-29,18600000.0
+2026-27,GER1,RB Leipzig,Rômulo,1133743,F,2002-02-07,Right,193.0,Brazil,2030-06-29,32000000.0
+2026-27,GER1,RB Leipzig,Tidiam Gomis,1426577,F,2006-08-07,Right,183.0,France,2029-06-29,5300000.0
+2026-27,GER1,RB Leipzig,Sani Suleiman,1894870,F,2006-08-31,Both,175.0,Nigeria,2031-06-29,5400000.0
+2026-27,GER1,RB Leipzig,Samba Konaté,2269705,F,2009-02-26,Right,190.0,France,2028-06-29,970000.0
+2026-27,GER1,RB Leipzig,Neil El Aynaoui,1128530,M,2001-07-01,Right,186.0,Morocco,2027-06-29,29000000.0
+2026-27,GER1,RB Leipzig,Assan Ouédraogo,1418623,M,2006-05-08,Right,192.0,Germany,2029-06-29,26000000.0
+2026-27,GER1,RB Leipzig,Andrija Maksimović,1406171,M,2007-06-04,Both,182.0,Serbia,2030-06-29,8600000.0
+2026-27,GER1,RB Leipzig,Brajan Gruda,1198075,M,2004-05-30,Left,178.0,Germany,2027-06-29,29000000.0
+2026-27,GER1,RB Leipzig,Christoph Baumgartner,825956,M,1999-07-31,Right,180.0,Austria,2028-06-29,42000000.0
+2026-27,GER1,RB Leipzig,Nicolas Seiwald,976575,M,2001-05-03,Right,179.0,Austria,2028-06-29,24000000.0
+2026-27,GER1,RB Leipzig,Ezechiel Banzuzi,1155383,M,2005-02-15,Right,191.0,Netherlands,2030-06-29,16800000.0
+2026-27,GER1,RB Leipzig,Rocco Reitz,1048650,M,2002-05-28,Both,175.0,Germany,2031-06-29,22000000.0
+2026-27,GER1,RB Leipzig,Viggo Gebel,1900995,M,2007-11-21,Right,175.0,Germany,2028-06-29,340000.0
+2026-27,GER1,RB Leipzig,Benno Kaltefleiter,1925472,M,2008-02-13,Right,189.0,Germany,2029-06-29,
+2026-27,GER1,RB Leipzig,Castello Lukeba,976421,D,2002-12-16,Left,184.0,France,2029-06-29,49000000.0
+2026-27,GER1,RB Leipzig,Willi Orbán,136924,D,1992-11-02,Right,186.0,Hungary,2027-06-29,5500000.0
+2026-27,GER1,RB Leipzig,David Raum,856076,D,1998-04-21,Left,180.0,Germany,2027-06-29,27000000.0
+2026-27,GER1,RB Leipzig,Ridle Baku,856553,D,1998-04-07,Right,176.0,Germany,2027-06-29,12800000.0
+2026-27,GER1,RB Leipzig,Maxime Estève,1117223,D,2002-05-25,Left,192.0,France,2031-06-29,26000000.0
+2026-27,GER1,RB Leipzig,Benjamin Henrichs,319857,D,1997-02-22,Both,182.0,Germany,2028-06-29,7600000.0
+2026-27,GER1,RB Leipzig,Lukas Klostermann,319853,D,1996-06-02,Right,188.0,Germany,2028-06-29,3400000.0
+2026-27,GER1,RB Leipzig,Abdoul Kone,1859949,D,2005-04-21,Right,191.0,France,2031-06-29,13800000.0
+2026-27,GER1,RB Leipzig,Max Finkgräfe,1146250,D,2004-03-26,Left,183.0,Germany,2030-06-29,5400000.0
+2026-27,GER1,RB Leipzig,Ørjan Nyland,22209,G,1990-09-09,Right,192.0,Norway,2028-06-29,825000.0
+2026-27,GER1,RB Leipzig,Maarten Vandevoordt,934385,G,2002-02-25,Right,192.0,Belgium,2030-06-29,16399999.0
+2026-27,GER1,RB Leipzig,Leopold Zingerle,148263,G,1994-04-09,Right,182.0,Germany,2028-06-29,280000.0
+2026-27,GER1,FC Augsburg,Steve Mounié,345035,F,1994-09-28,Right,190.0,Benin,2027-06-29,1500000.0
+2026-27,GER1,FC Augsburg,Michael Gregoritsch,111483,F,1994-04-17,Left,193.0,Austria,2027-06-29,1600000.0
+2026-27,GER1,FC Augsburg,Rodrigo Ribeiro,1215904,F,2005-04-27,Right,185.0,Portugal,2031-06-29,3900000.0
+2026-27,GER1,FC Augsburg,Alexis Claude-Maurice,822877,F,1998-06-05,Right,174.0,France,2027-06-29,16200000.0
+2026-27,GER1,FC Augsburg,Uchenna Ogundu,1996846,F,2006-05-11,Right,188.0,Nigeria,2031-06-29,4200000.0
+2026-27,GER1,FC Augsburg,Faik Sakar,1901001,F,2008-01-13,Right,174.0,Germany,2030-06-29,205000.0
+2026-27,GER1,FC Augsburg,Arijon Ibrahimović,1142248,M,2005-12-10,Right,176.0,Germany,2027-06-29,10500000.0
+2026-27,GER1,FC Augsburg,Kristijan Jakić,796206,M,1997-05-13,Right,181.0,Croatia,2028-06-29,5600000.0
+2026-27,GER1,FC Augsburg,Fabian Rieder,929620,M,2002-02-15,Left,181.0,Switzerland,2030-06-29,11100000.0
+2026-27,GER1,FC Augsburg,Mert Kömür,1390682,M,2005-07-16,Both,183.0,Germany,2029-06-29,11600000.0
+2026-27,GER1,FC Augsburg,Han-Noah Massengo,927340,M,2001-07-05,Right,175.0,France,2030-06-29,8199999.0
+2026-27,GER1,FC Augsburg,Marius Wolf,254119,M,1995-05-26,Right,187.0,Germany,2027-06-29,2300000.0
+2026-27,GER1,FC Augsburg,Anton Kade,1129365,M,2004-01-16,Right,179.0,Germany,2029-06-29,10300000.0
+2026-27,GER1,FC Augsburg,Yannik Keitel,877842,M,2000-02-14,Both,186.0,Germany,2027-06-29,1900000.0
+2026-27,GER1,FC Augsburg,Robin Fellhauer,860461,M,1998-01-20,Right,185.0,Germany,2029-06-29,3700000.0
+2026-27,GER1,FC Augsburg,Tim Breithaupt,1049177,M,2002-02-06,Right,192.0,Germany,2028-06-29,740000.0
+2026-27,GER1,FC Augsburg,Sima Suso,1540234,M,2005-05-27,Left,189.0,Germany,2031-06-29,2700000.0
+2026-27,GER1,FC Augsburg,Tim Schnitzer,1861987,M,2008-02-06,,185.0,Germany,2029-06-29,525000.0
+2026-27,GER1,FC Augsburg,Abdulai Juma Bah,1606792,D,2006-04-10,Right,195.0,Sierra Leone,2027-06-29,10400000.0
+2026-27,GER1,FC Augsburg,Young-woo Seol,1019333,D,1998-12-04,Right,181.0,South Korea,2030-06-29,6700000.0
+2026-27,GER1,FC Augsburg,Noahkai Banks,1597260,D,2006-11-30,Right,193.0,USA,2029-06-29,19400000.0
+2026-27,GER1,FC Augsburg,Chrislain Matsima,963198,D,2002-05-14,Right,192.0,France,2030-06-29,21000000.0
+2026-27,GER1,FC Augsburg,Hennes Behrens,1864760,D,2005-01-18,Right,174.0,Germany,2031-06-29,5200000.0
+2026-27,GER1,FC Augsburg,Jeffrey Gouweleeuw,146853,D,1991-07-09,Right,187.0,Netherlands,2027-06-29,1000000.0
+2026-27,GER1,FC Augsburg,Calvin Brackelmann,1128792,D,1999-08-21,Left,196.0,Germany,2030-06-29,3200000.0
+2026-27,GER1,FC Augsburg,Nediljko Labrović,947986,G,1999-10-09,Right,196.0,Croatia,2029-06-29,2100000.0
+2026-27,GER1,FC Augsburg,Finn Dahmen,822564,G,1998-03-26,Right,188.0,Germany,2027-06-29,12500000.0
+2026-27,GER1,FC Augsburg,Tom Wisbereit,1995013,G,2007-11-16,,195.0,Germany,2030-06-29,
+2026-27,GER1,Borussia Dortmund,Serhou Guirassy,328027,F,1996-03-11,Right,187.0,Guinea,2028-06-29,34000000.0
+2026-27,GER1,Borussia Dortmund,Maximilian Beier,980628,F,2002-10-16,Right,183.0,Germany,2029-06-29,43000000.0
+2026-27,GER1,Borussia Dortmund,Fábio Silva,954076,F,2002-07-18,Right,185.0,Portugal,2030-06-29,21000000.0
+2026-27,GER1,Borussia Dortmund,Mathis Albert,1937835,F,2009-05-20,Right,179.0,USA,2027-06-29,310000.0
+2026-27,GER1,Borussia Dortmund,Jobe Bellingham,1134083,M,2005-09-22,Right,189.0,England,2030-06-29,38000000.0
+2026-27,GER1,Borussia Dortmund,Ethan Nwaneri,1401702,M,2007-03-20,Left,176.0,England,2027-06-29,34000000.0
+2026-27,GER1,Borussia Dortmund,Konstantinos Karetsas,1468744,M,2007-11-18,Left,171.0,Greece,2031-06-29,34000000.0
+2026-27,GER1,Borussia Dortmund,Carney Chukwuemeka,994556,M,2003-10-19,Right,185.0,Austria,2030-06-29,18100000.0
+2026-27,GER1,Borussia Dortmund,Felix Nmecha,907463,M,2000-10-09,Right,190.0,Germany,2030-06-29,53000000.0
+2026-27,GER1,Borussia Dortmund,Marcel Sabitzer,133908,M,1994-03-16,Right,177.0,Austria,2027-06-29,6200000.0
+2026-27,GER1,Borussia Dortmund,Giannis Konstantelias,1002007,M,2003-03-04,Both,178.0,Greece,2031-06-29,20000000.0
+2026-27,GER1,Borussia Dortmund,Julian Ryerson,800951,M,1997-11-16,Right,183.0,Norway,2028-06-29,24000000.0
+2026-27,GER1,Borussia Dortmund,Samuele Inacio,1861666,M,2008-04-01,Right,175.0,Italy,2029-06-29,15900000.0
+2026-27,GER1,Borussia Dortmund,Joey Veerman,850816,M,1998-11-18,Right,185.0,Netherlands,2031-06-29,26000000.0
+2026-27,GER1,Borussia Dortmund,Daniel Svensson,1021272,M,2002-02-11,Left,183.0,Sweden,2029-06-29,20000000.0
+2026-27,GER1,Borussia Dortmund,Justin Lerma,1836843,M,2008-05-04,Right,176.0,Ecuador,2031-06-29,3100000.0
+2026-27,GER1,Borussia Dortmund,Mussa Kaba,1931662,M,2008-11-16,Right,194.0,Germany,2031-06-29,215000.0
+2026-27,GER1,Borussia Dortmund,Enzo Duarte,1957706,M,2009-01-27,Right,186.0,Luxembourg,2029-06-29,240000.0
+2026-27,GER1,Borussia Dortmund,Ramy Bensebaini,577726,D,1995-04-15,Left,186.0,Algeria,2027-06-29,7400000.0
+2026-27,GER1,Borussia Dortmund,Nico Schlotterbeck,940871,D,1999-11-30,Left,191.0,Germany,2031-06-29,57000000.0
+2026-27,GER1,Borussia Dortmund,Emre Can,138156,D,1994-01-11,Right,186.0,Germany,2027-06-29,3200000.0
+2026-27,GER1,Borussia Dortmund,Waldemar Anton,799046,D,1996-07-19,Right,189.0,Germany,2028-06-29,19700000.0
+2026-27,GER1,Borussia Dortmund,Filippo Mané,1137131,D,2005-03-07,Right,188.0,Italy,2028-06-29,2400000.0
+2026-27,GER1,Borussia Dortmund,Kauã Prates,1887796,D,2008-08-10,Left,182.0,Brazil,2031-06-29,10300000.0
+2026-27,GER1,Borussia Dortmund,Luca Reggiani,1937833,D,2008-01-08,Right,192.0,Italy,,9700000.0
+2026-27,GER1,Borussia Dortmund,Joane Gadou,1471049,D,2007-01-16,Right,195.0,France,2031-06-29,18500000.0
+2026-27,GER1,Borussia Dortmund,Gregor Kobel,556866,G,1997-12-05,Right,193.0,Switzerland,2028-06-29,41000000.0
+2026-27,GER1,Borussia Dortmund,Alexander Meyer,138491,G,1991-04-12,Right,196.0,Germany,2027-06-29,475000.0
+2026-27,GER1,Borussia Dortmund,Silas Ostrzinski,1140591,G,2003-11-18,Right,197.0,Germany,2027-06-29,205000.0
+2026-27,GER1,Borussia Dortmund,Patrick Drewes,132607,G,1993-02-03,Right,194.0,Germany,2027-06-29,315000.0
+2026-27,GER1,SV 07 Elversberg,Cole Campbell,1134578,F,2006-02-19,Left,170.0,USA,2030-06-29,4800000.0
+2026-27,GER1,SV 07 Elversberg,Noel Futkeu,1017574,F,2002-12-05,Right,183.0,Germany,2027-06-29,7300000.0
+2026-27,GER1,SV 07 Elversberg,David Mokwa,1432398,F,2004-05-02,Left,181.0,France,2029-06-29,3800000.0
+2026-27,GER1,SV 07 Elversberg,Luca Pfeiffer,842212,F,1996-08-19,Right,196.0,Germany,2028-06-29,480000.0
+2026-27,GER1,SV 07 Elversberg,Luca Schnellbacher,254133,F,1994-05-05,Right,183.0,Germany,2028-06-29,480000.0
+2026-27,GER1,SV 07 Elversberg,Raif Adam,2069061,F,2005-09-06,Left,188.0,Germany,2029-06-29,480000.0
+2026-27,GER1,SV 07 Elversberg,Noah Darvich,1469995,M,2006-09-24,Left,184.0,Germany,2027-06-29,3800000.0
+2026-27,GER1,SV 07 Elversberg,Francis Onyeka,1414916,M,2007-04-28,Left,186.0,Germany,2027-06-29,10600000.0
+2026-27,GER1,SV 07 Elversberg,Maurice Krattenmacher,1153365,M,2005-08-10,Both,180.0,Germany,2030-06-29,3200000.0
+2026-27,GER1,SV 07 Elversberg,Łukasz Poręba,942336,M,2000-03-12,Right,179.0,Poland,2029-06-29,2600000.0
+2026-27,GER1,SV 07 Elversberg,Lukas Petkov,960017,M,2000-10-31,Both,183.0,Bulgaria,2027-06-29,3200000.0
+2026-27,GER1,SV 07 Elversberg,Amara Condé,817978,M,1997-01-05,Right,173.0,Germany,2028-06-29,830000.0
+2026-27,GER1,SV 07 Elversberg,Tom Zimmerschied,887457,M,1998-09-21,Right,180.0,Germany,2029-06-29,1600000.0
+2026-27,GER1,SV 07 Elversberg,Frederik Schmahl,1131347,M,2002-12-20,Right,183.0,Germany,2027-06-29,820000.0
+2026-27,GER1,SV 07 Elversberg,Nicholas Mickelson,900264,D,1999-07-23,Right,179.0,Thailand,2027-06-29,970000.0
+2026-27,GER1,SV 07 Elversberg,Jan Gyamerah,254411,D,1995-06-17,Right,184.0,Ghana,2027-06-29,760000.0
+2026-27,GER1,SV 07 Elversberg,Luca Sirch,964603,D,1999-06-13,Both,185.0,Germany,2029-06-29,2300000.0
+2026-27,GER1,SV 07 Elversberg,Maximilian Rohr,846398,D,1995-06-26,Both,195.0,Germany,2028-06-29,765000.0
+2026-27,GER1,SV 07 Elversberg,Lasse Günther,997175,D,2003-03-20,Left,183.0,Germany,2030-06-29,2300000.0
+2026-27,GER1,SV 07 Elversberg,Lukas Finn Pinckert,990105,D,2000-01-21,Right,189.0,Germany,2028-06-29,2300000.0
+2026-27,GER1,SV 07 Elversberg,Felix Keidel,1215028,D,2003-06-13,Right,178.0,Germany,2028-06-29,1200000.0
+2026-27,GER1,SV 07 Elversberg,Florian Yves Le Joncour,787816,D,1995-02-02,Left,192.0,France,2027-06-29,480000.0
+2026-27,GER1,SV 07 Elversberg,Luis Seifert,1393424,D,2004-01-25,Right,185.0,Germany,2028-06-29,205000.0
+2026-27,GER1,SV 07 Elversberg,Nicolas Kristof,1131080,G,1999-12-19,Both,186.0,Austria,2029-06-29,2300000.0
+2026-27,GER1,SV 07 Elversberg,Tim Boss,142470,G,1993-06-27,Both,185.0,Germany,2027-06-29,215000.0
+2026-27,GER1,SV 07 Elversberg,Frank Lehmann,26767,G,1989-04-28,Right,192.0,Germany,2027-06-29,97000.0
+2026-27,GER1,SV 07 Elversberg,Elias Etringer,2478053,G,2007-11-23,Right,167.0,Germany,2029-06-29,
+2026-27,GER1,1. FC Köln,Mikey Moore,1403192,F,2007-08-10,Right,180.0,England,2027-06-29,18500000.0
+2026-27,GER1,1. FC Köln,Reigan Heskey,1601596,F,2008-01-17,Right,184.0,England,2031-06-29,2200000.0
+2026-27,GER1,1. FC Köln,Thijs Dallinga,905381,F,2000-08-02,Right,190.0,Netherlands,2027-06-29,9800000.0
+2026-27,GER1,1. FC Köln,Ragnar Ache,877544,F,1998-07-27,Right,182.0,Germany,2029-06-29,9400000.0
+2026-27,GER1,1. FC Köln,Luca Waldschmidt,319861,F,1996-05-18,Left,181.0,Germany,2027-06-29,1800000.0
+2026-27,GER1,1. FC Köln,Marius Bülter,378340,F,1993-03-28,Right,188.0,Germany,2027-06-29,1900000.0
+2026-27,GER1,1. FC Köln,Imad Rondić,858600,F,1999-02-15,Right,188.0,Bosnia & Herzegovina,2029-06-29,690000.0
+2026-27,GER1,1. FC Köln,Malek El Mala,1855407,F,2005-04-01,Right,193.0,Germany,2031-06-29,240000.0
+2026-27,GER1,1. FC Köln,Ellyes Skhiri,591706,M,1995-05-09,Right,185.0,Tunisia,2028-06-29,5200000.0
+2026-27,GER1,1. FC Köln,Said El Mala,1800475,M,2006-08-25,Right,185.0,Germany,2031-06-29,46000000.0
+2026-27,GER1,1. FC Köln,Borna Sosa,357584,M,1998-01-20,Left,187.0,Croatia,2027-06-29,2700000.0
+2026-27,GER1,1. FC Köln,Ísak Bergmann Jóhannesson,1112327,M,2003-03-22,Left,180.0,Iceland,2030-06-29,8400000.0
+2026-27,GER1,1. FC Köln,Paul Okon-Engstler,1411105,M,2005-01-23,Left,186.0,Australia,2030-06-29,1100000.0
+2026-27,GER1,1. FC Köln,Linton Maina,921033,M,1999-06-22,Right,173.0,Germany,,3300000.0
+2026-27,GER1,1. FC Köln,Tom Krauß,930272,M,2001-06-21,Right,182.0,Germany,2029-06-29,4700000.0
+2026-27,GER1,1. FC Köln,Jan Uwe Thielmann,1010726,M,2002-05-25,Right,178.0,Germany,2028-06-29,4500000.0
+2026-27,GER1,1. FC Köln,Alessio Castro-Montes,839898,M,1997-05-16,Right,175.0,Belgium,2028-06-29,2700000.0
+2026-27,GER1,1. FC Köln,Gil Matteo Neves,1426231,M,2008-02-08,Right,189.0,Portugal,2029-06-29,
+2026-27,GER1,1. FC Köln,Gideon Mensah,844942,D,1998-07-17,Left,177.0,Ghana,2028-06-29,3700000.0
+2026-27,GER1,1. FC Köln,Jahmai Simpson-Pusey,1402924,D,2005-11-03,Right,187.0,England,2030-06-29,9300000.0
+2026-27,GER1,1. FC Köln,Luka Lochoshvili,827473,D,1998-05-28,Left,191.0,Georgia,2029-06-29,2600000.0
+2026-27,GER1,1. FC Köln,Rav van den Berg,1014493,D,2004-07-06,Right,190.0,Netherlands,2030-06-29,7300000.0
+2026-27,GER1,1. FC Köln,Timo Hübers,387220,D,1996-07-19,Right,190.0,Germany,2027-06-29,1400000.0
+2026-27,GER1,1. FC Köln,Sebastian Sebulonsen,1020206,D,2000-01-26,Right,187.0,Norway,2028-06-29,5100000.0
+2026-27,GER1,1. FC Köln,Joel Schmied,965950,D,1998-09-22,Right,188.0,Switzerland,2029-06-29,3100000.0
+2026-27,GER1,1. FC Köln,Martin James,1952390,G,2008-02-13,Right,186.0,France,2029-06-29,
+2026-27,GER1,1. FC Köln,Marvin Schwäbe,187185,G,1995-04-24,Right,189.0,Germany,2027-06-29,3200000.0
+2026-27,GER1,1. FC Köln,Ron-Robert Zieler,41615,G,1989-02-11,Right,188.0,Germany,2027-06-29,455000.0
+2026-27,GER1,1. FC Köln,Matthias Köbbing,840352,G,1997-05-27,Both,196.0,Germany,2027-06-29,97000.0
+2026-27,GER1,Eintracht Frankfurt,Ayoube Amaimouni Echghouyab,1898148,F,2004-11-29,Left,178.0,Morocco,2031-06-29,10900000.0
+2026-27,GER1,Eintracht Frankfurt,Jonathan Burkardt,939830,F,2000-07-10,Right,181.0,Germany,2030-06-29,29000000.0
+2026-27,GER1,Eintracht Frankfurt,Younes Ebnoutalib,1474296,F,2003-09-12,Right,191.0,Germany,2031-06-29,8800000.0
+2026-27,GER1,Eintracht Frankfurt,Ansgar Knauff,997012,F,2002-01-09,Right,180.0,Germany,2028-06-29,15500000.0
+2026-27,GER1,Eintracht Frankfurt,Jessic Ngankam,906276,F,2000-07-19,Right,180.0,Germany,2028-06-29,720000.0
+2026-27,GER1,Eintracht Frankfurt,Malik Pimpong,1957761,F,2007-12-31,Right,190.0,Denmark,2031-06-29,4300000.0
+2026-27,GER1,Eintracht Frankfurt,Farès Chaïbi,1192318,M,2002-11-27,Right,183.0,Algeria,2028-06-29,14500000.0
+2026-27,GER1,Eintracht Frankfurt,Can Uzun,1440948,M,2005-11-10,Both,186.0,Türkiye,2029-06-29,44000000.0
+2026-27,GER1,Eintracht Frankfurt,Ritsu Doan,790965,M,1998-06-15,Left,172.0,Japan,2030-06-29,15600000.0
+2026-27,GER1,Eintracht Frankfurt,Raphael Onyedika,1129862,M,2001-04-18,Right,184.0,Nigeria,2031-06-29,24000000.0
+2026-27,GER1,Eintracht Frankfurt,Mario Götze,66518,M,1992-06-02,Right,176.0,Germany,2028-06-29,3100000.0
+2026-27,GER1,Eintracht Frankfurt,Noël Aséko,1410926,M,2005-11-21,Right,178.0,Germany,2031-06-29,12400000.0
+2026-27,GER1,Eintracht Frankfurt,Oscar Højlund,1149113,M,2005-01-03,Right,184.0,Denmark,2029-06-29,14600000.0
+2026-27,GER1,Eintracht Frankfurt,Love Arrhov,1977245,M,2008-05-16,Right,178.0,Sweden,2028-06-29,5200000.0
+2026-27,GER1,Eintracht Frankfurt,Timothy Chandler,40239,M,1990-03-28,Right,186.0,USA,2027-06-29,375000.0
+2026-27,GER1,Eintracht Frankfurt,Robin Koch,581302,D,1996-07-16,Right,190.0,Germany,2030-06-29,10800000.0
+2026-27,GER1,Eintracht Frankfurt,Keita Kosugi,1501641,D,2006-03-17,Left,172.0,Japan,2031-06-29,4900000.0
+2026-27,GER1,Eintracht Frankfurt,Elias Baum,1403018,D,2005-10-25,Right,180.0,Germany,2028-06-29,3900000.0
+2026-27,GER1,Eintracht Frankfurt,Nnamdi Collins,1048569,D,2004-01-09,Right,191.0,Germany,2030-06-29,18500000.0
+2026-27,GER1,Eintracht Frankfurt,Lilian Brassier,988907,D,1999-11-01,Left,184.0,France,2031-06-29,10800000.0
+2026-27,GER1,Eintracht Frankfurt,Otavio,2115909,D,2005-11-24,Left,193.0,Brazil,2031-06-29,1600000.0
+2026-27,GER1,Eintracht Frankfurt,Kauã Santos,1134203,G,2003-04-10,Right,196.0,Brazil,2030-06-29,6500000.0
+2026-27,GER1,Eintracht Frankfurt,Noah Atubolu,980626,G,2002-05-24,Right,190.0,Germany,2027-06-29,24000000.0
+2026-27,GER1,Eintracht Frankfurt,Amil Šiljević,2006785,G,2007-01-18,Right,192.0,Bosnia & Herzegovina,2029-06-29,
+2026-27,GER1,Eintracht Frankfurt,Jens Grahl,27214,G,1988-09-21,Right,193.0,Germany,2027-06-29,210000.0
+2026-27,GER1,1. FC Union Berlin,Marin Ljubičić,1090010,F,2002-02-27,Right,183.0,Croatia,,1800000.0
+2026-27,GER1,1. FC Union Berlin,Woo-Yeong Jeong,927405,F,1999-09-19,Right,179.0,South Korea,,3700000.0
+2026-27,GER1,1. FC Union Berlin,Emmanuel Latte Lath,848074,F,1998-12-31,Right,180.0,Côte d'Ivoire,2027-06-29,10400000.0
+2026-27,GER1,1. FC Union Berlin,Andrej Ilić,953767,F,2000-04-02,Right,189.0,Serbia,,8300000.0
+2026-27,GER1,1. FC Union Berlin,Oliver Burke,608362,F,1997-04-06,Right,188.0,Scotland,2029-06-29,2900000.0
+2026-27,GER1,1. FC Union Berlin,Livan Burcu,1513469,F,2004-09-27,Right,178.0,Türkiye,,4200000.0
+2026-27,GER1,1. FC Union Berlin,Linus Guther,2311163,F,2010-04-07,Right,175.0,Germany,2028-06-29,1000000.0
+2026-27,GER1,1. FC Union Berlin,Mekhi Gray,1989789,F,2007-02-18,Right,194.0,Germany,,
+2026-27,GER1,1. FC Union Berlin,Julien Friedrich,1534058,F,2006-11-11,Left,176.0,Germany,,130000.0
+2026-27,GER1,1. FC Union Berlin,Josip Juranović,791642,M,1995-08-15,Right,173.0,Croatia,,2200000.0
+2026-27,GER1,1. FC Union Berlin,András Schäfer,877302,M,1999-04-12,Both,179.0,Hungary,2027-06-29,4099999.0
+2026-27,GER1,1. FC Union Berlin,Derrick Köhn,886737,M,1999-02-03,Left,180.0,Ghana,2029-06-29,4200000.0
+2026-27,GER1,1. FC Union Berlin,Rani Khedira,149479,M,1994-01-26,Right,188.0,Tunisia,2027-06-29,2100000.0
+2026-27,GER1,1. FC Union Berlin,Michel Aebischer,850891,M,1997-01-05,Right,182.0,Switzerland,,4200000.0
+2026-27,GER1,1. FC Union Berlin,Robert Skov,327863,M,1996-05-19,Left,183.0,Denmark,,1900000.0
+2026-27,GER1,1. FC Union Berlin,Aljoscha Kemlein,1198074,M,2004-08-01,Right,185.0,Germany,2029-06-29,11000000.0
+2026-27,GER1,1. FC Union Berlin,Christopher Trimmel,48557,M,1987-02-23,Right,189.0,Austria,2027-06-29,555000.0
+2026-27,GER1,1. FC Union Berlin,Kastriot Imeri,865520,M,2000-06-26,Right,173.0,Switzerland,,2100000.0
+2026-27,GER1,1. FC Union Berlin,Tim Skarke,800252,M,1996-09-06,Right,179.0,Germany,,1500000.0
+2026-27,GER1,1. FC Union Berlin,Janik Haberer,168985,M,1994-04-01,Right,187.0,Germany,2027-06-29,2100000.0
+2026-27,GER1,1. FC Union Berlin,Felix Uduokhai,792142,D,1997-09-08,Left,193.0,Germany,,3200000.0
+2026-27,GER1,1. FC Union Berlin,Leopold Querfeld,1086547,D,2003-12-19,Right,190.0,Austria,2027-06-29,18900000.0
+2026-27,GER1,1. FC Union Berlin,Tom Alexander Rothe,1210666,D,2004-10-28,Left,192.0,Germany,,10300000.0
+2026-27,GER1,1. FC Union Berlin,Zeno Van Den Bosch,1103765,D,2003-07-05,Right,191.0,Belgium,,6300000.0
+2026-27,GER1,1. FC Union Berlin,Stanley Nsoki,904991,D,1999-04-08,Left,184.0,France,,1800000.0
+2026-27,GER1,1. FC Union Berlin,Marvin Friedrich,254449,D,1995-12-12,Right,193.0,Germany,,1900000.0
+2026-27,GER1,1. FC Union Berlin,Andrik Markgraf,1534045,D,2006-09-06,Left,172.0,Germany,,310000.0
+2026-27,GER1,1. FC Union Berlin,Frederik Rønnow,137692,G,1992-08-03,Right,188.0,Denmark,,2100000.0
+2026-27,GER1,1. FC Union Berlin,Matheo Raab,842718,G,1998-12-17,Right,186.0,Germany,,560000.0
+2026-27,GER1,1. FC Union Berlin,Carl Klaus,148167,G,1994-01-15,Right,189.0,Germany,,335000.0
+2026-27,GER1,1. FSV Mainz 05,Ransford Yeboah Königsdörffer,1012235,F,2001-09-12,Right,182.0,Ghana,,4700000.0
+2026-27,GER1,1. FSV Mainz 05,Sheraldo Becker,352544,F,1995-02-08,Right,180.0,Suriname,,1500000.0
+2026-27,GER1,1. FSV Mainz 05,Phillip Tietz,822340,F,1997-07-08,Right,190.0,Germany,2028-06-29,3800000.0
+2026-27,GER1,1. FSV Mainz 05,Benedict Hollerbach,975800,F,2001-05-16,Right,181.0,Germany,2029-06-29,7500000.0
+2026-27,GER1,1. FSV Mainz 05,Alynho Haidara,2112003,F,2008-07-25,Right,190.0,Côte d'Ivoire,,
+2026-27,GER1,1. FSV Mainz 05,Silas,949062,M,1998-10-05,Right,189.0,DR Congo,,2100000.0
+2026-27,GER1,1. FSV Mainz 05,Kaishu Sano,1028307,M,2000-12-29,Right,176.0,Japan,2028-06-29,53000000.0
+2026-27,GER1,1. FSV Mainz 05,Jae-sung Lee,537552,M,1992-08-09,Left,180.0,South Korea,,2100000.0
+2026-27,GER1,1. FSV Mainz 05,Nadiem Amiri,327755,M,1996-10-26,Right,180.0,Germany,2028-06-29,15500000.0
+2026-27,GER1,1. FSV Mainz 05,Paul Nebel,980621,M,2002-10-09,Both,169.0,Germany,2027-06-29,17200000.0
+2026-27,GER1,1. FSV Mainz 05,Eric Martel,988639,M,2002-04-28,Right,186.0,Germany,,8199999.0
+2026-27,GER1,1. FSV Mainz 05,Silvan Widmer,157377,M,1993-03-04,Right,182.0,Switzerland,,730000.0
+2026-27,GER1,1. FSV Mainz 05,Phillipp Mwene,138126,M,1994-01-28,Right,170.0,Austria,,1600000.0
+2026-27,GER1,1. FSV Mainz 05,Sota Kawasaki,1028306,M,2001-07-29,Right,171.0,Japan,,1800000.0
+2026-27,GER1,1. FSV Mainz 05,Anthony Caci,846471,M,1997-06-30,Right,184.0,France,2028-06-29,6800000.0
+2026-27,GER1,1. FSV Mainz 05,Otto Ruoppi,1175898,M,2006-01-30,Right,180.0,Finland,2030-06-29,1000000.0
+2026-27,GER1,1. FSV Mainz 05,Lennard Maloney,893962,M,1999-10-07,Right,187.0,USA,2028-06-29,2600000.0
+2026-27,GER1,1. FSV Mainz 05,Kacper Potulski,1548910,D,2007-10-18,Right,195.0,Poland,2028-06-29,16600000.0
+2026-27,GER1,1. FSV Mainz 05,Stefan Posch,355486,D,1997-05-13,Right,188.0,Austria,,6200000.0
+2026-27,GER1,1. FSV Mainz 05,Fabio Gruber,1130119,D,2002-09-02,Right,188.0,Peru,2030-06-29,2900000.0
+2026-27,GER1,1. FSV Mainz 05,Dominik Kohr,152206,D,1994-01-30,Right,183.0,Germany,2028-06-29,1900000.0
+2026-27,GER1,1. FSV Mainz 05,Danny da Costa,97926,D,1993-07-12,Right,186.0,Germany,2027-06-29,1100000.0
+2026-27,GER1,1. FSV Mainz 05,Stefan Bell,106662,D,1991-08-23,Right,192.0,Germany,2027-06-29,620000.0
+2026-27,GER1,1. FSV Mainz 05,Robin Zentner,174345,G,1994-10-27,Right,193.0,Germany,2028-06-29,2400000.0
+2026-27,GER1,1. FSV Mainz 05,Alexander Schwolow,134778,G,1992-06-01,Both,189.0,Germany,,465000.0
+2026-27,GER1,1. FSV Mainz 05,Maximilian Kinzig,1131885,G,2003-12-03,Right,188.0,Germany,,155000.0
+2026-27,GER1,SC Paderborn 07,Rayan Philippe,991824,F,2000-10-19,Left,177.0,France,2027-06-29,4099999.0
+2026-27,GER1,SC Paderborn 07,Steffen Tigges,826884,F,1998-07-30,Left,195.0,Germany,2027-06-29,680000.0
+2026-27,GER1,SC Paderborn 07,Marvin Pieringer,909485,F,1999-10-03,Right,189.0,Germany,,2700000.0
+2026-27,GER1,SC Paderborn 07,Sven Michel,246431,F,1990-07-14,Left,178.0,Germany,2027-06-29,310000.0
+2026-27,GER1,SC Paderborn 07,Deniz Zeitler,1604187,F,2006-12-12,Both,181.0,Germany,2027-06-29,4099999.0
+2026-27,GER1,SC Paderborn 07,Oliver Batista Meier,907685,F,2001-02-15,Right,178.0,Germany,,1500000.0
+2026-27,GER1,SC Paderborn 07,Stefano Marino,1167764,F,2004-03-11,Right,186.0,Germany,,965000.0
+2026-27,GER1,SC Paderborn 07,Ruben Müller,1864750,F,2005-08-23,Right,179.0,Germany,,1100000.0
+2026-27,GER1,SC Paderborn 07,Albert Millgramm,2122582,F,2004-11-11,Both,170.0,Germany,,155000.0
+2026-27,GER1,SC Paderborn 07,Lasse Eickel,2334132,F,2008-02-27,Right,187.0,Germany,2031-06-29,160000.0
+2026-27,GER1,SC Paderborn 07,Gabriel Vidović,1129940,M,2003-11-30,Right,180.0,Croatia,,3100000.0
+2026-27,GER1,SC Paderborn 07,Laurin Ulrich,1152486,M,2005-01-30,Right,180.0,Germany,2027-06-29,3200000.0
+2026-27,GER1,SC Paderborn 07,Santiago Castañeda,1199101,M,2004-11-12,Right,188.0,USA,,5200000.0
+2026-27,GER1,SC Paderborn 07,Laurin Curda,981788,M,2001-10-29,Right,181.0,Germany,,2800000.0
+2026-27,GER1,SC Paderborn 07,Luka Duric,2216257,M,2003-06-17,Right,181.0,Bosnia & Herzegovina,,855000.0
+2026-27,GER1,SC Paderborn 07,Raphael Obermair,820465,M,1996-03-31,Right,182.0,Philippines,2027-06-29,1300000.0
+2026-27,GER1,SC Paderborn 07,Timur Gayret,940567,M,1998-08-07,Left,176.0,Germany,2029-06-29,410000.0
+2026-27,GER1,SC Paderborn 07,Sebastian Klaas,878628,M,1998-06-29,Both,180.0,Germany,,875000.0
+2026-27,GER1,SC Paderborn 07,Clemens Lippmann,2020672,M,2006-06-28,Right,183.0,Germany,,435000.0
+2026-27,GER1,SC Paderborn 07,Tom Baack,800448,M,1999-03-12,Right,180.0,Germany,,565000.0
+2026-27,GER1,SC Paderborn 07,Niklas Mohr,2076815,M,2004-07-22,Left,179.0,Germany,2028-06-29,465000.0
+2026-27,GER1,SC Paderborn 07,Felix Götze,844131,D,1998-02-10,Right,185.0,Germany,,2100000.0
+2026-27,GER1,SC Paderborn 07,Mattes Hansen,1083387,D,2004-05-14,Right,183.0,Germany,,2700000.0
+2026-27,GER1,SC Paderborn 07,Tjark Lasse Scheller,1137717,D,2002-01-11,Both,192.0,Germany,,2700000.0
+2026-27,GER1,SC Paderborn 07,Jano Ter-Horst,1152342,D,2002-06-18,Right,181.0,Germany,,1200000.0
+2026-27,GER1,SC Paderborn 07,Marcel Hoffmeier,930702,D,1999-07-14,Right,180.0,Germany,2028-06-29,1100000.0
+2026-27,GER1,SC Paderborn 07,Jonah Sticker,1517850,D,2004-05-07,Right,180.0,Germany,,700000.0
+2026-27,GER1,SC Paderborn 07,Nyamekye Awortwie-Grant,1407863,D,2000-08-06,Right,193.0,Germany,,390000.0
+2026-27,GER1,SC Paderborn 07,Tristan Zobel,1401913,D,2003-10-03,Left,195.0,Germany,2028-06-29,205000.0
+2026-27,GER1,SC Paderborn 07,Nahuel Noll,1048651,G,2003-03-16,Both,188.0,Germany,2027-06-29,1900000.0
+2026-27,GER1,SC Paderborn 07,Markus Schubert,795006,G,1998-06-11,Right,186.0,Germany,2028-06-29,515000.0
+2026-27,GER1,SC Paderborn 07,Florian Pruhs,1515934,G,2006-02-05,Right,190.0,Germany,,145000.0
+2026-27,GER1,TSG Hoffenheim,Andrej Kramarić,67647,F,1991-06-18,Right,177.0,Croatia,2028-06-29,2700000.0
+2026-27,GER1,TSG Hoffenheim,Fisnik Asllani,1010117,F,2002-08-07,Both,191.0,Kosovo,2029-06-29,36000000.0
+2026-27,GER1,TSG Hoffenheim,Adam Hložek,963801,F,2002-07-24,Right,186.0,Czechia,2029-06-29,10300000.0
+2026-27,GER1,TSG Hoffenheim,Max Moerstedt,1418703,F,2006-01-14,Right,194.0,Germany,2030-06-29,7600000.0
+2026-27,GER1,TSG Hoffenheim,Adam Daghim,1180758,F,2005-09-27,Left,186.0,Denmark,,8100000.0
+2026-27,GER1,TSG Hoffenheim,Tim Lemperle,1014290,F,2002-02-04,Right,186.0,Germany,2031-06-29,15300000.0
+2026-27,GER1,TSG Hoffenheim,Nathan De Cat,1637689,M,2008-07-18,Right,192.0,Belgium,2031-06-29,25000000.0
+2026-27,GER1,TSG Hoffenheim,Patrick Wimmer,987504,M,2001-05-29,Right,182.0,Austria,2031-06-29,11100000.0
+2026-27,GER1,TSG Hoffenheim,Leon Avdullahu,1493305,M,2004-02-22,Right,185.0,Kosovo,2031-06-29,33000000.0
+2026-27,GER1,TSG Hoffenheim,Wouter Burger,916946,M,2001-02-15,Left,190.0,Netherlands,,21000000.0
+2026-27,GER1,TSG Hoffenheim,Alexander Prass,978062,M,2001-05-25,Left,180.0,Austria,2028-06-29,8700000.0
+2026-27,GER1,TSG Hoffenheim,Bambasé Conté,1185359,M,2003-07-06,Left,178.0,Germany,,3800000.0
+2026-27,GER1,TSG Hoffenheim,Cajetan Lenz,2077300,M,2006-06-15,Right,190.0,Germany,2031-06-29,9600000.0
+2026-27,GER1,TSG Hoffenheim,Luis Engelns,1838178,M,2007-03-10,Right,188.0,Germany,,4400000.0
+2026-27,GER1,TSG Hoffenheim,Ozan Kabak,857740,D,2000-03-24,Right,185.0,Türkiye,2030-06-29,14600000.0
+2026-27,GER1,TSG Hoffenheim,Vladimír Coufal,138024,D,1992-08-21,Right,179.0,Czechia,2028-06-29,2400000.0
+2026-27,GER1,TSG Hoffenheim,Koki Machida,790977,D,1997-08-24,Left,190.0,Japan,2029-06-29,5800000.0
+2026-27,GER1,TSG Hoffenheim,Albian Hajdari,1000269,D,2003-05-17,Left,189.0,Kosovo,2031-06-29,24000000.0
+2026-27,GER1,TSG Hoffenheim,Mats Rots,1387012,D,2006-03-10,Left,190.0,Netherlands,2031-06-29,11200000.0
+2026-27,GER1,TSG Hoffenheim,Bernardo,828571,D,1995-05-13,Left,186.0,Brazil,2027-06-29,3700000.0
+2026-27,GER1,TSG Hoffenheim,Arthur Chaves,1122806,D,2001-01-28,Right,187.0,Brazil,2029-06-29,4900000.0
+2026-27,GER1,TSG Hoffenheim,Robin Hranáč,957615,D,2000-01-28,Right,189.0,Czechia,2028-06-29,10900000.0
+2026-27,GER1,TSG Hoffenheim,Valentin Gendrey,944899,D,2000-06-20,Right,179.0,France,2028-06-29,6300000.0
+2026-27,GER1,TSG Hoffenheim,Sean Dulic,1885630,D,2005-01-04,Both,187.0,Germany,2030-06-29,1200000.0
+2026-27,GER1,TSG Hoffenheim,Natnael Abraha,1861981,D,2008-03-13,Right,179.0,Germany,,435000.0
+2026-27,GER1,TSG Hoffenheim,Oliver Baumann,40244,G,1990-06-01,Right,185.0,Germany,2028-06-29,2700000.0
+2026-27,GER1,TSG Hoffenheim,Luca Philipp,943550,G,2000-11-27,Right,192.0,Germany,,705000.0
+2026-27,GER1,TSG Hoffenheim,Lukas Petersson,1196091,G,2004-02-08,Right,193.0,Iceland,,570000.0
+2026-27,GER1,Bayer 04 Leverkusen,Ibrahim Maza,1407524,F,2005-11-23,Right,181.0,Algeria,2030-06-29,41000000.0
+2026-27,GER1,Bayer 04 Leverkusen,Victor Okoh Boniface,978521,F,2000-12-22,Right,193.0,Nigeria,2028-06-29,5500000.0
+2026-27,GER1,Bayer 04 Leverkusen,Eliesse Ben Seghir,1394353,F,2005-02-15,Right,178.0,Morocco,2030-06-29,21000000.0
+2026-27,GER1,Bayer 04 Leverkusen,Patrik Schick,280609,F,1996-01-23,Left,191.0,Czechia,2030-06-29,16600000.0
+2026-27,GER1,Bayer 04 Leverkusen,Christian Kofane,2029648,F,2006-07-25,Right,189.0,Cameroon,2029-06-29,41000000.0
+2026-27,GER1,Bayer 04 Leverkusen,Afonso Moreira,1215906,F,2005-03-18,Right,175.0,Portugal,2031-06-29,18400000.0
+2026-27,GER1,Bayer 04 Leverkusen,Nathan Tella,920379,F,1999-07-04,Right,173.0,Nigeria,2031-06-29,15800000.0
+2026-27,GER1,Bayer 04 Leverkusen,Martin Terrier,846445,F,1997-03-03,Right,184.0,France,2029-06-29,7400000.0
+2026-27,GER1,Bayer 04 Leverkusen,Jonas Hofmann,142390,F,1992-07-13,Right,176.0,Germany,2027-06-29,1600000.0
+2026-27,GER1,Bayer 04 Leverkusen,Ndjicoura Bomba,2111739,F,2008-03-11,,188.0,Mali,2030-06-29,1600000.0
+2026-27,GER1,Bayer 04 Leverkusen,Lucas Vázquez,255239,M,1991-06-30,Right,173.0,Spain,2027-06-29,1600000.0
+2026-27,GER1,Bayer 04 Leverkusen,Malik Tillman,975798,M,2002-05-27,Right,186.0,USA,2030-06-29,27000000.0
+2026-27,GER1,Bayer 04 Leverkusen,Moussa Diaby,855817,M,1999-07-06,Left,170.0,France,2031-06-29,26000000.0
+2026-27,GER1,Bayer 04 Leverkusen,Ezequiel Fernández,1003012,M,2002-07-24,Left,178.0,Argentina,2030-06-29,21000000.0
+2026-27,GER1,Bayer 04 Leverkusen,Aleix García,796047,M,1997-06-27,Right,173.0,Spain,2029-06-29,21000000.0
+2026-27,GER1,Bayer 04 Leverkusen,Kennet Eichhorn,1961762,M,2009-07-26,Right,186.0,Germany,2031-06-29,21000000.0
+2026-27,GER1,Bayer 04 Leverkusen,Montrell Culbreath,1568522,M,2007-08-28,Right,172.0,Germany,2031-06-29,15600000.0
+2026-27,GER1,Bayer 04 Leverkusen,Naba Mensah,1489216,M,2007-05-07,Both,,Germany,2027-06-29,
+2026-27,GER1,Bayer 04 Leverkusen,Edmond Tapsoba,883262,D,1999-02-01,Right,193.0,Burkina Faso,2031-06-29,37000000.0
+2026-27,GER1,Bayer 04 Leverkusen,Guéla Doué,1002033,D,2002-10-16,Right,187.0,Côte d'Ivoire,2031-06-29,21000000.0
+2026-27,GER1,Bayer 04 Leverkusen,Jarell Quansah,1003339,D,2003-01-28,Right,190.0,England,2030-06-29,48000000.0
+2026-27,GER1,Bayer 04 Leverkusen,Facundo Medina,860307,D,1999-05-27,Left,184.0,Argentina,2031-06-29,16300000.0
+2026-27,GER1,Bayer 04 Leverkusen,Miguel Gutiérrez,908716,D,2001-07-26,Left,180.0,Spain,2031-06-29,24000000.0
+2026-27,GER1,Bayer 04 Leverkusen,Robert Andrich,168903,D,1994-09-21,Right,189.0,Germany,2028-06-29,6200000.0
+2026-27,GER1,Bayer 04 Leverkusen,Loïc Badé,1006489,D,2000-04-10,Right,191.0,France,2030-06-29,19400000.0
+2026-27,GER1,Bayer 04 Leverkusen,Tim Oermann,1138778,D,2003-10-05,Right,187.0,Germany,2029-06-29,4099999.0
+2026-27,GER1,Bayer 04 Leverkusen,Mark Flekken,171919,G,1993-06-12,Both,194.0,Netherlands,2028-06-29,6400000.0
+2026-27,GER1,Bayer 04 Leverkusen,Janis Blaswich,96832,G,1991-05-01,Right,193.0,Germany,2027-06-29,650000.0
+2026-27,GER1,Bayer 04 Leverkusen,Niklas Lomb,142471,G,1993-07-27,Right,188.0,Germany,2027-06-29,240000.0
+2026-27,GER1,Hamburger SV,Patson Daka,865057,F,1998-10-08,Right,185.0,Zambia,2027-06-29,2900000.0
+2026-27,GER1,Hamburger SV,Terem Moffi,894396,F,1999-05-24,Left,188.0,Nigeria,2029-06-29,8199999.0
+2026-27,GER1,Hamburger SV,Yussuf Poulsen,135264,F,1994-06-14,Right,193.0,Denmark,2027-06-29,935000.0
+2026-27,GER1,Hamburger SV,Otto Stange,1568535,F,2007-02-08,Right,185.0,Germany,2028-06-29,4300000.0
+2026-27,GER1,Hamburger SV,Alexander Røssing-Lelesiit,1862226,F,2007-01-19,Right,184.0,Norway,2030-06-29,4700000.0
+2026-27,GER1,Hamburger SV,Fábio Vieira,904835,M,2000-05-29,Left,170.0,Portugal,2030-06-29,16600000.0
+2026-27,GER1,Hamburger SV,Bilal Nadir,1129527,M,2003-11-26,Right,178.0,Morocco,2029-06-29,8300000.0
+2026-27,GER1,Hamburger SV,Albert Sambi Lokonga,901892,M,1999-10-21,Right,183.0,Belgium,2028-06-29,12400000.0
+2026-27,GER1,Hamburger SV,Albert Grønbæk,1000263,M,2001-05-22,Right,176.0,Denmark,2030-06-29,5300000.0
+2026-27,GER1,Hamburger SV,Miro Muheim,798303,M,1998-03-23,Left,182.0,Switzerland,2027-06-29,5300000.0
+2026-27,GER1,Hamburger SV,Martin Adeline,1158529,M,2003-12-01,Right,180.0,France,2030-06-29,9200000.0
+2026-27,GER1,Hamburger SV,Bakery Jatta,842526,M,1998-06-05,Right,184.0,Gambia,2029-06-29,1000000.0
+2026-27,GER1,Hamburger SV,Immanuel Pherai,989203,M,2001-04-24,Right,175.0,Suriname,2027-06-29,1600000.0
+2026-27,GER1,Hamburger SV,Nicolai Remberg,1064305,M,2000-06-18,Right,187.0,Germany,2028-06-29,8400000.0
+2026-27,GER1,Hamburger SV,Kofi Jeremy Amoako,1467703,M,2005-05-05,Right,186.0,Germany,2030-06-29,3800000.0
+2026-27,GER1,Hamburger SV,Zakaria El Ouahdi,1134470,D,2001-12-30,Right,172.0,Morocco,2031-06-29,18500000.0
+2026-27,GER1,Hamburger SV,David Møller Wolfe,1031283,D,2002-04-22,Left,185.0,Norway,2027-06-29,11000000.0
+2026-27,GER1,Hamburger SV,Nicolás Capaldo,973564,D,1998-09-13,Right,178.0,Argentina,2028-06-29,8400000.0
+2026-27,GER1,Hamburger SV,Sebastiaan Bornauw,826167,D,1999-03-21,Right,190.0,Belgium,2027-06-29,7800000.0
+2026-27,GER1,Hamburger SV,Jordan Torunarigha,801003,D,1997-08-06,Left,189.0,Nigeria,2028-06-29,4099999.0
+2026-27,GER1,Hamburger SV,Warmed Omari,999030,D,2000-04-22,Right,185.0,Comoros,2030-06-29,3900000.0
+2026-27,GER1,Hamburger SV,Louis Lemke,1995000,D,2009-10-07,Left,182.0,Germany,2028-06-29,320000.0
+2026-27,GER1,Hamburger SV,Shafiq Nandja,2204961,D,2007-01-14,Right,184.0,Germany,2030-06-29,530000.0
+2026-27,GER1,Hamburger SV,Joel Agyekum,1409359,D,2005-03-07,Right,190.0,Germany,2027-06-29,145000.0
+2026-27,GER1,Hamburger SV,Sander Tangvik,1030355,G,2002-11-28,Right,193.0,Norway,2030-06-29,2700000.0
+2026-27,GER1,Hamburger SV,Daniel Fernandes,113442,G,1992-11-12,Right,188.0,Portugal,2028-06-29,1300000.0
+2026-27,GER1,Hamburger SV,Fernando Dickes,1489167,G,2007-10-12,Left,192.0,Germany,2028-06-29,285000.0
+2026-27,GER1,Hamburger SV,Elias Lahti,1971557,G,2009-01-08,,,Finland,2028-06-29,
+2026-27,GER1,SV Werder Bremen,Niclas Füllkrug,132645,F,1993-02-08,Right,188.0,Germany,2027-06-29,3700000.0
+2026-27,GER1,SV Werder Bremen,Dawid Kownacki,286103,F,1997-03-13,Right,186.0,Poland,2027-06-29,1600000.0
+2026-27,GER1,SV Werder Bremen,Cédric Itten,352290,F,1996-12-26,Right,189.0,Switzerland,2029-06-29,1600000.0
+2026-27,GER1,SV Werder Bremen,Keke Topp,1166832,F,2004-03-24,Right,192.0,Germany,2028-06-29,3100000.0
+2026-27,GER1,SV Werder Bremen,Eren Dinkçi,1067120,F,2001-12-12,Right,188.0,Türkiye,2027-06-29,5400000.0
+2026-27,GER1,SV Werder Bremen,Justin Njinmah,1005343,F,2000-11-14,Right,185.0,Germany,2028-06-29,5300000.0
+2026-27,GER1,SV Werder Bremen,Marco Grüll,815612,F,1998-07-05,Both,182.0,Austria,,4300000.0
+2026-27,GER1,SV Werder Bremen,Kenny Quetant,2198657,F,2006-07-16,Right,187.0,France,2030-06-29,3100000.0
+2026-27,GER1,SV Werder Bremen,Salim Musah,1864786,F,2006-02-21,Right,198.0,Germany,,2100000.0
+2026-27,GER1,SV Werder Bremen,Paul Erevbenagie,2160258,F,2007-08-18,Both,182.0,Germany,,120000.0
+2026-27,GER1,SV Werder Bremen,Arthur,1174761,M,2003-03-16,Right,173.0,Brazil,2027-06-29,7400000.0
+2026-27,GER1,SV Werder Bremen,Mitchell Weiser,138150,M,1994-04-20,Right,176.0,Germany,2027-06-29,2700000.0
+2026-27,GER1,SV Werder Bremen,Dariusz Stalmach,1141977,M,2005-12-07,Both,182.0,Poland,,1600000.0
+2026-27,GER1,SV Werder Bremen,Ludovit Reis,893586,M,2000-05-31,Right,178.0,Netherlands,2029-06-29,3100000.0
+2026-27,GER1,SV Werder Bremen,Youri Regeer,996940,M,2003-08-17,Right,177.0,Netherlands,2027-06-29,4700000.0
+2026-27,GER1,SV Werder Bremen,Jens Stage,830142,M,1996-11-07,Right,187.0,Denmark,2028-06-29,14400000.0
+2026-27,GER1,SV Werder Bremen,Chuki,1137584,M,2004-04-28,Left,176.0,Spain,2030-06-29,8700000.0
+2026-27,GER1,SV Werder Bremen,Skelly Alvero,1165722,M,2002-05-03,Right,202.0,France,2028-06-29,1900000.0
+2026-27,GER1,SV Werder Bremen,Senne Lynen,826171,M,1999-02-18,Right,182.0,Belgium,2030-06-29,7300000.0
+2026-27,GER1,SV Werder Bremen,Darwin Soylu,1823917,M,2007-03-25,Left,,Türkiye,,
+2026-27,GER1,SV Werder Bremen,Darwin Kaan Soylu,2725943,M,2007-03-22,,176.0,Germany,,
+2026-27,GER1,SV Werder Bremen,Moussa Ndiaye,982315,D,2002-06-17,Left,181.0,Senegal,2027-06-29,3900000.0
+2026-27,GER1,SV Werder Bremen,Marco Friedl,825771,D,1998-03-15,Left,187.0,Austria,2028-06-29,10600000.0
+2026-27,GER1,SV Werder Bremen,Felix Agu,933398,D,1999-09-26,Right,180.0,Nigeria,2027-06-29,4700000.0
+2026-27,GER1,SV Werder Bremen,Oskar Wójcik,1173623,D,2003-07-20,Right,191.0,Poland,2031-06-29,5400000.0
+2026-27,GER1,SV Werder Bremen,Olivier Deman,960114,D,2000-04-05,Left,181.0,Belgium,2028-06-29,3400000.0
+2026-27,GER1,SV Werder Bremen,Amos Pieper,851254,D,1998-01-16,Right,191.0,Germany,,3900000.0
+2026-27,GER1,SV Werder Bremen,Niklas Stark,229544,D,1995-04-13,Right,190.0,Germany,,2300000.0
+2026-27,GER1,SV Werder Bremen,Mick Schmetgens,1568521,D,2007-09-08,Right,190.0,Germany,2029-06-29,770000.0
+2026-27,GER1,SV Werder Bremen,Karl Hein,991591,G,2002-04-12,Right,193.0,Estonia,2030-06-29,2900000.0
+2026-27,GER1,SV Werder Bremen,Alexander Schlager,282073,G,1996-01-31,Right,184.0,Austria,2029-06-29,1900000.0
+2026-27,GER1,SV Werder Bremen,Markus Kolke,94411,G,1990-08-17,Right,187.0,Germany,,330000.0
+2026-27,GER1,FC Schalke 04,Edin Džeko,14990,F,1986-03-16,Both,193.0,Bosnia & Herzegovina,2027-06-29,905000.0
+2026-27,GER1,FC Schalke 04,Hwang Hee-chan,786186,F,1996-01-25,Right,177.0,South Korea,2028-06-29,5500000.0
+2026-27,GER1,FC Schalke 04,Moussa Sylla,861980,F,1999-11-24,Left,181.0,Mali,2028-06-29,5200000.0
+2026-27,GER1,FC Schalke 04,Kenan Karaman,168943,F,1994-03-04,Right,189.0,Türkiye,2028-06-29,1700000.0
+2026-27,GER1,FC Schalke 04,Junior Adamu,902381,F,2001-06-05,Right,183.0,Austria,2029-06-29,2800000.0
+2026-27,GER1,FC Schalke 04,Emil Højlund,1149078,F,2005-01-03,Right,185.0,Denmark,2028-06-29,530000.0
+2026-27,GER1,FC Schalke 04,Bryan Lasme,862011,F,1998-11-13,Right,194.0,France,2027-06-29,565000.0
+2026-27,GER1,FC Schalke 04,Adil Aouchiche,962877,M,2002-07-14,Right,181.0,Algeria,2030-06-29,3800000.0
+2026-27,GER1,FC Schalke 04,Eric Ebimbe,904994,M,2000-11-20,Right,183.0,Cameroon,2028-06-29,6500000.0
+2026-27,GER1,FC Schalke 04,Soufiane El-Faouzi,1083338,M,2002-07-12,Both,178.0,Morocco,2030-06-29,9800000.0
+2026-27,GER1,FC Schalke 04,Dejan Ljubičić,869883,M,1997-10-07,Both,186.0,Austria,2028-06-29,3300000.0
+2026-27,GER1,FC Schalke 04,Satoshi Tanaka,981067,M,2002-08-12,Left,175.0,Japan,2030-06-29,2100000.0
+2026-27,GER1,FC Schalke 04,Vitalie Becker,1195734,M,2005-03-02,Left,179.0,Germany,2030-06-29,3100000.0
+2026-27,GER1,FC Schalke 04,Ron Schallenberg,872358,M,1998-10-05,Right,183.0,Germany,2027-06-29,1900000.0
+2026-27,GER1,FC Schalke 04,Adrian Gantenbein,1046188,M,2001-04-17,Right,183.0,Switzerland,2028-06-29,850000.0
+2026-27,GER1,FC Schalke 04,Finn Porath,789714,M,1997-02-22,Right,179.0,Germany,2027-06-29,855000.0
+2026-27,GER1,FC Schalke 04,Janik Bachmann,579254,M,1996-05-05,Right,196.0,Germany,2027-06-29,450000.0
+2026-27,GER1,FC Schalke 04,Luca Vozar,2255221,M,2007-05-05,Left,173.0,Germany,2028-06-29,
+2026-27,GER1,FC Schalke 04,Nikola Katić,831488,D,1996-10-09,Right,194.0,Bosnia & Herzegovina,2028-06-29,1900000.0
+2026-27,GER1,FC Schalke 04,Robin Gosens,377118,D,1994-07-04,Left,183.0,Germany,2027-06-29,4099999.0
+2026-27,GER1,FC Schalke 04,Maximilian Wöber,794962,D,1998-02-03,Left,188.0,Austria,2027-06-29,2700000.0
+2026-27,GER1,FC Schalke 04,Mertcan Ayhan,1195798,D,2006-09-07,Right,190.0,Türkiye,2030-06-29,8199999.0
+2026-27,GER1,FC Schalke 04,Hasan Kuruçay,852096,D,1997-08-30,Right,187.0,Türkiye,2027-06-29,2100000.0
+2026-27,GER1,FC Schalke 04,Timo Becker,814735,D,1997-03-24,Right,186.0,Germany,2029-06-29,1500000.0
+2026-27,GER1,FC Schalke 04,Loris Karius,174135,G,1993-06-21,Right,190.0,Germany,2028-06-29,825000.0
+2026-27,GER1,FC Schalke 04,Kevin Müller,121908,G,1991-03-14,Right,190.0,Germany,,280000.0
+2026-27,GER1,FC Schalke 04,Johannes Siebeking,1510765,G,2006-03-01,Both,193.0,Germany,2029-06-29,120000.0
+2026-27,GER1,Borussia M'gladbach,Tim Kleindienst,228981,F,1995-08-30,Right,194.0,Germany,2029-06-29,7700000.0
+2026-27,GER1,Borussia M'gladbach,Nicolas-Gerrit Kühn,877835,F,1999-12-31,Left,174.0,Germany,2029-06-29,9400000.0
+2026-27,GER1,Borussia M'gladbach,Shuto Machino,925910,F,1999-09-29,Both,185.0,Japan,2029-06-29,3900000.0
+2026-27,GER1,Borussia M'gladbach,Isac Lidberg,798175,F,1998-09-07,Right,185.0,Sweden,2030-06-29,5300000.0
+2026-27,GER1,Borussia M'gladbach,Iaia Manco Danfa,2276906,F,2007-04-05,Right,188.0,Guinea-Bissau,2028-06-29,245000.0
+2026-27,GER1,Borussia M'gladbach,Wael Mohya,1995809,M,2008-12-30,Right,176.0,Germany,,18700000.0
+2026-27,GER1,Borussia M'gladbach,Jens Castrop,1019312,M,2003-07-28,Right,177.0,South Korea,2029-06-29,9300000.0
+2026-27,GER1,Borussia M'gladbach,Hugo Bolin,1142210,M,2003-07-23,Right,179.0,Sweden,2030-06-29,6200000.0
+2026-27,GER1,Borussia M'gladbach,Florian Neuhaus,837205,M,1997-03-15,Right,185.0,Germany,2027-06-29,2700000.0
+2026-27,GER1,Borussia M'gladbach,Kevin Stöger,95381,M,1993-08-26,Left,175.0,Austria,2027-06-29,1900000.0
+2026-27,GER1,Borussia M'gladbach,Franck Honorat,280453,M,1996-08-10,Right,180.0,France,2029-06-29,6500000.0
+2026-27,GER1,Borussia M'gladbach,Robin Hack,876858,M,1998-08-26,Right,176.0,Germany,2029-06-29,6500000.0
+2026-27,GER1,Borussia M'gladbach,Enzo Leopold,1009161,M,2000-07-20,Right,174.0,Germany,2030-06-29,4200000.0
+2026-27,GER1,Borussia M'gladbach,Zento Uno,1184035,M,2003-11-19,Right,176.0,Japan,2030-06-29,970000.0
+2026-27,GER1,Borussia M'gladbach,Mathieu Nguefack ,1861977,M,2008-05-13,Both,175.0,Germany,2027-06-29,1600000.0
+2026-27,GER1,Borussia M'gladbach,Fritz Fleck,1925476,M,2007-05-29,Left,170.0,Germany,2028-06-29,280000.0
+2026-27,GER1,Borussia M'gladbach,Kevin Diks,583806,D,1996-10-05,Right,186.0,Indonesia,2030-06-29,4800000.0
+2026-27,GER1,Borussia M'gladbach,Ko Itakura,790989,D,1997-01-26,Right,189.0,Japan,2030-06-29,8400000.0
+2026-27,GER1,Borussia M'gladbach,Joe Scally,1002920,D,2002-12-30,Right,184.0,USA,2027-06-29,6600000.0
+2026-27,GER1,Borussia M'gladbach,Daiki Hashioka,897334,D,1999-05-16,Right,185.0,Japan,2027-06-29,1500000.0
+2026-27,GER1,Borussia M'gladbach,Fabio Chiarodia,1130067,D,2005-06-04,Left,186.0,Italy,2028-06-29,2900000.0
+2026-27,GER1,Borussia M'gladbach,Jan Leszczyński,1823942,D,2007-04-11,Both,191.0,Poland,2030-06-29,645000.0
+2026-27,GER1,Borussia M'gladbach,Yukhym Konoplya,904852,D,1999-08-25,Right,180.0,Ukraine,2029-06-29,5400000.0
+2026-27,GER1,Borussia M'gladbach,Lukas Ullrich,1083382,D,2004-03-15,Left,177.0,Germany,2029-06-29,6200000.0
+2026-27,GER1,Borussia M'gladbach,Philipp Sander,939880,D,1998-02-20,Right,185.0,Germany,2028-06-29,4200000.0
+2026-27,GER1,Borussia M'gladbach,David Herold,997178,D,2003-02-19,Left,185.0,Germany,2030-06-29,4300000.0
+2026-27,GER1,Borussia M'gladbach,Moritz Nicolas,578166,G,1997-10-20,Right,193.0,Germany,2029-06-29,7700000.0
+2026-27,GER1,Borussia M'gladbach,Daniel Batz,94312,G,1991-01-11,Right,189.0,Germany,2029-06-29,370000.0
+2026-27,GER1,Borussia M'gladbach,Jan Olschowsky,972510,G,2001-11-17,Right,182.0,Germany,2027-06-29,465000.0
+2026-27,GER1,Borussia M'gladbach,Tobias Sippel,8772,G,1988-03-21,Right,180.0,Germany,2027-06-29,290000.0
+2026-27,GER1,VfB Stuttgart,Deniz Undav,794298,F,1996-07-18,Both,179.0,Germany,2029-06-29,20000000.0
+2026-27,GER1,VfB Stuttgart,Ermedin Demirović,878081,F,1998-03-24,Right,184.0,Bosnia & Herzegovina,2028-06-29,20000000.0
+2026-27,GER1,VfB Stuttgart,Jeremy Arevalo,1464642,F,2005-03-18,Left,180.0,Ecuador,2031-06-29,7200000.0
+2026-27,GER1,VfB Stuttgart,Leo Sauer,1150938,F,2005-12-15,Right,184.0,Slovakia,2031-06-29,6500000.0
+2026-27,GER1,VfB Stuttgart,Dženan Pejčinović,1127790,F,2005-02-14,Left,188.0,Germany,2031-06-29,16399999.0
+2026-27,GER1,VfB Stuttgart,Tiago Tomás,983540,F,2002-06-15,Right,180.0,Portugal,2029-06-29,14600000.0
+2026-27,GER1,VfB Stuttgart,Bilal El Khannouss,1126569,M,2004-05-09,Right,180.0,Morocco,2030-06-29,32000000.0
+2026-27,GER1,VfB Stuttgart,Angelo Stiller,901882,M,2001-04-03,Left,183.0,Germany,2028-06-29,46000000.0
+2026-27,GER1,VfB Stuttgart,Jamie Leweling,990201,M,2001-02-25,Both,184.0,Germany,2029-06-29,37000000.0
+2026-27,GER1,VfB Stuttgart,Chris Führich,891510,M,1998-01-08,Right,178.0,Germany,2028-06-29,11600000.0
+2026-27,GER1,VfB Stuttgart,Atakan Karazor,801030,M,1996-10-12,Right,190.0,Türkiye,2028-06-29,8800000.0
+2026-27,GER1,VfB Stuttgart,Nikolas Nartey,861981,M,2000-02-21,Left,185.0,Denmark,2028-06-29,10300000.0
+2026-27,GER1,VfB Stuttgart,Justin Diehl,1146132,M,2004-11-26,Right,174.0,Germany,2029-06-29,1100000.0
+2026-27,GER1,VfB Stuttgart,Grischa Prömel,253993,M,1995-01-08,Both,182.0,Germany,2029-06-29,3600000.0
+2026-27,GER1,VfB Stuttgart,Jarzinho Malanga,1418665,M,2006-07-09,Right,179.0,Germany,2028-06-29,1600000.0
+2026-27,GER1,VfB Stuttgart,Ertugrul Yigit,1961772,M,2009-01-07,Right,,Germany,2029-06-29,775000.0
+2026-27,GER1,VfB Stuttgart,Maximilian Mittelstädt,788949,D,1997-03-17,Left,178.0,Germany,2028-06-29,19800000.0
+2026-27,GER1,VfB Stuttgart,Finn Jeltsch,1418649,D,2006-07-16,Both,188.0,Germany,2030-06-29,32000000.0
+2026-27,GER1,VfB Stuttgart,Dan Zagadou,826205,D,1999-06-02,Left,196.0,France,2027-06-29,1900000.0
+2026-27,GER1,VfB Stuttgart,Jeff Chabot,863271,D,1998-02-11,Left,194.0,Germany,2028-06-29,15500000.0
+2026-27,GER1,VfB Stuttgart,Josha Vagnoman,906278,D,2000-12-10,Right,186.0,Germany,2028-06-29,10300000.0
+2026-27,GER1,VfB Stuttgart,Luca Jaquez,1127823,D,2003-06-01,Right,187.0,Switzerland,2029-06-29,10700000.0
+2026-27,GER1,VfB Stuttgart,Ameen Al-Dakhil,1979970,D,2002-03-05,Right,185.0,Belgium,2028-06-29,3100000.0
+2026-27,GER1,VfB Stuttgart,Leonidas Stergiou,962898,D,2002-03-02,Right,180.0,Switzerland,2028-06-29,2700000.0
+2026-27,GER1,VfB Stuttgart,Lorenz Assignon,1009334,D,2000-06-21,Right,179.0,France,2029-06-29,8700000.0
+2026-27,GER1,VfB Stuttgart,Ramon Hendriks,916943,D,2001-07-17,Left,189.0,Netherlands,2028-06-29,24000000.0
+2026-27,GER1,VfB Stuttgart,Dennis Seimen,1195736,G,2005-11-30,Left,191.0,Germany,2029-06-29,9500000.0
+2026-27,GER1,VfB Stuttgart,Fabian Bredlow,152463,G,1995-03-01,Right,191.0,Germany,2027-06-29,725000.0
+2026-27,GER1,VfB Stuttgart,Stefan Drljača,930339,G,1999-04-19,Right,191.0,Germany,2027-06-29,280000.0
+2026-27,GER1,VfB Stuttgart,Marius Funk,222770,G,1995-12-31,Right,187.0,Germany,2028-06-29,290000.0
+2026-27,ESP1,FC Barcelona,Anthony Gordon,914902,F,2001-02-23,Right,183.0,England,2031-06-29,82000000.0
+2026-27,ESP1,FC Barcelona,Hamza Abdelkarim,1961596,F,2007-12-31,Right,182.0,Egypt,2029-06-29,1500000.0
+2026-27,ESP1,FC Barcelona,Roony Bardghji,1162107,F,2005-11-14,Left,173.0,Sweden,2029-06-29,15500000.0
+2026-27,ESP1,FC Barcelona,Gabriel Jesus,794839,F,1997-04-02,Right,175.0,Brazil,2029-06-29,17600000.0
+2026-27,ESP1,FC Barcelona,Karim Adeyemi,940054,F,2002-01-17,Left,180.0,Germany,2031-06-29,41000000.0
+2026-27,ESP1,FC Barcelona,Lamine Yamal,1402912,M,2007-07-12,Left,183.0,Spain,2031-06-29,237000000.0
+2026-27,ESP1,FC Barcelona,Raphinha,831005,M,1996-12-13,Left,176.0,Brazil,2028-06-29,63000000.0
+2026-27,ESP1,FC Barcelona,Pedri,992587,M,2002-11-24,Right,174.0,Spain,2030-06-29,164000000.0
+2026-27,ESP1,FC Barcelona,Gavi,1103693,M,2004-08-04,Right,173.0,Spain,2030-06-29,31000000.0
+2026-27,ESP1,FC Barcelona,Frenkie de Jong,795222,M,1997-05-11,Right,180.0,Netherlands,2029-06-29,32000000.0
+2026-27,ESP1,FC Barcelona,Fermín López,1153270,M,2003-05-10,Right,176.0,Spain,2031-06-29,103000000.0
+2026-27,ESP1,FC Barcelona,Dani Olmo,789071,M,1998-05-06,Right,179.0,Spain,2030-06-29,58000000.0
+2026-27,ESP1,FC Barcelona,Rodri,827606,M,1996-06-21,Right,191.0,Spain,2030-06-29,50000000.0
+2026-27,ESP1,FC Barcelona,Marc Bernal,1526618,M,2007-05-25,Left,193.0,Spain,2029-06-29,29000000.0
+2026-27,ESP1,FC Barcelona,Jesse Bisiwu,1506988,M,2008-01-21,Right,185.0,Belgium,2031-06-29,775000.0
+2026-27,ESP1,FC Barcelona,Brian Fariñas,1544613,M,2006-02-08,Right,180.0,Spain,2028-06-29,2700000.0
+2026-27,ESP1,FC Barcelona,Pau Cubarsí,1402913,D,2007-01-21,Right,184.0,Spain,2029-06-29,94000000.0
+2026-27,ESP1,FC Barcelona,Jules Koundé,827212,D,1998-11-11,Right,180.0,France,2030-06-29,64000000.0
+2026-27,ESP1,FC Barcelona,Alejandro Balde,997035,D,2003-10-17,Left,177.0,Spain,2028-06-29,55000000.0
+2026-27,ESP1,FC Barcelona,João Cancelo,138892,D,1994-05-26,Right,182.0,Portugal,2029-06-29,8600000.0
+2026-27,ESP1,FC Barcelona,Andreas Christensen,186795,D,1996-04-09,Right,188.0,Denmark,2028-06-29,7700000.0
+2026-27,ESP1,FC Barcelona,Eric García,876214,D,2001-01-08,Right,182.0,Spain,2031-06-29,39000000.0
+2026-27,ESP1,FC Barcelona,Gerard Martín,1094827,D,2002-02-25,Left,186.0,Spain,2028-06-29,32000000.0
+2026-27,ESP1,FC Barcelona,Xavi Espart,1546073,D,2007-05-20,Right,175.0,Spain,2028-06-29,5300000.0
+2026-27,ESP1,FC Barcelona,Jordi Pesquer,2128094,D,2009-01-15,Left,183.0,Spain,2028-06-29,
+2026-27,ESP1,FC Barcelona,Joan García,930267,G,2001-05-03,Right,193.0,Spain,2031-06-29,46000000.0
+2026-27,ESP1,FC Barcelona,Wojciech Szczęsny,50490,G,1990-04-17,Right,196.0,Poland,2027-06-29,730000.0
+2026-27,ESP1,FC Barcelona,Dominik Livaković,190419,G,1995-01-08,Right,186.0,Croatia,2030-06-29,4099999.0
+2026-27,ESP1,Real Madrid,Kylian Mbappé,826643,F,1998-12-19,Right,180.0,France,2029-06-29,212000000.0
+2026-27,ESP1,Real Madrid,Vinícius Júnior,868812,F,2000-07-11,Right,176.0,Brazil,2032-06-29,146000000.0
+2026-27,ESP1,Real Madrid,Rodrygo,910536,F,2001-01-08,Right,174.0,Brazil,2028-06-29,48000000.0
+2026-27,ESP1,Real Madrid,Endrick,1174937,F,2006-07-20,Left,173.0,Brazil,2030-06-29,42000000.0
+2026-27,ESP1,Real Madrid,Yan Diomande,2087085,F,2006-11-13,Right,180.0,Côte d'Ivoire,2033-06-29,99000000.0
+2026-27,ESP1,Real Madrid,Carlos Espí,1649918,F,2005-07-23,Right,194.0,Spain,2031-06-29,22000000.0
+2026-27,ESP1,Real Madrid,Jude Bellingham,991011,M,2003-06-28,Right,188.0,England,2029-06-29,151000000.0
+2026-27,ESP1,Real Madrid,Federico Valverde,831808,M,1998-07-21,Right,181.0,Uruguay,2029-06-29,87000000.0
+2026-27,ESP1,Real Madrid,Arda Güler,1091116,M,2005-02-24,Left,176.0,Türkiye,2029-06-29,87000000.0
+2026-27,ESP1,Real Madrid,Brahim Díaz,835485,M,1999-08-02,Both,170.0,Morocco,2027-06-29,37000000.0
+2026-27,ESP1,Real Madrid,Eduardo Camavinga,973887,M,2002-11-09,Left,182.0,France,2029-06-29,48000000.0
+2026-27,ESP1,Real Madrid,Aurélien Tchouaméni,859025,M,2000-01-26,Right,188.0,France,2028-06-29,73000000.0
+2026-27,ESP1,Real Madrid,Bernardo Silva,331209,M,1994-08-09,Left,173.0,Portugal,2028-06-29,21000000.0
+2026-27,ESP1,Real Madrid,Thiago Pitarch,2237795,M,2007-08-02,Right,179.0,Spain,2027-06-29,18200000.0
+2026-27,ESP1,Real Madrid,Denzel Dumfries,759520,M,1996-04-17,Right,188.0,Netherlands,2030-06-29,26000000.0
+2026-27,ESP1,Real Madrid,Jorge Cestero,1590121,M,2006-03-23,Right,178.0,Spain,2028-06-29,8000000.0
+2026-27,ESP1,Real Madrid,Diego Lacosta,2049131,M,2008-01-29,Right,180.0,Spain,,
+2026-27,ESP1,Real Madrid,Trent Alexander-Arnold,795064,D,1998-10-06,Right,180.0,England,2031-06-29,62000000.0
+2026-27,ESP1,Real Madrid,Antonio Rüdiger,142622,D,1993-03-02,Right,191.0,Germany,2027-06-29,6200000.0
+2026-27,ESP1,Real Madrid,Dean Huijsen,1176744,D,2005-04-13,Both,195.0,Spain,2030-06-29,66000000.0
+2026-27,ESP1,Real Madrid,Éder Militão,822519,D,1998-01-17,Right,186.0,Brazil,2028-06-29,21000000.0
+2026-27,ESP1,Real Madrid,Raúl Asencio,1156645,D,2003-02-12,Right,184.0,Spain,2031-06-29,18100000.0
+2026-27,ESP1,Real Madrid,Marc Cucurella,794939,D,1998-07-21,Left,175.0,Spain,2032-06-29,62000000.0
+2026-27,ESP1,Real Madrid,Álvaro Carreras,1085081,D,2003-03-22,Left,186.0,Spain,2031-06-29,53000000.0
+2026-27,ESP1,Real Madrid,Ferland Mendy,792073,D,1995-06-07,Left,178.0,France,2028-06-29,4200000.0
+2026-27,ESP1,Real Madrid,Ibrahima Konaté,826215,D,1999-05-24,Right,195.0,France,2030-06-29,46000000.0
+2026-27,ESP1,Real Madrid,Thibaut Courtois,70988,G,1992-05-10,Left,200.0,Belgium,2027-06-29,14500000.0
+2026-27,ESP1,Real Madrid,Andriy Lunin,857574,G,1999-02-10,Right,191.0,Ukraine,2030-06-29,11300000.0
+2026-27,ESP1,Atlético Madrid,Julián Alvarez,944656,F,2000-01-30,Right,170.0,Argentina,2030-06-29,116000000.0
+2026-27,ESP1,Atlético Madrid,Ademola Lookman,824200,F,1997-10-19,Right,174.0,Nigeria,2030-06-29,44000000.0
+2026-27,ESP1,Atlético Madrid,Jonathan David,935564,F,2000-01-13,Both,180.0,Canada,2030-06-29,29000000.0
+2026-27,ESP1,Atlético Madrid,Alexander Sørloth,309078,F,1995-12-04,Left,195.0,Norway,2028-06-29,18600000.0
+2026-27,ESP1,Atlético Madrid,Kang-in Lee,917087,M,2001-02-18,Left,173.0,South Korea,2031-06-29,30000000.0
+2026-27,ESP1,Atlético Madrid,Giuliano Simeone,1099352,M,2002-12-17,Right,173.0,Argentina,2030-06-29,44000000.0
+2026-27,ESP1,Atlético Madrid,Alex Baena,910031,M,2001-07-18,Right,174.0,Spain,2030-06-29,43000000.0
+2026-27,ESP1,Atlético Madrid,Alejandro Grimaldo,177177,M,1995-09-19,Left,171.0,Spain,2030-06-29,19400000.0
+2026-27,ESP1,Atlético Madrid,Obed Vargas,1119345,M,2005-08-04,Right,175.0,Mexico,2030-06-29,9300000.0
+2026-27,ESP1,Atlético Madrid,Pablo Barrios,1142588,M,2003-06-14,Right,181.0,Spain,2030-06-29,60000000.0
+2026-27,ESP1,Atlético Madrid,Johnny Cardoso,990169,M,2001-09-19,Right,186.0,USA,2030-06-29,18700000.0
+2026-27,ESP1,Atlético Madrid,Koke,84539,M,1992-01-07,Right,177.0,Spain,2027-06-29,4600000.0
+2026-27,ESP1,Atlético Madrid,Morten Hjulmand,859917,M,1999-06-24,Right,185.0,Denmark,2031-06-29,48000000.0
+2026-27,ESP1,Atlético Madrid,Rodrigo Mendoza,1391752,M,2005-03-14,Right,182.0,Spain,2031-06-29,21000000.0
+2026-27,ESP1,Atlético Madrid,Arnau Ortiz,1143553,M,2001-10-28,Both,175.0,Spain,2028-06-29,1200000.0
+2026-27,ESP1,Atlético Madrid,Cristian Romero,829932,D,1998-04-26,Right,185.0,Argentina,2031-06-29,46000000.0
+2026-27,ESP1,Atlético Madrid,Marcos Llorente,353138,D,1995-01-29,Right,184.0,Spain,2027-06-29,21000000.0
+2026-27,ESP1,Atlético Madrid,Robin Le Normand,787751,D,1996-11-10,Right,187.0,Spain,2029-06-29,19100000.0
+2026-27,ESP1,Atlético Madrid,Marc Pubill,1094106,D,2003-06-19,Right,190.0,Spain,2030-06-29,33000000.0
+2026-27,ESP1,Atlético Madrid,Dávid Hancko,807771,D,1997-12-12,Left,188.0,Slovakia,2030-06-29,36000000.0
+2026-27,ESP1,Atlético Madrid,Jorge Domínguez,2271379,D,2009-12-20,Right,192.0,Spain,2028-06-29,7600000.0
+2026-27,ESP1,Atlético Madrid,Dani Martinez,1414932,D,2004-05-04,Left,186.0,Spain,2027-06-29,550000.0
+2026-27,ESP1,Atlético Madrid,Juan Musso,263651,G,1994-05-05,Right,191.0,Argentina,2028-06-29,3200000.0
+2026-27,ESP1,Atlético Madrid,Jan Oblak,69768,G,1993-01-06,Right,189.0,Slovenia,2028-06-29,16000000.0
+2026-27,ESP1,Atlético Madrid,Salvi Esquivel,1179149,G,2005-09-29,Left,193.0,Spain,2028-06-29,970000.0
+2026-27,ESP1,Deportivo Alavés,Mariano Díaz,175753,F,1993-07-31,Right,180.0,Dominican Republic,2027-06-29,285000.0
+2026-27,ESP1,Deportivo Alavés,Toni Martínez,831253,F,1997-06-29,Right,180.0,Spain,2028-06-29,7300000.0
+2026-27,ESP1,Deportivo Alavés,Lucas Boyé,814385,F,1996-02-27,Right,183.0,Argentina,2029-06-29,5300000.0
+2026-27,ESP1,Deportivo Alavés,Aitor Mañas,1639543,F,2003-01-04,Left,185.0,Spain,2030-06-29,570000.0
+2026-27,ESP1,Deportivo Alavés,Abderrahman Rebbach,1082968,M,1998-08-10,Right,176.0,Algeria,2028-06-29,2400000.0
+2026-27,ESP1,Deportivo Alavés,Antonio Blanco,855832,M,2000-07-22,Right,176.0,Spain,2027-06-29,9700000.0
+2026-27,ESP1,Deportivo Alavés,Carles Aleñá,794937,M,1998-01-04,Left,180.0,Spain,2029-06-29,2800000.0
+2026-27,ESP1,Deportivo Alavés,Denis Suárez,138383,M,1994-01-05,Right,176.0,Spain,2027-06-29,1100000.0
+2026-27,ESP1,Deportivo Alavés,Miguel Rodríguez,1014118,M,2003-04-28,Left,179.0,Spain,2031-06-29,4099999.0
+2026-27,ESP1,Deportivo Alavés,Pablo Ibáñez,1084381,M,1997-12-31,Right,179.0,Spain,2030-06-29,4099999.0
+2026-27,ESP1,Deportivo Alavés,Ángel Pérez,1513222,M,2002-08-28,Left,183.0,Spain,2030-06-29,2800000.0
+2026-27,ESP1,Deportivo Alavés,Ander Guevara,891931,M,1997-07-06,Right,180.0,Spain,2027-06-29,2700000.0
+2026-27,ESP1,Deportivo Alavés,Mikel Rodriguez,788142,M,2002-04-02,Right,175.0,Spain,2031-06-29,720000.0
+2026-27,ESP1,Deportivo Alavés,Selu Diallo,1522234,M,2003-09-30,Right,187.0,Guinea,2028-06-29,365000.0
+2026-27,ESP1,Deportivo Alavés,Tomás Mendes,1119693,M,2004-11-20,Right,179.0,Guinea-Bissau,2027-06-29,520000.0
+2026-27,ESP1,Deportivo Alavés,Youssef Enriquez,1403364,D,2005-10-06,Right,170.0,Morocco,2029-06-29,4300000.0
+2026-27,ESP1,Deportivo Alavés,Facundo Garcés,879875,D,1999-09-04,Right,191.0,Malaysia,2028-06-29,1300000.0
+2026-27,ESP1,Deportivo Alavés,Nahuel Tenaglia,896073,D,1996-02-20,Right,182.0,Argentina,2029-06-29,3200000.0
+2026-27,ESP1,Deportivo Alavés,Nicolás Valentini,1116570,D,2001-04-05,Left,184.0,Argentina,2029-06-29,3100000.0
+2026-27,ESP1,Deportivo Alavés,Jonny Otto,235648,D,1994-03-02,Both,175.0,Spain,2027-06-29,2100000.0
+2026-27,ESP1,Deportivo Alavés,Ville Koski,999178,D,2002-01-26,Right,185.0,Finland,2031-06-29,1600000.0
+2026-27,ESP1,Deportivo Alavés,Carlos Benavídez,873717,D,1998-03-29,Right,185.0,Uruguay,2028-06-29,960000.0
+2026-27,ESP1,Deportivo Alavés,Hugo Novoa,1001967,D,2003-01-23,Right,182.0,Spain,2029-06-29,725000.0
+2026-27,ESP1,Deportivo Alavés,Antonio Sivera,369004,G,1996-08-10,Right,184.0,Spain,2030-06-29,5600000.0
+2026-27,ESP1,Deportivo Alavés,Adrián Rodríguez,965822,G,2000-12-11,Right,195.0,Argentina,2028-06-29,185000.0
+2026-27,ESP1,Osasuna,Ante Budimir,37318,F,1991-07-21,Left,190.0,Croatia,2027-06-29,2600000.0
+2026-27,ESP1,Osasuna,Raúl García de Haro,997280,F,2000-11-02,Right,192.0,Spain,2031-06-29,3100000.0
+2026-27,ESP1,Osasuna,Kike Barja,591132,F,1997-04-03,Right,178.0,Spain,2028-06-29,1500000.0
+2026-27,ESP1,Osasuna,Raúl Moro,980383,M,2002-12-04,Right,169.0,Spain,2031-06-29,3300000.0
+2026-27,ESP1,Osasuna,Aimar Oroz,985329,M,2001-11-26,Right,177.0,Spain,2029-06-29,6900000.0
+2026-27,ESP1,Osasuna,Rubén García,260031,M,1993-07-13,Left,171.0,Spain,2027-06-29,1700000.0
+2026-27,ESP1,Osasuna,Jon Moncayola,976141,M,1998-05-12,Right,182.0,Spain,2031-06-29,7300000.0
+2026-27,ESP1,Osasuna,Romain Del Castillo,825681,M,1996-03-28,Left,172.0,France,2028-06-29,6400000.0
+2026-27,ESP1,Osasuna,Lucas Torró,187313,M,1994-07-18,Right,190.0,Spain,2027-06-29,2700000.0
+2026-27,ESP1,Osasuna,Moi Gómez,149370,M,1994-06-22,Right,174.0,Spain,2027-06-29,1600000.0
+2026-27,ESP1,Osasuna,Jonathan Dubasin,1094517,M,2000-02-01,Right,180.0,Spain,2030-06-29,4300000.0
+2026-27,ESP1,Osasuna,Iker Muñoz,1119586,M,2002-11-04,Right,179.0,Spain,2030-06-29,1800000.0
+2026-27,ESP1,Osasuna,Enzo Boyomo,1067582,D,2001-10-06,Right,181.0,Cameroon,2029-06-29,14600000.0
+2026-27,ESP1,Osasuna,Diego Rico,350560,D,1993-02-22,Left,181.0,Spain,2027-06-29,1000000.0
+2026-27,ESP1,Osasuna,Alejandro Catena,900792,D,1994-10-27,Right,194.0,Spain,2028-06-29,2700000.0
+2026-27,ESP1,Osasuna,Valentin Rosier,842419,D,1996-08-18,Right,175.0,France,2028-06-29,3100000.0
+2026-27,ESP1,Osasuna,Abel Bretones,1010165,D,2000-08-20,Left,188.0,Spain,2029-06-29,3400000.0
+2026-27,ESP1,Osasuna,Rockson Yeboah,1507914,D,2004-08-01,Right,189.0,Ghana,2031-06-29,280000.0
+2026-27,ESP1,Osasuna,Jorge Herrando,944225,D,2001-02-27,Left,192.0,Spain,2030-06-29,3200000.0
+2026-27,ESP1,Osasuna,Iñigo Arguibide,1495856,D,2005-04-18,Right,178.0,Spain,2027-06-29,850000.0
+2026-27,ESP1,Osasuna,Asier Osambela,1399702,D,2004-10-29,Right,186.0,Spain,2029-06-29,1000000.0
+2026-27,ESP1,Osasuna,Sergio Herrera,294377,G,1993-05-05,Right,192.0,Spain,2028-06-29,2600000.0
+2026-27,ESP1,Osasuna,Aitor Fernández,99516,G,1991-05-02,Right,182.0,Spain,2027-06-29,465000.0
+2026-27,ESP1,Sevilla,Chidera Ejuke,875890,F,1998-01-01,Right,176.0,Nigeria,2027-06-29,3700000.0
+2026-27,ESP1,Sevilla,Lucas Stassin,1126521,F,2004-11-28,Right,184.0,Belgium,2027-06-29,15700000.0
+2026-27,ESP1,Sevilla,Robbie Ure,1142351,F,2004-02-25,Right,189.0,Scotland,2031-06-29,4800000.0
+2026-27,ESP1,Sevilla,Isaac Romero,1018190,F,2000-05-17,Left,184.0,Spain,2028-06-29,5200000.0
+2026-27,ESP1,Sevilla,Alfon González,1468090,F,1999-05-03,Right,172.0,Spain,2028-06-29,3300000.0
+2026-27,ESP1,Sevilla,Manuel Angel Castillo Rodrguez,2725914,F,2008-06-11,,177.0,Spain,,
+2026-27,ESP1,Sevilla,Youssouf Fofana,945062,M,1999-01-09,Right,185.0,France,2027-06-29,25000000.0
+2026-27,ESP1,Sevilla,Rubén Vargas,872919,M,1998-08-04,Right,179.0,Switzerland,2029-06-29,13900000.0
+2026-27,ESP1,Sevilla,Giorgi Kochorashvili,886402,M,1999-06-27,Right,176.0,Georgia,2030-06-29,3800000.0
+2026-27,ESP1,Sevilla,Lucien Agoumé,960006,M,2002-02-08,Right,185.0,France,2028-06-29,15500000.0
+2026-27,ESP1,Sevilla,Félix Correia,934498,M,2001-01-21,Right,178.0,Portugal,2027-06-29,9700000.0
+2026-27,ESP1,Sevilla,Peque Fernández,997033,M,2002-10-03,Right,168.0,Spain,2028-06-29,3300000.0
+2026-27,ESP1,Sevilla,Jon Guridi,788141,M,1995-02-27,Left,179.0,Spain,2028-06-29,1700000.0
+2026-27,ESP1,Sevilla,Miguel Sierra,2509247,M,2004-07-13,Left,181.0,Spain,2029-06-29,330000.0
+2026-27,ESP1,Sevilla,Manu Bueno,1142094,M,2004-07-26,Left,178.0,Spain,2027-06-29,1500000.0
+2026-27,ESP1,Sevilla,Nico Guillén,1892023,M,2008-01-29,Left,190.0,Spain,2029-06-29,1100000.0
+2026-27,ESP1,Sevilla,Gabriel Suazo,818986,D,1997-08-08,Left,178.0,Chile,2028-06-29,6600000.0
+2026-27,ESP1,Sevilla,Kike Salas,1097719,D,2002-04-21,Left,186.0,Spain,2029-06-29,15400000.0
+2026-27,ESP1,Sevilla,Marcão,840951,D,1996-06-04,Left,185.0,Brazil,2028-06-29,2600000.0
+2026-27,ESP1,Sevilla,Arouna Sangante,1035988,D,2002-04-11,Right,189.0,Senegal,2031-06-29,7700000.0
+2026-27,ESP1,Sevilla,José Ángel Carmona,1015240,D,2002-01-28,Right,183.0,Spain,2028-06-29,11100000.0
+2026-27,ESP1,Sevilla,Juan Iglesias,949707,D,1998-07-02,Right,185.0,Spain,2030-06-29,4800000.0
+2026-27,ESP1,Sevilla,Julio Díaz,1402990,D,2005-01-09,Left,174.0,Spain,2031-06-29,1400000.0
+2026-27,ESP1,Sevilla,Fábio Cardoso,252815,D,1994-04-18,Right,187.0,Portugal,2028-06-29,1400000.0
+2026-27,ESP1,Sevilla,Andres Castrin,1428699,D,2003-05-25,Right,188.0,Spain,2027-06-29,6500000.0
+2026-27,ESP1,Sevilla,Fran González,1493226,G,2005-06-23,Right,199.0,Spain,2031-06-29,2700000.0
+2026-27,ESP1,Sevilla,Odysseas Vlachodimos,138149,G,1994-04-25,Right,191.0,Greece,2027-06-29,3200000.0
+2026-27,ESP1,Real Betis,Troy Parrott,966555,F,2002-02-03,Right,185.0,Ireland,2031-06-29,23000000.0
+2026-27,ESP1,Real Betis,Cucho Hernández,887055,F,1999-04-19,Right,175.0,Colombia,2030-06-29,16500000.0
+2026-27,ESP1,Real Betis,Antony,958380,M,2000-02-23,Left,172.0,Brazil,2030-06-29,37000000.0
+2026-27,ESP1,Real Betis,Dani Ceballos,547838,M,1996-08-06,Right,179.0,Spain,2029-06-29,7400000.0
+2026-27,ESP1,Real Betis,Abdessamad Ezzalzouli,1011375,M,2001-12-16,Right,177.0,Morocco,2029-06-29,43000000.0
+2026-27,ESP1,Real Betis,Isco,103417,M,1992-04-20,Right,176.0,Spain,2028-06-29,3600000.0
+2026-27,ESP1,Real Betis,Giovani Lo Celso,798835,M,1996-04-08,Left,177.0,Argentina,2028-06-29,7800000.0
+2026-27,ESP1,Real Betis,Álvaro Fidalgo,838629,M,1997-04-08,Right,174.0,Mexico,2030-06-29,6500000.0
+2026-27,ESP1,Real Betis,Nelson Deossa,1129401,M,2000-02-05,Left,185.0,Colombia,2030-06-29,9800000.0
+2026-27,ESP1,Real Betis,Rodrigo Riquelme,989113,M,2000-04-01,Right,174.0,Spain,2030-06-29,4300000.0
+2026-27,ESP1,Real Betis,Pablo Fornals,816763,M,1996-02-21,Right,178.0,Spain,2029-06-29,8400000.0
+2026-27,ESP1,Real Betis,Facundo Bernal,1177404,M,2003-08-20,Right,187.0,Uruguay,2031-06-29,5800000.0
+2026-27,ESP1,Real Betis,Marc Roca,847128,M,1996-11-25,Left,184.0,Spain,2029-06-29,4200000.0
+2026-27,ESP1,Real Betis,Iker Losada,992331,M,2001-07-31,Right,175.0,Spain,2029-06-29,2000000.0
+2026-27,ESP1,Real Betis,Ricardo Funez,2725906,M,2007-02-01,Right,173.0,Spain,,
+2026-27,ESP1,Real Betis,Fran García,851271,D,1999-08-13,Left,170.0,Spain,2030-06-29,9200000.0
+2026-27,ESP1,Real Betis,Héctor Bellerín,188365,D,1995-03-18,Right,178.0,Spain,2028-06-29,2500000.0
+2026-27,ESP1,Real Betis,Natan,1015287,D,2001-02-05,Left,188.0,Brazil,2030-06-29,26000000.0
+2026-27,ESP1,Real Betis,Valentín Gómez,1186010,D,2003-06-25,Left,181.0,Argentina,2030-06-29,11200000.0
+2026-27,ESP1,Real Betis,Junior Firpo,914835,D,1996-08-21,Left,184.0,Dominican Republic,2028-06-29,3400000.0
+2026-27,ESP1,Real Betis,Marc Bartra,99519,D,1991-01-14,Right,183.0,Spain,2027-06-29,930000.0
+2026-27,ESP1,Real Betis,Diego Llorente,305278,D,1993-08-15,Right,185.0,Spain,2028-06-29,2600000.0
+2026-27,ESP1,Real Betis,Aitor Ruibal,893062,D,1996-03-21,Right,176.0,Spain,2028-06-29,3900000.0
+2026-27,ESP1,Real Betis,Angel Ortiz,1152139,D,2004-07-24,Right,167.0,Spain,2029-06-29,4400000.0
+2026-27,ESP1,Real Betis,Álvaro Valles,964983,G,1997-07-24,Right,192.0,Spain,2030-06-29,6500000.0
+2026-27,ESP1,Real Betis,Diego Conde,951008,G,1998-10-27,Right,188.0,Spain,2027-06-29,3200000.0
+2026-27,ESP1,Deportivo de A Coruña,Pierre-Emerick Aubameyang,51498,F,1989-06-17,Right,187.0,Gabon,2028-06-29,2400000.0
+2026-27,ESP1,Deportivo de A Coruña,Adama Traoré,286165,F,1996-01-24,Right,178.0,Spain,2028-06-29,5700000.0
+2026-27,ESP1,Deportivo de A Coruña,Yeremay Hernández,1096950,F,2002-12-09,Right,169.0,Spain,2030-06-29,23000000.0
+2026-27,ESP1,Deportivo de A Coruña,Jonathan Asp Jensen,1146545,F,2006-01-13,Right,182.0,Denmark,2031-06-29,3900000.0
+2026-27,ESP1,Deportivo de A Coruña,Zakaria Eddahchouri,979476,F,2000-05-10,Right,187.0,Netherlands,2028-06-29,2400000.0
+2026-27,ESP1,Deportivo de A Coruña,Bil Nsongo,2335487,F,2004-09-20,Right,182.0,Cameroon,2030-06-29,3200000.0
+2026-27,ESP1,Deportivo de A Coruña,Marc Casadó,1000483,M,2003-09-13,Right,172.0,Spain,2027-06-29,17400000.0
+2026-27,ESP1,Deportivo de A Coruña,Angeliño,848355,M,1997-01-03,Left,171.0,Spain,2027-06-29,4200000.0
+2026-27,ESP1,Deportivo de A Coruña,David Mella,1146312,M,2005-05-22,Left,169.0,Spain,2029-06-29,4500000.0
+2026-27,ESP1,Deportivo de A Coruña,Lorenzo Amatucci,1100207,M,2004-02-04,Right,172.0,Italy,2028-06-29,8199999.0
+2026-27,ESP1,Deportivo de A Coruña,Mario Soriano,984622,M,2002-04-21,Right,163.0,Spain,2028-06-29,4600000.0
+2026-27,ESP1,Deportivo de A Coruña,Luismi Cruz,966526,M,2001-05-22,Left,166.0,Spain,2029-06-29,2100000.0
+2026-27,ESP1,Deportivo de A Coruña,Riki Rodríguez,950110,M,1997-09-24,Right,175.0,Spain,2029-06-29,1400000.0
+2026-27,ESP1,Deportivo de A Coruña,Teun Gijselhart,1405763,M,2005-04-05,Right,176.0,Netherlands,2030-06-29,700000.0
+2026-27,ESP1,Deportivo de A Coruña,Diego Villares,964849,M,1996-07-16,Right,186.0,Spain,2028-06-29,1000000.0
+2026-27,ESP1,Deportivo de A Coruña,Noé Carrillo,2414019,M,2006-12-27,Right,176.0,Spain,2029-06-29,1000000.0
+2026-27,ESP1,Deportivo de A Coruña,José María Giménez,325355,D,1995-01-19,Right,185.0,Uruguay,2028-06-29,8600000.0
+2026-27,ESP1,Deportivo de A Coruña,Bright Ede,1978292,D,2007-02-17,Left,193.0,Poland,2031-06-29,620000.0
+2026-27,ESP1,Deportivo de A Coruña,Lucas Noubi,1127337,D,2005-01-14,Right,184.0,Belgium,2029-06-29,1500000.0
+2026-27,ESP1,Deportivo de A Coruña,Adrià Altimira,980732,D,2001-03-27,Right,170.0,Spain,2029-06-29,1700000.0
+2026-27,ESP1,Deportivo de A Coruña,Arnau Comas,901843,D,2000-04-10,Right,189.0,Spain,2028-06-29,470000.0
+2026-27,ESP1,Deportivo de A Coruña,Ximo Navarro,150864,D,1990-01-22,Right,176.0,Spain,2027-06-29,95000.0
+2026-27,ESP1,Deportivo de A Coruña,Giacomo Quagliata,973300,D,2000-02-18,Left,177.0,Italy,2028-06-29,2100000.0
+2026-27,ESP1,Deportivo de A Coruña,Dani Barcia,1100590,D,2003-01-18,Left,186.0,Spain,2028-06-29,1300000.0
+2026-27,ESP1,Deportivo de A Coruña,Miguel Loureiro,811611,D,1996-11-20,Right,180.0,Spain,2028-06-29,1200000.0
+2026-27,ESP1,Deportivo de A Coruña,Leo Román,1131909,G,2000-07-05,Right,189.0,Spain,2031-06-29,5800000.0
+2026-27,ESP1,Deportivo de A Coruña,Álvaro Ferllo,852412,G,1998-04-12,Left,186.0,Spain,2027-06-29,2100000.0
+2026-27,ESP1,Deportivo de A Coruña,Germán Parreño,950678,G,1993-02-15,Right,189.0,Spain,2028-06-29,240000.0
+2026-27,ESP1,Levante UD,Etta Eyong,1393673,F,2003-10-13,Right,181.0,Cameroon,2029-06-29,15600000.0
+2026-27,ESP1,Levante UD,Petar Ratkov,1101942,F,2003-08-17,Right,187.0,Serbia,2027-06-29,8400000.0
+2026-27,ESP1,Levante UD,Iván Romero,1014042,F,2001-04-09,Right,172.0,Spain,2028-06-29,7400000.0
+2026-27,ESP1,Levante UD,Yanis Musuayi,1931573,F,2007-06-25,Right,190.0,Belgium,2030-06-29,645000.0
+2026-27,ESP1,Levante UD,Paco Cortés,1869106,F,2007-08-10,Right,178.0,Spain,2028-06-29,1400000.0
+2026-27,ESP1,Levante UD,Thiago Fernández,1201412,M,2004-04-02,Right,175.0,Argentina,2027-06-29,4700000.0
+2026-27,ESP1,Levante UD,Oriol Rey,859769,M,1998-02-24,Left,175.0,Spain,2027-06-29,1700000.0
+2026-27,ESP1,Levante UD,Hugo Sotelo,1120669,M,2003-12-18,Right,180.0,Spain,2027-06-29,4800000.0
+2026-27,ESP1,Levante UD,Enzo Bardeli,996974,M,2001-04-10,Right,172.0,France,2029-06-29,5800000.0
+2026-27,ESP1,Levante UD,Jon Ander Olasagasti,1010383,M,2000-08-15,Left,176.0,Spain,2028-06-29,2700000.0
+2026-27,ESP1,Levante UD,Roger Brugué,909554,M,1996-11-03,Left,173.0,Spain,2028-06-29,1900000.0
+2026-27,ESP1,Levante UD,Víctor García,952222,M,1996-12-31,Right,177.0,Spain,2027-06-29,1500000.0
+2026-27,ESP1,Levante UD,Daniel Requena,1521658,M,2004-02-11,Right,186.0,Spain,2027-06-29,1000000.0
+2026-27,ESP1,Levante UD,Aïssa Mandi,122810,D,1991-10-21,Right,186.0,Algeria,2028-06-29,1100000.0
+2026-27,ESP1,Levante UD,Ifeanyi Ndukwe,1929673,D,2008-03-02,Both,198.0,Austria,2027-06-29,3200000.0
+2026-27,ESP1,Levante UD,Axel Tape,1937795,D,2007-08-09,Right,180.0,France,2027-06-29,8700000.0
+2026-27,ESP1,Levante UD,Manuel Sánchez,984789,D,2000-08-22,Left,179.0,Spain,2027-06-29,6400000.0
+2026-27,ESP1,Levante UD,Adrián de la Fuente,997244,D,1999-02-25,Right,178.0,Spain,2027-06-29,4099999.0
+2026-27,ESP1,Levante UD,Jeremy Toljan,149606,D,1994-08-07,Right,182.0,Germany,2027-06-29,1900000.0
+2026-27,ESP1,Levante UD,Nacho Pérez,2049311,D,2008-08-31,Right,175.0,Spain,2028-06-29,310000.0
+2026-27,ESP1,Levante UD,Marc Santos,2342523,D,,Left,170.0,Spain,2029-06-29,
+2026-27,ESP1,Levante UD,Jorge Cabello,1807070,D,2004-04-24,Left,180.0,Spain,2028-06-29,930000.0
+2026-27,ESP1,Levante UD,Xavi Grande,1464651,D,2005-01-27,Right,175.0,Spain,2028-06-29,850000.0
+2026-27,ESP1,Levante UD,Mathew Ryan,134029,G,1992-04-07,Right,184.0,Australia,2027-06-29,1700000.0
+2026-27,ESP1,Levante UD,Pablo Cunat Campos,2660173,G,2002-04-27,Left,188.0,Spain,2027-06-29,1600000.0
+2026-27,ESP1,Levante UD,Alejandro Primo,1215079,G,2004-07-09,Right,185.0,Spain,2028-06-29,110000.0
+2026-27,ESP1,Real Racing Club,Yassir Zabiri,1606013,F,2005-02-22,Left,182.0,Morocco,2027-06-29,9800000.0
+2026-27,ESP1,Real Racing Club,Giorgi Guliashvili,965257,F,2001-09-04,Right,179.0,Georgia,2029-06-29,3400000.0
+2026-27,ESP1,Real Racing Club,Asier Villalibre,355072,F,1997-09-29,Left,183.0,Spain,2029-06-29,2100000.0
+2026-27,ESP1,Real Racing Club,Juan Carlos Arana,1084464,F,2000-02-07,Right,182.0,Spain,2028-06-29,1100000.0
+2026-27,ESP1,Real Racing Club,Sergio Canales,41560,M,1991-02-15,Left,176.0,Spain,2028-06-29,3200000.0
+2026-27,ESP1,Real Racing Club,Pablo García,1893910,M,2006-06-12,Left,175.0,Spain,2030-06-29,8199999.0
+2026-27,ESP1,Real Racing Club,Belal Attia,1961600,M,2007-12-31,Right,170.0,Egypt,2027-06-29,
+2026-27,ESP1,Real Racing Club,Andrés Martín,922939,M,1999-07-10,Left,178.0,Spain,2028-06-29,8199999.0
+2026-27,ESP1,Real Racing Club,Maguette Gueye,1383421,M,2002-12-29,Left,183.0,Senegal,2029-06-29,2100000.0
+2026-27,ESP1,Real Racing Club,Iker Luque,1544428,M,2005-06-04,Right,168.0,Spain,2030-06-29,2200000.0
+2026-27,ESP1,Real Racing Club,Iñigo Vicente,605674,M,1998-01-05,Right,178.0,Spain,2030-06-29,6600000.0
+2026-27,ESP1,Real Racing Club,André Almeida,845693,M,2000-05-29,Right,176.0,Portugal,2027-06-29,6200000.0
+2026-27,ESP1,Real Racing Club,Aarón Martín,797286,M,1997-04-21,Left,180.0,Spain,2027-06-29,4900000.0
+2026-27,ESP1,Real Racing Club,Iván Martín,973699,M,1999-02-13,Left,178.0,Spain,2030-06-29,4600000.0
+2026-27,ESP1,Real Racing Club,Matteo Prati,1111640,M,2003-12-27,Right,182.0,Italy,2027-06-29,5000000.0
+2026-27,ESP1,Real Racing Club,Íñigo Sáinz-Maza,949459,M,1998-06-15,Right,184.0,Spain,2028-06-29,1000000.0
+2026-27,ESP1,Real Racing Club,Jorge Salinas,1861680,D,2007-04-02,Left,181.0,Spain,2029-06-29,8500000.0
+2026-27,ESP1,Real Racing Club,Jeanuël Belocian,1173172,D,2005-02-16,Left,186.0,France,2027-06-29,12900000.0
+2026-27,ESP1,Real Racing Club,Facundo González,1085103,D,2003-06-05,Left,193.0,Uruguay,2029-06-29,3100000.0
+2026-27,ESP1,Real Racing Club,Pedro Felipe,1485292,D,2004-05-22,Right,190.0,Brazil,2030-06-29,1500000.0
+2026-27,ESP1,Real Racing Club,Pablo Ramón,962381,D,2001-06-29,Right,186.0,Spain,2029-06-29,1500000.0
+2026-27,ESP1,Real Racing Club,Manu Hernando,851268,D,1998-07-18,Right,181.0,Spain,2028-06-29,1400000.0
+2026-27,ESP1,Real Racing Club,Alvaro Mantilla,1010792,D,2000-05-08,Right,182.0,Spain,2028-06-29,1200000.0
+2026-27,ESP1,Real Racing Club,Julen Agirrezabala,1014412,G,2000-12-25,Left,187.0,Spain,2031-06-29,9800000.0
+2026-27,ESP1,Real Racing Club,Simon Eriksson,1472960,G,2006-04-23,Right,194.0,Sweden,2030-06-29,2100000.0
+2026-27,ESP1,Real Sociedad,Mikel Oyarzabal,823622,F,1997-04-20,Left,181.0,Spain,2028-06-29,27000000.0
+2026-27,ESP1,Real Sociedad,Orri Óskarsson,1026015,F,2004-08-28,Right,186.0,Iceland,2030-06-29,21000000.0
+2026-27,ESP1,Real Sociedad,Takefusa Kubo,880218,M,2001-06-03,Left,174.0,Japan,2029-06-29,21000000.0
+2026-27,ESP1,Real Sociedad,Luka Sučić,949156,M,2002-09-07,Left,185.0,Croatia,2029-06-29,10900000.0
+2026-27,ESP1,Real Sociedad,Gonçalo Guedes,280979,M,1996-11-28,Right,179.0,Portugal,2028-06-29,5700000.0
+2026-27,ESP1,Real Sociedad,Arsen Zakharyan,1066045,M,2003-05-25,Right,183.0,Russia,2029-06-29,8700000.0
+2026-27,ESP1,Real Sociedad,Yangel Herrera,839585,M,1998-01-06,Right,184.0,Venezuela,2030-06-29,5600000.0
+2026-27,ESP1,Real Sociedad,Carlos Soler,832427,M,1997-01-01,Right,180.0,Spain,2029-06-29,6600000.0
+2026-27,ESP1,Real Sociedad,Ander Barrenetxea,966862,M,2001-12-26,Right,174.0,Spain,2030-06-29,17200000.0
+2026-27,ESP1,Real Sociedad,Job Ochieng,1111081,M,2003-01-16,Right,185.0,Kenya,2028-06-29,2200000.0
+2026-27,ESP1,Real Sociedad,Beñat Turrientes,980410,M,2002-01-30,Right,179.0,Spain,2030-06-29,10600000.0
+2026-27,ESP1,Real Sociedad,Jon Gorrotxategi,1216309,M,2002-02-01,Right,177.0,Spain,2030-06-29,27000000.0
+2026-27,ESP1,Real Sociedad,Pablo Marín,1139409,M,2003-07-02,Right,178.0,Spain,2029-06-29,7400000.0
+2026-27,ESP1,Real Sociedad,Alex Marchal,1602590,M,2007-09-16,Right,181.0,Spain,2029-06-29,2100000.0
+2026-27,ESP1,Real Sociedad,Hector Fort,1402908,D,2006-08-01,Right,185.0,Spain,2031-06-29,11600000.0
+2026-27,ESP1,Real Sociedad,Mamadou Sarr,1154657,D,2005-08-28,Right,194.0,Senegal,2027-06-29,24000000.0
+2026-27,ESP1,Real Sociedad,Jon Aramburu,1116388,D,2002-07-22,Right,176.0,Venezuela,2030-06-29,13900000.0
+2026-27,ESP1,Real Sociedad,Sergio Gómez,855835,D,2000-09-03,Left,171.0,Spain,2030-06-29,14600000.0
+2026-27,ESP1,Real Sociedad,Álvaro Odriozola,353250,D,1995-12-13,Right,175.0,Spain,2029-06-29,825000.0
+2026-27,ESP1,Real Sociedad,Jon Martin,1466116,D,2006-04-22,Right,185.0,Spain,2032-06-29,24000000.0
+2026-27,ESP1,Real Sociedad,Igor Zubeldia,838159,D,1997-03-29,Right,180.0,Spain,2029-06-29,6300000.0
+2026-27,ESP1,Real Sociedad,Jon Pacheco,934383,D,2001-01-07,Left,184.0,Spain,2030-06-29,5200000.0
+2026-27,ESP1,Real Sociedad,Aihen Muñoz,966441,D,1997-08-15,Left,175.0,Spain,2027-06-29,2600000.0
+2026-27,ESP1,Real Sociedad,Luken Beitia,1539149,D,2004-06-29,Right,191.0,Spain,2030-06-29,1100000.0
+2026-27,ESP1,Real Sociedad,Álex Remiro,791773,G,1995-03-23,Right,191.0,Spain,2027-06-29,9600000.0
+2026-27,ESP1,Real Sociedad,Unai Marrero,1094782,G,2001-10-08,Right,187.0,Spain,2030-06-29,1100000.0
+2026-27,ESP1,Espanyol,Bryan Zaragoza,1084730,F,2001-09-08,Right,165.0,Spain,2027-06-29,7500000.0
+2026-27,ESP1,Espanyol,Roberto Fernández,1392592,F,2002-07-02,Right,186.0,Spain,2031-06-29,10300000.0
+2026-27,ESP1,Espanyol,Kike García,84972,F,1989-11-24,Right,186.0,Spain,2027-06-29,725000.0
+2026-27,ESP1,Espanyol,Marcos Fernández,1183542,F,2003-05-16,Right,176.0,Spain,2028-06-29,1500000.0
+2026-27,ESP1,Espanyol,Gabriel Moscardo,1485309,M,2005-09-27,Right,185.0,Brazil,2027-06-29,7500000.0
+2026-27,ESP1,Espanyol,Javi Puado,891511,M,1998-05-24,Right,178.0,Spain,2030-06-29,7000000.0
+2026-27,ESP1,Espanyol,Edu Expósito,877262,M,1996-07-31,Right,175.0,Spain,2027-06-29,4500000.0
+2026-27,ESP1,Espanyol,Tyrhys Dolan,1063015,M,2001-12-27,Right,170.0,England,2028-06-29,10800000.0
+2026-27,ESP1,Espanyol,Pere Milla,175185,M,1992-09-22,Left,179.0,Spain,2027-06-29,965000.0
+2026-27,ESP1,Espanyol,Álex Calatrava,1136863,M,2000-06-21,Left,175.0,Spain,2031-06-29,3900000.0
+2026-27,ESP1,Espanyol,Pol Lozano,826010,M,1999-10-05,Right,176.0,Spain,2027-06-29,5800000.0
+2026-27,ESP1,Espanyol,Urko González,1064009,M,2001-03-19,Right,189.0,Spain,2030-06-29,11600000.0
+2026-27,ESP1,Espanyol,Javier Hernández,1514913,M,2004-01-29,Left,175.0,Spain,2028-06-29,1600000.0
+2026-27,ESP1,Espanyol,Jofre Carreras,1019236,M,2001-06-16,Right,175.0,Spain,2029-06-29,2800000.0
+2026-27,ESP1,Espanyol,Rafael Bauzà,1841365,M,2005-01-29,Right,183.0,Spain,2028-06-29,1100000.0
+2026-27,ESP1,Espanyol,Omar El Hilali,1064026,D,2003-09-11,Right,183.0,Morocco,2027-06-29,15900000.0
+2026-27,ESP1,Espanyol,Quilindschy Hartman,1392044,D,2001-11-13,Left,183.0,Netherlands,2027-06-29,15500000.0
+2026-27,ESP1,Espanyol,Unai Núñez,892521,D,1997-01-29,Right,186.0,Spain,2027-06-29,3300000.0
+2026-27,ESP1,Espanyol,Leandro Cabrera,81992,D,1991-06-16,Left,190.0,Uruguay,2027-06-29,930000.0
+2026-27,ESP1,Espanyol,Vanja Drkušić,908617,D,1999-10-29,Right,186.0,Slovenia,2027-06-29,5500000.0
+2026-27,ESP1,Espanyol,Andoni Gorosabel,866810,D,1996-08-03,Right,174.0,Spain,2028-06-29,2900000.0
+2026-27,ESP1,Espanyol,Clemens Riedel,1129360,D,2003-07-18,Right,186.0,Germany,2029-06-29,3900000.0
+2026-27,ESP1,Espanyol,Roger Hinojo,2065347,D,2005-02-20,Left,180.0,Spain,2030-06-29,1000000.0
+2026-27,ESP1,Espanyol,Marko Dmitrović,94527,G,1992-01-23,Left,194.0,Serbia,2028-06-29,650000.0
+2026-27,ESP1,Espanyol,Angel Fortuno,1082734,G,2000-12-31,Right,183.0,Spain,2030-06-29,290000.0
+2026-27,ESP1,Athletic Club,Maroan Sannadi,1520799,F,2001-01-31,Right,192.0,Morocco,2029-06-29,2800000.0
+2026-27,ESP1,Athletic Club,Gorka Guruzeta,605672,F,1996-09-11,Right,188.0,Spain,2028-06-29,4600000.0
+2026-27,ESP1,Athletic Club,Álvaro Djaló,1160960,F,1999-08-15,Right,176.0,Guinea-Bissau,2029-06-29,4300000.0
+2026-27,ESP1,Athletic Club,Nico Williams,1085400,M,2002-07-11,Right,180.0,Spain,2035-06-29,44000000.0
+2026-27,ESP1,Athletic Club,Iñaki Williams,783374,M,1994-06-14,Right,186.0,Ghana,2028-06-29,7300000.0
+2026-27,ESP1,Athletic Club,Oihan Sancet,966801,M,2000-04-24,Right,188.0,Spain,2032-06-29,24000000.0
+2026-27,ESP1,Athletic Club,Álex Berenguer,592012,M,1995-07-03,Right,175.0,Spain,2027-06-29,4099999.0
+2026-27,ESP1,Athletic Club,Mikel Jauregizar,1495844,M,2003-11-12,Right,177.0,Spain,2031-06-29,31000000.0
+2026-27,ESP1,Athletic Club,Iñigo Ruiz de Galarreta,96365,M,1993-08-05,Right,174.0,Spain,2027-06-29,1800000.0
+2026-27,ESP1,Athletic Club,Robert Navarro,944165,M,2002-04-11,Right,178.0,Spain,2030-06-29,6500000.0
+2026-27,ESP1,Athletic Club,Peio Canales,1464648,M,2005-01-16,Right,175.0,Spain,2027-06-29,9700000.0
+2026-27,ESP1,Athletic Club,Alejandro Rego Mora,2110897,M,2003-06-10,Right,192.0,Spain,2030-06-29,5500000.0
+2026-27,ESP1,Athletic Club,Beñat Prados,1012409,M,2001-02-07,Right,179.0,Spain,2031-06-29,15500000.0
+2026-27,ESP1,Athletic Club,Nico Serrano,1019318,M,2003-03-04,Left,178.0,Spain,2028-06-29,1600000.0
+2026-27,ESP1,Athletic Club,Beñat Gerenabarrena,1171619,M,2003-03-28,Right,173.0,Spain,2027-06-29,1000000.0
+2026-27,ESP1,Athletic Club,Aymeric Laporte,149734,D,1994-05-26,Left,191.0,Spain,2028-06-29,8400000.0
+2026-27,ESP1,Athletic Club,Dani Vivian,910978,D,1999-07-04,Right,183.0,Spain,2032-06-29,18200000.0
+2026-27,ESP1,Athletic Club,Aitor Paredes,959872,D,2000-04-28,Right,186.0,Spain,2029-06-29,7100000.0
+2026-27,ESP1,Athletic Club,Yuri Berchiche,84531,D,1990-02-09,Left,181.0,Spain,2027-06-29,910000.0
+2026-27,ESP1,Athletic Club,Yeray Álvarez,807648,D,1995-01-23,Right,183.0,Spain,2028-06-29,930000.0
+2026-27,ESP1,Athletic Club,Jesús Areso,910267,D,1999-07-01,Right,183.0,Spain,2031-06-29,5500000.0
+2026-27,ESP1,Athletic Club,Hugo Rincón,1632454,D,2003-01-26,Right,183.0,Spain,2028-06-29,3400000.0
+2026-27,ESP1,Athletic Club,Unai Eguíluz,1391374,D,2002-03-18,Right,186.0,Spain,2028-06-29,410000.0
+2026-27,ESP1,Athletic Club,Unai Simón,797291,G,1997-06-10,Right,189.0,Spain,2029-06-29,21000000.0
+2026-27,ESP1,Athletic Club,Alex Padilla,1155116,G,2003-08-31,Right,190.0,Mexico,2029-06-29,3100000.0
+2026-27,ESP1,Getafe,Christantus Uche,1884145,F,2003-05-18,Both,190.0,Nigeria,2028-06-29,13200000.0
+2026-27,ESP1,Getafe,Enes Ünal,336655,F,1997-05-09,Right,185.0,Türkiye,2029-06-29,6800000.0
+2026-27,ESP1,Getafe,Martín Satriano,973536,F,2001-02-19,Right,187.0,Uruguay,2030-06-29,10600000.0
+2026-27,ESP1,Getafe,Borja Mayoral,604954,F,1997-04-04,Right,182.0,Spain,2027-06-29,6300000.0
+2026-27,ESP1,Getafe,Ivan Azón,1000696,F,2002-12-23,Right,181.0,Spain,2027-06-29,5200000.0
+2026-27,ESP1,Getafe,Juanmi,96369,F,1993-05-19,Right,169.0,Spain,2027-06-29,910000.0
+2026-27,ESP1,Getafe,Mario Martín,1154549,M,2004-03-04,Right,177.0,Spain,2030-06-29,10700000.0
+2026-27,ESP1,Getafe,Orel Mangala,793988,M,1998-03-17,Right,178.0,Belgium,2027-06-29,8600000.0
+2026-27,ESP1,Getafe,Nemanja Gudelj,68332,M,1991-11-15,Right,187.0,Serbia,2027-06-29,1900000.0
+2026-27,ESP1,Getafe,Ramón Terrats,1088565,M,2000-10-17,Left,179.0,Spain,2029-06-29,3200000.0
+2026-27,ESP1,Getafe,Francho Serrano,1000676,M,2001-10-16,Right,177.0,Spain,2029-06-29,3100000.0
+2026-27,ESP1,Getafe,Johan Mojica,344847,D,1992-08-20,Left,185.0,Colombia,2027-06-29,1400000.0
+2026-27,ESP1,Getafe,Abdel Abqar,1101232,D,1999-03-09,Right,188.0,Morocco,2028-06-29,3300000.0
+2026-27,ESP1,Getafe,Djené,307702,D,1991-12-30,Both,178.0,Togo,2027-06-29,1500000.0
+2026-27,ESP1,Getafe,Saba Sazonov,1101751,D,2002-01-31,Right,194.0,Georgia,2027-06-29,825000.0
+2026-27,ESP1,Getafe,Zaid Romero,1108450,D,1999-12-14,Left,192.0,Argentina,2030-06-29,2400000.0
+2026-27,ESP1,Getafe,Andrés García,1457536,D,2003-02-06,Right,183.0,Spain,2027-06-29,6500000.0
+2026-27,ESP1,Getafe,Sebastián Boselli,1392092,D,2003-12-03,Right,183.0,Uruguay,2030-06-29,1500000.0
+2026-27,ESP1,Getafe,Davinchi,1918369,D,2007-10-15,Left,182.0,Spain,2028-06-29,910000.0
+2026-27,ESP1,Getafe,Kiko Femenía,53739,D,1991-02-01,Right,176.0,Spain,2027-06-29,740000.0
+2026-27,ESP1,Getafe,Jean Ives Valou,1924859,D,2005-12-21,Left,188.0,Côte d'Ivoire,2027-06-29,550000.0
+2026-27,ESP1,Getafe,David Soria,604258,G,1993-04-03,Right,192.0,Spain,2030-06-29,2700000.0
+2026-27,ESP1,Getafe,Jiří Letáček,826047,G,1999-01-08,Right,196.0,Czechia,2028-06-29,1900000.0
+2026-27,ESP1,Villarreal,Nicolas Pépé,593526,F,1995-05-28,Left,183.0,Côte d'Ivoire,2028-06-29,6600000.0
+2026-27,ESP1,Villarreal,Georges Mikautadze,1009372,F,2000-10-30,Right,176.0,Georgia,2031-06-29,32000000.0
+2026-27,ESP1,Villarreal,Gerard Moreno,146866,F,1992-04-06,Left,180.0,Spain,2027-06-29,2400000.0
+2026-27,ESP1,Villarreal,Ayoze Pérez,345195,F,1993-07-22,Right,180.0,Spain,2028-06-29,5400000.0
+2026-27,ESP1,Villarreal,Tani Oluwaseyi,1172477,F,2000-05-14,Left,188.0,Canada,2030-06-29,7500000.0
+2026-27,ESP1,Villarreal,Pape Gueye,879694,M,1999-01-23,Left,187.0,Senegal,2028-06-29,39000000.0
+2026-27,ESP1,Villarreal,Ilias Akhomach,1089108,M,2004-04-15,Left,175.0,Morocco,2028-06-29,11100000.0
+2026-27,ESP1,Villarreal,Tajon Buchanan,973290,M,1999-02-07,Right,183.0,Canada,2030-06-29,13000000.0
+2026-27,ESP1,Villarreal,Alberto Moleiro,1012444,M,2003-09-29,Right,172.0,Spain,2030-06-29,54000000.0
+2026-27,ESP1,Villarreal,Nathan-Dylan Saliba,1093229,M,2004-02-06,Both,173.0,Canada,2031-06-29,9200000.0
+2026-27,ESP1,Villarreal,Alassane Diatta,1893907,M,2005-05-13,Left,190.0,Senegal,2030-06-29,660000.0
+2026-27,ESP1,Villarreal,Santi Comesaña,843678,M,1996-10-04,Both,187.0,Spain,2028-06-29,8400000.0
+2026-27,ESP1,Villarreal,Carlos Maciá,2238900,M,2008-08-31,Right,194.0,Spain,2031-06-29,2900000.0
+2026-27,ESP1,Villarreal,Renato Veiga,1087359,D,2003-07-28,Left,190.0,Portugal,2032-06-29,29000000.0
+2026-27,ESP1,Villarreal,Juan Foyth,873189,D,1998-01-11,Right,187.0,Argentina,2029-06-29,8600000.0
+2026-27,ESP1,Villarreal,Santiago Mouriño,1468046,D,2002-02-12,Right,186.0,Uruguay,2030-06-29,19400000.0
+2026-27,ESP1,Villarreal,Alexander Freeman,1184541,D,2004-08-08,Right,188.0,USA,2032-06-29,9200000.0
+2026-27,ESP1,Villarreal,Carlos Romero,1396048,D,2001-10-28,Left,174.0,Spain,2031-06-29,24000000.0
+2026-27,ESP1,Villarreal,Logan Costa,911853,D,2001-03-31,Right,188.0,Cape Verde,2030-06-29,14600000.0
+2026-27,ESP1,Villarreal,Sergi Cardona,986245,D,1999-07-07,Left,186.0,Spain,2027-06-29,8600000.0
+2026-27,ESP1,Villarreal,Pau Navarro,1525863,D,2005-04-24,Right,185.0,Spain,2031-06-29,14600000.0
+2026-27,ESP1,Villarreal,Luiz Júnior,1066603,G,2001-01-13,Left,192.0,Brazil,2030-06-29,12400000.0
+2026-27,ESP1,Villarreal,Péter Gulácsi,37096,G,1990-05-05,Right,190.0,Hungary,2028-06-29,970000.0
+2026-27,ESP1,Villarreal,Rubén Gómez,1407702,G,2002-01-23,Right,185.0,Spain,2027-06-29,390000.0
+2026-27,ESP1,Villarreal,Nizar El Jmili Ben Hamou,2725909,,,,,Spain,,
+2026-27,ESP1,Celta Vigo,Borja Iglesias,785989,F,1993-01-16,Right,187.0,Spain,2027-06-29,2900000.0
+2026-27,ESP1,Celta Vigo,Iago Aspas,19356,F,1987-07-31,Left,176.0,Spain,2027-06-29,1500000.0
+2026-27,ESP1,Celta Vigo,Couhaib Driouech,1047395,F,2002-04-16,Left,175.0,Morocco,2030-06-29,7100000.0
+2026-27,ESP1,Celta Vigo,Ferrán Jutglà,949962,F,1999-01-31,Right,175.0,Spain,2029-06-29,10700000.0
+2026-27,ESP1,Celta Vigo,Jones El-Abdellaoui,1173575,F,2006-01-11,Right,184.0,Morocco,2029-06-29,8400000.0
+2026-27,ESP1,Celta Vigo,Pablo Durán,1398524,F,2001-05-24,Right,176.0,Spain,2028-06-29,4099999.0
+2026-27,ESP1,Celta Vigo,Ilaix Moriba,962890,M,2003-01-18,Right,183.0,Guinea,2029-06-29,13700000.0
+2026-27,ESP1,Celta Vigo,Williot Swedberg,1126779,M,2004-01-31,Right,185.0,Sweden,2029-06-29,18700000.0
+2026-27,ESP1,Celta Vigo,Aleix Febas,286167,M,1996-02-01,Right,168.0,Spain,2029-06-29,5200000.0
+2026-27,ESP1,Celta Vigo,Hugo Álvarez,1154935,M,2003-07-01,Right,176.0,Spain,2028-06-29,7800000.0
+2026-27,ESP1,Celta Vigo,Sergio Carreira,1002764,M,2000-10-12,Right,170.0,Spain,2029-06-29,11500000.0
+2026-27,ESP1,Celta Vigo,Javier Rueda,1008259,M,2002-05-07,Right,176.0,Spain,2029-06-29,6200000.0
+2026-27,ESP1,Celta Vigo,Miguel Román,1398526,M,2002-12-25,Right,178.0,Spain,2028-06-29,14400000.0
+2026-27,ESP1,Celta Vigo,Hugo González,996931,M,2003-02-06,Right,181.0,Spain,2028-06-29,720000.0
+2026-27,ESP1,Celta Vigo,Andrés Antañón,1916256,M,2007-01-21,Right,183.0,Spain,2027-06-29,535000.0
+2026-27,ESP1,Celta Vigo,Hugo Burcio,1858279,M,2006-10-30,Right,187.0,Spain,2028-06-29,480000.0
+2026-27,ESP1,Celta Vigo,Marcos Alonso,69408,D,1990-12-27,Left,188.0,Spain,2028-06-29,1300000.0
+2026-27,ESP1,Celta Vigo,Javi Galán,825133,D,1994-11-18,Left,172.0,Spain,2028-06-29,1700000.0
+2026-27,ESP1,Celta Vigo,Abdoulaye Faye,1529051,D,2004-09-21,Left,191.0,Senegal,2027-06-29,4200000.0
+2026-27,ESP1,Celta Vigo,Sebastián Cáceres,924889,D,1999-08-17,Right,183.0,Uruguay,2030-06-29,4099999.0
+2026-27,ESP1,Celta Vigo,Carl Starfelt,360718,D,1995-05-31,Right,185.0,Sweden,2027-06-29,4099999.0
+2026-27,ESP1,Celta Vigo,Javi Rodríguez,1526627,D,2003-06-25,Right,184.0,Spain,2028-06-29,17500000.0
+2026-27,ESP1,Celta Vigo,Álvaro Núñez,1012410,D,2000-07-06,Right,174.0,Spain,2030-06-29,3900000.0
+2026-27,ESP1,Celta Vigo,Yoel Lago,1145100,D,2004-03-24,Right,185.0,Spain,2029-06-29,3700000.0
+2026-27,ESP1,Celta Vigo,Altay Bayındır,815890,G,1998-04-13,Right,198.0,Türkiye,2027-06-29,4900000.0
+2026-27,ESP1,Celta Vigo,Ionuț Radu,815202,G,1997-05-27,Right,188.0,Romania,2029-06-29,8700000.0
+2026-27,ESP1,Celta Vigo,Iván Villar,848980,G,1997-07-08,Right,183.0,Spain,2027-06-29,960000.0
+2026-27,ESP1,Valencia,Arnaut Danjuma,827064,F,1997-01-30,Right,178.0,Netherlands,2028-06-29,2800000.0
+2026-27,ESP1,Valencia,Umar Sadiq,754710,F,1997-02-01,Right,192.0,Nigeria,2028-06-29,3900000.0
+2026-27,ESP1,Valencia,Hugo Duro,909119,F,1999-11-09,Left,180.0,Spain,2028-06-29,11600000.0
+2026-27,ESP1,Valencia,Dani Raba,873947,F,1995-10-28,Left,184.0,Spain,2027-06-29,1200000.0
+2026-27,ESP1,Valencia,Harvey Elliott,955245,M,2003-04-03,Left,170.0,England,2027-06-29,21000000.0
+2026-27,ESP1,Valencia,Aliou Dieng,933780,M,1997-10-15,Right,184.0,Mali,2028-06-29,3100000.0
+2026-27,ESP1,Valencia,Guido Rodríguez,609752,M,1994-04-11,Right,185.0,Argentina,2028-06-29,4200000.0
+2026-27,ESP1,Valencia,Javier Guerra,1122610,M,2003-05-12,Right,187.0,Spain,2029-06-29,26000000.0
+2026-27,ESP1,Valencia,Ryunosuke Sato,1476200,M,2006-10-15,Right,171.0,Japan,2031-06-29,2100000.0
+2026-27,ESP1,Valencia,Pepelu,826948,M,1998-08-10,Right,185.0,Spain,2028-06-29,7300000.0
+2026-27,ESP1,Valencia,Diego López,998950,M,2002-05-12,Right,172.0,Spain,2029-06-29,9600000.0
+2026-27,ESP1,Valencia,Luis Rioja,900433,M,1993-10-15,Left,173.0,Spain,2027-06-29,1900000.0
+2026-27,ESP1,Valencia,Filip Ugrinić,857482,M,1999-01-04,Right,185.0,Switzerland,2029-06-29,5700000.0
+2026-27,ESP1,Valencia,Sergi Canós,790833,M,1997-02-01,Right,173.0,Spain,2027-06-29,630000.0
+2026-27,ESP1,Valencia,Mouctar Diakhaby,797306,D,1996-12-18,Right,192.0,Guinea,2027-06-29,1500000.0
+2026-27,ESP1,Valencia,Pablo Maffeo,788216,D,1997-07-11,Right,173.0,Argentina,2027-06-29,2900000.0
+2026-27,ESP1,Valencia,José Luis Gayà,227922,D,1995-05-24,Left,172.0,Spain,2027-06-29,4300000.0
+2026-27,ESP1,Valencia,Arnau Martínez,1084081,D,2003-04-24,Right,181.0,Spain,2031-06-29,10800000.0
+2026-27,ESP1,Valencia,César Tárrega,996928,D,2002-02-25,Right,193.0,Spain,2030-06-29,9300000.0
+2026-27,ESP1,Valencia,Jesús Vázquez,996929,D,2003-01-01,Left,182.0,Spain,2028-06-29,4200000.0
+2026-27,ESP1,Valencia,Justin De Haas,876255,D,2000-01-31,Left,192.0,Netherlands,2030-06-29,7700000.0
+2026-27,ESP1,Valencia,Dimitri Foulquier,151138,D,1993-03-22,Right,183.0,Guadeloupe,2027-06-29,980000.0
+2026-27,ESP1,Valencia,José Copete,913695,D,1999-10-09,Left,190.0,Spain,2029-06-29,4500000.0
+2026-27,ESP1,Valencia,Iker Cordoba,1563953,D,2005-11-10,Left,190.0,Spain,2028-06-29,485000.0
+2026-27,ESP1,Valencia,Stole Dimitrievski,97951,G,1993-12-24,Right,188.0,North Macedonia,2028-06-29,2100000.0
+2026-27,ESP1,Valencia,Kayne van Oevelen,1393970,G,2003-08-07,Both,199.0,Netherlands,2027-06-29,2100000.0
+2026-27,ESP1,Valencia,Cristian Rivero,914744,G,1998-03-20,Right,188.0,Spain,2027-06-29,94000.0
+2026-27,ESP1,Rayo Vallecano,Alemão,981604,F,1998-03-31,Right,182.0,Brazil,2030-06-29,4400000.0
+2026-27,ESP1,Rayo Vallecano,Jorge de Frutos,900003,F,1996-11-29,Right,173.0,Spain,2028-06-29,10900000.0
+2026-27,ESP1,Rayo Vallecano,Sergio Camello,910024,F,2001-02-09,Right,177.0,Spain,2027-06-29,3300000.0
+2026-27,ESP1,Rayo Vallecano,Randy Nteka,932764,F,1997-12-05,Left,190.0,Angola,2028-06-29,1000000.0
+2026-27,ESP1,Rayo Vallecano,Raúl de Tomás,138387,F,1994-10-16,Right,181.0,Spain,2027-06-29,440000.0
+2026-27,ESP1,Rayo Vallecano,Pathé Ismaël Ciss,913679,M,1994-03-15,Right,183.0,Senegal,2027-06-29,1600000.0
+2026-27,ESP1,Rayo Vallecano,Isi Palazón,899982,M,1994-12-26,Left,169.0,Spain,2028-06-29,3000000.0
+2026-27,ESP1,Rayo Vallecano,Rayane Belaid,1179148,M,2005-11-01,Right,175.0,Spain,2030-06-29,565000.0
+2026-27,ESP1,Rayo Vallecano,Giorgi Tsitaishvili,875677,M,2000-11-17,Left,171.0,Georgia,2029-06-29,2700000.0
+2026-27,ESP1,Rayo Vallecano,Álvaro García,345111,M,1992-10-26,Both,168.0,Spain,2028-06-29,1500000.0
+2026-27,ESP1,Rayo Vallecano,Unai López,588566,M,1995-10-29,Right,169.0,Spain,2029-06-29,2600000.0
+2026-27,ESP1,Rayo Vallecano,Pedro Díaz,900669,M,1998-06-04,Right,180.0,Spain,2028-06-29,2900000.0
+2026-27,ESP1,Rayo Vallecano,Óscar Valentín,900008,M,1994-08-19,Right,177.0,Spain,2027-06-29,1900000.0
+2026-27,ESP1,Rayo Vallecano,Fran Pérez,966637,M,2002-09-08,Right,176.0,Spain,2029-06-29,2300000.0
+2026-27,ESP1,Rayo Vallecano,Gnangoro Bouaré,2038238,M,2004-08-12,Left,184.0,Spain,2031-06-29,47000.0
+2026-27,ESP1,Rayo Vallecano,Gnangoro Bouare Samake,2725780,M,2004-06-12,Left,184.0,Spain,,
+2026-27,ESP1,Rayo Vallecano,Andrei Rațiu,965031,D,1998-06-19,Right,183.0,Romania,2030-06-29,16700000.0
+2026-27,ESP1,Rayo Vallecano,Marash Kumbulla,893642,D,2000-02-07,Right,191.0,Albania,2027-06-29,2800000.0
+2026-27,ESP1,Rayo Vallecano,Florian Lejeune,88528,D,1991-05-19,Right,190.0,France,2028-06-29,1700000.0
+2026-27,ESP1,Rayo Vallecano,Luiz Felipe,850035,D,1997-03-21,Right,187.0,Italy,2027-06-29,2100000.0
+2026-27,ESP1,Rayo Vallecano,Adrià Pedrosa,928672,D,1998-05-12,Left,176.0,Spain,2027-06-29,2700000.0
+2026-27,ESP1,Rayo Vallecano,Iván Balliu,152446,D,1991-12-31,Right,175.0,Albania,2027-06-29,1100000.0
+2026-27,ESP1,Rayo Vallecano,Jozhua Vertrouwd,1120947,D,2004-08-20,Left,188.0,Netherlands,2030-06-29,2100000.0
+2026-27,ESP1,Rayo Vallecano,Pelayo Fernández,1139724,D,2003-04-28,Right,193.0,Spain,2028-06-29,520000.0
+2026-27,ESP1,Rayo Vallecano,Mujaid Sadick,935309,D,2000-03-13,Right,185.0,Spain,2027-06-29,4700000.0
+2026-27,ESP1,Rayo Vallecano,Emil Audero,318603,G,1997-01-17,Right,190.0,Indonesia,2027-06-29,2700000.0
+2026-27,ESP1,Rayo Vallecano,Augusto Batalla,358910,G,1996-04-29,Right,186.0,Argentina,2030-06-29,5800000.0
+2026-27,ESP1,Rayo Vallecano,Dani Cárdenas,965832,G,1997-03-27,Right,185.0,Spain,2027-06-29,1700000.0
+2026-27,ESP1,Rayo Vallecano,Adrián Molina,1893144,G,2005-07-21,Right,189.0,Spain,,
+2026-27,ESP1,Elche,Adam Boayar,1518971,F,2005-10-12,Right,180.0,Morocco,2027-06-29,825000.0
+2026-27,ESP1,Elche,Ezequiel Ponce,356444,F,1997-03-28,Right,178.0,Argentina,2027-06-29,3600000.0
+2026-27,ESP1,Elche,Tete Morente,605374,F,1996-12-03,Right,180.0,Spain,2028-06-29,1600000.0
+2026-27,ESP1,Elche,Fernando Niño,1016019,F,2000-10-23,Right,190.0,Spain,2030-06-29,1800000.0
+2026-27,ESP1,Elche,Abiel Osorio,1190083,F,2002-06-13,Right,182.0,Argentina,2029-06-29,1400000.0
+2026-27,ESP1,Elche,Facundo Buonanotte,1117025,M,2004-12-22,Left,174.0,Argentina,2027-06-29,10900000.0
+2026-27,ESP1,Elche,Lucas Cepeda,1126447,M,2002-10-30,Left,177.0,Chile,2030-06-29,2600000.0
+2026-27,ESP1,Elche,Thomas Lemar,191182,M,1995-11-11,Left,170.0,France,2027-06-29,1900000.0
+2026-27,ESP1,Elche,Federico Redondo,1117026,M,2003-01-17,Right,188.0,Argentina,2030-06-29,2400000.0
+2026-27,ESP1,Elche,Grady Diangana,848512,M,1998-04-18,Left,180.0,DR Congo,2027-06-29,2100000.0
+2026-27,ESP1,Elche,Ali Houary,1516812,M,2005-08-04,Right,178.0,Morocco,2028-06-29,310000.0
+2026-27,ESP1,Elche,Gonzalo Villar,914765,M,1998-03-22,Right,181.0,Spain,2029-06-29,1700000.0
+2026-27,ESP1,Elche,Germán Valera,962710,M,2002-03-15,Left,170.0,Spain,2027-06-29,6200000.0
+2026-27,ESP1,Elche,Martim Neto,1100646,M,2003-01-13,Right,185.0,Portugal,2028-06-29,3800000.0
+2026-27,ESP1,Elche,Marc Aguado,1014595,M,2000-02-21,Right,178.0,Spain,2027-06-29,3700000.0
+2026-27,ESP1,Elche,Yago Santiago,1092515,M,2003-03-14,Right,177.0,Spain,2027-06-29,1100000.0
+2026-27,ESP1,Elche,Javi Morcillo,1832076,M,2006-03-14,Right,183.0,Spain,2030-06-29,515000.0
+2026-27,ESP1,Elche,Josan,808955,M,1989-12-02,Right,175.0,Spain,2027-06-29,105000.0
+2026-27,ESP1,Elche,Kevin Lomónaco,1003014,D,2002-01-07,Right,192.0,Argentina,2030-06-29,8199999.0
+2026-27,ESP1,Elche,Buba Sangaré,1542721,D,2007-08-05,Right,184.0,Spain,2031-06-29,4400000.0
+2026-27,ESP1,Elche,Víctor Chust,855831,D,2000-03-04,Right,182.0,Spain,2029-06-29,3700000.0
+2026-27,ESP1,Elche,Roy Revivo,1142085,D,2003-05-21,Left,183.0,Israel,2030-06-29,4600000.0
+2026-27,ESP1,Elche,Pedro Bigas,141832,D,1990-02-14,Left,180.0,Spain,2027-06-29,310000.0
+2026-27,ESP1,Elche,Matia Barzić,1542493,D,2004-05-30,Right,190.0,Croatia,2030-06-29,910000.0
+2026-27,ESP1,Elche,Bambo Diaby,849731,D,1997-12-16,Right,186.0,Senegal,2027-06-29,850000.0
+2026-27,ESP1,Elche,Rubén Sánchez,1021165,D,2001-02-03,Right,184.0,Spain,2027-06-29,1700000.0
+2026-27,ESP1,Elche,Matías Dituro,556884,G,1987-05-07,Right,191.0,Argentina,2027-06-29,105000.0
+2026-27,ESP1,Elche,Alejandro Iturbe,1019324,G,2003-09-01,Right,186.0,Spain,2029-06-29,1300000.0
+2026-27,ESP1,Málaga CF,Chupete,1913386,F,2004-08-23,Right,185.0,Spain,2029-06-29,10700000.0
+2026-27,ESP1,Málaga CF,Haitam Abaida,1021125,F,2002-05-31,Left,172.0,Morocco,2027-06-29,205000.0
+2026-27,ESP1,Málaga CF,Adrián Niño,1402927,F,2004-06-18,Right,186.0,Spain,2029-06-29,1900000.0
+2026-27,ESP1,Málaga CF,Julen Lobete,1006232,F,2000-09-17,Right,176.0,Spain,2027-06-29,1200000.0
+2026-27,ESP1,Málaga CF,Eneko Jauregi,926418,F,1996-07-12,Right,184.0,Spain,2027-06-29,720000.0
+2026-27,ESP1,Málaga CF,Jens-Lys Cajuste,857671,M,1999-08-09,Right,188.0,Sweden,2027-06-29,6600000.0
+2026-27,ESP1,Málaga CF,David Larrubia,1002405,M,2002-04-19,Both,172.0,Spain,2028-06-29,5300000.0
+2026-27,ESP1,Málaga CF,Juan Cruz,936234,M,2000-04-24,Left,179.0,Spain,2027-06-29,1700000.0
+2026-27,ESP1,Málaga CF,Carlos Dotor,997221,M,2001-03-14,Right,180.0,Spain,2027-06-29,1200000.0
+2026-27,ESP1,Málaga CF,Izan Merino,1493488,M,2006-04-14,Right,186.0,Spain,2028-06-29,1900000.0
+2026-27,ESP1,Málaga CF,Aarón Ochoa,1566178,M,2007-04-17,Right,167.0,Ireland,2029-06-29,870000.0
+2026-27,ESP1,Málaga CF,Pablo Martínez,927066,M,1998-02-21,Right,182.0,Spain,2027-06-29,3100000.0
+2026-27,ESP1,Málaga CF,Dani Lorenzo,1465424,M,2003-04-04,Right,176.0,Spain,2029-06-29,1400000.0
+2026-27,ESP1,Málaga CF,Joaquín Muñoz,904964,M,1999-03-09,Both,172.0,Spain,2027-06-29,1400000.0
+2026-27,ESP1,Málaga CF,Rafa Rodriguez,1465149,M,2003-07-09,Right,180.0,Spain,2028-06-29,930000.0
+2026-27,ESP1,Málaga CF,Ramón Enríquez,990800,M,2001-03-18,Right,173.0,Spain,2027-06-29,190000.0
+2026-27,ESP1,Málaga CF,Adam Aznou,1466124,D,2006-06-01,Left,178.0,Morocco,2027-06-29,6200000.0
+2026-27,ESP1,Málaga CF,Fernando Calero,857205,D,1995-09-13,Right,183.0,Spain,2027-06-29,2100000.0
+2026-27,ESP1,Málaga CF,Jose Salinas,1068891,D,2000-09-29,Left,178.0,Spain,2027-06-29,1800000.0
+2026-27,ESP1,Málaga CF,Carlos Puga,1164708,D,2000-11-25,Right,175.0,Spain,2029-06-29,825000.0
+2026-27,ESP1,Málaga CF,Einar Galilea,344797,D,1995-05-21,Left,182.0,Spain,2027-06-29,365000.0
+2026-27,ESP1,Málaga CF,Diego Murillo,1410734,D,2001-03-13,Right,182.0,Spain,2029-06-29,1600000.0
+2026-27,ESP1,Málaga CF,Rafa Garrido,1595666,D,2004-11-08,Right,170.0,Spain,2029-06-29,940000.0
+2026-27,ESP1,Málaga CF,Juan Berrocal,851226,D,1999-02-04,Both,187.0,Spain,2027-06-29,1500000.0
+2026-27,ESP1,Málaga CF,Ángel Recio,1123218,D,2003-01-04,Right,185.0,Spain,2029-06-29,315000.0
+2026-27,ESP1,Málaga CF,Álex Pastor,928825,D,1999-09-30,Right,185.0,Spain,2028-06-29,310000.0
+2026-27,ESP1,Málaga CF,Alfonso Herrero,96371,G,1994-04-20,Right,180.0,Spain,2028-06-29,420000.0
+2026-27,ESP1,Málaga CF,Carlos Lopez,1442178,G,2004-11-12,Right,184.0,Spain,2029-06-29,95000.0

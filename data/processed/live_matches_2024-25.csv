@@ -1,0 +1,939 @@
+source,season,league,tier,competition_type,comp_code,Date,Time,HomeTeam,AwayTeam,status,FTHG,FTAG,FTR,HTHG,HTAG,HTR,HS,AS,HST,AST,HC,AC,HF,AF,HY,AY,HR,AR,HPoss,APoss,HxG,AxG,match_id
+espn,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-09,15:30,San Tirso SD,Selaya FC,FINAL_PEN,1,1,D,,,,,,,,,,,,,,,,,,,,espn:721375
+espn,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-09,16:30,CD Sonseca,CP Parla Escuela,FINAL_AET,0,1,A,,,,,,,,,,,,,,,,,,,,espn:721376
+espn,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-09,17:00,Astur CF,Promesas EDF,FULL_TIME,2,0,H,,,,,,,,,,,,,,,,,,,,espn:721371
+espn,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-09,17:00,CD Baztán,Ontiñena CF,FINAL_PEN,1,1,D,,,,,,,,,,,,,,,,,,,,espn:721372
+espn,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-09,17:00,UD San Pedro,CD 6 de Junio,FULL_TIME,4,2,H,,,,,,,,,,,,,,,,,,,,espn:721377
+espn,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-09,17:30,CD Villamuriel,Aurrerá Vitoria,FULL_TIME,1,0,H,,,,,,,,,,,,,,,,,,,,espn:721374
+espn,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-09,18:00,EF Dolorense,Manises CF,FULL_TIME,1,3,A,,,,,,,,,,,,,,,,,,,,espn:721373
+espn,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-09,18:30,CD Gévora,UD Playas de Sotavento,FINAL_PEN,1,1,D,,,,,,,,,,,,,,,,,,,,espn:721379
+espn,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-09,18:30,UE Vic,CF Sporting de Mahón,FULL_TIME,4,0,H,,,,,,,,,,,,,,,,,,,,espn:721378
+espn,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-09,19:00,Chiclana,Melilla CD,FULL_TIME,4,0,H,,,,,,,,,,,,,,,,,,,,espn:721370
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-29,18:00,CD Villamuriel,Rayo Vallecano,FULL_TIME,0,5,A,,,,9.0,28.0,2.0,10.0,1.0,2.0,,,2.0,0.0,,,18.0,82.0,0.72,2.97,espn:722265
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-29,18:00,SD Compostela,Alavés,FULL_TIME,0,1,A,,,,7.0,8.0,0.0,1.0,3.0,6.0,,,1.0,3.0,,,50.0,50.0,0.2,1.38,espn:722247
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-29,19:00,Guijuelo,Ourense CF,FULL_TIME,1,2,A,,,,,,,,,,,,,,,,,,,,espn:722261
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-29,20:00,Astur CF,Real Valladolid,FULL_TIME,1,4,A,,,,2.0,19.0,2.0,10.0,0.0,9.0,,,0.0,0.0,,,24.0,76.0,0.24,3.42,espn:722254
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-29,20:00,Hospitalet,Real Zaragoza,FULL_TIME,1,5,A,,,,7.0,19.0,2.0,7.0,5.0,3.0,,,2.0,2.0,,,34.0,66.0,0.98,2.72,espn:722227
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-29,20:00,Poblense,Villarreal,FULL_TIME,1,6,A,,,,11.0,17.0,4.0,10.0,2.0,4.0,,,2.0,1.0,,,44.0,56.0,0.61,2.94,espn:722238
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-29,20:00,Real Jaen CF,Cádiz,FULL_TIME,0,3,A,,,,7.0,19.0,4.0,6.0,3.0,9.0,,,1.0,2.0,,,46.0,54.0,0.12,2.17,espn:722240
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-29,20:00,UD Lanzarote,Racing Santander,FULL_TIME,3,4,A,,,,4.0,16.0,3.0,6.0,2.0,7.0,,,2.0,1.0,,,37.0,63.0,0.86,2.19,espn:722274
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,17:30,CE Europa,Albacete,FULL_TIME,2,1,H,,,,23.0,6.0,10.0,4.0,5.0,1.0,,,0.0,1.0,,,60.0,40.0,1.41,0.55,espn:722260
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,18:00,Ibiza Islas Pitiusas,Gimnàstic de Tarragona,FULL_TIME,1,2,A,,,,,,,,,,,,,,,,,,,,espn:722225
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,18:00,Las Rozas CF,Sevilla,FULL_TIME,0,3,A,,,,6.0,11.0,2.0,4.0,3.0,7.0,,,1.0,1.0,,,29.0,71.0,0.41,1.82,espn:722230
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,18:00,Lucena CF,Leganés,FULL_TIME,1,2,A,,,,11.0,16.0,2.0,7.0,7.0,6.0,,,4.0,1.0,,,42.0,58.0,0.62,2.93,espn:722246
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,18:00,Olot,Córdoba,FINAL_PEN,1,1,D,,,,9.0,13.0,5.0,7.0,5.0,3.0,13.0,8.0,3.0,1.0,0.0,0.0,44.5,55.5,0.63,0.69,espn:722235
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,18:30,Beasain,FC Cartagena,FULL_TIME,0,1,A,,,,,,,,,,,,,,,,,,,,espn:722258
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,18:30,Bergantiños,Marbella FC,FULL_TIME,1,2,A,,,,,,,,,,,,,,,,,,,,espn:722259
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,18:30,Langreo,Orihuela,FINAL_AET,1,2,A,,,,,,,,,,,,,,,,,,,,espn:722228
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,18:30,Móstoles URJC,Burgos,FULL_TIME,2,5,A,,,,,,,,,,,,,,,,,,,,espn:722276
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:00,Badalona,Huesca,FULL_TIME,0,2,A,,,,11.0,11.0,6.0,7.0,6.0,3.0,,,3.0,0.0,,,58.0,42.0,0.63,1.39,espn:722256
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:00,CD Cortes,Granada,FULL_TIME,0,2,A,,,,,,,,,,,,,,,,,,,,espn:722269
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:00,CD Laredo,Yeclano Deportivo,FULL_TIME,0,6,A,,,,,,,,,,,,,,,,,,,,espn:722229
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:00,Escobedo,Ponferradina,FINAL_PEN,0,0,D,,,,,,,,,,,,,,,,,,,,espn:722251
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:00,Juventud Torremolinos,Zamora CF,FULL_TIME,1,2,A,,,,,,,,,,,,,,,,,,,,espn:722226
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:00,Lleida,Barakaldo,FULL_TIME,1,3,A,,,,,,,,,,,,,,,,,,,,espn:722232
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:00,Numancia,Sporting Gijón,FULL_TIME,0,1,A,,,,,,,,,,,,,,,,,,,,espn:722234
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:00,Salamanca UDS,AD Alcorcón,FULL_TIME,1,0,H,,,,,,,,,,,,,,,,,,,,espn:722278
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:00,Sant Andreu,Mirandés,FULL_TIME,2,1,H,,,,,,,,,,,,,,,,,,,,espn:722243
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:00,UD Logroñés,Eibar,FINAL_AET,1,0,H,,,,,,,,,,,,,,,,,,,,espn:722252
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:00,Utebo,Unionistas de Salamanca,FULL_TIME,0,4,A,,,,,,,,,,,,,,,,,,,,espn:722263
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:30,Cacereno,Gimnastica Segoviana,FINAL_AET,2,1,H,,,,5.0,13.0,2.0,4.0,3.0,2.0,,,4.0,3.0,,,46.0,54.0,1.28,0.53,espn:722244
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:30,Conquense,UD Ibiza,FULL_TIME,1,0,H,,,,,,,,,,,,,,,,,,,,espn:722248
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,19:30,Coria,Elche,FULL_TIME,0,3,A,,,,,,,,,,,,,,,,,,,,espn:722249
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,20:00,Aguilas,Castellón,FULL_TIME,0,1,A,,,,,,,,,,,,,,,,,,,,espn:722267
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,20:00,CD Extremadura,Girona,FULL_TIME,0,4,A,,,,8.0,19.0,0.0,5.0,1.0,11.0,,,1.0,2.0,,,35.0,65.0,0.45,2.7,espn:722268
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,20:00,San Sebastián de los Reyes,Almería,FULL_TIME,1,2,A,,,,,,,,,,,,,,,,,,,,espn:722241
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,20:00,UD San Pedro,Celta Vigo,FULL_TIME,1,5,A,,,,3.0,18.0,2.0,8.0,3.0,2.0,,,1.0,1.0,,,34.0,66.0,0.16,2.85,espn:722262
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-30,20:30,Atlético Paso,Eldense,FULL_TIME,0,1,A,,,,,,,,,,,,,,,,,,,,espn:722255
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-31,18:00,Barbastro,Amorebieta,FULL_TIME,4,0,H,,,,,,,,,,,,,,,,,,,,espn:722257
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-31,18:00,San Tirso SD,Espanyol,FULL_TIME,0,4,A,,,,8.0,26.0,1.0,12.0,5.0,3.0,,,2.0,2.0,,,28.0,72.0,0.22,4.91,espn:722242
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-31,18:00,UE Vic,Atlético Madrid,FULL_TIME,0,2,A,,,,8.0,16.0,3.0,7.0,0.0,6.0,,,2.0,0.0,,,18.0,82.0,0.66,2.65,espn:722264
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-31,19:00,CD Tudelano,CD Minera,FULL_TIME,0,5,A,,,,,,,,,,,,,,,,,,,,espn:722275
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-31,19:00,Real Ávila,Real Oviedo,FINAL_PEN,0,0,D,,,,9.0,13.0,4.0,4.0,4.0,4.0,,,5.0,2.0,,,29.0,71.0,1.28,0.49,espn:722277
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-31,19:30,Don Benito,FC Andorra,FULL_TIME,1,2,A,,,,,,,,,,,,,,,,,,,,espn:722250
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-31,20:00,Alfaro,Tenerife,FINAL_AET,0,2,A,,,,6.0,17.0,3.0,5.0,0.0,3.0,,,3.0,2.0,,,37.0,63.0,0.18,2.31,espn:722253
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-31,20:00,CD Cuarte,Racing Ferrol,FULL_TIME,1,3,A,,,,13.0,11.0,3.0,5.0,4.0,6.0,,,2.0,1.0,,,39.0,61.0,1.45,2.4,espn:722270
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-31,20:00,CD Estepona,Málaga,FINAL_AET,3,2,H,,,,13.0,19.0,7.0,7.0,6.0,9.0,,,3.0,2.0,,,36.0,64.0,1.49,0.91,espn:722272
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-31,20:00,CD Gévora,Real Betis,FULL_TIME,1,6,A,,,,6.0,25.0,3.0,12.0,0.0,5.0,,,1.0,3.0,,,40.0,60.0,1.09,4.14,espn:722224
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-31,20:00,Llanera,Cultural Leonesa,FINAL_AET,0,2,A,,,,,,,,,,,,,,,,,,,,espn:722231
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-10-31,20:00,Ontiñena CF,Las Palmas,FULL_TIME,0,7,A,,,,5.0,30.0,3.0,16.0,2.0,6.0,,,1.0,0.0,,,23.0,77.0,0.87,3.21,espn:722236
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-11-05,18:00,Chiclana,Osasuna,FULL_TIME,0,5,A,,,,5.0,23.0,2.0,11.0,3.0,6.0,,,1.0,0.0,,,32.0,68.0,0.38,3.67,espn:722245
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-11-06,18:00,Xerez,Ceuta,FULL_TIME,0,1,A,,,,,,,,,,,,,,,,,,,,espn:722266
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-11-14,17:00,Ejea,Hercules,FULL_TIME,1,0,H,,,,,,,,,,,,,,,,,,,,espn:722271
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-11-19,19:00,Pontevedra,Levante,FULL_TIME,4,1,H,,,,24.0,10.0,8.0,6.0,6.0,4.0,,,2.0,0.0,,,70.0,30.0,2.3,1.09,espn:722239
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-11-21,20:00,Jove Español,Real Sociedad,FULL_TIME,0,5,A,,,,2.0,17.0,1.0,11.0,4.0,1.0,,,0.0,0.0,,,32.0,68.0,0.09,3.08,espn:722273
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-11-26,18:00,CP Parla Escuela,Valencia,FULL_TIME,0,1,A,,,,8.0,15.0,2.0,4.0,3.0,4.0,,,1.0,0.0,,,40.0,60.0,0.27,0.72,espn:722237
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-11-26,18:00,Manises CF,Getafe,FULL_TIME,0,3,A,,,,7.0,23.0,2.0,11.0,0.0,6.0,,,3.0,1.0,,,34.0,66.0,0.26,3.38,espn:722233
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-03,18:00,Real Ávila,Real Valladolid,FINAL_AET,2,4,A,,,,16.0,21.0,7.0,8.0,1.0,4.0,,,5.0,4.0,,,34.0,66.0,1.69,2.02,espn:723903
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-03,19:00,Yeclano Deportivo,Elche,FULL_TIME,0,1,A,,,,12.0,10.0,4.0,2.0,4.0,4.0,,,3.0,1.0,,,29.0,71.0,0.27,0.77,espn:723908
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-03,20:00,Barbastro,Espanyol,FULL_TIME,2,0,H,,,,4.0,25.0,3.0,9.0,2.0,5.0,,,1.0,2.0,,,26.0,74.0,0.32,1.28,espn:723913
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-03,20:00,Real Zaragoza,Granada,FINAL_PEN,2,2,D,,,,24.0,11.0,7.0,4.0,8.0,5.0,,,6.0,5.0,,,42.0,58.0,2.24,0.85,espn:723902
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-03,20:00,Salamanca UDS,Celta Vigo,FULL_TIME,0,7,A,,,,16.0,17.0,1.0,11.0,3.0,3.0,,,2.0,2.0,,,52.0,48.0,1.12,4.48,espn:723904
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-03,20:15,CE Europa,Las Palmas,FULL_TIME,1,2,A,,,,6.0,22.0,2.0,12.0,5.0,5.0,,,3.0,3.0,,,38.0,62.0,0.39,2.91,espn:723912
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-04,18:00,Gimnàstic de Tarragona,Huesca,FULL_TIME,0,1,A,,,,11.0,9.0,2.0,2.0,6.0,4.0,,,3.0,2.0,,,57.0,43.0,0.39,0.28,espn:723894
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-04,18:00,Sant Andreu,Real Betis,FULL_TIME,1,3,A,,,,7.0,14.0,3.0,6.0,4.0,2.0,,,3.0,5.0,,,51.0,49.0,0.92,1.64,espn:723905
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-04,18:00,Unionistas de Salamanca,Rayo Vallecano,FULL_TIME,2,3,A,,,,18.0,16.0,5.0,10.0,4.0,3.0,,,3.0,4.0,,,35.0,65.0,1.45,0.76,espn:723907
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-04,19:00,Cádiz,Eldense,FULL_TIME,0,1,A,,,,,,,,,,,,,,,,,,,,espn:723889
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-04,19:00,Cultural Leonesa,Almería,FULL_TIME,1,2,A,,,,,,,,,,,,,,,,,,,,espn:723909
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-04,19:00,Ourense CF,Deportivo,FULL_TIME,1,0,H,,,,,,,,,,,,,,,,,,,,espn:723898
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-04,19:30,Racing Santander,Sporting Gijón,FULL_TIME,1,0,H,,,,,,,,,,,,,,,,,,,,espn:723901
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-04,20:00,CD Estepona,Leganés,FINAL_PEN,2,2,D,,,,9.0,25.0,5.0,9.0,3.0,5.0,,,2.0,2.0,,,29.0,71.0,1.36,2.16,espn:723916
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-04,20:00,Ejea,Valencia,FULL_TIME,1,3,A,,,,10.0,7.0,1.0,4.0,6.0,2.0,,,1.0,1.0,,,43.0,57.0,1.01,0.83,espn:723891
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-04,20:00,Pontevedra,Villarreal,FULL_TIME,1,0,H,,,,15.0,6.0,3.0,2.0,6.0,3.0,,,0.0,1.0,,,73.0,27.0,0.69,0.37,espn:723900
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-04,20:00,UD Logroñés,Girona,FINAL_PEN,0,0,D,,,,9.0,17.0,1.0,2.0,1.0,7.0,,,4.0,2.0,,,42.0,58.0,0.26,0.96,espn:723906
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-04,20:00,Zamora CF,Tenerife,FINAL_PEN,0,0,D,,,,,,,,,,,,,,,,,,,,espn:723892
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-05,18:00,Cacereno,Atlético Madrid,FULL_TIME,1,3,A,,,,5.0,28.0,2.0,13.0,1.0,7.0,,,1.0,2.0,,,29.0,71.0,0.56,2.92,espn:723911
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-05,18:00,Ceuta,Osasuna,FULL_TIME,2,3,A,,,,11.0,11.0,5.0,4.0,2.0,3.0,,,1.0,1.0,,,44.0,56.0,0.82,1.93,espn:723915
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-05,18:00,Orihuela,Getafe,FINAL_PEN,0,0,D,,,,9.0,24.0,4.0,8.0,4.0,6.0,,,2.0,3.0,,,34.0,66.0,0.56,2.08,espn:723897
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-05,19:00,Barakaldo,Racing Ferrol,FULL_TIME,1,2,A,,,,18.0,10.0,5.0,5.0,8.0,4.0,,,5.0,3.0,,,50.0,50.0,1.36,0.25,espn:723914
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-05,19:00,FC Andorra,FC Cartagena,FULL_TIME,0,1,A,,,,21.0,4.0,5.0,1.0,10.0,2.0,,,0.0,3.0,,,67.0,33.0,1.48,0.23,espn:723893
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-05,19:00,Marbella FC,Burgos,FULL_TIME,1,0,H,,,,8.0,4.0,5.0,3.0,3.0,2.0,,,4.0,2.0,,,44.0,56.0,0.95,0.19,espn:723895
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-05,19:00,Ponferradina,Castellón,FINAL_PEN,1,1,D,,,,13.0,17.0,7.0,5.0,4.0,7.0,,,3.0,2.0,,,46.0,54.0,1.16,0.8,espn:723899
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-05,20:00,CD Minera,Alavés,FINAL_PEN,2,2,D,,,,5.0,30.0,3.0,9.0,2.0,14.0,,,5.0,1.0,,,32.0,68.0,0.34,2.87,espn:723890
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-05,20:00,Conquense,Real Sociedad,FINAL_AET,0,1,A,,,,13.0,22.0,4.0,5.0,4.0,14.0,,,6.0,0.0,,,28.0,72.0,0.61,1.54,espn:723910
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2024-12-05,20:00,Olot,Sevilla,FULL_TIME,1,3,A,,,,17.0,12.0,5.0,5.0,7.0,1.0,,,1.0,4.0,,,42.0,58.0,1.9,1.6,espn:723896
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-03,18:00,Granada,Getafe,FINAL_AET,0,1,A,,,,11.0,19.0,3.0,4.0,11.0,8.0,,,5.0,5.0,,,54.0,46.0,0.61,2.41,espn:724689
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-03,18:00,Pontevedra,Mallorca,FULL_TIME,3,0,H,,,,14.0,6.0,7.0,2.0,3.0,6.0,,,5.0,2.0,,,54.0,46.0,1.24,1.19,espn:724680
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-03,18:00,Racing Ferrol,Rayo Vallecano,FULL_TIME,1,3,A,,,,18.0,10.0,2.0,6.0,9.0,4.0,,,2.0,3.0,,,46.0,54.0,1.13,0.56,espn:724681
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-04,14:30,Huesca,Real Betis,FULL_TIME,0,1,A,,,,14.0,16.0,1.0,2.0,4.0,12.0,,,4.0,0.0,,,43.0,57.0,1.08,1.1,espn:724688
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-04,15:30,Tenerife,Osasuna,FULL_TIME,1,2,A,,,,8.0,12.0,5.0,7.0,3.0,9.0,,,4.0,3.0,,,48.0,52.0,0.39,1.03,espn:724683
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-04,16:30,Almería,Sevilla,FULL_TIME,4,1,H,,,,14.0,15.0,6.0,4.0,2.0,5.0,,,3.0,1.0,,,48.0,52.0,2.64,0.89,espn:724694
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-04,18:00,Barbastro,Barcelona,FULL_TIME,0,4,A,,,,2.0,19.0,1.0,9.0,1.0,8.0,,,1.0,1.0,,,25.0,75.0,0.06,2.91,espn:724693
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-04,20:30,Marbella FC,Atlético Madrid,FULL_TIME,0,1,A,,,,5.0,18.0,2.0,5.0,4.0,6.0,,,1.0,3.0,,,40.0,60.0,0.29,1.29,espn:724687
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-04,20:30,UD Logroñés,Athletic Club,FINAL_PEN,0,0,D,,,,4.0,18.0,1.0,5.0,1.0,5.0,,,2.0,5.0,,,38.0,62.0,0.07,0.97,espn:724684
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-05,11:00,Elche,Las Palmas,FULL_TIME,4,0,H,,,,16.0,6.0,8.0,2.0,3.0,4.0,,,5.0,1.0,,,53.0,47.0,1.32,0.31,espn:724695
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-05,11:00,Ourense CF,Real Valladolid,FULL_TIME,3,2,H,,,,10.0,7.0,4.0,3.0,3.0,2.0,,,1.0,4.0,,,50.0,50.0,0.58,0.39,espn:724686
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-05,14:30,FC Cartagena,Leganés,FULL_TIME,1,2,A,,,,7.0,16.0,4.0,7.0,1.0,5.0,,,0.0,1.0,,,47.0,53.0,0.49,2.78,espn:724690
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-05,14:30,Ponferradina,Real Sociedad,FULL_TIME,0,2,A,,,,19.0,13.0,4.0,7.0,12.0,3.0,,,1.0,0.0,,,46.0,54.0,1.64,1.16,espn:724685
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-05,14:30,Racing Santander,Celta Vigo,FULL_TIME,2,3,A,,,,7.0,17.0,3.0,8.0,1.0,11.0,,,3.0,5.0,,,34.0,66.0,0.57,1.77,espn:724682
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-06,18:00,CD Minera,Real Madrid,FULL_TIME,0,5,A,,,,4.0,33.0,1.0,21.0,0.0,9.0,,,1.0,0.0,,,34.0,66.0,0.08,4.43,espn:724692
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-07,20:00,Eldense,Valencia,FULL_TIME,0,2,A,,,,11.0,16.0,2.0,6.0,3.0,3.0,,,2.0,4.0,,,43.0,57.0,0.37,1.22,espn:724691
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-14,20:00,Ourense CF,Valencia,FULL_TIME,0,2,A,,,,9.0,9.0,4.0,3.0,4.0,7.0,,,1.0,0.0,,,42.0,58.0,0.41,1.18,espn:729685
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-15,18:30,Almería,Leganés,FULL_TIME,2,3,A,,,,13.0,10.0,6.0,4.0,4.0,4.0,,,1.0,3.0,,,52.0,48.0,0.86,2.1,espn:729688
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-15,18:30,Pontevedra,Getafe,FULL_TIME,0,1,A,,,,14.0,12.0,3.0,3.0,8.0,3.0,,,2.0,3.0,,,84.0,16.0,0.65,0.77,espn:729683
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-15,20:00,Barcelona,Real Betis,FULL_TIME,5,1,H,,,,18.0,8.0,9.0,3.0,8.0,3.0,,,2.0,2.0,,,69.0,31.0,2.02,1.75,espn:729687
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-15,20:30,Elche,Atlético Madrid,FULL_TIME,0,4,A,,,,10.0,14.0,4.0,11.0,5.0,9.0,,,2.0,1.0,,,53.0,47.0,0.51,1.74,espn:729686
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-16,18:30,Athletic Club,Osasuna,FULL_TIME,2,3,A,,,,23.0,9.0,8.0,5.0,12.0,3.0,,,1.0,3.0,,,60.0,40.0,1.6,2.18,espn:729690
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-16,18:30,Real Sociedad,Rayo Vallecano,FULL_TIME,3,1,H,,,,14.0,12.0,5.0,3.0,6.0,2.0,,,1.0,2.0,,,49.0,51.0,1.18,1.19,espn:729689
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-01-16,20:30,Real Madrid,Celta Vigo,FINAL_AET,5,2,H,,,,23.0,12.0,11.0,4.0,11.0,6.0,,,2.0,4.0,,,58.0,42.0,2.58,1.36,espn:729684
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-02-04,20:30,Atlético Madrid,Getafe,FULL_TIME,5,0,H,,,,14.0,10.0,8.0,4.0,6.0,3.0,,,1.0,2.0,,,49.0,51.0,3.11,0.54,espn:730976
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-02-05,20:00,Leganés,Real Madrid,FULL_TIME,2,3,A,,,,16.0,20.0,4.0,12.0,3.0,7.0,,,1.0,3.0,,,41.0,59.0,1.79,2.8,espn:730977
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-02-06,18:30,Real Sociedad,Osasuna,FULL_TIME,2,0,H,,,,11.0,9.0,4.0,3.0,9.0,4.0,,,3.0,4.0,,,56.0,44.0,1.7,0.85,espn:730978
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-02-06,20:30,Valencia,Barcelona,FULL_TIME,0,5,A,,,,4.0,17.0,1.0,9.0,3.0,4.0,,,2.0,0.0,,,23.0,77.0,0.15,2.82,espn:730975
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-02-25,20:30,Barcelona,Atlético Madrid,FULL_TIME,4,4,D,,,,16.0,10.0,9.0,7.0,8.0,3.0,,,0.0,4.0,,,67.0,33.0,3.57,1.51,espn:732586
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-02-26,20:30,Real Sociedad,Real Madrid,FULL_TIME,0,1,A,,,,11.0,14.0,6.0,5.0,8.0,8.0,,,0.0,2.0,,,52.0,48.0,1.05,1.56,espn:732587
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-04-01,19:30,Real Madrid,Real Sociedad,FINAL_AET,4,4,D,,,,26.0,11.0,10.0,5.0,10.0,6.0,,,1.0,4.0,,,58.0,42.0,3.12,1.04,espn:732589
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-04-02,19:30,Atlético Madrid,Barcelona,FULL_TIME,0,1,A,,,,6.0,15.0,0.0,5.0,6.0,7.0,,,5.0,3.0,,,44.0,56.0,0.72,1.76,espn:732588
+espn+fotmob,2024-25,Copa del Rey,1,domestic_cup,CDR,2025-04-26,20:00,Barcelona,Real Madrid,FINAL_AET,3,2,H,,,,22.0,15.0,9.0,7.0,8.0,7.0,,,4.0,3.0,,,59.0,41.0,1.85,0.92,espn:735156
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-16,16:00,Hallescher FC,St. Pauli,FINAL_AET,2,3,A,,,,11.0,15.0,4.0,8.0,7.0,8.0,17.0,12.0,6.0,4.0,0.0,0.0,32.4,67.6,1.73,1.74,espn:703048
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-16,16:00,SV Wehen Wiesbaden,Mainz,FINAL_AET,1,3,A,,,,11.0,20.0,3.0,9.0,7.0,10.0,18.0,19.0,2.0,4.0,0.0,0.0,35.7,64.3,0.64,1.66,espn:703040
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-16,16:00,Würzburger Kickers,TSG Hoffenheim,FINAL_PEN,2,2,D,,,,11.0,20.0,4.0,11.0,3.0,6.0,14.0,13.0,2.0,1.0,0.0,0.0,30.3,69.7,1.83,2.58,espn:703050
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-16,18:45,SSV Ulm 1846,Bayern Munich,FULL_TIME,0,4,A,,,,6.0,16.0,1.0,7.0,0.0,4.0,10.0,11.0,2.0,1.0,0.0,0.0,22.7,77.3,0.45,3.28,espn:703043
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-17,11:00,FC Erzgebirge Aue,Borussia Mönchengladbach,FULL_TIME,1,3,A,,,,13.0,25.0,3.0,11.0,9.0,8.0,4.0,15.0,3.0,0.0,0.0,0.0,44.5,55.5,0.41,3.2,espn:703055
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-17,11:00,Schott,SpVgg Greuther Fürth,FULL_TIME,0,2,A,,,,10.0,26.0,0.0,8.0,3.0,11.0,6.0,4.0,3.0,0.0,0.0,0.0,35.7,64.3,0.89,2.33,espn:703038
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-17,13:30,FC 08 Villingen,1. FC Heidenheim 1846,FULL_TIME,0,4,A,,,,11.0,21.0,2.0,10.0,1.0,4.0,7.0,10.0,1.0,0.0,0.0,0.0,32.7,67.3,0.51,3.8,espn:703057
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-17,13:30,FC Ingolstadt 04,Kaiserslautern,FULL_TIME,1,2,A,,,,19.0,15.0,9.0,4.0,9.0,4.0,20.0,9.0,4.0,3.0,0.0,1.0,45.2,54.8,1.74,2.1,espn:703053
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-17,13:30,Greifswalder SC,1. FC Union Berlin,FULL_TIME,0,1,A,,,,6.0,30.0,2.0,4.0,3.0,14.0,10.0,14.0,2.0,1.0,0.0,0.0,35.3,64.7,0.94,1.83,espn:703049
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-17,13:30,Rot-Weiss Essen,RB Leipzig,FULL_TIME,1,4,A,,,,12.0,17.0,3.0,11.0,3.0,5.0,10.0,8.0,2.0,1.0,0.0,0.0,41.8,58.2,0.45,4.4,espn:703046
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-17,13:30,VfL Osnabruck,SC Freiburg,FULL_TIME,0,4,A,,,,18.0,16.0,4.0,6.0,4.0,4.0,14.0,15.0,2.0,0.0,0.0,0.0,48.8,51.2,1.65,2.26,espn:703036
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-17,13:30,VfR Aalen,Schalke 04,FULL_TIME,0,2,A,,,,4.0,20.0,0.0,7.0,1.0,6.0,16.0,15.0,3.0,1.0,0.0,0.0,29.8,70.2,0.09,2.02,espn:703035
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-17,16:00,1. FC Phönix Lübeck,Borussia Dortmund,FULL_TIME,1,4,A,,,,9.0,11.0,1.0,8.0,2.0,5.0,9.0,8.0,2.0,1.0,0.0,0.0,14.8,85.2,0.5,2.19,espn:703034
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-17,16:00,Alemannia Aachen,Holstein Kiel,FULL_TIME,2,3,A,,,,14.0,18.0,5.0,9.0,8.0,6.0,12.0,12.0,5.0,2.0,0.0,0.0,29.6,70.4,1.54,2.11,espn:703061
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-17,16:00,Arminia Bielefeld,Hannover 96,FULL_TIME,2,0,H,,,,13.0,16.0,5.0,7.0,2.0,7.0,20.0,19.0,6.0,2.0,0.0,0.0,44.2,55.8,0.73,0.79,espn:703060
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-18,11:00,FC Viktoria 1889 Berlin,FC Augsburg,FULL_TIME,1,4,A,,,,6.0,16.0,2.0,8.0,3.0,7.0,17.0,7.0,3.0,3.0,0.0,0.0,23.9,76.1,0.88,1.91,espn:703051
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-18,11:00,Saarbrücken,1. FC Nürnberg,FINAL_PEN,1,1,D,,,,13.0,13.0,5.0,4.0,4.0,6.0,19.0,18.0,1.0,3.0,0.0,0.0,45.5,54.5,0.56,0.48,espn:703062
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-18,13:30,Bremer SV,SC Paderborn 07,FULL_TIME,0,4,A,,,,10.0,18.0,3.0,8.0,1.0,6.0,16.0,14.0,4.0,1.0,0.0,0.0,36.3,63.7,0.67,1.61,espn:703059
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-18,13:30,Hansa Rostock,Hertha Berlin,FULL_TIME,1,5,A,,,,7.0,15.0,3.0,6.0,2.0,8.0,16.0,11.0,3.0,1.0,0.0,0.0,33.0,67.0,0.42,2.2,espn:703054
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-18,13:30,SSV Jahn Regensburg,VfL Bochum,FULL_TIME,1,0,H,,,,18.0,18.0,6.0,7.0,4.0,5.0,14.0,18.0,1.0,7.0,0.0,0.0,34.6,65.4,1.01,1.22,espn:703044
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-18,13:30,SV Sandhausen,FC Cologne,FINAL_AET,2,3,A,,,,19.0,23.0,7.0,13.0,3.0,12.0,17.0,21.0,4.0,5.0,0.0,0.0,52.3,47.7,2.64,2.23,espn:703041
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-18,13:30,Teutonia Ottensen,SV Darmstadt 98,FULL_TIME,1,3,A,,,,11.0,11.0,6.0,4.0,5.0,7.0,13.0,16.0,2.0,2.0,0.0,0.0,32.3,67.7,1.38,1.59,espn:703052
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-18,13:30,VfV Hildesheim,SV Elversberg,FULL_TIME,0,7,A,,,,8.0,26.0,1.0,12.0,1.0,7.0,7.0,6.0,1.0,0.0,0.0,0.0,34.6,65.4,0.49,4.55,espn:703033
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-18,16:00,Dynamo Dresden,Fortuna Düsseldorf,FULL_TIME,2,0,H,,,,27.0,13.0,5.0,5.0,5.0,5.0,9.0,11.0,2.0,4.0,0.0,0.0,47.3,52.7,2.25,1.04,espn:703045
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-18,16:00,Sportfreunde Lotte,Karlsruher SC,FULL_TIME,0,5,A,,,,11.0,19.0,0.0,7.0,4.0,7.0,9.0,7.0,1.0,1.0,0.0,0.0,48.6,51.4,0.93,2.11,espn:703039
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-18,16:00,SV Meppen,Hamburg SV,FULL_TIME,1,7,A,,,,8.0,16.0,2.0,10.0,2.0,7.0,8.0,6.0,3.0,0.0,0.0,0.0,31.5,68.5,0.36,2.02,espn:703042
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-19,16:00,Energie Cottbus,Werder Bremen,FULL_TIME,1,3,A,,,,8.0,27.0,3.0,10.0,5.0,11.0,14.0,10.0,2.0,2.0,1.0,0.0,39.3,60.7,0.4,4.21,espn:703056
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-19,16:00,Kickers Offenbach,1. FC Magdeburg,FULL_TIME,2,1,H,,,,9.0,15.0,3.0,7.0,1.0,7.0,17.0,16.0,4.0,8.0,0.0,0.0,27.3,72.7,1.97,1.42,espn:703047
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-19,16:00,TUS Koblenz,VfL Wolfsburg,FULL_TIME,0,1,A,,,,7.0,17.0,1.0,1.0,3.0,7.0,17.0,8.0,5.0,2.0,1.0,0.0,22.5,77.5,0.35,1.36,espn:703037
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-19,18:45,TSV Eintracht Braunschweig,Eintracht Frankfurt,FULL_TIME,1,4,A,,,,10.0,14.0,1.0,8.0,5.0,4.0,7.0,10.0,3.0,1.0,0.0,0.0,41.8,58.2,1.18,1.65,espn:703058
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-27,18:45,Preußen Münster,VfB Stuttgart,FULL_TIME,0,5,A,,,,6.0,17.0,0.0,8.0,4.0,8.0,11.0,11.0,2.0,1.0,0.0,0.0,23.6,76.4,0.29,2.74,espn:703064
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-08-28,16:00,FC Carl Zeiss Jena,Bayer Leverkusen,FULL_TIME,0,1,A,,,,6.0,16.0,1.0,3.0,4.0,5.0,17.0,6.0,2.0,1.0,0.0,0.0,25.8,74.2,1.04,1.35,espn:703063
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-29,17:00,Bayer Leverkusen,SV Elversberg,FULL_TIME,3,0,H,,,,10.0,13.0,7.0,5.0,3.0,12.0,11.0,8.0,1.0,1.0,0.0,0.0,66.2,33.8,1.43,0.85,espn:720735
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-29,17:00,FC Augsburg,Schalke 04,FULL_TIME,3,0,H,,,,12.0,8.0,3.0,1.0,2.0,6.0,6.0,15.0,0.0,4.0,0.0,0.0,53.4,46.6,0.92,0.28,espn:720723
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-29,17:00,Kickers Offenbach,Karlsruher SC,FULL_TIME,0,2,A,,,,12.0,13.0,6.0,3.0,4.0,5.0,10.0,8.0,1.0,0.0,0.0,0.0,28.2,71.8,0.68,1.41,espn:720726
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-29,17:00,RB Leipzig,St. Pauli,FULL_TIME,4,2,H,,,,9.0,17.0,7.0,4.0,3.0,7.0,5.0,7.0,0.0,1.0,0.0,0.0,46.7,53.3,1.74,0.59,espn:720736
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-29,19:45,FC Cologne,Holstein Kiel,FULL_TIME,3,0,H,,,,12.0,14.0,6.0,3.0,3.0,4.0,15.0,12.0,3.0,4.0,0.0,0.0,41.3,58.7,1.68,0.71,espn:720724
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-29,19:45,SSV Jahn Regensburg,SpVgg Greuther Fürth,FULL_TIME,1,0,H,,,,9.0,19.0,4.0,5.0,3.0,3.0,14.0,16.0,4.0,3.0,1.0,0.0,32.1,67.9,0.25,0.98,espn:720731
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-29,19:45,VfB Stuttgart,Kaiserslautern,FULL_TIME,2,1,H,,,,17.0,7.0,7.0,1.0,4.0,4.0,11.0,13.0,2.0,4.0,0.0,0.0,69.0,31.0,2.52,1.24,espn:720725
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-29,19:45,VfL Wolfsburg,Borussia Dortmund,FINAL_AET,1,0,H,,,,16.0,18.0,3.0,4.0,4.0,6.0,20.0,17.0,2.0,4.0,0.0,0.0,42.1,57.9,1.31,1.73,espn:720729
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-30,17:00,Eintracht Frankfurt,Borussia Mönchengladbach,FULL_TIME,2,1,H,,,,14.0,19.0,7.0,3.0,3.0,6.0,7.0,15.0,2.0,4.0,1.0,0.0,39.6,60.4,2.19,1.46,espn:720728
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-30,17:00,Hertha Berlin,1. FC Heidenheim 1846,FULL_TIME,2,1,H,,,,11.0,10.0,5.0,1.0,3.0,3.0,18.0,13.0,5.0,1.0,0.0,0.0,45.4,54.6,0.9,0.86,espn:720733
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-30,17:00,SC Freiburg,Hamburg SV,FULL_TIME,2,1,H,,,,13.0,10.0,5.0,4.0,6.0,5.0,7.0,10.0,0.0,1.0,0.0,0.0,48.1,51.9,1.57,0.89,espn:720727
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-30,17:00,SC Paderborn 07,Werder Bremen,FULL_TIME,0,1,A,,,,18.0,11.0,6.0,3.0,7.0,6.0,16.0,9.0,1.0,3.0,0.0,0.0,48.4,51.6,2.4,1.99,espn:720732
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-30,19:45,Arminia Bielefeld,1. FC Union Berlin,FULL_TIME,2,0,H,,,,11.0,21.0,3.0,5.0,2.0,7.0,8.0,14.0,3.0,1.0,0.0,0.0,29.4,70.6,1.36,1.98,espn:720734
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-30,19:45,Dynamo Dresden,SV Darmstadt 98,FINAL_AET,2,3,A,,,,24.0,20.0,8.0,7.0,20.0,5.0,11.0,17.0,2.0,2.0,0.0,0.0,45.1,54.9,1.81,2.17,espn:720737
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-30,19:45,Mainz,Bayern Munich,FULL_TIME,0,4,A,,,,6.0,15.0,4.0,10.0,1.0,2.0,17.0,10.0,3.0,1.0,0.0,0.0,20.2,79.8,0.56,3.21,espn:720730
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-10-30,19:45,TSG Hoffenheim,1. FC Nürnberg,FULL_TIME,2,1,H,,,,23.0,15.0,10.0,5.0,10.0,6.0,15.0,9.0,2.0,2.0,0.0,0.0,50.3,49.7,2.25,1.39,espn:720722
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-12-03,17:00,Arminia Bielefeld,SC Freiburg,FULL_TIME,3,1,H,,,,20.0,17.0,6.0,8.0,7.0,3.0,15.0,14.0,1.0,2.0,0.0,0.0,46.2,53.8,2.0,2.02,espn:723155
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-12-03,17:00,SSV Jahn Regensburg,VfB Stuttgart,FULL_TIME,0,3,A,,,,7.0,14.0,2.0,8.0,5.0,7.0,12.0,6.0,2.0,0.0,0.0,0.0,29.6,70.4,0.66,2.05,espn:723154
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-12-03,19:45,Bayern Munich,Bayer Leverkusen,FULL_TIME,0,1,A,,,,14.0,11.0,2.0,4.0,12.0,4.0,8.0,13.0,2.0,3.0,1.0,0.0,58.2,41.8,0.86,1.07,espn:723151
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-12-03,19:45,Werder Bremen,SV Darmstadt 98,FULL_TIME,1,0,H,,,,20.0,5.0,5.0,1.0,5.0,0.0,12.0,12.0,4.0,4.0,0.0,0.0,66.0,34.0,1.84,0.18,espn:723150
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-12-04,17:00,FC Cologne,Hertha Berlin,FINAL_AET,2,1,H,,,,28.0,8.0,4.0,3.0,11.0,6.0,13.0,14.0,4.0,2.0,0.0,1.0,60.8,39.2,2.41,1.08,espn:723152
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-12-04,17:00,VfL Wolfsburg,TSG Hoffenheim,FULL_TIME,3,0,H,,,,16.0,11.0,5.0,0.0,4.0,5.0,12.0,15.0,2.0,2.0,0.0,0.0,43.9,56.1,2.31,0.55,espn:723153
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-12-04,19:45,Karlsruher SC,FC Augsburg,FINAL_PEN,2,2,D,,,,13.0,15.0,8.0,3.0,5.0,7.0,12.0,12.0,2.0,4.0,0.0,0.0,46.6,53.4,2.04,1.29,espn:723148
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2024-12-04,19:45,RB Leipzig,Eintracht Frankfurt,FULL_TIME,3,0,H,,,,15.0,7.0,6.0,1.0,3.0,9.0,3.0,9.0,1.0,1.0,0.0,0.0,35.6,64.4,1.81,0.34,espn:723149
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2025-02-04,19:45,VfB Stuttgart,FC Augsburg,FULL_TIME,1,0,H,,,,12.0,6.0,2.0,3.0,4.0,0.0,14.0,17.0,2.0,1.0,0.0,0.0,60.3,39.7,0.84,0.51,espn:725025
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2025-02-05,19:45,Bayer Leverkusen,FC Cologne,FINAL_AET,3,2,H,,,,23.0,5.0,7.0,4.0,9.0,1.0,9.0,17.0,3.0,3.0,0.0,0.0,78.7,21.3,2.28,0.58,espn:725026
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2025-02-25,19:45,Arminia Bielefeld,Werder Bremen,FULL_TIME,2,1,H,,,,7.0,11.0,3.0,1.0,3.0,8.0,15.0,15.0,1.0,4.0,0.0,0.0,44.7,55.3,0.57,1.59,espn:725024
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2025-02-26,19:45,RB Leipzig,VfL Wolfsburg,FULL_TIME,1,0,H,,,,16.0,11.0,4.0,5.0,8.0,4.0,15.0,10.0,3.0,2.0,0.0,0.0,51.0,49.0,2.46,0.94,espn:725023
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2025-04-01,18:45,Arminia Bielefeld,Bayer Leverkusen,FULL_TIME,2,1,H,,,,8.0,13.0,3.0,4.0,7.0,6.0,14.0,12.0,3.0,5.0,0.0,0.0,48.3,51.7,1.43,1.05,espn:733955
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2025-04-02,18:45,VfB Stuttgart,RB Leipzig,FULL_TIME,3,1,H,,,,9.0,25.0,6.0,5.0,5.0,5.0,8.0,14.0,0.0,3.0,0.0,0.0,32.8,67.2,0.89,2.08,espn:733956
+espn+fotmob,2024-25,DFB-Pokal,1,domestic_cup,DFB,2025-05-24,18:00,Arminia Bielefeld,VfB Stuttgart,FULL_TIME,2,4,A,,,,15.0,14.0,5.0,7.0,4.0,6.0,11.0,11.0,3.0,2.0,0.0,0.0,58.4,41.6,2.03,2.48,espn:735148
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:30,Carlisle United,Stoke City,FULL_TIME,0,2,A,,,,12.0,12.0,3.0,6.0,7.0,3.0,13.0,12.0,0.0,0.0,0.0,0.0,37.4,62.6,1.25,1.41,espn:710327
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:30,Leyton Orient,Newport County,FULL_TIME,4,1,H,,,,10.0,5.0,6.0,1.0,5.0,2.0,16.0,7.0,1.0,1.0,0.0,0.0,48.7,51.3,1.16,0.36,espn:710317
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:30,Stockport County,Blackburn Rovers,FULL_TIME,1,6,A,,,,3.0,24.0,1.0,12.0,2.0,8.0,7.0,3.0,2.0,0.0,0.0,0.0,27.7,72.3,0.16,2.5,espn:710305
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Barrow,Port Vale,FULL_TIME,3,2,H,,,,20.0,6.0,6.0,5.0,11.0,4.0,9.0,8.0,2.0,1.0,0.0,0.0,43.3,56.7,1.37,0.58,espn:710334
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Bolton Wanderers,Mansfield Town,FINAL_PEN,1,1,D,,,,19.0,11.0,5.0,3.0,6.0,3.0,12.0,20.0,2.0,4.0,0.0,0.0,52.1,47.9,0.95,1.32,espn:710300
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Bristol City,Coventry City,FULL_TIME,0,1,A,,,,15.0,11.0,6.0,4.0,9.0,8.0,8.0,10.0,2.0,2.0,0.0,0.0,51.9,48.1,0.89,0.47,espn:710332
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Bromley,AFC Wimbledon,FULL_TIME,1,2,A,,,,11.0,13.0,4.0,7.0,4.0,5.0,10.0,15.0,0.0,4.0,0.0,0.0,43.2,56.8,1.04,1.81,espn:710331
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Burton Albion,Blackpool,FULL_TIME,0,4,A,,,,6.0,26.0,2.0,11.0,7.0,6.0,8.0,8.0,1.0,0.0,1.0,0.0,37.7,62.3,0.13,3.1,espn:710330
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Cambridge United,Queens Park Rangers,FULL_TIME,1,2,A,,,,16.0,13.0,4.0,4.0,3.0,5.0,10.0,14.0,2.0,2.0,0.0,0.0,58.9,41.1,1.68,1.22,espn:710329
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Cardiff City,Bristol Rovers,FULL_TIME,2,0,H,,,,17.0,7.0,8.0,2.0,10.0,2.0,12.0,8.0,1.0,1.0,0.0,0.0,60.6,39.4,2.22,0.3,espn:710328
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Charlton Athletic,Birmingham City,FULL_TIME,0,1,A,,,,11.0,16.0,1.0,6.0,3.0,3.0,23.0,8.0,2.0,1.0,0.0,1.0,37.3,62.7,1.27,0.96,espn:710326
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Colchester United,Reading,FINAL_PEN,2,2,D,,,,12.0,14.0,4.0,4.0,7.0,3.0,8.0,13.0,2.0,2.0,0.0,0.0,36.4,63.6,1.4,1.16,espn:710325
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Crawley Town,Swindon Town,FULL_TIME,4,2,H,,,,13.0,13.0,8.0,6.0,2.0,5.0,11.0,8.0,3.0,1.0,0.0,0.0,62.8,37.2,0.57,2.31,espn:710324
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Derby County,Chesterfield,FULL_TIME,2,1,H,,,,18.0,6.0,4.0,2.0,7.0,1.0,12.0,8.0,0.0,1.0,0.0,0.0,46.0,54.0,1.73,0.43,espn:710323
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Fleetwood Town,West Bromwich Albion,FULL_TIME,2,1,H,,,,5.0,14.0,3.0,3.0,3.0,4.0,10.0,14.0,2.0,2.0,0.0,0.0,25.3,74.7,0.69,0.84,espn:710322
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Grimsby Town,Bradford City,FINAL_PEN,1,1,D,,,,8.0,22.0,3.0,9.0,4.0,7.0,14.0,16.0,1.0,2.0,0.0,0.0,54.0,46.0,0.67,3.01,espn:710321
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Huddersfield Town,Morecambe,FULL_TIME,3,0,H,,,,24.0,5.0,7.0,0.0,8.0,2.0,14.0,9.0,0.0,1.0,0.0,1.0,69.7,30.3,3.53,0.44,espn:710320
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Lincoln City,Harrogate Town,FULL_TIME,1,2,A,,,,18.0,9.0,3.0,4.0,6.0,6.0,14.0,7.0,1.0,1.0,0.0,0.0,64.6,35.4,2.11,1.66,espn:710316
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Northampton Town,Wycombe Wanderers,FULL_TIME,0,2,A,,,,7.0,13.0,1.0,7.0,2.0,5.0,9.0,12.0,1.0,0.0,0.0,1.0,64.6,35.4,0.27,1.39,espn:710315
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Norwich City,Stevenage,FULL_TIME,4,3,H,,,,12.0,7.0,6.0,3.0,8.0,3.0,12.0,21.0,2.0,1.0,0.0,0.0,64.6,35.4,1.98,0.58,espn:710314
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Oxford United,Peterborough United,FULL_TIME,2,0,H,,,,10.0,11.0,7.0,6.0,8.0,6.0,12.0,7.0,1.0,1.0,0.0,0.0,53.5,46.5,2.66,0.96,espn:710313
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Portsmouth,Millwall,FULL_TIME,0,1,A,,,,10.0,8.0,0.0,2.0,10.0,4.0,14.0,16.0,2.0,1.0,0.0,0.0,63.8,36.2,1.11,0.43,espn:710311
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Preston North End,Sunderland,FULL_TIME,2,0,H,,,,14.0,12.0,7.0,6.0,5.0,6.0,16.0,9.0,1.0,1.0,0.0,0.0,45.8,54.2,1.01,0.51,espn:710310
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Rotherham United,Crewe Alexandra,FULL_TIME,2,1,H,,,,27.0,7.0,10.0,4.0,11.0,5.0,17.0,9.0,1.0,1.0,0.0,0.0,51.7,48.3,3.62,0.35,espn:710309
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Salford City,Doncaster Rovers,FULL_TIME,0,2,A,,,,19.0,14.0,2.0,4.0,12.0,4.0,10.0,13.0,5.0,2.0,0.0,0.0,55.8,44.2,0.75,1.69,espn:710308
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Shrewsbury Town,Notts County,FINAL_PEN,3,3,D,,,,20.0,12.0,7.0,5.0,13.0,4.0,14.0,5.0,2.0,1.0,0.0,0.0,40.3,59.7,2.46,2.28,espn:710306
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Swansea City,Gillingham,FULL_TIME,3,1,H,,,,13.0,4.0,9.0,2.0,8.0,0.0,10.0,10.0,2.0,0.0,0.0,1.0,78.3,21.7,2.26,0.15,espn:710304
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Tranmere Rovers,Accrington Stanley,FULL_TIME,3,0,H,,,,12.0,14.0,4.0,4.0,4.0,7.0,9.0,12.0,1.0,4.0,0.0,0.0,48.8,51.2,2.29,0.78,espn:710303
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Walsall,Exeter City,FINAL_PEN,1,1,D,,,,15.0,9.0,5.0,2.0,3.0,6.0,5.0,10.0,1.0,1.0,0.0,0.0,38.7,61.3,1.68,0.85,espn:710302
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Watford,Milton Keynes Dons,FULL_TIME,5,0,H,,,,24.0,9.0,12.0,2.0,12.0,2.0,10.0,6.0,1.0,1.0,0.0,0.0,57.1,42.9,2.7,0.54,espn:710301
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,18:45,Wigan Athletic,Barnsley,FINAL_PEN,1,1,D,,,,9.0,19.0,4.0,5.0,5.0,10.0,12.0,15.0,1.0,2.0,0.0,0.0,47.9,52.1,1.83,1.83,espn:710333
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-13,19:00,Sheffield United,Wrexham,FULL_TIME,4,2,H,,,,20.0,12.0,8.0,5.0,7.0,6.0,7.0,11.0,1.0,2.0,0.0,0.0,66.8,33.2,2.28,0.78,espn:710307
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-14,18:45,Hull City,Sheffield Wednesday,FULL_TIME,1,2,A,,,,12.0,9.0,4.0,3.0,12.0,2.0,13.0,9.0,1.0,2.0,0.0,0.0,59.8,40.2,1.45,1.9,espn:710319
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-14,18:45,Plymouth Argyle,Cheltenham Town,FULL_TIME,3,0,H,,,,32.0,9.0,8.0,2.0,14.0,5.0,12.0,17.0,1.0,2.0,0.0,0.0,70.0,30.0,3.51,0.28,espn:710312
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-14,19:00,Leeds United,Middlesbrough,FULL_TIME,0,3,A,,,,12.0,17.0,2.0,7.0,4.0,3.0,14.0,11.0,3.0,3.0,0.0,0.0,58.4,41.6,0.81,2.02,espn:710318
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:15,Middlesbrough,Stoke City,FULL_TIME,0,5,A,,,,16.0,12.0,3.0,5.0,4.0,3.0,5.0,8.0,1.0,1.0,0.0,0.0,66.2,33.8,1.84,1.54,espn:718807
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Barnsley,Sheffield United,FULL_TIME,1,0,H,,,,9.0,18.0,2.0,4.0,4.0,7.0,13.0,6.0,1.0,1.0,0.0,0.0,35.0,65.0,1.55,1.08,espn:718817
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Barrow,Derby County,FINAL_PEN,0,0,D,,,,12.0,11.0,3.0,3.0,2.0,4.0,10.0,13.0,0.0,2.0,0.0,0.0,45.7,54.3,0.46,0.7,espn:718816
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Blackburn Rovers,Blackpool,FULL_TIME,1,2,A,,,,14.0,10.0,5.0,5.0,10.0,3.0,16.0,8.0,1.0,2.0,0.0,0.0,60.0,40.0,1.96,1.68,espn:718797
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Brighton & Hove Albion,Crawley Town,FULL_TIME,4,0,H,,,,17.0,9.0,8.0,3.0,7.0,6.0,10.0,15.0,3.0,3.0,0.0,1.0,44.3,55.7,2.48,0.78,espn:718798
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Coventry City,Oxford United,FULL_TIME,1,0,H,,,,17.0,8.0,5.0,0.0,9.0,2.0,8.0,14.0,0.0,0.0,0.0,0.0,52.6,47.4,1.02,0.73,espn:718801
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Everton,Doncaster Rovers,FULL_TIME,3,0,H,,,,16.0,8.0,4.0,3.0,9.0,4.0,14.0,10.0,2.0,1.0,0.0,0.0,61.1,38.9,2.0,0.48,espn:718820
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Fleetwood Town,Rotherham United,FULL_TIME,2,1,H,,,,14.0,16.0,4.0,5.0,3.0,4.0,10.0,12.0,4.0,2.0,0.0,0.0,45.3,54.7,1.96,1.35,espn:718803
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Grimsby Town,Sheffield Wednesday,FULL_TIME,1,5,A,,,,8.0,11.0,2.0,5.0,5.0,11.0,8.0,10.0,2.0,2.0,0.0,0.0,29.7,70.3,0.37,1.23,espn:718804
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Harrogate Town,Preston North End,FULL_TIME,0,5,A,,,,6.0,15.0,3.0,6.0,3.0,7.0,7.0,6.0,1.0,0.0,0.0,0.0,32.4,67.6,0.21,2.59,espn:718805
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Leicester City,Tranmere Rovers,FULL_TIME,4,0,H,,,,22.0,3.0,8.0,0.0,9.0,1.0,6.0,9.0,0.0,1.0,0.0,0.0,70.5,29.5,3.11,0.15,espn:718806
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Millwall,Leyton Orient,FULL_TIME,0,1,A,,,,5.0,7.0,0.0,1.0,3.0,2.0,17.0,17.0,2.0,4.0,0.0,0.0,54.5,45.5,0.16,0.45,espn:718808
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Queens Park Rangers,Luton Town,FINAL_PEN,1,1,D,,,,10.0,21.0,6.0,7.0,1.0,12.0,15.0,14.0,3.0,2.0,0.0,0.0,50.4,49.6,1.28,1.05,espn:718815
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Shrewsbury Town,Bolton Wanderers,FULL_TIME,0,2,A,,,,10.0,21.0,1.0,6.0,6.0,4.0,12.0,9.0,2.0,0.0,0.0,0.0,38.0,62.0,0.67,1.63,espn:718813
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Walsall,Huddersfield Town,FULL_TIME,3,2,H,,,,22.0,11.0,7.0,2.0,3.0,2.0,15.0,11.0,1.0,2.0,0.0,1.0,38.1,61.9,3.72,0.87,espn:718811
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,18:45,Watford,Plymouth Argyle,FULL_TIME,2,0,H,,,,17.0,6.0,7.0,2.0,9.0,2.0,17.0,8.0,3.0,1.0,0.0,0.0,49.0,51.0,2.18,0.47,espn:718810
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,19:00,Birmingham City,Fulham,FULL_TIME,0,2,A,,,,16.0,8.0,4.0,2.0,11.0,3.0,16.0,18.0,1.0,2.0,0.0,0.0,57.2,42.8,0.66,1.59,espn:718796
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-27,19:00,Crystal Palace,Norwich City,FULL_TIME,4,0,H,,,,14.0,8.0,5.0,3.0,4.0,0.0,13.0,5.0,2.0,0.0,0.0,0.0,43.1,56.9,2.26,1.08,espn:718802
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-28,18:30,Wolverhampton Wanderers,Burnley,FULL_TIME,2,0,H,,,,17.0,3.0,6.0,0.0,4.0,0.0,13.0,11.0,0.0,1.0,0.0,0.0,50.2,49.8,2.47,0.16,espn:718814
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-28,18:45,AFC Wimbledon,Ipswich Town,FINAL_PEN,2,2,D,,,,2.0,20.0,2.0,5.0,1.0,7.0,12.0,10.0,2.0,2.0,0.0,0.0,20.9,79.1,0.24,1.91,espn:718818
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-28,18:45,Cardiff City,Southampton,FULL_TIME,3,5,A,,,,10.0,13.0,4.0,8.0,3.0,6.0,12.0,4.0,2.0,3.0,0.0,0.0,26.7,73.3,0.68,0.9,espn:718799
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-28,18:45,Colchester United,Brentford,FULL_TIME,0,1,A,,,,5.0,10.0,3.0,4.0,2.0,2.0,16.0,9.0,2.0,1.0,0.0,0.0,28.1,71.9,0.94,2.03,espn:718800
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-28,18:45,Swansea City,Wycombe Wanderers,FULL_TIME,0,1,A,,,,7.0,5.0,0.0,2.0,6.0,0.0,12.0,9.0,1.0,2.0,0.0,0.0,73.1,26.9,0.43,0.87,espn:718812
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-28,18:45,West Ham United,AFC Bournemouth,FULL_TIME,1,0,H,,,,15.0,12.0,4.0,4.0,4.0,5.0,14.0,11.0,3.0,4.0,0.0,0.0,48.6,51.4,0.89,1.06,espn:718819
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-08-28,19:00,Nottingham Forest,Newcastle United,FINAL_PEN,1,1,D,,,,12.0,14.0,3.0,7.0,3.0,5.0,13.0,6.0,5.0,2.0,0.0,0.0,41.7,58.3,1.01,1.97,espn:718809
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-17,18:30,Stoke City,Fleetwood Town,FINAL_PEN,1,1,D,,,,21.0,7.0,4.0,2.0,12.0,2.0,9.0,8.0,4.0,3.0,0.0,0.0,64.4,35.6,2.08,0.67,espn:720272
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-17,18:45,Blackpool,Sheffield Wednesday,FULL_TIME,0,1,A,,,,7.0,11.0,1.0,3.0,1.0,8.0,12.0,10.0,2.0,4.0,0.0,0.0,41.7,58.3,0.3,0.76,espn:720280
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-17,18:45,Brentford,Leyton Orient,FULL_TIME,3,1,H,,,,15.0,12.0,8.0,3.0,9.0,5.0,7.0,15.0,1.0,1.0,0.0,1.0,62.7,37.3,1.48,0.83,espn:720283
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-17,18:45,Everton,Southampton,FINAL_PEN,1,1,D,,,,14.0,11.0,4.0,4.0,9.0,4.0,12.0,7.0,3.0,1.0,0.0,0.0,26.1,73.9,1.48,0.57,espn:720275
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-17,18:45,Preston North End,Fulham,FINAL_PEN,1,1,D,,,,7.0,16.0,4.0,6.0,4.0,10.0,10.0,7.0,0.0,1.0,0.0,0.0,29.1,70.9,0.6,1.59,espn:720270
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-17,18:45,Queens Park Rangers,Crystal Palace,FULL_TIME,1,2,A,,,,6.0,8.0,2.0,4.0,6.0,2.0,14.0,12.0,4.0,3.0,0.0,0.0,43.3,56.7,0.66,0.41,espn:720271
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-17,19:00,Manchester United,Barnsley,FULL_TIME,7,0,H,,,,26.0,3.0,13.0,0.0,3.0,1.0,16.0,11.0,0.0,3.0,0.0,0.0,65.3,34.7,4.06,0.07,espn:720269
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-18,18:45,Brighton & Hove Albion,Wolverhampton Wanderers,FULL_TIME,3,2,H,,,,13.0,9.0,9.0,5.0,2.0,1.0,11.0,11.0,5.0,2.0,0.0,0.0,54.1,45.9,1.16,1.08,espn:720278
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-18,19:00,Coventry City,Tottenham Hotspur,FULL_TIME,1,2,A,,,,15.0,9.0,5.0,4.0,7.0,7.0,9.0,10.0,4.0,1.0,0.0,0.0,30.4,69.6,2.22,1.27,espn:720276
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-24,18:45,Chelsea,Barrow,FULL_TIME,5,0,H,,,,20.0,5.0,10.0,1.0,8.0,4.0,14.0,9.0,1.0,1.0,0.0,0.0,71.2,28.8,3.04,0.22,espn:720277
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-24,18:45,Manchester City,Watford,FULL_TIME,2,1,H,,,,24.0,5.0,8.0,1.0,10.0,1.0,5.0,6.0,0.0,0.0,0.0,0.0,72.4,27.6,1.98,0.46,espn:720268
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-24,18:45,Walsall,Leicester City,FINAL_PEN,0,0,D,,,,7.0,9.0,1.0,2.0,6.0,2.0,12.0,6.0,3.0,2.0,0.0,0.0,25.9,74.1,1.08,0.86,espn:720273
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-24,19:00,Wycombe Wanderers,Aston Villa,FULL_TIME,1,2,A,,,,12.0,11.0,6.0,4.0,4.0,2.0,9.0,12.0,1.0,0.0,0.0,0.0,28.7,71.3,0.99,1.89,espn:720279
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-25,18:45,Arsenal,Bolton Wanderers,FULL_TIME,5,1,H,,,,21.0,4.0,8.0,1.0,10.0,4.0,5.0,8.0,1.0,0.0,0.0,0.0,76.8,23.2,2.99,1.15,espn:720281
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-09-25,19:00,Liverpool,West Ham United,FULL_TIME,5,1,H,,,,21.0,12.0,11.0,3.0,5.0,4.0,13.0,10.0,1.0,1.0,0.0,1.0,61.1,38.9,2.64,0.57,espn:720274
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-10-01,18:45,Newcastle United,AFC Wimbledon,FULL_TIME,1,0,H,,,,18.0,2.0,5.0,0.0,10.0,1.0,9.0,6.0,1.0,2.0,0.0,0.0,78.2,21.8,1.97,0.05,espn:720282
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-10-29,19:45,Southampton,Stoke City,FULL_TIME,3,2,H,,,,12.0,6.0,5.0,2.0,5.0,1.0,5.0,11.0,2.0,1.0,0.0,0.0,77.9,22.1,1.83,0.98,espn:721578
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-10-29,20:00,Brentford,Sheffield Wednesday,FINAL_PEN,1,1,D,,,,12.0,9.0,5.0,5.0,5.0,2.0,9.0,9.0,0.0,1.0,0.0,0.0,70.2,29.8,1.49,0.49,espn:721574
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-10-30,19:30,Brighton & Hove Albion,Liverpool,FULL_TIME,2,3,A,,,,19.0,11.0,7.0,7.0,6.0,2.0,8.0,11.0,0.0,2.0,0.0,0.0,44.8,55.2,1.28,1.2,espn:721575
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-10-30,19:45,Aston Villa,Crystal Palace,FULL_TIME,1,2,A,,,,17.0,12.0,9.0,2.0,5.0,6.0,6.0,15.0,2.0,4.0,0.0,0.0,62.3,37.7,1.14,0.56,espn:721580
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-10-30,19:45,Manchester United,Leicester City,FULL_TIME,5,2,H,,,,23.0,16.0,9.0,7.0,5.0,3.0,8.0,5.0,0.0,1.0,0.0,0.0,56.4,43.6,2.95,0.94,espn:721581
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-10-30,19:45,Newcastle United,Chelsea,FULL_TIME,2,0,H,,,,8.0,17.0,2.0,4.0,1.0,9.0,12.0,14.0,4.0,2.0,0.0,0.0,34.4,65.6,1.58,2.06,espn:721579
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-10-30,19:45,Preston North End,Arsenal,FULL_TIME,0,3,A,,,,7.0,18.0,2.0,10.0,1.0,7.0,11.0,4.0,4.0,0.0,0.0,0.0,25.9,74.1,0.75,1.61,espn:721577
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-10-30,20:15,Tottenham Hotspur,Manchester City,FULL_TIME,2,1,H,,,,11.0,15.0,7.0,3.0,4.0,4.0,17.0,6.0,3.0,0.0,0.0,0.0,31.6,68.4,0.88,1.63,espn:721576
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-12-18,19:30,Arsenal,Crystal Palace,FULL_TIME,3,2,H,,,,12.0,8.0,9.0,4.0,4.0,2.0,7.0,12.0,1.0,1.0,0.0,0.0,70.5,29.5,2.02,0.38,espn:722969
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-12-18,19:45,Newcastle United,Brentford,FULL_TIME,3,1,H,,,,23.0,10.0,5.0,3.0,8.0,5.0,11.0,9.0,3.0,2.0,0.0,0.0,54.3,45.7,1.58,1.5,espn:722971
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-12-18,20:00,Southampton,Liverpool,FULL_TIME,1,2,A,,,,6.0,14.0,4.0,4.0,3.0,7.0,10.0,10.0,2.0,2.0,0.0,0.0,31.4,68.6,0.7,1.7,espn:722970
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2024-12-19,20:00,Tottenham Hotspur,Manchester United,FULL_TIME,4,3,H,,,,9.0,20.0,6.0,5.0,3.0,8.0,9.0,12.0,3.0,3.0,0.0,0.0,46.1,53.9,0.67,2.56,espn:722972
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2025-01-07,20:00,Arsenal,Newcastle United,FULL_TIME,0,2,A,,,,23.0,7.0,3.0,4.0,11.0,1.0,6.0,12.0,1.0,3.0,0.0,0.0,69.5,30.5,3.22,1.22,espn:727880
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2025-01-08,20:00,Tottenham Hotspur,Liverpool,FULL_TIME,1,0,H,,,,9.0,14.0,4.0,7.0,2.0,2.0,8.0,10.0,2.0,0.0,0.0,0.0,39.9,60.1,0.89,1.13,espn:727881
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2025-02-05,20:00,Newcastle United,Arsenal,FULL_TIME,2,0,H,,,,10.0,11.0,3.0,3.0,1.0,13.0,12.0,12.0,2.0,3.0,0.0,0.0,31.7,68.3,1.93,0.77,espn:727883
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2025-02-06,20:00,Liverpool,Tottenham Hotspur,FULL_TIME,4,0,H,,,,26.0,5.0,10.0,0.0,14.0,4.0,5.0,8.0,0.0,0.0,0.0,0.0,64.0,36.0,3.76,0.18,espn:727882
+espn+fotmob,2024-25,EFL Cup,1,league_cup,EFL,2025-03-16,16:30,Liverpool,Newcastle United,FULL_TIME,1,2,A,,,,7.0,17.0,2.0,6.0,4.0,9.0,14.0,10.0,1.0,2.0,0.0,0.0,65.6,34.4,1.05,1.93,espn:733028
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-01,19:45,Notts County,Alfreton Town,FULL_TIME,5,1,H,,,,,,,,,,,,,,,,,,,,espn:722390
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-01,19:45,Tamworth,Huddersfield Town,FULL_TIME,1,0,H,,,,11.0,19.0,3.0,4.0,3.0,7.0,,,3.0,1.0,,,32.0,68.0,1.13,1.52,espn:722405
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Barrow,Doncaster Rovers,FULL_TIME,0,1,A,,,,,,,,,,,,,,,,,,,,espn:722412
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Brackley Town,Braintree Town,FINAL_PEN,0,0,D,,,,,,,,,,,,,,,,,,,,espn:722404
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Bradford City,Aldershot Town,FULL_TIME,3,1,H,,,,,,,,,,,,,,,,,,,,espn:722414
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Bristol Rovers,Weston-super-Mare,FINAL_AET,3,1,H,,,,,,,,,,,,,,,,,,,,espn:722415
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Burton Albion,Scarborough Athletic,FULL_TIME,1,0,H,,,,,,,,,,,,,,,,,,,,espn:722416
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Carlisle United,Wigan Athletic,FINAL_AET,0,2,A,,,,,,,,,,,,,,,,,,,,espn:722417
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Chesterfield,Horsham,FULL_TIME,3,1,H,,,,,,,,,,,,,,,,,,,,espn:722419
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Crewe Alexandra,Dagenham & Redbridge,FULL_TIME,0,1,A,,,,,,,,,,,,,,,,,,,,espn:722420
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Exeter City,Barnet,FULL_TIME,5,3,H,,,,,,,,,,,,,,,,,,,,espn:722422
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Gillingham,Blackpool,FULL_TIME,0,2,A,,,,,,,,,,,,,,,,,,,,espn:722423
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Grimsby Town,Wealdstone,FULL_TIME,0,1,A,,,,,,,,,,,,,,,,,,,,espn:722424
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Hednesford,Gainsborough Trinity,FINAL_PEN,4,4,D,,,,,,,,,,,,,,,,,,,,espn:722472
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Maidenhead United,Crawley Town,FINAL_AET,1,2,A,,,,,,,,,,,,,,,,,,,,espn:722403
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Newport County,Peterborough United,FULL_TIME,2,4,A,,,,,,,,,,,,,,,,,,,,espn:722388
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Port Vale,Barnsley,FULL_TIME,1,3,A,,,,,,,,,,,,,,,,,,,,espn:722391
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Reading,Fleetwood Town,FULL_TIME,2,0,H,,,,,,,,,,,,,,,,,,,,espn:722392
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Rochdale,Bromley,FULL_TIME,3,4,A,,,,,,,,,,,,,,,,,,,,espn:722393
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Rotherham United,Cheltenham Town,FULL_TIME,1,3,A,,,,,,,,,,,,,,,,,,,,espn:722394
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Rushall Olympic,Accrington Stanley,FULL_TIME,0,2,A,,,,,,,,,,,,,,,,,,,,espn:722402
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Salford City,Shrewsbury Town,FULL_TIME,2,1,H,,,,,,,,,,,,,,,,,,,,espn:722395
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Solihull Moors,Maidstone United,FULL_TIME,3,0,H,,,,,,,,,,,,,,,,,,,,espn:722401
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Southend United,Charlton Athletic,FINAL_AET,3,4,A,,,,,,,,,,,,,,,,,,,,espn:722396
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Stevenage,Guiseley,FINAL_PEN,1,1,D,,,,,,,,,,,,,,,,,,,,espn:722397
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Stockport County,Forest Green Rovers,FINAL_AET,2,1,H,,,,,,,,,,,,,,,,,,,,espn:722398
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Swindon Town,Colchester United,FINAL_AET,2,1,H,,,,,,,,,,,,,,,,,,,,espn:722400
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Tonbridge Angels,Harborough Town,FULL_TIME,1,4,A,,,,,,,,,,,,,,,,,,,,espn:722411
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Tranmere Rovers,Oldham Athletic,FULL_TIME,1,2,A,,,,,,,,,,,,,,,,,,,,espn:722406
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Walsall,Bolton Wanderers,FULL_TIME,2,1,H,,,,,,,,,,,,,,,,,,,,espn:722407
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Woking,Cambridge United,FULL_TIME,0,1,A,,,,,,,,,,,,,,,,,,,,espn:722408
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Worthing,Morecambe,FULL_TIME,0,2,A,,,,,,,,,,,,,,,,,,,,espn:722409
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,15:00,Wycombe Wanderers,York City,FULL_TIME,3,2,H,,,,,,,,,,,,,,,,,,,,espn:722413
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-02,17:30,Northampton Town,Kettering Town,FINAL_AET,1,2,A,,,,24.0,11.0,5.0,5.0,5.0,3.0,,,2.0,2.0,,,63.0,37.0,1.29,0.76,espn:722389
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-03,12:30,Milton Keynes Dons,AFC Wimbledon,FULL_TIME,0,2,A,,,,,,,,,,,,,,,,,,,,espn:722426
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-03,12:30,Sutton United,Birmingham City,FULL_TIME,0,1,A,,,,3.0,13.0,0.0,3.0,2.0,10.0,,,2.0,4.0,,,25.0,75.0,0.29,0.98,espn:722399
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-03,14:00,Boreham Wood,Leyton Orient,FINAL_PEN,2,2,D,,,,,,,,,,,,,,,,,,,,espn:722410
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-03,14:00,Curzon Ashton,Mansfield Town,FULL_TIME,0,4,A,,,,,,,,,,,,,,,,,,,,espn:722421
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-03,15:30,Harrogate Town,Wrexham,FULL_TIME,1,0,H,,,,9.0,21.0,1.0,5.0,4.0,2.0,,,1.0,3.0,,,38.0,62.0,0.43,2.41,espn:722425
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-04,19:15,Chesham United,Lincoln City,FULL_TIME,0,4,A,,,,10.0,18.0,3.0,9.0,3.0,9.0,,,0.0,0.0,,,46.0,54.0,1.02,1.86,espn:722418
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-29,19:45,Harrogate Town,Gainsborough Trinity,FULL_TIME,1,0,H,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.32,0.22,espn:723163
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,11:30,Wealdstone,Wycombe Wanderers,FULL_TIME,0,2,A,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.13,0.88,espn:723176
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,15:00,Accrington Stanley,Swindon Town,FINAL_PEN,2,2,D,,,,,,,,,,,,,,,,,,,,espn:723173
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,15:00,Barnsley,Bristol Rovers,FINAL_PEN,0,0,D,,,,,,,,,,,,,,,,,,,,espn:723172
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,15:00,Cambridge United,Wigan Athletic,FINAL_AET,1,2,A,,,,,,,,,,,,,,,,,,,,espn:723166
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,15:00,Crawley Town,Lincoln City,FULL_TIME,3,4,A,,,,,,,,,,,,,,,,,,,,espn:723165
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,15:00,Exeter City,Chesterfield,FULL_TIME,2,0,H,,,,,,,,,,,,,,,,,,,,espn:723164
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,15:00,Leyton Orient,Oldham Athletic,FINAL_AET,2,1,H,,,,,,,,,,,,,,,,,,,,espn:723162
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,15:00,Morecambe,Bradford City,FULL_TIME,1,0,H,,,,,,,,,,,,,,,,,,,,espn:723161
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,15:00,Peterborough United,Notts County,FULL_TIME,4,3,H,,,,,,,,,,,,,,,,,,,,espn:723160
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,15:00,Salford City,Cheltenham Town,FULL_TIME,2,0,H,,,,,,,,,,,,,,,,,,,,espn:723158
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,15:00,Stevenage,Mansfield Town,FULL_TIME,0,1,A,,,,,,,,,,,,,,,,,,,,espn:723170
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,15:00,Stockport County,Brackley Town,FULL_TIME,3,1,H,,,,,,,,,,,,,,,,,,,,espn:723171
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,15:00,Walsall,Charlton Athletic,FULL_TIME,0,4,A,,,,,,,,,,,,,,,,,,,,espn:723175
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-11-30,19:15,AFC Wimbledon,Dagenham & Redbridge,FULL_TIME,1,2,A,,,,15.0,7.0,4.0,2.0,5.0,5.0,,,3.0,5.0,,,66.0,34.0,1.83,1.22,espn:723174
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-12-01,12:00,Kettering Town,Doncaster Rovers,FINAL_AET,1,2,A,,,,13.0,24.0,7.0,8.0,6.0,10.0,,,1.0,2.0,,,35.0,65.0,0.62,2.07,espn:723177
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-12-01,13:00,Blackpool,Birmingham City,FULL_TIME,1,2,A,,,,,,,,,,,,,,,,,,,,espn:723168
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-12-01,14:00,Burton Albion,Tamworth,FINAL_PEN,1,1,D,,,,,,,,,,,,,,,,,,,,espn:723167
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-12-01,14:00,Reading,Harborough Town,FINAL_AET,5,3,H,,,,,,,,,,,,,,,,,,,,espn:723159
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2024-12-01,15:15,Solihull Moors,Bromley,FULL_TIME,1,2,A,,,,10.0,9.0,1.0,3.0,7.0,4.0,,,4.0,0.0,,,67.0,33.0,0.56,2.16,espn:723169
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-09,19:00,Sheffield United,Cardiff City,FULL_TIME,0,1,A,,,,16.0,10.0,7.0,4.0,5.0,6.0,,,0.0,0.0,,,61.0,39.0,0.86,1.14,espn:724006
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-09,19:45,Everton,Peterborough United,FULL_TIME,2,0,H,,,,13.0,5.0,5.0,1.0,6.0,3.0,,,1.0,0.0,,,54.0,46.0,1.75,0.25,espn:723988
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-09,19:45,Fulham,Watford,FULL_TIME,4,1,H,,,,27.0,5.0,8.0,2.0,13.0,0.0,,,1.0,1.0,,,72.0,28.0,2.9,0.22,espn:723990
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-10,19:45,Wycombe Wanderers,Portsmouth,FULL_TIME,2,0,H,,,,7.0,5.0,5.0,2.0,1.0,3.0,,,,,,,30.0,70.0,,,espn:723991
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-10,20:00,Aston Villa,West Ham United,FULL_TIME,2,1,H,,,,16.0,11.0,5.0,2.0,9.0,4.0,,,1.0,1.0,,,59.0,41.0,2.04,0.77,espn:724014
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,12:00,Birmingham City,Lincoln City,FULL_TIME,2,1,H,,,,5.0,9.0,4.0,2.0,2.0,2.0,,,,,,,69.0,31.0,,,espn:724013
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,12:00,Bristol City,Wolverhampton Wanderers,FULL_TIME,1,2,A,,,,6.0,12.0,3.0,6.0,1.0,2.0,,,1.0,0.0,,,51.0,49.0,0.29,2.14,espn:724010
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,12:00,Middlesbrough,Blackburn Rovers,FULL_TIME,0,1,A,,,,9.0,7.0,2.0,1.0,6.0,1.0,,,,,,,49.0,51.0,,,espn:723999
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,12:15,Liverpool,Accrington Stanley,FULL_TIME,4,0,H,,,,22.0,8.0,9.0,1.0,8.0,6.0,,,0.0,1.0,,,79.0,21.0,2.93,0.24,espn:723996
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,14:00,Leicester City,Queens Park Rangers,FULL_TIME,6,2,H,,,,10.0,8.0,6.0,4.0,2.0,6.0,,,0.0,0.0,,,54.0,46.0,1.96,0.71,espn:723994
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,15:00,AFC Bournemouth,West Bromwich Albion,FULL_TIME,5,1,H,,,,17.0,6.0,6.0,2.0,5.0,3.0,,,1.0,3.0,,,53.0,47.0,2.85,0.4,espn:724012
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,15:00,Brentford,Plymouth Argyle,FULL_TIME,0,1,A,,,,9.0,5.0,2.0,2.0,13.0,3.0,,,0.0,0.0,,,71.0,29.0,0.41,0.28,espn:724011
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,15:00,Chelsea,Morecambe,FULL_TIME,5,0,H,,,,28.0,7.0,8.0,4.0,11.0,2.0,,,0.0,0.0,,,81.0,19.0,2.53,0.48,espn:723985
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,15:00,Exeter City,Oxford United,FULL_TIME,3,1,H,,,,7.0,5.0,6.0,4.0,5.0,5.0,,,,,,,54.0,46.0,,,espn:723989
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,15:00,Norwich City,Brighton & Hove Albion,FULL_TIME,0,4,A,,,,6.0,21.0,1.0,8.0,3.0,4.0,,,0.0,0.0,,,48.0,52.0,0.22,2.03,espn:724002
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,15:00,Nottingham Forest,Luton Town,FULL_TIME,2,0,H,,,,11.0,8.0,3.0,6.0,7.0,5.0,,,0.0,0.0,,,45.0,55.0,0.71,0.85,espn:724003
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,15:00,Reading,Burnley,FINAL_AET,1,3,A,,,,8.0,17.0,3.0,7.0,1.0,8.0,,,,,,,41.0,59.0,,,espn:724005
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,15:00,Sunderland,Stoke City,FINAL_AET,1,2,A,,,,19.0,13.0,8.0,5.0,5.0,3.0,,,1.0,4.0,,,52.0,48.0,1.9,1.63,espn:724008
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,17:45,Leeds United,Harrogate Town,FULL_TIME,1,0,H,,,,11.0,3.0,5.0,2.0,11.0,3.0,,,,,,,73.0,27.0,,,espn:723993
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,17:45,Manchester City,Salford City,FULL_TIME,8,0,H,,,,20.0,10.0,10.0,2.0,6.0,2.0,,,0.0,2.0,,,68.0,32.0,5.04,0.89,espn:723997
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-11,18:00,Coventry City,Sheffield Wednesday,FINAL_PEN,1,1,D,,,,11.0,4.0,3.0,1.0,9.0,6.0,,,,,,,47.0,53.0,,,espn:723986
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-12,12:00,Hull City,Doncaster Rovers,FINAL_PEN,1,1,D,,,,17.0,4.0,8.0,2.0,12.0,2.0,,,,,,,76.0,24.0,,,espn:724016
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-12,12:30,Tamworth,Tottenham Hotspur,FINAL_AET,0,3,A,,,,13.0,17.0,2.0,7.0,6.0,11.0,,,4.0,2.0,,,23.0,77.0,0.62,1.69,espn:724009
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-12,15:00,Arsenal,Manchester United,FINAL_PEN,1,1,D,,,,26.0,7.0,7.0,4.0,12.0,2.0,,,2.0,4.0,,,70.0,30.0,3.14,0.27,espn:724015
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-12,15:00,Crystal Palace,Stockport County,FULL_TIME,1,0,H,,,,13.0,6.0,3.0,4.0,7.0,2.0,,,1.0,3.0,,,75.0,25.0,1.71,0.63,espn:723987
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-12,15:00,Ipswich Town,Bristol Rovers,FULL_TIME,3,0,H,,,,16.0,3.0,5.0,1.0,7.0,2.0,,,0.0,1.0,,,67.0,33.0,2.91,0.14,espn:723992
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-12,15:00,Newcastle United,Bromley,FULL_TIME,3,1,H,,,,17.0,3.0,3.0,1.0,7.0,1.0,,,0.0,0.0,,,82.0,18.0,1.59,0.17,espn:724001
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-12,16:30,Southampton,Swansea City,FULL_TIME,3,0,H,,,,19.0,6.0,7.0,1.0,3.0,3.0,,,1.0,2.0,,,49.0,51.0,2.48,0.3,espn:724007
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-13,19:30,Millwall,Dagenham & Redbridge,FULL_TIME,3,0,H,,,,15.0,4.0,4.0,1.0,10.0,3.0,,,0.0,1.0,,,61.0,39.0,2.23,0.36,espn:724000
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-14,19:45,Leyton Orient,Derby County,FINAL_PEN,1,1,D,,,,7.0,10.0,1.0,6.0,6.0,5.0,,,,,,,52.0,48.0,,,espn:723995
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-14,19:45,Mansfield Town,Wigan Athletic,FULL_TIME,0,2,A,,,,6.0,6.0,4.0,3.0,4.0,0.0,,,,,,,53.0,47.0,,,espn:723998
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-01-14,19:45,Preston North End,Charlton Athletic,FULL_TIME,2,1,H,,,,6.0,11.0,2.0,7.0,2.0,6.0,,,,,,,48.0,52.0,,,espn:724004
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-07,20:00,Manchester United,Leicester City,FULL_TIME,2,1,H,,,,13.0,6.0,4.0,3.0,6.0,1.0,,,1.0,0.0,,,56.0,44.0,1.9,0.9,espn:730040
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-08,12:15,Leeds United,Millwall,FULL_TIME,0,2,A,,,,13.0,9.0,8.0,2.0,5.0,4.0,,,1.0,2.0,,,65.0,35.0,1.71,0.7,espn:730041
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-08,12:15,Leyton Orient,Manchester City,FULL_TIME,1,2,A,,,,13.0,24.0,3.0,10.0,2.0,10.0,,,2.0,1.0,,,27.0,73.0,1.14,3.65,espn:730051
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-08,15:00,Coventry City,Ipswich Town,FULL_TIME,1,4,A,,,,14.0,11.0,6.0,6.0,11.0,5.0,,,0.0,0.0,,,53.0,47.0,1.5,1.7,espn:730045
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-08,15:00,Everton,AFC Bournemouth,FULL_TIME,0,2,A,,,,11.0,18.0,1.0,8.0,6.0,6.0,,,1.0,4.0,,,58.0,42.0,1.12,2.31,espn:730043
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-08,15:00,Preston North End,Wycombe Wanderers,FINAL_PEN,0,0,D,,,,19.0,10.0,7.0,3.0,3.0,4.0,,,2.0,2.0,,,62.0,38.0,1.02,0.86,espn:730050
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-08,15:00,Southampton,Burnley,FULL_TIME,0,1,A,,,,10.0,6.0,3.0,5.0,2.0,0.0,,,2.0,1.0,,,58.0,42.0,0.98,1.46,espn:730039
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-08,15:00,Stoke City,Cardiff City,FINAL_PEN,3,3,D,,,,13.0,23.0,5.0,10.0,8.0,4.0,,,1.0,3.0,,,49.0,51.0,2.08,1.74,espn:730038
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-08,15:00,Wigan Athletic,Fulham,FULL_TIME,1,2,A,,,,10.0,15.0,5.0,5.0,7.0,7.0,,,2.0,0.0,,,30.0,70.0,0.35,1.28,espn:730052
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-08,17:45,Birmingham City,Newcastle United,FULL_TIME,2,3,A,,,,11.0,16.0,6.0,9.0,3.0,3.0,,,4.0,3.0,,,38.0,62.0,1.42,2.95,espn:730048
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-08,20:00,Brighton & Hove Albion,Chelsea,FULL_TIME,2,1,H,,,,6.0,7.0,3.0,1.0,4.0,3.0,,,2.0,2.0,,,43.0,57.0,0.92,0.79,espn:730046
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-09,12:30,Blackburn Rovers,Wolverhampton Wanderers,FULL_TIME,0,2,A,,,,11.0,16.0,4.0,7.0,3.0,4.0,,,2.0,1.0,,,47.0,53.0,0.52,1.88,espn:730047
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-09,15:00,Plymouth Argyle,Liverpool,FULL_TIME,1,0,H,,,,10.0,14.0,2.0,4.0,4.0,7.0,,,4.0,2.0,,,25.0,75.0,1.29,1.0,espn:730037
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-09,17:35,Aston Villa,Tottenham Hotspur,FULL_TIME,2,1,H,,,,16.0,11.0,7.0,5.0,4.0,5.0,,,0.0,3.0,,,51.0,49.0,2.14,1.22,espn:730049
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-10,19:45,Doncaster Rovers,Crystal Palace,FULL_TIME,0,2,A,,,,15.0,11.0,4.0,5.0,3.0,1.0,,,0.0,0.0,,,40.0,60.0,1.24,2.56,espn:730044
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-11,20:00,Exeter City,Nottingham Forest,FINAL_PEN,2,2,D,,,,12.0,31.0,7.0,12.0,8.0,10.0,,,2.0,1.0,,,23.0,77.0,1.2,2.54,espn:730042
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-02-28,20:00,Aston Villa,Cardiff City,FULL_TIME,2,0,H,,,,25.0,4.0,10.0,1.0,12.0,0.0,,,0.0,0.0,,,68.0,32.0,3.5,0.25,espn:732572
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-03-01,12:15,Crystal Palace,Millwall,FULL_TIME,3,1,H,,,,17.0,6.0,6.0,2.0,3.0,4.0,,,0.0,2.0,,,76.0,24.0,2.26,0.35,espn:732570
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-03-01,12:15,Preston North End,Burnley,FULL_TIME,3,0,H,,,,10.0,10.0,4.0,2.0,2.0,5.0,,,3.0,1.0,,,44.0,56.0,1.45,0.48,espn:732569
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-03-01,15:00,AFC Bournemouth,Wolverhampton Wanderers,FINAL_PEN,1,1,D,,,,31.0,9.0,10.0,3.0,18.0,1.0,,,5.0,5.0,,,67.0,33.0,3.78,0.9,espn:732571
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-03-01,17:45,Manchester City,Plymouth Argyle,FULL_TIME,3,1,H,,,,29.0,1.0,9.0,1.0,20.0,1.0,,,0.0,0.0,,,73.0,27.0,4.27,0.09,espn:732573
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-03-02,13:45,Newcastle United,Brighton & Hove Albion,FINAL_AET,1,2,A,,,,15.0,21.0,5.0,5.0,6.0,5.0,,,1.0,3.0,,,48.0,52.0,1.78,1.89,espn:732568
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-03-02,16:30,Manchester United,Fulham,FINAL_PEN,1,1,D,,,,20.0,12.0,9.0,5.0,5.0,8.0,,,1.0,2.0,,,41.0,59.0,1.54,0.85,espn:732567
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-03-03,19:30,Nottingham Forest,Ipswich Town,FINAL_PEN,1,1,D,,,,22.0,11.0,4.0,4.0,11.0,2.0,,,3.0,2.0,,,54.0,46.0,1.2,0.78,espn:732566
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-03-29,12:15,Fulham,Crystal Palace,FULL_TIME,0,3,A,,,,16.0,8.0,3.0,6.0,12.0,2.0,,,0.0,4.0,,,71.0,29.0,1.24,1.46,espn:733958
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-03-29,17:15,Brighton & Hove Albion,Nottingham Forest,FINAL_PEN,0,0,D,,,,13.0,13.0,2.0,5.0,6.0,7.0,,,2.0,4.0,,,53.0,47.0,0.89,1.66,espn:733960
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-03-30,12:30,Preston North End,Aston Villa,FULL_TIME,0,3,A,,,,4.0,16.0,1.0,7.0,0.0,9.0,,,2.0,0.0,,,29.0,71.0,0.47,3.93,espn:733957
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-03-30,15:30,AFC Bournemouth,Manchester City,FULL_TIME,1,2,A,,,,5.0,17.0,2.0,7.0,2.0,4.0,,,3.0,3.0,,,36.0,64.0,1.67,3.43,espn:733959
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-04-26,16:15,Crystal Palace,Aston Villa,FULL_TIME,3,0,H,,,,9.0,16.0,4.0,5.0,1.0,12.0,,,3.0,1.0,,,30.0,70.0,1.79,1.01,espn:735088
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-04-27,15:30,Nottingham Forest,Manchester City,FULL_TIME,0,2,A,,,,8.0,14.0,1.0,6.0,2.0,6.0,,,2.0,3.0,,,33.0,67.0,1.72,1.25,espn:735089
+espn+fotmob,2024-25,FA Cup,1,domestic_cup,FA,2025-05-17,15:30,Crystal Palace,Manchester City,FULL_TIME,1,0,H,,,,7.0,23.0,2.0,6.0,1.0,7.0,,,1.0,5.0,,,22.0,78.0,0.74,2.23,espn:735531
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-17,16:45,Juventus,PSV Eindhoven,FULL_TIME,3,1,H,,,,15.0,13.0,6.0,5.0,2.0,4.0,7.0,6.0,0.0,0.0,0.0,0.0,43.7,56.3,2.92,1.04,espn:720418
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-17,16:45,Young Boys,Aston Villa,FULL_TIME,0,3,A,,,,12.0,20.0,5.0,7.0,3.0,6.0,14.0,12.0,4.0,1.0,0.0,0.0,47.3,52.7,0.59,2.04,espn:720419
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-17,19:00,AC Milan,Liverpool,FULL_TIME,1,3,A,,,,8.0,23.0,2.0,11.0,2.0,5.0,9.0,12.0,2.0,2.0,0.0,0.0,49.4,50.6,0.61,3.09,espn:720365
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-17,19:00,Bayern Munich,Dinamo Zagreb,FULL_TIME,9,2,H,,,,29.0,4.0,19.0,3.0,12.0,0.0,8.0,6.0,0.0,1.0,0.0,0.0,69.9,30.1,6.26,0.7,espn:720422
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-17,19:00,Real Madrid,VfB Stuttgart,FULL_TIME,3,1,H,,,,20.0,17.0,8.0,7.0,10.0,6.0,13.0,9.0,4.0,1.0,0.0,0.0,45.8,54.2,2.61,1.94,espn:720420
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-17,19:00,Sporting CP,Lille,FULL_TIME,2,0,H,,,,18.0,3.0,5.0,2.0,3.0,2.0,17.0,18.0,2.0,3.0,0.0,1.0,50.1,49.9,1.62,0.41,espn:720421
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-18,16:45,Bologna,Shakhtar Donetsk,FULL_TIME,0,0,D,,,,17.0,4.0,4.0,1.0,8.0,3.0,13.0,12.0,2.0,4.0,0.0,0.0,47.6,52.4,1.17,0.87,espn:720424
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-18,16:45,Sparta Prague,RB Salzburg,FULL_TIME,3,0,H,,,,11.0,11.0,6.0,1.0,4.0,2.0,11.0,13.0,1.0,2.0,0.0,0.0,29.1,70.9,2.55,0.58,espn:720423
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-18,19:00,Celtic,Slovan Bratislava,FULL_TIME,5,1,H,,,,16.0,8.0,11.0,2.0,11.0,4.0,16.0,10.0,2.0,3.0,0.0,0.0,60.7,39.3,3.79,0.51,espn:720427
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-18,19:00,Club Brugge,Borussia Dortmund,FULL_TIME,0,3,A,,,,18.0,17.0,5.0,6.0,5.0,3.0,11.0,4.0,1.0,1.0,0.0,0.0,36.5,63.5,1.3,1.88,espn:720428
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-18,19:00,Manchester City,Internazionale,FULL_TIME,0,0,D,,,,22.0,13.0,5.0,4.0,4.0,3.0,12.0,9.0,1.0,0.0,0.0,0.0,59.8,40.2,2.35,0.75,espn:720426
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-18,19:00,Paris Saint-Germain,Girona,FULL_TIME,1,0,H,,,,26.0,3.0,5.0,1.0,5.0,1.0,8.0,18.0,1.0,3.0,0.0,0.0,63.8,36.2,2.1,0.25,espn:720425
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-19,16:45,Feyenoord Rotterdam,Bayer Leverkusen,FULL_TIME,0,4,A,,,,12.0,11.0,3.0,5.0,6.0,2.0,4.0,8.0,1.0,0.0,0.0,0.0,50.6,49.4,0.79,1.73,espn:720430
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-19,16:45,Red Star Belgrade,Benfica,FULL_TIME,1,2,A,,,,15.0,10.0,3.0,3.0,7.0,1.0,12.0,11.0,2.0,3.0,0.0,0.0,55.4,44.6,1.02,1.27,espn:720429
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-19,19:00,AS Monaco,Barcelona,FULL_TIME,2,1,H,,,,18.0,4.0,8.0,1.0,10.0,0.0,16.0,14.0,4.0,3.0,0.0,1.0,55.9,44.1,1.32,0.41,espn:720434
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-19,19:00,Atalanta,Arsenal,FULL_TIME,0,0,D,,,,8.0,6.0,2.0,2.0,4.0,2.0,7.0,10.0,1.0,0.0,0.0,0.0,53.9,46.1,1.2,0.78,espn:720431
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-19,19:00,Atlético Madrid,RB Leipzig,FULL_TIME,2,1,H,,,,21.0,7.0,4.0,3.0,8.0,2.0,13.0,13.0,3.0,4.0,0.0,0.0,51.8,48.2,1.75,0.71,espn:720432
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-09-19,19:00,Brest,SK Sturm Graz,FULL_TIME,2,1,H,,,,14.0,8.0,5.0,2.0,6.0,1.0,14.0,23.0,3.0,4.0,0.0,1.0,56.9,43.1,2.09,0.48,espn:720433
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-01,16:45,RB Salzburg,Brest,FULL_TIME,0,4,A,,,,15.0,13.0,7.0,6.0,4.0,0.0,17.0,11.0,3.0,2.0,0.0,0.0,51.9,48.1,1.62,2.02,espn:720435
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-01,16:45,VfB Stuttgart,Sparta Prague,FULL_TIME,1,1,D,,,,26.0,14.0,10.0,3.0,10.0,0.0,10.0,12.0,1.0,1.0,0.0,0.0,76.5,23.5,1.71,1.0,espn:720436
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-01,19:00,Arsenal,Paris Saint-Germain,FULL_TIME,2,0,H,,,,6.0,10.0,5.0,2.0,1.0,5.0,8.0,8.0,1.0,1.0,0.0,0.0,35.1,64.9,0.71,0.4,espn:720443
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-01,19:00,Barcelona,Young Boys,FULL_TIME,5,0,H,,,,21.0,5.0,8.0,1.0,9.0,3.0,9.0,10.0,0.0,2.0,0.0,0.0,70.0,30.0,3.64,0.78,espn:720442
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-01,19:00,Bayer Leverkusen,AC Milan,FULL_TIME,1,0,H,,,,16.0,16.0,9.0,5.0,5.0,4.0,15.0,4.0,2.0,3.0,0.0,0.0,50.3,49.7,1.82,1.0,espn:720437
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-01,19:00,Borussia Dortmund,Celtic,FULL_TIME,7,1,H,,,,16.0,9.0,13.0,2.0,8.0,4.0,16.0,6.0,2.0,2.0,0.0,0.0,52.6,47.4,2.6,2.13,espn:720438
+espn,2024-25,Champions League,1,european,UCL,2024-10-01,19:00,Internazionale,Red Star Belgrade,FULL_TIME,4,0,H,,,,15.0,11.0,7.0,3.0,2.0,2.0,11.0,8.0,2.0,1.0,0.0,0.0,52.4,47.6,,,espn:720440
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-01,19:00,PSV Eindhoven,Sporting CP,FULL_TIME,1,1,D,,,,18.0,9.0,6.0,3.0,0.0,4.0,18.0,15.0,3.0,2.0,0.0,0.0,57.3,42.7,2.56,1.34,espn:720441
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-01,19:00,Slovan Bratislava,Manchester City,FULL_TIME,0,4,A,,,,3.0,28.0,0.0,14.0,0.0,15.0,2.0,8.0,0.0,0.0,0.0,0.0,23.9,76.1,0.1,3.72,espn:720439
+fotmob,2024-25,Champions League,1,european,UCL,2024-10-01,19:00,Inter,FK Crvena Zvezda,FT,4,0,H,,,,15.0,11.0,7.0,3.0,2.0,2.0,,,2.0,1.0,,,52.0,48.0,2.79,0.52,fotmob:4621504
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-02,16:45,Girona,Feyenoord Rotterdam,FULL_TIME,2,3,A,,,,14.0,7.0,7.0,2.0,11.0,0.0,11.0,15.0,6.0,3.0,0.0,0.0,66.1,33.9,2.3,1.86,espn:720445
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-02,16:45,Shakhtar Donetsk,Atalanta,FULL_TIME,0,3,A,,,,6.0,22.0,0.0,5.0,3.0,5.0,6.0,8.0,1.0,2.0,0.0,0.0,46.9,53.1,0.29,2.6,espn:720444
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-02,19:00,Aston Villa,Bayern Munich,FULL_TIME,1,0,H,,,,5.0,17.0,2.0,7.0,1.0,11.0,8.0,12.0,3.0,2.0,0.0,0.0,30.0,70.0,0.4,1.55,espn:720451
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-02,19:00,Benfica,Atlético Madrid,FULL_TIME,4,0,H,,,,19.0,4.0,10.0,0.0,4.0,2.0,6.0,8.0,1.0,4.0,0.0,0.0,53.3,46.7,4.46,0.24,espn:720447
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-02,19:00,Dinamo Zagreb,AS Monaco,FULL_TIME,2,2,D,,,,7.0,9.0,3.0,5.0,2.0,4.0,16.0,16.0,5.0,2.0,0.0,0.0,38.4,61.6,0.99,2.07,espn:720446
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-02,19:00,Lille,Real Madrid,FULL_TIME,1,0,H,,,,7.0,12.0,3.0,6.0,2.0,3.0,12.0,14.0,2.0,5.0,0.0,0.0,42.2,57.8,1.19,2.18,espn:720448
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-02,19:00,Liverpool,Bologna,FULL_TIME,2,0,H,,,,9.0,12.0,4.0,2.0,5.0,3.0,10.0,8.0,4.0,2.0,0.0,0.0,51.4,48.6,1.21,0.59,espn:720366
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-02,19:00,RB Leipzig,Juventus,FULL_TIME,2,3,A,,,,24.0,16.0,7.0,5.0,8.0,2.0,4.0,14.0,1.0,2.0,0.0,1.0,44.9,55.1,3.37,1.2,espn:720449
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-02,19:00,SK Sturm Graz,Club Brugge,FULL_TIME,0,1,A,,,,8.0,13.0,1.0,4.0,4.0,5.0,14.0,13.0,5.0,1.0,0.0,0.0,38.2,61.8,0.4,0.68,espn:720450
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-22,16:45,AC Milan,Club Brugge,FULL_TIME,3,1,H,,,,15.0,9.0,5.0,5.0,5.0,3.0,7.0,9.0,4.0,3.0,0.0,1.0,61.7,38.3,1.22,0.57,espn:720453
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-22,16:45,AS Monaco,Red Star Belgrade,FULL_TIME,5,1,H,,,,27.0,5.0,8.0,2.0,8.0,5.0,16.0,8.0,1.0,1.0,0.0,0.0,70.2,29.8,3.33,1.01,espn:720452
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-22,19:00,Arsenal,Shakhtar Donetsk,FULL_TIME,1,0,H,,,,13.0,9.0,5.0,1.0,5.0,3.0,7.0,10.0,2.0,1.0,0.0,0.0,55.9,44.1,1.82,0.7,espn:720455
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-22,19:00,Aston Villa,Bologna,FULL_TIME,2,0,H,,,,16.0,12.0,6.0,4.0,5.0,4.0,13.0,9.0,1.0,4.0,0.0,0.0,53.3,46.7,1.18,0.86,espn:720457
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-22,19:00,Girona,Slovan Bratislava,FULL_TIME,2,0,H,,,,15.0,6.0,7.0,2.0,7.0,6.0,19.0,18.0,1.0,3.0,0.0,0.0,64.1,35.9,1.72,0.44,espn:720454
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-22,19:00,Juventus,VfB Stuttgart,FULL_TIME,0,1,A,,,,7.0,22.0,1.0,10.0,4.0,10.0,11.0,13.0,0.0,2.0,1.0,0.0,49.3,50.7,0.25,2.52,espn:720456
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-22,19:00,Paris Saint-Germain,PSV Eindhoven,FULL_TIME,1,1,D,,,,26.0,8.0,8.0,3.0,14.0,3.0,11.0,12.0,1.0,5.0,0.0,0.0,60.7,39.3,2.57,0.25,espn:720460
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-22,19:00,Real Madrid,Borussia Dortmund,FULL_TIME,5,2,H,,,,26.0,8.0,10.0,7.0,11.0,4.0,10.0,11.0,1.0,0.0,0.0,0.0,51.5,48.5,3.55,1.59,espn:720459
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-22,19:00,SK Sturm Graz,Sporting CP,FULL_TIME,0,2,A,,,,11.0,15.0,6.0,5.0,7.0,4.0,8.0,8.0,2.0,0.0,0.0,0.0,40.5,59.5,0.75,1.5,espn:720458
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-23,16:45,Atalanta,Celtic,FULL_TIME,0,0,D,,,,22.0,4.0,6.0,2.0,7.0,4.0,5.0,9.0,0.0,1.0,0.0,0.0,66.2,33.8,2.38,0.26,espn:720461
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-23,16:45,Brest,Bayer Leverkusen,FULL_TIME,1,1,D,,,,11.0,8.0,3.0,3.0,2.0,6.0,10.0,12.0,2.0,4.0,0.0,0.0,41.2,58.8,0.46,1.03,espn:720462
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-23,19:00,Atlético Madrid,Lille,FULL_TIME,1,3,A,,,,11.0,8.0,6.0,3.0,6.0,5.0,9.0,11.0,3.0,2.0,0.0,0.0,61.8,38.2,2.35,1.3,espn:720373
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-23,19:00,Barcelona,Bayern Munich,FULL_TIME,4,1,H,,,,12.0,11.0,4.0,3.0,5.0,5.0,11.0,10.0,0.0,2.0,0.0,0.0,39.8,60.2,2.23,1.04,espn:720372
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-23,19:00,Benfica,Feyenoord Rotterdam,FULL_TIME,1,3,A,,,,16.0,14.0,8.0,6.0,6.0,4.0,13.0,10.0,2.0,1.0,0.0,0.0,62.7,37.3,1.68,1.01,espn:720463
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-23,19:00,Manchester City,Sparta Prague,FULL_TIME,5,0,H,,,,22.0,5.0,10.0,1.0,7.0,1.0,5.0,4.0,1.0,1.0,0.0,0.0,79.9,20.1,2.93,0.23,espn:720374
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-23,19:00,RB Leipzig,Liverpool,FULL_TIME,0,1,A,,,,13.0,17.0,6.0,8.0,5.0,7.0,9.0,7.0,2.0,1.0,0.0,0.0,42.5,57.5,0.77,2.31,espn:720367
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-23,19:00,RB Salzburg,Dinamo Zagreb,FULL_TIME,0,2,A,,,,11.0,18.0,2.0,5.0,7.0,5.0,10.0,10.0,3.0,1.0,1.0,0.0,48.7,51.3,1.17,1.71,espn:720464
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-10-23,19:00,Young Boys,Internazionale,FULL_TIME,0,1,A,,,,20.0,19.0,2.0,6.0,5.0,1.0,20.0,7.0,4.0,1.0,0.0,0.0,41.7,58.3,0.92,3.27,espn:720371
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-05,17:45,PSV Eindhoven,Girona,FULL_TIME,4,0,H,,,,25.0,7.0,12.0,3.0,7.0,3.0,11.0,10.0,4.0,3.0,0.0,1.0,62.1,37.9,2.04,0.76,espn:720376
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-05,17:45,Slovan Bratislava,Dinamo Zagreb,FULL_TIME,1,4,A,,,,19.0,13.0,7.0,5.0,11.0,4.0,6.0,13.0,2.0,2.0,0.0,0.0,59.7,40.3,1.74,1.61,espn:720375
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-05,20:00,Bologna,AS Monaco,FULL_TIME,0,1,A,,,,7.0,10.0,2.0,4.0,3.0,6.0,16.0,14.0,3.0,2.0,0.0,0.0,46.5,53.5,0.46,0.97,espn:720382
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-05,20:00,Borussia Dortmund,SK Sturm Graz,FULL_TIME,1,0,H,,,,21.0,7.0,8.0,1.0,11.0,3.0,9.0,15.0,1.0,0.0,0.0,0.0,66.3,33.7,1.99,0.6,espn:720381
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-05,20:00,Celtic,RB Leipzig,FULL_TIME,3,1,H,,,,17.0,10.0,5.0,3.0,7.0,8.0,7.0,13.0,0.0,1.0,0.0,0.0,60.4,39.6,1.79,1.28,espn:720377
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-05,20:00,Lille,Juventus,FULL_TIME,1,1,D,,,,6.0,11.0,3.0,3.0,1.0,5.0,13.0,6.0,1.0,1.0,0.0,0.0,34.1,65.9,0.77,1.46,espn:720378
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-05,20:00,Liverpool,Bayer Leverkusen,FULL_TIME,4,0,H,,,,22.0,12.0,8.0,4.0,1.0,3.0,15.0,10.0,0.0,2.0,0.0,0.0,47.1,52.9,3.79,0.8,espn:720368
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-05,20:00,Real Madrid,AC Milan,FULL_TIME,1,3,A,,,,23.0,14.0,10.0,9.0,8.0,5.0,11.0,9.0,4.0,2.0,0.0,0.0,56.8,43.2,2.66,2.45,espn:720380
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-05,20:00,Sporting CP,Manchester City,FULL_TIME,4,1,H,,,,9.0,20.0,6.0,6.0,1.0,11.0,8.0,10.0,3.0,3.0,0.0,0.0,27.3,72.7,2.87,2.23,espn:720379
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-06,17:45,Club Brugge,Aston Villa,FULL_TIME,1,0,H,,,,13.0,8.0,7.0,1.0,2.0,3.0,12.0,12.0,2.0,4.0,0.0,0.0,43.9,56.1,1.38,0.42,espn:720383
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-06,17:45,Shakhtar Donetsk,Young Boys,FULL_TIME,2,1,H,,,,17.0,10.0,6.0,1.0,9.0,2.0,13.0,12.0,1.0,3.0,0.0,0.0,48.6,51.4,1.96,0.95,espn:720384
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-06,20:00,Feyenoord Rotterdam,RB Salzburg,FULL_TIME,1,3,A,,,,14.0,9.0,4.0,3.0,4.0,3.0,15.0,13.0,1.0,2.0,1.0,0.0,57.8,42.2,0.77,1.82,espn:720386
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-06,20:00,Internazionale,Arsenal,FULL_TIME,1,0,H,,,,7.0,20.0,1.0,4.0,0.0,13.0,12.0,21.0,2.0,2.0,0.0,0.0,37.2,62.8,1.19,1.8,espn:720387
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-06,20:00,Paris Saint-Germain,Atlético Madrid,FULL_TIME,1,2,A,,,,22.0,4.0,9.0,3.0,6.0,0.0,9.0,11.0,0.0,1.0,0.0,0.0,71.3,28.7,2.12,0.67,espn:720388
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-06,20:00,Red Star Belgrade,Barcelona,FULL_TIME,2,5,A,,,,4.0,21.0,2.0,9.0,1.0,7.0,4.0,12.0,2.0,0.0,0.0,0.0,30.1,69.9,0.31,3.63,espn:720385
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-06,20:00,Sparta Prague,Brest,FULL_TIME,1,2,A,,,,6.0,18.0,1.0,7.0,3.0,6.0,9.0,7.0,1.0,1.0,0.0,0.0,50.1,49.9,0.52,1.6,espn:720390
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-06,20:00,VfB Stuttgart,Atalanta,FULL_TIME,0,2,A,,,,10.0,9.0,1.0,4.0,4.0,3.0,8.0,17.0,2.0,3.0,0.0,0.0,55.1,44.9,0.97,2.27,espn:720391
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-06,20:15,Bayern Munich,Benfica,FULL_TIME,1,0,H,,,,24.0,1.0,10.0,0.0,10.0,0.0,8.0,8.0,1.0,2.0,0.0,0.0,73.5,26.5,1.45,0.08,espn:720389
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-26,17:45,Slovan Bratislava,AC Milan,FULL_TIME,2,3,A,,,,6.0,15.0,3.0,5.0,4.0,8.0,15.0,12.0,1.0,3.0,1.0,0.0,34.2,65.8,1.51,1.88,espn:720393
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-26,17:45,Sparta Prague,Atlético Madrid,FULL_TIME,0,6,A,,,,4.0,24.0,2.0,10.0,0.0,6.0,12.0,9.0,1.0,1.0,0.0,0.0,39.9,60.1,0.22,3.11,espn:720392
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-26,20:00,Barcelona,Brest,FULL_TIME,3,0,H,,,,19.0,2.0,8.0,0.0,4.0,0.0,8.0,19.0,0.0,4.0,0.0,0.0,75.9,24.1,2.86,0.07,espn:720394
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-26,20:00,Bayer Leverkusen,RB Salzburg,FULL_TIME,5,0,H,,,,29.0,7.0,13.0,2.0,6.0,3.0,11.0,11.0,1.0,1.0,0.0,0.0,62.4,37.6,4.56,0.33,espn:720395
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-26,20:00,Bayern Munich,Paris Saint-Germain,FULL_TIME,1,0,H,,,,18.0,11.0,7.0,3.0,4.0,3.0,13.0,10.0,3.0,3.0,0.0,1.0,57.4,42.6,2.41,0.77,espn:720396
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-26,20:00,Internazionale,RB Leipzig,FULL_TIME,1,0,H,,,,12.0,7.0,4.0,1.0,6.0,5.0,11.0,12.0,2.0,2.0,0.0,0.0,50.2,49.8,1.37,0.15,espn:720397
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-26,20:00,Manchester City,Feyenoord Rotterdam,FULL_TIME,3,3,D,,,,18.0,10.0,9.0,5.0,10.0,2.0,7.0,13.0,1.0,1.0,0.0,0.0,63.5,36.5,2.21,2.16,espn:720398
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-26,20:00,Sporting CP,Arsenal,FULL_TIME,1,5,A,,,,19.0,13.0,8.0,9.0,8.0,3.0,6.0,8.0,1.0,1.0,0.0,0.0,52.2,47.8,1.05,3.89,espn:720399
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-26,20:00,Young Boys,Atalanta,FULL_TIME,1,6,A,,,,9.0,18.0,1.0,10.0,7.0,9.0,16.0,7.0,2.0,1.0,0.0,0.0,44.8,55.2,0.81,2.54,espn:720400
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-27,17:45,Red Star Belgrade,VfB Stuttgart,FULL_TIME,5,1,H,,,,11.0,13.0,7.0,2.0,4.0,4.0,14.0,17.0,4.0,1.0,0.0,0.0,29.1,70.9,1.47,0.64,espn:720402
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-27,17:45,SK Sturm Graz,Girona,FULL_TIME,1,0,H,,,,9.0,9.0,5.0,1.0,1.0,10.0,11.0,16.0,1.0,1.0,0.0,0.0,30.7,69.3,0.84,1.67,espn:720401
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-27,20:00,AS Monaco,Benfica,FULL_TIME,2,3,A,,,,11.0,18.0,5.0,8.0,4.0,7.0,11.0,8.0,3.0,3.0,1.0,0.0,46.1,53.9,1.7,3.03,espn:720407
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-27,20:00,Aston Villa,Juventus,FULL_TIME,0,0,D,,,,11.0,8.0,3.0,2.0,3.0,3.0,13.0,14.0,3.0,3.0,0.0,0.0,45.6,54.4,1.22,0.39,espn:720405
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-27,20:00,Bologna,Lille,FULL_TIME,1,2,A,,,,12.0,15.0,6.0,8.0,2.0,3.0,12.0,9.0,3.0,4.0,0.0,0.0,56.9,43.1,1.45,2.16,espn:720403
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-27,20:00,Celtic,Club Brugge,FULL_TIME,1,1,D,,,,7.0,9.0,3.0,3.0,4.0,5.0,5.0,8.0,1.0,3.0,0.0,0.0,60.2,39.8,1.01,1.1,espn:720404
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-27,20:00,Dinamo Zagreb,Borussia Dortmund,FULL_TIME,0,3,A,,,,5.0,17.0,1.0,6.0,3.0,8.0,12.0,11.0,3.0,1.0,0.0,0.0,29.5,70.5,0.14,1.72,espn:720406
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-27,20:00,Liverpool,Real Madrid,FULL_TIME,2,0,H,,,,17.0,8.0,7.0,3.0,8.0,5.0,11.0,10.0,3.0,4.0,0.0,0.0,62.7,37.3,2.73,1.22,espn:720369
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-11-27,20:00,PSV Eindhoven,Shakhtar Donetsk,FULL_TIME,3,2,H,,,,35.0,12.0,18.0,3.0,12.0,5.0,4.0,2.0,3.0,1.0,0.0,1.0,69.2,30.8,2.77,1.03,espn:720408
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-10,17:45,Dinamo Zagreb,Celtic,FULL_TIME,0,0,D,,,,11.0,7.0,2.0,1.0,4.0,10.0,9.0,9.0,2.0,3.0,0.0,0.0,31.2,68.8,0.53,0.43,espn:720409
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-10,17:45,Girona,Liverpool,FULL_TIME,0,1,A,,,,13.0,15.0,5.0,7.0,5.0,8.0,11.0,8.0,3.0,2.0,0.0,0.0,37.5,62.5,1.21,1.84,espn:720370
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-10,20:00,Atalanta,Real Madrid,FULL_TIME,2,3,A,,,,20.0,10.0,9.0,6.0,5.0,2.0,15.0,13.0,1.0,2.0,0.0,0.0,55.6,44.4,3.33,2.1,espn:720413
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-10,20:00,Bayer Leverkusen,Internazionale,FULL_TIME,1,0,H,,,,17.0,6.0,5.0,0.0,3.0,1.0,10.0,7.0,0.0,3.0,0.0,0.0,60.7,39.3,1.14,0.29,espn:720412
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-10,20:00,Brest,PSV Eindhoven,FULL_TIME,1,0,H,,,,11.0,18.0,5.0,5.0,4.0,8.0,14.0,9.0,3.0,3.0,0.0,0.0,33.4,66.6,1.58,1.58,espn:720411
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-10,20:00,Club Brugge,Sporting CP,FULL_TIME,2,1,H,,,,9.0,8.0,4.0,2.0,4.0,0.0,11.0,13.0,4.0,4.0,0.0,0.0,44.0,56.0,1.01,1.33,espn:720410
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-10,20:00,RB Leipzig,Aston Villa,FULL_TIME,2,3,A,,,,17.0,19.0,6.0,8.0,5.0,7.0,12.0,7.0,1.0,2.0,0.0,0.0,46.7,53.3,2.23,2.14,espn:720416
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-10,20:00,RB Salzburg,Paris Saint-Germain,FULL_TIME,0,3,A,,,,3.0,15.0,1.0,8.0,1.0,5.0,9.0,11.0,3.0,0.0,0.0,0.0,30.0,70.0,0.15,3.18,espn:720414
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-10,20:00,Shakhtar Donetsk,Bayern Munich,FULL_TIME,1,5,A,,,,12.0,21.0,5.0,8.0,4.0,5.0,16.0,10.0,2.0,2.0,0.0,0.0,34.6,65.4,1.23,3.59,espn:720415
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-11,17:45,Atlético Madrid,Slovan Bratislava,FULL_TIME,3,1,H,,,,19.0,5.0,6.0,2.0,9.0,1.0,11.0,4.0,0.0,0.0,0.0,0.0,59.0,41.0,1.99,1.02,espn:720321
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-11,17:45,Lille,SK Sturm Graz,FULL_TIME,3,2,H,,,,18.0,10.0,9.0,4.0,9.0,2.0,6.0,8.0,1.0,1.0,0.0,0.0,66.7,33.3,2.01,1.25,espn:720417
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-11,20:00,AC Milan,Red Star Belgrade,FULL_TIME,2,1,H,,,,20.0,9.0,10.0,4.0,7.0,4.0,18.0,11.0,3.0,2.0,0.0,0.0,51.8,48.2,2.0,0.49,espn:720328
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-11,20:00,Arsenal,AS Monaco,FULL_TIME,3,0,H,,,,16.0,7.0,8.0,2.0,3.0,1.0,12.0,7.0,2.0,1.0,0.0,0.0,54.6,45.4,2.29,0.38,espn:720325
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-11,20:00,Benfica,Bologna,FULL_TIME,0,0,D,,,,15.0,6.0,5.0,1.0,10.0,4.0,14.0,13.0,5.0,5.0,0.0,0.0,49.0,51.0,1.27,0.21,espn:720324
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-11,20:00,Borussia Dortmund,Barcelona,FULL_TIME,2,3,A,,,,12.0,13.0,2.0,8.0,2.0,3.0,9.0,10.0,4.0,2.0,0.0,0.0,44.8,55.2,2.73,2.04,espn:720322
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-11,20:00,Feyenoord Rotterdam,Sparta Prague,FULL_TIME,4,2,H,,,,13.0,13.0,9.0,5.0,6.0,5.0,6.0,16.0,1.0,4.0,0.0,0.0,56.7,43.3,0.95,0.66,espn:720323
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-11,20:00,Juventus,Manchester City,FULL_TIME,2,0,H,,,,10.0,12.0,5.0,3.0,2.0,6.0,8.0,7.0,1.0,2.0,0.0,0.0,31.1,68.9,1.13,1.26,espn:720326
+espn+fotmob,2024-25,Champions League,1,european,UCL,2024-12-11,20:00,VfB Stuttgart,Young Boys,FULL_TIME,5,1,H,,,,20.0,5.0,6.0,1.0,5.0,0.0,10.0,16.0,1.0,4.0,0.0,0.0,63.8,36.2,2.33,0.19,espn:720327
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-21,17:45,AS Monaco,Aston Villa,FULL_TIME,1,0,H,,,,12.0,10.0,4.0,5.0,4.0,7.0,14.0,14.0,1.0,3.0,0.0,0.0,39.1,60.9,1.57,0.97,espn:720330
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-21,17:45,Atalanta,SK Sturm Graz,FULL_TIME,5,0,H,,,,25.0,5.0,9.0,1.0,12.0,1.0,12.0,13.0,1.0,0.0,0.0,0.0,61.0,39.0,5.34,0.79,espn:720329
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-21,20:00,Atlético Madrid,Bayer Leverkusen,FULL_TIME,2,1,H,,,,5.0,13.0,2.0,4.0,3.0,4.0,7.0,14.0,2.0,2.0,1.0,1.0,30.0,70.0,0.77,0.82,espn:720335
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-21,20:00,Benfica,Barcelona,FULL_TIME,4,5,A,,,,10.0,22.0,5.0,11.0,2.0,6.0,9.0,9.0,1.0,4.0,1.0,0.0,25.6,74.4,3.34,3.63,espn:720334
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-21,20:00,Bologna,Borussia Dortmund,FULL_TIME,2,1,H,,,,17.0,3.0,6.0,2.0,6.0,5.0,15.0,18.0,4.0,4.0,0.0,0.0,52.5,47.5,2.02,0.99,espn:720333
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-21,20:00,Club Brugge,Juventus,FULL_TIME,0,0,D,,,,7.0,5.0,0.0,1.0,3.0,4.0,7.0,11.0,0.0,2.0,0.0,0.0,42.8,57.2,0.75,0.44,espn:720336
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-21,20:00,Liverpool,Lille,FULL_TIME,2,1,H,,,,13.0,4.0,7.0,1.0,3.0,3.0,12.0,9.0,2.0,1.0,0.0,1.0,55.8,44.2,2.46,0.49,espn:720331
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-21,20:00,Red Star Belgrade,PSV Eindhoven,FULL_TIME,2,3,A,,,,21.0,13.0,7.0,5.0,7.0,7.0,10.0,12.0,0.0,0.0,0.0,1.0,56.8,43.2,2.66,0.83,espn:720332
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-21,20:00,Slovan Bratislava,VfB Stuttgart,FULL_TIME,1,3,A,,,,6.0,21.0,2.0,7.0,4.0,19.0,10.0,14.0,3.0,3.0,0.0,0.0,40.7,59.3,0.63,3.46,espn:720337
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-22,17:45,RB Leipzig,Sporting CP,FULL_TIME,2,1,H,,,,10.0,17.0,6.0,2.0,0.0,9.0,16.0,6.0,3.0,0.0,0.0,0.0,47.4,52.6,2.32,0.92,espn:720339
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-22,17:45,Shakhtar Donetsk,Brest,FULL_TIME,2,0,H,,,,9.0,10.0,5.0,4.0,3.0,4.0,17.0,11.0,1.0,1.0,0.0,0.0,46.8,53.2,1.93,0.43,espn:720338
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-22,20:00,AC Milan,Girona,FULL_TIME,1,0,H,,,,17.0,11.0,5.0,4.0,6.0,3.0,12.0,18.0,2.0,2.0,0.0,0.0,42.2,57.8,1.31,0.94,espn:720346
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-22,20:00,Arsenal,Dinamo Zagreb,FULL_TIME,3,0,H,,,,17.0,5.0,4.0,0.0,11.0,3.0,9.0,7.0,2.0,2.0,0.0,0.0,63.0,37.0,2.48,0.13,espn:720343
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-22,20:00,Celtic,Young Boys,FULL_TIME,1,0,H,,,,16.0,12.0,7.0,4.0,7.0,4.0,12.0,15.0,1.0,4.0,1.0,0.0,59.3,40.7,1.85,1.02,espn:720342
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-22,20:00,Feyenoord Rotterdam,Bayern Munich,FULL_TIME,3,0,H,,,,8.0,30.0,3.0,6.0,1.0,13.0,5.0,6.0,1.0,3.0,0.0,1.0,20.0,80.0,1.77,2.42,espn:720341
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-22,20:00,Paris Saint-Germain,Manchester City,FULL_TIME,4,2,H,,,,26.0,9.0,9.0,6.0,11.0,6.0,10.0,10.0,1.0,1.0,0.0,0.0,63.2,36.8,2.81,1.76,espn:720344
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-22,20:00,Real Madrid,RB Salzburg,FULL_TIME,5,1,H,,,,14.0,9.0,6.0,3.0,10.0,3.0,11.0,9.0,1.0,0.0,0.0,0.0,70.3,29.7,2.84,0.45,espn:720345
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-22,20:00,Sparta Prague,Internazionale,FULL_TIME,0,1,A,,,,10.0,12.0,2.0,4.0,4.0,3.0,11.0,7.0,2.0,2.0,0.0,0.0,30.5,69.5,0.36,0.88,espn:720340
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Aston Villa,Celtic,FULL_TIME,4,2,H,,,,20.0,6.0,8.0,4.0,4.0,4.0,4.0,15.0,0.0,0.0,0.0,0.0,58.4,41.6,3.97,0.81,espn:720363
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Barcelona,Atalanta,FULL_TIME,2,2,D,,,,16.0,8.0,7.0,4.0,7.0,4.0,7.0,13.0,0.0,4.0,0.0,0.0,68.2,31.8,2.39,1.22,espn:720362
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Bayer Leverkusen,Sparta Prague,FULL_TIME,2,0,H,,,,26.0,12.0,10.0,1.0,10.0,2.0,5.0,6.0,2.0,2.0,0.0,0.0,70.7,29.3,1.68,0.82,espn:720361
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Bayern Munich,Slovan Bratislava,FULL_TIME,3,1,H,,,,35.0,9.0,9.0,4.0,9.0,2.0,11.0,7.0,0.0,3.0,0.0,0.0,74.6,25.4,3.74,1.07,espn:720357
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Borussia Dortmund,Shakhtar Donetsk,FULL_TIME,3,1,H,,,,15.0,7.0,7.0,2.0,6.0,1.0,10.0,9.0,1.0,2.0,0.0,0.0,45.4,54.6,2.43,0.39,espn:720360
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Brest,Real Madrid,FULL_TIME,0,3,A,,,,23.0,14.0,5.0,6.0,4.0,3.0,11.0,12.0,1.0,3.0,0.0,0.0,40.7,59.3,1.43,2.6,espn:720364
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Dinamo Zagreb,AC Milan,FULL_TIME,2,1,H,,,,12.0,14.0,5.0,5.0,5.0,4.0,11.0,16.0,3.0,2.0,0.0,1.0,43.1,56.9,1.19,1.11,espn:720358
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Girona,Arsenal,FULL_TIME,1,2,A,,,,7.0,16.0,3.0,6.0,3.0,13.0,13.0,13.0,4.0,2.0,0.0,0.0,39.4,60.6,0.77,2.12,espn:720355
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Internazionale,AS Monaco,FULL_TIME,3,0,H,,,,20.0,4.0,7.0,0.0,3.0,0.0,12.0,5.0,2.0,2.0,0.0,1.0,63.9,36.1,3.89,0.25,espn:720347
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Juventus,Benfica,FULL_TIME,0,2,A,,,,17.0,15.0,4.0,6.0,7.0,3.0,8.0,7.0,1.0,2.0,0.0,0.0,66.7,33.3,0.95,2.18,espn:720348
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Lille,Feyenoord Rotterdam,FULL_TIME,6,1,H,,,,14.0,7.0,5.0,3.0,7.0,5.0,6.0,11.0,3.0,1.0,0.0,0.0,61.7,38.3,1.32,0.77,espn:720349
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Manchester City,Club Brugge,FULL_TIME,3,1,H,,,,17.0,12.0,6.0,5.0,5.0,1.0,2.0,3.0,0.0,0.0,0.0,0.0,73.9,26.1,1.98,1.17,espn:720350
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,PSV Eindhoven,Liverpool,FULL_TIME,3,2,H,,,,12.0,9.0,5.0,5.0,9.0,2.0,11.0,11.0,2.0,3.0,0.0,1.0,53.2,46.8,1.32,1.61,espn:720351
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,RB Salzburg,Atlético Madrid,FULL_TIME,1,4,A,,,,10.0,12.0,3.0,8.0,4.0,5.0,10.0,10.0,2.0,0.0,0.0,0.0,49.6,50.4,0.64,2.13,espn:720356
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,SK Sturm Graz,RB Leipzig,FULL_TIME,1,0,H,,,,9.0,15.0,5.0,5.0,3.0,9.0,13.0,10.0,2.0,1.0,0.0,0.0,39.9,60.1,1.27,1.54,espn:720352
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Sporting CP,Bologna,FULL_TIME,1,1,D,,,,9.0,11.0,5.0,2.0,5.0,6.0,18.0,29.0,4.0,5.0,0.0,0.0,57.1,42.9,1.38,1.14,espn:720353
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,VfB Stuttgart,Paris Saint-Germain,FULL_TIME,1,4,A,,,,10.0,13.0,2.0,6.0,2.0,8.0,10.0,8.0,2.0,1.0,0.0,0.0,41.6,58.4,0.77,2.41,espn:720354
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-01-29,20:00,Young Boys,Red Star Belgrade,FULL_TIME,0,1,A,,,,8.0,18.0,3.0,3.0,4.0,10.0,13.0,10.0,1.0,1.0,0.0,0.0,41.3,58.7,0.39,1.77,espn:720359
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-11,17:45,Brest,Paris Saint-Germain,FULL_TIME,0,3,A,,,,16.0,16.0,2.0,7.0,6.0,3.0,7.0,13.0,1.0,1.0,0.0,0.0,38.0,62.0,0.96,2.72,espn:732185
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-11,20:00,Juventus,PSV Eindhoven,FULL_TIME,2,1,H,,,,12.0,15.0,8.0,2.0,5.0,4.0,14.0,12.0,0.0,1.0,0.0,0.0,47.0,53.0,1.27,0.81,espn:732190
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-11,20:00,Manchester City,Real Madrid,FULL_TIME,2,3,A,,,,11.0,20.0,4.0,8.0,6.0,5.0,9.0,6.0,0.0,0.0,0.0,0.0,54.4,45.6,1.6,3.3,espn:732187
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-11,20:00,Sporting CP,Borussia Dortmund,FULL_TIME,0,3,A,,,,13.0,16.0,6.0,7.0,4.0,8.0,8.0,18.0,1.0,1.0,0.0,0.0,45.5,54.5,0.7,1.81,espn:732189
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-12,17:45,Club Brugge,Atalanta,FULL_TIME,2,1,H,,,,11.0,12.0,4.0,5.0,4.0,2.0,7.0,11.0,0.0,3.0,0.0,0.0,53.9,46.1,1.53,1.05,espn:732192
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-12,20:00,AS Monaco,Benfica,FULL_TIME,0,1,A,,,,6.0,23.0,3.0,6.0,2.0,7.0,10.0,14.0,2.0,2.0,1.0,0.0,44.4,55.6,0.39,2.17,espn:732188
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-12,20:00,Celtic,Bayern Munich,FULL_TIME,1,2,A,,,,9.0,10.0,2.0,5.0,7.0,7.0,4.0,4.0,0.0,0.0,0.0,0.0,43.1,56.9,1.37,0.7,espn:732186
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-12,20:00,Feyenoord Rotterdam,AC Milan,FULL_TIME,1,0,H,,,,11.0,12.0,2.0,6.0,5.0,6.0,8.0,9.0,2.0,1.0,0.0,0.0,46.2,53.8,0.5,0.57,espn:732191
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-18,17:45,AC Milan,Feyenoord Rotterdam,FULL_TIME,1,1,D,,,,18.0,6.0,7.0,1.0,4.0,3.0,11.0,10.0,2.0,2.0,1.0,1.0,56.1,43.9,1.71,0.71,espn:732194
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-18,20:00,Atalanta,Club Brugge,FULL_TIME,1,3,A,,,,30.0,7.0,11.0,4.0,14.0,0.0,8.0,7.0,3.0,4.0,1.0,0.0,65.0,35.0,3.28,1.15,espn:732197
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-18,20:00,Bayern Munich,Celtic,FULL_TIME,1,1,D,,,,23.0,5.0,10.0,3.0,7.0,0.0,2.0,9.0,0.0,0.0,0.0,0.0,67.0,33.0,2.38,1.12,espn:732193
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-18,20:00,Benfica,AS Monaco,FULL_TIME,3,3,D,,,,10.0,15.0,7.0,6.0,2.0,3.0,14.0,9.0,2.0,1.0,0.0,0.0,40.0,60.0,1.92,1.26,espn:732198
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-19,17:45,Borussia Dortmund,Sporting CP,FULL_TIME,0,0,D,,,,19.0,7.0,5.0,1.0,6.0,2.0,14.0,5.0,1.0,0.0,0.0,0.0,55.2,44.8,1.86,0.34,espn:732199
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-19,20:00,Paris Saint-Germain,Brest,FULL_TIME,7,0,H,,,,20.0,13.0,9.0,3.0,4.0,5.0,7.0,9.0,0.0,2.0,0.0,0.0,68.3,31.7,3.24,0.97,espn:732196
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-19,20:00,PSV Eindhoven,Juventus,FINAL_AET,3,1,H,,,,25.0,15.0,10.0,4.0,6.0,5.0,14.0,20.0,1.0,3.0,0.0,0.0,59.2,40.8,3.4,1.76,espn:732195
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-02-19,20:00,Real Madrid,Manchester City,FULL_TIME,3,1,H,,,,15.0,12.0,8.0,4.0,7.0,5.0,9.0,9.0,1.0,2.0,0.0,0.0,48.4,51.6,1.8,1.32,espn:732200
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-04,17:45,Club Brugge,Aston Villa,FULL_TIME,1,3,A,,,,11.0,7.0,3.0,4.0,3.0,1.0,8.0,10.0,0.0,0.0,0.0,0.0,56.0,44.0,1.05,1.27,espn:733145
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-04,20:00,Borussia Dortmund,Lille,FULL_TIME,1,1,D,,,,7.0,9.0,1.0,1.0,5.0,1.0,14.0,6.0,2.0,0.0,0.0,0.0,43.3,56.7,0.27,0.88,espn:733601
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-04,20:00,PSV Eindhoven,Arsenal,FULL_TIME,1,7,A,,,,12.0,15.0,2.0,8.0,5.0,3.0,9.0,10.0,1.0,3.0,0.0,0.0,53.2,46.8,1.38,1.91,espn:733603
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-04,20:00,Real Madrid,Atlético Madrid,FULL_TIME,2,1,H,,,,13.0,6.0,7.0,2.0,6.0,3.0,10.0,13.0,1.0,0.0,0.0,0.0,51.4,48.6,0.68,0.2,espn:733602
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-05,17:45,Feyenoord Rotterdam,Internazionale,FULL_TIME,0,2,A,,,,8.0,13.0,5.0,7.0,7.0,5.0,15.0,6.0,3.0,2.0,0.0,0.0,41.8,58.2,0.45,2.25,espn:733149
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-05,20:00,Bayern Munich,Bayer Leverkusen,FULL_TIME,3,0,H,,,,17.0,3.0,6.0,1.0,5.0,1.0,13.0,9.0,2.0,2.0,0.0,1.0,64.6,35.4,2.68,0.33,espn:733147
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-05,20:00,Benfica,Barcelona,FULL_TIME,0,1,A,,,,26.0,10.0,8.0,5.0,13.0,4.0,18.0,5.0,4.0,1.0,0.0,1.0,52.0,48.0,1.75,1.19,espn:733143
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-05,20:00,Paris Saint-Germain,Liverpool,FULL_TIME,0,1,A,,,,27.0,2.0,10.0,1.0,14.0,2.0,3.0,7.0,1.0,1.0,0.0,0.0,70.4,29.6,1.78,0.27,espn:733600
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-11,17:45,Barcelona,Benfica,FULL_TIME,3,1,H,,,,20.0,8.0,6.0,2.0,1.0,6.0,4.0,8.0,0.0,1.0,0.0,0.0,65.1,34.9,2.52,0.74,espn:733144
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-11,20:00,Bayer Leverkusen,Bayern Munich,FULL_TIME,0,2,A,,,,17.0,12.0,3.0,5.0,14.0,6.0,24.0,13.0,4.0,3.0,0.0,0.0,53.3,46.7,1.45,2.1,espn:733148
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-11,20:00,Internazionale,Feyenoord Rotterdam,FULL_TIME,2,1,H,,,,12.0,14.0,5.0,4.0,6.0,3.0,10.0,8.0,2.0,1.0,0.0,0.0,55.7,44.3,2.19,1.5,espn:733150
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-11,20:00,Liverpool,Paris Saint-Germain,FINAL_PEN,0,1,A,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.51,2.63,espn:733605
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-12,17:45,Lille,Borussia Dortmund,FULL_TIME,1,2,A,,,,11.0,17.0,4.0,8.0,4.0,3.0,11.0,12.0,2.0,3.0,0.0,0.0,49.6,50.4,1.48,3.06,espn:733604
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-12,20:00,Arsenal,PSV Eindhoven,FULL_TIME,2,2,D,,,,9.0,13.0,7.0,5.0,5.0,4.0,9.0,9.0,3.0,1.0,0.0,0.0,51.1,48.9,1.25,1.55,espn:733607
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-12,20:00,Aston Villa,Club Brugge,FULL_TIME,3,0,H,,,,14.0,4.0,10.0,1.0,3.0,1.0,7.0,8.0,0.0,1.0,0.0,1.0,53.3,46.7,2.45,0.12,espn:733146
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-03-12,20:00,Atlético Madrid,Real Madrid,FINAL_PEN,1,0,H,,,,17.0,10.0,8.0,3.0,10.0,10.0,11.0,16.0,4.0,4.0,0.0,0.0,38.0,62.0,1.36,1.15,espn:733606
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-04-08,19:00,Arsenal,Real Madrid,FULL_TIME,3,0,H,,,,12.0,9.0,11.0,3.0,5.0,3.0,8.0,9.0,1.0,0.0,0.0,1.0,53.4,46.6,1.64,0.5,espn:733608
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-04-08,19:00,Bayern Munich,Internazionale,FULL_TIME,1,2,A,,,,20.0,10.0,7.0,4.0,5.0,1.0,9.0,9.0,1.0,4.0,0.0,0.0,58.2,41.8,2.3,0.78,espn:733611
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-04-09,19:00,Barcelona,Borussia Dortmund,FULL_TIME,4,0,H,,,,18.0,13.0,10.0,3.0,4.0,6.0,5.0,12.0,0.0,2.0,0.0,0.0,60.2,39.8,3.69,1.45,espn:733610
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-04-09,19:00,Paris Saint-Germain,Aston Villa,FULL_TIME,3,1,H,,,,29.0,7.0,10.0,2.0,10.0,1.0,9.0,8.0,0.0,1.0,0.0,0.0,75.4,24.6,1.95,0.74,espn:733609
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-04-15,19:00,Aston Villa,Paris Saint-Germain,FULL_TIME,3,2,H,,,,17.0,14.0,9.0,7.0,5.0,5.0,15.0,3.0,1.0,0.0,0.0,0.0,34.3,65.7,2.05,1.69,espn:733613
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-04-15,19:00,Borussia Dortmund,Barcelona,FULL_TIME,3,1,H,,,,18.0,7.0,11.0,2.0,8.0,4.0,14.0,11.0,1.0,1.0,0.0,0.0,46.5,53.5,3.81,0.49,espn:733614
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-04-16,19:00,Internazionale,Bayern Munich,FULL_TIME,2,2,D,,,,15.0,20.0,6.0,6.0,5.0,6.0,10.0,16.0,2.0,2.0,0.0,0.0,37.7,62.3,1.49,1.4,espn:733615
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-04-16,19:00,Real Madrid,Arsenal,FULL_TIME,1,2,A,,,,18.0,12.0,3.0,6.0,10.0,4.0,18.0,15.0,3.0,2.0,0.0,0.0,66.2,33.8,1.41,2.05,espn:733612
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-04-29,19:00,Arsenal,Paris Saint-Germain,FULL_TIME,0,1,A,,,,10.0,11.0,5.0,4.0,3.0,1.0,15.0,15.0,2.0,2.0,0.0,0.0,47.9,52.1,1.63,1.16,espn:733616
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-04-30,19:00,Barcelona,Internazionale,FULL_TIME,3,3,D,,,,19.0,7.0,9.0,3.0,7.0,2.0,10.0,11.0,1.0,1.0,0.0,0.0,71.5,28.5,1.36,0.9,espn:733617
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-05-06,19:00,Internazionale,Barcelona,FINAL_AET,4,3,H,,,,13.0,22.0,7.0,10.0,5.0,7.0,14.0,10.0,5.0,2.0,0.0,0.0,28.8,71.2,2.28,2.81,espn:733619
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-05-07,19:00,Paris Saint-Germain,Arsenal,FULL_TIME,2,1,H,,,,11.0,19.0,6.0,4.0,2.0,6.0,11.0,11.0,2.0,4.0,0.0,0.0,45.9,54.1,1.74,2.91,espn:733618
+espn+fotmob,2024-25,Champions League,1,european,UCL,2025-05-31,19:00,Paris Saint-Germain,Internazionale,FULL_TIME,5,0,H,,,,23.0,8.0,8.0,2.0,4.0,6.0,13.0,7.0,2.0,3.0,0.0,0.0,59.3,40.7,3.12,0.49,espn:733620
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-02,14:30,Istanbul Basaksehir,Rapid Vienna,FULL_TIME,1,2,A,,,,16.0,11.0,4.0,5.0,6.0,5.0,5.0,12.0,0.0,3.0,0.0,0.0,53.3,46.7,0.79,1.51,espn:720609
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-02,14:30,Vitória de Guimaraes,NK Celje,FULL_TIME,3,1,H,,,,17.0,5.0,10.0,2.0,5.0,5.0,8.0,7.0,0.0,2.0,0.0,0.0,52.1,47.9,3.41,0.22,espn:720610
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,16:45,1. FC Heidenheim 1846,Olimpija Ljubljana,FULL_TIME,2,1,H,,,,18.0,14.0,8.0,3.0,6.0,4.0,14.0,15.0,3.0,3.0,0.0,0.0,66.5,33.5,1.89,1.44,espn:720615
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,16:45,Cercle Brugge KSV,St. Gallen,FULL_TIME,6,2,H,,,,16.0,14.0,12.0,6.0,6.0,8.0,10.0,14.0,2.0,1.0,0.0,0.0,42.7,57.3,3.31,1.56,espn:720618
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,16:45,Dinamo Minsk,Heart of Midlothian,FULL_TIME,1,2,A,,,,11.0,10.0,4.0,5.0,0.0,7.0,10.0,8.0,1.0,1.0,0.0,0.0,49.2,50.8,0.54,1.02,espn:720614
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,16:45,FC Astana,FK TSC,FULL_TIME,1,0,H,,,,12.0,24.0,4.0,6.0,3.0,2.0,10.0,8.0,1.0,2.0,0.0,0.0,33.5,66.5,1.04,1.45,espn:720612
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,16:45,FC Noah,Mlada Boleslav,FULL_TIME,2,0,H,,,,25.0,14.0,8.0,7.0,7.0,6.0,9.0,6.0,1.0,2.0,0.0,0.0,54.7,45.3,1.52,0.45,espn:720616
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,16:45,Legia Warsaw,Real Betis,FULL_TIME,1,0,H,,,,10.0,16.0,2.0,3.0,6.0,6.0,17.0,15.0,4.0,4.0,0.0,0.0,31.8,68.2,1.36,0.72,espn:720613
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,16:45,Molde,Larne,FULL_TIME,3,0,H,,,,17.0,4.0,9.0,1.0,7.0,0.0,12.0,10.0,2.0,1.0,0.0,1.0,66.8,33.2,2.54,0.09,espn:720611
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,16:45,Omonia Nicosia,Vikingur Reykjavik,FULL_TIME,4,0,H,,,,12.0,9.0,6.0,4.0,6.0,3.0,10.0,17.0,1.0,1.0,0.0,0.0,58.9,41.1,3.01,0.62,espn:720617
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,19:00,Borac Banja Luka,Panathinaikos,FULL_TIME,1,1,D,,,,13.0,17.0,5.0,2.0,5.0,6.0,12.0,10.0,3.0,3.0,0.0,0.0,30.9,69.1,0.48,1.61,espn:720619
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,19:00,Chelsea,KAA Gent,FULL_TIME,4,2,H,,,,20.0,9.0,6.0,3.0,10.0,4.0,9.0,7.0,1.0,1.0,0.0,0.0,70.0,30.0,1.92,1.11,espn:720626
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,19:00,F.C. København,Jagiellonia Bialystok,FULL_TIME,1,2,A,,,,20.0,4.0,5.0,3.0,5.0,2.0,11.0,12.0,2.0,5.0,0.0,0.0,68.0,32.0,1.37,0.66,espn:720620
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,19:00,FC Lugano,HJK Helsinki,FULL_TIME,3,0,H,,,,23.0,8.0,8.0,4.0,5.0,2.0,14.0,13.0,1.0,0.0,0.0,0.0,61.4,38.6,2.92,0.37,espn:720622
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,19:00,Fiorentina,The New Saints,FULL_TIME,2,0,H,,,,28.0,2.0,10.0,1.0,12.0,0.0,11.0,11.0,1.0,1.0,0.0,0.0,79.7,20.3,3.36,0.2,espn:720624
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,19:00,LASK Linz,Djurgården,FULL_TIME,2,2,D,,,,9.0,10.0,3.0,6.0,3.0,4.0,17.0,14.0,2.0,2.0,0.0,0.0,42.9,57.1,0.52,0.96,espn:720623
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,19:00,Petrocub,Pafos,FULL_TIME,1,4,A,,,,6.0,16.0,1.0,10.0,1.0,1.0,11.0,18.0,1.0,2.0,0.0,0.0,44.2,55.8,0.99,2.52,espn:720621
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-03,19:00,Shamrock Rovers,Apoel Nicosia,FULL_TIME,1,1,D,,,,4.0,14.0,3.0,2.0,2.0,8.0,9.0,9.0,1.0,2.0,1.0,0.0,32.4,67.6,0.15,1.33,espn:720625
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,14:30,Vikingur Reykjavik,Cercle Brugge KSV,FULL_TIME,3,1,H,,,,11.0,12.0,6.0,3.0,3.0,5.0,10.0,13.0,0.0,2.0,0.0,0.0,53.4,46.6,2.92,1.24,espn:720638
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,16:45,Apoel Nicosia,Borac Banja Luka,FULL_TIME,0,1,A,,,,23.0,4.0,3.0,2.0,6.0,1.0,10.0,14.0,1.0,5.0,0.0,0.0,73.9,26.1,1.21,0.41,espn:720627
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,16:45,Djurgården,Vitória de Guimaraes,FULL_TIME,1,2,A,,,,7.0,14.0,3.0,3.0,3.0,6.0,17.0,17.0,2.0,5.0,0.0,0.0,57.4,42.6,0.49,1.17,espn:720635
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,16:45,Heart of Midlothian,Omonia Nicosia,FULL_TIME,2,0,H,,,,12.0,9.0,3.0,1.0,4.0,4.0,18.0,12.0,3.0,2.0,0.0,0.0,38.3,61.7,1.19,0.63,espn:720634
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,16:45,Jagiellonia Bialystok,Petrocub,FULL_TIME,2,0,H,,,,17.0,4.0,6.0,0.0,5.0,1.0,10.0,11.0,1.0,2.0,0.0,0.0,59.7,40.3,2.64,0.11,espn:720633
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,16:45,KAA Gent,Molde,FULL_TIME,2,1,H,,,,10.0,9.0,5.0,3.0,5.0,2.0,12.0,14.0,2.0,3.0,0.0,0.0,49.7,50.3,1.21,0.92,espn:720632
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,16:45,Larne,Shamrock Rovers,FULL_TIME,1,4,A,,,,9.0,12.0,3.0,6.0,2.0,8.0,16.0,13.0,2.0,1.0,0.0,0.0,43.2,56.8,0.76,1.7,espn:720628
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,16:45,NK Celje,Istanbul Basaksehir,FULL_TIME,5,1,H,,,,18.0,20.0,8.0,6.0,3.0,5.0,18.0,10.0,2.0,5.0,0.0,0.0,28.1,71.9,3.77,1.66,espn:720636
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,16:45,Panathinaikos,Chelsea,FULL_TIME,1,4,A,,,,8.0,14.0,3.0,9.0,5.0,6.0,8.0,17.0,1.0,1.0,0.0,0.0,40.0,60.0,1.19,2.38,espn:720631
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,16:45,Rapid Vienna,FC Noah,FULL_TIME,1,0,H,,,,22.0,11.0,7.0,2.0,7.0,2.0,14.0,8.0,1.0,2.0,0.0,0.0,55.1,44.9,2.27,0.33,espn:720630
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,16:45,St. Gallen,Fiorentina,FULL_TIME,2,4,A,,,,8.0,25.0,4.0,15.0,2.0,7.0,10.0,8.0,3.0,3.0,0.0,0.0,44.0,56.0,0.52,2.84,espn:720629
+espn,2024-25,Europa Conference League,1,european,UECL,2024-10-24,19:00,FK TSC,Legia Warsaw,FULL_TIME,0,3,A,,,,10.0,17.0,2.0,7.0,6.0,2.0,14.0,12.0,4.0,3.0,0.0,0.0,72.0,28.0,,,espn:720639
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,19:00,HJK Helsinki,Dinamo Minsk,FULL_TIME,1,0,H,,,,15.0,21.0,6.0,3.0,4.0,11.0,9.0,20.0,2.0,3.0,0.0,1.0,51.2,48.8,2.77,1.51,espn:720644
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,19:00,Mlada Boleslav,FC Lugano,FULL_TIME,0,1,A,,,,12.0,13.0,5.0,5.0,5.0,3.0,14.0,10.0,0.0,2.0,0.0,0.0,38.2,61.8,1.28,1.82,espn:720642
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,19:00,Olimpija Ljubljana,LASK Linz,FULL_TIME,2,0,H,,,,11.0,11.0,4.0,5.0,5.0,4.0,9.0,9.0,4.0,2.0,0.0,0.0,32.6,67.4,2.09,1.0,espn:720641
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,19:00,Pafos,1. FC Heidenheim 1846,FULL_TIME,0,1,A,,,,15.0,9.0,3.0,3.0,6.0,3.0,15.0,13.0,1.0,1.0,0.0,0.0,62.0,38.0,1.12,1.12,espn:720637
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,19:00,Real Betis,F.C. København,FULL_TIME,1,1,D,,,,16.0,6.0,5.0,2.0,4.0,1.0,13.0,12.0,3.0,3.0,0.0,0.0,54.6,45.4,1.25,1.31,espn:720640
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,19:00,The New Saints,FC Astana,FULL_TIME,2,0,H,,,,15.0,14.0,7.0,3.0,5.0,2.0,6.0,9.0,0.0,0.0,0.0,0.0,40.4,59.6,2.9,1.14,espn:720643
+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-10-24,19:00,TSC Backa Topola,Legia Warszawa,FT,0,3,A,,,,10.0,17.0,2.0,7.0,6.0,2.0,,,4.0,3.0,,,72.0,28.0,0.87,3.18,fotmob:4622265
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,14:30,Vikingur Reykjavik,Borac Banja Luka,FULL_TIME,2,0,H,,,,13.0,5.0,8.0,3.0,2.0,3.0,15.0,6.0,2.0,1.0,0.0,0.0,47.4,52.6,1.28,0.28,espn:720652
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,17:45,FK TSC,FC Lugano,FULL_TIME,4,1,H,,,,21.0,9.0,9.0,3.0,2.0,3.0,22.0,13.0,4.0,3.0,0.0,1.0,43.5,56.5,1.98,0.86,espn:720651
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,17:45,HJK Helsinki,Olimpija Ljubljana,FULL_TIME,0,2,A,,,,10.0,5.0,3.0,4.0,5.0,3.0,17.0,17.0,4.0,2.0,0.0,0.0,53.7,46.3,0.7,0.36,espn:720646
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,17:45,KAA Gent,Omonia Nicosia,FULL_TIME,1,0,H,,,,17.0,13.0,6.0,5.0,11.0,6.0,10.0,10.0,1.0,1.0,0.0,0.0,56.8,43.2,1.56,0.84,espn:720645
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,17:45,Legia Warsaw,Dinamo Minsk,FULL_TIME,4,0,H,,,,12.0,10.0,7.0,3.0,5.0,2.0,8.0,15.0,1.0,4.0,0.0,0.0,55.1,44.9,2.46,0.52,espn:720650
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,17:45,Pafos,FC Astana,FULL_TIME,1,0,H,,,,32.0,2.0,13.0,0.0,12.0,2.0,11.0,6.0,0.0,2.0,0.0,0.0,66.1,33.9,3.74,0.06,espn:720649
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,17:45,Petrocub,Rapid Vienna,FULL_TIME,0,3,A,,,,13.0,14.0,4.0,7.0,4.0,2.0,5.0,6.0,1.0,0.0,0.0,0.0,38.0,62.0,0.64,2.34,espn:720648
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,17:45,Shamrock Rovers,The New Saints,FULL_TIME,2,1,H,,,,23.0,10.0,6.0,3.0,4.0,1.0,8.0,9.0,1.0,1.0,0.0,0.0,57.3,42.7,1.82,0.96,espn:720647
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,20:00,Apoel Nicosia,Fiorentina,FULL_TIME,2,1,H,,,,9.0,14.0,2.0,6.0,2.0,4.0,13.0,14.0,4.0,3.0,0.0,0.0,36.7,63.3,1.79,1.43,espn:720660
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,20:00,Chelsea,FC Noah,FULL_TIME,8,0,H,,,,31.0,15.0,18.0,7.0,4.0,3.0,9.0,5.0,0.0,2.0,0.0,0.0,57.9,42.1,5.82,0.78,espn:720659
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,20:00,Djurgården,Panathinaikos,FULL_TIME,2,1,H,,,,13.0,6.0,6.0,1.0,3.0,3.0,14.0,12.0,3.0,4.0,0.0,0.0,41.2,58.8,1.84,0.48,espn:720658
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,20:00,F.C. København,Istanbul Basaksehir,FULL_TIME,2,2,D,,,,23.0,8.0,9.0,4.0,7.0,0.0,14.0,14.0,3.0,6.0,0.0,0.0,67.4,32.6,1.84,2.22,espn:720662
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,20:00,Heart of Midlothian,1. FC Heidenheim 1846,FULL_TIME,0,2,A,,,,17.0,10.0,4.0,3.0,5.0,1.0,8.0,13.0,0.0,1.0,0.0,0.0,47.6,52.4,1.81,0.67,espn:720657
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,20:00,Jagiellonia Bialystok,Molde,FULL_TIME,3,0,H,,,,14.0,7.0,5.0,2.0,2.0,3.0,10.0,15.0,0.0,0.0,0.0,0.0,45.2,54.8,2.5,0.25,espn:720656
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,20:00,Larne,St. Gallen,FULL_TIME,1,2,A,,,,1.0,19.0,1.0,6.0,0.0,16.0,6.0,13.0,1.0,1.0,0.0,0.0,29.4,70.6,0.1,1.02,espn:720654
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,20:00,LASK Linz,Cercle Brugge KSV,FULL_TIME,0,0,D,,,,18.0,4.0,2.0,2.0,5.0,3.0,10.0,7.0,1.0,2.0,0.0,1.0,65.1,34.9,1.12,0.17,espn:720653
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,20:00,Real Betis,NK Celje,FULL_TIME,2,1,H,,,,20.0,8.0,6.0,2.0,4.0,1.0,14.0,9.0,0.0,4.0,0.0,0.0,52.7,47.3,1.35,0.83,espn:720661
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-07,20:00,Vitória de Guimaraes,Mlada Boleslav,FULL_TIME,2,1,H,,,,25.0,12.0,12.0,5.0,11.0,4.0,5.0,8.0,1.0,1.0,0.0,0.0,52.6,47.4,2.4,0.96,espn:720655
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-27,15:30,Istanbul Basaksehir,Petrocub,FULL_TIME,1,1,D,,,,14.0,5.0,5.0,2.0,5.0,1.0,15.0,13.0,3.0,2.0,0.0,0.0,62.2,37.8,2.16,0.32,espn:720663
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,15:30,FC Astana,Vitória de Guimaraes,FULL_TIME,1,1,D,,,,6.0,34.0,4.0,7.0,1.0,12.0,12.0,11.0,5.0,4.0,0.0,0.0,35.3,64.7,0.55,2.87,espn:720664
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,17:45,1. FC Heidenheim 1846,Chelsea,FULL_TIME,0,2,A,,,,16.0,17.0,11.0,9.0,3.0,6.0,14.0,10.0,2.0,3.0,0.0,1.0,33.1,66.9,1.72,3.19,espn:720674
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,17:45,Borac Banja Luka,LASK Linz,FULL_TIME,2,1,H,,,,20.0,4.0,8.0,2.0,7.0,2.0,11.0,11.0,3.0,6.0,0.0,1.0,63.2,36.8,1.05,0.42,espn:720665
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,17:45,Cercle Brugge KSV,Heart of Midlothian,FULL_TIME,2,0,H,,,,12.0,13.0,6.0,6.0,4.0,3.0,19.0,12.0,1.0,2.0,0.0,0.0,40.2,59.8,0.76,1.85,espn:720666
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,17:45,Dinamo Minsk,F.C. København,FULL_TIME,1,2,A,,,,9.0,13.0,4.0,4.0,2.0,7.0,17.0,12.0,2.0,2.0,0.0,0.0,27.8,72.2,1.04,1.31,espn:720673
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,17:45,FC Noah,Vikingur Reykjavik,FULL_TIME,0,0,D,,,,11.0,6.0,5.0,2.0,7.0,3.0,9.0,13.0,1.0,1.0,0.0,0.0,55.9,44.1,0.82,0.68,espn:720671
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,17:45,Molde,Apoel Nicosia,FULL_TIME,0,1,A,,,,11.0,5.0,5.0,3.0,6.0,6.0,13.0,12.0,3.0,4.0,0.0,0.0,57.9,42.1,0.84,0.48,espn:720672
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,17:45,NK Celje,Jagiellonia Bialystok,FULL_TIME,3,3,D,,,,19.0,16.0,6.0,7.0,9.0,3.0,12.0,8.0,2.0,2.0,0.0,0.0,58.2,41.8,2.48,2.91,espn:720667
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,17:45,Panathinaikos,HJK Helsinki,FULL_TIME,1,0,H,,,,22.0,6.0,10.0,3.0,11.0,2.0,16.0,18.0,1.0,1.0,0.0,0.0,56.8,43.2,2.44,0.61,espn:720670
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,17:45,St. Gallen,FK TSC,FULL_TIME,2,2,D,,,,24.0,16.0,7.0,4.0,6.0,6.0,11.0,10.0,2.0,3.0,0.0,0.0,47.3,52.7,3.7,2.48,espn:720669
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,17:45,The New Saints,Djurgården,FULL_TIME,0,1,A,,,,8.0,16.0,0.0,5.0,1.0,6.0,15.0,9.0,2.0,3.0,0.0,0.0,40.2,59.8,0.38,0.89,espn:720668
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,20:00,FC Lugano,KAA Gent,FULL_TIME,2,0,H,,,,10.0,17.0,3.0,6.0,3.0,10.0,16.0,14.0,4.0,4.0,0.0,0.0,39.6,60.4,1.19,2.14,espn:720677
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,20:00,Fiorentina,Pafos,FULL_TIME,3,2,H,,,,13.0,9.0,4.0,3.0,4.0,5.0,11.0,18.0,2.0,4.0,0.0,0.0,49.0,51.0,1.25,1.72,espn:720678
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,20:00,Mlada Boleslav,Real Betis,FULL_TIME,2,1,H,,,,18.0,14.0,9.0,4.0,4.0,5.0,11.0,12.0,2.0,2.0,0.0,1.0,42.3,57.7,2.73,1.33,espn:720676
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,20:00,Olimpija Ljubljana,Larne,FULL_TIME,1,0,H,,,,17.0,4.0,5.0,1.0,12.0,0.0,9.0,14.0,1.0,1.0,0.0,1.0,79.6,20.4,1.39,0.27,espn:720679
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,20:00,Omonia Nicosia,Legia Warsaw,FULL_TIME,0,3,A,,,,8.0,13.0,3.0,4.0,5.0,5.0,8.0,9.0,2.0,2.0,0.0,0.0,55.5,44.5,1.35,1.56,espn:720675
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-11-28,20:00,Rapid Vienna,Shamrock Rovers,FULL_TIME,1,1,D,,,,19.0,6.0,3.0,3.0,15.0,2.0,3.0,10.0,0.0,5.0,0.0,0.0,74.3,25.7,2.02,1.06,espn:720680
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,13:00,Vikingur Reykjavik,Djurgården,FULL_TIME,1,2,A,,,,11.0,13.0,1.0,5.0,4.0,1.0,14.0,15.0,3.0,3.0,0.0,1.0,60.8,39.2,1.04,0.96,espn:720694
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,15:30,FC Astana,Chelsea,FULL_TIME,1,3,A,,,,6.0,24.0,3.0,13.0,2.0,4.0,7.0,8.0,1.0,0.0,0.0,0.0,30.6,69.4,0.27,1.52,espn:720681
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,17:45,Dinamo Minsk,Larne,FULL_TIME,2,0,H,,,,11.0,8.0,4.0,2.0,9.0,2.0,21.0,13.0,2.0,5.0,0.0,1.0,54.0,46.0,2.16,0.55,espn:720686
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,17:45,F.C. København,Heart of Midlothian,FULL_TIME,2,0,H,,,,19.0,2.0,8.0,0.0,4.0,3.0,11.0,12.0,0.0,3.0,0.0,0.0,65.0,35.0,4.06,0.12,espn:720685
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,17:45,FC Noah,Apoel Nicosia,FULL_TIME,1,3,A,,,,14.0,9.0,7.0,5.0,5.0,4.0,16.0,13.0,2.0,0.0,0.0,0.0,53.5,46.5,1.01,1.49,espn:720687
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,17:45,Fiorentina,LASK Linz,FULL_TIME,7,0,H,,,,23.0,7.0,9.0,3.0,5.0,1.0,14.0,13.0,1.0,1.0,0.0,0.0,54.3,45.7,5.24,0.69,espn:720684
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,17:45,HJK Helsinki,Molde,FULL_TIME,2,2,D,,,,10.0,10.0,2.0,2.0,5.0,6.0,10.0,13.0,3.0,1.0,0.0,0.0,55.5,44.5,1.19,1.41,espn:720683
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,17:45,Istanbul Basaksehir,1. FC Heidenheim 1846,FULL_TIME,3,1,H,,,,10.0,16.0,6.0,4.0,9.0,6.0,13.0,16.0,1.0,3.0,0.0,0.0,41.4,58.6,1.48,2.01,espn:720682
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,17:45,Legia Warsaw,FC Lugano,FULL_TIME,1,2,A,,,,12.0,16.0,2.0,11.0,1.0,2.0,15.0,16.0,5.0,3.0,1.0,0.0,34.9,65.1,1.39,1.99,espn:720690
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,17:45,Olimpija Ljubljana,Cercle Brugge KSV,FULL_TIME,1,4,A,,,,10.0,16.0,2.0,8.0,3.0,10.0,14.0,15.0,4.0,2.0,1.0,0.0,47.4,52.6,1.12,2.23,espn:720689
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,17:45,Petrocub,Real Betis,FULL_TIME,0,1,A,,,,3.0,15.0,1.0,4.0,0.0,8.0,19.0,12.0,2.0,1.0,0.0,0.0,39.6,60.4,0.18,1.12,espn:720688
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,20:00,KAA Gent,FK TSC,FULL_TIME,3,0,H,,,,13.0,15.0,6.0,6.0,2.0,4.0,13.0,11.0,1.0,3.0,0.0,0.0,48.4,51.6,3.04,1.16,espn:720696
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,20:00,Mlada Boleslav,Jagiellonia Bialystok,FULL_TIME,1,0,H,,,,11.0,13.0,5.0,3.0,4.0,4.0,12.0,11.0,5.0,4.0,0.0,1.0,36.6,63.4,0.87,0.63,espn:720692
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,20:00,Omonia Nicosia,Rapid Vienna,FULL_TIME,3,1,H,,,,11.0,19.0,7.0,4.0,6.0,6.0,10.0,13.0,1.0,2.0,0.0,0.0,38.4,61.6,1.65,1.19,espn:720691
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,20:00,Pafos,NK Celje,FULL_TIME,2,0,H,,,,10.0,6.0,4.0,1.0,3.0,4.0,9.0,15.0,4.0,1.0,0.0,0.0,49.8,50.2,0.61,1.02,espn:720693
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,20:00,Shamrock Rovers,Borac Banja Luka,FULL_TIME,3,0,H,,,,9.0,6.0,6.0,3.0,4.0,2.0,15.0,10.0,3.0,1.0,0.0,0.0,45.6,54.4,2.44,0.27,espn:720698
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,20:00,St. Gallen,Vitória de Guimaraes,FULL_TIME,1,4,A,,,,10.0,30.0,4.0,16.0,2.0,8.0,11.0,11.0,5.0,4.0,0.0,0.0,47.5,52.5,1.38,3.22,espn:720697
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-12,20:00,The New Saints,Panathinaikos,FULL_TIME,0,2,A,,,,9.0,16.0,4.0,8.0,4.0,7.0,8.0,10.0,2.0,1.0,0.0,0.0,36.2,63.8,0.5,2.57,espn:720695
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,1. FC Heidenheim 1846,St. Gallen,FULL_TIME,1,1,D,,,,20.0,7.0,5.0,2.0,9.0,6.0,9.0,17.0,2.0,3.0,0.0,0.0,60.9,39.1,1.76,0.57,espn:720713
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Apoel Nicosia,FC Astana,FULL_TIME,1,1,D,,,,19.0,11.0,4.0,3.0,2.0,6.0,14.0,17.0,3.0,3.0,1.0,1.0,37.2,62.8,1.16,1.11,espn:720712
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Borac Banja Luka,Omonia Nicosia,FULL_TIME,0,0,D,,,,8.0,6.0,2.0,2.0,6.0,4.0,10.0,14.0,0.0,2.0,0.0,0.0,44.6,55.4,0.82,0.57,espn:720710
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Cercle Brugge KSV,Istanbul Basaksehir,FULL_TIME,1,1,D,,,,21.0,12.0,9.0,4.0,4.0,3.0,12.0,11.0,1.0,3.0,0.0,0.0,42.2,57.8,2.18,1.48,espn:720709
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Chelsea,Shamrock Rovers,FULL_TIME,5,1,H,,,,20.0,6.0,10.0,4.0,7.0,3.0,7.0,12.0,0.0,2.0,0.0,0.0,73.2,26.8,2.59,0.48,espn:720708
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Djurgården,Legia Warsaw,FULL_TIME,3,1,H,,,,12.0,15.0,6.0,4.0,3.0,6.0,14.0,13.0,3.0,4.0,0.0,0.0,54.9,45.1,0.55,1.05,espn:720699
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,FC Lugano,Pafos,FULL_TIME,2,2,D,,,,12.0,15.0,5.0,3.0,2.0,4.0,15.0,7.0,5.0,4.0,0.0,0.0,48.2,51.8,2.36,0.79,espn:720704
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,FK TSC,FC Noah,FULL_TIME,4,3,H,,,,26.0,10.0,11.0,7.0,8.0,3.0,15.0,12.0,4.0,1.0,0.0,0.0,61.4,38.6,3.29,2.84,espn:720711
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Heart of Midlothian,Petrocub,FULL_TIME,2,2,D,,,,13.0,8.0,4.0,3.0,15.0,0.0,12.0,14.0,2.0,3.0,0.0,0.0,68.1,31.9,1.4,1.92,espn:720700
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Jagiellonia Bialystok,Olimpija Ljubljana,FULL_TIME,0,0,D,,,,7.0,12.0,2.0,3.0,2.0,8.0,19.0,17.0,3.0,4.0,0.0,0.0,39.8,60.2,0.87,0.61,espn:720701
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Larne,KAA Gent,FULL_TIME,1,0,H,,,,6.0,16.0,2.0,6.0,2.0,9.0,12.0,15.0,2.0,1.0,0.0,0.0,23.8,76.2,0.67,1.33,espn:720703
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,LASK Linz,Vikingur Reykjavik,FULL_TIME,1,1,D,,,,13.0,5.0,5.0,2.0,2.0,4.0,7.0,20.0,1.0,4.0,0.0,1.0,60.4,39.6,1.04,1.06,espn:720702
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Molde,Mlada Boleslav,FULL_TIME,4,3,H,,,,21.0,14.0,7.0,6.0,3.0,2.0,7.0,15.0,2.0,1.0,0.0,0.0,65.2,34.8,2.06,1.83,espn:720705
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,NK Celje,The New Saints,FULL_TIME,3,2,H,,,,25.0,7.0,11.0,2.0,8.0,5.0,10.0,11.0,2.0,2.0,0.0,0.0,66.6,33.4,4.63,0.51,espn:720716
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Panathinaikos,Dinamo Minsk,FULL_TIME,4,0,H,,,,17.0,7.0,8.0,1.0,8.0,4.0,6.0,17.0,3.0,3.0,0.0,0.0,67.5,32.5,3.01,0.39,espn:720707
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Rapid Vienna,F.C. København,FULL_TIME,3,0,H,,,,22.0,12.0,9.0,2.0,7.0,4.0,8.0,13.0,3.0,4.0,0.0,0.0,39.5,60.5,1.9,0.9,espn:720714
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Real Betis,HJK Helsinki,FULL_TIME,1,0,H,,,,18.0,2.0,8.0,2.0,6.0,1.0,13.0,13.0,1.0,3.0,0.0,0.0,57.5,42.5,2.46,0.05,espn:720715
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2024-12-19,20:00,Vitória de Guimaraes,Fiorentina,FULL_TIME,1,1,D,,,,17.0,12.0,5.0,2.0,2.0,7.0,20.0,7.0,4.0,1.0,0.0,0.0,45.8,54.2,1.71,1.38,espn:720706
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-13,17:45,FK TSC,Jagiellonia Bialystok,FULL_TIME,1,3,A,,,,5.0,14.0,1.0,6.0,4.0,2.0,21.0,18.0,1.0,0.0,0.0,0.0,51.6,48.4,0.25,2.28,espn:727375
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-13,17:45,Molde,Shamrock Rovers,FULL_TIME,0,1,A,,,,4.0,5.0,1.0,2.0,3.0,2.0,14.0,8.0,3.0,3.0,1.0,0.0,58.7,41.3,0.28,0.72,espn:727377
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-13,17:45,NK Celje,Apoel Nicosia,FULL_TIME,2,2,D,,,,8.0,7.0,5.0,5.0,2.0,2.0,17.0,17.0,1.0,3.0,0.0,1.0,59.8,40.2,1.27,0.91,espn:727382
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-13,17:45,Vikingur Reykjavik,Panathinaikos,FULL_TIME,2,1,H,,,,9.0,15.0,4.0,6.0,2.0,6.0,18.0,10.0,3.0,1.0,0.0,0.0,34.7,65.3,1.39,1.93,espn:727379
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-13,20:00,Borac Banja Luka,Olimpija Ljubljana,FULL_TIME,1,0,H,,,,18.0,10.0,4.0,2.0,9.0,1.0,18.0,21.0,1.0,3.0,0.0,1.0,54.7,45.3,2.49,0.72,espn:727376
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-13,20:00,F.C. København,1. FC Heidenheim 1846,FULL_TIME,1,2,A,,,,15.0,11.0,7.0,7.0,5.0,4.0,17.0,15.0,3.0,1.0,0.0,0.0,60.3,39.7,1.96,2.2,espn:727381
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-13,20:00,KAA Gent,Real Betis,FULL_TIME,0,3,A,,,,8.0,18.0,1.0,8.0,5.0,8.0,19.0,14.0,1.0,1.0,0.0,0.0,51.3,48.7,0.49,1.63,espn:727380
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-13,20:00,Omonia Nicosia,Pafos,FULL_TIME,1,1,D,,,,9.0,16.0,2.0,5.0,0.0,9.0,9.0,14.0,2.0,3.0,0.0,0.0,39.8,60.2,1.2,1.56,espn:727378
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-20,17:45,1. FC Heidenheim 1846,F.C. København,FINAL_AET,1,3,A,,,,22.0,15.0,7.0,6.0,2.0,5.0,18.0,19.0,3.0,3.0,0.0,0.0,58.8,41.2,1.84,2.48,espn:727387
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-20,17:45,Olimpija Ljubljana,Borac Banja Luka,FULL_TIME,0,0,D,,,,13.0,14.0,2.0,4.0,7.0,7.0,18.0,9.0,2.0,6.0,0.0,0.0,63.3,36.7,1.94,0.86,espn:727383
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-20,17:45,Pafos,Omonia Nicosia,FULL_TIME,2,1,H,,,,20.0,7.0,11.0,2.0,7.0,1.0,12.0,11.0,1.0,2.0,0.0,0.0,51.2,48.8,1.73,0.79,espn:727384
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-20,17:45,Real Betis,KAA Gent,FULL_TIME,0,1,A,,,,16.0,9.0,7.0,1.0,6.0,4.0,6.0,15.0,1.0,1.0,1.0,0.0,52.8,47.2,1.3,0.69,espn:727386
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-20,20:00,Apoel Nicosia,NK Celje,FULL_TIME,0,2,A,,,,9.0,18.0,4.0,8.0,4.0,7.0,17.0,16.0,4.0,3.0,0.0,0.0,50.8,49.2,0.28,1.93,espn:727388
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-20,20:00,Jagiellonia Bialystok,FK TSC,FULL_TIME,3,1,H,,,,13.0,13.0,7.0,2.0,6.0,6.0,15.0,23.0,2.0,3.0,0.0,0.0,36.9,63.1,1.61,0.92,espn:727389
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-20,20:00,Panathinaikos,Vikingur Reykjavik,FULL_TIME,2,0,H,,,,17.0,4.0,5.0,2.0,11.0,3.0,12.0,16.0,4.0,4.0,0.0,0.0,64.2,35.8,0.66,0.45,espn:727385
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-02-20,20:00,Shamrock Rovers,Molde,FINAL_PEN,0,1,A,,,,9.0,11.0,3.0,4.0,9.0,1.0,12.0,19.0,4.0,1.0,0.0,1.0,53.1,46.9,0.87,1.14,espn:727390
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-06,17:45,F.C. København,Chelsea,FULL_TIME,1,2,A,,,,5.0,5.0,2.0,2.0,1.0,0.0,10.0,5.0,4.0,1.0,0.0,0.0,37.6,62.4,0.45,0.37,espn:733654
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-06,17:45,Molde,Legia Warsaw,FULL_TIME,3,2,H,,,,12.0,16.0,7.0,6.0,2.0,10.0,10.0,15.0,1.0,2.0,0.0,0.0,55.9,44.1,1.83,2.65,espn:733653
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-06,17:45,Panathinaikos,Fiorentina,FULL_TIME,3,2,H,,,,12.0,14.0,6.0,5.0,4.0,6.0,9.0,12.0,1.0,2.0,0.0,0.0,51.2,48.8,1.51,1.89,espn:733652
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-06,17:45,Real Betis,Vitória de Guimaraes,FULL_TIME,2,2,D,,,,14.0,8.0,6.0,2.0,7.0,2.0,17.0,9.0,4.0,0.0,0.0,0.0,47.0,53.0,2.46,0.95,espn:733655
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-06,20:00,Borac Banja Luka,Rapid Vienna,FULL_TIME,1,1,D,,,,14.0,15.0,5.0,3.0,4.0,4.0,8.0,18.0,1.0,3.0,0.0,0.0,45.9,54.1,1.32,1.56,espn:733656
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-06,20:00,Jagiellonia Bialystok,Cercle Brugge KSV,FULL_TIME,3,0,H,,,,17.0,9.0,7.0,4.0,3.0,2.0,12.0,16.0,2.0,1.0,0.0,1.0,53.7,46.3,2.16,0.77,espn:733651
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-06,20:00,NK Celje,FC Lugano,FULL_TIME,1,0,H,,,,6.0,14.0,3.0,5.0,6.0,5.0,14.0,12.0,2.0,2.0,0.0,1.0,45.8,54.2,0.48,1.85,espn:733650
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-06,20:00,Pafos,Djurgården,FULL_TIME,1,0,H,,,,16.0,11.0,6.0,3.0,6.0,2.0,13.0,7.0,2.0,2.0,0.0,0.0,65.8,34.2,1.59,1.14,espn:733657
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-13,17:45,Cercle Brugge KSV,Jagiellonia Bialystok,FULL_TIME,2,0,H,,,,23.0,5.0,7.0,2.0,17.0,2.0,10.0,18.0,0.0,4.0,0.0,0.0,57.3,42.7,2.05,0.38,espn:733660
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-13,17:45,Djurgården,Pafos,FULL_TIME,3,0,H,,,,14.0,13.0,8.0,2.0,4.0,4.0,21.0,17.0,3.0,6.0,0.0,0.0,47.8,52.2,2.02,2.24,espn:733665
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-13,17:45,FC Lugano,NK Celje,FINAL_PEN,5,4,H,,,,16.0,16.0,8.0,7.0,5.0,2.0,19.0,20.0,5.0,3.0,1.0,0.0,42.3,57.7,2.79,2.56,espn:733659
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-13,17:45,Rapid Vienna,Borac Banja Luka,FINAL_AET,2,1,H,,,,35.0,4.0,11.0,1.0,19.0,0.0,17.0,20.0,1.0,5.0,0.0,0.0,52.4,47.6,4.1,0.13,espn:733664
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-13,20:00,Chelsea,F.C. København,FULL_TIME,1,0,H,,,,11.0,10.0,5.0,1.0,1.0,6.0,9.0,7.0,2.0,1.0,0.0,0.0,53.8,46.2,1.13,0.97,espn:733663
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-13,20:00,Fiorentina,Panathinaikos,FULL_TIME,3,1,H,,,,16.0,18.0,9.0,2.0,5.0,5.0,26.0,19.0,4.0,3.0,0.0,1.0,50.2,49.8,1.94,1.76,espn:733658
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-13,20:00,Legia Warsaw,Molde,FINAL_AET,2,0,H,,,,18.0,18.0,6.0,4.0,7.0,8.0,18.0,11.0,1.0,3.0,1.0,1.0,35.6,64.4,1.95,1.7,espn:733661
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-03-13,20:00,Vitória de Guimaraes,Real Betis,FULL_TIME,0,4,A,,,,7.0,8.0,2.0,6.0,3.0,3.0,16.0,18.0,5.0,2.0,0.0,0.0,61.9,38.1,0.6,1.65,espn:733662
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-04-10,16:45,Legia Warsaw,Chelsea,FULL_TIME,0,3,A,,,,8.0,23.0,1.0,10.0,6.0,8.0,7.0,5.0,0.0,0.0,0.0,0.0,27.7,72.3,0.42,4.17,espn:733668
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-04-10,19:00,Djurgården,Rapid Vienna,FULL_TIME,0,1,A,,,,13.0,14.0,5.0,4.0,8.0,8.0,10.0,16.0,1.0,3.0,0.0,0.0,59.9,40.1,1.33,1.17,espn:734501
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-04-10,19:00,NK Celje,Fiorentina,FULL_TIME,1,2,A,,,,12.0,10.0,4.0,2.0,4.0,1.0,13.0,17.0,1.0,5.0,0.0,0.0,54.0,46.0,1.48,1.01,espn:733666
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-04-10,19:00,Real Betis,Jagiellonia Bialystok,FULL_TIME,2,0,H,,,,27.0,4.0,8.0,1.0,6.0,1.0,7.0,11.0,1.0,2.0,0.0,0.0,64.6,35.4,3.34,0.32,espn:733667
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-04-17,16:45,Fiorentina,NK Celje,FULL_TIME,2,2,D,,,,10.0,12.0,5.0,4.0,6.0,4.0,17.0,10.0,2.0,1.0,0.0,0.0,36.5,63.5,1.81,0.86,espn:733670
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-04-17,16:45,Jagiellonia Bialystok,Real Betis,FULL_TIME,1,1,D,,,,8.0,12.0,1.0,5.0,4.0,5.0,10.0,6.0,3.0,2.0,0.0,0.0,42.3,57.7,0.47,1.33,espn:733669
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-04-17,19:00,Chelsea,Legia Warsaw,FULL_TIME,1,2,A,,,,16.0,13.0,8.0,5.0,2.0,3.0,9.0,6.0,2.0,0.0,0.0,0.0,70.2,29.8,2.09,2.22,espn:733671
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-04-17,19:00,Rapid Vienna,Djurgården,FINAL_AET,1,4,A,,,,16.0,30.0,5.0,12.0,4.0,5.0,14.0,19.0,3.0,3.0,2.0,0.0,44.7,55.3,1.56,3.71,espn:734502
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-05-01,19:00,Djurgården,Chelsea,FULL_TIME,1,4,A,,,,16.0,12.0,5.0,7.0,3.0,4.0,10.0,8.0,1.0,2.0,0.0,0.0,41.6,58.4,1.39,2.17,espn:733673
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-05-01,19:00,Real Betis,Fiorentina,FULL_TIME,2,1,H,,,,14.0,7.0,5.0,2.0,6.0,2.0,19.0,16.0,2.0,4.0,0.0,0.0,45.4,54.6,1.87,1.05,espn:733672
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-05-08,19:00,Chelsea,Djurgården,FULL_TIME,1,0,H,,,,17.0,12.0,5.0,3.0,7.0,3.0,5.0,20.0,1.0,1.0,0.0,0.0,65.0,35.0,1.33,0.51,espn:733675
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-05-08,19:00,Fiorentina,Real Betis,FINAL_AET,2,2,D,,,,23.0,28.0,7.0,10.0,12.0,9.0,14.0,19.0,7.0,4.0,0.0,0.0,56.2,43.8,1.89,2.73,espn:733674
+espn+fotmob,2024-25,Europa Conference League,1,european,UECL,2025-05-28,19:00,Real Betis,Chelsea,FULL_TIME,1,4,A,,,,13.0,11.0,3.0,7.0,4.0,4.0,16.0,12.0,2.0,3.0,0.0,0.0,33.6,66.4,1.07,1.32,espn:733676
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-25,16:45,AZ Alkmaar,IF Elfsborg,FULL_TIME,3,2,H,,,,16.0,3.0,9.0,2.0,7.0,0.0,12.0,15.0,2.0,2.0,0.0,1.0,66.4,33.6,2.7,0.14,espn:720510
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-25,16:45,Bodo/Glimt,FC Porto,FULL_TIME,3,2,H,,,,11.0,28.0,7.0,9.0,2.0,9.0,8.0,8.0,1.0,2.0,1.0,0.0,37.4,62.6,2.09,2.56,espn:720509
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-25,19:00,Anderlecht,Ferencvaros,FULL_TIME,2,1,H,,,,13.0,9.0,6.0,3.0,3.0,3.0,12.0,25.0,2.0,5.0,1.0,0.0,56.2,43.8,1.43,0.77,espn:720517
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-25,19:00,Dynamo Kyiv,Lazio,FULL_TIME,0,3,A,,,,10.0,14.0,6.0,7.0,3.0,3.0,11.0,15.0,2.0,1.0,1.0,1.0,56.4,43.6,0.49,2.24,espn:720516
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-25,19:00,FC Midtjylland,TSG Hoffenheim,FULL_TIME,1,1,D,,,,13.0,14.0,7.0,3.0,10.0,5.0,16.0,7.0,1.0,0.0,0.0,0.0,49.4,50.6,2.1,1.44,espn:720515
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-25,19:00,Galatasaray,PAOK,FULL_TIME,3,1,H,,,,25.0,7.0,9.0,5.0,9.0,1.0,13.0,9.0,1.0,1.0,0.0,0.0,56.2,43.8,2.42,0.87,espn:720511
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-25,19:00,Ludogorets Razgrad,Slavia Prague,FULL_TIME,0,2,A,,,,10.0,12.0,1.0,5.0,3.0,7.0,11.0,26.0,2.0,3.0,0.0,0.0,43.1,56.9,0.89,1.25,espn:720512
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-25,19:00,Manchester United,FC Twente,FULL_TIME,1,1,D,,,,19.0,7.0,5.0,3.0,10.0,5.0,5.0,8.0,1.0,3.0,0.0,0.0,57.0,43.0,1.37,0.54,espn:720513
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-25,19:00,Nice,Real Sociedad,FULL_TIME,1,1,D,,,,10.0,8.0,5.0,2.0,5.0,4.0,7.0,14.0,2.0,3.0,0.0,0.0,55.1,44.9,1.28,0.74,espn:720514
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-26,16:45,Fenerbahce,Union St.-Gilloise,FULL_TIME,2,1,H,,,,10.0,15.0,4.0,7.0,7.0,6.0,13.0,20.0,2.0,2.0,1.0,1.0,60.3,39.7,1.57,2.27,espn:720519
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-26,16:45,Malmö FF,Rangers,FULL_TIME,0,2,A,,,,7.0,17.0,0.0,5.0,5.0,3.0,13.0,13.0,2.0,2.0,0.0,0.0,59.8,40.2,0.44,2.63,espn:720518
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-26,19:00,Ajax Amsterdam,Besiktas,FULL_TIME,4,0,H,,,,17.0,6.0,9.0,0.0,4.0,6.0,11.0,9.0,2.0,2.0,0.0,0.0,46.8,53.2,2.23,0.6,espn:720525
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-26,19:00,AS Roma,Athletic Club,FULL_TIME,1,1,D,,,,5.0,12.0,3.0,2.0,2.0,10.0,12.0,15.0,2.0,4.0,0.0,0.0,59.8,40.2,0.53,1.02,espn:720522
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-26,19:00,Braga,Maccabi Tel-Aviv,FULL_TIME,2,1,H,,,,31.0,10.0,9.0,2.0,8.0,2.0,10.0,12.0,3.0,1.0,0.0,2.0,57.2,42.8,3.31,1.71,espn:720523
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-26,19:00,Eintracht Frankfurt,Viktoria Plzen,FULL_TIME,3,3,D,,,,19.0,13.0,6.0,6.0,5.0,1.0,5.0,11.0,0.0,0.0,0.0,0.0,67.4,32.6,1.47,1.24,espn:720524
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-26,19:00,FCSB,Rigas Futbola Skola,FULL_TIME,4,1,H,,,,18.0,10.0,8.0,5.0,8.0,4.0,13.0,11.0,1.0,0.0,0.0,0.0,59.4,40.6,1.86,0.68,espn:720520
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-26,19:00,Lyon,Olympiacos,FULL_TIME,2,0,H,,,,17.0,7.0,7.0,3.0,8.0,2.0,7.0,14.0,1.0,3.0,0.0,0.0,62.8,37.2,1.48,1.43,espn:720526
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-09-26,19:35,Tottenham Hotspur,FK Qarabag,FULL_TIME,3,0,H,,,,10.0,14.0,5.0,5.0,3.0,9.0,10.0,9.0,1.0,1.0,1.0,0.0,49.4,50.6,1.42,2.19,espn:720521
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,16:45,Ferencvaros,Tottenham Hotspur,FULL_TIME,1,2,A,,,,15.0,17.0,5.0,7.0,4.0,11.0,11.0,13.0,1.0,0.0,0.0,0.0,41.8,58.2,1.27,1.32,espn:720530
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,16:45,FK Qarabag,Malmö FF,FULL_TIME,1,2,A,,,,12.0,9.0,1.0,5.0,7.0,1.0,11.0,10.0,0.0,2.0,0.0,0.0,55.3,44.7,0.94,0.81,espn:720535
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,16:45,Lazio,Nice,FULL_TIME,4,1,H,,,,13.0,11.0,6.0,4.0,6.0,3.0,17.0,9.0,2.0,3.0,0.0,0.0,39.8,60.2,1.96,1.04,espn:720533
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,16:45,Maccabi Tel-Aviv,FC Midtjylland,FULL_TIME,0,2,A,,,,21.0,10.0,4.0,7.0,8.0,2.0,12.0,8.0,2.0,0.0,0.0,0.0,60.8,39.2,2.43,1.54,espn:720534
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,16:45,Olympiacos,Braga,FULL_TIME,3,0,H,,,,15.0,10.0,6.0,6.0,5.0,4.0,10.0,12.0,3.0,2.0,0.0,0.0,44.8,55.2,1.24,1.59,espn:720531
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,16:45,Real Sociedad,Anderlecht,FULL_TIME,1,2,A,,,,20.0,15.0,4.0,3.0,9.0,6.0,12.0,7.0,1.0,2.0,0.0,0.0,56.8,43.2,1.22,0.86,espn:720529
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,16:45,Rigas Futbola Skola,Galatasaray,FULL_TIME,2,2,D,,,,8.0,16.0,4.0,7.0,2.0,7.0,14.0,13.0,2.0,2.0,0.0,0.0,24.5,75.5,1.19,2.35,espn:720528
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,16:45,Slavia Prague,Ajax Amsterdam,FULL_TIME,1,1,D,,,,19.0,6.0,8.0,2.0,8.0,3.0,21.0,17.0,3.0,5.0,0.0,1.0,54.8,45.2,1.11,1.51,espn:720527
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,16:45,TSG Hoffenheim,Dynamo Kyiv,FULL_TIME,2,0,H,,,,19.0,8.0,6.0,1.0,4.0,7.0,14.0,8.0,1.0,0.0,0.0,0.0,48.1,51.9,1.49,0.24,espn:720532
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,19:00,Athletic Club,AZ Alkmaar,FULL_TIME,2,0,H,,,,17.0,5.0,7.0,2.0,4.0,1.0,7.0,12.0,1.0,2.0,0.0,0.0,55.3,44.7,1.42,0.37,espn:720541
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,19:00,Besiktas,Eintracht Frankfurt,FULL_TIME,1,3,A,,,,27.0,11.0,11.0,5.0,11.0,1.0,10.0,11.0,3.0,2.0,0.0,0.0,65.2,34.8,2.59,2.36,espn:720542
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,19:00,FC Porto,Manchester United,FULL_TIME,3,3,D,,,,14.0,29.0,7.0,8.0,5.0,10.0,7.0,7.0,1.0,0.0,0.0,1.0,46.7,53.3,2.13,1.61,espn:720539
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,19:00,FC Twente,Fenerbahce,FULL_TIME,1,1,D,,,,14.0,6.0,9.0,2.0,4.0,2.0,15.0,16.0,3.0,5.0,0.0,0.0,51.7,48.3,1.86,0.94,espn:720538
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,19:00,IF Elfsborg,AS Roma,FULL_TIME,1,0,H,,,,6.0,23.0,4.0,5.0,3.0,5.0,12.0,5.0,3.0,1.0,0.0,0.0,24.6,75.4,1.41,1.79,espn:720540
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,19:00,PAOK,FCSB,FULL_TIME,0,1,A,,,,28.0,6.0,6.0,2.0,13.0,1.0,14.0,13.0,2.0,4.0,0.0,1.0,64.8,35.2,2.02,0.72,espn:720537
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,19:00,Rangers,Lyon,FULL_TIME,1,4,A,,,,16.0,15.0,5.0,8.0,3.0,2.0,13.0,2.0,2.0,3.0,0.0,0.0,45.4,54.6,2.04,2.25,espn:720536
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,19:00,Union St.-Gilloise,Bodo/Glimt,FULL_TIME,0,0,D,,,,21.0,9.0,3.0,1.0,4.0,2.0,11.0,9.0,3.0,2.0,0.0,0.0,46.4,53.6,1.77,1.37,espn:720544
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-03,19:00,Viktoria Plzen,Ludogorets Razgrad,FULL_TIME,0,0,D,,,,13.0,8.0,5.0,2.0,2.0,1.0,12.0,15.0,2.0,3.0,0.0,0.0,48.7,51.3,0.81,1.03,espn:720543
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-23,14:30,Braga,Bodo/Glimt,FULL_TIME,1,2,A,,,,20.0,13.0,11.0,3.0,9.0,2.0,15.0,11.0,2.0,2.0,1.0,0.0,52.2,47.8,2.37,0.88,espn:720546
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-23,14:30,Galatasaray,IF Elfsborg,FULL_TIME,4,3,H,,,,23.0,14.0,11.0,6.0,5.0,4.0,5.0,12.0,0.0,2.0,0.0,0.0,65.7,34.3,3.34,2.29,espn:720545
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,16:45,AS Roma,Dynamo Kyiv,FULL_TIME,1,0,H,,,,17.0,7.0,5.0,2.0,9.0,2.0,11.0,17.0,1.0,4.0,0.0,0.0,61.4,38.6,2.35,0.76,espn:720548
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,16:45,Eintracht Frankfurt,Rigas Futbola Skola,FULL_TIME,1,0,H,,,,20.0,10.0,4.0,1.0,7.0,4.0,12.0,6.0,1.0,0.0,0.0,0.0,60.1,39.9,0.86,0.49,espn:720553
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,16:45,FC Midtjylland,Union St.-Gilloise,FULL_TIME,1,0,H,,,,15.0,13.0,5.0,7.0,6.0,6.0,11.0,15.0,1.0,5.0,0.0,0.0,44.2,55.8,1.78,0.74,espn:720552
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,16:45,Ferencvaros,Nice,FULL_TIME,1,0,H,,,,15.0,16.0,6.0,4.0,3.0,5.0,13.0,10.0,2.0,2.0,0.0,1.0,46.7,53.3,1.74,1.0,espn:720547
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,16:45,FK Qarabag,Ajax Amsterdam,FULL_TIME,0,3,A,,,,2.0,14.0,1.0,10.0,4.0,2.0,11.0,21.0,4.0,2.0,2.0,0.0,43.8,56.2,0.09,2.56,espn:720549
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,16:45,Maccabi Tel-Aviv,Real Sociedad,FULL_TIME,1,2,A,,,,12.0,12.0,4.0,5.0,2.0,6.0,8.0,14.0,3.0,2.0,1.0,0.0,36.7,63.3,0.51,1.26,espn:720551
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,16:45,PAOK,Viktoria Plzen,FULL_TIME,2,2,D,,,,19.0,11.0,8.0,6.0,8.0,0.0,4.0,10.0,1.0,3.0,0.0,1.0,75.0,25.0,1.53,2.72,espn:720550
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,19:00,Anderlecht,Ludogorets Razgrad,FULL_TIME,2,0,H,,,,17.0,7.0,8.0,2.0,5.0,3.0,17.0,10.0,3.0,6.0,0.0,1.0,70.1,29.9,2.23,0.83,espn:720555
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,19:00,Athletic Club,Slavia Prague,FULL_TIME,1,0,H,,,,6.0,14.0,3.0,6.0,0.0,8.0,16.0,15.0,2.0,2.0,0.0,0.0,39.2,60.8,0.17,1.07,espn:720562
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,19:00,FC Porto,TSG Hoffenheim,FULL_TIME,2,0,H,,,,11.0,15.0,4.0,1.0,6.0,9.0,16.0,9.0,3.0,1.0,0.0,0.0,45.0,55.0,0.59,1.3,espn:720554
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,19:00,FC Twente,Lazio,FULL_TIME,0,2,A,,,,7.0,14.0,2.0,6.0,2.0,4.0,12.0,6.0,4.0,0.0,1.0,0.0,32.6,67.4,0.33,2.82,espn:720557
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,19:00,Fenerbahce,Manchester United,FULL_TIME,1,1,D,,,,10.0,12.0,5.0,5.0,5.0,3.0,12.0,14.0,2.0,1.0,0.0,0.0,51.7,48.3,1.15,1.21,espn:720561
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,19:00,Lyon,Besiktas,FULL_TIME,0,1,A,,,,30.0,12.0,9.0,5.0,8.0,0.0,7.0,11.0,2.0,6.0,0.0,0.0,58.1,41.9,2.83,1.82,espn:720558
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,19:00,Malmö FF,Olympiacos,FULL_TIME,0,1,A,,,,16.0,15.0,2.0,5.0,4.0,3.0,9.0,15.0,2.0,3.0,0.0,0.0,60.5,39.5,1.42,1.74,espn:720556
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,19:00,Rangers,FCSB,FULL_TIME,4,0,H,,,,23.0,7.0,7.0,1.0,4.0,2.0,19.0,15.0,3.0,4.0,0.0,0.0,53.7,46.3,1.86,0.35,espn:720559
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-10-24,19:00,Tottenham Hotspur,AZ Alkmaar,FULL_TIME,1,0,H,,,,16.0,9.0,5.0,3.0,6.0,4.0,13.0,17.0,0.0,3.0,0.0,1.0,59.1,40.9,1.87,0.41,espn:720560
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-06,15:30,Besiktas,Malmö FF,FULL_TIME,2,1,H,,,,14.0,16.0,5.0,8.0,2.0,3.0,7.0,9.0,3.0,2.0,0.0,0.0,53.5,46.5,0.91,2.31,espn:720563
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,17:45,Bodo/Glimt,FK Qarabag,FULL_TIME,1,2,A,,,,23.0,10.0,7.0,6.0,10.0,3.0,11.0,10.0,1.0,2.0,0.0,0.0,54.9,45.1,2.76,0.74,espn:720572
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,17:45,Eintracht Frankfurt,Slavia Prague,FULL_TIME,1,0,H,,,,10.0,20.0,5.0,4.0,4.0,7.0,13.0,5.0,3.0,1.0,0.0,0.0,47.1,52.9,0.9,1.13,espn:720571
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,17:45,FCSB,FC Midtjylland,FULL_TIME,2,0,H,,,,13.0,11.0,5.0,3.0,2.0,4.0,13.0,10.0,0.0,1.0,0.0,0.0,43.5,56.5,1.75,0.89,espn:720569
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,17:45,Galatasaray,Tottenham Hotspur,FULL_TIME,3,2,H,,,,28.0,5.0,10.0,3.0,8.0,0.0,14.0,10.0,3.0,4.0,0.0,1.0,54.0,46.0,3.12,2.01,espn:720564
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,17:45,IF Elfsborg,Braga,FULL_TIME,1,1,D,,,,7.0,11.0,3.0,2.0,3.0,6.0,13.0,8.0,2.0,2.0,0.0,0.0,37.1,62.9,0.6,1.36,espn:720570
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,17:45,Ludogorets Razgrad,Athletic Club,FULL_TIME,1,2,A,,,,9.0,19.0,2.0,7.0,3.0,6.0,15.0,17.0,3.0,4.0,0.0,0.0,40.2,59.8,0.58,1.66,espn:720568
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,17:45,Nice,FC Twente,FULL_TIME,2,2,D,,,,13.0,14.0,3.0,6.0,6.0,5.0,10.0,14.0,3.0,0.0,1.0,1.0,50.2,49.8,1.34,1.06,espn:720567
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,17:45,Olympiacos,Rangers,FULL_TIME,1,1,D,,,,14.0,11.0,2.0,6.0,4.0,4.0,11.0,15.0,2.0,3.0,0.0,0.0,60.5,39.5,0.71,1.16,espn:720566
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,17:45,Union St.-Gilloise,AS Roma,FULL_TIME,1,1,D,,,,14.0,11.0,5.0,5.0,5.0,4.0,22.0,14.0,2.0,2.0,0.0,0.0,41.7,58.3,0.83,0.62,espn:720565
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,20:00,Ajax Amsterdam,Maccabi Tel-Aviv,FULL_TIME,5,0,H,,,,19.0,11.0,10.0,3.0,4.0,2.0,18.0,15.0,3.0,3.0,0.0,0.0,62.3,37.7,3.68,1.02,espn:720579
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,20:00,AZ Alkmaar,Fenerbahce,FULL_TIME,3,1,H,,,,11.0,11.0,3.0,6.0,5.0,3.0,15.0,12.0,2.0,6.0,0.0,0.0,47.3,52.7,2.83,2.32,espn:720580
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,20:00,Dynamo Kyiv,Ferencvaros,FULL_TIME,0,4,A,,,,10.0,27.0,0.0,13.0,5.0,11.0,3.0,11.0,2.0,3.0,1.0,0.0,36.5,63.5,0.45,2.69,espn:720577
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,20:00,Lazio,FC Porto,FULL_TIME,2,1,H,,,,11.0,7.0,5.0,1.0,6.0,5.0,11.0,16.0,3.0,6.0,0.0,0.0,48.2,51.8,1.49,0.57,espn:720578
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,20:00,Manchester United,PAOK,FULL_TIME,2,0,H,,,,16.0,8.0,4.0,4.0,9.0,2.0,10.0,15.0,2.0,1.0,0.0,0.0,52.4,47.6,1.16,1.33,espn:720575
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,20:00,Rigas Futbola Skola,Anderlecht,FULL_TIME,1,1,D,,,,7.0,10.0,3.0,3.0,3.0,9.0,15.0,11.0,1.0,2.0,0.0,0.0,32.7,67.3,0.86,0.58,espn:720574
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,20:00,TSG Hoffenheim,Lyon,FULL_TIME,2,2,D,,,,18.0,11.0,12.0,4.0,8.0,9.0,13.0,12.0,2.0,1.0,0.0,0.0,43.5,56.5,1.4,0.98,espn:720576
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-07,20:00,Viktoria Plzen,Real Sociedad,FULL_TIME,2,1,H,,,,11.0,16.0,4.0,6.0,5.0,4.0,9.0,9.0,3.0,5.0,0.0,0.0,29.6,70.4,0.52,2.02,espn:720573
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,17:45,Anderlecht,FC Porto,FULL_TIME,2,2,D,,,,9.0,12.0,5.0,5.0,7.0,5.0,7.0,16.0,1.0,2.0,0.0,0.0,52.7,47.3,0.91,1.41,espn:720587
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,17:45,Athletic Club,IF Elfsborg,FULL_TIME,3,0,H,,,,19.0,2.0,6.0,0.0,10.0,0.0,13.0,13.0,1.0,1.0,0.0,0.0,70.4,29.6,1.43,0.27,espn:720582
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,17:45,AZ Alkmaar,Galatasaray,FULL_TIME,1,1,D,,,,12.0,19.0,5.0,5.0,3.0,5.0,15.0,10.0,2.0,4.0,1.0,0.0,40.1,59.9,1.67,2.1,espn:720581
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,17:45,Besiktas,Maccabi Tel-Aviv,FULL_TIME,1,3,A,,,,11.0,19.0,3.0,10.0,2.0,7.0,12.0,10.0,3.0,2.0,0.0,0.0,59.0,41.0,1.83,2.96,espn:720583
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,17:45,Dynamo Kyiv,Viktoria Plzen,FULL_TIME,1,2,A,,,,14.0,15.0,6.0,5.0,8.0,1.0,11.0,14.0,1.0,2.0,0.0,0.0,62.3,37.7,0.88,1.06,espn:720584
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,17:45,FK Qarabag,Lyon,FULL_TIME,1,4,A,,,,17.0,16.0,4.0,10.0,5.0,3.0,8.0,15.0,0.0,2.0,0.0,0.0,56.6,43.4,2.51,2.35,espn:720586
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,17:45,Lazio,Ludogorets Razgrad,FULL_TIME,0,0,D,,,,20.0,3.0,6.0,0.0,7.0,3.0,10.0,9.0,6.0,2.0,0.0,0.0,62.1,37.9,1.11,0.16,espn:720585
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,17:45,Rigas Futbola Skola,PAOK,FULL_TIME,0,2,A,,,,8.0,15.0,3.0,6.0,6.0,5.0,11.0,9.0,0.0,1.0,0.0,0.0,46.0,54.0,0.52,1.61,espn:720588
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,20:00,Braga,TSG Hoffenheim,FULL_TIME,3,0,H,,,,9.0,15.0,5.0,4.0,1.0,9.0,9.0,13.0,0.0,1.0,0.0,0.0,44.9,55.1,0.48,0.78,espn:720595
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,20:00,FC Midtjylland,Eintracht Frankfurt,FULL_TIME,1,2,A,,,,11.0,17.0,3.0,6.0,6.0,4.0,8.0,7.0,1.0,0.0,0.0,0.0,42.9,57.1,0.82,2.49,espn:720594
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,20:00,FC Twente,Union St.-Gilloise,FULL_TIME,0,1,A,,,,13.0,18.0,3.0,9.0,4.0,4.0,9.0,12.0,2.0,4.0,0.0,0.0,56.1,43.9,0.8,2.07,espn:720593
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,20:00,FCSB,Olympiacos,FULL_TIME,0,0,D,,,,10.0,12.0,2.0,2.0,4.0,4.0,10.0,16.0,4.0,1.0,1.0,0.0,40.7,59.3,0.48,1.08,espn:720592
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,20:00,Ferencvaros,Malmö FF,FULL_TIME,4,1,H,,,,9.0,11.0,6.0,4.0,1.0,3.0,16.0,11.0,1.0,2.0,0.0,0.0,32.6,67.4,1.48,1.31,espn:720591
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,20:00,Manchester United,Bodo/Glimt,FULL_TIME,3,2,H,,,,20.0,7.0,6.0,4.0,2.0,1.0,7.0,7.0,2.0,1.0,0.0,0.0,72.4,27.6,2.95,0.77,espn:720590
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,20:00,Nice,Rangers,FULL_TIME,1,4,A,,,,19.0,14.0,7.0,8.0,8.0,1.0,5.0,15.0,2.0,2.0,0.0,0.0,53.7,46.3,1.38,2.3,espn:720596
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,20:00,Real Sociedad,Ajax Amsterdam,FULL_TIME,2,0,H,,,,12.0,12.0,3.0,3.0,5.0,4.0,20.0,17.0,3.0,2.0,0.0,0.0,53.2,46.8,2.04,0.7,espn:720597
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,20:00,Slavia Prague,Fenerbahce,FULL_TIME,1,2,A,,,,23.0,5.0,6.0,3.0,4.0,2.0,16.0,18.0,4.0,6.0,0.0,0.0,53.3,46.7,2.14,0.73,espn:720598
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-11-28,20:00,Tottenham Hotspur,AS Roma,FULL_TIME,2,2,D,,,,24.0,18.0,12.0,7.0,7.0,6.0,9.0,9.0,2.0,1.0,0.0,0.0,49.9,50.1,3.74,2.29,espn:720589
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-11,15:30,Fenerbahce,Athletic Club,FULL_TIME,0,2,A,,,,4.0,9.0,1.0,5.0,5.0,3.0,12.0,21.0,1.0,3.0,1.0,0.0,53.2,46.8,0.38,1.48,espn:720599
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,17:45,AS Roma,Braga,FULL_TIME,3,0,H,,,,34.0,8.0,17.0,0.0,14.0,5.0,9.0,11.0,1.0,2.0,0.0,1.0,54.1,45.9,3.59,1.09,espn:720604
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,17:45,Ludogorets Razgrad,AZ Alkmaar,FULL_TIME,2,2,D,,,,14.0,18.0,3.0,8.0,3.0,11.0,6.0,16.0,2.0,3.0,0.0,0.0,49.6,50.4,0.98,2.56,espn:720602
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,17:45,Malmö FF,Galatasaray,FULL_TIME,2,2,D,,,,21.0,9.0,4.0,5.0,7.0,3.0,11.0,11.0,2.0,2.0,0.0,0.0,48.5,51.5,2.45,0.81,espn:720605
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,17:45,Olympiacos,FC Twente,FULL_TIME,0,0,D,,,,12.0,7.0,4.0,2.0,7.0,2.0,11.0,13.0,2.0,2.0,0.0,0.0,45.9,54.1,1.63,1.1,espn:720600
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,17:45,PAOK,Ferencvaros,FULL_TIME,5,0,H,,,,13.0,9.0,7.0,2.0,3.0,2.0,11.0,14.0,2.0,4.0,0.0,0.0,49.5,50.5,3.06,0.69,espn:720601
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,17:45,TSG Hoffenheim,FCSB,FULL_TIME,0,0,D,,,,14.0,8.0,3.0,4.0,4.0,2.0,17.0,18.0,4.0,3.0,0.0,0.0,68.9,31.1,0.89,0.69,espn:720606
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,17:45,Union St.-Gilloise,Nice,FULL_TIME,2,1,H,,,,24.0,13.0,12.0,2.0,8.0,3.0,15.0,6.0,4.0,1.0,0.0,0.0,49.1,50.9,3.82,0.87,espn:720603
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,17:45,Viktoria Plzen,Manchester United,FULL_TIME,1,2,A,,,,15.0,17.0,2.0,8.0,1.0,5.0,11.0,11.0,0.0,3.0,0.0,0.0,31.6,68.4,0.95,2.73,espn:720607
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,20:00,Ajax Amsterdam,Lazio,FULL_TIME,1,3,A,,,,16.0,9.0,6.0,6.0,2.0,0.0,8.0,18.0,3.0,3.0,0.0,0.0,54.2,45.8,2.18,1.59,espn:720471
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,20:00,Bodo/Glimt,Besiktas,FULL_TIME,2,1,H,,,,16.0,14.0,4.0,4.0,11.0,6.0,10.0,9.0,1.0,2.0,0.0,0.0,59.4,40.6,1.77,1.78,espn:720470
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,20:00,FC Porto,FC Midtjylland,FULL_TIME,2,0,H,,,,17.0,5.0,7.0,1.0,3.0,7.0,16.0,11.0,1.0,1.0,0.0,0.0,61.8,38.2,2.35,0.97,espn:720472
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,20:00,IF Elfsborg,FK Qarabag,FULL_TIME,1,0,H,,,,9.0,14.0,3.0,2.0,2.0,4.0,20.0,7.0,1.0,3.0,0.0,0.0,29.9,70.1,1.52,1.02,espn:720469
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,20:00,Lyon,Eintracht Frankfurt,FULL_TIME,3,2,H,,,,19.0,7.0,6.0,5.0,4.0,0.0,18.0,15.0,5.0,7.0,0.0,0.0,43.0,57.0,2.2,1.1,espn:720468
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,20:00,Maccabi Tel-Aviv,Rigas Futbola Skola,FULL_TIME,2,1,H,,,,10.0,14.0,5.0,4.0,1.0,4.0,11.0,14.0,2.0,2.0,0.0,0.0,52.8,47.2,0.51,1.87,espn:720467
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,20:00,Rangers,Tottenham Hotspur,FULL_TIME,1,1,D,,,,15.0,12.0,6.0,3.0,7.0,7.0,9.0,9.0,1.0,2.0,0.0,0.0,41.3,58.7,1.28,0.87,espn:720466
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,20:00,Real Sociedad,Dynamo Kyiv,FULL_TIME,3,0,H,,,,27.0,5.0,14.0,1.0,6.0,1.0,10.0,14.0,2.0,2.0,0.0,0.0,59.2,40.8,3.12,0.15,espn:720465
+espn+fotmob,2024-25,Europa League,1,european,UEL,2024-12-12,20:00,Slavia Prague,Anderlecht,FULL_TIME,1,2,A,,,,21.0,7.0,6.0,2.0,9.0,1.0,15.0,13.0,2.0,3.0,0.0,0.0,64.0,36.0,1.61,0.87,espn:720608
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-21,15:30,Galatasaray,Dynamo Kyiv,FULL_TIME,3,3,D,,,,24.0,6.0,8.0,3.0,8.0,3.0,6.0,7.0,4.0,5.0,0.0,0.0,48.1,51.9,3.34,0.98,espn:720473
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-22,15:30,Besiktas,Athletic Club,FULL_TIME,4,1,H,,,,11.0,10.0,9.0,4.0,4.0,1.0,15.0,15.0,3.0,0.0,0.0,0.0,47.0,53.0,2.8,1.04,espn:720474
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,17:45,AZ Alkmaar,AS Roma,FULL_TIME,1,0,H,,,,7.0,11.0,1.0,2.0,6.0,1.0,19.0,10.0,3.0,3.0,0.0,0.0,36.3,63.7,1.08,0.73,espn:720475
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,17:45,Bodo/Glimt,Maccabi Tel-Aviv,FULL_TIME,3,1,H,,,,14.0,5.0,5.0,3.0,4.0,1.0,6.0,6.0,1.0,2.0,0.0,0.0,70.9,29.1,2.95,0.7,espn:720476
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,17:45,FC Porto,Olympiacos,FULL_TIME,0,1,A,,,,16.0,7.0,2.0,2.0,2.0,2.0,10.0,18.0,3.0,1.0,0.0,0.0,58.3,41.7,1.14,0.45,espn:720482
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,17:45,Fenerbahce,Lyon,FULL_TIME,0,0,D,,,,11.0,13.0,2.0,7.0,3.0,7.0,14.0,23.0,4.0,5.0,0.0,0.0,44.2,55.8,1.04,0.8,espn:720481
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,17:45,FK Qarabag,FCSB,FULL_TIME,2,3,A,,,,9.0,10.0,1.0,5.0,7.0,4.0,10.0,23.0,2.0,3.0,0.0,0.0,63.5,36.5,1.42,0.79,espn:720479
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,17:45,Malmö FF,FC Twente,FULL_TIME,2,3,A,,,,11.0,7.0,4.0,4.0,9.0,7.0,18.0,17.0,5.0,5.0,1.0,0.0,55.9,44.1,0.95,2.1,espn:720480
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,17:45,TSG Hoffenheim,Tottenham Hotspur,FULL_TIME,2,3,A,,,,22.0,8.0,5.0,5.0,6.0,4.0,6.0,6.0,1.0,0.0,0.0,0.0,56.0,44.0,2.55,2.12,espn:720478
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,17:45,Viktoria Plzen,Anderlecht,FULL_TIME,2,0,H,,,,12.0,6.0,5.0,2.0,3.0,0.0,16.0,6.0,0.0,0.0,0.0,0.0,30.0,70.0,1.67,0.5,espn:720477
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,20:00,Eintracht Frankfurt,Ferencvaros,FULL_TIME,2,0,H,,,,14.0,1.0,8.0,0.0,7.0,2.0,11.0,5.0,3.0,0.0,0.0,0.0,68.6,31.4,1.43,0.03,espn:720484
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,20:00,IF Elfsborg,Nice,FULL_TIME,1,0,H,,,,9.0,22.0,1.0,6.0,4.0,9.0,5.0,7.0,2.0,1.0,0.0,0.0,31.6,68.4,0.77,1.7,espn:720485
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,20:00,Lazio,Real Sociedad,FULL_TIME,3,1,H,,,,19.0,9.0,6.0,4.0,3.0,3.0,10.0,6.0,2.0,1.0,0.0,1.0,77.5,22.5,1.53,1.58,espn:720486
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,20:00,Ludogorets Razgrad,FC Midtjylland,FULL_TIME,0,2,A,,,,16.0,11.0,6.0,6.0,8.0,3.0,13.0,15.0,2.0,2.0,0.0,0.0,64.1,35.9,0.76,2.29,espn:720487
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,20:00,Manchester United,Rangers,FULL_TIME,2,1,H,,,,16.0,11.0,6.0,7.0,7.0,5.0,10.0,14.0,0.0,1.0,0.0,0.0,67.1,32.9,2.69,1.42,espn:720483
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,20:00,PAOK,Slavia Prague,FULL_TIME,2,0,H,,,,14.0,15.0,7.0,4.0,6.0,4.0,11.0,16.0,2.0,3.0,0.0,0.0,46.5,53.5,2.12,0.84,espn:720490
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,20:00,Rigas Futbola Skola,Ajax Amsterdam,FULL_TIME,1,0,H,,,,7.0,13.0,2.0,6.0,1.0,5.0,14.0,7.0,3.0,1.0,0.0,0.0,30.8,69.2,0.24,1.05,espn:720489
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-23,20:00,Union St.-Gilloise,Braga,FULL_TIME,2,1,H,,,,6.0,8.0,3.0,4.0,3.0,0.0,18.0,14.0,3.0,3.0,2.0,2.0,55.9,44.1,0.84,1.76,espn:720488
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Ajax Amsterdam,Galatasaray,FULL_TIME,2,1,H,,,,12.0,28.0,6.0,9.0,2.0,10.0,16.0,8.0,1.0,3.0,0.0,0.0,38.9,61.1,1.44,2.76,espn:720491
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Anderlecht,TSG Hoffenheim,FULL_TIME,3,4,A,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.39,1.48,espn:720502
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,AS Roma,Eintracht Frankfurt,FULL_TIME,2,0,H,,,,15.0,6.0,3.0,2.0,5.0,2.0,6.0,15.0,1.0,0.0,0.0,0.0,47.0,53.0,1.95,0.39,espn:720505
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Athletic Club,Viktoria Plzen,FULL_TIME,3,1,H,,,,19.0,8.0,8.0,2.0,7.0,1.0,11.0,9.0,2.0,2.0,0.0,1.0,57.8,42.2,2.2,0.58,espn:720508
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Braga,Lazio,FULL_TIME,1,0,H,,,,8.0,12.0,4.0,4.0,4.0,7.0,13.0,15.0,0.0,1.0,0.0,0.0,50.0,50.0,0.75,0.6,espn:720501
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Dynamo Kyiv,Rigas Futbola Skola,FULL_TIME,1,0,H,,,,9.0,7.0,3.0,2.0,5.0,5.0,12.0,13.0,2.0,2.0,0.0,0.0,69.9,30.1,0.72,1.11,espn:720493
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,FC Midtjylland,Fenerbahce,FULL_TIME,2,2,D,,,,13.0,7.0,5.0,4.0,3.0,2.0,12.0,13.0,0.0,3.0,0.0,0.0,54.1,45.9,1.52,1.47,espn:720494
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,FC Twente,Besiktas,FULL_TIME,1,0,H,,,,22.0,8.0,2.0,3.0,11.0,5.0,10.0,12.0,1.0,4.0,0.0,0.0,49.3,50.7,2.21,0.62,espn:720495
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,FCSB,Manchester United,FULL_TIME,0,2,A,,,,8.0,21.0,3.0,7.0,3.0,6.0,14.0,10.0,3.0,1.0,0.0,0.0,30.5,69.5,0.55,2.88,espn:720496
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Ferencvaros,AZ Alkmaar,FULL_TIME,4,3,H,,,,11.0,11.0,5.0,4.0,3.0,7.0,9.0,16.0,2.0,2.0,0.0,0.0,35.5,64.5,1.7,0.74,espn:720497
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Lyon,Ludogorets Razgrad,FULL_TIME,1,1,D,,,,13.0,15.0,8.0,6.0,11.0,4.0,13.0,13.0,1.0,2.0,0.0,0.0,57.5,42.5,1.3,2.43,espn:720498
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Maccabi Tel-Aviv,FC Porto,FULL_TIME,0,1,A,,,,7.0,9.0,1.0,3.0,9.0,5.0,9.0,13.0,0.0,1.0,0.0,0.0,52.5,47.5,0.52,0.67,espn:720499
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Nice,Bodo/Glimt,FULL_TIME,1,1,D,,,,16.0,18.0,3.0,7.0,5.0,8.0,10.0,5.0,4.0,0.0,0.0,0.0,45.1,54.9,1.04,0.89,espn:720500
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Olympiacos,FK Qarabag,FULL_TIME,3,0,H,,,,23.0,3.0,9.0,1.0,7.0,3.0,15.0,13.0,0.0,6.0,0.0,0.0,44.3,55.7,3.8,0.17,espn:720506
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Rangers,Union St.-Gilloise,FULL_TIME,2,1,H,,,,12.0,14.0,4.0,2.0,4.0,3.0,16.0,9.0,5.0,2.0,0.0,0.0,46.1,53.9,1.75,2.4,espn:720504
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Real Sociedad,PAOK,FULL_TIME,2,0,H,,,,16.0,12.0,7.0,4.0,4.0,4.0,12.0,8.0,2.0,2.0,0.0,0.0,54.7,45.3,1.99,1.41,espn:720492
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Slavia Prague,Malmö FF,FULL_TIME,2,2,D,,,,17.0,14.0,6.0,7.0,8.0,4.0,8.0,11.0,4.0,3.0,0.0,0.0,59.7,40.3,1.83,2.3,espn:720503
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-01-30,20:00,Tottenham Hotspur,IF Elfsborg,FULL_TIME,3,0,H,,,,21.0,4.0,11.0,0.0,10.0,0.0,5.0,11.0,1.0,0.0,0.0,0.0,81.6,18.4,1.48,0.46,espn:720507
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-13,17:45,FC Midtjylland,Real Sociedad,FULL_TIME,1,2,A,,,,13.0,9.0,3.0,3.0,8.0,3.0,16.0,22.0,3.0,4.0,0.0,0.0,60.4,39.6,1.1,1.26,espn:732202
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-13,17:45,Fenerbahce,Anderlecht,FULL_TIME,3,0,H,,,,13.0,15.0,6.0,2.0,6.0,6.0,12.0,11.0,2.0,1.0,0.0,0.0,47.8,52.2,1.51,0.59,espn:732206
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-13,17:45,Ferencvaros,Viktoria Plzen,FULL_TIME,1,0,H,,,,12.0,17.0,3.0,2.0,8.0,8.0,13.0,16.0,1.0,0.0,0.0,0.0,42.5,57.5,1.02,1.13,espn:732203
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-13,17:45,Union St.-Gilloise,Ajax Amsterdam,FULL_TIME,0,2,A,,,,13.0,10.0,4.0,7.0,6.0,4.0,10.0,15.0,1.0,1.0,0.0,0.0,49.5,50.5,0.59,1.36,espn:732205
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-13,20:00,AZ Alkmaar,Galatasaray,FULL_TIME,4,1,H,,,,17.0,8.0,9.0,2.0,7.0,1.0,12.0,12.0,2.0,2.0,0.0,1.0,54.8,45.2,3.65,0.52,espn:732201
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-13,20:00,FC Porto,AS Roma,FULL_TIME,1,1,D,,,,12.0,15.0,2.0,4.0,4.0,6.0,8.0,16.0,3.0,6.0,0.0,1.0,57.4,42.6,0.75,1.25,espn:732208
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-13,20:00,FC Twente,Bodo/Glimt,FULL_TIME,2,1,H,,,,14.0,6.0,7.0,2.0,3.0,0.0,12.0,9.0,2.0,3.0,0.0,0.0,45.1,54.9,1.65,0.45,espn:732207
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-13,20:00,PAOK,FCSB,FULL_TIME,1,2,A,,,,5.0,13.0,2.0,5.0,1.0,2.0,11.0,13.0,2.0,7.0,1.0,0.0,48.0,52.0,0.29,1.84,espn:732204
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-20,17:45,AS Roma,FC Porto,FULL_TIME,3,2,H,,,,19.0,5.0,6.0,1.0,6.0,2.0,12.0,9.0,2.0,4.0,0.0,1.0,55.5,44.5,2.68,0.56,espn:732212
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-20,17:45,Bodo/Glimt,FC Twente,FINAL_AET,5,2,H,,,,14.0,10.0,7.0,2.0,9.0,4.0,9.0,10.0,1.0,3.0,0.0,0.0,72.0,28.0,1.9,1.17,espn:732214
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-20,17:45,FCSB,PAOK,FULL_TIME,2,0,H,,,,10.0,9.0,4.0,4.0,5.0,7.0,22.0,11.0,1.0,5.0,0.0,0.0,46.5,53.5,1.19,0.87,espn:732215
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-20,17:45,Galatasaray,AZ Alkmaar,FULL_TIME,2,2,D,,,,20.0,26.0,9.0,11.0,5.0,8.0,17.0,16.0,1.0,0.0,0.0,0.0,64.9,35.1,0.93,3.2,espn:732209
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-20,20:00,Ajax Amsterdam,Union St.-Gilloise,FINAL_AET,1,2,A,,,,7.0,34.0,5.0,11.0,1.0,12.0,17.0,21.0,6.0,6.0,1.0,0.0,33.2,66.8,1.72,4.02,espn:732213
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-20,20:00,Anderlecht,Fenerbahce,FULL_TIME,2,2,D,,,,13.0,8.0,6.0,3.0,3.0,2.0,15.0,12.0,1.0,3.0,0.0,0.0,57.9,42.1,2.43,1.26,espn:732210
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-20,20:00,Real Sociedad,FC Midtjylland,FULL_TIME,5,2,H,,,,22.0,8.0,10.0,3.0,7.0,6.0,18.0,11.0,1.0,2.0,0.0,1.0,52.8,47.2,4.59,1.17,espn:732211
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-02-20,20:00,Viktoria Plzen,Ferencvaros,FULL_TIME,3,0,H,,,,15.0,11.0,8.0,1.0,8.0,1.0,11.0,19.0,2.0,2.0,0.0,0.0,51.4,48.6,2.35,0.54,espn:732216
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-06,17:45,AZ Alkmaar,Tottenham Hotspur,FULL_TIME,1,0,H,,,,12.0,7.0,5.0,1.0,7.0,2.0,14.0,12.0,3.0,1.0,0.0,0.0,38.4,61.6,1.61,0.44,espn:733622
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-06,17:45,FCSB,Lyon,FULL_TIME,1,3,A,,,,11.0,17.0,4.0,5.0,5.0,6.0,15.0,9.0,2.0,0.0,0.0,0.0,33.4,66.6,1.3,1.31,espn:733624
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-06,17:45,Fenerbahce,Rangers,FULL_TIME,1,3,A,,,,23.0,8.0,7.0,6.0,11.0,3.0,8.0,10.0,1.0,1.0,0.0,0.0,64.1,35.9,1.8,1.82,espn:733621
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-06,17:45,Real Sociedad,Manchester United,FULL_TIME,1,1,D,,,,13.0,13.0,3.0,5.0,6.0,2.0,11.0,13.0,1.0,1.0,0.0,0.0,54.9,45.1,1.46,1.16,espn:733625
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-06,20:00,Ajax Amsterdam,Eintracht Frankfurt,FULL_TIME,1,2,A,,,,12.0,17.0,3.0,5.0,7.0,4.0,8.0,10.0,2.0,2.0,0.0,0.0,52.1,47.9,1.66,1.6,espn:733628
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-06,20:00,AS Roma,Athletic Club,FULL_TIME,2,1,H,,,,12.0,16.0,5.0,1.0,1.0,3.0,12.0,15.0,1.0,2.0,0.0,1.0,58.5,41.5,1.2,1.19,espn:733626
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-06,20:00,Bodo/Glimt,Olympiacos,FULL_TIME,3,0,H,,,,9.0,18.0,6.0,5.0,8.0,7.0,8.0,6.0,0.0,2.0,0.0,0.0,48.0,52.0,2.23,1.99,espn:733623
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-06,20:00,Viktoria Plzen,Lazio,FULL_TIME,1,2,A,,,,12.0,10.0,5.0,4.0,7.0,2.0,17.0,13.0,3.0,2.0,0.0,2.0,56.5,43.5,1.61,1.25,espn:733627
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-13,17:45,Athletic Club,AS Roma,FULL_TIME,3,1,H,,,,22.0,5.0,8.0,2.0,9.0,2.0,11.0,4.0,2.0,4.0,0.0,1.0,69.8,30.2,1.84,1.15,espn:733636
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-13,17:45,Eintracht Frankfurt,Ajax Amsterdam,FULL_TIME,4,1,H,,,,16.0,12.0,9.0,5.0,2.0,6.0,8.0,7.0,0.0,0.0,0.0,0.0,53.3,46.7,2.45,0.56,espn:733630
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-13,17:45,Lazio,Viktoria Plzen,FULL_TIME,1,1,D,,,,15.0,11.0,5.0,3.0,12.0,4.0,12.0,13.0,2.0,2.0,0.0,0.0,53.1,46.9,0.9,0.64,espn:733634
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-13,17:45,Olympiacos,Bodo/Glimt,FULL_TIME,2,1,H,,,,27.0,2.0,9.0,1.0,11.0,0.0,12.0,13.0,3.0,3.0,1.0,0.0,69.2,30.8,2.98,0.46,espn:733631
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-13,20:00,Lyon,FCSB,FULL_TIME,4,0,H,,,,18.0,9.0,6.0,2.0,2.0,2.0,8.0,11.0,0.0,0.0,0.0,0.0,65.4,34.6,2.81,0.52,espn:733633
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-13,20:00,Manchester United,Real Sociedad,FULL_TIME,4,1,H,,,,25.0,8.0,10.0,3.0,6.0,4.0,6.0,13.0,2.0,7.0,0.0,1.0,59.9,40.1,4.25,1.05,espn:733635
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-13,20:00,Rangers,Fenerbahce,FINAL_PEN,0,2,A,,,,23.0,21.0,9.0,3.0,5.0,1.0,19.0,10.0,7.0,4.0,0.0,0.0,40.2,59.8,0.97,2.01,espn:733629
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-03-13,20:00,Tottenham Hotspur,AZ Alkmaar,FULL_TIME,3,1,H,,,,17.0,10.0,4.0,2.0,5.0,2.0,6.0,12.0,0.0,1.0,0.0,0.0,60.3,39.7,2.23,1.19,espn:733632
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-04-10,16:45,Bodo/Glimt,Lazio,FULL_TIME,2,0,H,,,,18.0,6.0,6.0,1.0,1.0,4.0,9.0,13.0,0.0,3.0,0.0,0.0,58.2,41.8,3.02,0.38,espn:733638
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-04-10,19:00,Lyon,Manchester United,FULL_TIME,2,2,D,,,,16.0,13.0,5.0,5.0,5.0,8.0,10.0,14.0,1.0,4.0,0.0,0.0,54.3,45.7,1.76,1.22,espn:734500
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-04-10,19:00,Rangers,Athletic Club,FULL_TIME,0,0,D,,,,4.0,19.0,0.0,3.0,2.0,9.0,6.0,12.0,0.0,3.0,1.0,0.0,28.9,71.1,0.14,2.37,espn:733639
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-04-10,19:00,Tottenham Hotspur,Eintracht Frankfurt,FULL_TIME,1,1,D,,,,10.0,4.0,6.0,2.0,9.0,3.0,14.0,15.0,1.0,2.0,0.0,0.0,56.3,43.7,0.94,0.36,espn:733637
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-04-17,19:00,Athletic Club,Rangers,FULL_TIME,2,0,H,,,,22.0,7.0,4.0,2.0,6.0,3.0,15.0,9.0,1.0,3.0,0.0,0.0,55.8,44.2,2.7,0.54,espn:733643
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-04-17,19:00,Eintracht Frankfurt,Tottenham Hotspur,FULL_TIME,0,1,A,,,,14.0,12.0,5.0,3.0,8.0,7.0,7.0,9.0,3.0,3.0,0.0,0.0,60.6,39.4,0.91,1.71,espn:733641
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-04-17,19:00,Lazio,Bodo/Glimt,FINAL_PEN,3,1,H,,,,33.0,12.0,11.0,8.0,15.0,3.0,14.0,15.0,3.0,4.0,0.0,1.0,53.3,46.7,3.91,1.52,espn:733642
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-04-17,19:00,Manchester United,Lyon,FINAL_AET,5,4,H,,,,21.0,21.0,8.0,9.0,7.0,3.0,17.0,14.0,3.0,3.0,0.0,1.0,41.3,58.7,3.42,2.58,espn:734499
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-05-01,19:00,Athletic Club,Manchester United,FULL_TIME,0,3,A,,,,9.0,14.0,3.0,7.0,4.0,5.0,19.0,7.0,3.0,3.0,1.0,0.0,27.4,72.6,1.11,2.55,espn:733646
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-05-01,19:00,Tottenham Hotspur,Bodo/Glimt,FULL_TIME,3,1,H,,,,24.0,3.0,7.0,1.0,13.0,1.0,12.0,7.0,1.0,2.0,0.0,0.0,41.7,58.3,3.06,0.26,espn:733645
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-05-08,19:00,Bodo/Glimt,Tottenham Hotspur,FULL_TIME,0,2,A,,,,7.0,8.0,2.0,3.0,3.0,8.0,8.0,10.0,1.0,2.0,0.0,0.0,68.7,31.3,0.43,0.77,espn:733647
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-05-08,19:00,Manchester United,Athletic Club,FULL_TIME,4,1,H,,,,11.0,11.0,5.0,1.0,0.0,2.0,10.0,17.0,3.0,4.0,0.0,0.0,51.3,48.7,2.19,0.81,espn:733648
+espn+fotmob,2024-25,Europa League,1,european,UEL,2025-05-21,19:00,Tottenham Hotspur,Manchester United,FULL_TIME,1,0,H,,,,3.0,16.0,1.0,6.0,4.0,5.0,22.0,10.0,3.0,4.0,0.0,0.0,26.7,73.3,1.01,0.97,espn:733649
