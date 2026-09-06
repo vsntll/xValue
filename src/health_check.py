@@ -172,10 +172,20 @@ def check_football_data_co_uk() -> dict:
 
 
 def check_sofascore_values() -> dict:
-    r = requests.get("https://api.sofascore.com/api/v1/unique-tournament/17/season/96668/standings/total",
-                     timeout=TIMEOUT)
+    # Probe the SAME way pull_sofascore_values.py pulls: tls_requests (a real
+    # browser TLS/JA3 fingerprint), not plain requests. Sofascore's Varnish tier
+    # 403s any non-browser fingerprint outright, so a plain requests probe would
+    # always say "blocked" and tell us nothing about whether the scraper works.
+    import tls_requests  # noqa: PLC0415
+    from pull_sofascore_values import API, HEADERS  # noqa: PLC0415
+    url = f"{API}/unique-tournament/17/season/96668/standings/total"
+    r = tls_requests.get(url, headers=HEADERS, timeout=TIMEOUT)
     if r.status_code in (403, 429):
-        return _result("blocked (known)", f"{r.status_code} - Sofascore IP-blocks this network sometimes (CI especially)")
+        # tls_requests got through the fingerprint check and STILL got a 403 -
+        # that's a real IP block on this network (CI datacenter ranges), the
+        # scraper won't work here either. Known, and the scraper keeps its last
+        # good CSV, so it's not a failure - but it IS the real status now.
+        return _result("blocked (known)", f"{r.status_code} even with a browser TLS fingerprint - IP block on this network")
     if r.status_code >= 500:
         return _result("unreachable", f"HTTP {r.status_code} - upstream 5xx, transient")
     if r.status_code != 200:
