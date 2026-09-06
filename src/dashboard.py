@@ -224,10 +224,11 @@ def tab_health() -> None:
     if h is None:
         _missing("health_check.json", "src/health_check.py")
         return
-    st.caption(f"Last checked: {h['checked_at']}  (`.github/workflows/health-check.yml` runs this daily)")
+    st.caption(f"Last checked: {h['checked_at']}  (`.github/workflows/health-check.yml` runs this every 3 days)")
     rows = []
     for name, r in h["results"].items():
-        icon = {"ok": "✅", "blocked (known)": "\U0001f7e1", "skipped": "⚪"}.get(r["status"], "\U0001f534")
+        icon = {"ok": "✅", "blocked (known)": "\U0001f7e1", "unreachable": "\U0001f7e1",
+                "skipped": "⚪"}.get(r["status"], "\U0001f534")
         rows.append({"": icon, "Source": name, "Status": r["status"], "Detail": r["detail"],
                     "Seconds": r.get("seconds", "")})
     st.dataframe(pd.DataFrame(rows), width='stretch', hide_index=True)

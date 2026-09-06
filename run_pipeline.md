@@ -58,9 +58,11 @@ py -3.11 -m streamlit run src/dashboard.py   # predictions vs results, value lea
 py -3.11 src/health_check.py                 # probes every scrape source, writes health_check.json
 ```
 
-`.github/workflows/health-check.yml` runs the health check daily and commits
-the report, so the dashboard's "Source health" tab stays current without a
-local run.
+`.github/workflows/health-check.yml` runs the health check every 3 days and
+commits the report, so the dashboard's "Source health" tab stays current
+without a local run. A transient upstream outage (5xx, an IP block on CI's
+range) is reported as `unreachable` but does not fail the run - only a real
+schema drift (`DEGRADED` / `ERROR`) does.
 
 ## Refresh the current season
 

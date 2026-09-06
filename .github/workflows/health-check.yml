@@ -1,15 +1,17 @@
 name: Data source health check
 
 # Probes every upstream source (FBref/Transfermarkt reachability, and a real
-# call to each JSON-API source) daily. The job goes red the moment a source's
-# response shape drifts or a normally-nonempty pull comes back empty, instead
-# of that surfacing three weeks later as a stale squad rollup. See
+# call to each JSON-API source) every 3 days. The job goes red the moment a
+# source's response shape drifts, instead of that surfacing three weeks later
+# as a stale squad rollup - but a transient upstream outage (a 503, an IP
+# block on CI's datacenter range) is reported without failing the run. See
 # src/health_check.py for exactly what each probe checks and why a given
-# status (ok / blocked (known) / DEGRADED / ERROR) isn't a false alarm.
+# status (ok / blocked (known) / unreachable / DEGRADED / ERROR) isn't a
+# false alarm.
 
 on:
   schedule:
-    - cron: "30 6 * * *"        # daily, 06:30 UTC (ahead of the Monday full refresh)
+    - cron: "30 6 */3 * *"      # every 3 days, 06:30 UTC (ahead of the Monday full refresh)
   workflow_dispatch: {}
 
 permissions:

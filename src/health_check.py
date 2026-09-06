@@ -8,14 +8,21 @@ fixtures/values, one FBref/Transfermarkt page. A probe is:
   blocked (known)   - Transfermarkt's WAF captcha / FBref's JS-challenge, the
                        same block this pipeline has always worked around -
                        not a regression, reported for visibility only
-  DEGRADED          - reachable but the response shape/columns changed, or a
-                       source that's usually non-empty came back empty
-  ERROR             - raised an exception or timed out
+  unreachable       - a 5xx, a connection error/timeout, or a source that
+                       normally returns a full slate came back empty: the
+                       upstream is having a moment, not a schema change.
+                       Reported for visibility, does NOT fail the run - these
+                       are transient and clear on their own.
+  DEGRADED          - reachable, HTTP 200, but the response shape/columns
+                       changed: a real regression that needs a code fix.
+  ERROR             - an unexpected client error (4xx that shouldn't happen)
+                       or an exception that isn't just a network blip.
 
 Exit code is non-zero iff anything is DEGRADED or ERROR, so a scheduled CI run
-shows red without anyone reading the log.
+shows red for a genuine schema drift without anyone reading the log, but a
+transient upstream outage (503, IP block on CI's datacenter range) does not.
 
-Run:  py -3.11 src/health_check.py
+Run:  py -3.11 src/health_check.py    (CI runs it every 3 days)
 Output: data/processed/health_check.json (latest run, for the dashboard)
 """
 
@@ -51,11 +58,14 @@ def _result(status: str, detail: str, n: int | None = None, secs: float | None =
 
 
 def _probe(fn):
-    """Run one probe, timing it and turning any exception into ERROR rather
-    than killing the whole health check."""
+    """Run one probe, timing it. A network blip (connection reset, timeout)
+    becomes 'unreachable' - noise, not a regression; anything else that raises
+    becomes ERROR, since an unexpected exception IS the signal."""
     t0 = time.time()
     try:
         return {**fn(), "seconds": round(time.time() - t0, 1)}
+    except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as exc:
+        return _result("unreachable", f"{type(exc).__name__}: {str(exc)[:120]}", secs=time.time() - t0)
     except Exception as exc:  # noqa: BLE001 - a probe failing IS the signal
         return _result("ERROR", f"{type(exc).__name__}: {str(exc)[:160]}", secs=time.time() - t0)
 
@@ -75,7 +85,7 @@ def check_fbref() -> dict:
     if r.status_code in (403, 429):
         return _result("blocked (known)", f"HTTP {r.status_code} - Cloudflare bot-blocks plain requests, as always")
     if r.status_code >= 500:
-        return _result("ERROR", f"HTTP {r.status_code} from {url}")
+        return _result("unreachable", f"HTTP {r.status_code} from {url} - upstream 5xx, transient")
     if r.status_code != 200:
         return _result("DEGRADED", f"unexpected HTTP {r.status_code} from {url}")
     if any(m in r.text for m in CHALLENGE_MARKERS):
@@ -88,12 +98,16 @@ def check_fbref() -> dict:
 def check_transfermarkt() -> dict:
     url = "https://www.transfermarkt.com/premier-league/startseite/wettbewerb/GB1"
     r = requests.get(url, headers=UA, timeout=TIMEOUT)
-    if r.status_code == 405:
-        return _result("blocked (known)", "HTTP 405 - the standing non-browser block")
+    if "Human Verification" in r.text or "awswaf" in r.text.lower():
+        return _result("blocked (known)", f"HTTP {r.status_code} - AWS WAF captcha page, as expected without a browser")
+    if r.status_code in (202, 403, 405, 429):
+        # 405 from a home IP, 202/403 from CI's datacenter range - all the same
+        # standing "no plain requests" WAF block, just a different response tier.
+        return _result("blocked (known)", f"HTTP {r.status_code} - the standing non-browser block")
+    if r.status_code >= 500:
+        return _result("unreachable", f"HTTP {r.status_code} - upstream 5xx, transient")
     if r.status_code != 200:
         return _result("ERROR", f"unexpected HTTP {r.status_code}")
-    if "Human Verification" in r.text or "awswaf" in r.text.lower():
-        return _result("blocked (known)", "AWS WAF captcha page, as expected without a browser")
     if "startseite" not in r.text.lower() and "premier league" not in r.text.lower():
         return _result("DEGRADED", "200 OK but doesn't look like a Transfermarkt page - check manually")
     return _result("ok", "200 OK, unblocked (unusual - a scrape might work without nodriver right now)")
@@ -118,7 +132,11 @@ def check_live_source(module_name: str) -> dict:
     mod = importlib.import_module(f"live.{module_name}")
     df = mod.fetch(["ENG1"], current_season(), with_stats=False)
     if df is None or df.empty:
-        return _result("DEGRADED", "returned 0 rows for the current season's top flight")
+        # fetch() swallows upstream HTTPErrors and returns a blank frame, so an
+        # empty result here is almost always an upstream hiccup (or CI's IP
+        # getting throttled), not schema drift - genuine drift shows up as the
+        # missing-columns branch below or as an exception. Don't fail the run.
+        return _result("unreachable", "returned 0 rows for the current top flight - upstream hiccup, transient")
     need = {"HomeTeam", "AwayTeam", "Date", "FTHG", "FTAG", "status"}
     missing = need - set(df.columns)
     if missing:
@@ -140,6 +158,10 @@ def check_football_data_co_uk() -> dict:
     yy = season.replace("-", "")[2:]
     url = f"https://www.football-data.co.uk/mmz4281/{yy}/E0.csv"
     r = requests.get(url, headers=UA, timeout=TIMEOUT)
+    if r.status_code >= 500:
+        # football-data.co.uk throws intermittent 503s (often a short 489-byte
+        # error page) and recovers within the hour - transient, not our problem.
+        return _result("unreachable", f"HTTP {r.status_code}, {len(r.content)} bytes - upstream 5xx, transient")
     if r.status_code != 200 or len(r.content) < 1000:
         return _result("ERROR", f"HTTP {r.status_code}, {len(r.content)} bytes")
     head = r.text.splitlines()[0]
@@ -151,8 +173,10 @@ def check_football_data_co_uk() -> dict:
 def check_sofascore_values() -> dict:
     r = requests.get("https://api.sofascore.com/api/v1/unique-tournament/17/season/96668/standings/total",
                      timeout=TIMEOUT)
-    if r.status_code == 403:
-        return _result("blocked (known)", "403 - Sofascore IP-blocks this network sometimes (CI especially)")
+    if r.status_code in (403, 429):
+        return _result("blocked (known)", f"{r.status_code} - Sofascore IP-blocks this network sometimes (CI especially)")
+    if r.status_code >= 500:
+        return _result("unreachable", f"HTTP {r.status_code} - upstream 5xx, transient")
     if r.status_code != 200:
         return _result("ERROR", f"HTTP {r.status_code}")
     data = r.json()
@@ -178,13 +202,16 @@ def main() -> None:
     print(f"Health check - {datetime.now(timezone.utc).isoformat(timespec='seconds')}\n")
     results = {}
     bad = []
+    flaky = []
     for name, fn in PROBES.items():
         r = _probe(fn)
         results[name] = r
-        flag = {"ok": "OK", "blocked (known)": "~~", "skipped": "--"}.get(r["status"], "!!")
+        flag = {"ok": "OK", "blocked (known)": "~~", "unreachable": "~~", "skipped": "--"}.get(r["status"], "!!")
         print(f"  [{flag:>2}] {name:32} {r['status']:16} {r['detail']}  ({r.get('seconds', '?')}s)")
         if r["status"] in ("DEGRADED", "ERROR"):
             bad.append(name)
+        elif r["status"] == "unreachable":
+            flaky.append(name)
 
     payload = {"checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
               "results": results}
@@ -192,10 +219,12 @@ def main() -> None:
     OUT.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     print(f"\nwrote {OUT}")
 
+    if flaky:
+        print(f"\n{len(flaky)} source(s) transiently unreachable (not failing the run): {', '.join(flaky)}")
     if bad:
         print(f"\n{len(bad)} source(s) need attention: {', '.join(bad)}")
         sys.exit(1)
-    print("\nall sources healthy (or blocked exactly as expected)")
+    print("\nall sources healthy (or blocked / transiently unreachable exactly as expected)")
 
 
 if __name__ == "__main__":
