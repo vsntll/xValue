@@ -26,6 +26,7 @@ py -3.11 src/pull_understat_player_matches.py           # per-player per-match x
 ```
 py -3.11 src/parse_fbref_matchlogs.py       -> fbref_team_matchlogs.csv
 py -3.11 src/parse_fbref_player_stats.py    -> fbref_player_season_stats.csv   (folds in xG + values)
+py -3.11 src/build_current_season_stats.py  -> rewrites the current season's rows in fbref_player_season_stats.csv from Understat (fresh goals/assists/minutes/xG without a browser scrape)
 py -3.11 src/build_matches_all.py           -> matches_all.csv                 (9k matches, all comps)
 py -3.11 src/build_squad_features.py        -> squad_season_features.csv
 py -3.11 src/build_match_model_table.py     -> match_model_table.csv           (Elo, form, odds, momentum if squad_momentum.csv exists yet)
@@ -66,25 +67,39 @@ schema drift (`DEGRADED` / `ERROR`) does.
 
 ## Refresh the current season
 
-**Automatic (weekly):** `.github/workflows/weekly-refresh.yml` runs every Monday
-(and on manual dispatch). It pulls everything that doesn't need a browser -
-football-data.co.uk results, live fixtures + match stats (ESPN / football-data.org
-/ FotMob / Understat), Sofascore market values - then rebuilds the match table,
-retrains both models, regenerates `site/index.html`, and commits the refreshed
+**Automatic (every 2 days):** `.github/workflows/weekly-refresh.yml` runs on a
+`*/2` cron (and on manual dispatch). It pulls everything that doesn't need a
+browser - football-data.co.uk results, live fixtures + match stats (ESPN /
+football-data.org / FotMob / Understat), Sofascore market values - **refreshes
+the current season's player stats from Understat** (`pull_understat.py --current`
+then `build_current_season_stats.py`), rebuilds the match table, retrains both
+models, regenerates `site/index.html`, and commits the refreshed
 `data/processed/` **and** `site/index.html` back to `master`.
 
-`data/processed/` is committed (checkout brings it, `git pull` gets you the
-latest weekly data locally). `data/raw/` + the soccerdata/Understat fetch caches
-stay gitignored - CI keeps them in a non-load-bearing `actions/cache` blob only
-to skip re-downloading. Setup: just add repo secret `FOOTBALL_DATA_ORG_KEY`.
+`build_current_season_stats.py` rewrites only the current season's rows in
+`fbref_player_season_stats.csv`, and only the volatile counting columns (goals /
+assists / minutes / MP / starts / cards / shots / xG / npxG / xAG + the
+`understat__*` block). Starts come from `understat_player_matches.csv`
+(`position != 'Sub'`). Each player's birth year, nationality, and last-known deep
+stats (shots on target, fouls, passing / defense / GCA / keeper) are kept from
+the most recent FBref parse. Finished seasons are never touched.
 
-**Manual (goals / assists / minutes — needs a real Chrome window):** run this
-every week or two; it re-scrapes the current season's FBref player stats,
-rebuilds the tables, retrains the value model and regenerates the page.
+`data/processed/` is committed (checkout brings it, `git pull` gets you the
+latest data locally). `data/raw/` + the soccerdata/Understat fetch caches stay
+gitignored - CI keeps them in a non-load-bearing `actions/cache` blob only to
+skip re-downloading. Setup: just add repo secret `FOOTBALL_DATA_ORG_KEY`.
+
+**Manual (~monthly — the deep FBref stats + Transfermarkt values, needs a real
+Chrome window):** re-scrape the full FBref player-stats set for the depth columns
+Understat doesn't carry (shots on target, fouls, progressive passes, defensive
+actions, GCA, keeper advanced), then re-apply the Understat current-season
+refresh on top.
 
 ```
-py -3.11 refresh_player_stats.py            # scrape + rebuild; you commit
-py -3.11 refresh_player_stats.py --commit   # also commit + push (fires the Pages deploy)
+py -3.11 src/pull_fbref_player_stats.py       # league-wide player stats (FBref, ~1h)
+py -3.11 src/parse_fbref_player_stats.py      # -> fbref_player_season_stats.csv
+py -3.11 src/build_current_season_stats.py    # re-fold Understat's live season back in
+# then re-run steps 2-4, or just let the next every-2-days run rebuild the site
 ```
 
 **Manual (less often — cup xG and Transfermarkt scrape values):**

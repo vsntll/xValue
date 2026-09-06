@@ -1,18 +1,21 @@
-name: Weekly site refresh
+name: Site refresh (every 2 days)
 
 # Pulls the data that does NOT need a browser (live fixtures + match stats via
 # ESPN / football-data.org / FotMob / Understat, and market values via Sofascore),
-# rebuilds the match table, retrains both models, regenerates site/index.html,
-# then commits the refreshed data/processed/ AND site/index.html back to master.
+# refreshes the current season's player stats from Understat, rebuilds the match
+# table, retrains both models, regenerates site/index.html, then commits the
+# refreshed data/processed/ AND site/index.html back to master.
 #
-# NOT refreshed here: FBref counting stats (goals / assists / minutes) and
-# Transfermarkt scrape values - those need a real Chrome window (nodriver) and a
-# one-off WAF-captcha click, so run `run_pipeline.md` step 1 locally now and then;
-# refresh_player_stats.py commits data/processed + site/index.html the same way.
+# Current-season goals / assists / minutes / xG now come from Understat
+# (build_current_season_stats.py) so this no longer waits on a manual FBref
+# scrape. FBref is still the source for finished seasons and for the deep stats
+# (shots on target, fouls, passing / defense / GCA / keeper) - re-scrape those
+# roughly monthly with `run_pipeline.md` step 1 (needs Chrome + a one-off
+# WAF-captcha click). Transfermarkt scrape values are also monthly-manual.
 
 on:
   schedule:
-    - cron: "0 7 * * 1"        # Mondays 07:00 UTC
+    - cron: "0 7 */2 * *"      # every 2 days, 07:00 UTC
   workflow_dispatch: {}
 
 permissions:
@@ -20,7 +23,7 @@ permissions:
   actions: write        # to kick deploy-pages.yml after committing
 
 concurrency:
-  group: weekly-refresh
+  group: site-refresh
   cancel-in-progress: false
 
 jobs:
@@ -84,6 +87,18 @@ jobs:
         continue-on-error: true
         run: python src/pull_understat_player_matches.py --seasons 2020-21 2021-22 2022-23 2023-24 2024-25 2025-26 2026-27
 
+      # current-season player season aggregates (goals/xg/xa/cards/...) - three
+      # cheap API calls, merges into the committed file without touching 2020-25
+      - name: Pull current-season player + match aggregates (Understat)
+        continue-on-error: true
+        run: python src/pull_understat.py --current --what both
+
+      # fold Understat's current season into fbref_player_season_stats.csv so the
+      # value model / site cards have fresh goals/assists/minutes/xG without a
+      # manual FBref scrape (finished seasons + deep stats stay as FBref left them)
+      - name: Refresh current-season player stats from Understat
+        run: python src/build_current_season_stats.py
+
       - name: Rebuild tables
         run: |
           python src/build_matches_all.py
@@ -115,7 +130,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "nothing changed - nothing to commit"
           else
-            git commit -m "Weekly refresh: fixtures, odds, market values, Understat, models + site ($(date -u +%Y-%m-%d))"
+            git commit -m "Auto refresh: fixtures, odds, values, Understat current-season stats, models + site ($(date -u +%Y-%m-%d))"
             git pull --rebase --autostash origin master
             git push
             # a GITHUB_TOKEN push doesn't trigger deploy-pages.yml's push event

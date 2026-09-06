@@ -46,10 +46,24 @@ def _sd_season(season: str) -> str:
     return f"{start}-{start + 1}"
 
 
+def _merge_write(new: pd.DataFrame, path: Path, refreshed: set[tuple[str, str]]) -> pd.DataFrame:
+    """Write `new`, but keep any (src_league, season) already on disk that this
+    run did not re-pull - a `--seasons 2026-27` refresh must not wipe 2020-25
+    (the same drop-unrelated-rows bug that bit pull_understat_player_matches.py)."""
+    if path.exists():
+        prior = pd.read_csv(path)
+        if {"src_league", "season"}.issubset(prior.columns):
+            keep = ~prior.set_index(["src_league", "season"]).index.isin(refreshed)
+            new = pd.concat([prior[keep], new], ignore_index=True)
+    PROCESSED.mkdir(parents=True, exist_ok=True)
+    new.to_csv(path, index=False)
+    return new
+
+
 def pull_matches(seasons: list[str]) -> None:
     import soccerdata as sd
 
-    frames = []
+    frames, refreshed = [], set()
     for code, key in LEAGUE_KEY.items():
         for season in seasons:
             try:
@@ -61,6 +75,7 @@ def pull_matches(seasons: list[str]) -> None:
             sch["src_league"] = code
             sch["season"] = season
             frames.append(sch)
+            refreshed.add((code, season))
             played = int(sch.get("is_result", pd.Series(dtype=bool)).sum())
             print(f"  {code} {season}: {len(sch)} matches ({played} played)")
     if not frames:
@@ -69,8 +84,7 @@ def pull_matches(seasons: list[str]) -> None:
     keep = ["src_league", "season", "game_id", "date", "home_team", "away_team",
             "home_goals", "away_goals", "home_xg", "away_xg", "is_result", "url"]
     out = out[[c for c in keep if c in out.columns]]
-    PROCESSED.mkdir(parents=True, exist_ok=True)
-    out.to_csv(PROCESSED / "understat_matches.csv", index=False)
+    out = _merge_write(out, PROCESSED / "understat_matches.csv", refreshed)
     print(f"\nwrote understat_matches.csv  ({len(out)} rows, "
           f"{int(out['is_result'].sum())} with xG)")
 
@@ -78,7 +92,7 @@ def pull_matches(seasons: list[str]) -> None:
 def pull_players(seasons: list[str]) -> None:
     import soccerdata as sd
 
-    frames = []
+    frames, refreshed = [], set()
     for code, key in LEAGUE_KEY.items():
         for season in seasons:
             try:
@@ -90,12 +104,12 @@ def pull_players(seasons: list[str]) -> None:
             ps["src_league"] = code
             ps["season"] = season
             frames.append(ps)
+            refreshed.add((code, season))
             print(f"  {code} {season}: {len(ps)} players")
     if not frames:
         raise SystemExit("no player data")
     out = pd.concat(frames, ignore_index=True)
-    PROCESSED.mkdir(parents=True, exist_ok=True)
-    out.to_csv(PROCESSED / "understat_player_season.csv", index=False)
+    out = _merge_write(out, PROCESSED / "understat_player_season.csv", refreshed)
     print(f"\nwrote understat_player_season.csv  ({len(out)} rows, "
           f"{out['player'].nunique()} players)")
 
@@ -103,8 +117,14 @@ def pull_players(seasons: list[str]) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--seasons", nargs="+", default=DEFAULT_SEASONS)
+    ap.add_argument("--current", action="store_true",
+                    help="just the season in progress (for the every-other-day refresh)")
     ap.add_argument("--what", choices=["matches", "players", "both"], default="both")
     args = ap.parse_args()
+
+    if args.current:
+        from fbref_common import current_season
+        args.seasons = [current_season()]
 
     if args.what in ("matches", "both"):
         print("[matches]")
