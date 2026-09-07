@@ -37,7 +37,6 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 from build_match_model_table import _elo_update, _res  # noqa: E402
-from fbref_common import top_flight_clubs  # noqa: E402
 from dixon_coles import fit, match_probs  # noqa: E402
 from live.schema import normalize_team  # noqa: E402
 
@@ -295,11 +294,6 @@ def load_all_matches() -> pd.DataFrame:
     m["h"] = m["HomeTeam"].map(normalize_team)
     m["a"] = m["AwayTeam"].map(normalize_team)
     m["comp"] = m["comp"].replace(COMP_ALIASES)
-    # drop league matches involving a club that has never been top-flight in the
-    # observed window (2nd-tier churn leaking into the current-season feeds)
-    top = top_flight_clubs()
-    lg = m["competition_type"].eq("league")
-    m = m[~(lg & (~m["h"].isin(top) | ~m["a"].isin(top)))]
     return m.sort_values("Date")
 
 
@@ -312,7 +306,6 @@ def build_teams_list() -> list[dict]:
     # in this script from matches_all.csv / fbref_player_season_stats.csv
     sq["team_key"] = sq["team"].map(normalize_team)
     sq = sq[sq["src_league"].isin(LEAGUES)].copy()
-    sq = sq[sq["team_key"].isin(top_flight_clubs())]  # drop 2nd-tier churn
     sq["league"] = sq["src_league"].map(LEAGUES)
     latest = sq.sort_values("season").groupby(["team_key", "league"], as_index=False).last()
     return [
@@ -523,7 +516,6 @@ def build_team_elo_rankings(teams_list: list[dict]) -> dict:
 
     key2name = {t["team_key"]: t["name"] for t in teams_list}
     key2league = {t["team_key"]: t["league"] for t in teams_list}
-    _top = top_flight_clubs()
     name_of, s_league = {}, {}      # fallbacks for teams not in the current-season list
     for r in mm.itertuples(index=False):
         name_of[r.h_key], name_of[r.a_key] = r.HomeTeam, r.AwayTeam
@@ -554,7 +546,7 @@ def build_team_elo_rankings(teams_list: list[dict]) -> dict:
         seasons[seas] = _rank([
             {"team_key": tk, "name": _nm(tk),
              "league": s_league.get((seas, tk), key2league.get(tk, "")), "elo": _num(e)}
-            for tk, e in fin.items() if tk in _top
+            for tk, e in fin.items()
         ])
     return {"overall": overall, "seasons": seasons}
 

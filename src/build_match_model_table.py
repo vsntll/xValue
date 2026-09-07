@@ -86,17 +86,6 @@ def build() -> pd.DataFrame:
     m = m.dropna(subset=["Date", "FTHG", "FTAG"]).sort_values("Date").reset_index(drop=True)
     m["h"] = m["HomeTeam"].map(normalize_team)
     m["a"] = m["AwayTeam"].map(normalize_team)
-
-    # drop 2nd-tier clubs that leak into the modern league feeds (promoted /
-    # relegated churn is often wrong in the current season). Warmup rows (pre-2020,
-    # top flight by construction) and cup / European ties are exempt.
-    from fbref_common import top_flight_clubs
-    top = top_flight_clubs()
-    modern_league = (~m["_warm"]) & m["competition_type"].eq("league")
-    drop = modern_league & (~m["h"].isin(top) | ~m["a"].isin(top))
-    if drop.any():
-        print(f"dropped {int(drop.sum())} league matches involving a non-top-flight club")
-    m = m[~drop].reset_index(drop=True)
     for c in ("FTHG", "FTAG", "HxG", "AxG"):
         m[c] = pd.to_numeric(m[c], errors="coerce")
 
