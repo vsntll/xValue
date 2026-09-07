@@ -36,7 +36,9 @@ HEADERS = {
     "Origin": "https://www.sofascore.com",
 }
 
-# our code -> Sofascore unique-tournament id + {season year: season id}
+# our code -> Sofascore unique-tournament id + {season year: season id}.
+# Sofascore only exposes a player's CURRENT market value, so this is
+# current-season only - historical values come from the Transfermarkt scrape.
 LEAGUES = {
     "ENG1": (17, {"26/27": 96668, "25/26": 76986, "24/25": 61627}),
     "GER1": (35, {"26/27": 97464, "25/26": 77333, "24/25": 63516}),

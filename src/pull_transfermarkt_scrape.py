@@ -7,15 +7,21 @@ Per (league, season): the competition page gives the ~20 club ids/slugs, then
 each club's squad page (`/kader/verein/<id>/saison_id/<y>/plus/1`) lists every
 player with their market value at that time. Pages are cached, so re-runs resume.
 
-Run (Python 3.11, visible Chrome):
-    py -3.11 src/pull_transfermarkt_scrape.py                       # 2023-24..2025-26
-    py -3.11 src/pull_transfermarkt_scrape.py --seasons 2024-25
+ENG1/GER1/ESP1 are the modelled leagues. ITA1/FRA1 aren't modelled but their
+past-season values go into value_history.csv, so a Serie A / Ligue 1 -> Premier
+League mover isn't a cold start for the value model (a big chunk of the ~30%
+that had no prior value).
+
+Run (Python 3.11, visible Chrome - click the consent / WAF wall once):
+    py -3.11 src/pull_transfermarkt_scrape.py                        # 2023-24..2025-26, all 5 leagues
+    py -3.11 src/pull_transfermarkt_scrape.py --comps ITA1 FRA1 --seasons 2023-24 2024-25 2025-26
     py -3.11 src/pull_transfermarkt_scrape.py --parse-only
 
 Output:
     data/raw/tm/squads/<COMP>_<season>_<slug>.html
-    data/processed/tm_values_scraped.csv   -> folded into tm_player_values.csv by
-                                              parse_fbref_player_stats via a union
+    data/processed/tm_values_scraped.csv   -> folded into value_history.csv (all
+                                              leagues) + fbref_player_season_stats
+                                              (our 3) by their union steps
 """
 
 from __future__ import annotations
@@ -34,7 +40,7 @@ BROWSER = r"C:/Users/avasa/chrome-for-testing/chrome-win64/chrome.exe"
 SQUAD_DIR = PROJECT_ROOT / "data" / "raw" / "tm" / "squads"
 OUT = PROJECT_ROOT / "data" / "processed" / "tm_values_scraped.csv"
 
-COMPS = {"ENG1": "GB1", "GER1": "L1", "ESP1": "ES1"}
+COMPS = {"ENG1": "GB1", "GER1": "L1", "ESP1": "ES1", "ITA1": "IT1", "FRA1": "FR1"}
 DEFAULT_SEASONS = ["2023-24", "2024-25", "2025-26"]
 BASE = "https://www.transfermarkt.com"
 
@@ -79,7 +85,7 @@ async def _get(browser, url: str, tries: int = 3) -> str:
     return html
 
 
-async def scrape(seasons: list[str]) -> None:
+async def scrape(seasons: list[str], comps: list[str]) -> None:
     import nodriver as uc
 
     SQUAD_DIR.mkdir(parents=True, exist_ok=True)
@@ -89,7 +95,8 @@ async def scrape(seasons: list[str]) -> None:
         await _accept_consent(first)
         await first.sleep(2)
 
-        for code, wett in COMPS.items():
+        for code in comps:
+            wett = COMPS[code]
             for season in seasons:
                 y = _saison(season)
                 comp_html = await _get(
@@ -181,12 +188,13 @@ def parse() -> None:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--seasons", nargs="+", default=DEFAULT_SEASONS)
+    ap.add_argument("--comps", nargs="+", default=list(COMPS), choices=list(COMPS))
     ap.add_argument("--parse-only", action="store_true")
     args = ap.parse_args()
 
     if not args.parse_only:
         import nodriver as uc
-        uc.loop().run_until_complete(scrape(args.seasons))
+        uc.loop().run_until_complete(scrape(args.seasons, args.comps))
     parse()
 
 

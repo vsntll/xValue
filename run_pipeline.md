@@ -106,6 +106,15 @@ py -3.11 src/build_current_season_stats.py    # re-fold Understat's live season 
 # then re-run steps 2-4, or just let the next every-2-days run rebuild the site
 ```
 
+**Manual (one-off — Serie A / Ligue 1 past values, so a Serie A/Ligue 1 -> our
+leagues mover has a prior value; needs visible Chrome + a consent click):**
+
+```
+py -3.11 src/pull_transfermarkt_scrape.py --comps ITA1 FRA1 --seasons 2023-24 2024-25 2025-26
+py -3.11 src/build_value_history.py        # folds the new values in
+# then retrain: train_value_model.py + downstream
+```
+
 **Manual (less often — cup xG and Transfermarkt scrape values):**
 
 ```
