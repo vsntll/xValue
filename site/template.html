@@ -805,7 +805,14 @@
   renderLeaderboard();
 
   // ---------- fixtures ----------
-  function teamShort(n){ return n.replace(' FC','').replace(' AFC','').replace(' United',' Utd'); }
+  function teamShort(n){
+    if(!n) return n;
+    var s = String(n)
+      .replace(/^(AFC|1\.?\s*FC|1\.?\s*FSV)\s+/i, '')
+      .replace(/\s+(FC|AFC|CF|SAD)$/i, '')
+      .replace(' United', ' Utd').trim();
+    return s || String(n);
+  }
 
   function teamColor(name){
     var hash = 0;

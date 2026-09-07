@@ -140,6 +140,28 @@ _ALIASES = {
     "la coruna": "deportivo a coruna", "depor": "deportivo a coruna",
     "racing sant": "real racing", "racing santander": "real racing",
     "real racing club": "real racing",
+    # European cup opponents - the same club arrives under a short and a long
+    # name from different feeds (FotMob for cups vs. football-data for league),
+    # so an Arsenal-PSG tie would otherwise show up twice on the site.
+    "psg": "paris saint germain", "paris sg": "paris saint germain",
+    "ajax amsterdam": "ajax", "as monaco": "monaco", "as roma": "roma",
+    "internazionale": "inter", "inter milan": "inter",
+    "feyenoord rotterdam": "feyenoord", "psv eindhoven": "psv",
+    "racing genk": "genk", "krc genk": "genk", "kaa gent": "gent",
+    "kairat almaty": "kairat", "fc kairat": "kairat",
+    "ludogorets razgrad": "ludogorets", "malmo ff": "malmo",
+    "red star belgrade": "red star", "crvena zvezda": "red star",
+    "shakhtar d": "shakhtar donetsk", "sturm graz": "sk sturm graz",
+    "fk qarabag": "qarabag", "if elfsborg": "elfsborg",
+    "istanbul basaksehir": "basaksehir", "omonia nicosia": "omonia",
+    "ac omonia": "omonia", "fc copenhagen": "copenhagen", "kobenhavn": "copenhagen",
+    "f c kobenhavn": "copenhagen", "young boys bern": "young boys",
+    "bsc young boys": "young boys", "club brugge kv": "brugge", "club brugge": "brugge",
+    "sporting cp": "sporting", "sporting lisbon": "sporting", "sporting clube": "sporting",
+    "union sg": "union saint gilloise", "union st gilloise": "union saint gilloise",
+    "royale union saint gilloise": "union saint gilloise", "union": "union saint gilloise",
+    "vitoria de guimaraes": "vitoria guimaraes", "sc braga": "braga",
+    "fk shkendija": "shkendija", "kf shkendija": "shkendija",
 }
 
 

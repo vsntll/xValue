@@ -316,6 +316,9 @@ def build_teams_list() -> list[dict]:
 
 def build_recent_matches(m: pd.DataFrame) -> dict[str, list[dict]]:
     recent: dict[str, list[dict]] = {}
+    seen: dict[str, set] = {}   # team_key -> {(date, opp_key)} so a match that
+    #                             slipped past build_matches_all's dedup (a rare
+    #                             cross-source name variant) shows only once
     for _, r in m.sort_values("Date", ascending=False).iterrows():
         legs = (
             (r["h"], r["a"], r["HomeTeam"], r["AwayTeam"], r["FTHG"], r["FTAG"],
@@ -327,6 +330,10 @@ def build_recent_matches(m: pd.DataFrame) -> dict[str, list[dict]]:
             lst = recent.setdefault(team_key, [])
             if len(lst) >= RECENT_N:
                 continue
+            sig = (r["Date"].strftime("%Y-%m-%d"), opp_key)
+            if sig in seen.setdefault(team_key, set()):
+                continue
+            seen[team_key].add(sig)
             result = "W" if gf > ga else "L" if gf < ga else "D"
             lst.append({
                 "date": r["Date"].strftime("%Y-%m-%d"), "opponent": opp_name, "opponent_key": opp_key,
