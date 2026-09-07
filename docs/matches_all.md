@@ -4,19 +4,19 @@ Built by `src/build_matches_all.py` from every match source. One row per match,
 all competitions, 2020-21 .. 2026-27, top flight of England / Germany / Spain /
 Italy / France plus the cups their clubs play in.
 
-## Composition (13,446 matches as of 2026-09-07)
+## Composition (13,507 matches as of 2026-09-07)
 
 | competition_type | rows | source | stats |
 | --- | --- | --- | --- |
-| league | 10,788 | football-data.co.uk (2020-26) + live sources (2026-27) | shots/SoT/corners/fouls/cards everywhere; **xG 93%** (Understat); possession only 2026-27 |
+| league | 10,876 | football-data.co.uk (2020-26) + live sources (2026-27) | shots/SoT/corners/fouls/cards everywhere; **xG 97%** (Understat); possession only 2026-27 |
 | european (UCL/UEL/UECL) | 1,368 | FBref match logs + ESPN/FotMob (2024-25 on) | result-only history; **xG + shots for 2024-25, 2025-26, 2026-27** |
-| domestic_cup (FA/DFB/Copa/Coppa/Coupe) | 977 | same | same |
-| league_cup (EFL) | 265 | same | same |
+| domestic_cup (FA/DFB/Copa/Coppa/Coupe) | 959 | same | same |
+| league_cup (EFL) | 256 | same | same |
 | super_cup | 36 | same | |
 | playoff | 12 | same | |
 
-Overall: **xG 82%**, shots ~84%, possession ~10%. Cup xG: 0% for 2020-24,
-76-78% for 2024-25 & 2025-26, ~100% for 2026-27.
+Overall: **xG 86%**, shots ~84%, possession ~10%. Cup xG: 0% for 2020-24,
+~90% for 2024-25 & 2025-26, ~100% for 2026-27.
 
 Cup/European rows are scoped to ties involving a club from one of the five
 leagues that season (matches FBref). The `normalize_team` transliteration +
@@ -33,10 +33,10 @@ drift - step 4).
   per historical season, then re-run `build_matches_all.py` after teaching it to
   read `data/raw/live/*_<season>.csv`. ~2,300 FotMob matchDetails calls - ToS-
   sensitive at that volume.
-- **Historical league possession** (all 6,396 rows): football-data.co.uk has no
-  possession. ESPN box scores do - `pull_live.py` per historical season with
-  `--sources espn`, ~14k summary calls.
-- **Name-match misses**: ~7% of league rows don't get Understat xG (spelling
+- **Historical league possession** (every league row before the live 2026-27
+  season): football-data.co.uk has no possession. ESPN box scores do -
+  `pull_live.py` per historical season with `--sources espn`, ~14k summary calls.
+- **Name-match misses**: ~3% of league rows don't get Understat xG (spelling
   drift the alias map in `live/schema.py` doesn't cover yet).
 
 ## Columns

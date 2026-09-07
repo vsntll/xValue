@@ -42,8 +42,10 @@ One row per match.
 | `AvgH/D/A` | market-average pre-match 1X2 odds |
 | `AvgCH/CD/CA` | market-average closing 1X2 odds |
 
-Odds columns are carried only for the step 8 benchmark (model vs. bookmaker);
-the outcome model itself does not train on them. `AvgH/D/A` is the most complete
+Odds columns are carried for the step 8 benchmark (model vs. bookmaker) and, in
+the **hybrid** model only, the market *opening* line (`AvgH/D/A`) is used as a
+feature; the **pure** model trains on data alone. The Bet365 *closing* columns
+(`B365C*`) are benchmark-only, never a feature. `AvgH/D/A` is the most complete
 odds column (no nulls); `B365H` has a handful of gaps in the ongoing season where
 Bet365 prices had not posted at pull time.
 

@@ -80,9 +80,12 @@ possession, GCA). The mirror stopped updating advanced stats after 2022-23, so
 2023-24 onward waits for API-Football.
 
 `data/processed/fbref_player_season_stats.csv` = one row per (player, squad,
-season), **11,056 rows, 290 cols**. Basic stats everywhere; advanced on ~4,150
-top-flight 2020-22 rows (84 % of mirror rows joined — name-mismatch losses; a
-player-id join would lift this).
+season). The FBref scrape + parse contributes **~11,200 rows** (PL / Bundesliga /
+La Liga, 2020-21 … 2026-27); `build_understat_player_seasons.py` then adds the
+Serie A / Ligue 1 rows and `build_current_season_stats.py` rewrites the current
+season, for **18,877 rows × 291 cols** total. Basic stats everywhere; advanced
+on ~4,150 top-flight 2020-22 rows (84 % of mirror rows joined — name-mismatch
+losses; a player-id join would lift this).
 
 ### Market-value join (step 3 target)
 
