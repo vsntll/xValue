@@ -616,9 +616,16 @@
 
   // ---------- player Elo badge (shown anywhere a player is named) ----------
   var eloIndex = DATA.player_elo_index || { by_key:{}, by_name:{} };
+  var _TRANSLIT = {'ø':'o','ß':'ss','ł':'l','ı':'i','đ':'dj','æ':'ae','œ':'oe','ð':'d','þ':'th','ħ':'h','ŧ':'t','ŋ':'n'};
+  function pnameKey(s){          // mirror export_site_data._pname_key / live.schema.deaccent
+    if(!s) return '';
+    var t = String(s).toLowerCase().replace(/[øßłıđæœðþħŧŋ]/g, function(c){ return _TRANSLIT[c] || c; });
+    return t.normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
+  }
   function eloRating(name, teamKey){
     if(!name) return null;
-    var n = String(name).trim().toLowerCase();
+    var n = pnameKey(name);
+    if(!n) return null;
     var r = null;
     if(teamKey && eloIndex.by_key) r = eloIndex.by_key[n + '|' + teamKey];
     if(r==null && eloIndex.by_name) r = eloIndex.by_name[n];

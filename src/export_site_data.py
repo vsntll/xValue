@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import base64
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -38,7 +39,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 from build_match_model_table import _elo_update, _res  # noqa: E402
 from dixon_coles import fit, match_probs  # noqa: E402
-from live.schema import normalize_team  # noqa: E402
+from live.schema import deaccent, normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 OUT = ROOT / "site" / "data.json"
@@ -649,16 +650,25 @@ def build_player_elo_leaderboard(teams_list: list[dict]) -> dict | None:
     return result
 
 
+def _pname_key(s) -> str:
+    """Accent-folded, punctuation-stripped, lowercased name key. Understat spells
+    "Fermín López" / FBref "Fermin López" - deaccent() collapses both to the same
+    key so the Elo badge still resolves across the sources."""
+    return " ".join(re.sub(r"[^a-z0-9 ]", " ", deaccent(str(s)).lower()).split())
+
+
 def build_player_elo_index() -> dict:
     """A flat name -> latest player-Elo lookup so a rating badge can sit next to
     a player *anywhere* he's named on the site (Players table, value leaderboard,
     Teams roster, goalscorer props, Match Sim, the worked example), not only on
     the Rankings tab. Uses the whole of player_elo.csv (not just the leaderboard
     pool), the latest rating per player (inactivity decay included), at the club
-    of his last real appearance.
+    of his last real appearance. Keyed on an accent-folded name so an
+    Understat/FBref accent mismatch doesn't drop the badge; the template applies
+    the same fold before the lookup.
 
-      by_key  "<player lower>|<team_key>" -> rating  (exact, survives a transfer)
-      by_name "<player lower>"            -> rating  (fallback where no key)
+      by_key  "<name key>|<team_key>" -> rating  (exact, survives a transfer)
+      by_name "<name key>"            -> rating  (fallback where no key)
     """
     p = PROC / "player_elo.csv"
     if not p.exists():
@@ -682,9 +692,11 @@ def build_player_elo_index() -> dict:
         if pd.isna(rating):
             continue
         rating = int(round(float(rating)))
-        nm_l = str(lr["player"]).strip().lower()
-        by_key[f"{nm_l}|{lr['team_key']}"] = rating
-        by_name[nm_l] = max(by_name.get(nm_l, -10**9), rating)
+        nk = _pname_key(lr["player"])
+        if not nk:
+            continue
+        by_key[f"{nk}|{lr['team_key']}"] = rating
+        by_name[nk] = max(by_name.get(nk, -10**9), rating)
     return {"by_key": by_key, "by_name": by_name}
 
 
