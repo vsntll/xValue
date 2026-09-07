@@ -61,6 +61,16 @@ US_TO_FBREF = {
 US_PASSTHROUGH = ["xg", "np_xg", "xa", "np_goals", "shots", "key_passes",
                   "xg_chain", "xg_buildup"]  # -> understat__<col>, consumed directly
 
+# FotMob per-season column -> the fbref column it fills (the stats Understat
+# doesn't carry). Totals; per-90s recomputed after. src/pull_fotmob_players.py.
+FOTMOB_TO_FBREF = {
+    "sot": "shooting__Standard_SoT",
+    "fouls": "misc__Performance_Fls", "fouled": "misc__Performance_Fld",
+    "tackles": "defense__Tkl_Tackles", "interceptions": "defense__Int",
+    "blocks": "defense__Blocks_Blocks", "clearances": "defense__Clr",
+    "touches": "possession__Touches_Touches", "saves": "keeper__Performance_Saves",
+}
+
 
 def _starts(cur: str) -> pd.Series:
     """(_pk, _tk) -> count of appearances that season where the player started
@@ -265,6 +275,9 @@ def build() -> pd.DataFrame:
         print(f"  dropped {int((~keep).sum())} current rows at non-top-flight clubs: "
               f"{sorted(updated.loc[~keep, 'Squad'].dropna().unique())}")
     updated = updated[keep]
+
+    updated = _fill_from_fotmob(updated, cur, f.columns)
+
     # FBref leaves Age blank all of the current season - derive it from Born for
     # every current row (kept or refreshed), matching build_xy's own fallback.
     born = pd.to_numeric(updated["Born"], errors="coerce")
@@ -285,6 +298,64 @@ def build() -> pd.DataFrame:
           f"~{n_new} new Understat-only), {len(hist)} earlier-season rows kept "
           f"-> {FBREF.name}")
     return out
+
+
+def _fill_from_fotmob(updated: pd.DataFrame, cur: str, cols) -> pd.DataFrame:
+    """Fill the stats Understat doesn't carry (SoT, fouls, tackles / int / blocks /
+    clearances, touches, saves) from FotMob's per-match player stats. Matched by
+    normalised name + club, with the same fuzzy fallback as the Understat join."""
+    fm_path = PROC / "fotmob_player_season.csv"
+    if not fm_path.exists():
+        return updated
+    fm = pd.read_csv(fm_path)
+    fm = fm[fm["season"] == cur].copy()
+    if fm.empty:
+        return updated
+    for c in FOTMOB_TO_FBREF:
+        fm[c] = pd.to_numeric(fm[c], errors="coerce")
+    fm["pk"] = fm["player"].map(_norm_name)
+    fm["tk"] = fm["team"].map(normalize_team)
+    by_kt = {(r.pk, r.tk): r for r in fm.itertuples(index=False)}
+    by_club: dict[str, list] = {}
+    for r in fm.itertuples(index=False):
+        by_club.setdefault(r.tk, []).append(r)
+
+    tgt = [c for c in FOTMOB_TO_FBREF.values() if c in cols]
+    filled = 0
+    for i in updated.index:
+        pk = _norm_name(updated.at[i, "player_slug"])
+        tk = normalize_team(updated.at[i, "Squad"])
+        r = by_kt.get((pk, tk))
+        if r is None:
+            for cand in by_club.get(tk, []):
+                if _names_close(pk, cand.pk):
+                    r = cand
+                    break
+        if r is None:
+            continue
+        n90 = pd.to_numeric(pd.Series([updated.at[i, "standard__Playing Time_90s"]]),
+                            errors="coerce").iat[0]
+        for fm_col, fb_col in FOTMOB_TO_FBREF.items():
+            if fb_col in tgt and pd.notna(getattr(r, fm_col)):
+                updated.at[i, fb_col] = getattr(r, fm_col)
+        sot, sh = getattr(r, "sot"), pd.to_numeric(updated.at[i, "shooting__Standard_Sh"], errors="coerce")
+        gls = pd.to_numeric(updated.at[i, "standard__Performance_Gls"], errors="coerce")
+        if "shooting__Standard_SoT%" in cols and pd.notna(sot) and sh:
+            updated.at[i, "shooting__Standard_SoT%"] = round(100 * sot / sh, 1)
+        if "shooting__Standard_G/Sh" in cols and pd.notna(gls) and sh:
+            updated.at[i, "shooting__Standard_G/Sh"] = round(gls / sh, 2)
+        if "shooting__Standard_SoT/90" in cols and pd.notna(sot) and n90:
+            updated.at[i, "shooting__Standard_SoT/90"] = round(sot / n90, 2)
+        filled += 1
+    print(f"  filled {filled} rows' FBref-only stats (SoT/fouls/tackles/...) from FotMob")
+    return updated
+
+
+def _names_close(a: str, b: str) -> bool:
+    ta, tb = a.split(), b.split()
+    sa, sb = set(ta), set(tb)
+    return (len(sa) >= 2 and len(sb) >= 2 and (sa <= sb or sb <= sa)
+            and len(sa & sb) >= 2 and (ta[0] == tb[0] or ta[-1] == tb[-1]))
 
 
 def _sub(a, b):

@@ -93,10 +93,18 @@ jobs:
         continue-on-error: true
         run: python src/pull_understat.py --current --what both
 
-      # fold Understat's current season into fbref_player_season_stats.csv so the
-      # value model / site cards have fresh goals/assists/minutes/xG without a
-      # manual FBref scrape (finished seasons + deep stats stay as FBref left them)
-      - name: Refresh current-season player stats from Understat
+      # the stats Understat doesn't carry: shots on target, fouls, tackles /
+      # interceptions / blocks / clearances, touches, saves - from FotMob's
+      # per-match player box scores (cached, so only new matches cost a request)
+      - name: Pull current-season per-player stats (FotMob)
+        continue-on-error: true
+        run: python src/pull_fotmob_players.py --current
+
+      # fold Understat + FotMob's current season into fbref_player_season_stats.csv
+      # so the value model / site cards have fresh goals/assists/minutes/xG/SoT/
+      # fouls without a manual FBref scrape (finished seasons + the unused deep
+      # FBref columns stay as the last FBref parse left them)
+      - name: Refresh current-season player stats (Understat + FotMob)
         run: python src/build_current_season_stats.py
 
       - name: Rebuild tables
