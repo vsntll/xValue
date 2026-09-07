@@ -66,12 +66,29 @@ PER90 = {
     "understat__xg_buildup": "xgbuildup_p90",
     "misc__Performance_Fls": "fouls_p90",
     "misc__Performance_Fld": "fouled_p90",
+    # defensive / build-up volume - available every season from FBref's basic
+    # 'misc' table (the gated advanced tables aren't), fresh for the current
+    # season from FotMob. Lets the model separate a ball-winning midfielder or
+    # an overlapping full-back from a same-output player who does neither.
+    "misc__Performance_Int": "int_p90",
+    "misc__Performance_TklW": "tklw_p90",
+    "misc__Performance_Crs": "crosses_p90",
+    "misc__Performance_Off": "offsides_p90",
 }
 FLAT = {
     "standard__Playing Time_Min": "minutes",
     "standard__Playing Time_Starts": "starts",
     "shooting__Standard_G/Sh": "g_per_shot",
-    "shooting__Standard_Dist": "shot_dist",
+    "shooting__Standard_SoT%": "sot_pct",
+    "playing_time__Starts_Compl": "complete_matches",
+    "playing_time__Playing Time_Mn/MP": "mins_per_match",
+    "standard__Performance_PKatt": "pens_taken",          # designated taker -> status
+    # how the team does with this player on the pitch - a strong, low-circularity
+    # value signal (good players lift results; also captures being trusted in
+    # the big games) that the model wasn't using.
+    "playing_time__Team Success_PPM": "team_ppm_on",
+    "playing_time__Team Success_+/-90": "team_gd90_on",
+    "playing_time__Team Success_On-Off": "team_on_off",
 }
 
 

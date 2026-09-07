@@ -64,11 +64,12 @@ US_PASSTHROUGH = ["xg", "np_xg", "xa", "np_goals", "shots", "key_passes",
 # FotMob per-season column -> the fbref column it fills (the stats Understat
 # doesn't carry). Totals; per-90s recomputed after. src/pull_fotmob_players.py.
 FOTMOB_TO_FBREF = {
-    "sot": "shooting__Standard_SoT",
-    "fouls": "misc__Performance_Fls", "fouled": "misc__Performance_Fld",
-    "tackles": "defense__Tkl_Tackles", "interceptions": "defense__Int",
-    "blocks": "defense__Blocks_Blocks", "clearances": "defense__Clr",
-    "touches": "possession__Touches_Touches", "saves": "keeper__Performance_Saves",
+    "sot": ["shooting__Standard_SoT"],
+    "fouls": ["misc__Performance_Fls"], "fouled": ["misc__Performance_Fld"],
+    "tackles": ["defense__Tkl_Tackles", "misc__Performance_TklW"],
+    "interceptions": ["defense__Int", "misc__Performance_Int"],
+    "blocks": ["defense__Blocks_Blocks"], "clearances": ["defense__Clr"],
+    "touches": ["possession__Touches_Touches"], "saves": ["keeper__Performance_Saves"],
 }
 
 
@@ -320,7 +321,7 @@ def _fill_from_fotmob(updated: pd.DataFrame, cur: str, cols) -> pd.DataFrame:
     for r in fm.itertuples(index=False):
         by_club.setdefault(r.tk, []).append(r)
 
-    tgt = [c for c in FOTMOB_TO_FBREF.values() if c in cols]
+    valid = {fm: [c for c in fbs if c in cols] for fm, fbs in FOTMOB_TO_FBREF.items()}
     filled = 0
     for i in updated.index:
         pk = _norm_name(updated.at[i, "player_slug"])
@@ -335,9 +336,11 @@ def _fill_from_fotmob(updated: pd.DataFrame, cur: str, cols) -> pd.DataFrame:
             continue
         n90 = pd.to_numeric(pd.Series([updated.at[i, "standard__Playing Time_90s"]]),
                             errors="coerce").iat[0]
-        for fm_col, fb_col in FOTMOB_TO_FBREF.items():
-            if fb_col in tgt and pd.notna(getattr(r, fm_col)):
-                updated.at[i, fb_col] = getattr(r, fm_col)
+        for fm_col, fb_cols in valid.items():
+            v = getattr(r, fm_col)
+            if pd.notna(v):
+                for fb_col in fb_cols:
+                    updated.at[i, fb_col] = v
         sot, sh = getattr(r, "sot"), pd.to_numeric(updated.at[i, "shooting__Standard_Sh"], errors="coerce")
         gls = pd.to_numeric(updated.at[i, "standard__Performance_Gls"], errors="coerce")
         if "shooting__Standard_SoT%" in cols and pd.notna(sot) and sh:
