@@ -566,8 +566,9 @@
 
   <section id="tab-method" hidden>
     <p class="method-intro">Every number on this page traces back to real matches, real stats and one
-      fitted model per task — no black box. Below is the exact arithmetic, run on today's actual data:
-      a real upcoming fixture, a real player, a real valuation.</p>
+      fitted model per task — no black box, and no market value anywhere in the Elo ratings. Below is
+      the exact arithmetic, run on today's actual data: a real upcoming fixture, a real player, a real
+      valuation, a real rating.</p>
     <div id="methodBody"></div>
   </section>
 
@@ -1228,8 +1229,36 @@
       html += '<div class="empty">No worked example available in this data snapshot.</div>';
     }
 
+    var peb = (DATA.player_elo_leaderboard && DATA.player_elo_leaderboard.overall) || [];
+    var topElo = peb[0];
     html += '<div class="method-card">' +
-      '<h3><span class="num-tag">4</span>38-game pace projection</h3>' +
+      '<h3><span class="num-tag">4</span>Elo ratings &mdash; teams and players</h3>' +
+      '<p>Two <b>separate</b> Elo systems, and no market value in either. <b>Team Elo</b> is goals-based and updates on ' +
+      'every match a club plays (league, cup, European): everyone starts at 1500, and a result moves both sides by ' +
+      '<code>K &times; margin-of-victory &times; (result &minus; expected result)</code>, where the expected result comes ' +
+      'from the rating gap. Beating a team you were meant to beat barely moves the needle; an upset moves it a lot. This ' +
+      'is the same rating the win-odds model leans on. A quarter of each club\'s gap from 1500 reverts every summer; the ' +
+      'per-season ladder on the Rankings tab resets harder.</p>' +
+      '<p><b>Player Elo</b> is built from scratch from one number per appearance: <code>non-penalty xG + 0.7 &times; xA</code>. ' +
+      'That real output is measured against an <b>expectation</b> that folds in the opponent\'s defensive strength (their ' +
+      'team Elo) and the player\'s own current rating &mdash; so a 1700-rated player has to keep producing at a 1700 level ' +
+      'just to hold it. <code>new = old + K &times; (output &minus; expected) / position-group spread</code>, clipped each ' +
+      'match. Windowed to the last three seasons; half the gap from 1500 reverts between seasons, and a player who stops ' +
+      'featuring bleeds back toward 1500 for every match his club plays without him (after a two-game grace). The small ' +
+      'badge beside a player anywhere on this site is this number &mdash; <b>1500 is an average top-five-league player</b>. ' +
+      'Full tables, position filters and per-season ladders are on the <b>Rankings</b> tab.</p>' +
+      (topElo ? '<div class="worked"><div class="wt">Worked for '+esc(topElo.player)+' ('+esc(topElo.squad)+
+          (topElo.pos_group ? ', '+esc(topElo.pos_group) : '')+')</div>' +
+        wrow('Every player starts at', '1500') +
+        wrowHl('Current rating', String(Math.round(topElo.rating))) +
+        wrowResult('vs. an average player', (topElo.rating>=1500?'+':'')+Math.round(topElo.rating-1500)) +
+        '</div><div class="method-note">Top of the overall board right now &mdash; a rating this far above 1500 means ' +
+        'he has been beating the opponent-adjusted output bar, appearance after appearance, across the three-season ' +
+        'window. The Rankings tab shows the last ten updates as a sparkline.</div>' : '') +
+      '</div>';
+
+    html += '<div class="method-card">' +
+      '<h3><span class="num-tag">5</span>38-game pace projection</h3>' +
       '<p>Not a trained model &mdash; just arithmetic, and labelled as such everywhere it appears. ' +
       '<code>projected minutes = min(90, minutes per appearance) &times; 38 &times; season minutes-share</code>, then ' +
       '<code>projected goals = current goals-per-90 &times; (projected minutes / 90)</code>, same for assists. Shown ' +
@@ -1237,7 +1266,7 @@
       'stable rate.</p></div>';
 
     html += '<div class="method-card">' +
-      '<h3><span class="num-tag">5</span>League tables &amp; the projected final table</h3>' +
+      '<h3><span class="num-tag">6</span>League tables &amp; the projected final table</h3>' +
       '<p>The <b>current table</b> (Teams tab) is plain arithmetic over match results &mdash; 3 points a win, 1 a draw, ' +
       'ranked by points then goal difference then goals for &mdash; computed directly from the same results feeding ' +
       'every model on this page, not scraped from anywhere else.</p>' +
@@ -1248,7 +1277,7 @@
       'in November.</p></div>';
 
     html += '<div class="method-card">' +
-      '<h3><span class="num-tag">6</span>Cup finals &amp; honours</h3>' +
+      '<h3><span class="num-tag">7</span>Cup finals &amp; honours</h3>' +
       '<p>There is no round-by-round bracket in this data, so a competition\'s final is <b>inferred</b> as the '+
       'last-dated match recorded for that season + competition. Checked against several real finals (2021-22 Champions '+
       'League: Real Madrid 1-0 Liverpool; 2023-24 Copa del Rey: Athletic Club 1-1 Mallorca, correctly flagged as a '+
@@ -1257,7 +1286,7 @@
       'penalty-shootout results are not in this data. The in-progress 2026-27 season is excluded entirely.</p></div>';
 
     html += '<div class="method-card">' +
-      '<h3><span class="num-tag">7</span>The two games</h3>' +
+      '<h3><span class="num-tag">8</span>The two games</h3>' +
       '<p><b>Match Sim</b> uses the same Dixon-Coles ratings as card 1. For the chosen matchup it computes ' +
       '<code>&lambda;<sub>home</sub> = exp(att<sub>home</sub> + def<sub>away</sub> + home)</code> and the mirror for the away side, ' +
       'draws each team\'s goals from <code>Poisson(&lambda;)</code>, then hands every goal to a player picked in proportion to ' +
