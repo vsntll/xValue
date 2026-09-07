@@ -1,7 +1,9 @@
-"""Understat xG - the historical + current xG source for the three leagues.
+"""Understat xG - the historical + current xG source for the big-5 leagues.
 
 FBref gates its xG columns from scrapers and the worldfootballR mirror stops at
-2022-23, so xG comes from Understat (EPL / Bundesliga / La Liga, 2014-present).
+2022-23, so xG comes from Understat (EPL / Bundesliga / La Liga / Serie A /
+Ligue 1, 2014-present); it is also the whole player spine for Serie A / Ligue 1
+(no FBref scrape - see build_understat_player_seasons.py).
 soccerdata's reader uses a TLS-fingerprint HTTP client - no browser, no
 Cloudflare. Understat has **no cup / European coverage** - that xG comes from
 FotMob (src/live/fotmob.py).
@@ -33,6 +35,8 @@ LEAGUE_KEY = {
     "ENG1": "ENG-Premier League",
     "GER1": "GER-Bundesliga",
     "ESP1": "ESP-La Liga",
+    "ITA1": "ITA-Serie A",
+    "FRA1": "FRA-Ligue 1",
 }
 DEFAULT_SEASONS = [
     "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27",

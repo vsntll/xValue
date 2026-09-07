@@ -31,9 +31,9 @@ SLEEP = 0.5
 
 # our comp code -> FotMob league id
 _LID = {
-    "ENG1": 47, "GER1": 54, "ESP1": 87,
+    "ENG1": 47, "GER1": 54, "ESP1": 87, "ITA1": 55, "FRA1": 53,
     "UCL": 42, "UEL": 73, "UECL": 10216,
-    "FA": 132, "EFL": 133, "DFB": 209, "CDR": 138,
+    "FA": 132, "EFL": 133, "DFB": 209, "CDR": 138, "CI": 141, "CDF": 134,
 }
 # FotMob "Top stats" title -> (home col, away col) target
 _STAT_TITLES = {

@@ -32,9 +32,11 @@ COLS = [
     "HS", "AS", "HST", "AST", "HC", "AC", "HF", "AF", "HY", "AY", "HR", "AR",
     "HPoss", "APoss", "HxG", "AxG", "source",
 ]
-DIV_LEAGUE = {"E0": "Premier League", "D1": "Bundesliga", "SP1": "La Liga"}
-DIV_CODE = {"E0": "ENG1", "D1": "GER1", "SP1": "ESP1"}
-COMP_TO_CODE = {"Premier League": "ENG1", "Bundesliga": "GER1", "La Liga": "ESP1"}
+DIV_LEAGUE = {"E0": "Premier League", "D1": "Bundesliga", "SP1": "La Liga",
+              "I1": "Serie A", "F1": "Ligue 1"}
+DIV_CODE = {"E0": "ENG1", "D1": "GER1", "SP1": "ESP1", "I1": "ITA1", "F1": "FRA1"}
+COMP_TO_CODE = {"Premier League": "ENG1", "Bundesliga": "GER1", "La Liga": "ESP1",
+                "Serie A": "ITA1", "Ligue 1": "FRA1"}
 
 
 def _key(df: pd.DataFrame) -> pd.Series:

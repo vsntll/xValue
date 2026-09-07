@@ -19,12 +19,13 @@ CHALLENGE_MARKERS = ("Just a moment", "Enable JavaScript and cookies")
 NAV_PAUSE = (1.0, 2.5)  # polite random gap between page loads
 
 # league key -> (FBref competition id, URL slug, short code for filenames).
-# Top flight only - the three 2nd tiers (Championship / 2.Bundesliga / Segunda)
-# were dropped from scope 2026-09-03.
+# Big-5 top flights.
 COMPS = {
     "ENG-Premier League": (9, "Premier-League", "ENG1"),
     "GER-Bundesliga": (20, "Bundesliga", "GER1"),
     "ESP-La Liga": (12, "La-Liga", "ESP1"),
+    "ITA-Serie A": (11, "Serie-A", "ITA1"),
+    "FRA-Ligue 1": (13, "Ligue-1", "FRA1"),
 }
 DEFAULT_LEAGUES = list(COMPS)
 DEFAULT_SEASONS = [

@@ -42,6 +42,8 @@ DIVISIONS = {
     "E0": ("Premier League", 1),
     "D1": ("Bundesliga", 1),
     "SP1": ("La Liga", 1),
+    "I1": ("Serie A", 1),
+    "F1": ("Ligue 1", 1),
 }
 
 # Season code = the two end-years, e.g. 2020-21 -> "2021". The last entry is the

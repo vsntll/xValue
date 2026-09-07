@@ -37,7 +37,7 @@ BASE = "https://www.fotmob.com/api/data"
 HDRS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)", "Accept": "application/json"}
 SLEEP = 0.5
 
-LEAGUE_ID = {"ENG1": 47, "GER1": 54, "ESP1": 87}
+LEAGUE_ID = {"ENG1": 47, "GER1": 54, "ESP1": 87, "ITA1": 55, "FRA1": 53}
 
 # FotMob playerStats key -> our column. `value` is taken even for the
 # fraction-with-percentage entries (aerials etc.), which is the "won"/"made" count.

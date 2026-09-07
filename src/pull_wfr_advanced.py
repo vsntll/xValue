@@ -34,8 +34,9 @@ BASE = ("https://raw.githubusercontent.com/JaseZiv/worldfootballR_data/master/"
 CATEGORIES = ["standard", "shooting", "passing", "passing_types",
               "gca", "defense", "possession", "keepers_adv"]
 
-# mirror Comp -> our src_league code (only the three we cover)
-COMP_CODE = {"Premier League": "ENG1", "Bundesliga": "GER1", "La Liga": "ESP1"}
+# mirror Comp -> our src_league code (the big-5)
+COMP_CODE = {"Premier League": "ENG1", "Bundesliga": "GER1", "La Liga": "ESP1",
+             "Serie A": "ITA1", "Ligue 1": "FRA1"}
 SEASON_END_YEARS = {2021: "2020-21", 2022: "2021-22", 2023: "2022-23"}
 
 # identity columns to keep once (the rest get a category prefix)

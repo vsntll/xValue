@@ -47,7 +47,8 @@ INDEX = ROOT / "site" / "index.html"
 PLACEHOLDER = "__SITE_DATA_JSON__"
 FERMIN_IMG = ROOT / "site" / "fermin.png"       # easter egg portrait (webp bytes, .png name)
 FERMIN_PLACEHOLDER = "__FERMIN_IMG__"
-LEAGUES = {"ENG1": "Premier League", "ESP1": "La Liga", "GER1": "Bundesliga"}
+LEAGUES = {"ENG1": "Premier League", "ESP1": "La Liga", "GER1": "Bundesliga",
+           "ITA1": "Serie A", "FRA1": "Ligue 1"}
 MIN_MIN_CURRENT = 45   # min minutes this season to trust current-season rates
 MIN_MIN_PROJECT = 180  # min minutes to publish a pace projection / prop odds
 

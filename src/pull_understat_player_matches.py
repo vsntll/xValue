@@ -45,7 +45,8 @@ from live.schema import deaccent  # noqa: E402
 
 PROCESSED = PROJECT_ROOT / "data" / "processed"
 OUT = PROCESSED / "understat_player_matches.csv"
-LEAGUE_KEY = {"ENG1": "ENG-Premier League", "GER1": "GER-Bundesliga", "ESP1": "ESP-La Liga"}
+LEAGUE_KEY = {"ENG1": "ENG-Premier League", "GER1": "GER-Bundesliga", "ESP1": "ESP-La Liga",
+              "ITA1": "ITA-Serie A", "FRA1": "FRA-Ligue 1"}
 DEFAULT_SEASONS = [
     "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27",
 ]

@@ -21,7 +21,7 @@ MATCH_COLS = [
     "HPoss", "APoss", "HxG", "AxG", "match_id",
 ]
 
-# our three leagues + the cups their clubs play in. Per-source competition codes;
+# the big-5 leagues + the cups their clubs play in. Per-source competition codes;
 # None = that source doesn't carry it.
 LEAGUES: dict[str, dict] = {
     "ENG1": dict(name="Premier League", tier=1, competition_type="league",
@@ -30,6 +30,10 @@ LEAGUES: dict[str, dict] = {
                  espn="ger.1", fdorg="BL1"),
     "ESP1": dict(name="La Liga", tier=1, competition_type="league",
                  espn="esp.1", fdorg="PD"),
+    "ITA1": dict(name="Serie A", tier=1, competition_type="league",
+                 espn="ita.1", fdorg="SA"),
+    "FRA1": dict(name="Ligue 1", tier=1, competition_type="league",
+                 espn="fra.1", fdorg="FL1"),
 }
 CUPS: dict[str, dict] = {
     "UCL": dict(name="Champions League", tier=1, competition_type="european",
@@ -46,9 +50,13 @@ CUPS: dict[str, dict] = {
                 espn="ger.dfb_pokal", fdorg=None),
     "CDR": dict(name="Copa del Rey", tier=1, competition_type="domestic_cup",
                 espn="esp.copa_del_rey", fdorg=None),
+    "CI": dict(name="Coppa Italia", tier=1, competition_type="domestic_cup",
+               espn="ita.coppa_italia", fdorg=None),
+    "CDF": dict(name="Coupe de France", tier=1, competition_type="domestic_cup",
+                espn="fra.coupe_de_france", fdorg=None),
 }
 ALL_COMPS = {**LEAGUES, **CUPS}
-DEFAULT_COMPS = list(LEAGUES) + ["UCL", "FA", "EFL", "DFB", "CDR"]
+DEFAULT_COMPS = list(LEAGUES) + ["UCL", "UEL", "UECL", "FA", "EFL", "DFB", "CDR", "CI", "CDF"]
 
 
 def blank_frame() -> pd.DataFrame:
@@ -162,6 +170,48 @@ _ALIASES = {
     "royale union saint gilloise": "union saint gilloise", "union": "union saint gilloise",
     "vitoria de guimaraes": "vitoria guimaraes", "sc braga": "braga",
     "fk shkendija": "shkendija", "kf shkendija": "shkendija",
+    # --- Serie A. football-data.co.uk's short names are the canonical key;
+    #     Understat ("Hellas Verona"), FotMob ("AC Milan") and the German
+    #     Transfermarkt slugs ("juventus-turin", "inter-mailand", "ssc-neapel")
+    #     all fold onto it. Two-token forms ("inter mailand") are matched before
+    #     "mailand" alone so Inter and Milan don't merge.
+    "juventus turin": "juventus", "juve": "juventus",
+    "inter mailand": "inter", "inter milano": "inter", "fc internazionale milano": "inter",
+    "ac milan": "milan", "ac mailand": "milan", "mailand": "milan", "milan ac": "milan",
+    "ssc napoli": "napoli", "ssc neapel": "napoli", "neapel": "napoli",
+    "as rom": "roma", "ss lazio": "lazio", "lazio rom": "lazio",
+    "atalanta bergamo": "atalanta", "atalanta bc": "atalanta",
+    "acf fiorentina": "fiorentina", "ac florenz": "fiorentina", "florenz": "fiorentina",
+    "fc turin": "torino", "turin": "torino",
+    "hellas verona": "verona", "hellas verona fc": "verona",
+    "us lecce": "lecce", "us sassuolo": "sassuolo", "us cremonese": "cremonese",
+    "us salernitana": "salernitana", "us salernitana 1919": "salernitana",
+    "salernitana 1919": "salernitana",
+    "como 1907": "como", "parma 1913": "parma", "parma calcio 1913": "parma",
+    "pisa 1909": "pisa", "ac pisa 1909": "pisa",
+    "genua cfc": "genoa", "genoa cfc": "genoa", "genua": "genoa",
+    "bologna 1909": "bologna",
+    # --- Ligue 1. "Paris SG" (football-data) must reach "paris saint germain"
+    #     via the pre-token-drop full-string match, NOT collapse to "paris"
+    #     (which is Paris FC, a different club).
+    "paris s g": "paris saint germain", "paris saint-germain": "paris saint germain",
+    "paris fc": "paris fc",  # pre-drop identity: keep the "fc" so it can't become "paris"
+    "olympique lyon": "lyon", "olympique lyonnais": "lyon",
+    "olympique marseille": "marseille", "olympique de marseille": "marseille",
+    "losc lille": "lille", "losc": "lille", "lille osc": "lille",
+    "stade rennes": "rennes", "stade rennais": "rennes", "stade rennais fc": "rennes",
+    "stade reims": "reims",
+    "stade brest 29": "brest", "stade brestois 29": "brest", "stade brestois": "brest",
+    "ogc nice": "nice", "ogc nizza": "nice", "nizza": "nice",
+    "rc strasbourg alsace": "strasbourg", "strasbourg alsace": "strasbourg",
+    "strassburg alsace": "strasbourg", "rc strassburg alsace": "strasbourg",
+    "montpellier hsc": "montpellier", "aj auxerre": "auxerre",
+    "sco angers": "angers", "angers sco": "angers",
+    "as saint etienne": "saint etienne", "st etienne": "saint etienne",
+    "as st etienne": "saint etienne",
+    "clermont foot": "clermont", "clermont foot 63": "clermont",
+    "le havre ac": "le havre", "le havre athletic": "le havre",
+    "estac troyes": "troyes", "ac ajaccio": "ajaccio",
 }
 
 
@@ -204,6 +254,9 @@ def normalize_team(name: str) -> str:
     s = deaccent(str(name)).lower().replace("'", "")   # Nott'm -> nottm, O'Brien -> obrien
     s = s.replace("&", " and ").replace("-", " ").replace(".", " ")
     s = re.sub(r"[^a-z0-9 ]", " ", s)
+    full = " ".join(s.split()).strip()
+    if full in _ALIASES:                 # match before token-drop: "paris sg" (PSG)
+        return _ALIASES[full]            # must beat "sg"-dropped "paris" (= Paris FC)
     toks = [t for t in s.split() if t and t not in _DROP_TOKENS]
     s = " ".join(toks).strip()
     s = _ALIASES.get(s, s)

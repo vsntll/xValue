@@ -4,8 +4,10 @@ Direct Transfermarkt scraping is blocked here (HTTP 405 to `curl_cffi` /
 `tls_requests`; a GDPR consent wall behind `nodriver`). The worldfootballR mirror
 publishes TM values pre-scraped as `.rds` - big-5 leagues, **season_start_year
 2010..2022** (i.e. up to 2022-23). That's three of our seasons (2020-21..2022-23)
-- enough to train the value model and hold out a season. 2023-24 onward would
-need a browser scrape with consent-wall handling (not built).
+across all five modelled leagues - enough to train the value model and hold out
+a season. 2023-24 onward comes from `pull_transfermarkt_scrape.py` (browser +
+consent click). `build_value_history.py` pulls the same mirror back to 2015 for
+the lag features.
 
 Run:  py -3.11 src/pull_transfermarkt.py
 
@@ -27,7 +29,8 @@ OUT = PROJECT_ROOT / "data" / "processed" / "tm_player_values.csv"
 URL = ("https://raw.githubusercontent.com/JaseZiv/worldfootballR_data/master/"
        "data/tm_player_vals/big5_player_vals.rds")
 
-COMP_CODE = {"Premier League": "ENG1", "Bundesliga": "GER1", "LaLiga": "ESP1"}
+COMP_CODE = {"Premier League": "ENG1", "Bundesliga": "GER1", "LaLiga": "ESP1",
+             "Serie A": "ITA1", "Ligue 1": "FRA1"}
 SEASON = {2020: "2020-21", 2021: "2021-22", 2022: "2022-23"}
 
 

@@ -58,7 +58,8 @@ def _res(a: float, b: float) -> float:
     return 1.0 if a > b else 0.5 if a == b else 0.0
 
 
-DIV_COMP = {"E0": "Premier League", "D1": "Bundesliga", "SP1": "La Liga"}
+DIV_COMP = {"E0": "Premier League", "D1": "Bundesliga", "SP1": "La Liga",
+            "I1": "Serie A", "F1": "Ligue 1"}
 
 
 def _warmup() -> pd.DataFrame:

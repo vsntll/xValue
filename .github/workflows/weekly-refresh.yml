@@ -100,6 +100,12 @@ jobs:
         continue-on-error: true
         run: python src/pull_fotmob_players.py --current
 
+      # Serie A / Ligue 1 have no FBref player scrape - synthesise their
+      # player-season rows (all seasons) from Understat + the wfr mirror + FotMob
+      # + value_history. Idempotent; must run before build_current_season_stats.
+      - name: Build Serie A / Ligue 1 player-season rows (Understat spine)
+        run: python src/build_understat_player_seasons.py
+
       # fold Understat + FotMob's current season into fbref_player_season_stats.csv
       # so the value model / site cards have fresh goals/assists/minutes/xG/SoT/
       # fouls without a manual FBref scrape (finished seasons + the unused deep
@@ -109,10 +115,10 @@ jobs:
 
       - name: Rebuild tables
         run: |
+          python src/build_value_history.py
           python src/build_matches_all.py
           python src/build_squad_features.py
           python src/build_match_model_table.py
-          python src/build_value_history.py
 
       - name: Retrain models
         run: |
