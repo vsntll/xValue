@@ -88,6 +88,7 @@ _DROP_TOKENS = {
     "club", "de", "futbol", "the", "calcio", "balompie", "cp",
     "amp",  # residue of an unescaped "&amp;" (e.g. Transfermarkt slug "brighton-amp-hove-albion")
     "1", "07", "05", "04", "09", "08", "06", "1899", "1846", "1904", "1900", "1846",
+    "1893", "1901", "1903", "1907", "1908", "1909", "1913", "1919",  # club founding years
 }
 _ALIASES = {
     "man united": "manchester united", "man utd": "manchester united",
@@ -211,7 +212,16 @@ _ALIASES = {
     "as st etienne": "saint etienne",
     "clermont foot": "clermont", "clermont foot 63": "clermont",
     "le havre ac": "le havre", "le havre athletic": "le havre",
-    "estac troyes": "troyes", "ac ajaccio": "ajaccio",
+    "estac troyes": "troyes", "es troyes": "troyes", "ac ajaccio": "ajaccio",
+    # ESPN / football-data.org spell some clubs with their full legal name; the
+    # historical feeds use the short form. Land both on the short key so the
+    # 2026-27 live standings row matches its team page / roster.
+    "racing lens": "lens", "racing club lens": "lens",
+    "stade rennais": "rennes", "rennais": "rennes",
+    "rayo vallecano madrid": "rayo vallecano", "rayo vallecano de madrid": "rayo vallecano",
+    "real racing santander": "real racing", "real racing club santander": "real racing",
+    "racing santander": "real racing",
+    "coventry city": "coventry",
 }
 
 
