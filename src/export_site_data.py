@@ -584,6 +584,10 @@ def build_player_elo_leaderboard(teams_list: list[dict]) -> dict | None:
         return None
     pe = pd.read_csv(p, encoding="utf-8")
     pe = _fix_names(pe, ["player"])
+    nm_path = PROC / "player_name_map.csv"
+    if nm_path.exists():
+        nm = pd.read_csv(nm_path).dropna()
+        pe["player"] = pe["player"].replace(dict(zip(nm["understat_name"], nm["canonical_name"])))
     pe = pe.sort_values("date")
     played = pe[pe["minutes"].fillna(0) > 0]
 

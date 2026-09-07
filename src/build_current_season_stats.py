@@ -114,15 +114,36 @@ def build() -> pd.DataFrame:
     club_mp = _club_matches(cur)
 
     # Understat lookups: (name, team) first, then name-only for a club-string
-    # mismatch or a just-completed transfer.
+    # mismatch or a just-completed transfer, then a same-club fuzzy match for a
+    # name form that differs between sources (Kylian Mbappe vs Mbappe-Lottin,
+    # Ezri Konsa vs Ezri Konsa Ngoyo - one name's tokens are a subset of the
+    # other's). The fuzzy step keeps my rule-2 additions from re-creating a
+    # player FBref already has under a slightly different spelling.
     us["nk"] = us["pk"]  # keep the name key reachable after set_index
     us_by_kt = us.set_index(["pk", "tk"])
     us_by_k = us.drop_duplicates("pk", keep="last").set_index("pk")
+    us_by_club: dict[str, list] = {}
+    for _, u in us.iterrows():
+        us_by_club.setdefault(u["tk"], []).append(u)
+
+    def _fuzzy_same(a: str, b: str) -> bool:
+        """same player, name form differs across sources - one token set is fully
+        contained in the other, they share >=2 tokens, and either the first or
+        the last token agrees (a dropped middle name: "Destiny Udogie" vs
+        "Iyenoma Destiny Udogie"; or a compound surname: "Kylian Mbappe" vs
+        "Kylian Mbappe Lottin")."""
+        ta, tb = a.split(), b.split()
+        sa, sb = set(ta), set(tb)
+        return (len(sa) >= 2 and len(sb) >= 2 and (sa <= sb or sb <= sa)
+                and len(sa & sb) >= 2 and (ta[0] == tb[0] or ta[-1] == tb[-1]))
 
     def _us_row(pk, tk, allow_name_only: bool):
         if (pk, tk) in us_by_kt.index:
             v = us_by_kt.loc[(pk, tk)]
             return v.iloc[0] if isinstance(v, pd.DataFrame) else v
+        for u in us_by_club.get(tk, []):
+            if _fuzzy_same(pk, u["pk"]):
+                return u
         # name-only is a club-string mismatch OR a transfer - only trust it to
         # fill an FBref row that has no minutes yet, never to move a played row.
         if allow_name_only and pk in us_by_k.index:
@@ -156,13 +177,15 @@ def build() -> pd.DataFrame:
     prior = (hist.assign(pk=hist["player_slug"].map(_norm_name))
                  .sort_values("season").drop_duplicates("pk", keep="last").set_index("pk"))
     fcur_names = set(fcur["player_slug"].map(_norm_name))
-    rows, used = [], set()
+    rows, used, xref = [], set(), []   # xref: (understat_name, fbref_name) for a non-exact match
     for row in fcur[f.columns].to_dict("records"):
         pk, tk = _norm_name(row["player_slug"]), normalize_team(row["Squad"])
         no_min = pd.to_numeric(pd.Series([row["standard__Playing Time_Min"]]),
                                errors="coerce").fillna(0).iat[0] == 0
         u = _us_row(pk, tk, allow_name_only=no_min)
         if u is not None:
+            if _norm_name(u["player"]) != pk and pd.notna(row.get("Player")):
+                xref.append((str(u["player"]), str(row["Player"])))
             _apply(row, u, tk)
             used.add(u["nk"])
         rows.append(row)
@@ -197,6 +220,44 @@ def build() -> pd.DataFrame:
     updated["_m"] = pd.to_numeric(updated["standard__Playing Time_Min"], errors="coerce").fillna(0)
     updated = (updated.sort_values("_m", ascending=False)
                       .drop_duplicates("player_slug", keep="first").drop(columns="_m"))
+    # same player, different name form across sources ("Kylian Mbappe" vs
+    # "Kylian Mbappe-Lottin", "Jose Gaya" vs "Jose Luis Gaya"): within a club,
+    # cluster fuzzy-equal names, keep the fullest row (Born / deep stats) but
+    # relabel it to the SHORTEST name in the cluster - that's the common form.
+    updated["_n"] = updated.notna().sum(axis=1)
+    updated["_tk"] = updated["Squad"].map(normalize_team)
+    drop_idx, canon = set(), {}   # canon: any variant name -> the chosen one
+    for _tk, g in updated.groupby("_tk"):
+        clusters: list[list] = []
+        for i in g.index:
+            ki = _norm_name(updated.at[i, "player_slug"])
+            for cl in clusters:
+                if any(_fuzzy_same(ki, _norm_name(updated.at[j, "player_slug"])) for j in cl):
+                    cl.append(i)
+                    break
+            else:
+                clusters.append([i])
+        for cl in clusters:
+            if len(cl) < 2:
+                continue
+            keep_i = max(cl, key=lambda j: updated.at[j, "_n"])
+            best = min((updated.at[j, "Player"] for j in cl),
+                       key=lambda n: (len(str(n).split()), len(str(n))))
+            for j in cl:
+                canon[str(updated.at[j, "Player"])] = best
+                if j != keep_i:
+                    drop_idx.add(j)
+            updated.at[keep_i, "Player"] = best
+    updated = updated.drop(index=drop_idx).drop(columns=["_n", "_tk"])
+
+    # one map: every non-canonical spelling (from a merged cluster or a rule-1
+    # fuzzy match that had no dup to merge) -> the canonical name.
+    name_map = {us: canon.get(fb, fb) for us, fb in xref}
+    name_map.update(canon)
+    name_map = {k: v for k, v in name_map.items() if k and v and str(k) != str(v)}
+    if drop_idx or name_map:
+        print(f"  merged {len(drop_idx)} duplicate name-form rows; "
+              f"{len(name_map)} name aliases -> {sorted(set(name_map.values()))[:8]}...")
     # drop 2nd-tier clubs that leak into the current-season feeds, unless the club
     # has actually been top-flight during the observed window
     keep = updated["Squad"].map(normalize_team).isin(top)
@@ -213,6 +274,12 @@ def build() -> pd.DataFrame:
     hist = hist[hist["Squad"].map(normalize_team).isin(top)]
     out = pd.concat([hist, updated], ignore_index=True)
     out.to_csv(FBREF, index=False)
+
+    # variant spelling -> canonical, so downstream files that carry another
+    # source's spelling (player_elo.csv from Understat) show one name per player.
+    pd.DataFrame(sorted(name_map.items()), columns=["understat_name", "canonical_name"]).to_csv(
+        PROC / "player_name_map.csv", index=False)
+
     n_new = max(0, len(updated) - fcur["Squad"].map(normalize_team).isin(top).sum())
     print(f"{cur}: {len(updated)} rows ({len(used)} refreshed from Understat, "
           f"~{n_new} new Understat-only), {len(hist)} earlier-season rows kept "
