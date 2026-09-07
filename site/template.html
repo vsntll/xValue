@@ -420,7 +420,7 @@
       <div>
         <h1>xValue</h1>
       </div>
-      <span class="sub">Big 3</span>
+      <span class="sub">Big 5</span>
     </div>
     <div class="chipset" id="leagueChips"></div>
     <div class="tabs">
@@ -439,8 +439,8 @@
 <div class="shell">
   <header class="hero">
     <p id="heroText">Every player's season stats next to what the models think happens next: market value,
-      win odds, and who's most likely to score — across the Premier League, La Liga and Bundesliga, plus
-      club form, rosters, honours, and a full projected final table. <b>Rankings</b> has two from-scratch
+      win odds, and who's most likely to score — across the Premier League, La Liga, Bundesliga, Serie A
+      and Ligue 1, plus club form, rosters, honours, and a full projected final table. <b>Rankings</b> has two from-scratch
       Elo systems — team power rankings and a player rating built purely from recent output, no market
       value involved. Play the models too: <b>Match Sim</b> runs any matchup with goalscorers, <b>Streak</b>
       dares you to call a whole real season. Curious how any of it's computed? The <b>How It Works</b> tab
@@ -1125,7 +1125,7 @@
       html += '<div class="method-card">' +
         '<h3><span class="num-tag">1</span>Next-match win odds</h3>' +
         '<p>Every club gets an <b>attack</b> and a <b>defence</b> rating from a Dixon-Coles model, fit on every league, cup '+
-        'and European result across all three leagues from the last ~900 days (recency-weighted, so last month counts '+
+        'and European result across all five leagues from the last ~900 days (recency-weighted, so last month counts '+
         'more than two years ago). A fixture\'s expected goals: <code>exp(attack_home + defence_away + home_advantage)</code> '+
         'for the home side, <code>exp(attack_away + defence_home)</code> for the away side. Those feed a Poisson scoreline '+
         'grid (with a small correction for low-scoring games) to get Win / Draw / Loss.</p>' +
@@ -1249,7 +1249,7 @@
       '<polyline points="'+pts+'" fill="none" stroke="'+(up?'#1f9d55':'#d64545')+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   }
 
-  var LG_SHORT = { 'Premier League':'PL', 'La Liga':'LL', 'Bundesliga':'BL' };
+  var LG_SHORT = { 'Premier League':'PL', 'La Liga':'LL', 'Bundesliga':'BL', 'Serie A':'SA', 'Ligue 1':'L1' };
   function lgShort(l){ return LG_SHORT[l] || esc(l||''); }
 
   function initRankings(){
