@@ -1,96 +1,96 @@
 source,season,league,tier,competition_type,comp_code,Date,Time,HomeTeam,AwayTeam,status,FTHG,FTAG,FTR,HTHG,HTAG,HTR,HS,AS,HST,AST,HC,AC,HF,AF,HY,AY,HR,AR,HPoss,APoss,HxG,AxG,match_id
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-21,16:00,Preußen Münster,Karlsruher SC,FULL_TIME,1.0,2.0,A,,,,8.0,15.0,3.0,6.0,3.0,8.0,13.0,8.0,0.0,1.0,1.0,0.0,44.2,55.8,0.36,1.53,espn:401874895
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-21,16:00,SC St. Tönis,Eintracht Frankfurt,FULL_TIME,0.0,11.0,A,,,,3.0,29.0,0.0,19.0,2.0,8.0,6.0,10.0,0.0,1.0,0.0,0.0,25.4,74.6,0.24,5.59,espn:401875189
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-21,16:00,SV Waldhof Mannheim,Kaiserslautern,FINAL_AET,0.0,1.0,A,,,,18.0,22.0,5.0,5.0,5.0,15.0,16.0,21.0,7.0,6.0,0.0,0.0,46.8,53.2,1.11,2.47,espn:401875179
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-21,18:45,Hansa Rostock,VfB Stuttgart,FULL_TIME,0.0,4.0,A,,,,9.0,21.0,6.0,8.0,4.0,8.0,6.0,5.0,1.0,1.0,0.0,0.0,24.7,75.3,0.71,2.14,espn:401875187
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,11:00,Energie Cottbus,FC Augsburg,FULL_TIME,0.0,2.0,A,,,,21.0,20.0,6.0,7.0,8.0,6.0,10.0,14.0,2.0,3.0,0.0,0.0,60.3,39.7,1.05,1.65,espn:401875177
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,11:00,SV Wehen Wiesbaden,Bayer Leverkusen,FULL_TIME,0.0,4.0,A,,,,7.0,19.0,1.0,8.0,4.0,3.0,15.0,12.0,2.0,0.0,0.0,0.0,28.9,71.1,0.23,1.93,espn:401874891
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,13:30,FC Erzgebirge Aue,TSG Hoffenheim,FULL_TIME,0.0,4.0,A,,,,5.0,28.0,1.0,12.0,2.0,15.0,4.0,6.0,1.0,0.0,0.0,0.0,34.8,65.2,0.4,3.36,espn:401875184
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,13:30,Hemelingen,Hannover 96,FULL_TIME,1.0,9.0,A,,,,7.0,48.0,1.0,24.0,0.0,14.0,4.0,4.0,1.0,0.0,0.0,0.0,28.3,71.7,0.32,8.05,espn:401874899
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,13:30,Lüneburger SK Hansa,Werder Bremen,FULL_TIME,0.0,3.0,A,,,,2.0,24.0,0.0,8.0,1.0,10.0,9.0,8.0,0.0,1.0,0.0,0.0,28.4,71.6,0.05,2.76,espn:401875176
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,13:30,MSV Duisburg,SV Elversberg,FULL_TIME,1.0,3.0,A,,,,13.0,15.0,3.0,6.0,3.0,3.0,11.0,9.0,1.0,1.0,0.0,0.0,39.1,60.9,1.23,1.56,espn:401875178
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,13:30,Saarbrücken,Hertha Berlin,FINAL_PEN,1.0,1.0,D,,,,7.0,33.0,2.0,9.0,5.0,11.0,16.0,20.0,2.0,3.0,0.0,0.0,37.4,62.6,0.26,3.19,espn:401875181
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,13:30,Viktoria Köln,1. FC Nürnberg,FINAL_PEN,1.0,1.0,D,,,,21.0,11.0,6.0,5.0,8.0,7.0,15.0,17.0,3.0,2.0,0.0,0.0,45.8,54.2,2.77,1.15,espn:401875180
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,16:00,Eintracht Trier,RB Leipzig,FULL_TIME,0.0,6.0,A,,,,7.0,28.0,2.0,11.0,2.0,11.0,6.0,9.0,1.0,1.0,0.0,0.0,28.4,71.6,0.62,4.51,espn:401874893
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,16:00,SG Sonnenhof Großaspach,Arminia Bielefeld,FINAL_PEN,2.0,2.0,D,,,,21.0,13.0,7.0,5.0,8.0,7.0,15.0,15.0,5.0,2.0,0.0,1.0,52.9,47.1,1.86,1.44,espn:401875186
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,16:00,TSV 1860 Munich,Holstein Kiel,FULL_TIME,0.0,2.0,A,,,,10.0,15.0,3.0,4.0,6.0,5.0,16.0,17.0,1.0,4.0,0.0,0.0,39.4,60.6,0.33,1.8,espn:401874892
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,11:00,SpVgg Greuther Fürth,VfL Bochum,FULL_TIME,1.0,2.0,A,,,,22.0,6.0,4.0,3.0,11.0,1.0,12.0,14.0,2.0,2.0,0.0,0.0,64.7,35.3,1.6,0.43,espn:401874902
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,11:00,SSV Jeddeloh II,1. FC Heidenheim 1846,FULL_TIME,5.0,2.0,H,,,,9.0,26.0,5.0,8.0,2.0,11.0,10.0,8.0,1.0,2.0,0.0,0.0,28.0,72.0,1.58,2.83,espn:401875182
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,13:30,Bahlinger SC 1929,1. FC Magdeburg,FULL_TIME,0.0,4.0,A,,,,7.0,18.0,2.0,9.0,2.0,4.0,16.0,12.0,3.0,0.0,0.0,0.0,37.2,62.8,0.93,3.72,espn:401875183
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,13:30,FC Carl Zeiss Jena,SV Darmstadt 98,FULL_TIME,1.0,2.0,A,,,,10.0,13.0,5.0,5.0,5.0,5.0,16.0,5.0,2.0,0.0,0.0,0.0,47.3,52.7,0.86,1.46,espn:401875185
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,13:30,Schott,Borussia Mönchengladbach,FULL_TIME,0.0,5.0,A,,,,4.0,30.0,1.0,13.0,1.0,8.0,5.0,11.0,0.0,1.0,0.0,0.0,22.4,77.6,0.12,4.49,espn:401874889
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,13:30,TSV Eintracht Braunschweig,1. FC Union Berlin,FULL_TIME,2.0,4.0,A,,,,16.0,17.0,6.0,10.0,7.0,9.0,6.0,18.0,1.0,3.0,0.0,0.0,63.0,37.0,0.74,2.24,espn:401875218
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,13:30,VFB Krieschow,Mainz,FULL_TIME,0.0,9.0,A,,,,10.0,30.0,2.0,12.0,3.0,9.0,6.0,10.0,0.0,1.0,0.0,0.0,29.0,71.0,0.83,3.79,espn:401875190
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,13:30,Westfalia Rhynern,Dynamo Dresden,FULL_TIME,0.0,6.0,A,,,,3.0,19.0,1.0,8.0,1.0,11.0,8.0,1.0,0.0,0.0,0.0,0.0,27.3,72.7,0.08,1.96,espn:401875175
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,16:00,1. FC Phönix Lübeck,SC Paderborn 07,FULL_TIME,2.0,4.0,A,,,,15.0,24.0,8.0,10.0,8.0,9.0,17.0,10.0,1.0,2.0,0.0,0.0,36.4,63.6,1.21,2.71,espn:401874900
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,16:00,Fortuna Düsseldorf,SC Freiburg,FULL_TIME,1.0,5.0,A,,,,5.0,17.0,2.0,10.0,3.0,9.0,15.0,4.0,1.0,1.0,0.0,0.0,44.5,55.5,0.84,2.97,espn:401874901
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,16:00,Rot-Weiss Essen,St. Pauli,FULL_TIME,2.0,0.0,H,,,,19.0,7.0,7.0,2.0,7.0,1.0,17.0,17.0,2.0,2.0,0.0,0.0,39.2,60.8,1.92,1.41,espn:401875188
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-24,16:00,SC Verl 1924,Hamburg SV,FULL_TIME,0.0,3.0,A,,,,13.0,10.0,4.0,6.0,2.0,1.0,8.0,11.0,1.0,1.0,0.0,0.0,57.0,43.0,0.6,0.97,espn:401874898
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-24,16:00,VSG Altglienicke,VfL Wolfsburg,FINAL_PEN,3.0,3.0,D,,,,9.0,32.0,5.0,16.0,3.0,13.0,13.0,8.0,2.0,2.0,0.0,0.0,24.0,76.0,1.42,3.07,espn:401874897
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-24,16:00,Würzburger Kickers,FC Cologne,FULL_TIME,1.0,2.0,A,,,,10.0,14.0,2.0,6.0,5.0,5.0,11.0,8.0,1.0,1.0,0.0,0.0,35.3,64.7,0.96,1.86,espn:401874896
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-24,18:45,Hallescher FC,Schalke 04,FINAL_AET,2.0,5.0,A,,,,10.0,26.0,5.0,12.0,3.0,9.0,11.0,11.0,4.0,2.0,0.0,0.0,25.8,74.2,0.7,4.18,espn:401874890
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-09-01,18:45,HEBC Hamburg,Borussia Dortmund,FULL_TIME,0.0,5.0,A,,,,2.0,36.0,1.0,12.0,2.0,17.0,10.0,7.0,1.0,0.0,0.0,0.0,22.9,77.1,0.05,2.87,espn:401875201
-espn+fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-09-02,18:45,VfL Osnabruck,Bayern Munich,FULL_TIME,1.0,4.0,A,,,,5.0,22.0,2.0,9.0,0.0,8.0,6.0,9.0,0.0,0.0,0.0,0.0,32.8,67.2,0.13,3.11,espn:401875174
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-21,16:00,Preußen Münster,Karlsruher SC,FULL_TIME,1.0,2.0,A,,,,8.0,15.0,3.0,6.0,3.0,8.0,13.0,8.0,0.0,1.0,1.0,0.0,44.2,55.8,,,espn:401874895
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-21,16:00,SC St. Tönis,Eintracht Frankfurt,FULL_TIME,0.0,11.0,A,,,,3.0,29.0,0.0,19.0,2.0,8.0,6.0,10.0,0.0,1.0,0.0,0.0,25.4,74.6,,,espn:401875189
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-21,16:00,SV Waldhof Mannheim,Kaiserslautern,FINAL_AET,0.0,1.0,A,,,,18.0,22.0,5.0,5.0,5.0,15.0,16.0,21.0,7.0,6.0,0.0,0.0,46.8,53.2,,,espn:401875179
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-21,18:45,Hansa Rostock,VfB Stuttgart,FULL_TIME,0.0,4.0,A,,,,9.0,21.0,6.0,8.0,4.0,8.0,6.0,5.0,1.0,1.0,0.0,0.0,24.7,75.3,,,espn:401875187
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,11:00,Energie Cottbus,FC Augsburg,FULL_TIME,0.0,2.0,A,,,,21.0,20.0,6.0,7.0,8.0,6.0,10.0,14.0,2.0,3.0,0.0,0.0,60.3,39.7,,,espn:401875177
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,11:00,SV Wehen Wiesbaden,Bayer Leverkusen,FULL_TIME,0.0,4.0,A,,,,7.0,19.0,1.0,8.0,4.0,3.0,15.0,12.0,2.0,0.0,0.0,0.0,28.9,71.1,,,espn:401874891
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,13:30,FC Erzgebirge Aue,TSG Hoffenheim,FULL_TIME,0.0,4.0,A,,,,5.0,28.0,1.0,12.0,2.0,15.0,4.0,6.0,1.0,0.0,0.0,0.0,34.8,65.2,,,espn:401875184
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,13:30,Hemelingen,Hannover 96,FULL_TIME,1.0,9.0,A,,,,7.0,48.0,1.0,24.0,0.0,14.0,4.0,4.0,1.0,0.0,0.0,0.0,28.3,71.7,,,espn:401874899
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,13:30,Lüneburger SK Hansa,Werder Bremen,FULL_TIME,0.0,3.0,A,,,,2.0,24.0,0.0,8.0,1.0,10.0,9.0,8.0,0.0,1.0,0.0,0.0,28.4,71.6,,,espn:401875176
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,13:30,MSV Duisburg,SV Elversberg,FULL_TIME,1.0,3.0,A,,,,13.0,15.0,3.0,6.0,3.0,3.0,11.0,9.0,1.0,1.0,0.0,0.0,39.1,60.9,,,espn:401875178
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,13:30,Saarbrücken,Hertha Berlin,FINAL_PEN,1.0,1.0,D,,,,7.0,33.0,2.0,9.0,5.0,11.0,16.0,20.0,2.0,3.0,0.0,0.0,37.4,62.6,,,espn:401875181
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,13:30,Viktoria Köln,1. FC Nürnberg,FINAL_PEN,1.0,1.0,D,,,,21.0,11.0,6.0,5.0,8.0,7.0,15.0,17.0,3.0,2.0,0.0,0.0,45.8,54.2,,,espn:401875180
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,16:00,Eintracht Trier,RB Leipzig,FULL_TIME,0.0,6.0,A,,,,7.0,28.0,2.0,11.0,2.0,11.0,6.0,9.0,1.0,1.0,0.0,0.0,28.4,71.6,,,espn:401874893
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,16:00,SG Sonnenhof Großaspach,Arminia Bielefeld,FINAL_PEN,2.0,2.0,D,,,,21.0,13.0,7.0,5.0,8.0,7.0,15.0,15.0,5.0,2.0,0.0,1.0,52.9,47.1,,,espn:401875186
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-22,16:00,TSV 1860 Munich,Holstein Kiel,FULL_TIME,0.0,2.0,A,,,,10.0,15.0,3.0,4.0,6.0,5.0,16.0,17.0,1.0,4.0,0.0,0.0,39.4,60.6,,,espn:401874892
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,11:00,SpVgg Greuther Fürth,VfL Bochum,FULL_TIME,1.0,2.0,A,,,,22.0,6.0,4.0,3.0,11.0,1.0,12.0,14.0,2.0,2.0,0.0,0.0,64.7,35.3,,,espn:401874902
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,11:00,SSV Jeddeloh II,1. FC Heidenheim 1846,FULL_TIME,5.0,2.0,H,,,,9.0,26.0,5.0,8.0,2.0,11.0,10.0,8.0,1.0,2.0,0.0,0.0,28.0,72.0,,,espn:401875182
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,13:30,Bahlinger SC 1929,1. FC Magdeburg,FULL_TIME,0.0,4.0,A,,,,7.0,18.0,2.0,9.0,2.0,4.0,16.0,12.0,3.0,0.0,0.0,0.0,37.2,62.8,,,espn:401875183
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,13:30,FC Carl Zeiss Jena,SV Darmstadt 98,FULL_TIME,1.0,2.0,A,,,,10.0,13.0,5.0,5.0,5.0,5.0,16.0,5.0,2.0,0.0,0.0,0.0,47.3,52.7,,,espn:401875185
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,13:30,Schott,Borussia Mönchengladbach,FULL_TIME,0.0,5.0,A,,,,4.0,30.0,1.0,13.0,1.0,8.0,5.0,11.0,0.0,1.0,0.0,0.0,22.4,77.6,,,espn:401874889
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,13:30,TSV Eintracht Braunschweig,1. FC Union Berlin,FULL_TIME,2.0,4.0,A,,,,16.0,17.0,6.0,10.0,7.0,9.0,6.0,18.0,1.0,3.0,0.0,0.0,63.0,37.0,,,espn:401875218
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,13:30,VFB Krieschow,Mainz,FULL_TIME,0.0,9.0,A,,,,10.0,30.0,2.0,12.0,3.0,9.0,6.0,10.0,0.0,1.0,0.0,0.0,29.0,71.0,,,espn:401875190
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,13:30,Westfalia Rhynern,Dynamo Dresden,FULL_TIME,0.0,6.0,A,,,,3.0,19.0,1.0,8.0,1.0,11.0,8.0,1.0,0.0,0.0,0.0,0.0,27.3,72.7,,,espn:401875175
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,16:00,1. FC Phönix Lübeck,SC Paderborn 07,FULL_TIME,2.0,4.0,A,,,,15.0,24.0,8.0,10.0,8.0,9.0,17.0,10.0,1.0,2.0,0.0,0.0,36.4,63.6,,,espn:401874900
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,16:00,Fortuna Düsseldorf,SC Freiburg,FULL_TIME,1.0,5.0,A,,,,5.0,17.0,2.0,10.0,3.0,9.0,15.0,4.0,1.0,1.0,0.0,0.0,44.5,55.5,,,espn:401874901
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-23,16:00,Rot-Weiss Essen,St. Pauli,FULL_TIME,2.0,0.0,H,,,,19.0,7.0,7.0,2.0,7.0,1.0,17.0,17.0,2.0,2.0,0.0,0.0,39.2,60.8,,,espn:401875188
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-24,16:00,SC Verl 1924,Hamburg SV,FULL_TIME,0.0,3.0,A,,,,13.0,10.0,4.0,6.0,2.0,1.0,8.0,11.0,1.0,1.0,0.0,0.0,57.0,43.0,,,espn:401874898
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-24,16:00,VSG Altglienicke,VfL Wolfsburg,FINAL_PEN,3.0,3.0,D,,,,9.0,32.0,5.0,16.0,3.0,13.0,13.0,8.0,2.0,2.0,0.0,0.0,24.0,76.0,,,espn:401874897
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-24,16:00,Würzburger Kickers,FC Cologne,FULL_TIME,1.0,2.0,A,,,,10.0,14.0,2.0,6.0,5.0,5.0,11.0,8.0,1.0,1.0,0.0,0.0,35.3,64.7,,,espn:401874896
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-08-24,18:45,Hallescher FC,Schalke 04,FINAL_AET,2.0,5.0,A,,,,10.0,26.0,5.0,12.0,3.0,9.0,11.0,11.0,4.0,2.0,0.0,0.0,25.8,74.2,,,espn:401874890
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-09-01,18:45,HEBC Hamburg,Borussia Dortmund,FULL_TIME,0.0,5.0,A,,,,2.0,36.0,1.0,12.0,2.0,17.0,10.0,7.0,1.0,0.0,0.0,0.0,22.9,77.1,,,espn:401875201
+espn,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-09-02,18:45,VfL Osnabruck,Bayern Munich,FULL_TIME,1.0,4.0,A,,,,5.0,22.0,2.0,9.0,0.0,8.0,6.0,9.0,0.0,0.0,0.0,0.0,32.8,67.2,,,espn:401875174
 espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-01,14:00,Tranmere Rovers,Rochdale,FINAL_PEN,2.0,2.0,D,,,,15.0,10.0,6.0,2.0,4.0,3.0,18.0,11.0,3.0,0.0,0.0,0.0,28.4,71.6,,,espn:401877066
 espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-03,18:30,York City,Crawley Town,FULL_TIME,0.0,2.0,A,,,,11.0,8.0,2.0,5.0,6.0,3.0,10.0,10.0,4.0,3.0,0.0,0.0,61.2,38.8,,,espn:401877065
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-06,18:45,Bristol City,Walsall,FULL_TIME,0.0,1.0,A,,,,33.0,9.0,9.0,5.0,13.0,4.0,3.0,13.0,0.0,3.0,0.0,0.0,71.9,28.1,2.76,1.51,espn:401880618
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-07,18:45,Wolverhampton Wanderers,Port Vale,FULL_TIME,3.0,0.0,H,,,,16.0,11.0,7.0,3.0,9.0,5.0,10.0,6.0,1.0,1.0,0.0,0.0,68.5,31.5,1.44,2.34,espn:401880604
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-07,18:45,Wycombe Wanderers,Stevenage,FULL_TIME,1.0,2.0,A,,,,13.0,13.0,3.0,5.0,4.0,3.0,8.0,12.0,2.0,4.0,0.0,0.0,59.0,41.0,1.85,1.0,espn:401880609
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-07,19:00,Middlesbrough,Wrexham,FULL_TIME,1.0,0.0,H,,,,13.0,11.0,3.0,2.0,7.0,3.0,10.0,11.0,1.0,4.0,0.0,0.0,48.6,51.4,1.63,1.59,espn:401881129
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,12:00,Cambridge United,Barnet,FULL_TIME,2.0,1.0,H,,,,13.0,16.0,7.0,6.0,5.0,4.0,14.0,10.0,2.0,2.0,0.0,0.0,51.0,49.0,1.41,1.95,espn:401880614
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,13:00,Queens Park Rangers,Millwall,FINAL_PEN,1.0,1.0,D,,,,11.0,5.0,3.0,2.0,6.0,1.0,6.0,11.0,0.0,0.0,0.0,0.0,56.4,43.6,0.97,1.16,espn:401881122
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,AFC Wimbledon,Newport County,FINAL_PEN,1.0,1.0,D,,,,16.0,14.0,5.0,4.0,7.0,5.0,11.0,15.0,2.0,1.0,0.0,0.0,61.1,38.9,0.95,1.55,espn:401880601
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Barnsley,Wigan Athletic,FINAL_PEN,1.0,1.0,D,,,,11.0,13.0,4.0,8.0,9.0,6.0,9.0,10.0,1.0,0.0,0.0,0.0,60.2,39.8,0.91,2.79,espn:401880615
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Bradford City,Rochdale,FULL_TIME,2.0,0.0,H,,,,23.0,9.0,11.0,2.0,10.0,2.0,10.0,6.0,0.0,2.0,0.0,0.0,52.0,48.0,2.89,0.86,espn:401903410
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Bristol Rovers,Peterborough United,FULL_TIME,0.0,1.0,A,,,,19.0,9.0,4.0,3.0,2.0,5.0,14.0,10.0,1.0,3.0,0.0,0.0,46.1,53.9,1.15,1.81,espn:401880617
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Bromley,Reading,FINAL_PEN,1.0,1.0,D,,,,15.0,16.0,3.0,5.0,5.0,10.0,11.0,11.0,1.0,1.0,1.0,0.0,41.4,58.6,1.67,2.39,espn:401880607
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Burnley,Notts County,FINAL_PEN,1.0,1.0,D,,,,12.0,6.0,4.0,2.0,4.0,3.0,9.0,15.0,1.0,4.0,0.0,0.0,73.8,26.2,0.99,0.39,espn:401880603
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Burton Albion,Blackburn Rovers,FULL_TIME,1.0,2.0,A,,,,17.0,27.0,7.0,7.0,6.0,9.0,12.0,14.0,2.0,1.0,0.0,0.0,36.4,63.6,1.75,3.89,espn:401881124
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Cardiff City,Swindon Town,FULL_TIME,3.0,2.0,H,,,,15.0,12.0,4.0,1.0,6.0,3.0,8.0,17.0,1.0,1.0,0.0,1.0,61.3,38.7,2.52,1.36,espn:401881121
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Crewe Alexandra,Accrington Stanley,FULL_TIME,2.0,1.0,H,,,,15.0,16.0,3.0,3.0,1.0,6.0,15.0,13.0,0.0,3.0,0.0,0.0,49.9,50.1,2.05,1.31,espn:401880608
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Derby County,Lincoln City,FULL_TIME,1.0,2.0,A,,,,8.0,14.0,4.0,4.0,3.0,6.0,12.0,12.0,1.0,2.0,0.0,0.0,71.1,28.9,0.37,1.26,espn:401880602
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Fleetwood Town,Chesterfield,FULL_TIME,1.0,0.0,H,,,,5.0,15.0,2.0,1.0,7.0,9.0,21.0,8.0,3.0,2.0,0.0,0.0,29.4,70.6,0.55,1.1,espn:401880610
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Gillingham,Luton Town,FULL_TIME,0.0,3.0,A,,,,7.0,17.0,2.0,11.0,2.0,9.0,17.0,10.0,1.0,1.0,0.0,0.0,33.7,66.3,0.26,3.12,espn:401880600
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Grimsby Town,Blackpool,FULL_TIME,1.0,3.0,A,,,,13.0,10.0,8.0,4.0,13.0,4.0,7.0,11.0,0.0,1.0,0.0,0.0,50.5,49.5,0.63,1.42,espn:401880597
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Leicester City,Northampton Town,FULL_TIME,1.0,0.0,H,,,,8.0,4.0,3.0,2.0,7.0,5.0,11.0,12.0,4.0,1.0,0.0,0.0,77.1,22.9,0.49,0.8,espn:401880599
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Leyton Orient,Oxford United,FULL_TIME,2.0,0.0,H,,,,12.0,6.0,3.0,2.0,7.0,2.0,17.0,8.0,1.0,1.0,0.0,0.0,51.4,48.6,0.78,0.46,espn:401881126
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Norwich City,Milton Keynes Dons,FULL_TIME,4.0,1.0,H,,,,25.0,8.0,7.0,5.0,7.0,3.0,11.0,13.0,4.0,1.0,0.0,0.0,64.9,35.1,3.52,1.04,espn:401880613
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Preston North End,Huddersfield Town,FINAL_PEN,1.0,1.0,D,,,,10.0,10.0,3.0,2.0,7.0,6.0,11.0,16.0,2.0,3.0,1.0,0.0,46.0,54.0,0.87,0.64,espn:401881123
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Salford City,Shrewsbury Town,FINAL_PEN,1.0,1.0,D,,,,21.0,11.0,5.0,3.0,8.0,2.0,10.0,17.0,2.0,2.0,1.0,1.0,71.7,28.3,1.99,0.74,espn:401880598
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Sheffield Wednesday,Bolton Wanderers,FULL_TIME,1.0,0.0,H,,,,13.0,11.0,3.0,1.0,6.0,5.0,17.0,8.0,0.0,2.0,0.0,1.0,45.4,54.6,1.18,1.74,espn:401880611
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Stockport County,Doncaster Rovers,FINAL_PEN,1.0,1.0,D,,,,18.0,8.0,8.0,1.0,6.0,8.0,4.0,6.0,0.0,1.0,0.0,0.0,72.7,27.3,0.93,0.37,espn:401880612
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Stoke City,Oldham Athletic,FULL_TIME,2.0,0.0,H,,,,11.0,9.0,3.0,4.0,3.0,3.0,14.0,11.0,2.0,1.0,0.0,0.0,59.4,40.6,1.79,0.93,espn:401880606
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Swansea City,Birmingham City,FULL_TIME,0.0,1.0,A,,,,13.0,6.0,2.0,1.0,6.0,4.0,12.0,19.0,2.0,0.0,0.0,0.0,61.0,39.0,1.37,0.59,espn:401880605
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Watford,Crawley Town,FULL_TIME,1.0,0.0,H,,,,36.0,9.0,11.0,3.0,12.0,1.0,11.0,13.0,2.0,3.0,0.0,0.0,60.9,39.1,4.35,0.74,espn:401903532
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,West Ham United,Portsmouth,FULL_TIME,3.0,1.0,H,,,,12.0,12.0,7.0,4.0,3.0,7.0,12.0,19.0,1.0,2.0,0.0,0.0,45.0,55.0,2.07,0.6,espn:401881125
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,16:30,Cheltenham Town,Charlton Athletic,FULL_TIME,1.0,3.0,A,,,,7.0,17.0,2.0,9.0,2.0,3.0,11.0,8.0,1.0,0.0,0.0,0.0,45.6,54.4,0.86,1.11,espn:401880596
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,16:30,Colchester United,Southampton,FULL_TIME,0.0,2.0,A,,,,11.0,25.0,4.0,5.0,1.0,5.0,14.0,5.0,0.0,0.0,0.0,0.0,25.8,74.2,1.21,3.2,espn:401881127
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,16:30,Rotherham United,West Bromwich Albion,FULL_TIME,1.0,4.0,A,,,,8.0,18.0,2.0,10.0,1.0,2.0,9.0,7.0,2.0,0.0,0.0,0.0,28.5,71.5,0.83,2.76,espn:401880616
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-09,15:00,Mansfield Town,Sheffield United,FULL_TIME,0.0,3.0,A,,,,7.0,20.0,2.0,4.0,5.0,3.0,15.0,13.0,2.0,1.0,0.0,0.0,49.9,50.1,0.43,2.67,espn:401881128
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-10,19:00,Plymouth Argyle,Exeter City,FULL_TIME,2.0,0.0,H,,,,21.0,8.0,6.0,1.0,9.0,3.0,9.0,14.0,0.0,1.0,0.0,1.0,62.9,37.1,2.52,0.67,espn:401881130
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:00,Cardiff City,Norwich City,FULL_TIME,1.0,2.0,A,,,,11.0,12.0,3.0,3.0,5.0,3.0,12.0,14.0,3.0,1.0,0.0,0.0,65.5,34.5,0.5,1.6,espn:401908119
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:30,Doncaster Rovers,Middlesbrough,FULL_TIME,1.0,3.0,A,,,,12.0,24.0,5.0,8.0,1.0,7.0,13.0,16.0,2.0,2.0,0.0,0.0,34.0,66.0,1.38,2.58,espn:401908124
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Barnsley,Crewe Alexandra,FULL_TIME,3.0,2.0,H,,,,30.0,16.0,8.0,9.0,20.0,7.0,10.0,4.0,2.0,0.0,0.0,0.0,66.3,33.7,2.13,1.75,espn:401908137
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Blackburn Rovers,Sheffield United,FULL_TIME,1.0,2.0,A,,,,9.0,16.0,5.0,5.0,6.0,4.0,12.0,9.0,0.0,0.0,0.0,0.0,49.1,50.9,0.69,2.15,espn:401908139
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Blackpool,Lincoln City,FULL_TIME,1.0,4.0,A,,,,8.0,14.0,3.0,9.0,1.0,1.0,12.0,10.0,2.0,1.0,1.0,0.0,38.2,61.8,0.75,1.35,espn:401908122
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Cambridge United,Millwall,FULL_TIME,0.0,1.0,A,,,,9.0,10.0,1.0,4.0,4.0,1.0,11.0,17.0,2.0,0.0,0.0,0.0,43.6,56.4,0.34,0.79,espn:401907952
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Fleetwood Town,Shrewsbury Town,FULL_TIME,4.0,0.0,H,,,,8.0,11.0,3.0,4.0,3.0,7.0,8.0,12.0,1.0,3.0,0.0,0.0,44.6,55.4,0.93,0.88,espn:401908135
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Ipswich Town,Leicester City,FULL_TIME,3.0,1.0,H,,,,15.0,22.0,9.0,9.0,5.0,3.0,11.0,13.0,3.0,2.0,0.0,0.0,42.7,57.3,1.23,1.98,espn:401907954
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Plymouth Argyle,Coventry City,FULL_TIME,2.0,4.0,A,,,,11.0,12.0,5.0,5.0,3.0,3.0,22.0,13.0,1.0,2.0,0.0,0.0,34.3,65.7,1.45,3.06,espn:401908416
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Sheffield Wednesday,Wolverhampton Wanderers,FULL_TIME,0.0,2.0,A,,,,11.0,13.0,3.0,3.0,2.0,6.0,5.0,10.0,1.0,1.0,0.0,0.0,48.2,51.8,0.39,1.03,espn:401908121
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Southampton,West Ham United,FULL_TIME,1.0,4.0,A,,,,12.0,18.0,5.0,8.0,2.0,5.0,7.0,8.0,2.0,0.0,0.0,0.0,57.7,42.3,0.87,2.63,espn:401907950
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Stevenage,Reading,FULL_TIME,0.0,3.0,A,,,,13.0,10.0,3.0,5.0,5.0,5.0,6.0,13.0,2.0,2.0,0.0,0.0,57.1,42.9,0.57,1.62,espn:401907953
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Stoke City,Hull City,FINAL_PEN,1.0,1.0,D,,,,10.0,18.0,4.0,6.0,1.0,4.0,11.0,6.0,1.0,1.0,0.0,0.0,44.4,55.6,0.93,1.94,espn:401908126
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Walsall,Leyton Orient,FINAL_PEN,0.0,0.0,D,,,,13.0,20.0,4.0,5.0,2.0,8.0,18.0,14.0,2.0,1.0,0.0,0.0,39.6,60.4,1.21,1.28,espn:401908120
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Watford,Peterborough United,FULL_TIME,1.0,5.0,A,,,,17.0,19.0,5.0,10.0,2.0,2.0,7.0,9.0,0.0,1.0,0.0,0.0,63.3,36.7,1.93,3.32,espn:401907949
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,19:00,Birmingham City,Brentford,FULL_TIME,1.0,6.0,A,,,,8.0,18.0,2.0,8.0,4.0,7.0,9.0,12.0,2.0,1.0,0.0,0.0,31.5,68.5,0.4,1.98,espn:401907951
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,19:00,Nottingham Forest,Leeds United,FULL_TIME,0.0,2.0,A,,,,8.0,13.0,3.0,5.0,3.0,2.0,15.0,12.0,4.0,3.0,0.0,0.0,50.3,49.7,0.83,2.02,espn:401908138
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-26,18:45,Bradford City,Burnley,FINAL_PEN,0.0,0.0,D,,,,16.0,23.0,4.0,6.0,5.0,15.0,7.0,9.0,2.0,0.0,0.0,0.0,32.2,67.8,0.78,1.17,espn:401908136
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-26,18:45,Newcastle United,West Bromwich Albion,FULL_TIME,3.0,2.0,H,,,,16.0,12.0,7.0,3.0,6.0,2.0,14.0,13.0,3.0,3.0,0.0,0.0,56.7,43.3,2.61,1.46,espn:401908125
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-26,18:45,Tottenham Hotspur,Charlton Athletic,FULL_TIME,5.0,1.0,H,,,,20.0,6.0,11.0,4.0,11.0,6.0,5.0,11.0,1.0,1.0,0.0,0.0,72.6,27.4,1.38,0.41,espn:401908140
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-26,19:00,Preston North End,Everton,FULL_TIME,0.0,4.0,A,,,,5.0,29.0,1.0,10.0,3.0,5.0,3.0,6.0,0.0,0.0,0.0,0.0,32.4,67.6,0.35,4.13,espn:401908123
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-27,18:30,Chelsea,Luton Town,FULL_TIME,2.0,0.0,H,,,,26.0,7.0,7.0,1.0,9.0,3.0,11.0,6.0,0.0,1.0,0.0,0.0,65.7,34.3,2.67,0.39,espn:401908127
-espn+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-27,19:00,Fulham,AFC Wimbledon,FULL_TIME,3.0,0.0,H,,,,29.0,5.0,8.0,2.0,10.0,4.0,6.0,9.0,1.0,1.0,0.0,0.0,79.3,20.7,3.02,0.18,espn:401907948
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-06,18:45,Bristol City,Walsall,FULL_TIME,0.0,1.0,A,,,,33.0,9.0,9.0,5.0,13.0,4.0,3.0,13.0,0.0,3.0,0.0,0.0,71.9,28.1,,,espn:401880618
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-07,18:45,Wolverhampton Wanderers,Port Vale,FULL_TIME,3.0,0.0,H,,,,16.0,11.0,7.0,3.0,9.0,5.0,10.0,6.0,1.0,1.0,0.0,0.0,68.5,31.5,,,espn:401880604
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-07,18:45,Wycombe Wanderers,Stevenage,FULL_TIME,1.0,2.0,A,,,,13.0,13.0,3.0,5.0,4.0,3.0,8.0,12.0,2.0,4.0,0.0,0.0,59.0,41.0,,,espn:401880609
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-07,19:00,Middlesbrough,Wrexham,FULL_TIME,1.0,0.0,H,,,,13.0,11.0,3.0,2.0,7.0,3.0,10.0,11.0,1.0,4.0,0.0,0.0,48.6,51.4,,,espn:401881129
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,12:00,Cambridge United,Barnet,FULL_TIME,2.0,1.0,H,,,,13.0,16.0,7.0,6.0,5.0,4.0,14.0,10.0,2.0,2.0,0.0,0.0,51.0,49.0,,,espn:401880614
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,13:00,Queens Park Rangers,Millwall,FINAL_PEN,1.0,1.0,D,,,,11.0,5.0,3.0,2.0,6.0,1.0,6.0,11.0,0.0,0.0,0.0,0.0,56.4,43.6,,,espn:401881122
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,AFC Wimbledon,Newport County,FINAL_PEN,1.0,1.0,D,,,,16.0,14.0,5.0,4.0,7.0,5.0,11.0,15.0,2.0,1.0,0.0,0.0,61.1,38.9,,,espn:401880601
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Barnsley,Wigan Athletic,FINAL_PEN,1.0,1.0,D,,,,11.0,13.0,4.0,8.0,9.0,6.0,9.0,10.0,1.0,0.0,0.0,0.0,60.2,39.8,,,espn:401880615
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Bradford City,Rochdale,FULL_TIME,2.0,0.0,H,,,,23.0,9.0,11.0,2.0,10.0,2.0,10.0,6.0,0.0,2.0,0.0,0.0,52.0,48.0,,,espn:401903410
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Bristol Rovers,Peterborough United,FULL_TIME,0.0,1.0,A,,,,19.0,9.0,4.0,3.0,2.0,5.0,14.0,10.0,1.0,3.0,0.0,0.0,46.1,53.9,,,espn:401880617
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Bromley,Reading,FINAL_PEN,1.0,1.0,D,,,,15.0,16.0,3.0,5.0,5.0,10.0,11.0,11.0,1.0,1.0,1.0,0.0,41.4,58.6,,,espn:401880607
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Burnley,Notts County,FINAL_PEN,1.0,1.0,D,,,,12.0,6.0,4.0,2.0,4.0,3.0,9.0,15.0,1.0,4.0,0.0,0.0,73.8,26.2,,,espn:401880603
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Burton Albion,Blackburn Rovers,FULL_TIME,1.0,2.0,A,,,,17.0,27.0,7.0,7.0,6.0,9.0,12.0,14.0,2.0,1.0,0.0,0.0,36.4,63.6,,,espn:401881124
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Cardiff City,Swindon Town,FULL_TIME,3.0,2.0,H,,,,15.0,12.0,4.0,1.0,6.0,3.0,8.0,17.0,1.0,1.0,0.0,1.0,61.3,38.7,,,espn:401881121
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Crewe Alexandra,Accrington Stanley,FULL_TIME,2.0,1.0,H,,,,15.0,16.0,3.0,3.0,1.0,6.0,15.0,13.0,0.0,3.0,0.0,0.0,49.9,50.1,,,espn:401880608
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Derby County,Lincoln City,FULL_TIME,1.0,2.0,A,,,,8.0,14.0,4.0,4.0,3.0,6.0,12.0,12.0,1.0,2.0,0.0,0.0,71.1,28.9,,,espn:401880602
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Fleetwood Town,Chesterfield,FULL_TIME,1.0,0.0,H,,,,5.0,15.0,2.0,1.0,7.0,9.0,21.0,8.0,3.0,2.0,0.0,0.0,29.4,70.6,,,espn:401880610
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Gillingham,Luton Town,FULL_TIME,0.0,3.0,A,,,,7.0,17.0,2.0,11.0,2.0,9.0,17.0,10.0,1.0,1.0,0.0,0.0,33.7,66.3,,,espn:401880600
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Grimsby Town,Blackpool,FULL_TIME,1.0,3.0,A,,,,13.0,10.0,8.0,4.0,13.0,4.0,7.0,11.0,0.0,1.0,0.0,0.0,50.5,49.5,,,espn:401880597
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Leicester City,Northampton Town,FULL_TIME,1.0,0.0,H,,,,8.0,4.0,3.0,2.0,7.0,5.0,11.0,12.0,4.0,1.0,0.0,0.0,77.1,22.9,,,espn:401880599
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Leyton Orient,Oxford United,FULL_TIME,2.0,0.0,H,,,,12.0,6.0,3.0,2.0,7.0,2.0,17.0,8.0,1.0,1.0,0.0,0.0,51.4,48.6,,,espn:401881126
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Norwich City,Milton Keynes Dons,FULL_TIME,4.0,1.0,H,,,,25.0,8.0,7.0,5.0,7.0,3.0,11.0,13.0,4.0,1.0,0.0,0.0,64.9,35.1,,,espn:401880613
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Preston North End,Huddersfield Town,FINAL_PEN,1.0,1.0,D,,,,10.0,10.0,3.0,2.0,7.0,6.0,11.0,16.0,2.0,3.0,1.0,0.0,46.0,54.0,,,espn:401881123
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Salford City,Shrewsbury Town,FINAL_PEN,1.0,1.0,D,,,,21.0,11.0,5.0,3.0,8.0,2.0,10.0,17.0,2.0,2.0,1.0,1.0,71.7,28.3,,,espn:401880598
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Sheffield Wednesday,Bolton Wanderers,FULL_TIME,1.0,0.0,H,,,,13.0,11.0,3.0,1.0,6.0,5.0,17.0,8.0,0.0,2.0,0.0,1.0,45.4,54.6,,,espn:401880611
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Stockport County,Doncaster Rovers,FINAL_PEN,1.0,1.0,D,,,,18.0,8.0,8.0,1.0,6.0,8.0,4.0,6.0,0.0,1.0,0.0,0.0,72.7,27.3,,,espn:401880612
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Stoke City,Oldham Athletic,FULL_TIME,2.0,0.0,H,,,,11.0,9.0,3.0,4.0,3.0,3.0,14.0,11.0,2.0,1.0,0.0,0.0,59.4,40.6,,,espn:401880606
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Swansea City,Birmingham City,FULL_TIME,0.0,1.0,A,,,,13.0,6.0,2.0,1.0,6.0,4.0,12.0,19.0,2.0,0.0,0.0,0.0,61.0,39.0,,,espn:401880605
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Watford,Crawley Town,FULL_TIME,1.0,0.0,H,,,,36.0,9.0,11.0,3.0,12.0,1.0,11.0,13.0,2.0,3.0,0.0,0.0,60.9,39.1,,,espn:401903532
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,West Ham United,Portsmouth,FULL_TIME,3.0,1.0,H,,,,12.0,12.0,7.0,4.0,3.0,7.0,12.0,19.0,1.0,2.0,0.0,0.0,45.0,55.0,,,espn:401881125
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,16:30,Cheltenham Town,Charlton Athletic,FULL_TIME,1.0,3.0,A,,,,7.0,17.0,2.0,9.0,2.0,3.0,11.0,8.0,1.0,0.0,0.0,0.0,45.6,54.4,,,espn:401880596
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,16:30,Colchester United,Southampton,FULL_TIME,0.0,2.0,A,,,,11.0,25.0,4.0,5.0,1.0,5.0,14.0,5.0,0.0,0.0,0.0,0.0,25.8,74.2,,,espn:401881127
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,16:30,Rotherham United,West Bromwich Albion,FULL_TIME,1.0,4.0,A,,,,8.0,18.0,2.0,10.0,1.0,2.0,9.0,7.0,2.0,0.0,0.0,0.0,28.5,71.5,,,espn:401880616
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-09,15:00,Mansfield Town,Sheffield United,FULL_TIME,0.0,3.0,A,,,,7.0,20.0,2.0,4.0,5.0,3.0,15.0,13.0,2.0,1.0,0.0,0.0,49.9,50.1,,,espn:401881128
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-10,19:00,Plymouth Argyle,Exeter City,FULL_TIME,2.0,0.0,H,,,,21.0,8.0,6.0,1.0,9.0,3.0,9.0,14.0,0.0,1.0,0.0,1.0,62.9,37.1,,,espn:401881130
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:00,Cardiff City,Norwich City,FULL_TIME,1.0,2.0,A,,,,11.0,12.0,3.0,3.0,5.0,3.0,12.0,14.0,3.0,1.0,0.0,0.0,65.5,34.5,,,espn:401908119
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:30,Doncaster Rovers,Middlesbrough,FULL_TIME,1.0,3.0,A,,,,12.0,24.0,5.0,8.0,1.0,7.0,13.0,16.0,2.0,2.0,0.0,0.0,34.0,66.0,,,espn:401908124
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Barnsley,Crewe Alexandra,FULL_TIME,3.0,2.0,H,,,,30.0,16.0,8.0,9.0,20.0,7.0,10.0,4.0,2.0,0.0,0.0,0.0,66.3,33.7,,,espn:401908137
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Blackburn Rovers,Sheffield United,FULL_TIME,1.0,2.0,A,,,,9.0,16.0,5.0,5.0,6.0,4.0,12.0,9.0,0.0,0.0,0.0,0.0,49.1,50.9,,,espn:401908139
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Blackpool,Lincoln City,FULL_TIME,1.0,4.0,A,,,,8.0,14.0,3.0,9.0,1.0,1.0,12.0,10.0,2.0,1.0,1.0,0.0,38.2,61.8,,,espn:401908122
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Cambridge United,Millwall,FULL_TIME,0.0,1.0,A,,,,9.0,10.0,1.0,4.0,4.0,1.0,11.0,17.0,2.0,0.0,0.0,0.0,43.6,56.4,,,espn:401907952
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Fleetwood Town,Shrewsbury Town,FULL_TIME,4.0,0.0,H,,,,8.0,11.0,3.0,4.0,3.0,7.0,8.0,12.0,1.0,3.0,0.0,0.0,44.6,55.4,,,espn:401908135
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Ipswich Town,Leicester City,FULL_TIME,3.0,1.0,H,,,,15.0,22.0,9.0,9.0,5.0,3.0,11.0,13.0,3.0,2.0,0.0,0.0,42.7,57.3,,,espn:401907954
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Plymouth Argyle,Coventry City,FULL_TIME,2.0,4.0,A,,,,11.0,12.0,5.0,5.0,3.0,3.0,22.0,13.0,1.0,2.0,0.0,0.0,34.3,65.7,,,espn:401908416
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Sheffield Wednesday,Wolverhampton Wanderers,FULL_TIME,0.0,2.0,A,,,,11.0,13.0,3.0,3.0,2.0,6.0,5.0,10.0,1.0,1.0,0.0,0.0,48.2,51.8,,,espn:401908121
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Southampton,West Ham United,FULL_TIME,1.0,4.0,A,,,,12.0,18.0,5.0,8.0,2.0,5.0,7.0,8.0,2.0,0.0,0.0,0.0,57.7,42.3,,,espn:401907950
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Stevenage,Reading,FULL_TIME,0.0,3.0,A,,,,13.0,10.0,3.0,5.0,5.0,5.0,6.0,13.0,2.0,2.0,0.0,0.0,57.1,42.9,,,espn:401907953
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Stoke City,Hull City,FINAL_PEN,1.0,1.0,D,,,,10.0,18.0,4.0,6.0,1.0,4.0,11.0,6.0,1.0,1.0,0.0,0.0,44.4,55.6,,,espn:401908126
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Walsall,Leyton Orient,FINAL_PEN,0.0,0.0,D,,,,13.0,20.0,4.0,5.0,2.0,8.0,18.0,14.0,2.0,1.0,0.0,0.0,39.6,60.4,,,espn:401908120
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Watford,Peterborough United,FULL_TIME,1.0,5.0,A,,,,17.0,19.0,5.0,10.0,2.0,2.0,7.0,9.0,0.0,1.0,0.0,0.0,63.3,36.7,,,espn:401907949
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,19:00,Birmingham City,Brentford,FULL_TIME,1.0,6.0,A,,,,8.0,18.0,2.0,8.0,4.0,7.0,9.0,12.0,2.0,1.0,0.0,0.0,31.5,68.5,,,espn:401907951
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,19:00,Nottingham Forest,Leeds United,FULL_TIME,0.0,2.0,A,,,,8.0,13.0,3.0,5.0,3.0,2.0,15.0,12.0,4.0,3.0,0.0,0.0,50.3,49.7,,,espn:401908138
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-26,18:45,Bradford City,Burnley,FINAL_PEN,0.0,0.0,D,,,,16.0,23.0,4.0,6.0,5.0,15.0,7.0,9.0,2.0,0.0,0.0,0.0,32.2,67.8,,,espn:401908136
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-26,18:45,Newcastle United,West Bromwich Albion,FULL_TIME,3.0,2.0,H,,,,16.0,12.0,7.0,3.0,6.0,2.0,14.0,13.0,3.0,3.0,0.0,0.0,56.7,43.3,,,espn:401908125
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-26,18:45,Tottenham Hotspur,Charlton Athletic,FULL_TIME,5.0,1.0,H,,,,20.0,6.0,11.0,4.0,11.0,6.0,5.0,11.0,1.0,1.0,0.0,0.0,72.6,27.4,,,espn:401908140
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-26,19:00,Preston North End,Everton,FULL_TIME,0.0,4.0,A,,,,5.0,29.0,1.0,10.0,3.0,5.0,3.0,6.0,0.0,0.0,0.0,0.0,32.4,67.6,,,espn:401908123
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-27,18:30,Chelsea,Luton Town,FULL_TIME,2.0,0.0,H,,,,26.0,7.0,7.0,1.0,9.0,3.0,11.0,6.0,0.0,1.0,0.0,0.0,65.7,34.3,,,espn:401908127
+espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-27,19:00,Fulham,AFC Wimbledon,FULL_TIME,3.0,0.0,H,,,,29.0,5.0,8.0,2.0,10.0,4.0,6.0,9.0,1.0,1.0,0.0,0.0,79.3,20.7,,,espn:401907948
 espn,2026-27,EFL Cup,1,league_cup,EFL,2026-09-08,18:45,AFC Bournemouth,Lincoln City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401914267
 espn,2026-27,EFL Cup,1,league_cup,EFL,2026-09-08,18:45,Crystal Palace,Middlesbrough,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401914269
 espn,2026-27,EFL Cup,1,league_cup,EFL,2026-09-08,18:45,Leyton Orient,Bradford City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401914254
@@ -107,36 +107,36 @@ espn,2026-27,EFL Cup,1,league_cup,EFL,2026-09-16,18:45,Fleetwood Town,Sheffield 
 espn,2026-27,EFL Cup,1,league_cup,EFL,2026-09-16,19:00,Coventry City,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401914258
 espn,2026-27,EFL Cup,1,league_cup,EFL,2026-09-16,19:00,Manchester United,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401914261
 espn,2026-27,EFL Cup,1,league_cup,EFL,2026-09-17,18:30,Manchester City,Norwich City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401914260
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-21,19:00,Arsenal FC,Coventry City FC,FINISHED,3.0,0.0,H,2.0,0.0,,20.0,4.0,6.0,1.0,8.0,2.0,10.0,13.0,1.0,1.0,0.0,0.0,64.5,35.5,1.854,0.558,fdorg:560542
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,11:30,Hull City AFC,Manchester United FC,FINISHED,2.0,0.0,H,2.0,0.0,,8.0,21.0,4.0,5.0,1.0,6.0,10.0,9.0,2.0,1.0,0.0,0.0,28.5,71.5,1.496,1.779,fdorg:560543
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Ipswich Town FC,Sunderland AFC,FINISHED,2.0,1.0,H,1.0,1.0,,10.0,11.0,3.0,4.0,3.0,5.0,12.0,14.0,0.0,3.0,0.0,0.0,37.5,62.5,1.585,1.177,fdorg:560544
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Nottingham Forest FC,Leeds United FC,FINISHED,0.0,1.0,A,0.0,0.0,,12.0,11.0,2.0,3.0,3.0,2.0,15.0,14.0,2.0,1.0,0.0,0.0,55.2,44.8,0.657,0.466,fdorg:560545
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Everton FC,Crystal Palace FC,FINISHED,2.0,0.0,H,1.0,0.0,,16.0,11.0,5.0,4.0,4.0,0.0,5.0,15.0,0.0,1.0,0.0,0.0,42.1,57.9,1.451,2.231,fdorg:560546
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,16:30,Brentford FC,Tottenham Hotspur FC,FINISHED,3.0,0.0,H,2.0,0.0,,26.0,9.0,8.0,4.0,7.0,3.0,17.0,14.0,1.0,1.0,0.0,0.0,41.1,58.9,4.042,0.756,fdorg:560547
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-23,13:00,Manchester City FC,AFC Bournemouth,FINISHED,2.0,1.0,H,0.0,1.0,,13.0,5.0,6.0,4.0,8.0,3.0,11.0,11.0,1.0,2.0,0.0,0.0,66.1,33.9,2.474,0.708,fdorg:560548
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-23,13:00,Brighton & Hove Albion FC,Aston Villa FC,FINISHED,4.0,0.0,H,4.0,0.0,,21.0,6.0,6.0,0.0,5.0,2.0,12.0,9.0,2.0,3.0,0.0,1.0,72.9,27.1,4.003,0.275,fdorg:560549
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-23,15:30,Newcastle United FC,Liverpool FC,FINISHED,2.0,2.0,D,1.0,0.0,,13.0,27.0,4.0,7.0,2.0,6.0,16.0,15.0,5.0,3.0,0.0,0.0,39.2,60.8,1.595,3.131,fdorg:560550
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-24,19:00,Fulham FC,Chelsea FC,FINISHED,2.0,3.0,A,1.0,2.0,,14.0,18.0,6.0,6.0,6.0,4.0,12.0,7.0,2.0,3.0,0.0,0.0,61.5,38.5,1.417,2.584,fdorg:560551
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-28,19:00,Crystal Palace FC,Manchester City FC,FINISHED,1.0,4.0,A,0.0,1.0,,9.0,18.0,1.0,9.0,2.0,6.0,8.0,10.0,1.0,2.0,0.0,0.0,27.8,72.2,0.927,2.567,fdorg:560555
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-29,11:30,Liverpool FC,Nottingham Forest FC,FINISHED,2.0,2.0,D,0.0,1.0,,13.0,12.0,4.0,3.0,3.0,5.0,13.0,10.0,4.0,2.0,0.0,0.0,69.6,30.4,1.279,2.879,fdorg:560552
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-29,14:00,AFC Bournemouth,Everton FC,FINISHED,1.0,1.0,D,1.0,0.0,,17.0,13.0,5.0,7.0,10.0,7.0,11.0,14.0,3.0,2.0,0.0,0.0,58.5,41.5,2.258,1.664,fdorg:560560
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-29,14:00,Coventry City FC,Hull City AFC,FINISHED,0.0,1.0,A,0.0,0.0,,11.0,6.0,3.0,2.0,6.0,2.0,11.0,8.0,1.0,4.0,0.0,0.0,68.7,31.3,1.182,0.46,fdorg:560561
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-29,16:30,Tottenham Hotspur FC,Newcastle United FC,FINISHED,0.0,2.0,A,0.0,0.0,,17.0,11.0,6.0,2.0,9.0,7.0,15.0,9.0,1.0,2.0,0.0,0.0,57.5,42.5,1.12,1.01,fdorg:560558
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-30,13:00,Sunderland AFC,Fulham FC,FINISHED,1.0,0.0,H,0.0,0.0,,12.0,11.0,4.0,0.0,3.0,4.0,10.0,15.0,0.0,2.0,0.0,0.0,41.6,58.4,1.562,1.024,fdorg:560554
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-30,13:00,Chelsea FC,Brighton & Hove Albion FC,FINISHED,4.0,3.0,H,3.0,1.0,,17.0,15.0,6.0,6.0,4.0,7.0,6.0,12.0,1.0,3.0,0.0,0.0,25.6,74.4,3.829,1.792,fdorg:560556
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-30,13:00,Leeds United FC,Brentford FC,FINISHED,1.0,1.0,D,0.0,1.0,,12.0,22.0,2.0,5.0,5.0,6.0,5.0,13.0,0.0,4.0,0.0,0.0,46.6,53.4,1.15,1.613,fdorg:560559
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-30,15:30,Manchester United FC,Ipswich Town FC,FINISHED,5.0,2.0,H,1.0,1.0,,33.0,9.0,11.0,5.0,8.0,4.0,7.0,12.0,1.0,3.0,0.0,0.0,60.4,39.6,4.866,1.805,fdorg:560553
-espn+football-data.org+fotmob+understat,2026-27,Premier League,1,league,ENG1,2026-08-31,19:00,Aston Villa FC,Arsenal FC,FINISHED,0.0,1.0,A,0.0,0.0,,7.0,7.0,0.0,2.0,2.0,4.0,17.0,6.0,3.0,1.0,0.0,0.0,39.2,60.8,0.282,1.524,fdorg:560557
-espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-04,19:00,Ipswich Town FC,Liverpool FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560566
-espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,11:30,Newcastle United FC,AFC Bournemouth,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560571
-espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Nottingham Forest FC,Tottenham Hotspur FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560562
-espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Manchester City FC,Coventry City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560563
-espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Brighton & Hove Albion FC,Leeds United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560564
-espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Brentford FC,Sunderland AFC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560565
-espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Fulham FC,Crystal Palace FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560568
-espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,16:30,Hull City AFC,Aston Villa FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560569
-espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-06,13:00,Everton FC,Manchester United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560567
-espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-06,15:30,Arsenal FC,Chelsea FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560570
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-21,19:00,Arsenal FC,Coventry City FC,FINISHED,3.0,0.0,H,2.0,0.0,,20.0,4.0,6.0,1.0,8.0,2.0,10.0,13.0,1.0,1.0,0.0,0.0,64.5,35.5,1.854,0.558,fdorg:560542
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,11:30,Hull City AFC,Manchester United FC,FINISHED,2.0,0.0,H,2.0,0.0,,8.0,21.0,4.0,5.0,1.0,6.0,10.0,9.0,2.0,1.0,0.0,0.0,28.5,71.5,1.496,1.779,fdorg:560543
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Ipswich Town FC,Sunderland AFC,FINISHED,2.0,1.0,H,1.0,1.0,,10.0,11.0,3.0,4.0,3.0,5.0,12.0,14.0,0.0,3.0,0.0,0.0,37.5,62.5,1.585,1.177,fdorg:560544
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Nottingham Forest FC,Leeds United FC,FINISHED,0.0,1.0,A,0.0,0.0,,12.0,11.0,2.0,3.0,3.0,2.0,15.0,14.0,2.0,1.0,0.0,0.0,55.2,44.8,0.657,0.466,fdorg:560545
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Everton FC,Crystal Palace FC,FINISHED,2.0,0.0,H,1.0,0.0,,16.0,11.0,5.0,4.0,4.0,0.0,5.0,15.0,0.0,1.0,0.0,0.0,42.1,57.9,1.451,2.231,fdorg:560546
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,16:30,Brentford FC,Tottenham Hotspur FC,FINISHED,3.0,0.0,H,2.0,0.0,,26.0,9.0,8.0,4.0,7.0,3.0,17.0,14.0,1.0,1.0,0.0,0.0,41.1,58.9,4.042,0.756,fdorg:560547
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-23,13:00,Manchester City FC,AFC Bournemouth,FINISHED,2.0,1.0,H,0.0,1.0,,13.0,5.0,6.0,4.0,8.0,3.0,11.0,11.0,1.0,2.0,0.0,0.0,66.1,33.9,2.474,0.708,fdorg:560548
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-23,13:00,Brighton & Hove Albion FC,Aston Villa FC,FINISHED,4.0,0.0,H,4.0,0.0,,21.0,6.0,6.0,0.0,5.0,2.0,12.0,9.0,2.0,3.0,0.0,1.0,72.9,27.1,4.003,0.275,fdorg:560549
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-23,15:30,Newcastle United FC,Liverpool FC,FINISHED,2.0,2.0,D,1.0,0.0,,13.0,27.0,4.0,7.0,2.0,6.0,16.0,15.0,5.0,3.0,0.0,0.0,39.2,60.8,1.595,3.131,fdorg:560550
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-24,19:00,Fulham FC,Chelsea FC,FINISHED,2.0,3.0,A,1.0,2.0,,14.0,18.0,6.0,6.0,6.0,4.0,12.0,7.0,2.0,3.0,0.0,0.0,61.5,38.5,1.417,2.584,fdorg:560551
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-28,19:00,Crystal Palace FC,Manchester City FC,FINISHED,1.0,4.0,A,0.0,1.0,,9.0,18.0,1.0,9.0,2.0,6.0,8.0,10.0,1.0,2.0,0.0,0.0,27.8,72.2,0.927,2.567,fdorg:560555
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-29,11:30,Liverpool FC,Nottingham Forest FC,FINISHED,2.0,2.0,D,0.0,1.0,,13.0,12.0,4.0,3.0,3.0,5.0,13.0,10.0,4.0,2.0,0.0,0.0,69.6,30.4,1.279,2.879,fdorg:560552
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-29,14:00,AFC Bournemouth,Everton FC,FINISHED,1.0,1.0,D,1.0,0.0,,17.0,13.0,5.0,7.0,10.0,7.0,11.0,14.0,3.0,2.0,0.0,0.0,58.5,41.5,2.258,1.664,fdorg:560560
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-29,14:00,Coventry City FC,Hull City AFC,FINISHED,0.0,1.0,A,0.0,0.0,,11.0,6.0,3.0,2.0,6.0,2.0,11.0,8.0,1.0,4.0,0.0,0.0,68.7,31.3,1.182,0.46,fdorg:560561
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-29,16:30,Tottenham Hotspur FC,Newcastle United FC,FINISHED,0.0,2.0,A,0.0,0.0,,17.0,11.0,6.0,2.0,9.0,7.0,15.0,9.0,1.0,2.0,0.0,0.0,57.5,42.5,1.12,1.01,fdorg:560558
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-30,13:00,Sunderland AFC,Fulham FC,FINISHED,1.0,0.0,H,0.0,0.0,,12.0,11.0,4.0,0.0,3.0,4.0,10.0,15.0,0.0,2.0,0.0,0.0,41.6,58.4,1.562,1.024,fdorg:560554
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-30,13:00,Chelsea FC,Brighton & Hove Albion FC,FINISHED,4.0,3.0,H,3.0,1.0,,17.0,15.0,6.0,6.0,4.0,7.0,6.0,12.0,1.0,3.0,0.0,0.0,25.6,74.4,3.829,1.792,fdorg:560556
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-30,13:00,Leeds United FC,Brentford FC,FINISHED,1.0,1.0,D,0.0,1.0,,12.0,22.0,2.0,5.0,5.0,6.0,5.0,13.0,0.0,4.0,0.0,0.0,46.6,53.4,1.15,1.613,fdorg:560559
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-30,15:30,Manchester United FC,Ipswich Town FC,FINISHED,5.0,2.0,H,1.0,1.0,,33.0,9.0,11.0,5.0,8.0,4.0,7.0,12.0,1.0,3.0,0.0,0.0,60.4,39.6,4.866,1.805,fdorg:560553
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-31,19:00,Aston Villa FC,Arsenal FC,FINISHED,0.0,1.0,A,0.0,0.0,,7.0,7.0,0.0,2.0,2.0,4.0,17.0,6.0,3.0,1.0,0.0,0.0,39.2,60.8,0.282,1.524,fdorg:560557
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-04,19:00,Ipswich Town FC,Liverpool FC,FINISHED,0.0,2.0,A,0.0,2.0,,14.0,10.0,5.0,7.0,4.0,3.0,6.0,13.0,1.0,3.0,0.0,0.0,45.1,54.9,0.598,0.744,fdorg:560566
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,11:30,Newcastle United FC,AFC Bournemouth,FINISHED,2.0,2.0,D,1.0,2.0,,8.0,17.0,2.0,5.0,4.0,3.0,19.0,17.0,2.0,3.0,0.0,0.0,57.3,42.7,0.772,1.639,fdorg:560571
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Nottingham Forest FC,Tottenham Hotspur FC,FINISHED,0.0,0.0,D,0.0,0.0,,12.0,12.0,2.0,0.0,2.0,10.0,22.0,13.0,2.0,2.0,0.0,0.0,41.4,58.6,0.832,1.484,fdorg:560562
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Manchester City FC,Coventry City FC,FINISHED,1.0,0.0,H,1.0,0.0,,15.0,12.0,4.0,3.0,4.0,5.0,7.0,17.0,1.0,2.0,0.0,0.0,77.6,22.4,2.19,1.493,fdorg:560563
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Brighton & Hove Albion FC,Leeds United FC,FINISHED,1.0,1.0,D,0.0,1.0,,20.0,10.0,5.0,5.0,7.0,6.0,13.0,16.0,3.0,3.0,0.0,0.0,66.8,33.2,2.22,2.234,fdorg:560564
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Brentford FC,Sunderland AFC,FINISHED,1.0,1.0,D,0.0,0.0,,12.0,14.0,2.0,5.0,4.0,3.0,19.0,9.0,3.0,2.0,0.0,0.0,49.0,51.0,1.586,2.155,fdorg:560565
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Fulham FC,Crystal Palace FC,FINISHED,2.0,3.0,A,2.0,1.0,,25.0,10.0,6.0,5.0,7.0,1.0,6.0,7.0,0.0,0.0,0.0,0.0,64.7,35.3,2.883,2.36,fdorg:560568
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,16:30,Hull City AFC,Aston Villa FC,FINISHED,0.0,0.0,D,0.0,0.0,,11.0,13.0,4.0,1.0,3.0,4.0,10.0,5.0,2.0,0.0,0.0,0.0,26.5,73.5,0.812,1.635,fdorg:560569
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-06,13:00,Everton FC,Manchester United FC,FINISHED,2.0,2.0,D,0.0,0.0,,18.0,14.0,6.0,3.0,4.0,3.0,7.0,11.0,3.0,3.0,0.0,0.0,45.4,54.6,1.056,0.872,fdorg:560567
+espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-06,15:30,Arsenal FC,Chelsea FC,FINISHED,2.0,1.0,H,1.0,1.0,,16.0,13.0,9.0,5.0,5.0,3.0,13.0,16.0,2.0,4.0,0.0,0.0,54.6,45.4,2.806,0.431,fdorg:560570
 espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Crystal Palace FC,Ipswich Town FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560572
 espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Liverpool FC,Fulham FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560573
 espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Aston Villa FC,Nottingham Forest FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560574
@@ -487,45 +487,45 @@ espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-05-30
 espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Sunderland AFC,Manchester City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560919
 espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Chelsea FC,Brentford FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560920
 espn+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Crystal Palace FC,Leeds United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560921
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-15,17:30,Deportivo Alavés,Getafe CF,FINISHED,3.0,0.0,H,0.0,0.0,,18.0,6.0,8.0,2.0,5.0,3.0,16.0,13.0,4.0,3.0,0.0,1.0,51.8,48.2,2.286,0.26,fdorg:564634
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-15,19:30,Sevilla FC,Rayo Vallecano de Madrid,FINISHED,2.0,1.0,H,0.0,1.0,,13.0,6.0,4.0,3.0,1.0,2.0,18.0,18.0,4.0,4.0,1.0,0.0,49.0,51.0,2.018,1.912,fdorg:564633
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-16,15:00,Real Racing Club de Santander,Villarreal CF,FINISHED,2.0,2.0,D,2.0,2.0,,17.0,12.0,3.0,7.0,6.0,10.0,14.0,14.0,2.0,4.0,0.0,0.0,41.4,58.6,1.965,0.769,fdorg:564629
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-16,17:00,RCD Espanyol de Barcelona,Levante UD,FINISHED,3.0,0.0,H,2.0,0.0,,16.0,4.0,6.0,0.0,1.0,1.0,17.0,7.0,3.0,0.0,0.0,0.0,53.7,46.3,2.01,0.196,fdorg:564632
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-17,19:00,RC Deportivo La Coruña,Elche CF,FINISHED,1.0,1.0,D,1.0,0.0,,8.0,11.0,3.0,6.0,2.0,7.0,17.0,12.0,2.0,2.0,0.0,0.0,38.8,61.2,0.34,1.587,fdorg:564635
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-19,19:00,Club Atlético de Madrid,Málaga CF,FINISHED,2.0,0.0,H,0.0,0.0,,15.0,5.0,6.0,1.0,6.0,1.0,17.0,11.0,2.0,3.0,0.0,0.0,53.3,46.7,1.344,0.23,fdorg:564628
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-20,19:00,Rayo Vallecano de Madrid,Deportivo Alavés,FINISHED,1.0,1.0,D,0.0,0.0,,8.0,15.0,3.0,3.0,9.0,7.0,14.0,13.0,1.0,2.0,0.0,0.0,48.2,51.8,0.566,2.221,fdorg:564638
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-21,19:00,Real Betis Balompié,Real Sociedad de Fútbol,FINISHED,1.0,0.0,H,0.0,0.0,,18.0,9.0,7.0,3.0,4.0,5.0,9.0,12.0,3.0,3.0,0.0,0.0,48.4,51.6,1.696,1.14,fdorg:564647
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-22,15:00,Athletic Club,Sevilla FC,FINISHED,1.0,3.0,A,0.0,1.0,,18.0,7.0,8.0,4.0,10.0,3.0,11.0,16.0,2.0,5.0,1.0,0.0,64.9,35.1,1.465,0.967,fdorg:564641
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-22,17:30,Valencia CF,RC Celta de Vigo,FINISHED,0.0,0.0,D,0.0,0.0,,8.0,7.0,2.0,3.0,1.0,2.0,17.0,17.0,2.0,3.0,0.0,0.0,44.4,55.6,0.421,0.537,fdorg:564643
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-22,19:30,RCD Espanyol de Barcelona,Real Madrid CF,FINISHED,1.0,2.0,A,1.0,1.0,,8.0,21.0,3.0,8.0,0.0,8.0,19.0,7.0,5.0,1.0,0.0,0.0,37.3,62.7,1.019,2.561,fdorg:564645
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-23,15:00,Club Atlético de Madrid,Villarreal CF,FINISHED,2.0,2.0,D,0.0,0.0,,19.0,13.0,4.0,6.0,5.0,3.0,12.0,13.0,3.0,2.0,1.0,0.0,52.0,48.0,0.739,3.542,fdorg:564646
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-23,17:30,Getafe CF,Real Racing Club de Santander,FINISHED,1.0,0.0,H,0.0,0.0,,12.0,6.0,1.0,3.0,8.0,6.0,14.0,17.0,1.0,3.0,0.0,0.0,42.7,57.3,0.983,1.168,fdorg:564644
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-23,19:30,Elche CF,FC Barcelona,FINISHED,0.0,5.0,A,0.0,2.0,,7.0,11.0,2.0,7.0,3.0,1.0,13.0,12.0,1.0,0.0,0.0,0.0,45.6,54.4,1.176,4.252,fdorg:564642
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-24,17:30,CA Osasuna,Levante UD,FINISHED,0.0,0.0,D,0.0,0.0,,12.0,11.0,7.0,1.0,9.0,4.0,9.0,12.0,2.0,1.0,0.0,0.0,45.7,54.3,0.893,1.27,fdorg:564639
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-24,19:30,Málaga CF,RC Deportivo La Coruña,FINISHED,1.0,1.0,D,1.0,1.0,,13.0,6.0,2.0,4.0,8.0,4.0,12.0,12.0,1.0,4.0,0.0,0.0,55.2,44.8,1.356,1.13,fdorg:564640
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-25,19:00,Valencia CF,Real Betis Balompié,FINISHED,0.0,1.0,A,0.0,0.0,,16.0,15.0,3.0,3.0,8.0,2.0,10.0,11.0,2.0,1.0,0.0,0.0,41.6,58.4,1.29,0.964,fdorg:564637
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-26,19:00,Real Madrid CF,Real Sociedad de Fútbol,FINISHED,4.0,1.0,H,1.0,1.0,,20.0,10.0,11.0,3.0,4.0,7.0,10.0,8.0,3.0,3.0,0.0,0.0,50.7,49.3,3.305,0.463,fdorg:564631
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-27,18:30,RC Celta de Vigo,CA Osasuna,FINISHED,1.0,2.0,A,1.0,0.0,,4.0,13.0,2.0,5.0,5.0,3.0,7.0,16.0,1.0,1.0,1.0,0.0,51.5,48.5,0.107,1.897,fdorg:564636
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-27,19:00,FC Barcelona,Athletic Club,FINISHED,2.0,0.0,H,1.0,0.0,,22.0,5.0,10.0,0.0,12.0,5.0,13.0,6.0,1.0,2.0,0.0,0.0,70.2,29.8,3.917,0.222,fdorg:564630
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-28,17:00,Real Racing Club de Santander,Elche CF,FINISHED,3.0,2.0,H,3.0,0.0,,13.0,18.0,6.0,7.0,5.0,10.0,17.0,19.0,2.0,1.0,0.0,0.0,39.9,60.1,2.562,1.076,fdorg:564654
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-28,19:30,Deportivo Alavés,Villarreal CF,FINISHED,1.0,0.0,H,1.0,0.0,,9.0,19.0,2.0,6.0,5.0,9.0,15.0,8.0,3.0,2.0,0.0,0.0,24.1,75.9,0.915,1.451,fdorg:564648
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,15:00,Levante UD,Real Betis Balompié,FINISHED,5.0,2.0,H,2.0,2.0,,19.0,20.0,10.0,6.0,6.0,8.0,9.0,7.0,1.0,1.0,0.0,0.0,39.8,60.2,3.038,1.923,fdorg:564655
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,17:00,Real Sociedad de Fútbol,RCD Espanyol de Barcelona,FINISHED,2.0,1.0,H,1.0,1.0,,17.0,11.0,10.0,3.0,7.0,3.0,19.0,14.0,2.0,4.0,0.0,0.0,51.2,48.8,2.917,0.93,fdorg:564653
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,19:30,Sevilla FC,Club Atlético de Madrid,FINISHED,1.0,3.0,A,0.0,3.0,,20.0,12.0,5.0,5.0,4.0,2.0,20.0,16.0,2.0,2.0,0.0,0.0,42.0,58.0,1.081,1.477,fdorg:564649
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,15:00,Real Madrid CF,Málaga CF,FINISHED,4.0,0.0,H,3.0,0.0,,19.0,14.0,8.0,1.0,9.0,6.0,6.0,9.0,0.0,2.0,0.0,0.0,56.7,43.3,3.408,0.76,fdorg:564656
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,17:30,RC Deportivo La Coruña,Valencia CF,FINISHED,3.0,1.0,H,2.0,1.0,,11.0,12.0,4.0,4.0,5.0,5.0,14.0,5.0,0.0,1.0,1.0,0.0,44.5,55.5,1.408,1.017,fdorg:564651
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,19:30,RC Celta de Vigo,Athletic Club,FINISHED,0.0,2.0,A,0.0,2.0,,8.0,17.0,2.0,7.0,4.0,7.0,8.0,17.0,0.0,3.0,0.0,0.0,53.5,46.5,1.201,3.133,fdorg:564652
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-31,17:30,CA Osasuna,Getafe CF,FINISHED,1.0,0.0,H,1.0,0.0,,10.0,11.0,2.0,1.0,1.0,3.0,17.0,14.0,5.0,4.0,0.0,0.0,45.0,55.0,1.705,1.09,fdorg:564657
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-08-31,19:30,FC Barcelona,Rayo Vallecano de Madrid,FINISHED,5.0,2.0,H,2.0,1.0,,26.0,11.0,9.0,5.0,9.0,5.0,4.0,11.0,0.0,1.0,0.0,0.0,68.6,31.4,2.958,1.066,fdorg:564650
-espn+football-data.org+fotmob+understat,2026-27,La Liga,1,league,ESP1,2026-09-03,19:00,Real Sociedad de Fútbol,RC Celta de Vigo,FINISHED,0.0,0.0,D,0.0,0.0,,16.0,7.0,5.0,2.0,11.0,3.0,15.0,11.0,2.0,3.0,0.0,0.0,50.9,49.1,1.02,0.633,fdorg:564682
-espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-04,19:00,Real Betis Balompié,Real Madrid CF,2026-09-05 13:15:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564667
-espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,14:15,Athletic Club,Club Atlético de Madrid,2026-09-05 14:15:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564663
-espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,16:30,Rayo Vallecano de Madrid,Real Racing Club de Santander,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:564660
-espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,19:00,Villarreal CF,RC Deportivo La Coruña,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:564662
-espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,14:15,Valencia CF,FC Barcelona,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:564659
-espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,16:30,Deportivo Alavés,CA Osasuna,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:564664
-espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,16:30,Málaga CF,Levante UD,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:564666
-espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,19:00,RCD Espanyol de Barcelona,Sevilla FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:564661
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-15,17:30,Deportivo Alavés,Getafe CF,FINISHED,3.0,0.0,H,0.0,0.0,,18.0,6.0,8.0,2.0,5.0,3.0,16.0,13.0,4.0,3.0,0.0,1.0,51.8,48.2,2.286,0.26,fdorg:564634
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-15,19:30,Sevilla FC,Rayo Vallecano de Madrid,FINISHED,2.0,1.0,H,0.0,1.0,,13.0,6.0,4.0,3.0,1.0,2.0,18.0,18.0,4.0,4.0,1.0,0.0,49.0,51.0,2.018,1.912,fdorg:564633
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-16,15:00,Real Racing Club de Santander,Villarreal CF,FINISHED,2.0,2.0,D,2.0,2.0,,17.0,12.0,3.0,7.0,6.0,10.0,14.0,14.0,2.0,4.0,0.0,0.0,41.4,58.6,1.965,0.769,fdorg:564629
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-16,17:00,RCD Espanyol de Barcelona,Levante UD,FINISHED,3.0,0.0,H,2.0,0.0,,16.0,4.0,6.0,0.0,1.0,1.0,17.0,7.0,3.0,0.0,0.0,0.0,53.7,46.3,2.01,0.196,fdorg:564632
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-17,19:00,RC Deportivo La Coruña,Elche CF,FINISHED,1.0,1.0,D,1.0,0.0,,8.0,11.0,3.0,6.0,2.0,7.0,17.0,12.0,2.0,2.0,0.0,0.0,38.8,61.2,0.34,1.587,fdorg:564635
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-19,19:00,Club Atlético de Madrid,Málaga CF,FINISHED,2.0,0.0,H,0.0,0.0,,15.0,5.0,6.0,1.0,6.0,1.0,17.0,11.0,2.0,3.0,0.0,0.0,53.3,46.7,1.344,0.23,fdorg:564628
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-20,19:00,Rayo Vallecano de Madrid,Deportivo Alavés,FINISHED,1.0,1.0,D,0.0,0.0,,8.0,15.0,3.0,3.0,9.0,7.0,14.0,13.0,1.0,2.0,0.0,0.0,48.2,51.8,0.566,2.221,fdorg:564638
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-21,19:00,Real Betis Balompié,Real Sociedad de Fútbol,FINISHED,1.0,0.0,H,0.0,0.0,,18.0,9.0,7.0,3.0,4.0,5.0,9.0,12.0,3.0,3.0,0.0,0.0,48.4,51.6,1.696,1.14,fdorg:564647
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-22,15:00,Athletic Club,Sevilla FC,FINISHED,1.0,3.0,A,0.0,1.0,,18.0,7.0,8.0,4.0,10.0,3.0,11.0,16.0,2.0,5.0,1.0,0.0,64.9,35.1,1.465,0.967,fdorg:564641
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-22,17:30,Valencia CF,RC Celta de Vigo,FINISHED,0.0,0.0,D,0.0,0.0,,8.0,7.0,2.0,3.0,1.0,2.0,17.0,17.0,2.0,3.0,0.0,0.0,44.4,55.6,0.421,0.537,fdorg:564643
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-22,19:30,RCD Espanyol de Barcelona,Real Madrid CF,FINISHED,1.0,2.0,A,1.0,1.0,,8.0,21.0,3.0,8.0,0.0,8.0,19.0,7.0,5.0,1.0,0.0,0.0,37.3,62.7,1.019,2.561,fdorg:564645
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-23,15:00,Club Atlético de Madrid,Villarreal CF,FINISHED,2.0,2.0,D,0.0,0.0,,19.0,13.0,4.0,6.0,5.0,3.0,12.0,13.0,3.0,2.0,1.0,0.0,52.0,48.0,0.739,3.542,fdorg:564646
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-23,17:30,Getafe CF,Real Racing Club de Santander,FINISHED,1.0,0.0,H,0.0,0.0,,12.0,6.0,1.0,3.0,8.0,6.0,14.0,17.0,1.0,3.0,0.0,0.0,42.7,57.3,0.983,1.168,fdorg:564644
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-23,19:30,Elche CF,FC Barcelona,FINISHED,0.0,5.0,A,0.0,2.0,,7.0,11.0,2.0,7.0,3.0,1.0,13.0,12.0,1.0,0.0,0.0,0.0,45.6,54.4,1.176,4.252,fdorg:564642
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-24,17:30,CA Osasuna,Levante UD,FINISHED,0.0,0.0,D,0.0,0.0,,12.0,11.0,7.0,1.0,9.0,4.0,9.0,12.0,2.0,1.0,0.0,0.0,45.7,54.3,0.893,1.27,fdorg:564639
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-24,19:30,Málaga CF,RC Deportivo La Coruña,FINISHED,1.0,1.0,D,1.0,1.0,,13.0,6.0,2.0,4.0,8.0,4.0,12.0,12.0,1.0,4.0,0.0,0.0,55.2,44.8,1.356,1.13,fdorg:564640
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-25,19:00,Valencia CF,Real Betis Balompié,FINISHED,0.0,1.0,A,0.0,0.0,,16.0,15.0,3.0,3.0,8.0,2.0,10.0,11.0,2.0,1.0,0.0,0.0,41.6,58.4,1.29,0.964,fdorg:564637
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-26,19:00,Real Madrid CF,Real Sociedad de Fútbol,FINISHED,4.0,1.0,H,1.0,1.0,,20.0,10.0,11.0,3.0,4.0,7.0,10.0,8.0,3.0,3.0,0.0,0.0,50.7,49.3,3.305,0.463,fdorg:564631
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-27,18:30,RC Celta de Vigo,CA Osasuna,FINISHED,1.0,2.0,A,1.0,0.0,,4.0,13.0,2.0,5.0,5.0,3.0,7.0,16.0,1.0,1.0,1.0,0.0,51.5,48.5,0.107,1.897,fdorg:564636
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-27,19:00,FC Barcelona,Athletic Club,FINISHED,2.0,0.0,H,1.0,0.0,,22.0,5.0,10.0,0.0,12.0,5.0,13.0,6.0,1.0,2.0,0.0,0.0,70.2,29.8,3.917,0.222,fdorg:564630
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-28,17:00,Real Racing Club de Santander,Elche CF,FINISHED,3.0,2.0,H,3.0,0.0,,13.0,18.0,6.0,7.0,5.0,10.0,17.0,19.0,2.0,1.0,0.0,0.0,39.9,60.1,2.562,1.076,fdorg:564654
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-28,19:30,Deportivo Alavés,Villarreal CF,FINISHED,1.0,0.0,H,1.0,0.0,,9.0,19.0,2.0,6.0,5.0,9.0,15.0,8.0,3.0,2.0,0.0,0.0,24.1,75.9,0.915,1.451,fdorg:564648
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,15:00,Levante UD,Real Betis Balompié,FINISHED,5.0,2.0,H,2.0,2.0,,19.0,20.0,10.0,6.0,6.0,8.0,9.0,7.0,1.0,1.0,0.0,0.0,39.8,60.2,3.038,1.923,fdorg:564655
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,17:00,Real Sociedad de Fútbol,RCD Espanyol de Barcelona,FINISHED,2.0,1.0,H,1.0,1.0,,17.0,11.0,10.0,3.0,7.0,3.0,19.0,14.0,2.0,4.0,0.0,0.0,51.2,48.8,2.917,0.93,fdorg:564653
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,19:30,Sevilla FC,Club Atlético de Madrid,FINISHED,1.0,3.0,A,0.0,3.0,,20.0,12.0,5.0,5.0,4.0,2.0,20.0,16.0,2.0,2.0,0.0,0.0,42.0,58.0,1.081,1.477,fdorg:564649
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,15:00,Real Madrid CF,Málaga CF,FINISHED,4.0,0.0,H,3.0,0.0,,19.0,14.0,8.0,1.0,9.0,6.0,6.0,9.0,0.0,2.0,0.0,0.0,56.7,43.3,3.408,0.76,fdorg:564656
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,17:30,RC Deportivo La Coruña,Valencia CF,FINISHED,3.0,1.0,H,2.0,1.0,,11.0,12.0,4.0,4.0,5.0,5.0,14.0,5.0,0.0,1.0,1.0,0.0,44.5,55.5,1.408,1.017,fdorg:564651
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,19:30,RC Celta de Vigo,Athletic Club,FINISHED,0.0,2.0,A,0.0,2.0,,8.0,17.0,2.0,7.0,4.0,7.0,8.0,17.0,0.0,3.0,0.0,0.0,53.5,46.5,1.201,3.133,fdorg:564652
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-31,17:30,CA Osasuna,Getafe CF,FINISHED,1.0,0.0,H,1.0,0.0,,10.0,11.0,2.0,1.0,1.0,3.0,17.0,14.0,5.0,4.0,0.0,0.0,45.0,55.0,1.705,1.09,fdorg:564657
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-31,19:30,FC Barcelona,Rayo Vallecano de Madrid,FINISHED,5.0,2.0,H,2.0,1.0,,26.0,11.0,9.0,5.0,9.0,5.0,4.0,11.0,0.0,1.0,0.0,0.0,68.6,31.4,2.958,1.066,fdorg:564650
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-03,19:00,Real Sociedad de Fútbol,RC Celta de Vigo,FINISHED,0.0,0.0,D,0.0,0.0,,16.0,7.0,5.0,2.0,11.0,3.0,15.0,11.0,2.0,3.0,0.0,0.0,50.9,49.1,1.02,0.633,fdorg:564682
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-04,19:00,Real Betis Balompié,Real Madrid CF,FINISHED,1.0,0.0,H,0.0,0.0,,10.0,20.0,5.0,8.0,6.0,10.0,11.0,13.0,3.0,4.0,0.0,0.0,41.5,58.5,0.885,3.383,fdorg:564667
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,14:15,Athletic Club,Club Atlético de Madrid,FINISHED,3.0,0.0,H,0.0,0.0,,11.0,15.0,4.0,5.0,3.0,8.0,8.0,6.0,0.0,1.0,0.0,0.0,38.4,61.6,1.872,0.752,fdorg:564663
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,16:30,Rayo Vallecano de Madrid,Real Racing Club de Santander,FINISHED,3.0,2.0,H,2.0,2.0,,16.0,9.0,10.0,4.0,9.0,6.0,15.0,12.0,3.0,2.0,2.0,0.0,48.7,51.3,1.19,0.633,fdorg:564660
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,19:00,Villarreal CF,RC Deportivo La Coruña,FINISHED,2.0,3.0,A,1.0,1.0,,17.0,8.0,5.0,3.0,7.0,1.0,14.0,14.0,2.0,2.0,0.0,0.0,62.4,37.6,3.642,2.442,fdorg:564662
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,14:15,Valencia CF,FC Barcelona,FINISHED,0.0,5.0,A,0.0,2.0,,3.0,25.0,2.0,10.0,1.0,4.0,7.0,6.0,1.0,3.0,0.0,0.0,26.5,73.5,0.519,4.769,fdorg:564659
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,16:30,Deportivo Alavés,CA Osasuna,FINISHED,5.0,2.0,H,2.0,0.0,,12.0,7.0,7.0,5.0,4.0,2.0,14.0,13.0,1.0,2.0,0.0,0.0,49.6,50.4,1.602,1.644,fdorg:564664
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,16:30,Málaga CF,Levante UD,FINISHED,0.0,0.0,D,0.0,0.0,,10.0,11.0,3.0,3.0,6.0,4.0,15.0,11.0,4.0,2.0,0.0,0.0,62.8,37.2,1.727,1.192,fdorg:564666
+espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,19:00,RCD Espanyol de Barcelona,Sevilla FC,FINISHED,1.0,1.0,D,0.0,0.0,,12.0,6.0,3.0,3.0,0.0,4.0,17.0,13.0,2.0,3.0,0.0,1.0,55.6,44.4,1.817,0.373,fdorg:564661
 espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-07,17:00,Getafe CF,RC Celta de Vigo,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:564665
 espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-07,19:30,Elche CF,Real Sociedad de Fútbol,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:564658
 espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-11,19:00,Sevilla FC,Valencia CF,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:564669
@@ -867,24 +867,24 @@ espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,00:00,
 espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,00:00,RCD Espanyol de Barcelona,Deportivo Alavés,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565005
 espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,00:00,Getafe CF,FC Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565006
 espn+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,00:00,CA Osasuna,Valencia CF,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565007
-espn+football-data.org+fotmob+understat,2026-27,Bundesliga,1,league,GER1,2026-08-28,18:30,FC Bayern München,VfB Stuttgart,FINISHED,5.0,1.0,H,1.0,0.0,,21.0,11.0,9.0,4.0,9.0,3.0,10.0,17.0,1.0,3.0,0.0,0.0,58.9,41.1,4.079,1.25,fdorg:565776
-espn+football-data.org+fotmob+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,RB Leipzig,Borussia Mönchengladbach,FINISHED,3.0,0.0,H,1.0,0.0,,25.0,15.0,11.0,4.0,7.0,6.0,10.0,13.0,1.0,0.0,0.0,0.0,47.1,52.9,3.765,1.234,fdorg:565777
-espn+football-data.org+fotmob+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,1. FSV Mainz 05,SC Paderborn 07,FINISHED,0.0,0.0,D,0.0,0.0,,22.0,10.0,4.0,0.0,11.0,2.0,8.0,10.0,1.0,2.0,0.0,0.0,51.3,48.7,1.549,0.691,fdorg:565778
-espn+football-data.org+fotmob+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,1. FC Union Berlin,Eintracht Frankfurt,FINISHED,3.0,3.0,D,1.0,2.0,,19.0,12.0,10.0,3.0,5.0,2.0,11.0,10.0,2.0,4.0,0.0,0.0,48.5,51.5,2.283,2.119,fdorg:565779
-espn+football-data.org+fotmob+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,SV 07 Elversberg,Bayer 04 Leverkusen,FINISHED,3.0,2.0,H,2.0,0.0,,11.0,21.0,6.0,4.0,4.0,3.0,18.0,15.0,3.0,2.0,0.0,0.0,32.6,67.4,1.4,2.615,fdorg:565780
-espn+football-data.org+fotmob+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,1. FC Köln,TSG 1899 Hoffenheim,FINISHED,3.0,2.0,H,0.0,1.0,,18.0,15.0,6.0,4.0,6.0,7.0,11.0,14.0,0.0,2.0,0.0,0.0,41.3,58.7,2.314,1.923,fdorg:565783
-espn+football-data.org+fotmob+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,16:30,Borussia Dortmund,Hamburger SV,FINISHED,2.0,0.0,H,2.0,0.0,,20.0,8.0,6.0,3.0,3.0,1.0,13.0,19.0,2.0,1.0,1.0,0.0,56.1,43.9,1.313,1.106,fdorg:565781
-espn+football-data.org+fotmob+understat,2026-27,Bundesliga,1,league,GER1,2026-08-30,13:30,SC Freiburg,SV Werder Bremen,FINISHED,4.0,1.0,H,2.0,0.0,,19.0,9.0,5.0,3.0,6.0,5.0,13.0,16.0,1.0,1.0,0.0,0.0,52.8,47.2,2.385,0.949,fdorg:565784
-espn+football-data.org+fotmob+understat,2026-27,Bundesliga,1,league,GER1,2026-08-30,15:30,FC Augsburg,FC Schalke 04,FINISHED,3.0,0.0,H,1.0,0.0,,24.0,11.0,13.0,5.0,11.0,3.0,5.0,6.0,1.0,0.0,0.0,1.0,47.4,52.6,5.536,1.837,fdorg:565782
-espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-04,18:30,VfB Stuttgart,1. FC Köln,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565791
-espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,SV Werder Bremen,RB Leipzig,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565785
-espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,TSG 1899 Hoffenheim,Borussia Dortmund,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565787
-espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,Bayer 04 Leverkusen,1. FC Union Berlin,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565790
-espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,Borussia Mönchengladbach,SV 07 Elversberg,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565792
-espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,SC Paderborn 07,SC Freiburg,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565793
-espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,16:30,FC Schalke 04,FC Bayern München,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565789
-espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-06,13:30,Hamburger SV,1. FSV Mainz 05,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565788
-espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-06,15:30,Eintracht Frankfurt,FC Augsburg,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565786
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-08-28,18:30,FC Bayern München,VfB Stuttgart,FINISHED,5.0,1.0,H,1.0,0.0,,21.0,11.0,9.0,4.0,9.0,3.0,10.0,17.0,1.0,3.0,0.0,0.0,58.9,41.1,4.079,1.25,fdorg:565776
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,RB Leipzig,Borussia Mönchengladbach,FINISHED,3.0,0.0,H,1.0,0.0,,25.0,15.0,11.0,4.0,7.0,6.0,10.0,13.0,1.0,0.0,0.0,0.0,47.1,52.9,3.765,1.234,fdorg:565777
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,1. FSV Mainz 05,SC Paderborn 07,FINISHED,0.0,0.0,D,0.0,0.0,,22.0,10.0,4.0,0.0,11.0,2.0,8.0,10.0,1.0,2.0,0.0,0.0,51.3,48.7,1.549,0.691,fdorg:565778
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,1. FC Union Berlin,Eintracht Frankfurt,FINISHED,3.0,3.0,D,1.0,2.0,,19.0,12.0,10.0,3.0,5.0,2.0,11.0,10.0,2.0,4.0,0.0,0.0,48.5,51.5,2.283,2.119,fdorg:565779
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,SV 07 Elversberg,Bayer 04 Leverkusen,FINISHED,3.0,2.0,H,2.0,0.0,,11.0,21.0,6.0,4.0,4.0,3.0,18.0,15.0,3.0,2.0,0.0,0.0,32.6,67.4,1.4,2.615,fdorg:565780
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,1. FC Köln,TSG 1899 Hoffenheim,FINISHED,3.0,2.0,H,0.0,1.0,,18.0,15.0,6.0,4.0,6.0,7.0,11.0,14.0,0.0,2.0,0.0,0.0,41.3,58.7,2.314,1.923,fdorg:565783
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,16:30,Borussia Dortmund,Hamburger SV,FINISHED,2.0,0.0,H,2.0,0.0,,20.0,8.0,6.0,3.0,3.0,1.0,13.0,19.0,2.0,1.0,1.0,0.0,56.1,43.9,1.313,1.106,fdorg:565781
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-08-30,13:30,SC Freiburg,SV Werder Bremen,FINISHED,4.0,1.0,H,2.0,0.0,,19.0,9.0,5.0,3.0,6.0,5.0,13.0,16.0,1.0,1.0,0.0,0.0,52.8,47.2,2.385,0.949,fdorg:565784
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-08-30,15:30,FC Augsburg,FC Schalke 04,FINISHED,3.0,0.0,H,1.0,0.0,,24.0,11.0,13.0,5.0,11.0,3.0,5.0,6.0,1.0,0.0,0.0,1.0,47.4,52.6,5.536,1.837,fdorg:565782
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-04,18:30,VfB Stuttgart,1. FC Köln,FINISHED,4.0,1.0,H,1.0,0.0,,22.0,18.0,8.0,5.0,10.0,8.0,5.0,6.0,1.0,3.0,0.0,0.0,58.2,41.8,3.522,2.858,fdorg:565791
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,SV Werder Bremen,RB Leipzig,FINISHED,3.0,1.0,H,1.0,0.0,,12.0,19.0,7.0,5.0,2.0,7.0,13.0,8.0,1.0,0.0,0.0,0.0,29.2,70.8,0.854,1.582,fdorg:565785
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,TSG 1899 Hoffenheim,Borussia Dortmund,FINISHED,2.0,3.0,A,1.0,0.0,,18.0,11.0,6.0,4.0,10.0,3.0,13.0,7.0,4.0,2.0,0.0,0.0,59.9,40.1,2.166,2.025,fdorg:565787
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,Bayer 04 Leverkusen,1. FC Union Berlin,FINISHED,4.0,0.0,H,2.0,0.0,,21.0,5.0,10.0,0.0,11.0,1.0,11.0,12.0,2.0,2.0,0.0,0.0,63.9,36.1,3.392,0.25,fdorg:565790
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,Borussia Mönchengladbach,SV 07 Elversberg,FINISHED,3.0,4.0,A,2.0,1.0,,25.0,14.0,6.0,10.0,13.0,4.0,18.0,9.0,3.0,1.0,0.0,0.0,51.3,48.7,2.888,3.032,fdorg:565792
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,SC Paderborn 07,SC Freiburg,FINISHED,0.0,1.0,A,0.0,1.0,,14.0,16.0,3.0,5.0,5.0,4.0,16.0,10.0,3.0,3.0,0.0,0.0,58.9,41.1,0.733,1.172,fdorg:565793
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,16:30,FC Schalke 04,FC Bayern München,FINISHED,0.0,0.0,D,0.0,0.0,,4.0,15.0,1.0,5.0,0.0,11.0,5.0,12.0,2.0,2.0,0.0,0.0,17.1,82.9,0.251,2.054,fdorg:565789
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-06,13:30,Hamburger SV,1. FSV Mainz 05,FINISHED,0.0,5.0,A,0.0,2.0,,8.0,17.0,1.0,8.0,4.0,5.0,14.0,19.0,1.0,3.0,0.0,0.0,54.3,45.7,0.257,3.28,fdorg:565788
+espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-06,15:30,Eintracht Frankfurt,FC Augsburg,FINISHED,1.0,4.0,A,1.0,0.0,,22.0,17.0,8.0,7.0,9.0,4.0,10.0,13.0,1.0,1.0,0.0,0.0,60.1,39.9,2.51,1.445,fdorg:565786
 espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-11,18:30,1. FC Union Berlin,FC Schalke 04,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565797
 espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,TSG 1899 Hoffenheim,VfB Stuttgart,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565794
 espn+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,Borussia Dortmund,SC Paderborn 07,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565795
@@ -1188,11 +1188,10 @@ espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-09-09,19:00,
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-09-09,19:00,Sporting Clube de Portugal,Galatasaray SK,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575334
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-09-10,16:45,Fenerbahçe SK,AS Roma,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575335
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-09-10,16:45,PSV,FK Shakhtar Donetsk,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575336
-football-data.org,2026-27,Champions League,1,european,UCL,2026-09-10,19:00,FC Bayern München,FK Bodø/Glimt,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575337
+espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-09-10,19:00,FC Bayern München,FK Bodø/Glimt,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575337
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-09-10,19:00,Manchester United FC,Sabah FK,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575338
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-09-10,19:00,Como 1907,RB Leipzig,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575339
 football-data.org,2026-27,Champions League,1,european,UCL,2026-09-10,19:00,SK Slavia Praha,Racing Club de Lens,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575340
-espn,2026-27,Champions League,1,european,UCL,2026-09-10,19:00,Bayern Munich,Bodo/Glimt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915443
 espn,2026-27,Champions League,1,european,UCL,2026-09-10,19:00,Slavia Prague,Lens,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915440
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-13,16:45,Racing Club de Lens,Sporting Clube de Portugal,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575341
 football-data.org,2026-27,Champions League,1,european,UCL,2026-10-13,16:45,Sabah FK,SK Slavia Praha,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575342
@@ -1208,12 +1207,11 @@ espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-14,16:45,
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-14,16:45,Feyenoord Rotterdam,Como 1907,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575351
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-14,19:00,AS Roma,Real Madrid CF,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575352
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-14,19:00,Manchester City FC,Paris Saint-Germain FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575353
-football-data.org,2026-27,Champions League,1,european,UCL,2026-10-14,19:00,FK Bodø/Glimt,Borussia Dortmund,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575354
+espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-14,19:00,FK Bodø/Glimt,Borussia Dortmund,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575354
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-14,19:00,Aston Villa FC,Fenerbahçe SK,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575355
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-14,19:00,Real Betis Balompié,FC Porto,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575356
 football-data.org,2026-27,Champions League,1,european,UCL,2026-10-14,19:00,FK Shakhtar Donetsk,PAE AEK,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575357
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-14,19:00,ŠK Slovan Bratislava,VfB Stuttgart,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575358
-espn,2026-27,Champions League,1,european,UCL,2026-10-14,19:00,Bodo/Glimt,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915393
 espn,2026-27,Champions League,1,european,UCL,2026-10-14,19:00,Shakhtar Donetsk,AEK Athens,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915406
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-20,16:45,Sabah FK,Borussia Dortmund,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575359
 football-data.org,2026-27,Champions League,1,european,UCL,2026-10-20,16:45,Fenerbahçe SK,SK Slavia Praha,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575360
@@ -1222,11 +1220,10 @@ espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-20,19:00,
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-20,19:00,Liverpool FC,Villarreal CF,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575363
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-20,19:00,AS Roma,ŠK Slovan Bratislava,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575364
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-20,19:00,FC Porto,PSV,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575365
-football-data.org,2026-27,Champions League,1,european,UCL,2026-10-20,19:00,SSC Napoli,FK Bodø/Glimt,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575366
+espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-20,19:00,SSC Napoli,FK Bodø/Glimt,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575366
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-20,19:00,Paris Saint-Germain FC,FC Barcelona,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575367
 espn,2026-27,Champions League,1,european,UCL,2026-10-20,16:45,Fenerbahce,Slavia Prague,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915403
 espn,2026-27,Champions League,1,european,UCL,2026-10-20,19:00,Manchester City,AEK Athens,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915401
-espn,2026-27,Champions League,1,european,UCL,2026-10-20,19:00,Napoli,Bodo/Glimt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915400
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-21,16:45,Como 1907,Manchester United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575368
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-21,16:45,Lille OSC,Galatasaray SK,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575369
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-10-21,19:00,Real Madrid CF,RB Leipzig,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575370
@@ -1243,9 +1240,8 @@ espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-03,20:00,
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-03,20:00,Club Atlético de Madrid,FC Bayern München,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575381
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-03,20:00,Villarreal CF,Paris Saint-Germain FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575382
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-03,20:00,Manchester United FC,AS Roma,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575383
-football-data.org,2026-27,Champions League,1,european,UCL,2026-11-03,20:00,FK Bodø/Glimt,Lille OSC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575384
+espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-03,20:00,FK Bodø/Glimt,Lille OSC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575384
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-03,20:00,LASK Linz,ŠK Slovan Bratislava,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575385
-espn,2026-27,Champions League,1,european,UCL,2026-11-03,20:00,Bodo/Glimt,Lille,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915384
 football-data.org,2026-27,Champions League,1,european,UCL,2026-11-04,17:45,PAE AEK,Real Madrid CF,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575386
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-04,17:45,Fenerbahçe SK,Liverpool FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575387
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-04,20:00,RB Leipzig,Manchester City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575388
@@ -1258,7 +1254,7 @@ espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-04,20:00,
 espn,2026-27,Champions League,1,european,UCL,2026-11-04,17:45,AEK Athens,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915383
 espn,2026-27,Champions League,1,european,UCL,2026-11-04,20:00,Slavia Prague,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915381
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-24,17:45,Galatasaray SK,Aston Villa FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575395
-football-data.org,2026-27,Champions League,1,european,UCL,2026-11-24,17:45,FK Bodø/Glimt,LASK Linz,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575396
+espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-24,17:45,FK Bodø/Glimt,LASK Linz,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575396
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Real Madrid CF,PSV,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575397
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Manchester City FC,SSC Napoli,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575398
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Arsenal FC,Borussia Dortmund,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575399
@@ -1266,7 +1262,6 @@ espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,ŠK Slovan Bratislava,Real Betis Balompié,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575401
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,RB Leipzig,Racing Club de Lens,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575402
 football-data.org,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Como 1907,PAE AEK,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575403
-espn,2026-27,Champions League,1,european,UCL,2026-11-24,17:45,Bodo/Glimt,LASK Linz,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915380
 espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Como,AEK Athens,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915296
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-11-25,17:45,Sabah FK,FC Barcelona,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575404
 football-data.org,2026-27,Champions League,1,european,UCL,2026-11-25,17:45,SK Slavia Praha,Villarreal CF,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575405
@@ -1295,11 +1290,10 @@ espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-12-09,20:00,
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-12-09,20:00,Borussia Dortmund,FC Internazionale Milano,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575286
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-12-09,20:00,PSV,Club Atlético de Madrid,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575290
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-12-09,20:00,Liverpool FC,FC Porto,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575295
-football-data.org,2026-27,Champions League,1,european,UCL,2026-12-09,20:00,Racing Club de Lens,FK Bodø/Glimt,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575315
+espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-12-09,20:00,Racing Club de Lens,FK Bodø/Glimt,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575315
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-12-09,20:00,LASK Linz,Fenerbahçe SK,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575317
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2026-12-09,20:00,VfB Stuttgart,Lille OSC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575322
-espn,2026-27,Champions League,1,european,UCL,2026-12-09,20:00,Lens,Bodo/Glimt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915370
-football-data.org,2026-27,Champions League,1,european,UCL,2027-01-19,17:45,FK Bodø/Glimt,Club Atlético de Madrid,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575292
+espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-19,17:45,FK Bodø/Glimt,Club Atlético de Madrid,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575292
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-19,17:45,Galatasaray SK,Feyenoord Rotterdam,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575318
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-19,20:00,Real Madrid CF,LASK Linz,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575282
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-19,20:00,FC Internazionale Milano,Liverpool FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575285
@@ -1308,7 +1302,6 @@ espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-19,20:00,
 football-data.org,2026-27,Champions League,1,european,UCL,2027-01-19,20:00,PAE AEK,AS Roma,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575307
 football-data.org,2026-27,Champions League,1,european,UCL,2027-01-19,20:00,FC Porto,SK Slavia Praha,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575308
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-19,20:00,Lille OSC,ŠK Slovan Bratislava,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575321
-espn,2026-27,Champions League,1,european,UCL,2027-01-19,17:45,Bodo/Glimt,Atlético Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915364
 espn,2026-27,Champions League,1,european,UCL,2027-01-19,20:00,AEK Athens,AS Roma,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915362
 espn,2026-27,Champions League,1,european,UCL,2027-01-19,20:00,FC Porto,Slavia Prague,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915278
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-20,17:45,Fenerbahçe SK,Villarreal CF,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575314
@@ -1329,7 +1322,7 @@ espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,Liverpool FC,Racing Club de Lens,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575296
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,Arsenal FC,Sabah FK,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575298
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,FC Bayern München,Real Betis Balompié,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575299
-football-data.org,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,Club Brugge KV,FK Bodø/Glimt,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575301
+espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,Club Brugge KV,FK Bodø/Glimt,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575301
 football-data.org,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,Borussia Dortmund,PAE AEK,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575304
 football-data.org,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,SK Slavia Praha,Aston Villa FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575305
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,AS Roma,Lille OSC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575306
@@ -1339,7 +1332,6 @@ espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,Feyenoord Rotterdam,RB Leipzig,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575316
 espn+football-data.org,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,SSC Napoli,Viking FK,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:575319
 espn,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,Borussia Dortmund,AEK Athens,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915265
-espn,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,Club Brugge,Bodo/Glimt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915266
 espn,2026-27,Champions League,1,european,UCL,2027-01-27,20:00,Slavia Prague,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915351
 espn,2026-27,Europa Conference League,1,european,UECL,2026-10-15,16:45,CSKA Sofia,AS Monaco,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915855
 espn,2026-27,Europa Conference League,1,european,UECL,2026-10-15,16:45,CSU Craiova,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915854

@@ -10059,8 +10059,8 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,GER1,Angelo Stiller,Stuttgart,MF,25.0,46000000.0,45000000.0,0,0.98
 2026-27,GER1,Nathaniel Brown,Bayern Munich,MF,23.0,46000000.0,40000000.0,0,0.87
 2026-27,GER1,Said El Mala,Köln,FW,20.0,46000000.0,46836485.0,0,1.02
-2026-27,ENG1,Piero Hincapié,Arsenal,DF,24.0,46000000.0,50000000.0,0,1.09
 2026-27,ESP1,Cristian Romero,Atlético Madrid,DF,28.0,46000000.0,45000000.0,0,0.98
+2026-27,ENG1,Piero Hincapié,Arsenal,DF,24.0,46000000.0,50000000.0,0,1.09
 2026-27,ENG1,Leny Yoro,Manchester Utd,DF,21.0,46000000.0,50000000.0,0,1.09
 2026-27,ENG1,Geovany Quenda,Chelsea,MF,19.0,45000000.0,9749584.0,0,0.22
 2026-27,ESP1,Ademola Lookman,Atlético Madrid,MF,29.0,44000000.0,40000000.0,0,0.91
@@ -10068,8 +10068,8 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ESP1,Nico Williams,Athletic Club,MF,24.0,44000000.0,40000000.0,0,0.91
 2026-27,GER1,Can Uzun,Frankfurt,MF,21.0,44000000.0,45000000.0,0,1.02
 2026-27,ENG1,Valentín Barco,Chelsea,DF,22.0,44000000.0,12000000.0,0,0.27
-2026-27,ENG1,Ousmane Diomande,Nottingham,DF,23.0,44000000.0,9000000.0,0,0.2
 2026-27,ENG1,Tino Livramento,Newcastle,DF,24.0,44000000.0,45000000.0,0,1.02
+2026-27,ENG1,Ousmane Diomande,Nottingham,DF,23.0,44000000.0,9000000.0,0,0.2
 2026-27,ENG1,Youri Tielemans,Manchester Utd,MF,29.0,43000000.0,30000000.0,0,0.7
 2026-27,ESP1,Álex Baena,Atlético Madrid,FW,25.0,43000000.0,40000000.0,0,0.93
 2026-27,GER1,Maximilian Beier,Dortmund,MF,24.0,43000000.0,40000000.0,0,0.93
@@ -10079,8 +10079,8 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ENG1,Christos Tzolis,Arsenal,MF,24.0,42000000.0,8000000.0,0,0.19
 2026-27,ENG1,Pedro Porro,Tottenham,MF,27.0,42000000.0,35000000.0,0,0.83
 2026-27,ENG1,Mykhailo Mudryk,Tottenham,MF,25.0,42000000.0,35000000.0,0,0.83
-2026-27,ENG1,Malick Thiaw,Newcastle,DF,25.0,41000000.0,45000000.0,0,1.1
 2026-27,ENG1,Jarrad Branthwaite,Everton,DF,24.0,41000000.0,40000000.0,0,0.98
+2026-27,ENG1,Malick Thiaw,Newcastle,DF,25.0,41000000.0,45000000.0,0,1.1
 2026-27,ENG1,Jorrel Hato,Chelsea,MF,20.0,41000000.0,41632431.0,0,1.02
 2026-27,GER1,Ibrahim Maza,Leverkusen,MF,21.0,41000000.0,45000000.0,0,1.1
 2026-27,GER1,Gregor Kobel,Dortmund,GK,29.0,41000000.0,40000000.0,0,0.98
@@ -10097,13 +10097,13 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ENG1,Andrey Santos,Manchester Utd,MF,22.0,39000000.0,40000000.0,0,1.03
 2026-27,GER1,Tom Bischof,Bayern Munich,MF,21.0,39000000.0,40000000.0,0,1.03
 2026-27,GER1,Josip Stanišić,Bayern Munich,DF,26.0,39000000.0,40000000.0,0,1.03
-2026-27,ENG1,Lewis Hall,Newcastle,DF,22.0,38000000.0,40000000.0,0,1.05
-2026-27,ENG1,Kiernan Dewsbury-Hall,Everton,MF,28.0,38000000.0,35000000.0,0,0.92
 2026-27,ENG1,Senne Lammens,Manchester Utd,GK,24.0,38000000.0,35000000.0,0,0.92
+2026-27,ENG1,Kiernan Dewsbury-Hall,Everton,MF,28.0,38000000.0,35000000.0,0,0.92
+2026-27,ENG1,Lewis Hall,Newcastle,DF,22.0,38000000.0,40000000.0,0,1.05
 2026-27,ENG1,Tarik Muharemovic,Leeds United,DF,23.0,38000000.0,9000000.0,0,0.24
 2026-27,ENG1,Marcus Rashford,Manchester Utd,MF,29.0,38000000.0,40000000.0,0,1.05
-2026-27,GER1,Joshua Kimmich,Bayern Munich,MF,31.0,38000000.0,32961759.0,0,0.87
 2026-27,GER1,Jobe Bellingham,Dortmund,MF,21.0,38000000.0,40000000.0,0,1.05
+2026-27,GER1,Joshua Kimmich,Bayern Munich,MF,31.0,38000000.0,32961759.0,0,0.87
 2026-27,ENG1,Cristhian Mosquera,Arsenal,DF,22.0,38000000.0,40000000.0,0,1.05
 2026-27,ENG1,Matias Fernandez-Pardo,Newcastle,FW,21.0,38000000.0,9000000.0,0,0.24
 2026-27,ESP1,Antony,Real Betis,MF,26.0,37000000.0,40000000.0,0,1.08
@@ -10138,8 +10138,8 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,GER1,Leon Avdullahu,Hoffenheim,MF,22.0,33000000.0,30000000.0,0,0.91
 2026-27,ENG1,Patrick Dorgu,Manchester Utd,MF,22.0,33000000.0,35000000.0,0,1.06
 2026-27,ESP1,Georges Mikautadze,Villarreal,FW,26.0,32000000.0,30000000.0,0,0.94
-2026-27,ESP1,Gerard Martín,Barcelona,DF,24.0,32000000.0,35000000.0,0,1.09
 2026-27,ENG1,Bruno Fernandes,Manchester Utd,MF,32.0,32000000.0,31042215.0,0,0.97
+2026-27,ESP1,Gerard Martín,Barcelona,DF,24.0,32000000.0,35000000.0,0,1.09
 2026-27,GER1,Finn Jeltsch,Stuttgart,DF,20.0,32000000.0,36428377.0,0,1.14
 2026-27,ENG1,Brennan Johnson,Everton,FW,25.0,32000000.0,30000000.0,0,0.94
 2026-27,GER1,Bilal El Khannouss,Stuttgart,MF,22.0,32000000.0,35000000.0,0,1.09
@@ -10162,10 +10162,10 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ENG1,Yehor Yarmoliuk,Brentford,MF,22.0,30000000.0,9000000.0,0,0.3
 2026-27,ENG1,Hugo Larsson,Fulham,MF,22.0,30000000.0,28000000.0,0,0.93
 2026-27,ESP1,Renato Veiga,Villarreal,DF,23.0,29000000.0,25000000.0,0,0.86
-2026-27,ENG1,Calvin Bassey,Fulham,DF,27.0,29000000.0,28000000.0,0,0.97
-2026-27,ENG1,Dean Henderson,Crystal Palace,GK,29.0,29000000.0,28000000.0,0,0.97
 2026-27,ENG1,Robin Roefs,Sunderland,GK,23.0,29000000.0,28000000.0,0,0.97
+2026-27,ENG1,Calvin Bassey,Fulham,DF,27.0,29000000.0,28000000.0,0,0.97
 2026-27,ENG1,Đorđe Petrović,Bournemouth,GK,27.0,29000000.0,28000000.0,0,0.97
+2026-27,ENG1,Dean Henderson,Crystal Palace,GK,29.0,29000000.0,28000000.0,0,0.97
 2026-27,ESP1,Marc Bernal,Barcelona,MF,19.0,29000000.0,32498612.0,0,1.12
 2026-27,ENG1,Nathan Collins,Brentford,DF,25.0,29000000.0,30000000.0,0,1.03
 2026-27,ENG1,Víctor Muñoz,Liverpool,MF,23.0,29000000.0,30000000.0,0,1.03
@@ -10182,12 +10182,12 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ENG1,Ian Maatsen,Aston Villa,DF,24.0,28000000.0,30000000.0,0,1.07
 2026-27,ENG1,Diogo Dalot,Manchester Utd,DF,27.0,28000000.0,30000000.0,0,1.07
 2026-27,ENG1,Destiny Udogie,Tottenham,DF,24.0,28000000.0,30000000.0,0,1.07
-2026-27,ESP1,Mikel Oyarzabal,Real Sociedad,FW,29.0,27000000.0,25000000.0,0,0.93
-2026-27,ENG1,António Silva,Bournemouth,DF,23.0,27000000.0,9000000.0,0,0.33
-2026-27,ENG1,Diego Gómez,Brighton,MF,23.0,27000000.0,25000000.0,0,0.93
-2026-27,ENG1,Anton Stach,Leeds United,MF,28.0,27000000.0,28000000.0,0,1.04
 2026-27,ENG1,Ben White,Arsenal,DF,29.0,27000000.0,30000000.0,0,1.11
 2026-27,ENG1,James Trafford,Leeds United,GK,24.0,27000000.0,25000000.0,0,0.93
+2026-27,ENG1,Anton Stach,Leeds United,MF,28.0,27000000.0,28000000.0,0,1.04
+2026-27,ENG1,Diego Gómez,Brighton,MF,23.0,27000000.0,25000000.0,0,0.93
+2026-27,ENG1,António Silva,Bournemouth,DF,23.0,27000000.0,9000000.0,0,0.33
+2026-27,ESP1,Mikel Oyarzabal,Real Sociedad,FW,29.0,27000000.0,25000000.0,0,0.93
 2026-27,ENG1,Lewis Miley,Newcastle,MF,20.0,27000000.0,26020269.0,0,0.96
 2026-27,ENG1,Oscar Bobb,Fulham,MF,23.0,27000000.0,28000000.0,0,1.04
 2026-27,ENG1,Charalampos Kostoulas,Brighton,FW,19.0,27000000.0,27082177.0,0,1.0
@@ -10201,9 +10201,9 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ENG1,Matteo Ruggeri,Aston Villa,DF,24.0,27000000.0,28000000.0,0,1.04
 2026-27,ESP1,Javier Guerra,Valencia,MF,23.0,26000000.0,25000000.0,0,0.96
 2026-27,ESP1,Natan,Real Betis,DF,25.0,26000000.0,25000000.0,0,0.96
+2026-27,ENG1,Nikola Milenković,Nottingham,DF,29.0,26000000.0,28000000.0,0,1.08
 2026-27,ENG1,Joshua King,Fulham,MF,19.0,26000000.0,27082177.0,0,1.04
 2026-27,ENG1,Neco Williams,Nottingham,MF,25.0,26000000.0,28000000.0,0,1.08
-2026-27,ENG1,Nikola Milenković,Nottingham,DF,29.0,26000000.0,28000000.0,0,1.08
 2026-27,ENG1,Enzo Le Fée,Sunderland,MF,26.0,26000000.0,28000000.0,0,1.08
 2026-27,ESP1,Denzel Dumfries,Real Madrid,DF,30.0,26000000.0,25000000.0,0,0.96
 2026-27,ENG1,Igor Jesus,Nottingham,FW,25.0,26000000.0,25000000.0,0,0.96
@@ -10222,17 +10222,17 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ENG1,Alejandro Garnacho,Aston Villa,MF,22.0,26000000.0,28000000.0,0,1.08
 2026-27,GER1,Moussa Diaby,Leverkusen,FW,27.0,26000000.0,55000000.0,0,2.12
 2026-27,ENG1,Kevin,Fulham,MF,23.0,26000000.0,25000000.0,0,0.96
-2026-27,ENG1,Caoimhín Kelleher,Brentford,GK,28.0,25000000.0,28000000.0,0,1.12
 2026-27,ENG1,Chris Richards,Crystal Palace,DF,26.0,25000000.0,28000000.0,0,1.12
 2026-27,ENG1,Jaydee Canvot,Crystal Palace,DF,20.0,25000000.0,29142702.0,0,1.17
+2026-27,ENG1,Caoimhín Kelleher,Brentford,GK,28.0,25000000.0,28000000.0,0,1.12
 2026-27,GER1,Yuito Suzuki,Freiburg,MF,25.0,25000000.0,24000000.0,0,0.96
 2026-27,GER1,Nathan De Cat,Hoffenheim,MF,18.0,25000000.0,10147472.0,0,0.41
 2026-27,ESP1,Jon Martin,Real Sociedad,DF,20.0,24000000.0,26020269.0,0,1.08
 2026-27,ESP1,Oihan Sancet,Athletic Club,MF,26.0,24000000.0,25000000.0,0,1.04
-2026-27,ENG1,James Hill,Bournemouth,DF,24.0,24000000.0,23000000.0,0,0.96
-2026-27,ENG1,Keane Lewis-Potter,Brentford,DF,25.0,24000000.0,25000000.0,0,1.04
 2026-27,ENG1,Kristoffer Ajer,Brentford,DF,28.0,24000000.0,18000000.0,0,0.75
+2026-27,ENG1,James Hill,Bournemouth,DF,24.0,24000000.0,23000000.0,0,0.96
 2026-27,ESP1,Carlos Romero,Villarreal,DF,25.0,24000000.0,25000000.0,0,1.04
+2026-27,ENG1,Keane Lewis-Potter,Brentford,DF,25.0,24000000.0,25000000.0,0,1.04
 2026-27,ENG1,Antonee Robinson,Fulham,DF,29.0,24000000.0,22000000.0,0,0.92
 2026-27,ENG1,Dominic Calvert-Lewin,Leeds United,FW,29.0,24000000.0,22000000.0,0,0.92
 2026-27,ENG1,Julio Enciso,Ipswich Town,MF,22.0,24000000.0,22000000.0,0,0.92
@@ -10280,8 +10280,8 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ENG1,Roméo Lavia,Chelsea,MF,22.0,21000000.0,22000000.0,0,1.05
 2026-27,ESP1,Bernardo Silva,Real Madrid,MF,32.0,21000000.0,19512249.0,0,0.93
 2026-27,ENG1,Joachim Andersen,Fulham,DF,30.0,21000000.0,20000000.0,0,0.95
-2026-27,GER1,Chrislain Matsima,Augsburg,DF,24.0,21000000.0,22000000.0,0,1.05
 2026-27,GER1,Aleix García,Leverkusen,MF,29.0,21000000.0,20000000.0,0,0.95
+2026-27,GER1,Chrislain Matsima,Augsburg,DF,24.0,21000000.0,22000000.0,0,1.05
 2026-27,GER1,Wouter Burger,Hoffenheim,MF,25.0,21000000.0,20000000.0,0,0.95
 2026-27,ENG1,Pau Torres,Aston Villa,DF,29.0,21000000.0,20000000.0,0,0.95
 2026-27,GER1,Igor Matanović,Freiburg,FW,23.0,21000000.0,22000000.0,0,1.05
@@ -10304,8 +10304,8 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ENG1,Matty Cash,Aston Villa,DF,29.0,19800000.0,22000000.0,0,1.11
 2026-27,GER1,Maximilian Mittelstädt,Stuttgart,MF,29.0,19800000.0,18000000.0,0,0.91
 2026-27,GER1,Waldemar Anton,Dortmund,DF,30.0,19700000.0,18000000.0,0,0.91
-2026-27,ESP1,Álex Grimaldo,Atlético Madrid,DF,31.0,19400000.0,18835291.0,0,0.97
 2026-27,ENG1,Amar Dedić,Newcastle,DF,24.0,19400000.0,9000000.0,0,0.46
+2026-27,ESP1,Álex Grimaldo,Atlético Madrid,DF,31.0,19400000.0,18835291.0,0,0.97
 2026-27,ESP1,Santiago Mouriño,Villarreal,DF,24.0,19400000.0,20000000.0,0,1.03
 2026-27,GER1,Noahkai Banks,Augsburg,DF,20.0,19400000.0,20816216.0,0,1.07
 2026-27,ENG1,Jaidon Anthony,Brentford,MF,27.0,19400000.0,20000000.0,0,1.03
@@ -10399,8 +10399,8 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ENG1,Aaron Wan-Bissaka,Aston Villa,DF,29.0,14100000.0,15000000.0,0,1.06
 2026-27,ENG1,Ao Tanaka,Leeds United,MF,28.0,14000000.0,13000000.0,0,0.93
 2026-27,ESP1,Jon Aramburu,Real Sociedad,DF,24.0,13900000.0,15000000.0,0,1.08
-2026-27,ENG1,Jordan Pickford,Everton,GK,32.0,13900000.0,11529966.0,0,0.83
 2026-27,ENG1,Olivier Boscagli,Brighton,DF,29.0,13900000.0,15000000.0,0,1.08
+2026-27,ENG1,Jordan Pickford,Everton,GK,32.0,13900000.0,11529966.0,0,0.83
 2026-27,ESP1,Ruben Vargas,Sevilla,FW,28.0,13900000.0,12000000.0,0,0.86
 2026-27,ENG1,Abdoul Ouattara,Ipswich Town,MF,21.0,13800000.0,100000.0,0,0.01
 2026-27,ENG1,Omar Alderete,Sunderland,DF,30.0,13800000.0,13000000.0,0,0.94
@@ -10492,9 +10492,9 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,GER1,Younes Ebnoutalib,Frankfurt,FW,23.0,8800000.0,8000000.0,0,0.91
 2026-27,ESP1,Ionuț Radu,Celta Vigo,GK,29.0,8700000.0,9000000.0,0,1.03
 2026-27,ESP1,Arsen Zakharyan,Real Sociedad,FW,23.0,8700000.0,9000000.0,0,1.03
-2026-27,ESP1,Orel Mangala,Getafe,MF,28.0,8600000.0,18000000.0,0,2.09
 2026-27,ESP1,Juan Foyth,Villarreal,DF,28.0,8600000.0,8000000.0,0,0.93
 2026-27,ENG1,Harry Maguire,Manchester Utd,DF,33.0,8600000.0,6682162.0,0,0.78
+2026-27,ESP1,Orel Mangala,Getafe,MF,28.0,8600000.0,18000000.0,0,2.09
 2026-27,ESP1,Sergi Cardona,Villarreal,DF,27.0,8600000.0,9000000.0,0,1.05
 2026-27,ENG1,Jorge Cuenca,Fulham,DF,27.0,8600000.0,8000000.0,0,0.93
 2026-27,ESP1,João Cancelo,Barcelona,DF,32.0,8600000.0,7095363.0,0,0.83
@@ -10505,10 +10505,10 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ESP1,Aymeric Laporte,Athletic Club,DF,32.0,8400000.0,7095363.0,0,0.84
 2026-27,ESP1,Pablo Fornals,Real Betis,MF,30.0,8400000.0,8000000.0,0,0.95
 2026-27,ESP1,Santi Comesaña,Villarreal,MF,30.0,8400000.0,8000000.0,0,0.95
-2026-27,GER1,Nicolás Capaldo,Hamburger SV,DF,28.0,8400000.0,8000000.0,0,0.95
-2026-27,GER1,Ko Itakura,Gladbach,DF,29.0,8400000.0,12000000.0,0,1.43
 2026-27,GER1,Nicolai Remberg,Hamburger SV,MF,26.0,8400000.0,9000000.0,0,1.07
 2026-27,GER1,Ísak Jóhannesson,Köln,MF,23.0,8400000.0,8000000.0,0,0.95
+2026-27,GER1,Nicolás Capaldo,Hamburger SV,DF,28.0,8400000.0,8000000.0,0,0.95
+2026-27,GER1,Ko Itakura,Gladbach,DF,29.0,8400000.0,12000000.0,0,1.43
 2026-27,ESP1,Jones El-Abdellaoui,Celta Vigo,FW,20.0,8400000.0,8326486.0,0,0.99
 2026-27,GER1,Bilal Nadir,Hamburger SV,MF,23.0,8300000.0,150000.0,0,0.02
 2026-27,ENG1,Issa Diop,Ipswich Town,DF,29.0,8199999.0,8000000.0,0,0.98
@@ -10649,14 +10649,14 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ESP1,Álvaro djaló,Athletic Club,MF,27.0,4300000.0,5000000.0,0,1.16
 2026-27,ESP1,Jesus Vazquez,Valencia,DF,23.0,4200000.0,4000000.0,0,0.95
 2026-27,ESP1,Marc Roca,Real Betis,MF,30.0,4200000.0,4000000.0,0,0.95
-2026-27,ESP1,Guido Rodríguez,Valencia,MF,32.0,4200000.0,3547682.0,0,0.84
 2026-27,GER1,Philipp Sander,Gladbach,MF,28.0,4200000.0,4000000.0,0,0.95
+2026-27,ESP1,Guido Rodríguez,Valencia,MF,32.0,4200000.0,3547682.0,0,0.84
 2026-27,GER1,Michel Aebischer,Union Berlin,MF,29.0,4200000.0,3500000.0,0,0.83
 2026-27,GER1,Livan Burcu,Union Berlin,MF,22.0,4200000.0,4000000.0,0,0.95
 2026-27,ESP1,Abdoulaye Faye,Celta Vigo,DF,22.0,4200000.0,9000000.0,0,2.14
 2026-27,GER1,Derrick Köhn,Union Berlin,DF,27.0,4200000.0,4000000.0,0,0.95
-2026-27,ESP1,Adrián de la Fuente,Levante,DF,27.0,4099999.0,600000.0,0,0.15
 2026-27,ESP1,Pablo Ibáñez,Alavés,MF,28.0,4099999.0,4000000.0,0,0.98
+2026-27,ESP1,Adrián de la Fuente,Levante,DF,27.0,4099999.0,600000.0,0,0.15
 2026-27,ENG1,Reinildo Mandava,Sunderland,DF,32.0,4099999.0,3547682.0,0,0.87
 2026-27,ESP1,Álex Berenguer,Athletic Club,MF,31.0,4099999.0,3767058.0,0,0.92
 2026-27,GER1,Manuel Neuer,Bayern Munich,GK,40.0,4099999.0,2195246.0,0,0.54
@@ -10715,8 +10715,8 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ESP1,Raúl Moro,Osasuna,MF,24.0,3300000.0,3500000.0,0,1.06
 2026-27,ESP1,Alfon,Sevilla,FW,27.0,3300000.0,3000000.0,0,0.91
 2026-27,ESP1,Nahuel Tenaglia,Alavés,DF,30.0,3200000.0,3000000.0,0,0.94
-2026-27,ESP1,Odysseas Vlachodimos,Sevilla,GK,32.0,3200000.0,2660761.0,0,0.83
 2026-27,ESP1,Ramón Terrats,Getafe,MF,26.0,3200000.0,3000000.0,0,0.94
+2026-27,ESP1,Odysseas Vlachodimos,Sevilla,GK,32.0,3200000.0,2660761.0,0,0.83
 2026-27,ESP1,Jorge Herrando,Osasuna,DF,25.0,3200000.0,3500000.0,0,1.09
 2026-27,GER1,Marvin Schwäbe,Köln,GK,31.0,3200000.0,2825294.0,0,0.88
 2026-27,GER1,Calvin Brackelmann,Augsburg,DF,27.0,3200000.0,9000000.0,0,2.81
@@ -10748,11 +10748,11 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,GER1,Junior Adamu,Schalke 04,MF,25.0,2800000.0,3000000.0,0,1.07
 2026-27,ESP1,Maroan Sannadi,Athletic Club,FW,25.0,2800000.0,3000000.0,0,1.07
 2026-27,ESP1,Jofre,Espanyol,MF,25.0,2800000.0,3000000.0,0,1.07
+2026-27,ESP1,David Soria,Getafe,GK,33.0,2700000.0,2338756.0,0,0.87
 2026-27,ESP1,Catena,Osasuna,DF,32.0,2700000.0,2305993.0,0,0.85
 2026-27,ESP1,Olasagasti,Levante,MF,26.0,2700000.0,2500000.0,0,0.93
-2026-27,ESP1,David Soria,Getafe,GK,33.0,2700000.0,2338756.0,0,0.87
-2026-27,GER1,Oliver Baumann,Hoffenheim,GK,36.0,2700000.0,1744191.0,0,0.65
 2026-27,GER1,Alessio Castro-Montes,Köln,DF,29.0,2700000.0,2500000.0,0,0.93
+2026-27,GER1,Oliver Baumann,Hoffenheim,GK,36.0,2700000.0,1744191.0,0,0.65
 2026-27,ESP1,Adrià Pedrosa,Rayo Vallecano,DF,28.0,2700000.0,2800000.0,0,1.04
 2026-27,ESP1,Lucas Torró,Osasuna,MF,32.0,2700000.0,2217301.0,0,0.82
 2026-27,GER1,Maximilian Wöber,Schalke 04,DF,28.0,2700000.0,3000000.0,0,1.11
@@ -10788,8 +10788,8 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,GER1,Rani Khedira,Union Berlin,MF,32.0,2100000.0,1773841.0,0,0.84
 2026-27,GER1,Hasan Kuruçay,Schalke 04,DF,29.0,2100000.0,9000000.0,0,4.29
 2026-27,ESP1,Jozhua Vertrouwd,Rayo Vallecano,DF,22.0,2100000.0,2000000.0,0,0.95
-2026-27,GER1,Frederik Rønnow,Union Berlin,GK,34.0,2100000.0,1573256.0,0,0.75
 2026-27,GER1,Satoshi Tanaka,Schalke 04,MF,24.0,2100000.0,9000000.0,0,4.29
+2026-27,GER1,Frederik Rønnow,Union Berlin,GK,34.0,2100000.0,1573256.0,0,0.75
 2026-27,ESP1,Alex Marchal,Real Sociedad,MF,19.0,2100000.0,2166574.0,0,1.03
 2026-27,GER1,Lee Jae-sung,Mainz 05,MF,34.0,2100000.0,1573256.0,0,0.75
 2026-27,GER1,Salim Musah,Werder Bremen,FW,20.0,2100000.0,2081622.0,0,0.99
@@ -10809,8 +10809,8 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ESP1,Fernando Niño,Elche,FW,26.0,1800000.0,3000000.0,0,1.67
 2026-27,GER1,Marin Ljubicic,Union Berlin,FW,24.0,1800000.0,2000000.0,0,1.11
 2026-27,ESP1,Iñigo Ruiz de Galarreta,Athletic Club,MF,33.0,1800000.0,1670540.0,0,0.93
-2026-27,ESP1,Florian Lejeune,Rayo Vallecano,DF,35.0,1700000.0,1333473.0,0,0.78
 2026-27,ESP1,Oriol Rey,Levante,MF,28.0,1700000.0,1800000.0,0,1.06
+2026-27,ESP1,Florian Lejeune,Rayo Vallecano,DF,35.0,1700000.0,1333473.0,0,0.78
 2026-27,ESP1,Mathew Ryan,Levante,GK,34.0,1700000.0,1415930.0,0,0.83
 2026-27,ESP1,Gonzalo Villar,Elche,MF,28.0,1700000.0,1800000.0,0,1.06
 2026-27,ESP1,Jon Guridi,Sevilla,MF,31.0,1700000.0,1695176.0,0,1.0
@@ -10838,8 +10838,8 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ESP1,Iago Aspas,Celta Vigo,FW,39.0,1500000.0,932397.0,0,0.62
 2026-27,GER1,Sheraldo Becker,Mainz 05,FW,31.0,1500000.0,1412647.0,0,0.94
 2026-27,ESP1,Víctor García,Levante,MF,29.0,1500000.0,1500000.0,0,1.0
-2026-27,GER1,Lukas Kübler,Freiburg,DF,34.0,1500000.0,1179942.0,0,0.79
 2026-27,ESP1,Kike Barja,Osasuna,MF,29.0,1500000.0,1500000.0,0,1.0
+2026-27,GER1,Lukas Kübler,Freiburg,DF,34.0,1500000.0,1179942.0,0,0.79
 2026-27,GER1,Daiki Hashioka,Gladbach,DF,27.0,1500000.0,2000000.0,0,1.33
 2026-27,ESP1,Carlos Martín,Atlético Madrid,MF,24.0,1500000.0,1500000.0,0,1.0
 2026-27,ESP1,Marcos Fernández,Espanyol,FW,23.0,1500000.0,400000.0,0,0.27
@@ -10916,31 +10916,76 @@ season,src_league,Player,Squad,pos,age,market_value_eur,predicted_eur,value_impu
 2026-27,ESP1,Matías Dituro,Elche,GK,39.0,105000.0,58274.0,0,0.55
 2026-27,ESP1,Josan,Elche,DF,37.0,105000.0,65704.0,0,0.63
 2026-27,ESP1,Gnangoro,Rayo Vallecano,MF,22.0,47000.0,9000000.0,0,191.49
+2026-27,ESP1,Leo Román,Deportivo La Coruna,GK,26.0,,6000000.0,0,
+2026-27,ESP1,Pierre-Emerick Aubameyang,Deportivo La Coruna,FW,37.0,,9855702.0,0,
+2026-27,ESP1,Ximo Navarro,Deportivo La Coruna,DF,36.0,,837211.0,0,
+2026-27,ESP1,Julen Agirrezabala,Racing Santander,GK,26.0,,9000000.0,0,
+2026-27,ESP1,Iñigo Vicente,Racing Santander,MF,28.0,,1000000.0,0,
+2026-27,ESP1,Sergio Canales,Racing Santander,MF,35.0,,14816364.0,0,
 2026-27,ESP1,Javi Hernández,Espanyol,DF,28.0,,1500000.0,0,
+2026-27,ESP1,Carlos Dotor,Malaga,MF,25.0,,2000000.0,0,
 2026-27,ESP1,Cala,Espanyol,DF,37.0,,591342.0,0,
+2026-27,ENG1,Oliver McBurnie,Hull,FW,30.0,,2500000.0,0,
+2026-27,ENG1,John Egan,Hull,DF,34.0,,3146511.0,0,
+2026-27,ENG1,Aurèle Amenda,Coventry,DF,23.0,,10000000.0,0,
+2026-27,ESP1,Gustavo Puerta,Racing Santander,MF,23.0,,3000000.0,0,
+2026-27,ENG1,Semi Ajayi,Hull,DF,33.0,,5011621.0,0,
+2026-27,ESP1,Andrés Martín,Racing Santander,MF,27.0,,1200000.0,0,
+2026-27,ESP1,Joaquín Muñoz,Malaga,FW,27.0,,600000.0,0,
+2026-27,ESP1,Iván Martín,Racing Santander,MF,27.0,,5000000.0,0,
 2026-27,ESP1,Raúl García,Osasuna,FW,40.0,,1646434.0,0,
+2026-27,ENG1,Nobel Mendy,Hull,DF,22.0,,7500000.0,0,
+2026-27,ENG1,Taiwo Awoniyi,Coventry,FW,29.0,,8000000.0,0,
+2026-27,GER1,Lukas Petkov,Elversberg,FW,26.0,,350000.0,0,
+2026-27,GER1,Gabriel Vidovic,Paderborn,MF,23.0,,3000000.0,0,
+2026-27,GER1,Marvin Pieringer,Paderborn,FW,27.0,,3000000.0,0,
+2026-27,ENG1,Loum Tchaouna,Coventry,MF,23.0,,13000000.0,0,
+2026-27,GER1,David Mokwa,Elversberg,FW,22.0,,4000000.0,0,
+2026-27,GER1,Lasse Günther,Elversberg,MF,23.0,,1000000.0,0,
+2026-27,ESP1,Juan Cruz,Malaga,MF,26.0,,1000000.0,0,
+2026-27,ESP1,Asier Villalibre,Racing Santander,FW,29.0,,1200000.0,0,
+2026-27,ENG1,Frank Onyeka,Coventry,MF,28.0,,8000000.0,0,
+2026-27,GER1,Cole Campbell,Elversberg,FW,20.0,,5204054.0,0,
+2026-27,ESP1,José Salinas,Malaga,DF,26.0,,2000000.0,0,
+2026-27,ESP1,Pablo Garcia,Racing Santander,MF,20.0,,8326486.0,0,
+2026-27,ESP1,Jonathan Asp Jensen,Deportivo La Coruna,FW,20.0,,1561216.0,0,
 2026-27,ESP1,Álvaro Fernández,Real Madrid,GK,28.0,,3500000.0,0,
-2026-27,ESP1,Leandro Cabrera,Espanyol,DF,35.0,,666736.0,0,
+2026-27,ESP1,Pablo Martínez,Malaga,MF,28.0,,3000000.0,0,
+2026-27,ENG1,Ethan Pinnock,Coventry,DF,33.0,,2505810.0,0,
+2026-27,ENG1,Ellis Simms,Coventry,FW,25.0,,300000.0,0,
 2026-27,GER1,Alexander Schwolow,Mainz 05,GK,34.0,,393314.0,0,
+2026-27,ESP1,Leandro Cabrera,Espanyol,DF,35.0,,666736.0,0,
 2026-27,GER1,Stefan Posch,Mainz 05,DF,29.0,,6000000.0,0,
 2026-27,GER1,Ritsu Doan,Eintracht Frankfurt,MF,28.0,,17000000.0,0,
 2026-27,GER1,David Møller Wolfe,Hamburger SV,MF,24.0,,8000000.0,0,
 2026-27,GER1,Mario Götze,Eintracht Frankfurt,MF,34.0,,2359883.0,0,
+2026-27,GER1,Steffen Tigges,Paderborn,FW,28.0,,1500000.0,0,
 2026-27,GER1,Arijon Ibrahimović,Augsburg,MF,21.0,,10000000.0,0,
+2026-27,ENG1,Cody Drameh,Hull,DF,25.0,,3000000.0,0,
+2026-27,ESP1,Adama Traoré,Deportivo La Coruna,MF,30.0,,6000000.0,0,
+2026-27,ESP1,Marc Casado,Deportivo La Coruna,MF,23.0,,18000000.0,0,
 2026-27,GER1,Shafiq Nandja,Hamburger SV,DF,19.0,,541644.0,0,
 2026-27,GER1,Fabio Vieira,Hamburger SV,MF,26.0,,18000000.0,0,
+2026-27,ESP1,André Almeida,Racing Santander,MF,26.0,,6000000.0,0,
+2026-27,ESP1,Jeanuël Belocian,Racing Santander,DF,21.0,,12000000.0,0,
 2026-27,ESP1,Harvey Elliott,Valencia,FW,23.0,,20000000.0,0,
 2026-27,GER1,Alexis Claude-Maurice,Augsburg,MF,28.0,,15000000.0,0,
+2026-27,ENG1,Gustavo Hamer,Coventry,MF,29.0,,15000000.0,0,
 2026-27,ENG1,Jack Grealish,Everton,MF,31.0,,18835291.0,0,
 2026-27,ESP1,Iker Córdoba,Valencia,DF,21.0,,100000.0,0,
 2026-27,GER1,Timothy Chandler,Eintracht Frankfurt,DF,36.0,,244186.0,0,
 2026-27,ESP1,Bryan Zaragoza,Espanyol,FW,25.0,,8000000.0,0,
 2026-27,GER1,Luca Vozar,Schalke 04,MF,19.0,,9749584.0,0,
+2026-27,ENG1,Mohamed Ali Cho,Hull,FW,22.0,,10000000.0,0,
 2026-27,ENG1,Ainsley Maitland-Niles,Everton,DF,29.0,,10000000.0,0,
 2026-27,ENG1,Viktor Gyökeres,Arsenal,FW,28.0,,65000000.0,0,
+2026-27,ESP1,Julen Lobete,Malaga,FW,26.0,,3000000.0,0,
 2026-27,ESP1,Quilindschy Hartman,Espanyol,DF,25.0,,16000000.0,0,
+2026-27,ENG1,Matt Targett,Hull,DF,31.0,,2825294.0,0,
 2026-27,ESP1,Gabriel Jesus,Barcelona,FW,29.0,,17000000.0,0,
-2026-27,ENG1,Danny Welbeck,Chelsea,FW,36.0,,2093029.0,0,
-2026-27,ESP1,Miguel Rodríguez,Alaves,MF,23.0,,800000.0,0,
 2026-27,GER1,Lennard Maloney,Mainz 05,DF,27.0,,2500000.0,0,
 2026-27,ESP1,Daniel Requena,Levante,MF,22.0,,400000.0,0,
+2026-27,ESP1,Miguel Rodríguez,Alaves,MF,23.0,,800000.0,0,
+2026-27,ENG1,Danny Welbeck,Chelsea,FW,36.0,,2093029.0,0,
+2026-27,ESP1,Aarón Martín,Racing Santander,MF,29.0,,5000000.0,0,
+2026-27,ESP1,Jens Cajuste,Malaga,MF,27.0,,12000000.0,0,
