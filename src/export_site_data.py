@@ -649,6 +649,45 @@ def build_player_elo_leaderboard(teams_list: list[dict]) -> dict | None:
     return result
 
 
+def build_player_elo_index() -> dict:
+    """A flat name -> latest player-Elo lookup so a rating badge can sit next to
+    a player *anywhere* he's named on the site (Players table, value leaderboard,
+    Teams roster, goalscorer props, Match Sim, the worked example), not only on
+    the Rankings tab. Uses the whole of player_elo.csv (not just the leaderboard
+    pool), the latest rating per player (inactivity decay included), at the club
+    of his last real appearance.
+
+      by_key  "<player lower>|<team_key>" -> rating  (exact, survives a transfer)
+      by_name "<player lower>"            -> rating  (fallback where no key)
+    """
+    p = PROC / "player_elo.csv"
+    if not p.exists():
+        return {"by_key": {}, "by_name": {}}
+    pe = pd.read_csv(p, encoding="utf-8")
+    pe = _fix_names(pe, ["player"])
+    nm_path = PROC / "player_name_map.csv"
+    if nm_path.exists():
+        nm = pd.read_csv(nm_path).dropna()
+        pe["player"] = pe["player"].replace(dict(zip(nm["understat_name"], nm["canonical_name"])))
+    pe = pe.sort_values("date")
+    played = pe[pe["minutes"].fillna(0) > 0]
+    if played.empty:
+        return {"by_key": {}, "by_name": {}}
+    last_real = played.drop_duplicates("player_id", keep="last")
+    latest_rating = pe.drop_duplicates("player_id", keep="last").set_index("player_id")["rating_after"]
+    by_key, by_name = {}, {}
+    for _, lr in last_real.iterrows():
+        pid = lr["player_id"]
+        rating = latest_rating.get(pid, lr["rating_after"])
+        if pd.isna(rating):
+            continue
+        rating = int(round(float(rating)))
+        nm_l = str(lr["player"]).strip().lower()
+        by_key[f"{nm_l}|{lr['team_key']}"] = rating
+        by_name[nm_l] = max(by_name.get(nm_l, -10**9), rating)
+    return {"by_key": by_key, "by_name": by_name}
+
+
 def build_methodology_example(model, fixtures: list[dict], blended_df: pd.DataFrame,
                                all_players: list[dict]) -> dict | None:
     """A fully worked example of every number on the site, computed for one real
@@ -885,6 +924,7 @@ def main() -> None:
     value_leaderboard = build_value_leaderboard(all_players)
     team_elo_rankings = build_team_elo_rankings(teams)
     player_elo_leaderboard = build_player_elo_leaderboard(teams)
+    player_elo_index = build_player_elo_index()
     methodology_example = build_methodology_example(model, fixtures, blended_df, all_players)
     games = build_games_data(model, blended_df, all_matches, teams, all_players)
 
@@ -901,13 +941,14 @@ def main() -> None:
         "value_leaderboard": value_leaderboard,
         "team_elo_rankings": team_elo_rankings,
         "player_elo_leaderboard": player_elo_leaderboard,
+        "player_elo_index": player_elo_index,
         "methodology_example": methodology_example,
         "games": games,
         "notes": {
             "current_stats": "2026-27 FBref season-to-date stats (min 45 minutes played).",
             "last_season": "2025-26 full-season stats for the same player, where available.",
             "projected_38": "Simple pace projection: current per-90 rate x projected minutes over a 38-game season. Not a trained model.",
-            "value": "Predicted market value from the trained value-regression model (current season preferred, else last season; R2(log) 0.89, MAE EUR4.9M, within-2x 91%) vs listed market value.",
+            "value": "Predicted market value from the trained value-regression model (current season preferred, else last season; R2(log) 0.89, MAE EUR4.1M, within-2x 91%) vs listed market value.",
             "match_odds": "Win/draw/loss odds from a Dixon-Coles attack/defence model fit on all competitions through the date above.",
             "player_props": "Anytime goal/assist odds: team's Dixon-Coles expected goals split across the matchday squad by each player's (non-penalty xG90 or xA90, shrunk toward last season's rate early in the current season) x season minutes-share, then Poisson P(>=1).",
             "cup_finals": "Each competition's final is inferred as the last-dated match of that season/competition in the results data - not read from an official bracket. When it ended level (decided on penalties/extra time not recorded here), no winner is shown. The in-progress 2026-27 season is excluded.",

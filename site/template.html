@@ -119,6 +119,15 @@
   .ratio-badge.bargain{ background:color-mix(in srgb, var(--win) 16%, transparent); color:var(--win); }
   .ratio-badge.fair{ background:var(--chip-bg); color:var(--text-dim); }
   .ratio-badge.rich{ background:color-mix(in srgb, var(--loss) 16%, transparent); color:var(--loss); }
+  /* inline player-Elo badge (recent-form rating, 1500 = average) - shows anywhere a player is named */
+  .elo-tag{ display:inline-block; font-family:var(--font-mono, ui-monospace, monospace); font-size:10px;
+            font-weight:700; padding:1px 5px; border-radius:5px; vertical-align:1px; letter-spacing:.2px;
+            background:var(--chip-bg); color:var(--text-dim); cursor:help; }
+  .elo-tag.e5{ background:color-mix(in srgb, var(--win) 26%, transparent); color:var(--win); }
+  .elo-tag.e4{ background:color-mix(in srgb, var(--win) 14%, transparent); color:var(--win); }
+  .elo-tag.e3{ background:var(--chip-bg); color:var(--text-dim); }
+  .elo-tag.e2{ background:color-mix(in srgb, var(--loss) 13%, transparent); color:var(--loss); }
+  .elo-tag.e1{ background:color-mix(in srgb, var(--loss) 24%, transparent); color:var(--loss); }
   .detail-row td{ background:var(--surface-2); padding:0; }
   .detail{ padding:16px 20px 20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
            gap:16px; white-space:normal; }
@@ -605,6 +614,25 @@
   function esc(s){ return (s==null?'':String(s)).replace(/[&<>]/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
   function isFermin(p){ return p && typeof p.player==='string' && p.player.toLowerCase().indexOf('fermin l')===0; }
 
+  // ---------- player Elo badge (shown anywhere a player is named) ----------
+  var eloIndex = DATA.player_elo_index || { by_key:{}, by_name:{} };
+  function eloRating(name, teamKey){
+    if(!name) return null;
+    var n = String(name).trim().toLowerCase();
+    var r = null;
+    if(teamKey && eloIndex.by_key) r = eloIndex.by_key[n + '|' + teamKey];
+    if(r==null && eloIndex.by_name) r = eloIndex.by_name[n];
+    return (r==null || isNaN(r)) ? null : r;
+  }
+  function eloTag(name, teamKey){
+    var r = eloRating(name, teamKey);
+    if(r==null) return '';
+    var c = r>=1750?'e5' : r>=1575?'e4' : r>=1440?'e3' : r>=1370?'e2' : 'e1';
+    return ' <span class="elo-tag '+c+'" title="Player Elo '+Math.round(r)+
+      ' — recent output vs an opponent-adjusted expectation, last 3 seasons (1500 = average). Full table on the Rankings tab.">'+
+      Math.round(r)+'</span>';
+  }
+
   // ---------- tabs ----------
   var tabBtns = document.querySelectorAll('.tab-btn');
   tabBtns.forEach(function(b){
@@ -634,8 +662,10 @@
       var fp = players.filter(isFermin)[0];
       items.push({k:'⚽ Player of the everything', v:'Fermín López', d: fp ? 'Barcelona — ' + num(fp.current.gls) + ' goals, model value ' + eur(fp.value && fp.value.predicted_eur) : 'Barcelona'});
     }
-    if(topScorer) items.push({k:'Top scorer', v:topScorer.player, d:topScorer.squad + ' — ' + num(topScorer.current.gls) + ' goals in ' + num(topScorer.current.min) + ' min'});
-    if(bargain) items.push({k:'Biggest value gap', v:bargain.player, d:'Model: ' + eur(bargain.value.predicted_eur) + ' vs listed ' + eur(bargain.value.listed_value_eur)});
+    if(topScorer){ var tsE = eloRating(topScorer.player, topScorer.team_key);
+      items.push({k:'Top scorer', v:topScorer.player, d:topScorer.squad + ' — ' + num(topScorer.current.gls) + ' goals in ' + num(topScorer.current.min) + ' min' + (tsE!=null?' · Elo ' + Math.round(tsE):'')}); }
+    if(bargain){ var bgE = eloRating(bargain.player, bargain.team_key);
+      items.push({k:'Biggest value gap', v:bargain.player, d:'Model: ' + eur(bargain.value.predicted_eur) + ' vs listed ' + eur(bargain.value.listed_value_eur) + (bgE!=null?' · Elo ' + Math.round(bgE):'')}); }
     if(nextFx) items.push({k:'Next up', v: teamShort(nextFx.home) + ' vs ' + teamShort(nextFx.away), d: nextFx.date.slice(0,10) + ' (' + nextFx.league + ') — ' + pct(nextFx.p_home_win) + ' / ' + pct(nextFx.p_draw) + ' / ' + pct(nextFx.p_away_win)});
     items.push({k:'Coverage', v: pl.length + ' players', d: fl.length + ' upcoming fixtures modelled'});
     tiles.innerHTML = items.map(function(it){
@@ -689,7 +719,7 @@
     var ferm = FERMIN && isFermin(p);
     return (
       '<tr class="prow'+(state.openKey===key?' open':'')+(ferm?' fermin-row':'')+'" data-key="'+key+'">' +
-        '<td><div class="pname">'+(ferm?'🐐 ':'')+esc(p.player)+' <span class="pos-badge">'+esc(p.pos)+'</span></div><div class="psquad">'+esc(p.squad)+' &middot; '+esc(p.league)+'</div></td>' +
+        '<td><div class="pname">'+(ferm?'🐐 ':'')+esc(p.player)+' <span class="pos-badge">'+esc(p.pos)+'</span>'+eloTag(p.player,p.team_key)+'</div><div class="psquad">'+esc(p.squad)+' &middot; '+esc(p.league)+'</div></td>' +
         '<td class="num num-col">'+num(p.current.min)+'</td>' +
         '<td class="num num-col">'+num(p.current.gls)+'</td>' +
         '<td class="num num-col">'+num(p.current.ast)+'</td>' +
@@ -704,6 +734,13 @@
   function detailHtml(p){
     var ls = p.last_season, pj = p.projected_38, v = p.value;
     var blocks = [];
+    var eloR = eloRating(p.player, p.team_key);
+    if(eloR!=null){
+      blocks.push('<div class="blk"><div class="k">Player Elo (recent form)</div>' +
+        '<div class="row"><span>Rating</span><b>'+Math.round(eloR)+'</b></div>' +
+        '<div class="row"><span>vs. average (1500)</span><b>'+(eloR>=1500?'+':'')+Math.round(eloR-1500)+'</b></div>' +
+        '<div class="note">Real match output (npxG + 0.7&times;xA) vs. an opponent-adjusted bar, last 3 seasons. No market value in it. Full table on Rankings.</div></div>');
+    }
     blocks.push('<div class="blk"><div class="k">This season</div>' +
       '<div class="row"><span>Starts / apps</span><b>'+num(p.current.starts)+' / '+num(p.current.mp)+'</b></div>' +
       '<div class="row"><span>Shots (on target)</span><b>'+num(p.current.shots)+' ('+num(p.current.sot)+')</b></div>' +
@@ -790,7 +827,7 @@
   function lbRowHtml(p, i){
     var pct2 = (p.value.ratio>=1?'+':'') + Math.round((p.value.ratio-1)*100) + '%';
     return '<div class="lb-row"><span class="lb-rank">'+(i+1)+'</span>'+crest(p.squad,26)+
-      '<div class="lb-name"><span class="p">'+esc(p.player)+'</span><span class="s">'+esc(p.squad)+' &middot; '+esc(p.league)+'</span></div>' +
+      '<div class="lb-name"><span class="p">'+esc(p.player)+eloTag(p.player,p.team_key)+'</span><span class="s">'+esc(p.squad)+' &middot; '+esc(p.league)+'</span></div>' +
       '<span class="lb-ratio">'+pct2+'</span></div>';
   }
   function renderLeaderboard(){
@@ -843,7 +880,7 @@
   function propRow(pr, teamKey){
     return (
       '<div class="prop-row">' +
-        '<div class="pn"><button type="button" class="playerlink" data-player="'+esc(pr.player)+'" data-team="'+esc(teamKey)+'">'+esc(pr.player)+'</button></div>' +
+        '<div class="pn"><button type="button" class="playerlink" data-player="'+esc(pr.player)+'" data-team="'+esc(teamKey)+'">'+esc(pr.player)+'</button>'+eloTag(pr.player,teamKey)+'</div>' +
         '<span class="pos-badge">'+esc(pr.pos)+'</span>' +
         '<div class="prop-cell"><div class="prop-bar"><b style="width:'+Math.min(100,(pr.p_anytime_goal||0)*100)+'%"></b></div><span class="pp">'+pct(pr.p_anytime_goal)+'</span></div>' +
         '<div class="prop-cell assist"><div class="prop-bar assist"><b style="width:'+Math.min(100,(pr.p_anytime_assist||0)*100)+'%"></b></div><span class="pp">'+pct(pr.p_anytime_assist)+'</span></div>' +
@@ -1011,7 +1048,7 @@
         '<th class="num-col">Ast</th><th class="num-col">npxG/90</th></tr></thead><tbody>' +
       roster.map(function(p){
         return (
-          '<tr><td><button type="button" class="playerlink linkbtn" data-player="'+esc(p.player)+'" data-team="'+esc(p.team_key)+'">'+esc(p.player)+'</button> <span class="pos-badge">'+esc(p.pos)+'</span></td>' +
+          '<tr><td><button type="button" class="playerlink linkbtn" data-player="'+esc(p.player)+'" data-team="'+esc(p.team_key)+'">'+esc(p.player)+'</button> <span class="pos-badge">'+esc(p.pos)+'</span>'+eloTag(p.player,p.team_key)+'</td>' +
           '<td class="num num-col">'+num(p.age)+'</td><td class="num num-col">'+num(p.current.min)+'</td>' +
           '<td class="num num-col">'+num(p.current.gls)+'</td><td class="num num-col">'+num(p.current.ast)+'</td>' +
           '<td class="num num-col">'+num(p.current.npxg90,2)+'</td></tr>'
@@ -1149,7 +1186,7 @@
           'sample is small) times their share of the team\'s minutes this season. Bigger share of the team\'s attacking '+
           'output = bigger share of the team\'s expected goals for this match, then <code>P(scores) = 1 - e^(-that '+
           'player\'s expected goals)</code> &mdash; the standard Poisson "at least one" formula.</p>' +
-          '<div class="worked"><div class="wt">Worked for '+esc(pe.player)+' ('+esc(pe.team)+')</div>' +
+          '<div class="worked"><div class="wt">Worked for '+esc(pe.player)+eloTag(pe.player)+' ('+esc(pe.team)+')</div>' +
           wrow('Blended npxG per 90', num(pe.npxg90_blended,3)) +
           wrow('Minutes-share this season', pct(pe.minute_frac)) +
           wrow('Attacking weight (npxG/90 &times; minutes-share)', num(pe.atk_weight,3)) +
@@ -1167,8 +1204,8 @@
           '<p>A gradient-boosted regression trained on prior-season value (the single biggest lever), age, minutes, and '+
           'per-90 output (goals, assists, xG, xA, shots, key passes) predicts <code>log(market value)</code>, then a '+
           'calibration step corrects the model\'s tendency to under/over-shrink at the extremes. Test-set '+
-          'R&sup2;(log) 0.89, median error 23%, within 2&times; the true value 91% of the time.</p>' +
-          '<div class="worked"><div class="wt">Worked for '+esc(ve.player)+' ('+esc(ve.squad)+', '+esc(ve.season)+')</div>' +
+          'R&sup2;(log) 0.89, median error 22%, within 2&times; the true value 91% of the time.</p>' +
+          '<div class="worked"><div class="wt">Worked for '+esc(ve.player)+eloTag(ve.player)+' ('+esc(ve.squad)+', '+esc(ve.season)+')</div>' +
           wrow('Age', num(ve.age)) +
           wrow('Minutes this season', num(ve.current.min)) +
           wrow('Goals / Assists', num(ve.current.gls)+' / '+num(ve.current.ast)) +
@@ -1432,9 +1469,9 @@
       var L = lambdas();
       var r = simOne(L);
       var grid = dcGrid(L.lh, L.la, S.rho);
-      function scoreList(arr){
+      function scoreList(arr, teamKey){
         if(!arr.length) return '<div class="none">no goals</div>';
-        return arr.map(function(g){ return '<div class="g"><span class="min">'+g.min+'′</span>'+esc(g.p)+'</div>'; }).join('');
+        return arr.map(function(g){ return '<div class="g"><span class="min">'+g.min+'′</span>'+esc(g.p)+eloTag(g.p, teamKey)+'</div>'; }).join('');
       }
       document.getElementById('simOut').innerHTML =
         '<div class="sim-head">' +
@@ -1451,8 +1488,8 @@
         '</div>' +
         '<div class="sim-line" style="margin-top:2px;">'+esc(teamShort(L.h.name))+' win / draw / '+esc(teamShort(L.a.name))+' win</div>' +
         '<div class="sim-scorers">' +
-          '<div class="col"><h4>'+esc(L.h.name)+' scorers</h4>'+scoreList(r.hScorers)+'</div>' +
-          '<div class="col"><h4>'+esc(L.a.name)+' scorers</h4>'+scoreList(r.aScorers)+'</div>' +
+          '<div class="col"><h4>'+esc(L.h.name)+' scorers</h4>'+scoreList(r.hScorers, L.h.key)+'</div>' +
+          '<div class="col"><h4>'+esc(L.a.name)+' scorers</h4>'+scoreList(r.aScorers, L.a.key)+'</div>' +
         '</div>';
     }
     function renderMany(){
@@ -1654,7 +1691,7 @@
     '<div><b>Projected table</b> — '+esc(notes.projected_table)+'</div>' +
     '<div><b>Value leaderboard</b> — '+esc(notes.value_leaderboard)+'</div>' +
     '<div><b>Team power rankings</b> — '+esc(notes.team_elo)+'</div>' +
-    '<div><b>Player Elo</b> — '+esc(notes.player_elo)+'</div>' +
+    '<div><b>Player Elo</b> — '+esc(notes.player_elo)+' The small <span class="elo-tag e3">1500</span>-style badge next to a player anywhere on the site is this rating (1500 = average); ~85% of listed players have enough recent matches to carry one.</div>' +
     '<div><b>Cup finals</b> — '+esc(notes.cup_finals)+'</div>' +
     (GAMES.notes ? '<div><b>Match Sim</b> — '+esc(GAMES.notes.sim)+'</div>' +
                    '<div><b>Streak</b> — '+esc(GAMES.notes.streak)+'</div>' : '');
