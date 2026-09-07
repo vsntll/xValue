@@ -1,34 +1,35 @@
 # `matches_all.csv` - the modelling match table
 
 Built by `src/build_matches_all.py` from every match source. One row per match,
-all competitions, 2020-21 .. 2026-27, top flight of England / Germany / Spain
-plus the cups their clubs play in.
+all competitions, 2020-21 .. 2026-27, top flight of England / Germany / Spain /
+Italy / France plus the cups their clubs play in.
 
-## Composition (9,059 matches as of 2026-09-03)
+## Composition (13,446 matches as of 2026-09-07)
 
 | competition_type | rows | source | stats |
 | --- | --- | --- | --- |
-| league | 6,456 | football-data.co.uk (2020-26) + live sources (2026-27) | shots/SoT/corners/fouls/cards everywhere; **xG 93%** (Understat); possession only 2026-27 |
-| european (UCL/UEL/UECL) | 1,346 | FBref match logs + ESPN/FotMob (2024-25 on) | result-only history; **xG + shots for 2024-25, 2025-26, 2026-27** |
-| domestic_cup (FA/DFB/Copa) | 1,005 | same | same |
-| league_cup (EFL) | 277 | same | same |
-| super_cup | 37 | same | |
+| league | 10,788 | football-data.co.uk (2020-26) + live sources (2026-27) | shots/SoT/corners/fouls/cards everywhere; **xG 93%** (Understat); possession only 2026-27 |
+| european (UCL/UEL/UECL) | 1,368 | FBref match logs + ESPN/FotMob (2024-25 on) | result-only history; **xG + shots for 2024-25, 2025-26, 2026-27** |
+| domestic_cup (FA/DFB/Copa/Coppa/Coupe) | 977 | same | same |
+| league_cup (EFL) | 265 | same | same |
+| super_cup | 36 | same | |
 | playoff | 12 | same | |
 
-Overall: **xG 78%**, shots 81%, possession 10%. Cup xG: 0% for 2020-24,
+Overall: **xG 82%**, shots ~84%, possession ~10%. Cup xG: 0% for 2020-24,
 76-78% for 2024-25 & 2025-26, ~100% for 2026-27.
 
-Cup/European rows are scoped to ties involving a club from ENG1/GER1/ESP1 that
-season (matches FBref). The `normalize_team` transliteration + alias fixes
-(2026-09) folded ~74 previously-duplicated cup rows together; a residual few
-percent of live cup rows still don't dedupe cleanly against the FBref rows
-(team-name drift - step 4).
+Cup/European rows are scoped to ties involving a club from one of the five
+leagues that season (matches FBref). The `normalize_team` transliteration +
+alias fixes (2026-09, incl. the Serie A / Ligue 1 club-name reconciliation)
+folded the previously-duplicated cup rows together; a residual few percent of
+live cup rows still don't dedupe cleanly against the FBref rows (team-name
+drift - step 4).
 
 ## Gaps and how to close them
 
 - **Historical cup xG + shot stats** (~2,300 matches, 2020-26): FBref gates shot
   detail for cups and Understat has no cup coverage. FotMob has both -
-  `py -3.11 src/pull_live.py --season <s> --comps UCL UEL UECL FA EFL DFB CDR`
+  `py -3.11 src/pull_live.py --season <s> --comps UCL UEL UECL FA EFL DFB CDR CI CDF`
   per historical season, then re-run `build_matches_all.py` after teaching it to
   read `data/raw/live/*_<season>.csv`. ~2,300 FotMob matchDetails calls - ToS-
   sensitive at that volume.

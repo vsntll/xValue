@@ -12,7 +12,7 @@ py -3.11 src/pull_fbref_matchlogs.py --stats schedule   # cup/European rows     
 py -3.11 src/pull_fbref_matchlogs.py                    # + shooting/keeper/misc  (~4h, re-run to resume)
 py -3.11 src/pull_fbref_player_stats.py                 # league-wide player stats (FBref, ~1h)
 py -3.11 src/pull_wfr_advanced.py                       # advanced player stats    (mirror, 2020-22)
-py -3.11 src/pull_understat.py                          # per-match + per-player xG (Understat)
+py -3.11 src/pull_understat.py                          # per-match + per-player xG, all big-5 (Understat)
 py -3.11 src/pull_transfermarkt.py                      # market values 2020-23    (mirror)
 py -3.11 src/pull_transfermarkt_scrape.py               # market values 2023-26    (TM, click the WAF captcha once)
 py -3.11 src/pull_sofascore_values.py                   # current-season values    (Sofascore)
@@ -26,12 +26,13 @@ py -3.11 src/pull_fotmob_players.py --current           # per-player SoT/fouls/t
 
 ```
 py -3.11 src/parse_fbref_matchlogs.py       -> fbref_team_matchlogs.csv
-py -3.11 src/parse_fbref_player_stats.py    -> fbref_player_season_stats.csv   (folds in xG + values)
-py -3.11 src/build_current_season_stats.py  -> rewrites the current season's rows in fbref_player_season_stats.csv from Understat (goals/assists/minutes/xG) + FotMob (SoT/fouls/tackles/int/blocks/clearances) - no browser scrape
-py -3.11 src/build_matches_all.py           -> matches_all.csv                 (9k matches, all comps)
+py -3.11 src/parse_fbref_player_stats.py       -> fbref_player_season_stats.csv   (folds in xG + values; PL/BL/La Liga only)
+py -3.11 src/build_value_history.py            -> value_history.csv               (prev-value lags + the Serie A/Ligue 1 season value: big-5 mirror 2015-22 + scrape + Sofascore. A clean first build converges on the 2nd pass.)
+py -3.11 src/build_understat_player_seasons.py -> + Serie A / Ligue 1 rows, all seasons, synthesised from Understat + wfr mirror + FotMob + value_history (idempotent)
+py -3.11 src/build_current_season_stats.py     -> rewrites the current season's rows in fbref_player_season_stats.csv from Understat (goals/assists/minutes/xG) + FotMob (SoT/fouls/tackles/int/blocks/clearances) - no browser scrape
+py -3.11 src/build_matches_all.py           -> matches_all.csv                 (13k matches, all comps)
 py -3.11 src/build_squad_features.py        -> squad_season_features.csv
 py -3.11 src/build_match_model_table.py     -> match_model_table.csv           (Elo, form, odds, momentum if squad_momentum.csv exists yet)
-py -3.11 src/build_value_history.py         -> value_history.csv               (prev-value lags: big-5 mirror 2015-22 + scrape + Sofascore)
 ```
 
 ## 3. Train
@@ -40,7 +41,7 @@ py -3.11 src/build_value_history.py         -> value_history.csv               (
 py -3.11 src/train_value_model.py           -> models/value_model.pkl, value_model_predictions.csv  (R2(log) 0.89; predicts every player/season incl. current)
 py -3.11 src/build_form_momentum.py         -> squad_momentum.csv    (peer-baseline value vs. actual recent output - needs value_model_predictions.csv above, so run this after it; re-run build_match_model_table.py once more to fold it in)
 py -3.11 src/train_outcome_model.py         -> outcome_model_predictions.csv          (pure, log-loss 0.988; + O/U, BTTS, correct-score)
-py -3.11 src/train_outcome_model.py --hybrid -> outcome_model_predictions_hybrid.csv  (+ market odds, 0.975)
+py -3.11 src/train_outcome_model.py --hybrid -> outcome_model_predictions_hybrid.csv  (+ market odds, 0.972 ~ Bet365 0.971)
 ```
 
 ## 4. Build the site

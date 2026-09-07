@@ -2,10 +2,11 @@
 
 A single self-contained HTML page (`site/index.html`) with the season's player
 stats, the value model's predictions, next-fixture odds, and club pages, across
-the Premier League, La Liga and Bundesliga — no server, no fetch, data is
-embedded inline. A league chip filter in the top bar (All / Premier League /
-La Liga / Bundesliga) scopes the player table, fixture grid and leaderboard.
-Four tabs: Players, Fixtures & Odds, Teams, How It Works.
+the Premier League, La Liga, Bundesliga, Serie A and Ligue 1 — no server, no
+fetch, data is embedded inline. The league chip filter in the top bar is built
+from `DATA.leagues`, so it auto-expands as leagues are added; it scopes the
+player table, fixture grid and leaderboard. Five tabs: Players, Fixtures & Odds,
+Teams, Rankings, How It Works.
 
 The **Players** tab opens with a "Biggest bargains" / "Most overpriced"
 leaderboard (`build_value_leaderboard`) above the search table - the value
@@ -46,11 +47,12 @@ player in the dataset (picked for recognisability, not cherry-picked results).
 ## Data (`src/export_site_data.py` -> `site/data.json`)
 
 `LEAGUES` in the script maps FBref's `src_league` codes to display names
-(`ENG1`/`ESP1`/`GER1` -> Premier League/La Liga/Bundesliga); add an entry there
-to cover another top-5 league already in the underlying data.
+(`ENG1`/`ESP1`/`GER1`/`ITA1`/`FRA1` -> Premier League / La Liga / Bundesliga /
+Serie A / Ligue 1); add an entry there to cover another league already in the
+underlying data.
 
-- **Players**: current-season (2026-27) FBref stats, min 45 minutes played, for
-  all three leagues. npxG/90 and xA/90 come from Understat season totals / 90s
+- **Players**: current-season (2026-27) stats, min 45 minutes played, for
+  all five leagues. npxG/90 and xA/90 come from Understat season totals / 90s
   played — FBref's own `*_Per` xG columns are empty for every season/league in
   this dataset (the advanced FBref tables are gated), Understat is the real
   source here.
@@ -58,7 +60,7 @@ to cover another top-5 league already in the underlying data.
 - **Projected 38-game pace**: current per-90 rate x projected minutes over a full
   season. A simple pace projection, not a trained model — labelled as such in the UI.
 - **Predicted market value**: from `value_model_predictions.csv` (the trained
-  regressor, R2(log) 0.89 / MAE EUR4.9M / within-2x 91%) vs the player's listed
+  regressor, R2(log) 0.89 / MAE EUR4.1M / within-2x 91%) vs the player's listed
   value. `value_model_predictions.csv` now covers every season 2020-21..2026-27
   (it used to stop at 2025-26); `load_value_predictions` prefers the *current*
   season's row per player+team and falls back to 2025-26 for anyone not yet
@@ -108,7 +110,7 @@ to cover another top-5 league already in the underlying data.
   fixture where both teams are in the fitted Dixon-Coles model's team index
   (falls back gracefully - `methodology_example: null` - if somehow none
   qualify), its top-attacking-weight home player for the prop-odds worked
-  example, and the highest-listed-value player across all three leagues for
+  example, and the highest-listed-value player across all five leagues for
   the value-model worked example.
 
 Watch for: `fbref_player_season_stats.csv`, `value_model_predictions.csv`,
@@ -157,8 +159,10 @@ caches stay gitignored (CI keeps them in a throwaway `actions/cache` blob).
 
 ## Known data-scope note
 
-The 2026-27 Premier League club list in the underlying data (Coventry City, Hull
-City, Ipswich Town in; West Ham, Wolves, Burnley out, vs. 2025-26) was
-cross-checked for internal consistency against known 2024-25/2025-26
-promotion/relegation and is plausible, not independently verified against a live
-source.
+The 2026-27 promoted-club lists across all five leagues (e.g. Coventry / Hull /
+Ipswich into the Premier League) were cross-checked for internal consistency
+against ESPN + football-data.org + Understat (all three agree on the 20/20/18/20/18
+club counts) and are plausible, not independently verified against an official
+source. Serie A / Ligue 1 player rows are Understat-derived (see
+`docs/fbref_ingestion.md`), so a player who has not yet appeared in a match has
+no row until he does.

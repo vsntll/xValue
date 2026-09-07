@@ -20,9 +20,9 @@ field from the first source that has it (key: comp_code + normalised home + away
 
 | module | source | key? | gives | status |
 | --- | --- | --- | --- | --- |
-| `live/football_data_org.py` | football-data.org v4 | `FOOTBALL_DATA_ORG_KEY` in `.env` | fixtures, results, HT score — **sanctioned, stable**. No shot/possession. 10 req/min, PL/BL1/PD/CL. | working |
-| `live/espn.py` | site.api.espn.com | none | fixtures, results, **+ box-score stats** (shots, SoT, corners, fouls, cards, possession) for the 3 leagues + UCL/UEL/UECL + FA/EFL/DFB/Copa. Unofficial. Summaries cached. | working |
-| `live/understat.py` | understat.com (via soccerdata, TLS client) | none | **+ xG** (per-match team xG). The 3 leagues only — no cups. | working |
+| `live/football_data_org.py` | football-data.org v4 | `FOOTBALL_DATA_ORG_KEY` in `.env` | fixtures, results, HT score — **sanctioned, stable**. No shot/possession. 10 req/min, PL/BL1/PD/SA/FL1/CL. | working |
+| `live/espn.py` | site.api.espn.com | none | fixtures, results, **+ box-score stats** (shots, SoT, corners, fouls, cards, possession) for the 5 leagues + UCL/UEL/UECL + FA/EFL/DFB/Copa/Coppa/Coupe. Unofficial. Summaries cached. | working |
+| `live/understat.py` | understat.com (via soccerdata, TLS client) | none | **+ xG** (per-match team xG). The 5 leagues only — no cups. | working |
 | `live/fotmob.py` | fotmob.com/api/data | none (may need `x-mas` later) | **+ xG** for cups/Europe (and leagues). Reads teams+xG from `matchDetails` (fixture-list home/away is unreliable). Details cached. ToS restricts — low volume. | working |
 | `live/sofascore.py` | api.sofascore.com | none | + xG | stub — fallback |
 
@@ -31,13 +31,13 @@ defines its match list; later sources are matched on comp + date (±3d) + both
 team names (`teams_match`: normalized-equal or decisive token overlap, with a
 score+date fallback for names one source mangles) and fill missing fields.
 
-Comp codes: `ENG1 GER1 ESP1` (leagues) + `UCL UEL UECL FA EFL DFB CDR` (cups).
-Default = leagues + UCL/FA/EFL/DFB/CDR.
+Comp codes: `ENG1 GER1 ESP1 ITA1 FRA1` (leagues) + `UCL UEL UECL FA EFL DFB CDR CI CDF` (cups).
+Default = leagues + UCL/FA/EFL/DFB/CDR/CI/CDF.
 
 ## Run
 
     py -3.11 src/pull_live.py                          # current season, default comps, ESPN
-    py -3.11 src/pull_live.py --season 2026-27 --comps ENG1 GER1 ESP1 UCL
+    py -3.11 src/pull_live.py --season 2026-27 --comps ENG1 GER1 ESP1 ITA1 FRA1 UCL
     py -3.11 src/pull_live.py --no-stats               # fixtures/results only, fast
     py -3.11 src/pull_live.py --sources espn           # force a single source
 

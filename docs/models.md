@@ -1,27 +1,29 @@
 # Models (steps 6-8)
 
-**Current results** (temporal holdout 2024-25 + 2025-26):
+**Current results** (temporal holdout 2024-25 + 2025-26, all **big-5** leagues):
 
 | | value model | outcome (pure) | outcome (hybrid) |
 | --- | --- | --- | --- |
-| metric | R²(log) **0.89**, MAE **€4.9M**, within-2x **91%**, medAPE 23% | log-loss **0.978**, acc **0.532** | log-loss **0.975**, acc **0.531** |
+| metric | R²(log) **0.89**, MAE **€4.1M**, within-2x **91%**, medAPE 22% | log-loss **0.981**, acc **0.532** | log-loss **0.972**, acc **0.534** |
 | v1 was | 0.70 / €9.1M / 68% | 1.014 / 0.511 | — |
-| reference | — | Bet365 closing 0.973 / 0.537 | (uses market opening odds as a feature) |
+| reference | — | Bet365 closing 0.971 / 0.539 | (uses market opening odds as a feature) |
 
 Trajectory: value R²(log) 0.70 → 0.82 (prev-value) → 0.835 (contract/minutes) →
 0.87 (prev-season club value + xG-share) → 0.88 (name-resolution, coverage
 81 → 95%) → 0.90 (`value_history.csv`: big-5 mirror back to 2015 + cross-league)
-→ **0.89** (goalkeepers folded in, test set widened to transferred players, and a
-direct + change-from-last-value blend with a €220M cap that fixes the elite tail
-at a ~0.005 cost to overall R²). Outcome 1.014 → 0.997 → 0.990 → 0.988 → **0.978**
-(cleaner team keys). Hybrid **0.975** ≈ bookmaker.
+→ 0.907 (defensive-volume + team-success features, Serie A/Ligue 1 value backfill)
+→ **0.89** (Serie A + Ligue 1 folded in as full leagues 2026-09-06: +7.7k
+player-seasons, most without the team-success columns and cold-start-heavy, so
+the holdout got bigger and harder even as MAE fell to €4.1M). Outcome
+1.014 → 0.997 → 0.990 → 0.988 → **0.981** (pure). Hybrid **0.972** ≈ Bet365 0.971.
 
 The value model splits cleanly by whether a prior-season value exists:
-**R²(log) 0.93** for the 77% that have one, **0.72** for cold-start arrivals from
-outside the big-5 (promoted-club squads, Eredivisie/Primeira/Championship
-signings, academy graduates). Keepers score **0.88**. Closing the cold-start gap -
-and pushing past 0.90 - needs data we don't have: lower-league value history,
-transfer fees, or salaries.
+**R²(log) 0.92** for the ~82% that have one, **0.72** for cold-start arrivals with
+none (promoted-club squads, Eredivisie/Primeira/Championship signings, academy
+graduates, and Serie A / Ligue 1 players whose only prior value predates the
+2015 mirror). Keepers score **0.87**. Closing the cold-start gap - and pushing
+past 0.90 - needs data we don't have: lower-league value history, transfer fees,
+or salaries.
 
 **The ceiling and the high end**: Transfermarkt caps listings near **€220M**, so
 predictions are clipped there in log space and the elite gravitate toward it
@@ -50,9 +52,10 @@ bookmaker's own **closing**-odds performance. The pure model uses only data.
 Predicts a player's market value from his season + his value history.
 
 - **Data**: `fbref_player_season_stats.csv`, players (outfield **and keepers**)
-  with a real value and >= 8 full-90s. ~4,160 train / ~2,070 test. Value coverage
-  is ~99% of season-rows that have minutes (81% before this work); the gap is
-  2022-23 (thin TM mirror) and just-promoted clubs.
+  with a real value and >= 8 full-90s, across all five leagues. ~5,600 train /
+  ~3,000 test. Value coverage is ~90% of season-rows that have minutes; the gap
+  is 2022-23 (thin TM mirror), just-promoted clubs, and the Serie A / Ligue 1
+  players whose season value the TM scrape didn't reach.
 - **Prev-value lags** (`build_value_history.py` → `value_history.csv`): the model
   is dominated by last season's value, so coverage of that lag caps accuracy.
   The history table unions the worldfootballR big-5 mirror **back to 2015-16 and

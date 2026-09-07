@@ -30,8 +30,16 @@ shooting + keeper pages back to back with no crash. New scripts:
   the cached pages → `data/processed/fbref_team_matchlogs.csv`, `Comp` mapped to
   `competition_type`.
 
-Competition ids: PL 9, Bundesliga 20, La Liga 12. (The three 2nd tiers -
-Championship / 2.Bundesliga / Segunda - were dropped from scope 2026-09-03.)
+Competition ids: PL 9, Bundesliga 20, La Liga 12, Serie A 11, Ligue 1 13.
+(The 2nd tiers were dropped from scope 2026-09-03.)
+
+**Serie A / Ligue 1 (added 2026-09-06) are not browser-scraped from FBref.**
+Their player-season rows are synthesised by `src/build_understat_player_seasons.py`
+from the browser-free feeds instead — Understat season totals (goals / assists /
+xG / npxG / xA / shots / key passes / cards / xgChain), the worldfootballR mirror
+for the advanced columns 2020-22, FotMob for the current season's SoT / fouls /
+tackles, and `value_history.csv` for the market value. Team match logs for those
+two leagues come from the live sources (ESPN / Understat / FotMob), not FBref.
 
 ## Match-log scrape COMPLETE 2026-09-03 (~02:15)
 

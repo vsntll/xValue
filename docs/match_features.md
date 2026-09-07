@@ -5,12 +5,14 @@ One row per match.
 
 ## Coverage
 
-- **Competitions:** the top flight of each country — Premier League (England),
-  Bundesliga (Germany), La Liga (Spain). All league play; see "Not included"
-  below. (The three 2nd tiers were in scope until 2026-09-03, then dropped.)
+- **Competitions:** the top flight of each big-5 country — Premier League
+  (England), Bundesliga (Germany), La Liga (Spain), Serie A (Italy), Ligue 1
+  (France). All league play; see "Not included" below. (The 2nd tiers were in
+  scope until 2026-09-03, then dropped.)
 - **Seasons:** 2020-21 … 2025-26 complete, plus **2026-27 ongoing** (live —
   re-running the script pulls in matches played since the last run).
-- **Rows:** ~6,455. Per completed season: 1066 (380 E0 + 306 D1 + 380 SP1).
+- **Rows:** ~10,800. Per completed season: 1752 (380 E0 + 306 D1 + 380 SP1 +
+  380 I1 + 306 F1); 1826 for 2020-21..2022-23 when Ligue 1 still had 20 clubs.
   2026-27 grows over time.
 - **Date range:** 2020-09-12 … whatever the latest played match is.
 
@@ -22,11 +24,11 @@ One row per match.
 | `league` | human-readable league name (injected) |
 | `tier` | always 1 (injected) — kept for schema stability |
 | `competition_type` | always `league` here — the column exists so cup/friendly rows from another source can be unioned in later |
-| `Div` | football-data division code (`E0`/`D1`/`SP1`) |
+| `Div` | football-data division code (`E0`/`D1`/`SP1`/`I1`/`F1`) |
 | `Date` | match date, ISO (parsed from dd/mm/yy) |
 | `Time` | kickoff local time |
 | `HomeTeam`, `AwayTeam` | football-data team names — **not yet resolved** to FBref names (step 4) |
-| `Referee` | England only (`E0`); blank for German/Spanish leagues (source does not provide it) |
+| `Referee` | England only (`E0`); blank for the other leagues (source does not provide it) |
 | `FTHG`, `FTAG`, `FTR` | full-time home goals, away goals, result (`H`/`D`/`A`) |
 | `HTHG`, `HTAG`, `HTR` | half-time equivalents |
 | `HS`, `AS` | shots |
