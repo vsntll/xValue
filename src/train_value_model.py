@@ -170,15 +170,21 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
     sq_path = SRC.parent / "squad_season_features.csv"
     if sq_path.exists():
         sq = pd.read_csv(sq_path).rename(columns={"team": "Squad"})
-        d = d.merge(sq[["season", "src_league", "Squad", "squad_xg"]],
+        d = d.merge(sq[["season", "src_league", "Squad", "squad_xg", "squad_xa",
+                        "mean_age_wtd"]],
                     on=["season", "src_league", "Squad"], how="left")
-        # PREVIOUS season's squad value - club spending power, non-circular
+        # PREVIOUS season's squad value / core-18 value - club spending power,
+        # non-circular (this season's squad value is built from this season's
+        # player values, which would leak the target).
         sq["_ord"] = sq["season"].map(_SEASON_ORDER) + 1
-        d = d.merge(sq[["_ord", "src_league", "Squad", "squad_value_eur"]].rename(
-            columns={"squad_value_eur": "prev_squad_value"}),
+        d = d.merge(sq[["_ord", "src_league", "Squad", "squad_value_eur",
+                        "core18_value_eur"]].rename(
+            columns={"squad_value_eur": "prev_squad_value",
+                     "core18_value_eur": "prev_core18_value"}),
             on=["_ord", "src_league", "Squad"], how="left")
     else:
-        d["prev_squad_value"], d["squad_xg"] = np.nan, np.nan
+        d["prev_squad_value"] = d["squad_xg"] = d["squad_xa"] = np.nan
+        d["mean_age_wtd"] = d["prev_core18_value"] = np.nan
 
     d["imputed"] = pd.to_numeric(d.get("market_value_imputed"), errors="coerce").fillna(0)
     # keep anyone with a value or any minutes (the n90 >= 8 cut for fit/eval is
@@ -212,7 +218,13 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
         "contract_years": d["contract_years"],
         "minutes_trend": np.log1p(d["_min"]) - np.log1p(d["prev1_min"]),
         "club_log_value": np.log1p(d["prev_squad_value"]),
+        "club_core18_log_value": np.log1p(d["prev_core18_value"]),
+        "club_x_youth": np.log1p(d["prev_squad_value"]) * (25 - d["age"]).clip(-8, 8),
+        "squad_age": pd.to_numeric(d["mean_age_wtd"], errors="coerce"),
         "xg_share": d["_xg"] / (pd.to_numeric(d["squad_xg"], errors="coerce") + 1),
+        "xa_share": pd.to_numeric(d.get("understat__xa"), errors="coerce")
+        / (pd.to_numeric(d["squad_xa"], errors="coerce") + 1),
+        "nation": d["Nation"].astype(str).str.split().str[-1],
         "y": np.log1p(d["mv"]),
         "market_value_eur": d["mv"],
         "imputed": d["imputed"].astype(int),
@@ -227,6 +239,19 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
 
 def main() -> None:
     df = build_xy(pd.read_csv(SRC, low_memory=False))
+
+    # nationality premium: encode each nation as the mean log-value of its
+    # players in the TRAIN years only (no leakage), shrunk toward the global
+    # mean for small samples. Brazil/France/England command a premium; a
+    # 20-cap nation with 3 players in the data shouldn't swing a prediction.
+    _tr_mask = df["season"].isin(TRAIN_SEASONS) & (df["imputed"] == 0) & df["y"].notna()
+    _g = df.loc[_tr_mask].groupby("nation")["y"]
+    _mu, _n = _g.mean(), _g.count()
+    _glob = df.loc[_tr_mask, "y"].mean()
+    _enc = ((_n * _mu + 12 * _glob) / (_n + 12)).to_dict()
+    df["nation_premium"] = df["nation"].map(_enc).fillna(_glob)
+    df = df.drop(columns=["nation"])
+
     feat_num = [c for c in df.columns
                 if c not in ("season", "src_league", "Player", "Squad", "pos", "y",
                              "market_value_eur", "imputed", "n90")]
