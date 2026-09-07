@@ -80,8 +80,14 @@ def _involves_tracked(df: pd.DataFrame, tracked: dict[str, set]) -> pd.Series:
 
 
 def league_history() -> pd.DataFrame:
+    # Keep 2026-27 too: football-data.co.uk carries every big-5 league result
+    # (plus Bet365 odds) and is reachable from CI, whereas the live snapshot
+    # depends on ESPN/Sofascore, which rate-limit datacenter IPs - so on a CI
+    # refresh the live file can be thin for Serie A / Ligue 1. main()'s union +
+    # drop_duplicates(keep=first) prefers this row where both sources have the
+    # match; _enrich() then backfills possession/xG from the live row.
     mf = pd.read_csv(PROC / "match_features.csv")
-    mf = mf[mf["season"] != "2026-27"].copy()
+    mf = mf.copy()
     mf["competition_type"] = "league"
     mf["comp"] = mf["Div"].map(DIV_LEAGUE)
     mf["src_league"] = mf["Div"].map(DIV_CODE)
