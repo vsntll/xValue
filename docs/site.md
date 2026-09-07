@@ -5,8 +5,10 @@ stats, the value model's predictions, next-fixture odds, and club pages, across
 the Premier League, La Liga, Bundesliga, Serie A and Ligue 1 — no server, no
 fetch, data is embedded inline. The league chip filter in the top bar is built
 from `DATA.leagues`, so it auto-expands as leagues are added; it scopes the
-player table, fixture grid and leaderboard. Five tabs: Players, Fixtures & Odds,
-Teams, Rankings, How It Works.
+player table, fixture grid and leaderboard. Seven tabs: **Players**, **Fixtures
+& Odds**, **Teams**, **Rankings** (team + player Elo), **Match Sim** (run any
+matchup with goalscorers), **Streak** (call a real season one match at a time),
+**How It Works**.
 
 The **Players** tab opens with a "Biggest bargains" / "Most overpriced"
 leaderboard (`build_value_leaderboard`) above the search table - the value
@@ -34,15 +36,43 @@ expected-value sum, not a season simulation - no single simulated result ever
 gets played out - and obviously can't see injuries, transfers, or a manager
 getting sacked in November.
 
-The **How It Works** tab is the point of transparency: six cards, one per
-"kind of conclusion" (match odds, player props, value model, pace projection,
-standings/projected table, cup finals), each with a plain-language explanation
-and - for the three model-driven ones - the *actual arithmetic*, run on one
-real upcoming fixture and one real player (`build_methodology_example`): the
-Dixon-Coles attack/defence ratings and resulting expected goals for that
-fixture, the anytime-goalscorer share-of-xG breakdown for its top-attack
-player, and the value model's inputs/output for the single most expensive
-player in the dataset (picked for recognisability, not cherry-picked results).
+The **Rankings** tab has two from-scratch Elo systems, no market value in either
+(`build_team_elo_rankings`, `build_player_elo_leaderboard` over
+`build_player_elo.py`'s output):
+
+- **Team power rankings** — goals-based Elo across *all* competitions, the same
+  rating the outcome model uses. "Overall" carries across seasons (a quarter of
+  each team's gap from 1500 reverts each summer); a per-season ladder resets
+  harder (starts at 1500 + half the previous final's gap, promoted sides at
+  1400) and counts only that season's matches.
+- **Player Elo leaderboard** — an opponent-adjusted rating built purely from
+  real match output (non-penalty xG + 0.7 × xA per appearance) vs. an
+  expectation that folds in the opponent's strength and the player's own current
+  rating, over the last three seasons. Half the gap from 1500 reverts between
+  seasons; a player who stops featuring bleeds toward 1500 for every match his
+  club plays without him, after a two-game grace. Overall (≥ 5 appearances in
+  the window) plus per-position and per-season views.
+
+The **Match Sim** tab (`build_games_data` → `sim`) runs any matchup between two
+current-squad clubs: draws each side's goals from a Poisson on the Dixon-Coles
+expected goals, then hands each goal to a player picked by his npxG-per-90 ×
+minutes share. One random game per run — or simulate 1,000 for the score spread.
+
+The **Streak** tab (`build_games_data` → `streak`) is a "predict the season"
+game: every league match 2020-21 → 2026-27 in date order with its actual score,
+and the leak-free Dixon-Coles pre-match W/D/L probabilities revealed after each
+call. One wrong call ends the run.
+
+The **How It Works** tab is the point of transparency: a card per kind of
+conclusion (match odds, player props, value model, pace projection,
+standings/projected table, cup finals; the Elo systems and the two games are
+explained in the footer notes), each with a plain-language explanation and - for
+the model-driven ones - the *actual arithmetic*, run on one real upcoming
+fixture and one real player (`build_methodology_example`): the Dixon-Coles
+attack/defence ratings and resulting expected goals for that fixture, the
+anytime-goalscorer share-of-xG breakdown for its top-attack player, and the
+value model's inputs/output for the single most expensive player in the dataset
+(picked for recognisability, not cherry-picked results).
 
 ## Data (`src/export_site_data.py` -> `site/data.json`)
 
@@ -144,14 +174,20 @@ self-contained page; `__SITE_DATA_JSON__` placeholder), in one run
 nothing to `site/index.html` and the commit-and-deploy step downstream always
 saw "site unchanged."
 
-## Weekly auto-refresh
+## Auto-refresh (every 2 days)
 
-`.github/workflows/weekly-refresh.yml` (Mondays 07:00 UTC + manual dispatch)
-re-pulls every browser-free source, rebuilds `matches_all`, retrains both models,
-regenerates `site/index.html`, and commits the refreshed `data/processed/` **and**
-`site/index.html` back to `master`. It does **not** refresh the FBref counting
-stats or the Transfermarkt scrape values (those need Chrome + a WAF captcha) —
-run those locally now and then per `run_pipeline.md`.
+`.github/workflows/weekly-refresh.yml` — "Site refresh (every 2 days)", cron
+`0 7 */2 * *` + manual dispatch — re-pulls every browser-free source,
+**refreshes the current season's player stats from Understat + FotMob**
+(`build_current_season_stats.py`: goals / assists / minutes / xG / SoT / fouls /
+tackles, no browser), rebuilds `matches_all`, retrains both models, rebuilds the
+player Elo, regenerates `site/index.html`, and commits the refreshed
+`data/processed/` **and** `site/index.html` back to `master`.
+
+It does **not** re-scrape the deep FBref columns (progressive passing, SCA/GCA,
+zonal touches, PSxG — nothing the models or site currently read) or the
+Transfermarkt values; those need Chrome + a WAF captcha, so run them locally
+roughly monthly per `run_pipeline.md`.
 
 Setup: just the repo secret `FOOTBALL_DATA_ORG_KEY`. `data/processed/` is
 committed, so there's no seed release to maintain; `data/raw/` and the fetch

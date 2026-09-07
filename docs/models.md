@@ -4,7 +4,7 @@
 
 | | value model | outcome (pure) | outcome (hybrid) |
 | --- | --- | --- | --- |
-| metric | R²(log) **0.89**, MAE **€4.1M**, within-2x **91%**, medAPE 22% | log-loss **0.981**, acc **0.532** | log-loss **0.972**, acc **0.534** |
+| metric | R²(log) **0.89**, MAE **€4.1M**, within-2x **91%**, medAPE 22% | log-loss **0.981**, acc **0.529** | log-loss **0.972**, acc **0.534** |
 | v1 was | 0.70 / €9.1M / 68% | 1.014 / 0.511 | — |
 | reference | — | Bet365 closing 0.971 / 0.539 | (uses market opening odds as a feature) |
 
@@ -97,11 +97,16 @@ Season-level (per-match XI rollups need lineup data we only have for 2026-27).
 
 Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
 
-- **Feature table** `build_match_model_table.py`: **goals-Elo and xG-Elo**
-  (updated across all competitions, seeded with 2014-20 warmup results so ratings
-  have converged); home/away-**split** rolling-8 form (pts / goals / xG for &
-  against); Elo-implied home prob; squad-value ratio; promoted flags; days rest;
-  head-to-head.
+- **Feature table** `build_match_model_table.py` (54 cols): **goals-Elo and
+  xG-Elo** (updated across all competitions, seeded with 2014-20 warmup results
+  so ratings have converged); home/away-**split** rolling-8 form (pts / goals /
+  xG for & against); Elo-implied home prob; squad-value ratio; promoted flags;
+  days rest; head-to-head; **squad momentum** (`h/a_momentum` — each side's
+  recent player output vs. the value model's peer baseline, from
+  `build_form_momentum.py` → `squad_momentum.csv`, folded in on a second
+  `build_match_model_table.py` pass). The season-scoped Elo twins (`elo_*_s`)
+  are emitted for the site Rankings view only; the model uses the continuous
+  columns.
 - **Models**:
   - logreg on the features
   - **Poisson-Skellam**: two Poisson GLMs (home goals, away goals) -> full
@@ -116,6 +121,7 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
   | --- | --- | --- |
   | base rate | .430 | 1.075 |
   | logreg | .527 | 0.977 |
+  | poisson-Skellam | .529 | 0.981 |
   | poisson + xG | .532 | 0.980 |
   | blend {poisson, logreg} | .532 | 0.974 |
   | **hybrid (+ market opening odds)** | **.534** | **0.972** |
@@ -131,9 +137,9 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
 
 ## Obvious next improvements
 
-- **Value model → 0.95**: the has-prev segment is already at 0.93 (Transfermarkt's
+- **Value model → 0.95**: the has-prev segment is already at 0.92 (Transfermarkt's
   own estimate noise is roughly the ceiling there), so the gain is in the
-  cold-start 23%. Needs a prior value for players arriving from outside the
+  cold-start rows (R²(log) 0.72, ~1 in 6 of the holdout). Needs a prior value for players arriving from outside the
   big-5: a Championship / Eredivisie / Primeira Liga TM scrape, or transfer-fee
   data, or salaries. Also worth trying: a dedicated cold-start sub-model, and a
   real 2022-23 TM scrape to fill the mirror hole.
