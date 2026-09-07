@@ -26,13 +26,14 @@ past 0.90 - needs data we don't have: lower-league value history, transfer fees,
 or salaries.
 
 **The ceiling and the high end**: Transfermarkt caps listings near **€220M**, so
-predictions are clipped there in log space and the elite gravitate toward it
-(2025-26: Yamal €200M→€220M, Haaland €200M→€209M, Bellingham €130M→€139M).
-`medAPE` for the **€100M+ band is 12%** (was ~30-40% before — the trees squashed
-the tail toward the mean). Mid-range predictions carry a **median bias of ~4%**
-(pred/listed 1.04) but individual scatter stays ~24% — that's roughly how much a
-crowd-sourced value moves between updates, and the season stats don't explain the
-revisions, so "every mid-range player within 10%" is not reachable from this data.
+predictions are clipped there in log space and the elite gravitate toward it.
+`medAPE` for the **€100M+ band is 15%** (was ~30-40% before — the trees squashed
+the tail toward the mean), though the ~40-row band now sits slightly *under* the
+listed values (median pred/listed 0.85). Mid-range predictions carry only a
+**~2% median bias** (pred/listed 1.02) but individual scatter stays ~22% —
+that's roughly how much a crowd-sourced value moves between updates, and the
+season stats don't explain the revisions, so "every mid-range player within 10%"
+is not reachable from this data.
 
 **Coverage guarantee**: `parse_fbref_player_stats.py` gives every player with
 minutes a `market_value_eur` - a real feed value, else the player's most recent
@@ -52,7 +53,7 @@ bookmaker's own **closing**-odds performance. The pure model uses only data.
 Predicts a player's market value from his season + his value history.
 
 - **Data**: `fbref_player_season_stats.csv`, players (outfield **and keepers**)
-  with a real value and >= 8 full-90s, across all five leagues. ~5,600 train /
+  with a real value and >= 8 full-90s, across all five leagues. ~6,700 train /
   ~3,000 test. Value coverage is ~90% of season-rows that have minutes; the gap
   is 2022-23 (thin TM mirror), just-promoted clubs, and the Serie A / Ligue 1
   players whose season value the TM scrape didn't reach.
@@ -78,9 +79,9 @@ Predicts a player's market value from his season + his value history.
   de-shrunk on OOF and blended `0.5 / 0.5`, then clipped to €220M in log space.
   Rows with < 8 full-90s this season (all of the current season, early on) skip
   the models and predict the last known value along a light age curve.
-- **Result**: R2(log) **0.89**, MAE **EUR4.8M**, medAPE **23%**, within-2x
-  **91%** (0.93 with a prior value, 0.72 cold-start, 0.88 keepers). €100M+ band
-  medAPE **12%**, median pred/listed **1.00**.
+- **Result**: R2(log) **0.89**, MAE **EUR4.1M**, medAPE **22%**, within-2x
+  **91%** (0.92 with a prior value, 0.72 cold-start, 0.87 keepers). €100M+ band
+  medAPE **15%**, median pred/listed **0.85**.
 - Output: `value_model_predictions.csv` (**every player, every season incl. the
   current one**, with `value_imputed` flag), `models/value_model.pkl`
   (`{bases, meta, cal, features}`).
@@ -108,21 +109,25 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
     a validation season); recency-weighted (2-season half-life). **Best single
     model.**
   - a logreg stack of {poisson, logreg} calibrated on 2023-24
-- **Split**: train <= 2022-23, val 2023-24, test 2024-26 (~2,120).
+- **Split**: train <= 2022-23, val 2023-24, test 2024-26 (~3,480).
 - **Result** (log-loss / accuracy):
 
   | model | acc | log-loss |
   | --- | --- | --- |
-  | base rate | .433 | 1.074 |
-  | logreg | .516 | 0.997 |
-  | poisson | .519 | 0.990 |
-  | **blend** | **.523** | **0.990** |
-  | Bet365 closing | .537 | 0.973 |
+  | base rate | .430 | 1.075 |
+  | logreg | .527 | 0.977 |
+  | poisson + xG | .532 | 0.980 |
+  | blend {poisson, logreg} | .532 | 0.974 |
+  | **hybrid (+ market opening odds)** | **.534** | **0.972** |
+  | Bet365 closing | .539 | 0.971 |
 
-  Closes ~55% of the base-rate -> bookmaker gap on log-loss. The remaining gap is
-  information the market has and we don't (confirmed lineups, injuries, sharp
-  money).
-- Output: `data/processed/outcome_model_predictions.csv`.
+  The pure model closes ~90% of the base-rate → bookmaker gap on log-loss; the
+  hybrid, which adds the market's *opening* line as a feature, lands level with
+  Bet365's *closing*-odds performance. The last sliver is information the market
+  has and we don't (confirmed lineups, injuries, sharp money).
+- Output: `data/processed/outcome_model_predictions.csv` (pure),
+  `outcome_model_predictions_hybrid.csv` (+ opening odds),
+  `outcome_model_predictions_all.csv` (every split, incl. the live 2026-27 rows).
 
 ## Obvious next improvements
 
