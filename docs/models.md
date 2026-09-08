@@ -35,13 +35,20 @@ that's roughly how much a crowd-sourced value moves between updates, and the
 season stats don't explain the revisions, so "every mid-range player within 10%"
 is not reachable from this data.
 
-**Coverage guarantee**: `parse_fbref_player_stats.py` gives every player with
-minutes a `market_value_eur` - a real feed value, else the player's most recent
-value carried forward across a transfer, else a position × league × age
-peer-median (flagged `market_value_imputed`, never used to fit the model). The
-only players left unvalued are arrivals on a just-promoted club with no market
-history. `value_model_predictions.csv` is written for every season including the
-current one, so the site has a value and a prediction for every current player.
+**Coverage guarantee**: every current-season player with minutes gets a
+`market_value_eur` - a real feed value, else the player's most recent value
+carried forward across a transfer, else a position × league × age peer-median
+(`parse_fbref_player_stats.py`), and finally, for the just-promoted squads the
+transfermarkt / sofascore feeds don't reach (Coventry, Hull, Elversberg,
+Deportivo, ...), a **division-adjusted** baseline in
+`build_current_season_stats.py`: the top-flight positional median scaled by
+`PROMO_FACTOR` (~0.38 for England down to the Championship, ~0.42 for Serie A /
+Ligue 1 - the narrower gap to their 2nd tiers). All impute paths are flagged
+`market_value_imputed = 1` and excluded from both model fitting and the
+prev-value history; the model's own `predicted_eur` is still computed for these
+players, so `ratio` = model vs. the promoted-club baseline is a real over/under
+signal. `value_model_predictions.csv` covers every season including the current
+one, so the site has a value and a prediction for every current player.
 
 "Hybrid" (`train_outcome_model.py --hybrid`) blends market-consensus **opening**
 odds into the stack - it beats the opening line and lands ~level with the
@@ -54,9 +61,10 @@ Predicts a player's market value from his season + his value history.
 
 - **Data**: `fbref_player_season_stats.csv`, players (outfield **and keepers**)
   with a real value and >= 8 full-90s, across all five leagues. ~6,700 train /
-  ~3,000 test. Value coverage is ~90% of season-rows that have minutes; the gap
-  is 2022-23 (thin TM mirror), just-promoted clubs, and the Serie A / Ligue 1
-  players whose season value the TM scrape didn't reach.
+  ~3,000 test. ~90% of season-rows with minutes carry a *real* value (the gap is
+  2022-23's thin TM mirror and Serie A / Ligue 1 rows the scrape missed); the
+  rest get a flagged peer-median or, for just-promoted squads, a
+  division-adjusted baseline - never used to fit.
 - **Prev-value lags** (`build_value_history.py` → `value_history.csv`): the model
   is dominated by last season's value, so coverage of that lag caps accuracy.
   The history table unions the worldfootballR big-5 mirror **back to 2015-16 and

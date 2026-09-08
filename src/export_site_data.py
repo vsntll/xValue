@@ -120,7 +120,10 @@ def load_value_predictions(src_league: str) -> pd.DataFrame:
     v["team_key"] = v["Squad"].map(normalize_team)
     # prefer the current season's prediction over last season's, per player+team
     v = v.sort_values("season").drop_duplicates(subset=["Player", "team_key"], keep="last")
-    return v[["Player", "team_key", "season", "predicted_eur", "market_value_eur", "ratio"]].rename(
+    if "value_imputed" not in v.columns:
+        v["value_imputed"] = 0
+    return v[["Player", "team_key", "season", "predicted_eur", "market_value_eur",
+              "ratio", "value_imputed"]].rename(
         columns={"Player": "player", "market_value_eur": "listed_value_eur"})
 
 
@@ -212,6 +215,7 @@ def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict]
                 "predicted_eur": _num(vr["predicted_eur"]),
                 "ratio": _num(vr["ratio"]),
                 "as_of_season": vr["season"],
+                "listed_is_estimate": bool(pd.to_numeric(vr.get("value_imputed"), errors="coerce")),
             }
         out.append(rec)
     return out, team_display, pd.DataFrame(blended_rows)
@@ -483,7 +487,8 @@ def build_value_leaderboard(all_players: list[dict], n: int = 8) -> dict:
     """Biggest gaps between the model's predicted value and the listed value,
     both directions - a live demo of the value model, not just a single-player tile."""
     pool = [p for p in all_players if p.get("value") and (p["current"]["min"] or 0) >= MIN_MIN_PROJECT
-            and (p["value"]["listed_value_eur"] or 0) >= MIN_LISTED_FOR_LEADERBOARD]
+            and (p["value"]["listed_value_eur"] or 0) >= MIN_LISTED_FOR_LEADERBOARD
+            and not p["value"].get("listed_is_estimate")]  # can't call a player a bargain vs a value we imputed
 
     def slim(p: dict) -> dict:
         return {

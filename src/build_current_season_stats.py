@@ -287,6 +287,7 @@ def build() -> pd.DataFrame:
     # years ago but top-flight sometime in 2020-26 stays; one that never was goes)
     hist = hist[hist["Squad"].map(normalize_team).isin(top)]
     out = pd.concat([hist, updated], ignore_index=True)
+    out = _baseline_values(out, cur)
     out.to_csv(FBREF, index=False)
 
     # variant spelling -> canonical, so downstream files that carry another
@@ -298,6 +299,70 @@ def build() -> pd.DataFrame:
     print(f"{cur}: {len(updated)} rows ({len(used)} refreshed from Understat, "
           f"~{n_new} new Understat-only), {len(hist)} earlier-season rows kept "
           f"-> {FBREF.name}")
+    return out
+
+
+# a promoted-club squad player is worth roughly this fraction of the top-flight
+# positional median (the "division adjustment"). England's gap down to the
+# Championship is the widest, Serie A / Ligue 1's down to their 2nd tiers the
+# narrowest. Tuned so a promoted squad totals ~EUR120-200M (England) /
+# ~EUR60-110M (elsewhere), where real promoted sides sit.
+PROMO_FACTOR = {"ENG1": 0.38, "GER1": 0.36, "ESP1": 0.35, "ITA1": 0.42, "FRA1": 0.42}
+NEW_SIGNING_FACTOR = 0.80  # a player new to the dataset at an established club, no listing yet
+
+
+def _baseline_values(out: pd.DataFrame, cur: str) -> pd.DataFrame:
+    """Give every current-season player with minutes a market value, even the
+    just-promoted squads the transfermarkt / sofascore feeds don't reach.
+
+    Baseline = the (league x position x age-band) median of the *real* values,
+    scaled by PROMO_FACTOR for a club new to its league this season (a
+    division-strength adjustment, since a Championship / 2.Bundesliga / Segunda
+    squad is worth a fraction of a top-flight one), or NEW_SIGNING_FACTOR for a
+    player who is simply new to the data at an established club. Flagged
+    market_value_imputed = 1, so it is excluded from model fitting and from the
+    prev-value history exactly like any other peer-median fill - it only feeds
+    the site card and lets the model's own prediction have something to sit next
+    to (ratio = model vs. this baseline is then a real over/under signal)."""
+    prev = f"{int(cur[:4]) - 1}-{int(cur[:4]) % 100:02d}"  # "2026-27" -> "2025-26"
+    mv = pd.to_numeric(out["market_value_eur"], errors="coerce")
+    mn = pd.to_numeric(out.get("standard__Playing Time_Min"), errors="coerce").fillna(0)
+    need = (out["season"] == cur) & mv.isna() & (mn > 0)
+    if not need.any():
+        return out
+
+    lab = out[mv.notna()].copy()
+    lab["_p"] = lab["Pos"].astype(str).str.split(",").str[0].str.strip()
+    lab["_a"] = (pd.to_numeric(lab["Age"], errors="coerce") // 3).clip(6, 12)
+    lab["_lv"] = np.log1p(pd.to_numeric(lab["market_value_eur"], errors="coerce"))
+    med3 = lab.groupby(["src_league", "_p", "_a"])["_lv"].median()
+    med2 = lab.groupby(["src_league", "_p"])["_lv"].median()
+    med1 = lab.groupby("src_league")["_lv"].median()
+
+    # (src_league, team_key) pairs that had rows in this league the prior season
+    prior_here = set(zip(out.loc[out["season"] == prev, "src_league"],
+                         out.loc[out["season"] == prev, "Squad"].map(normalize_team)))
+
+    if "market_value_imputed" not in out.columns:
+        out["market_value_imputed"] = 0
+    filled = promoted = 0
+    for idx in out.index[need]:
+        r = out.loc[idx]
+        p = str(r["Pos"]).split(",")[0].strip()
+        ab = np.clip(pd.to_numeric(r["Age"], errors="coerce") // 3, 6, 12)
+        lv = med3.get((r["src_league"], p, ab))
+        if pd.isna(lv):
+            lv = med2.get((r["src_league"], p), med1.get(r["src_league"], np.nan))
+        if pd.isna(lv):
+            continue
+        is_promoted = (r["src_league"], normalize_team(r["Squad"])) not in prior_here
+        factor = PROMO_FACTOR.get(r["src_league"], 0.35) if is_promoted else NEW_SIGNING_FACTOR
+        out.at[idx, "market_value_eur"] = float(round(np.expm1(lv) * factor, -4))
+        out.at[idx, "market_value_imputed"] = 1
+        filled += 1
+        promoted += is_promoted
+    print(f"  baseline value for {filled} unvalued current players "
+          f"({promoted} at just-promoted clubs, division-adjusted)")
     return out
 
 

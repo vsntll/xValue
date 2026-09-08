@@ -107,10 +107,15 @@ longer miss. After the keyed merge the parser runs four fallback passes:
 4. **peer-median impute**: for anyone still blank *who has minutes*, the
    position × league × age-band median (flagged `market_value_imputed`, never
    used to fit the value model).
+5. **division-adjusted baseline** (`build_current_season_stats.py`, current
+   season only): the just-promoted squads the transfermarkt / sofascore feeds
+   never list get the top-flight positional median scaled by a per-league
+   `PROMO_FACTOR` (~0.38 England → Championship, ~0.42 Serie A / Ligue 1). Also
+   flagged `market_value_imputed = 1`.
 
-The only players left unvalued are arrivals on a just-promoted club with no
-market history anywhere. Coverage: **~99 %** of rows with minutes (81 % before);
-GK **97 %** → complete bar promoted-club edge cases.
+Coverage: **100 %** of current-season rows with minutes now carry a value; the
+peer-median / division-adjusted fills are flagged so they never train the model
+or feed the prev-value lag.
 
 ## Live season -> API-Football
 

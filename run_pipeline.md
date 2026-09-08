@@ -29,7 +29,7 @@ py -3.11 src/parse_fbref_matchlogs.py       -> fbref_team_matchlogs.csv
 py -3.11 src/parse_fbref_player_stats.py       -> fbref_player_season_stats.csv   (folds in xG + values; PL/BL/La Liga only)
 py -3.11 src/build_value_history.py            -> value_history.csv               (prev-value lags + the Serie A/Ligue 1 season value: big-5 mirror 2015-22 + scrape + Sofascore. A clean first build converges on the 2nd pass.)
 py -3.11 src/build_understat_player_seasons.py -> + Serie A / Ligue 1 rows, all seasons, synthesised from Understat + wfr mirror + FotMob + value_history (idempotent)
-py -3.11 src/build_current_season_stats.py     -> rewrites the current season's rows in fbref_player_season_stats.csv from Understat (goals/assists/minutes/xG) + FotMob (SoT/fouls/tackles/int/blocks/clearances) - no browser scrape
+py -3.11 src/build_current_season_stats.py     -> rewrites the current season's rows in fbref_player_season_stats.csv from Understat (goals/assists/minutes/xG) + FotMob (SoT/fouls/tackles/int/blocks/clearances) - no browser scrape; also gives every unvalued current player with minutes a value (division-adjusted positional median for just-promoted squads, flagged imputed)
 py -3.11 src/build_matches_all.py           -> matches_all.csv                 (~13.5k matches, all comps)
 py -3.11 src/build_squad_features.py        -> squad_season_features.csv
 py -3.11 src/build_match_model_table.py     -> match_model_table.csv           (Elo, form, odds, momentum if squad_momentum.csv exists yet)
