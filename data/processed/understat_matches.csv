@@ -11458,8 +11458,8 @@ ESP1,2026-27,30807,2026-09-06 16:30:00,Alaves,Osasuna,5.0,2.0,1.60188,1.64406,Tr
 ESP1,2026-27,30808,2026-09-06 19:00:00,Espanyol,Sevilla,1.0,1.0,1.81745,0.372572,True,https://understat.com/match/30808
 ESP1,2026-27,30806,2026-09-06 16:30:00,Malaga,Levante,0.0,0.0,1.72661,1.19172,True,https://understat.com/match/30806
 ESP1,2026-27,30805,2026-09-06 14:15:00,Valencia,Barcelona,0.0,5.0,0.518846,4.76916,True,https://understat.com/match/30805
-ESP1,2026-27,30810,2026-09-07 19:30:00,Elche,Real Sociedad,,,,,False,https://understat.com/match/30810
-ESP1,2026-27,30809,2026-09-07 17:00:00,Getafe,Celta Vigo,,,,,False,https://understat.com/match/30809
+ESP1,2026-27,30810,2026-09-07 19:30:00,Elche,Real Sociedad,2.0,3.0,2.87045,0.876198,True,https://understat.com/match/30810
+ESP1,2026-27,30809,2026-09-07 17:00:00,Getafe,Celta Vigo,1.0,1.0,1.45841,1.42122,True,https://understat.com/match/30809
 ESP1,2026-27,30812,2026-09-13 15:00:00,Athletic Club,Elche,,,,,False,https://understat.com/match/30812
 ESP1,2026-27,30811,2026-09-13 15:00:00,Celta Vigo,Malaga,,,,,False,https://understat.com/match/30811
 ESP1,2026-27,30813,2026-09-13 15:00:00,Getafe,Deportivo La Coruna,,,,,False,https://understat.com/match/30813
@@ -11827,8 +11827,8 @@ ITA1,2026-27,31586,2026-09-06 16:00:00,Bologna,Sassuolo,2.0,2.0,3.00787,1.8411,T
 ITA1,2026-27,31584,2026-09-06 13:00:00,Frosinone,Venezia,3.0,2.0,1.78975,2.43691,True,https://understat.com/match/31584
 ITA1,2026-27,31587,2026-09-06 18:45:00,Juventus,AC Milan,1.0,1.0,1.69177,0.0949898,True,https://understat.com/match/31587
 ITA1,2026-27,31585,2026-09-06 13:00:00,Parma Calcio 1913,Monza,1.0,1.0,0.622609,2.10415,True,https://understat.com/match/31585
-ITA1,2026-27,31588,2026-09-07 16:00:00,Cagliari,Lecce,,,,,False,https://understat.com/match/31588
-ITA1,2026-27,31589,2026-09-07 18:45:00,Udinese,Lazio,,,,,False,https://understat.com/match/31589
+ITA1,2026-27,31588,2026-09-07 16:00:00,Cagliari,Lecce,1.0,0.0,1.92177,0.445912,True,https://understat.com/match/31588
+ITA1,2026-27,31589,2026-09-07 18:45:00,Udinese,Lazio,1.0,2.0,0.797693,1.97943,True,https://understat.com/match/31589
 ITA1,2026-27,31590,2026-09-11 18:45:00,Venezia,Fiorentina,,,,,False,https://understat.com/match/31590
 ITA1,2026-27,31593,2026-09-12 18:45:00,Atalanta,Cagliari,,,,,False,https://understat.com/match/31593
 ITA1,2026-27,31591,2026-09-12 13:00:00,Genoa,Frosinone,,,,,False,https://understat.com/match/31591
