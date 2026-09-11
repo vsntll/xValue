@@ -13369,6 +13369,16 @@ season,competition_type,comp,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,
 2026-27,european,Champions League,2026-09-08,FC Porto,Manchester City FC,0.0,2.0,A,0.0,0.0,,,,,,,,,,,,,,,,,,football-data.org
 2026-27,european,Champions League,2026-09-08,Borussia Dortmund,Villarreal CF,3.0,2.0,H,0.0,0.0,,,,,,,,,,,,,,,,,,football-data.org
 2026-27,european,Champions League,2026-09-08,Lille OSC,Real Betis Balompié,2.0,3.0,A,2.0,1.0,,,,,,,,,,,,,,,,,,football-data.org
+2026-27,european,Champions League,2026-09-09,FC Barcelona,Feyenoord Rotterdam,5.0,1.0,H,2.0,0.0,,,,,,,,,,,,,,,,,,football-data.org
+2026-27,european,Champions League,2026-09-09,VfB Stuttgart,Viking FK,3.0,1.0,H,3.0,1.0,,,,,,,,,,,,,,,,,,football-data.org
+2026-27,european,Champions League,2026-09-09,Liverpool FC,Club Atlético de Madrid,2.0,1.0,H,1.0,1.0,,,,,,,,,,,,,,,,,,football-data.org
+2026-27,european,Champions League,2026-09-09,Paris Saint-Germain FC,ŠK Slovan Bratislava,6.0,1.0,H,3.0,0.0,,,,,,,,,,,,,,,,,,football-data.org
+2026-27,european,Champions League,2026-09-09,SSC Napoli,Arsenal FC,0.0,1.0,A,0.0,0.0,,,,,,,,,,,,,,,,,,football-data.org
+2026-27,european,Champions League,2026-09-10,Fenerbahçe SK,AS Roma,1.0,1.0,D,0.0,1.0,,,,,,,,,,,,,,,,,,football-data.org
+2026-27,european,Champions League,2026-09-10,FC Bayern München,FK Bodø/Glimt,5.0,0.0,H,0.0,0.0,,,,,,,,,,,,,,,,,,football-data.org
+2026-27,european,Champions League,2026-09-10,Manchester United FC,Sabah FK,4.0,0.0,H,3.0,0.0,,,,,,,,,,,,,,,,,,football-data.org
+2026-27,european,Champions League,2026-09-10,Como 1907,RB Leipzig,4.0,1.0,H,2.0,0.0,,,,,,,,,,,,,,,,,,football-data.org
+2026-27,european,Champions League,2026-09-10,SK Slavia Praha,Racing Club de Lens,2.0,3.0,A,0.0,0.0,,,,,,,,,,,,,,,,,,football-data.org
 2026-27,league,La Liga,2026-08-15,Alaves,Getafe,3.0,0.0,H,0.0,0.0,D,18.0,6.0,8.0,2.0,5.0,3.0,16.0,13.0,4.0,3.0,0.0,1.0,,,2.28581,0.259705,football-data.co.uk
 2026-27,league,La Liga,2026-08-15,Sevilla,Vallecano,2.0,1.0,H,0.0,1.0,A,13.0,6.0,4.0,3.0,1.0,2.0,18.0,18.0,4.0,4.0,1.0,0.0,,,2.01841,1.91219,football-data.co.uk
 2026-27,league,La Liga,2026-08-16,Santander,Villarreal,2.0,2.0,D,2.0,2.0,D,17.0,12.0,3.0,7.0,6.0,10.0,14.0,14.0,2.0,4.0,0.0,0.0,,,,,football-data.co.uk
@@ -13426,7 +13436,7 @@ season,competition_type,comp,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,
 2026-27,league,Ligue 1,2026-08-28,Lille,Paris SG,2.0,2.0,D,1.0,0.0,H,9.0,18.0,4.0,4.0,0.0,5.0,11.0,7.0,2.0,1.0,0.0,0.0,,,1.16266,1.78135,football-data.co.uk
 2026-27,league,Premier League,2026-08-28,Crystal Palace,Man City,1.0,4.0,A,0.0,1.0,A,9.0,18.0,1.0,9.0,2.0,6.0,8.0,11.0,1.0,2.0,0.0,0.0,,,0.926624,2.56662,football-data.co.uk
 2026-27,league,Serie A,2026-08-28,Milan,Venezia,2.0,0.0,H,0.0,0.0,D,16.0,9.0,5.0,2.0,2.0,3.0,8.0,11.0,1.0,3.0,0.0,0.0,,,3.21774,0.521597,football-data.co.uk
-2026-27,league,La Liga,2026-08-28,Real Racing Club de Santander,Elche CF,3.0,2.0,H,3.0,0.0,,,,,,,,,,,,,,,,2.562,1.076,football-data.org+understat
+2026-27,league,La Liga,2026-08-28,Real Racing Club de Santander,Elche CF,3.0,2.0,H,,,,,,,,,,,,,,,,,,2.562,1.076,football-data.org+understat
 2026-27,league,Bundesliga,2026-08-29,Elversberg,Leverkusen,3.0,2.0,H,2.0,0.0,H,11.0,21.0,6.0,4.0,4.0,3.0,18.0,15.0,3.0,2.0,0.0,0.0,,,1.40032,2.61527,football-data.co.uk
 2026-27,league,Bundesliga,2026-08-29,FC Koln,Hoffenheim,3.0,2.0,H,0.0,1.0,A,18.0,15.0,6.0,4.0,6.0,7.0,11.0,14.0,0.0,2.0,0.0,0.0,,,2.31412,1.92317,football-data.co.uk
 2026-27,league,Bundesliga,2026-08-29,Mainz,Paderborn,0.0,0.0,D,0.0,0.0,D,21.0,10.0,4.0,0.0,11.0,2.0,8.0,10.0,1.0,2.0,0.0,0.0,,,1.54945,0.691131,football-data.co.uk
@@ -13500,7 +13510,7 @@ season,competition_type,comp,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,
 2026-27,league,Serie A,2026-09-05,Fiorentina,Torino,1.0,2.0,A,0.0,0.0,D,14.0,7.0,6.0,4.0,3.0,5.0,13.0,9.0,0.0,0.0,0.0,0.0,,,1.35877,0.771751,football-data.co.uk
 2026-27,league,Serie A,2026-09-05,Inter,Napoli,3.0,2.0,H,0.0,0.0,D,29.0,16.0,8.0,7.0,10.0,5.0,7.0,7.0,1.0,2.0,0.0,0.0,,,3.7848,2.32276,football-data.co.uk
 2026-27,league,Serie A,2026-09-05,Roma,Atalanta,2.0,1.0,H,0.0,0.0,D,39.0,6.0,10.0,2.0,14.0,1.0,9.0,10.0,1.0,1.0,0.0,1.0,,,3.54086,0.772123,football-data.co.uk
-2026-27,league,La Liga,2026-09-05,Rayo Vallecano de Madrid,Real Racing Club de Santander,3.0,2.0,H,2.0,2.0,,,,,,,,,,,,,,,,1.19,0.633,football-data.org+understat
+2026-27,league,La Liga,2026-09-05,Rayo Vallecano de Madrid,Real Racing Club de Santander,3.0,2.0,H,,,,,,,,,,,,,,,,,,1.19,0.633,football-data.org+understat
 2026-27,league,Bundesliga,2026-09-05,Borussia Mönchengladbach,SV 07 Elversberg,3.0,4.0,A,2.0,1.0,,,,,,,,,,,,,,,,2.888,3.032,football-data.org+understat
 2026-27,league,Bundesliga,2026-09-06,Hamburg,Mainz,0.0,5.0,A,0.0,2.0,A,8.0,17.0,1.0,8.0,4.0,5.0,14.0,19.0,1.0,3.0,0.0,0.0,,,0.257239,3.27983,football-data.co.uk
 2026-27,league,Bundesliga,2026-09-06,Ein Frankfurt,Augsburg,1.0,4.0,A,1.0,0.0,H,22.0,17.0,8.0,7.0,9.0,4.0,10.0,13.0,1.0,1.0,0.0,0.0,,,2.51037,1.44545,football-data.co.uk
