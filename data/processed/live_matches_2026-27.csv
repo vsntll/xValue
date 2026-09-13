@@ -29,13 +29,13 @@ football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:0
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,16:30,Hull City AFC,Aston Villa FC,FINISHED,0.0,0.0,D,0.0,0.0,,,,,,,,,,,,,,,,0.812,1.635,fdorg:560569
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-06,13:00,Everton FC,Manchester United FC,FINISHED,2.0,2.0,D,0.0,0.0,,,,,,,,,,,,,,,,1.056,0.872,fdorg:560567
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-06,15:30,Arsenal FC,Chelsea FC,FINISHED,2.0,1.0,H,1.0,1.0,,,,,,,,,,,,,,,,2.806,0.431,fdorg:560570
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Crystal Palace FC,Ipswich Town FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560572
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Liverpool FC,Fulham FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560573
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Aston Villa FC,Nottingham Forest FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560574
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,AFC Bournemouth,Brentford FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560576
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Chelsea FC,Hull City AFC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560581
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,16:30,Tottenham Hotspur FC,Everton FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560575
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,19:00,Sunderland AFC,Arsenal FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560577
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Crystal Palace FC,Ipswich Town FC,FINISHED,2.0,3.0,A,1.0,2.0,,,,,,,,,,,,,,,,0.938,2.034,fdorg:560572
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Liverpool FC,Fulham FC,FINISHED,0.0,0.0,D,0.0,0.0,,,,,,,,,,,,,,,,1.798,0.922,fdorg:560573
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Aston Villa FC,Nottingham Forest FC,FINISHED,1.0,2.0,A,0.0,0.0,,,,,,,,,,,,,,,,1.088,2.795,fdorg:560574
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,AFC Bournemouth,Brentford FC,FINISHED,2.0,2.0,D,1.0,1.0,,,,,,,,,,,,,,,,2.549,0.794,fdorg:560576
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Chelsea FC,Hull City AFC,FINISHED,2.0,2.0,D,1.0,2.0,,,,,,,,,,,,,,,,1.214,1.804,fdorg:560581
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,16:30,Tottenham Hotspur FC,Everton FC,FINISHED,0.0,0.0,D,0.0,0.0,,,,,,,,,,,,,,,,0.737,1.601,fdorg:560575
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,19:00,Sunderland AFC,Arsenal FC,FINISHED,0.0,2.0,A,0.0,0.0,,,,,,,,,,,,,,,,2.07,1.989,fdorg:560577
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-13,13:00,Coventry City FC,Brighton & Hove Albion FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560578
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-13,15:30,Manchester United FC,Manchester City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560580
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-09-14,19:00,Leeds United FC,Newcastle United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560579
@@ -159,46 +159,46 @@ football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:0
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Arsenal FC,Manchester United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560699
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Liverpool FC,Tottenham Hotspur FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560700
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Chelsea FC,Aston Villa FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560701
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Aston Villa FC,Leeds United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560702
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Manchester United FC,Nottingham Forest FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560703
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Crystal Palace FC,Arsenal FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560704
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,12:30,Aston Villa FC,Leeds United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560702
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Everton FC,Sunderland AFC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560705
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Coventry City FC,Chelsea FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560706
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Newcastle United FC,Manchester City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560707
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Fulham FC,Brighton & Hove Albion FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560708
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Tottenham Hotspur FC,AFC Bournemouth,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560709
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Hull City AFC,Liverpool FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560710
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Ipswich Town FC,Brentford FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560711
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Fulham FC,Arsenal FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560712
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Coventry City FC,Brentford FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560713
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Aston Villa FC,Liverpool FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560714
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Newcastle United FC,Nottingham Forest FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560715
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Hull City AFC,Leeds United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560716
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Manchester United FC,Sunderland AFC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560717
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Ipswich Town FC,Chelsea FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560718
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Tottenham Hotspur FC,Brighton & Hove Albion FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560719
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Everton FC,Manchester City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560720
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Crystal Palace FC,AFC Bournemouth,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560721
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,AFC Bournemouth,Aston Villa FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560722
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,17:30,Hull City AFC,Liverpool FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560710
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,20:00,Newcastle United FC,Manchester City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560707
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-27,14:00,Coventry City FC,Chelsea FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560706
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-27,16:30,Manchester United FC,Nottingham Forest FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560703
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-27,19:00,Crystal Palace FC,Arsenal FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560704
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-29,19:30,Hull City AFC,Leeds United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560716
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-29,19:30,Tottenham Hotspur FC,Brighton & Hove Albion FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560719
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-29,20:15,Everton FC,Manchester City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560720
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,19:30,Fulham FC,Arsenal FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560712
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,19:30,Coventry City FC,Brentford FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560713
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,19:30,Newcastle United FC,Nottingham Forest FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560715
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,19:30,Manchester United FC,Sunderland AFC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560717
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,19:30,Crystal Palace FC,AFC Bournemouth,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560721
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:15,Aston Villa FC,Liverpool FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560714
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:15,Ipswich Town FC,Chelsea FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560718
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-01,20:00,Leeds United FC,Everton FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560724
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,12:30,Brighton & Hove Albion FC,Manchester United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560730
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Brentford FC,Crystal Palace FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560723
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Leeds United FC,Everton FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560724
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Arsenal FC,Ipswich Town FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560725
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Sunderland AFC,Hull City AFC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560726
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Liverpool FC,Coventry City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560727
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Chelsea FC,Newcastle United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560728
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Nottingham Forest FC,Fulham FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560729
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Brighton & Hove Albion FC,Manchester United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560730
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Manchester City FC,Tottenham Hotspur FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560731
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Arsenal FC,Brentford FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560732
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Leeds United FC,Manchester City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560733
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Manchester United FC,Newcastle United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560734
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Brighton & Hove Albion FC,AFC Bournemouth,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560735
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Nottingham Forest FC,Hull City AFC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560736
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Fulham FC,Tottenham Hotspur FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560737
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Everton FC,Aston Villa FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560738
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Sunderland AFC,Liverpool FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560739
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Crystal Palace FC,Chelsea FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560740
-football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Ipswich Town FC,Coventry City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560741
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,17:30,AFC Bournemouth,Aston Villa FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560722
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-03,14:00,Chelsea FC,Newcastle United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560728
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-03,16:30,Manchester City FC,Tottenham Hotspur FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560731
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-05,19:30,Arsenal FC,Brentford FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560732
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-05,19:30,Brighton & Hove Albion FC,AFC Bournemouth,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560735
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-05,19:30,Nottingham Forest FC,Hull City AFC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560736
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-05,19:30,Everton FC,Aston Villa FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560738
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-05,20:15,Sunderland AFC,Liverpool FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560739
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,19:30,Fulham FC,Tottenham Hotspur FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560737
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,19:30,Crystal Palace FC,Chelsea FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560740
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,19:30,Ipswich Town FC,Coventry City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560741
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:15,Leeds United FC,Manchester City FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560733
+football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-07,20:00,Manchester United FC,Newcastle United FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560734
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,AFC Bournemouth,Ipswich Town FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560742
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Manchester City FC,Nottingham Forest FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560743
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Chelsea FC,Sunderland AFC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:560744
@@ -396,79 +396,79 @@ football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-23,19:30,Elche
 football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-24,17:30,CA Osasuna,Levante UD,FINISHED,0.0,0.0,D,0.0,0.0,,,,,,,,,,,,,,,,0.893,1.27,fdorg:564639
 football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-24,19:30,Málaga CF,RC Deportivo La Coruña,FINISHED,1.0,1.0,D,1.0,1.0,,,,,,,,,,,,,,,,1.356,1.13,fdorg:564640
 football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-25,19:00,Valencia CF,Real Betis Balompié,FINISHED,0.0,1.0,A,0.0,0.0,,,,,,,,,,,,,,,,1.29,0.964,fdorg:564637
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-26,19:00,Real Madrid CF,Real Sociedad de Fútbol,2026-08-26 18:00:00Z,4.0,1.0,H,,,,,,,,,,,,,,,,,,3.305,0.463,fdorg:564631
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-27,18:30,RC Celta de Vigo,CA Osasuna,2026-08-27 17:30:00Z,1.0,2.0,A,,,,,,,,,,,,,,,,,,0.107,1.897,fdorg:564636
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-27,19:00,FC Barcelona,Athletic Club,2026-08-27 18:00:00Z,2.0,0.0,H,,,,,,,,,,,,,,,,,,3.917,0.222,fdorg:564630
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-28,17:00,Real Racing Club de Santander,Elche CF,2026-08-28 16:00:00Z,3.0,2.0,H,,,,,,,,,,,,,,,,,,2.562,1.076,fdorg:564654
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-28,19:30,Deportivo Alavés,Villarreal CF,2026-08-28 18:30:00Z,1.0,0.0,H,,,,,,,,,,,,,,,,,,0.915,1.451,fdorg:564648
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,15:00,Levante UD,Real Betis Balompié,2026-08-29 14:00:00Z,5.0,2.0,H,,,,,,,,,,,,,,,,,,3.038,1.923,fdorg:564655
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,17:00,Real Sociedad de Fútbol,RCD Espanyol de Barcelona,2026-08-29 16:00:00Z,2.0,1.0,H,,,,,,,,,,,,,,,,,,2.917,0.93,fdorg:564653
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,19:30,Sevilla FC,Club Atlético de Madrid,2026-08-29 18:30:00Z,1.0,3.0,A,,,,,,,,,,,,,,,,,,1.081,1.477,fdorg:564649
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,15:00,Real Madrid CF,Málaga CF,2026-08-30 14:00:00Z,4.0,0.0,H,,,,,,,,,,,,,,,,,,3.408,0.76,fdorg:564656
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,17:30,RC Deportivo La Coruña,Valencia CF,2026-08-30 16:30:00Z,3.0,1.0,H,,,,,,,,,,,,,,,,,,1.408,1.017,fdorg:564651
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,19:30,RC Celta de Vigo,Athletic Club,2026-08-30 18:30:00Z,0.0,2.0,A,,,,,,,,,,,,,,,,,,1.201,3.133,fdorg:564652
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-31,17:30,CA Osasuna,Getafe CF,2026-08-31 16:30:00Z,1.0,0.0,H,,,,,,,,,,,,,,,,,,1.705,1.09,fdorg:564657
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-31,19:30,FC Barcelona,Rayo Vallecano de Madrid,2026-08-31 18:30:00Z,5.0,2.0,H,,,,,,,,,,,,,,,,,,2.958,1.066,fdorg:564650
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-03,19:00,Real Sociedad de Fútbol,RC Celta de Vigo,2026-09-04 18:00:00Z,0.0,0.0,D,,,,,,,,,,,,,,,,,,1.02,0.633,fdorg:564682
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-04,19:00,Real Betis Balompié,Real Madrid CF,2026-09-05 18:00:00Z,1.0,0.0,H,,,,,,,,,,,,,,,,,,0.885,3.383,fdorg:564667
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,14:15,Athletic Club,Club Atlético de Madrid,2026-09-05 13:15:00Z,3.0,0.0,H,,,,,,,,,,,,,,,,,,1.872,0.752,fdorg:564663
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,16:30,Rayo Vallecano de Madrid,Real Racing Club de Santander,2026-09-05 15:30:00Z,3.0,2.0,H,,,,,,,,,,,,,,,,,,1.19,0.633,fdorg:564660
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,19:00,Villarreal CF,RC Deportivo La Coruña,2026-09-05 18:00:00Z,2.0,3.0,A,,,,,,,,,,,,,,,,,,3.642,2.442,fdorg:564662
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,14:15,Valencia CF,FC Barcelona,2026-09-06 13:15:00Z,0.0,5.0,A,,,,,,,,,,,,,,,,,,0.519,4.769,fdorg:564659
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,16:30,Deportivo Alavés,CA Osasuna,2026-09-06 15:30:00Z,5.0,2.0,H,,,,,,,,,,,,,,,,,,1.602,1.644,fdorg:564664
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,16:30,Málaga CF,Levante UD,2026-09-06 15:30:00Z,0.0,0.0,D,,,,,,,,,,,,,,,,,,1.727,1.192,fdorg:564666
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,19:00,RCD Espanyol de Barcelona,Sevilla FC,2026-09-06 18:00:00Z,1.0,1.0,D,,,,,,,,,,,,,,,,,,1.817,0.373,fdorg:564661
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-07,17:00,Getafe CF,RC Celta de Vigo,2026-09-07 16:00:00Z,1.0,1.0,D,,,,,,,,,,,,,,,,,,1.458,1.421,fdorg:564665
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-07,19:30,Elche CF,Real Sociedad de Fútbol,2026-09-07 18:30:00Z,2.0,3.0,A,,,,,,,,,,,,,,,,,,2.87,0.876,fdorg:564658
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-11,19:00,Sevilla FC,Valencia CF,2026-09-11 18:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564669
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-12,12:00,Real Racing Club de Santander,Deportivo Alavés,2026-09-12 11:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564670
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-12,14:15,CA Osasuna,RCD Espanyol de Barcelona,2026-09-12 13:15:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564673
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-12,16:30,Athletic Club,Elche CF,2026-09-12 15:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564676
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-12,19:00,Real Madrid CF,Rayo Vallecano de Madrid,2026-09-12 18:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564677
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-13,12:00,RC Celta de Vigo,Málaga CF,2026-09-13 11:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564672
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-13,14:15,Levante UD,FC Barcelona,2026-09-13 13:15:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564675
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-13,16:30,Getafe CF,RC Deportivo La Coruña,2026-09-13 15:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564668
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-13,19:00,Real Sociedad de Fútbol,Club Atlético de Madrid,2026-09-13 18:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564674
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-14,19:00,Villarreal CF,Real Betis Balompié,2026-09-14 18:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564671
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-15,17:00,Rayo Vallecano de Madrid,RCD Espanyol de Barcelona,2026-09-15 16:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564678
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-15,18:00,Deportivo Alavés,Valencia CF,2026-09-15 17:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564680
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-15,19:30,Elche CF,Real Madrid CF,2026-09-15 18:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564681
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-16,17:00,RC Deportivo La Coruña,Sevilla FC,2026-09-16 16:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564679
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-16,17:00,Club Atlético de Madrid,CA Osasuna,2026-09-16 16:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564684
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-16,19:30,Levante UD,Athletic Club,2026-09-16 18:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564685
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-16,19:30,FC Barcelona,Real Racing Club de Santander,2026-09-16 18:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564687
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-17,17:00,Real Betis Balompié,Getafe CF,2026-09-17 16:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564686
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-17,19:30,Málaga CF,Villarreal CF,2026-09-17 18:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564683
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-18,19:00,RCD Espanyol de Barcelona,Elche CF,2026-09-18 18:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564692
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-19,12:00,CA Osasuna,Rayo Vallecano de Madrid,2026-09-19 11:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564693
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-19,14:15,Athletic Club,Deportivo Alavés,2026-09-19 13:15:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564691
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-19,16:30,RC Celta de Vigo,Real Racing Club de Santander,2026-09-19 15:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564694
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-19,19:00,Sevilla FC,FC Barcelona,2026-09-19 18:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564690
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,12:00,Getafe CF,Málaga CF,2026-09-20 11:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564697
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,14:15,Club Atlético de Madrid,Real Madrid CF,2026-09-20 13:15:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564688
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,16:30,RC Deportivo La Coruña,Real Betis Balompié,2026-09-20 15:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564695
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,16:30,Villarreal CF,Levante UD,2026-09-20 15:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564696
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,19:00,Valencia CF,Real Sociedad de Fútbol,2026-09-20 18:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564689
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-09,19:00,Málaga CF,RCD Espanyol de Barcelona,2026-10-11 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564706
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-10,12:00,Rayo Vallecano de Madrid,Athletic Club,2026-10-11 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564698
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-10,14:15,Deportivo Alavés,Club Atlético de Madrid,2026-10-11 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564699
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-10,16:30,FC Barcelona,Getafe CF,2026-10-11 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564700
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-10,19:00,Real Madrid CF,Villarreal CF,2026-10-11 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564702
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,12:00,Elche CF,RC Celta de Vigo,2026-10-11 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564703
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,14:15,Real Sociedad de Fútbol,RC Deportivo La Coruña,2026-10-11 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564707
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,16:30,Real Betis Balompié,CA Osasuna,2026-10-11 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564701
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,19:00,Real Racing Club de Santander,Valencia CF,2026-10-11 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564705
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-12,19:00,Levante UD,Sevilla FC,2026-10-11 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564704
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,Villarreal CF,Elche CF,2026-10-18 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564708
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,Real Madrid CF,Sevilla FC,2026-10-18 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564709
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,RCD Espanyol de Barcelona,Club Atlético de Madrid,2026-10-18 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564710
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,Valencia CF,Athletic Club,2026-10-18 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564711
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,RC Celta de Vigo,Deportivo Alavés,2026-10-18 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564712
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,Real Betis Balompié,FC Barcelona,2026-10-18 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564713
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,Málaga CF,Real Sociedad de Fútbol,2026-10-18 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564714
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,CA Osasuna,Real Racing Club de Santander,2026-10-18 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564715
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,RC Deportivo La Coruña,Levante UD,2026-10-18 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564716
-football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,Getafe CF,Rayo Vallecano de Madrid,2026-10-18 14:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564717
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-26,19:00,Real Madrid CF,Real Sociedad de Fútbol,FINISHED,4.0,1.0,H,1.0,1.0,,,,,,,,,,,,,,,,3.305,0.463,fdorg:564631
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-27,18:30,RC Celta de Vigo,CA Osasuna,FINISHED,1.0,2.0,A,1.0,0.0,,,,,,,,,,,,,,,,0.107,1.897,fdorg:564636
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-27,19:00,FC Barcelona,Athletic Club,FINISHED,2.0,0.0,H,1.0,0.0,,,,,,,,,,,,,,,,3.917,0.222,fdorg:564630
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-28,17:00,Real Racing Club de Santander,Elche CF,FINISHED,3.0,2.0,H,3.0,0.0,,,,,,,,,,,,,,,,2.562,1.076,fdorg:564654
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-28,19:30,Deportivo Alavés,Villarreal CF,FINISHED,1.0,0.0,H,1.0,0.0,,,,,,,,,,,,,,,,0.915,1.451,fdorg:564648
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,15:00,Levante UD,Real Betis Balompié,FINISHED,5.0,2.0,H,2.0,2.0,,,,,,,,,,,,,,,,3.038,1.923,fdorg:564655
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,17:00,Real Sociedad de Fútbol,RCD Espanyol de Barcelona,FINISHED,2.0,1.0,H,1.0,1.0,,,,,,,,,,,,,,,,2.917,0.93,fdorg:564653
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,19:30,Sevilla FC,Club Atlético de Madrid,FINISHED,1.0,3.0,A,0.0,3.0,,,,,,,,,,,,,,,,1.081,1.477,fdorg:564649
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,15:00,Real Madrid CF,Málaga CF,FINISHED,4.0,0.0,H,3.0,0.0,,,,,,,,,,,,,,,,3.408,0.76,fdorg:564656
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,17:30,RC Deportivo La Coruña,Valencia CF,FINISHED,3.0,1.0,H,2.0,1.0,,,,,,,,,,,,,,,,1.408,1.017,fdorg:564651
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,19:30,RC Celta de Vigo,Athletic Club,FINISHED,0.0,2.0,A,0.0,2.0,,,,,,,,,,,,,,,,1.201,3.133,fdorg:564652
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-31,17:30,CA Osasuna,Getafe CF,FINISHED,1.0,0.0,H,1.0,0.0,,,,,,,,,,,,,,,,1.705,1.09,fdorg:564657
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-08-31,19:30,FC Barcelona,Rayo Vallecano de Madrid,FINISHED,5.0,2.0,H,2.0,1.0,,,,,,,,,,,,,,,,2.958,1.066,fdorg:564650
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-03,19:00,Real Sociedad de Fútbol,RC Celta de Vigo,FINISHED,0.0,0.0,D,0.0,0.0,,,,,,,,,,,,,,,,1.02,0.633,fdorg:564682
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-04,19:00,Real Betis Balompié,Real Madrid CF,FINISHED,1.0,0.0,H,0.0,0.0,,,,,,,,,,,,,,,,0.885,3.383,fdorg:564667
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,14:15,Athletic Club,Club Atlético de Madrid,FINISHED,3.0,0.0,H,0.0,0.0,,,,,,,,,,,,,,,,1.872,0.752,fdorg:564663
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,16:30,Rayo Vallecano de Madrid,Real Racing Club de Santander,FINISHED,3.0,2.0,H,2.0,2.0,,,,,,,,,,,,,,,,1.19,0.633,fdorg:564660
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,19:00,Villarreal CF,RC Deportivo La Coruña,FINISHED,2.0,3.0,A,1.0,1.0,,,,,,,,,,,,,,,,3.642,2.442,fdorg:564662
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,14:15,Valencia CF,FC Barcelona,FINISHED,0.0,5.0,A,0.0,2.0,,,,,,,,,,,,,,,,0.519,4.769,fdorg:564659
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,16:30,Deportivo Alavés,CA Osasuna,FINISHED,5.0,2.0,H,2.0,0.0,,,,,,,,,,,,,,,,1.602,1.644,fdorg:564664
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,16:30,Málaga CF,Levante UD,FINISHED,0.0,0.0,D,0.0,0.0,,,,,,,,,,,,,,,,1.727,1.192,fdorg:564666
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,19:00,RCD Espanyol de Barcelona,Sevilla FC,FINISHED,1.0,1.0,D,0.0,0.0,,,,,,,,,,,,,,,,1.817,0.373,fdorg:564661
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-07,17:00,Getafe CF,RC Celta de Vigo,FINISHED,1.0,1.0,D,1.0,0.0,,,,,,,,,,,,,,,,1.458,1.421,fdorg:564665
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-07,19:30,Elche CF,Real Sociedad de Fútbol,FINISHED,2.0,3.0,A,0.0,2.0,,,,,,,,,,,,,,,,2.87,0.876,fdorg:564658
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-11,19:00,Sevilla FC,Valencia CF,FINISHED,1.0,0.0,H,0.0,0.0,,,,,,,,,,,,,,,,1.355,0.08,fdorg:564669
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-12,12:00,Real Racing Club de Santander,Deportivo Alavés,FINISHED,2.0,1.0,H,1.0,1.0,,,,,,,,,,,,,,,,1.384,2.271,fdorg:564670
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-12,14:15,CA Osasuna,RCD Espanyol de Barcelona,FINISHED,0.0,2.0,A,0.0,2.0,,,,,,,,,,,,,,,,1.104,1.41,fdorg:564673
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-12,16:30,Athletic Club,Elche CF,FINISHED,1.0,1.0,D,0.0,0.0,,,,,,,,,,,,,,,,3.13,0.816,fdorg:564676
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-12,19:00,Real Madrid CF,Rayo Vallecano de Madrid,FINISHED,4.0,1.0,H,3.0,0.0,,,,,,,,,,,,,,,,3.122,1.193,fdorg:564677
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-13,12:00,RC Celta de Vigo,Málaga CF,IN_PLAY,0.0,0.0,D,,,,,,,,,,,,,,,,,,,,fdorg:564672
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-13,14:15,Levante UD,FC Barcelona,2026-09-13 14:15:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564675
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-13,16:30,Getafe CF,RC Deportivo La Coruña,2026-09-13 16:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564668
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-13,19:00,Real Sociedad de Fútbol,Club Atlético de Madrid,2026-09-13 19:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564674
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-14,19:00,Villarreal CF,Real Betis Balompié,2026-09-14 19:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564671
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-15,17:00,Rayo Vallecano de Madrid,RCD Espanyol de Barcelona,2026-09-15 17:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564678
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-15,18:00,Deportivo Alavés,Valencia CF,2026-09-15 18:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564680
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-15,19:30,Elche CF,Real Madrid CF,2026-09-15 19:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564681
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-16,17:00,RC Deportivo La Coruña,Sevilla FC,2026-09-16 17:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564679
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-16,17:00,Club Atlético de Madrid,CA Osasuna,2026-09-16 17:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564684
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-16,19:30,Levante UD,Athletic Club,2026-09-16 19:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564685
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-16,19:30,FC Barcelona,Real Racing Club de Santander,2026-09-16 19:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564687
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-17,17:00,Real Betis Balompié,Getafe CF,2026-09-17 17:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564686
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-17,19:30,Málaga CF,Villarreal CF,2026-09-17 19:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564683
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-18,19:00,RCD Espanyol de Barcelona,Elche CF,2026-09-18 19:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564692
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-19,12:00,CA Osasuna,Rayo Vallecano de Madrid,2026-09-19 12:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564693
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-19,14:15,Athletic Club,Deportivo Alavés,2026-09-19 14:15:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564691
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-19,16:30,RC Celta de Vigo,Real Racing Club de Santander,2026-09-19 16:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564694
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-19,19:00,Sevilla FC,FC Barcelona,2026-09-19 19:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564690
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,12:00,Getafe CF,Málaga CF,2026-09-20 12:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564697
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,14:15,Club Atlético de Madrid,Real Madrid CF,2026-09-20 14:15:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564688
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,16:30,RC Deportivo La Coruña,Real Betis Balompié,2026-09-20 16:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564695
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,16:30,Villarreal CF,Levante UD,2026-09-20 16:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564696
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,19:00,Valencia CF,Real Sociedad de Fútbol,2026-09-20 19:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564689
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-09,19:00,Málaga CF,RCD Espanyol de Barcelona,2026-10-09 19:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564706
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-10,12:00,Rayo Vallecano de Madrid,Athletic Club,2026-10-10 12:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564698
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-10,14:15,Deportivo Alavés,Club Atlético de Madrid,2026-10-10 14:15:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564699
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-10,16:30,FC Barcelona,Getafe CF,2026-10-10 16:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564700
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-10,19:00,Real Madrid CF,Villarreal CF,2026-10-10 19:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564702
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,12:00,Elche CF,RC Celta de Vigo,2026-10-11 12:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564703
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,14:15,Real Sociedad de Fútbol,RC Deportivo La Coruña,2026-10-11 14:15:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564707
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,16:30,Real Betis Balompié,CA Osasuna,2026-10-11 16:30:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564701
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,19:00,Real Racing Club de Santander,Valencia CF,2026-10-11 19:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564705
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-12,19:00,Levante UD,Sevilla FC,2026-10-12 19:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564704
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,Villarreal CF,Elche CF,2026-10-18 15:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564708
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,Real Madrid CF,Sevilla FC,2026-10-18 15:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564709
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,RCD Espanyol de Barcelona,Club Atlético de Madrid,2026-10-18 15:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564710
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,Valencia CF,Athletic Club,2026-10-18 15:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564711
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,RC Celta de Vigo,Deportivo Alavés,2026-10-18 15:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564712
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,Real Betis Balompié,FC Barcelona,2026-10-18 15:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564713
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,Málaga CF,Real Sociedad de Fútbol,2026-10-18 15:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564714
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,CA Osasuna,Real Racing Club de Santander,2026-10-18 15:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564715
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,RC Deportivo La Coruña,Levante UD,2026-10-18 15:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564716
+football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,00:00,Getafe CF,Rayo Vallecano de Madrid,2026-10-18 15:00:00Z,,,,,,,,,,,,,,,,,,,,,,,fdorg:564717
 football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,00:00,Rayo Vallecano de Madrid,Elche CF,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,fdorg:564718
 football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,00:00,Deportivo Alavés,Málaga CF,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,fdorg:564719
 football-data.org+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,00:00,Athletic Club,Getafe CF,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,fdorg:564720
@@ -786,12 +786,12 @@ football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-05,18:45,OGC Nice,Le Man
 football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-06,13:00,ES Troyes AC,RC Strasbourg Alsace,FINISHED,2.0,6.0,A,1.0,2.0,,,,,,,,,,,,,,,,,,fdorg:559700
 football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-06,15:15,Angers SCO,Stade Rennais FC 1901,FINISHED,1.0,2.0,A,1.0,2.0,,,,,,,,,,,,,,,,,,fdorg:559698
 football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-06,18:45,Olympique de Marseille,Paris FC,FINISHED,2.0,3.0,A,1.0,2.0,,,,,,,,,,,,,,,,,,fdorg:559694
-football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-11,18:45,Stade Rennais FC 1901,Olympique de Marseille,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:559689
-football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-12,15:15,RC Strasbourg Alsace,AS Monaco FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:559687
-football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-12,18:45,FC Lorient,Toulouse FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:559684
-football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-12,18:45,AJ Auxerre,OGC Nice,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:559688
-football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-12,18:45,Le Havre AC,Angers SCO,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:559690
-football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-12,18:45,Paris FC,Olympique Lyonnais,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:559692
+football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-11,18:45,Stade Rennais FC 1901,Olympique de Marseille,FINISHED,1.0,0.0,H,0.0,0.0,,,,,,,,,,,,,,,,,,fdorg:559689
+football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-12,15:15,RC Strasbourg Alsace,AS Monaco FC,FINISHED,1.0,1.0,D,0.0,0.0,,,,,,,,,,,,,,,,,,fdorg:559687
+football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-12,18:45,FC Lorient,Toulouse FC,FINISHED,2.0,2.0,D,2.0,0.0,,,,,,,,,,,,,,,,,,fdorg:559684
+football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-12,18:45,AJ Auxerre,OGC Nice,FINISHED,1.0,0.0,H,0.0,0.0,,,,,,,,,,,,,,,,,,fdorg:559688
+football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-12,18:45,Le Havre AC,Angers SCO,FINISHED,0.0,0.0,D,0.0,0.0,,,,,,,,,,,,,,,,,,fdorg:559690
+football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-12,18:45,Paris FC,Olympique Lyonnais,FINISHED,0.0,0.0,D,0.0,0.0,,,,,,,,,,,,,,,,,,fdorg:559692
 football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-13,13:00,Lille OSC,ES Troyes AC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:559685
 football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-13,15:15,Le Mans FC,Racing Club de Lens,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:559686
 football-data.org,2026-27,Ligue 1,1,league,FRA1,2026-09-13,18:45,Stade Brestois 29,Paris Saint-Germain FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:559691
@@ -1083,13 +1083,13 @@ football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,SC
 football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,16:30,FC Schalke 04,FC Bayern München,FINISHED,0.0,0.0,D,0.0,0.0,,,,,,,,,,,,,,,,0.251,2.054,fdorg:565789
 football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-06,13:30,Hamburger SV,1. FSV Mainz 05,FINISHED,0.0,5.0,A,0.0,2.0,,,,,,,,,,,,,,,,0.257,3.28,fdorg:565788
 football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-06,15:30,Eintracht Frankfurt,FC Augsburg,FINISHED,1.0,4.0,A,1.0,0.0,,,,,,,,,,,,,,,,2.51,1.445,fdorg:565786
-football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-11,18:30,1. FC Union Berlin,FC Schalke 04,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565797
-football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,TSG 1899 Hoffenheim,VfB Stuttgart,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565794
-football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,Borussia Dortmund,SC Paderborn 07,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565795
-football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,FC Augsburg,Bayer 04 Leverkusen,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565796
-football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,1. FSV Mainz 05,Eintracht Frankfurt,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565801
-football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,SC Freiburg,Borussia Mönchengladbach,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565802
-football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,16:30,1. FC Köln,SV Werder Bremen,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565798
+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-11,18:30,1. FC Union Berlin,FC Schalke 04,FINISHED,1.0,3.0,A,0.0,1.0,,,,,,,,,,,,,,,,1.918,3.218,fdorg:565797
+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,TSG 1899 Hoffenheim,VfB Stuttgart,FINISHED,2.0,1.0,H,1.0,0.0,,,,,,,,,,,,,,,,2.957,2.67,fdorg:565794
+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,Borussia Dortmund,SC Paderborn 07,FINISHED,3.0,0.0,H,1.0,0.0,,,,,,,,,,,,,,,,3.145,0.311,fdorg:565795
+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,FC Augsburg,Bayer 04 Leverkusen,FINISHED,2.0,2.0,D,0.0,1.0,,,,,,,,,,,,,,,,0.843,1.886,fdorg:565796
+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,1. FSV Mainz 05,Eintracht Frankfurt,FINISHED,1.0,3.0,A,0.0,2.0,,,,,,,,,,,,,,,,2.242,2.159,fdorg:565801
+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,SC Freiburg,Borussia Mönchengladbach,FINISHED,5.0,0.0,H,2.0,0.0,,,,,,,,,,,,,,,,2.149,0.268,fdorg:565802
+football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,16:30,1. FC Köln,SV Werder Bremen,FINISHED,1.0,1.0,D,1.0,0.0,,,,,,,,,,,,,,,,1.613,1.182,fdorg:565798
 football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-13,13:30,RB Leipzig,Hamburger SV,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565799
 football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-13,15:30,SV 07 Elversberg,FC Bayern München,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565800
 football-data.org+understat,2026-27,Bundesliga,1,league,GER1,2026-09-18,18:30,FC Bayern München,1. FC Union Berlin,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:565804
@@ -1401,10 +1401,10 @@ football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-06,16:00,Bologna FC 1909
 football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-06,18:45,Juventus FC,AC Milan,FINISHED,1.0,1.0,D,0.0,0.0,,,,,,,,,,,,,,,,,,fdorg:558618
 football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-07,16:30,Cagliari Calcio,US Lecce,FINISHED,1.0,0.0,H,1.0,0.0,,,,,,,,,,,,,,,,,,fdorg:558610
 football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-07,18:45,Udinese Calcio,SS Lazio,FINISHED,1.0,2.0,A,0.0,0.0,,,,,,,,,,,,,,,,,,fdorg:558617
-football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-11,18:45,Venezia FC,ACF Fiorentina,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:558606
-football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-12,13:00,Genoa CFC,Frosinone Calcio,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:558604
-football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-12,16:00,SS Lazio,AC Milan,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:558600
-football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-12,18:45,Atalanta BC,Cagliari Calcio,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:558607
+football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-11,18:45,Venezia FC,ACF Fiorentina,FINISHED,2.0,4.0,A,1.0,2.0,,,,,,,,,,,,,,,,,,fdorg:558606
+football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-12,13:00,Genoa CFC,Frosinone Calcio,FINISHED,1.0,1.0,D,0.0,1.0,,,,,,,,,,,,,,,,,,fdorg:558604
+football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-12,16:00,SS Lazio,AC Milan,FINISHED,2.0,2.0,D,2.0,0.0,,,,,,,,,,,,,,,,,,fdorg:558600
+football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-12,18:45,Atalanta BC,Cagliari Calcio,FINISHED,1.0,2.0,A,1.0,1.0,,,,,,,,,,,,,,,,,,fdorg:558607
 football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-13,13:00,US Lecce,AC Monza,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:558605
 football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-13,16:00,SSC Napoli,Bologna FC 1909,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:558599
 football-data.org,2026-27,Serie A,1,league,ITA1,2026-09-13,18:45,US Sassuolo Calcio,Juventus FC,TIMED,,,,,,,,,,,,,,,,,,,,,,,fdorg:558608
