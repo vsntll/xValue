@@ -44,8 +44,11 @@ SOURCES = {
     "sofascore": sofascore.fetch,
 }
 # authority order for filling a merged row: sanctioned results backbone, then
-# ESPN's box-score stats, then Understat's xG (leagues only).
-DEFAULT_PRIORITY = ["football-data-org", "espn", "understat"]
+# ESPN's box-score stats, then Understat's xG (leagues only), then FotMob as the
+# fallback that actually carries the cups (ESPN's cup endpoints have started
+# returning 403s from some IP ranges, incl. cloud/CI - without this, EFL/FA/DFB/
+# CDR/CI/CDF/UEL/UECL silently go missing for the current season).
+DEFAULT_PRIORITY = ["football-data-org", "espn", "understat", "fotmob"]
 
 
 def _current_season() -> str:
