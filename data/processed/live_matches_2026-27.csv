@@ -1,4 +1,73 @@
 source,season,league,tier,competition_type,comp_code,Date,Time,HomeTeam,AwayTeam,status,FTHG,FTAG,FTR,HTHG,HTAG,HTR,HS,AS,HST,AST,HC,AC,HF,AF,HY,AY,HR,AR,HPoss,APoss,HxG,AxG,match_id
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-06,18:45,Bristol City,Walsall,FT,0.0,1.0,A,,,,32.0,8.0,9.0,5.0,13.0,4.0,,,0.0,3.0,,,72.0,28.0,2.76,1.51,fotmob:5840307
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-07,18:45,Wolverhampton Wanderers,Port Vale,FT,3.0,0.0,H,,,,16.0,11.0,7.0,3.0,8.0,5.0,,,1.0,1.0,,,69.0,31.0,1.44,2.34,fotmob:5840295
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-07,18:45,Wycombe Wanderers,Stevenage,FT,1.0,2.0,A,,,,13.0,13.0,3.0,5.0,4.0,3.0,,,2.0,4.0,,,59.0,41.0,1.85,1.0,fotmob:5840315
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-07,19:00,Middlesbrough,Wrexham,FT,1.0,0.0,H,,,,13.0,11.0,3.0,2.0,7.0,3.0,,,1.0,4.0,,,49.0,51.0,1.63,1.59,fotmob:5840286
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,12:00,Cambridge United,Barnet,FT,2.0,1.0,H,,,,13.0,17.0,7.0,6.0,5.0,4.0,,,1.0,2.0,,,51.0,49.0,1.41,1.95,fotmob:5840311
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,13:00,Queens Park Rangers,Millwall,FT,1.0,1.0,D,,,,12.0,6.0,3.0,3.0,6.0,1.0,,,0.0,0.0,,,56.0,44.0,0.97,1.16,fotmob:5840303
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,AFC Wimbledon,Newport County,FT,1.0,1.0,D,,,,16.0,14.0,5.0,4.0,7.0,5.0,,,2.0,1.0,,,61.0,39.0,0.95,1.55,fotmob:5840319
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Barnsley,Wigan Athletic,FT,1.0,1.0,D,,,,11.0,13.0,4.0,8.0,9.0,6.0,,,1.0,0.0,,,60.0,40.0,0.91,2.79,fotmob:5840288
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Bradford City,Rochdale,FT,2.0,0.0,H,,,,23.0,9.0,11.0,2.0,10.0,2.0,,,0.0,2.0,,,52.0,48.0,2.89,0.86,fotmob:5840298
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Bristol Rovers,Peterborough United,FT,0.0,1.0,A,,,,20.0,9.0,4.0,3.0,2.0,5.0,,,1.0,3.0,,,46.0,54.0,1.15,1.81,fotmob:5840309
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Bromley,Reading,FT,1.0,1.0,D,,,,15.0,16.0,3.0,5.0,5.0,10.0,,,1.0,1.0,,,41.0,59.0,1.67,2.39,fotmob:5840316
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Burnley,Notts County,FT,1.0,1.0,D,,,,12.0,6.0,4.0,2.0,4.0,3.0,,,1.0,4.0,,,74.0,26.0,0.99,0.39,fotmob:5840296
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Burton Albion,Blackburn Rovers,FT,1.0,2.0,A,,,,17.0,27.0,7.0,7.0,6.0,9.0,,,2.0,1.0,,,36.0,64.0,1.75,3.89,fotmob:5840299
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Cardiff City,Swindon Town,FT,3.0,2.0,H,,,,15.0,13.0,4.0,1.0,6.0,3.0,,,1.0,0.0,,,61.0,39.0,2.52,1.36,fotmob:5840306
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Crewe Alexandra,Accrington Stanley,FT,2.0,1.0,H,,,,15.0,16.0,3.0,4.0,1.0,6.0,,,0.0,3.0,,,50.0,50.0,2.05,1.31,fotmob:5840293
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Derby County,Lincoln City,FT,1.0,2.0,A,,,,8.0,14.0,4.0,4.0,3.0,6.0,,,1.0,2.0,,,71.0,29.0,0.37,1.26,fotmob:5840297
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Fleetwood Town,Chesterfield,FT,1.0,0.0,H,,,,5.0,15.0,2.0,1.0,7.0,9.0,,,3.0,2.0,,,30.0,70.0,0.55,1.1,fotmob:5840292
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Gillingham,Luton Town,FT,0.0,3.0,A,,,,7.0,17.0,2.0,11.0,2.0,9.0,,,1.0,1.0,,,34.0,66.0,0.26,3.12,fotmob:5840305
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Grimsby Town,Blackpool,FT,1.0,3.0,A,,,,13.0,10.0,8.0,4.0,13.0,4.0,,,0.0,1.0,,,50.0,50.0,0.63,1.42,fotmob:5840301
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Leicester City,Northampton Town,FT,1.0,0.0,H,,,,8.0,4.0,3.0,2.0,7.0,5.0,,,4.0,1.0,,,77.0,23.0,0.49,0.8,fotmob:5840320
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Leyton Orient,Oxford United,FT,2.0,0.0,H,,,,12.0,6.0,3.0,2.0,7.0,2.0,,,1.0,1.0,,,51.0,49.0,0.78,0.46,fotmob:5840314
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Norwich City,Milton Keynes Dons,FT,4.0,1.0,H,,,,25.0,8.0,7.0,5.0,7.0,3.0,,,4.0,1.0,,,65.0,35.0,3.52,1.04,fotmob:5840312
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Preston North End,Huddersfield Town,FT,1.0,1.0,D,,,,10.0,10.0,3.0,2.0,7.0,6.0,,,2.0,3.0,,,46.0,54.0,0.87,0.64,fotmob:5840302
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Salford City,Shrewsbury Town,FT,1.0,1.0,D,,,,21.0,11.0,5.0,3.0,8.0,2.0,,,2.0,2.0,,,72.0,28.0,1.99,0.74,fotmob:5840300
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Sheffield Wednesday,Bolton Wanderers,FT,1.0,0.0,H,,,,13.0,11.0,3.0,1.0,6.0,5.0,,,1.0,2.0,,,45.0,55.0,1.18,1.74,fotmob:5840291
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Stockport County,Doncaster Rovers,FT,1.0,1.0,D,,,,19.0,8.0,9.0,1.0,6.0,8.0,,,0.0,1.0,,,73.0,27.0,0.93,0.37,fotmob:5840290
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Stoke City,Oldham Athletic,FT,2.0,0.0,H,,,,11.0,9.0,3.0,4.0,3.0,3.0,,,2.0,1.0,,,60.0,40.0,1.79,0.93,fotmob:5840294
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Swansea City,Birmingham City,FT,0.0,1.0,A,,,,14.0,6.0,2.0,1.0,6.0,4.0,,,2.0,0.0,,,62.0,38.0,1.37,0.59,fotmob:5840317
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,Watford,Crawley Town,FT,1.0,0.0,H,,,,36.0,9.0,11.0,3.0,12.0,1.0,,,2.0,3.0,,,61.0,39.0,4.35,0.74,fotmob:5840310
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,14:00,West Ham United,Portsmouth,FT,3.0,1.0,H,,,,12.0,12.0,7.0,4.0,3.0,7.0,,,1.0,2.0,,,45.0,55.0,2.07,0.6,fotmob:5840318
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,16:30,Cheltenham Town,Charlton Athletic,FT,1.0,3.0,A,,,,7.0,17.0,2.0,9.0,2.0,3.0,,,1.0,0.0,,,46.0,54.0,0.86,1.11,fotmob:5840304
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,16:30,Colchester United,Southampton,FT,0.0,2.0,A,,,,11.0,25.0,4.0,5.0,1.0,5.0,,,0.0,0.0,,,26.0,74.0,1.21,3.2,fotmob:5840313
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-08,16:30,Rotherham United,West Bromwich Albion,FT,1.0,4.0,A,,,,8.0,18.0,2.0,10.0,1.0,2.0,,,2.0,0.0,,,29.0,71.0,0.83,2.76,fotmob:5840287
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-09,15:00,Mansfield Town,Sheffield United,FT,0.0,3.0,A,,,,7.0,20.0,2.0,4.0,5.0,3.0,,,2.0,1.0,,,50.0,50.0,0.43,2.67,fotmob:5840289
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-10,19:00,Plymouth Argyle,Exeter City,FT,2.0,0.0,H,,,,21.0,8.0,6.0,1.0,9.0,3.0,,,0.0,2.0,,,63.0,37.0,2.52,0.67,fotmob:5840308
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:00,Cardiff City,Norwich City,FT,1.0,2.0,A,,,,11.0,12.0,3.0,3.0,5.0,3.0,,,3.0,1.0,,,65.0,35.0,0.5,1.6,fotmob:6005657
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:30,Doncaster Rovers,Middlesbrough,FT,1.0,3.0,A,,,,12.0,24.0,5.0,8.0,1.0,7.0,,,2.0,2.0,,,34.0,66.0,1.38,2.58,fotmob:6005648
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Barnsley,Crewe Alexandra,FT,3.0,2.0,H,,,,30.0,16.0,8.0,9.0,20.0,7.0,,,2.0,0.0,,,66.0,34.0,2.13,1.75,fotmob:6005649
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Blackburn Rovers,Sheffield United,FT,1.0,2.0,A,,,,9.0,16.0,5.0,5.0,6.0,4.0,,,0.0,0.0,,,50.0,50.0,0.69,2.15,fotmob:6005646
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Blackpool,Lincoln City,FT,1.0,4.0,A,,,,8.0,14.0,3.0,9.0,1.0,1.0,,,2.0,1.0,,,38.0,62.0,0.75,1.35,fotmob:6005651
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Cambridge United,Millwall,FT,0.0,1.0,A,,,,8.0,10.0,1.0,4.0,4.0,1.0,,,2.0,0.0,,,44.0,56.0,0.34,0.79,fotmob:6005659
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Fleetwood Town,Shrewsbury Town,FT,4.0,0.0,H,,,,8.0,11.0,3.0,4.0,3.0,7.0,,,1.0,3.0,,,45.0,55.0,0.93,0.88,fotmob:6005654
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Ipswich Town,Leicester City,FT,3.0,1.0,H,,,,15.0,22.0,9.0,8.0,5.0,3.0,,,3.0,2.0,,,42.0,58.0,1.23,1.98,fotmob:6005656
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Plymouth Argyle,Coventry City,FT,2.0,4.0,A,,,,11.0,12.0,5.0,5.0,3.0,3.0,,,1.0,2.0,,,34.0,66.0,1.45,3.06,fotmob:6005664
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Sheffield Wednesday,Wolverhampton Wanderers,FT,0.0,2.0,A,,,,11.0,13.0,3.0,3.0,2.0,6.0,,,1.0,1.0,,,48.0,52.0,0.39,1.03,fotmob:6005652
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Southampton,West Ham United,FT,1.0,4.0,A,,,,12.0,18.0,5.0,8.0,2.0,5.0,,,2.0,0.0,,,58.0,42.0,0.87,2.63,fotmob:6005661
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Stevenage,Reading,FT,0.0,3.0,A,,,,13.0,10.0,3.0,5.0,5.0,5.0,,,2.0,2.0,,,57.0,43.0,0.57,1.62,fotmob:6005658
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Stoke City,Hull City,FT,1.0,1.0,D,,,,10.0,18.0,4.0,6.0,1.0,4.0,,,1.0,1.0,,,44.0,56.0,0.93,1.94,fotmob:6005644
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Walsall,Leyton Orient,FT,0.0,0.0,D,,,,13.0,20.0,4.0,5.0,2.0,8.0,,,2.0,1.0,,,39.0,61.0,1.21,1.28,fotmob:6005655
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,18:45,Watford,Peterborough United,FT,1.0,5.0,A,,,,17.0,19.0,5.0,10.0,2.0,2.0,,,0.0,1.0,,,63.0,37.0,1.93,3.32,fotmob:6005662
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,19:00,Birmingham City,Brentford,FT,1.0,6.0,A,,,,8.0,18.0,2.0,8.0,4.0,6.0,,,2.0,1.0,,,31.0,69.0,0.4,1.98,fotmob:6005660
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-25,19:00,Nottingham Forest,Leeds United,FT,0.0,2.0,A,,,,8.0,13.0,3.0,5.0,3.0,2.0,,,4.0,3.0,,,50.0,50.0,0.83,2.02,fotmob:6005647
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-26,18:45,Bradford City,Burnley,FT,0.0,0.0,D,,,,16.0,22.0,4.0,6.0,5.0,14.0,,,2.0,0.0,,,32.0,68.0,0.78,1.17,fotmob:6005653
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-26,18:45,Newcastle United,West Bromwich Albion,FT,3.0,2.0,H,,,,16.0,13.0,7.0,3.0,6.0,2.0,,,2.0,3.0,,,56.0,44.0,2.61,1.46,fotmob:6005645
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-26,18:45,Tottenham Hotspur,Charlton Athletic,FT,5.0,1.0,H,,,,20.0,6.0,11.0,4.0,11.0,6.0,,,1.0,1.0,,,72.0,28.0,1.38,0.41,fotmob:6005666
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-26,19:00,Preston North End,Everton,FT,0.0,4.0,A,,,,5.0,29.0,1.0,10.0,3.0,5.0,,,0.0,0.0,,,32.0,68.0,0.35,4.13,fotmob:6005650
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-27,18:30,Chelsea,Luton Town,FT,2.0,0.0,H,,,,26.0,7.0,7.0,1.0,9.0,3.0,,,0.0,1.0,,,66.0,34.0,2.67,0.39,fotmob:6005665
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-27,19:00,Fulham,AFC Wimbledon,FT,3.0,0.0,H,,,,29.0,5.0,8.0,2.0,10.0,4.0,,,1.0,1.0,,,79.0,21.0,3.02,0.18,fotmob:6005663
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-09-08,18:45,AFC Bournemouth,Lincoln City,FT,4.0,0.0,H,,,,36.0,2.0,8.0,1.0,10.0,0.0,,,2.0,3.0,,,68.0,32.0,2.51,0.52,fotmob:6099334
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-09-08,18:45,Crystal Palace,Middlesbrough,FT,3.0,0.0,H,,,,8.0,16.0,5.0,4.0,1.0,6.0,,,0.0,2.0,,,41.0,59.0,1.11,0.73,fotmob:6099328
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-09-08,18:45,Leyton Orient,Bradford City,FT,1.0,3.0,A,,,,16.0,17.0,4.0,9.0,8.0,12.0,,,3.0,1.0,,,53.0,47.0,1.98,2.06,fotmob:6099339
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-09-08,18:45,Sunderland,Hull City,FT,1.0,0.0,H,,,,13.0,7.0,3.0,1.0,7.0,12.0,,,1.0,3.0,,,51.0,49.0,0.81,0.97,fotmob:6099331
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-09-08,19:00,Millwall,Newcastle United,FT,0.0,1.0,A,,,,9.0,25.0,2.0,6.0,1.0,15.0,,,2.0,1.0,,,37.0,63.0,0.54,1.56,fotmob:6099336
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-09-09,19:15,Chelsea,Leeds United,FT,6.0,3.0,H,,,,16.0,18.0,8.0,6.0,3.0,5.0,,,1.0,0.0,,,50.0,50.0,2.36,2.7,fotmob:6099342
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-09-15,18:30,Peterborough United,Barnsley,FT,3.0,3.0,D,,,,17.0,28.0,9.0,15.0,7.0,1.0,,,3.0,3.0,,,53.0,47.0,2.16,3.16,fotmob:6099341
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-09-15,18:45,West Ham United,Fulham,FT,2.0,3.0,A,,,,11.0,12.0,3.0,6.0,5.0,4.0,,,0.0,1.0,,,38.0,62.0,1.63,2.48,fotmob:6099343
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-09-15,19:00,Ipswich Town,Arsenal,FT,2.0,4.0,A,,,,8.0,12.0,3.0,6.0,3.0,2.0,,,2.0,0.0,,,41.0,59.0,0.72,0.95,fotmob:6099332
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-09-15,19:00,Liverpool,Tottenham Hotspur,FT,3.0,1.0,H,,,,12.0,17.0,5.0,6.0,5.0,9.0,,,3.0,2.0,,,44.0,56.0,1.53,2.34,fotmob:6099335
+fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-09-15,19:00,Reading,Brentford,FT,1.0,2.0,A,,,,17.0,24.0,3.0,8.0,5.0,7.0,,,0.0,0.0,,,29.0,71.0,1.4,3.21,fotmob:6099340
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-21,19:00,Arsenal FC,Coventry City FC,FINISHED,3.0,0.0,H,2.0,0.0,,,,,,,,,,,,,,,,1.854,0.558,fdorg:560542
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,11:30,Hull City AFC,Manchester United FC,FINISHED,2.0,0.0,H,2.0,0.0,,,,,,,,,,,,,,,,1.496,1.779,fdorg:560543
 football-data.org+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Ipswich Town FC,Sunderland AFC,FINISHED,2.0,1.0,H,1.0,1.0,,,,,,,,,,,,,,,,1.585,1.177,fdorg:560544
