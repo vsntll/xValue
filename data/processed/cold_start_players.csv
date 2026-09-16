@@ -1,0 +1,2834 @@
+season,src_league,Squad,Player,age,is_promoted,is_academy_age,is_brand_new
+2020-21,ITA1,AC Milan,Jens Petter Hauge,21.0,1,0,1
+2020-21,ITA1,AC Milan,Lorenzo Colombo,18.0,1,1,1
+2020-21,ESP1,Alavés,Facundo Pellistri,18.0,1,1,1
+2020-21,ESP1,Alavés,Jota,29.0,1,0,1
+2020-21,ESP1,Alavés,Martin Agirregabiria,24.0,1,0,1
+2020-21,ESP1,Alavés,Rodrigo Battaglia,29.0,1,0,1
+2020-21,ESP1,Alavés,Sergi García,21.0,1,0,1
+2020-21,ESP1,Alavés,Stephane Keller,18.0,1,1,1
+2020-21,ESP1,Alavés,Tomás Pina Isla,32.0,1,0,1
+2020-21,ESP1,Alavés,Tomás Tavares,19.0,1,1,1
+2020-21,FRA1,Angers,Enzo Ebosse,21.0,1,0,1
+2020-21,FRA1,Angers,Mohamed Ali-Cho,16.0,1,1,1
+2020-21,FRA1,Angers,Noah Fatar,18.0,1,1,1
+2020-21,FRA1,Angers,Waniss Taibi,18.0,1,1,1
+2020-21,FRA1,Angers,Yassin Fortune,21.0,1,0,1
+2020-21,GER1,Arminia,Anderson Lucoqui,23.0,1,0,1
+2020-21,GER1,Arminia,Andreas Voglsammer,28.0,1,0,1
+2020-21,GER1,Arminia,Brian Behrendt,28.0,1,0,1
+2020-21,GER1,Arminia,Cebio Soukou,27.0,1,0,1
+2020-21,GER1,Arminia,Christian Gebauer,26.0,1,0,1
+2020-21,GER1,Arminia,Cédric Brunner,26.0,1,0,1
+2020-21,GER1,Arminia,Fabian Klos,32.0,1,0,1
+2020-21,GER1,Arminia,Fabian Kunze,22.0,1,0,1
+2020-21,GER1,Arminia,Jacob Barrett Laursen,25.0,1,0,1
+2020-21,GER1,Arminia,Joakim Nilsson,26.0,1,0,1
+2020-21,GER1,Arminia,Jóan Símun Edmundsson,29.0,1,0,1
+2020-21,GER1,Arminia,Manuel Prietl,28.0,1,0,1
+2020-21,GER1,Arminia,Masaya Okugawa,24.0,1,0,1
+2020-21,GER1,Arminia,Michel Vlap,23.0,1,0,1
+2020-21,GER1,Arminia,Nathan de Medina,22.0,1,0,1
+2020-21,GER1,Arminia,Nils Seufert,23.0,1,0,1
+2020-21,GER1,Arminia,Reinhold Yabo,28.0,1,0,1
+2020-21,GER1,Arminia,Ritsu Doan,22.0,1,0,1
+2020-21,GER1,Arminia,Sebastian Müller,19.0,1,1,1
+2020-21,GER1,Arminia,Stefan Ortega,27.0,1,0,1
+2020-21,ENG1,Aston Villa,Carney Chukwuemeka,16.0,1,1,1
+2020-21,ENG1,Aston Villa,Jacob Ramsey,19.0,1,1,1
+2020-21,ENG1,Aston Villa,Jaden Philogene Bidace,18.0,1,1,1
+2020-21,ENG1,Aston Villa,Matty Cash,22.0,1,0,1
+2020-21,ENG1,Aston Villa,Ollie Watkins,24.0,1,0,1
+2020-21,ENG1,Aston Villa,Wesley Moraes,23.0,1,0,1
+2020-21,ITA1,Atalanta,Aleksey Miranchuk,25.0,1,0,1
+2020-21,ITA1,Atalanta,Davide Ghislandi,19.0,1,1,1
+2020-21,ITA1,Atalanta,Emmanuel Gyabuaa,19.0,1,1,1
+2020-21,ITA1,Atalanta,Joakim Maehle,23.0,1,0,1
+2020-21,ITA1,Atalanta,Matteo Ruggeri,18.0,1,1,1
+2020-21,ITA1,Atalanta,Sam Lammers,23.0,1,0,1
+2020-21,ITA1,Atalanta,Viktor Kovalenko,24.0,1,0,1
+2020-21,ESP1,Athletic Club,Jon Morcillo,21.0,1,0,1
+2020-21,ESP1,Athletic Club,Nico Williams,18.0,1,1,1
+2020-21,ESP1,Athletic Club,Oier Zarraga,21.0,1,0,1
+2020-21,ESP1,Athletic Club,Unai Vencedor Paris,19.0,1,1,1
+2020-21,GER1,Augsburg,Lukas Petkov,19.0,1,1,1
+2020-21,GER1,Augsburg,Noah Sarenren Bazee,23.0,1,0,1
+2020-21,GER1,Augsburg,Ohis Felix Uduokhai,22.0,1,0,1
+2020-21,GER1,Augsburg,Robert Gumny,22.0,1,0,1
+2020-21,GER1,Augsburg,Tim Civeja,18.0,1,1,1
+2020-21,ESP1,Barcelona,Francisco Trincão,20.0,1,1,1
+2020-21,ESP1,Barcelona,Ilaix Moriba,17.0,1,1,1
+2020-21,ESP1,Barcelona,Pedri,17.0,1,1,1
+2020-21,ESP1,Barcelona,Sergiño Dest,19.0,1,1,1
+2020-21,GER1,Bayern Munich,Christopher Scott,18.0,1,1,1
+2020-21,GER1,Bayern Munich,Jamal Musiala,17.0,1,1,1
+2020-21,GER1,Bayern Munich,Josip Stanišić,20.0,1,1,1
+2020-21,GER1,Bayern Munich,Mickaël Cuisance,20.0,1,1,1
+2020-21,GER1,Bayern Munich,Tiago Dantas,19.0,1,1,1
+2020-21,ITA1,Benevento,Adolfo Gaich,21.0,1,0,1
+2020-21,ITA1,Benevento,Alessandro Tuia,30.0,1,0,1
+2020-21,ITA1,Benevento,Amadou Diambo,19.0,1,1,1
+2020-21,ITA1,Benevento,Christian Pastina,19.0,1,1,1
+2020-21,ITA1,Benevento,Daam Foulon,21.0,1,0,1
+2020-21,ITA1,Benevento,Giuseppe Di Serio,19.0,1,1,1
+2020-21,ITA1,Benevento,Lorenzo Montipo,24.0,1,0,1
+2020-21,ITA1,Benevento,Nicolo Manfredini,32.0,1,0,1
+2020-21,ITA1,Benevento,Riccardo Improta,27.0,1,0,1
+2020-21,ITA1,Benevento,Siriki Sanogo,19.0,1,1,1
+2020-21,ITA1,Bologna,Aaron Hickey,18.0,1,1,1
+2020-21,ITA1,Bologna,Andri Fannar Baldursson,18.0,1,1,1
+2020-21,ITA1,Bologna,Antonio Raimondo,16.0,1,1,1
+2020-21,ITA1,Bologna,Kacper Urbanski,16.0,1,1,1
+2020-21,ITA1,Bologna,Mattia Pagliuca,18.0,1,1,1
+2020-21,ITA1,Bologna,Omar Khailoti,19.0,1,1,1
+2020-21,ITA1,Bologna,Simone Rabbi,19.0,1,1,1
+2020-21,ITA1,Bologna,Valentin Antov,20.0,1,1,1
+2020-21,ITA1,Bologna,Wisdom Amey,15.0,1,1,1
+2020-21,FRA1,Bordeaux,Amadou Traore,18.0,1,1,1
+2020-21,FRA1,Bordeaux,Dilane Bakwa,18.0,1,1,1
+2020-21,FRA1,Bordeaux,Hwang Ui-Jo,28.0,1,0,1
+2020-21,FRA1,Bordeaux,Issouf Sissokho,18.0,1,1,1
+2020-21,FRA1,Bordeaux,Loic Bessile,21.0,1,0,1
+2020-21,FRA1,Bordeaux,Mehdi Zerkane,21.0,1,0,1
+2020-21,FRA1,Bordeaux,Sekou Mara,18.0,1,1,1
+2020-21,FRA1,Bordeaux,Tom Lacoux,18.0,1,1,1
+2020-21,FRA1,Brest,Bandiougou Fadiga,19.0,1,1,1
+2020-21,FRA1,Brest,Heriberto Tavares,23.0,1,0,1
+2020-21,FRA1,Brest,Jeremy Le Douaron,22.0,1,0,1
+2020-21,FRA1,Brest,Lilian Brassier,21.0,1,0,1
+2020-21,ENG1,Brighton,Andi Zeqiri,21.0,1,0,1
+2020-21,ENG1,Brighton,Ben White,22.0,1,0,1
+2020-21,ENG1,Brighton,Jakub Moder,21.0,1,0,1
+2020-21,ENG1,Brighton,Jayson Molumby,20.0,1,1,1
+2020-21,ENG1,Brighton,Joël Veltman,28.0,1,0,1
+2020-21,ENG1,Brighton,Reda Khadra,19.0,1,1,1
+2020-21,ENG1,Brighton,Robert Sánchez,22.0,1,0,1
+2020-21,ENG1,Burnley,Joel Mumbongo,21.0,1,0,1
+2020-21,ENG1,Burnley,Josh Benson,20.0,1,1,1
+2020-21,ENG1,Burnley,Lewis Richardson,17.0,1,1,1
+2020-21,ITA1,Cagliari,Guglielmo Vicario,24.0,1,0,1
+2020-21,ITA1,Cagliari,Matteo Tramoni,20.0,1,1,1
+2020-21,ITA1,Cagliari,Razvan Marin,24.0,1,0,1
+2020-21,ESP1,Celta Vigo,Alfon,21.0,1,0,1
+2020-21,ESP1,Celta Vigo,Augusto Solari,28.0,1,0,1
+2020-21,ESP1,Celta Vigo,Carlos Dominguez,19.0,1,1,1
+2020-21,ESP1,Celta Vigo,Gabriel Veiga,18.0,1,1,1
+2020-21,ESP1,Celta Vigo,Hugo Sotelo,16.0,1,1,1
+2020-21,ESP1,Celta Vigo,Jordan Holsgrove,20.0,1,1,1
+2020-21,ESP1,Celta Vigo,Lauti,19.0,1,1,1
+2020-21,ESP1,Celta Vigo,Miguel Baeza,20.0,1,1,1
+2020-21,ESP1,Celta Vigo,Miguel Rodríguez,17.0,1,1,1
+2020-21,ESP1,Celta Vigo,Renato Tapia,25.0,1,0,1
+2020-21,ENG1,Chelsea,Emerson Palmieri,25.0,1,0,1
+2020-21,ENG1,Chelsea,Hakim Ziyech,27.0,1,0,1
+2020-21,ITA1,Crotone,Antonio Mazzotta,31.0,1,0,1
+2020-21,ITA1,Crotone,Augustus Kargbo,21.0,1,0,1
+2020-21,ITA1,Crotone,Denis Dragus,21.0,1,0,1
+2020-21,ITA1,Crotone,Eduardo Henrique,25.0,1,0,1
+2020-21,ITA1,Crotone,Gian Marco Crespi,19.0,1,1,1
+2020-21,ITA1,Crotone,Junior Messias,29.0,1,0,1
+2020-21,ITA1,Crotone,Luis Rojas,18.0,1,1,1
+2020-21,ITA1,Crotone,Milos Vulic,24.0,1,0,1
+2020-21,ITA1,Crotone,Tomislav Gomelt,25.0,1,0,1
+2020-21,ITA1,Crotone,Vladimir Golemic,29.0,1,0,1
+2020-21,ENG1,Crystal Palace,Eberechi Eze,22.0,1,0,1
+2020-21,ENG1,Crystal Palace,Tyrick Mitchell,20.0,1,1,1
+2020-21,ESP1,Cádiz,Alberto Cifuentes,41.0,1,0,1
+2020-21,ESP1,Cádiz,Alberto Perea,29.0,1,0,1
+2020-21,ESP1,Cádiz,Alfonso Espino,28.0,1,0,1
+2020-21,ESP1,Cádiz,Anthony Lozano,27.0,1,0,1
+2020-21,ESP1,Cádiz,Cala,30.0,1,0,1
+2020-21,ESP1,Cádiz,David Gil,26.0,1,0,1
+2020-21,ESP1,Cádiz,Fali,26.0,1,0,1
+2020-21,ESP1,Cádiz,Filip Malbašić,27.0,1,0,1
+2020-21,ESP1,Cádiz,Isaac Carcelen,27.0,1,0,1
+2020-21,ESP1,Cádiz,Jens Jønsson,27.0,1,0,1
+2020-21,ESP1,Cádiz,Jeremías Ledesma,27.0,1,0,1
+2020-21,ESP1,Cádiz,Jon Ander Garrido,30.0,1,0,1
+2020-21,ESP1,Cádiz,Jorge Pombo,26.0,1,0,1
+2020-21,ESP1,Cádiz,Marc Baró,20.0,1,1,1
+2020-21,ESP1,Cádiz,Marcos Mauro,29.0,1,0,1
+2020-21,ESP1,Cádiz,Nano,25.0,1,0,1
+2020-21,ESP1,Cádiz,Nieto,22.0,1,0,1
+2020-21,ESP1,Cádiz,Salvi,29.0,1,0,1
+2020-21,ESP1,Cádiz,Sergio González,23.0,1,0,1
+2020-21,ESP1,Cádiz,Álex Fernández,27.0,1,0,1
+2020-21,ESP1,Cádiz,Álex Martín,22.0,1,0,1
+2020-21,ESP1,Cádiz,Álvaro Bastida,16.0,1,1,1
+2020-21,ESP1,Cádiz,Álvaro Giménez,29.0,1,0,1
+2020-21,FRA1,Dijon,Anibal Chala,24.0,1,0,1
+2020-21,FRA1,Dijon,Aurelien Scheidler,22.0,1,0,1
+2020-21,FRA1,Dijon,Bersant Celina,24.0,1,0,1
+2020-21,FRA1,Dijon,Charles Costes,18.0,1,1,1
+2020-21,FRA1,Dijon,Erwan Belhadji,19.0,1,1,1
+2020-21,FRA1,Dijon,Jacques Siwe,19.0,1,1,1
+2020-21,FRA1,Dijon,Rayan Philippe,20.0,1,1,1
+2020-21,FRA1,Dijon,Saturnin Allagbe,27.0,1,0,1
+2020-21,FRA1,Dijon,Wilitty Younoussa,19.0,1,1,1
+2020-21,GER1,Dortmund,Ansgar Knauff,18.0,1,1,1
+2020-21,GER1,Dortmund,Gio Reyna,17.0,1,1,1
+2020-21,GER1,Dortmund,Jude Bellingham,17.0,1,1,1
+2020-21,GER1,Dortmund,Mateu Morey,20.0,1,1,1
+2020-21,GER1,Dortmund,Steffen Tigges,22.0,1,0,1
+2020-21,GER1,Dortmund,Youssoufa Moukoko,15.0,1,1,1
+2020-21,ESP1,Eibar,Alejandro Pozo Pozo,21.0,1,0,1
+2020-21,ESP1,Eibar,Damian Kądzior,28.0,1,0,1
+2020-21,ESP1,Eibar,Eñaut Mendía,21.0,1,0,1
+2020-21,ESP1,Eibar,José Ángel,30.0,1,0,1
+2020-21,ESP1,Eibar,Kiké,30.0,1,0,1
+2020-21,ESP1,Eibar,Papakouli Diop,34.0,1,0,1
+2020-21,ESP1,Eibar,Quique,30.0,1,0,1
+2020-21,ESP1,Eibar,Sergio Cubero Ezcurra,20.0,1,1,1
+2020-21,ESP1,Eibar,Unai Arietaleanizbeaskoa,21.0,1,0,1
+2020-21,ESP1,Eibar,Unai Dufur,21.0,1,0,1
+2020-21,ESP1,Eibar,Yoel,31.0,1,0,1
+2020-21,ESP1,Elche,Cifu,29.0,1,0,1
+2020-21,ESP1,Elche,Dani Calvo,26.0,1,0,1
+2020-21,ESP1,Elche,Fidel,30.0,1,0,1
+2020-21,ESP1,Elche,Gonzalo Verdú,31.0,1,0,1
+2020-21,ESP1,Elche,Helibelton Palacios,27.0,1,0,1
+2020-21,ESP1,Elche,Iván Marcone,30.0,1,0,1
+2020-21,ESP1,Elche,Jeison Lucumí,25.0,1,0,1
+2020-21,ESP1,Elche,John Donald,19.0,1,1,1
+2020-21,ESP1,Elche,Jony Álamo,18.0,1,1,1
+2020-21,ESP1,Elche,Josan,30.0,1,0,1
+2020-21,ESP1,Elche,Josema,24.0,1,0,1
+2020-21,ESP1,Elche,Juan Sánchez Miño,30.0,1,0,1
+2020-21,ESP1,Elche,Nino,40.0,1,0,1
+2020-21,ESP1,Elche,Ramón Folch,30.0,1,0,1
+2020-21,ESP1,Elche,Raúl Guti,23.0,1,0,1
+2020-21,ESP1,Elche,Tete Morente,23.0,1,0,1
+2020-21,ESP1,Elche,Édgar Badía,28.0,1,0,1
+2020-21,ENG1,Everton,Nathan Broadhead,22.0,1,0,1
+2020-21,ENG1,Everton,Niels Nkounkou,19.0,1,1,1
+2020-21,ITA1,Fiorentina,Aleksandr Kokorin,29.0,1,0,1
+2020-21,ITA1,Fiorentina,Lucas Martinez Quarta,24.0,1,0,1
+2020-21,GER1,Frankfurt,Ajdin Hrustic,24.0,1,0,1
+2020-21,GER1,Frankfurt,Elias Bördner,18.0,1,1,1
+2020-21,GER1,Frankfurt,Obite N'Dicka,20.0,1,1,1
+2020-21,GER1,Frankfurt,Ragnar Ache,22.0,1,0,1
+2020-21,GER1,Freiburg,Guus Til,22.0,1,0,1
+2020-21,GER1,Freiburg,Jeong Woo-yeong,20.0,1,1,1
+2020-21,GER1,Freiburg,Kwon Chang-hoon,26.0,1,0,1
+2020-21,GER1,Freiburg,Nishan Burkart,20.0,1,1,1
+2020-21,ENG1,Fulham,Antonee Robinson,22.0,1,0,1
+2020-21,ENG1,Fulham,Bobby De Cordova-Reid,27.0,1,0,1
+2020-21,ENG1,Fulham,Fabio Carvalho,17.0,1,1,1
+2020-21,ENG1,Fulham,Frank Anguissa,24.0,1,0,1
+2020-21,ENG1,Fulham,Marek Rodák,23.0,1,0,1
+2020-21,ENG1,Fulham,Tyrese Francois,20.0,1,1,1
+2020-21,ITA1,Genoa,Alberto Paleari,28.0,1,0,1
+2020-21,ITA1,Genoa,Eldor Shomurodov,25.0,1,0,1
+2020-21,ITA1,Genoa,Jerome Onguene,23.0,1,0,1
+2020-21,ITA1,Genoa,Yayah Kallon,19.0,1,1,1
+2020-21,ESP1,Getafe,Abdoulay Diaby,29.0,1,0,1
+2020-21,ESP1,Getafe,Amankwaa Akurugu,18.0,1,1,1
+2020-21,ESP1,Getafe,Ante Palaversa,20.0,1,1,1
+2020-21,ESP1,Getafe,Cucho,21.0,1,0,1
+2020-21,ESP1,Getafe,Iglesias,22.0,1,0,1
+2020-21,ESP1,Getafe,John Joe,16.0,1,1,1
+2020-21,ESP1,Getafe,José Antonio Miranda,22.0,1,0,1
+2020-21,ESP1,Getafe,Mamor Niang,18.0,1,1,1
+2020-21,ESP1,Getafe,Sabit Abdulai,21.0,1,0,1
+2020-21,ESP1,Getafe,Sofian Chakla,26.0,1,0,1
+2020-21,ESP1,Getafe,Xabier Etxeita,32.0,1,0,1
+2020-21,GER1,Gladbach,Rocco Reitz,18.0,1,1,1
+2020-21,ESP1,Granada,Alberto Soro,21.0,1,0,1
+2020-21,ESP1,Granada,Barcia,19.0,1,1,1
+2020-21,ESP1,Granada,Dani Plomer,21.0,1,0,1
+2020-21,ESP1,Granada,Juan Brunet,22.0,1,0,1
+2020-21,ESP1,Granada,Kingsley Fobi,21.0,1,0,1
+2020-21,ESP1,Granada,Luis Milla,25.0,1,0,1
+2020-21,ESP1,Granada,Yan Brice Eteki,22.0,1,0,1
+2020-21,ESP1,Granada,Álvaro Bravo,22.0,1,0,1
+2020-21,ESP1,Granada,Ángel,18.0,1,1,1
+2020-21,GER1,Hertha BSC,Deyovaisio Zeefuik,22.0,1,0,1
+2020-21,GER1,Hertha BSC,Jonas Dirkner,18.0,1,1,1
+2020-21,GER1,Hertha BSC,Jonas Michelbrink,19.0,1,1,1
+2020-21,GER1,Hertha BSC,Luca Netz,17.0,1,1,1
+2020-21,GER1,Hertha BSC,Marten Winkler,17.0,1,1,1
+2020-21,GER1,Hertha BSC,Omar Alderete,23.0,1,0,1
+2020-21,GER1,Hoffenheim,Kasim Nuhu,25.0,1,0,1
+2020-21,GER1,Hoffenheim,Klauss,23.0,1,0,1
+2020-21,GER1,Hoffenheim,Marco John,18.0,1,1,1
+2020-21,GER1,Hoffenheim,Melayro Bogarde,18.0,1,1,1
+2020-21,GER1,Hoffenheim,Moanes Dabbur,28.0,1,0,1
+2020-21,ESP1,Huesca,Dimitris Siovas,31.0,1,0,1
+2020-21,ESP1,Huesca,Eugeni Valderrama,26.0,1,0,1
+2020-21,ESP1,Huesca,Idrissa Doumbia,22.0,1,0,1
+2020-21,ESP1,Huesca,Javier Ontiveros,22.0,1,0,1
+2020-21,ESP1,Huesca,Kelechi Nwakali,22.0,1,0,1
+2020-21,ESP1,Huesca,Pedro López Muñoz,36.0,1,0,1
+2020-21,ITA1,Juventus,Alessandro Di Pardo,21.0,1,0,1
+2020-21,ITA1,Juventus,Felix Correia,19.0,1,1,1
+2020-21,ITA1,Juventus,Nicolo Fagioli,19.0,1,1,1
+2020-21,ITA1,Juventus,Radu Dragusin,18.0,1,1,1
+2020-21,GER1,Köln,Dimitris Limnios,22.0,1,0,1
+2020-21,GER1,Köln,Emmanuel Dennis,22.0,1,0,1
+2020-21,GER1,Köln,Sava Cestic,19.0,1,1,1
+2020-21,GER1,Köln,Tolu Arokodare,19.0,1,1,1
+2020-21,ITA1,Lazio,Marco Bertini,18.0,1,1,1
+2020-21,ITA1,Lazio,Raul Moro,18.0,1,1,1
+2020-21,ITA1,Lazio,Vedat Muriqi,26.0,1,0,1
+2020-21,ENG1,Leeds United,Ezgjan Alioski,28.0,1,0,1
+2020-21,ENG1,Leeds United,Gaetano Berardi,31.0,1,0,1
+2020-21,ENG1,Leeds United,Illan Meslier,20.0,1,1,1
+2020-21,ENG1,Leeds United,Jamie Shackleton,20.0,1,1,1
+2020-21,ENG1,Leeds United,Kalvin Phillips,24.0,1,0,1
+2020-21,ENG1,Leeds United,Leif Davis,20.0,1,1,1
+2020-21,ENG1,Leeds United,Liam Cooper,28.0,1,0,1
+2020-21,ENG1,Leeds United,Luke Ayling,28.0,1,0,1
+2020-21,ENG1,Leeds United,Mateusz Klich,30.0,1,0,1
+2020-21,ENG1,Leeds United,Niall Huggins,19.0,1,1,1
+2020-21,ENG1,Leeds United,Pascal Struijk,20.0,1,1,1
+2020-21,ENG1,Leeds United,Stuart Dallas,29.0,1,0,1
+2020-21,ENG1,Leicester City,Luke Thomas,19.0,1,1,1
+2020-21,ENG1,Leicester City,Sidnei Tavares,18.0,1,1,1
+2020-21,FRA1,Lens,Adrien Louveau,20.0,1,1,1
+2020-21,FRA1,Lens,Aleksandar Radovanovic,27.0,1,0,1
+2020-21,FRA1,Lens,Ansou Sow,20.0,1,1,1
+2020-21,FRA1,Lens,David Pereira Da Costa,19.0,1,1,1
+2020-21,FRA1,Lens,Facundo Medina,21.0,1,0,1
+2020-21,FRA1,Lens,Ismael Boura,20.0,1,1,1
+2020-21,FRA1,Lens,Jonathan Clauss,28.0,1,0,1
+2020-21,FRA1,Lens,Loic Bade,20.0,1,1,1
+2020-21,FRA1,Lens,Manuel Perez,29.0,1,0,1
+2020-21,FRA1,Lens,Simon Banza,24.0,1,0,1
+2020-21,FRA1,Lens,Tony Mauricio,26.0,1,0,1
+2020-21,FRA1,Lens,Wuilker Farinez,22.0,1,0,1
+2020-21,ESP1,Levante,Alejandro Blesa,18.0,1,1,1
+2020-21,ESP1,Levante,Dani Gómez,22.0,1,0,1
+2020-21,ESP1,Levante,Edgar Sevikyan,18.0,1,1,1
+2020-21,ESP1,Levante,Mickael Malsa,24.0,1,0,1
+2020-21,ESP1,Levante,Rober,25.0,1,0,1
+2020-21,ESP1,Levante,Son,26.0,1,0,1
+2020-21,ESP1,Levante,Álex Cantero,20.0,1,1,1
+2020-21,GER1,Leverkusen,Emrehan Gedikli,17.0,1,1,1
+2020-21,GER1,Leverkusen,Florian Wirtz,17.0,1,1,1
+2020-21,GER1,Leverkusen,Jeremie Frimpong,19.0,1,1,1
+2020-21,GER1,Leverkusen,Lennart Grill,21.0,1,0,1
+2020-21,FRA1,Lille,Burak Yilmaz,35.0,1,0,1
+2020-21,FRA1,Lille,Sven Botman,20.0,1,1,1
+2020-21,ENG1,Liverpool,Andy Robertson,26.0,1,0,1
+2020-21,ENG1,Liverpool,Kostas Tsimikas,24.0,1,0,1
+2020-21,ENG1,Liverpool,Neco Williams,19.0,1,1,1
+2020-21,ENG1,Liverpool,Rhys Williams,19.0,1,1,1
+2020-21,ENG1,Liverpool,Thiago Alcántara,29.0,1,0,1
+2020-21,FRA1,Lorient,Adrian Grbic,24.0,1,0,1
+2020-21,FRA1,Lorient,Andrew Gravillon,22.0,1,0,1
+2020-21,FRA1,Lorient,Enzo Le Fee,20.0,1,1,1
+2020-21,FRA1,Lorient,Franklin Wadja,25.0,1,0,1
+2020-21,FRA1,Lorient,Houboulang Mendes,22.0,1,0,1
+2020-21,FRA1,Lorient,Jerome Hergault,34.0,1,0,1
+2020-21,FRA1,Lorient,Julien Laporte,27.0,1,0,1
+2020-21,FRA1,Lorient,Laurent Abergel,27.0,1,0,1
+2020-21,FRA1,Lorient,Loris Mouyokolo,19.0,1,1,1
+2020-21,FRA1,Lorient,Stephane Diarra,22.0,1,0,1
+2020-21,FRA1,Lorient,Trevoh Chalobah,21.0,1,0,1
+2020-21,FRA1,Lorient,Yoann Etienne,23.0,1,0,1
+2020-21,FRA1,Lyon,Djamel Benlamri,31.0,1,0,1
+2020-21,FRA1,Lyon,Fernando Marcal,31.0,1,0,1
+2020-21,FRA1,Lyon,Florent da Silva,17.0,1,1,1
+2020-21,FRA1,Lyon,Habib Keita,18.0,1,1,1
+2020-21,FRA1,Lyon,Malo Gusto,17.0,1,1,1
+2020-21,FRA1,Lyon,Melvin Bard,20.0,1,1,1
+2020-21,FRA1,Lyon,Sinaly Diomande,19.0,1,1,1
+2020-21,FRA1,Lyon,Yaya Soumare,20.0,1,1,1
+2020-21,GER1,Mainz 05,Abass Issah,21.0,1,0,1
+2020-21,GER1,Mainz 05,Jerry St. Juste,23.0,1,0,1
+2020-21,GER1,Mainz 05,Ji Dong-won,29.0,1,0,1
+2020-21,GER1,Mainz 05,Leandro Barreiro Martins,20.0,1,1,1
+2020-21,GER1,Mainz 05,Paul Nebel,17.0,1,1,1
+2020-21,GER1,Mainz 05,Robert Glatzel,26.0,1,0,1
+2020-21,ENG1,Manchester City,Ederson Moraes,26.0,1,0,1
+2020-21,ENG1,Manchester City,Liam Delap,17.0,1,1,1
+2020-21,ENG1,Manchester City,Rúben Dias,23.0,1,0,1
+2020-21,ENG1,Manchester Utd,Amad Diallo,18.0,1,1,1
+2020-21,ENG1,Manchester Utd,Anthony Elanga,18.0,1,1,1
+2020-21,ENG1,Manchester Utd,Donny van de Beek,23.0,1,0,1
+2020-21,ENG1,Manchester Utd,Hannibal Mejbri,17.0,1,1,1
+2020-21,ENG1,Manchester Utd,Shola Shoretire,16.0,1,1,1
+2020-21,ENG1,Manchester Utd,Will Fish,17.0,1,1,1
+2020-21,FRA1,Marseille,Cheick Souare,18.0,1,1,1
+2020-21,FRA1,Marseille,Luis Henrique,19.0,1,1,1
+2020-21,FRA1,Metz,Kiki Kouyate,23.0,1,0,1
+2020-21,FRA1,Metz,Lamine Gueye,22.0,1,0,1
+2020-21,FRA1,Metz,Pape Sarr,18.0,1,1,1
+2020-21,FRA1,Metz,Warren Tchimbembe,22.0,1,0,1
+2020-21,FRA1,Metz,Youssef Maziz,22.0,1,0,1
+2020-21,FRA1,Monaco,Chrislain Matsima,18.0,1,1,1
+2020-21,FRA1,Monaco,Eliot Matazo,18.0,1,1,1
+2020-21,FRA1,Monaco,Enzo Millot,18.0,1,1,1
+2020-21,FRA1,Monaco,Florentino Luis,21.0,1,0,1
+2020-21,FRA1,Monaco,Krepin Diatta,21.0,1,0,1
+2020-21,FRA1,Monaco,Radoslaw Majecki,21.0,1,0,1
+2020-21,FRA1,Monaco,Strahinja Pavlovic,19.0,1,1,1
+2020-21,FRA1,Montpellier,Jonas Omlin,26.0,1,0,1
+2020-21,FRA1,Montpellier,Sacha Delaye,18.0,1,1,1
+2020-21,FRA1,Montpellier,Sepe Elye Wahi,17.0,1,1,1
+2020-21,FRA1,Montpellier,Yun Il-Lok,28.0,1,0,1
+2020-21,FRA1,Nantes,Abdoulaye Sylla,20.0,1,1,1
+2020-21,ITA1,Napoli,Antonio Cioffi,18.0,1,1,1
+2020-21,ITA1,Napoli,Kostas Manolas,29.0,1,0,1
+2020-21,ENG1,Newcastle,Elliot Anderson,17.0,1,1,1
+2020-21,FRA1,Nice,Dan Ndoye,20.0,1,1,1
+2020-21,FRA1,Nice,Evann Guessand,19.0,1,1,1
+2020-21,FRA1,Nice,Flavius Daniliuc,19.0,1,1,1
+2020-21,FRA1,Nice,Jordan Lotomba,22.0,1,0,1
+2020-21,FRA1,Nice,Malik Sellouki,20.0,1,1,1
+2020-21,FRA1,Nice,Robson Bambu,23.0,1,0,1
+2020-21,FRA1,Nice,Salim Ben Seghir,17.0,1,1,1
+2020-21,FRA1,Nimes,Adilson Malanda,19.0,1,1,1
+2020-21,FRA1,Nimes,Adrian Cubas,24.0,1,0,1
+2020-21,FRA1,Nimes,Antoine Valerio,21.0,1,0,1
+2020-21,FRA1,Nimes,Birger Meling,26.0,1,0,1
+2020-21,FRA1,Nimes,Karim Aribi,26.0,1,0,1
+2020-21,FRA1,Nimes,Mahamadou Doucoure,20.0,1,1,1
+2020-21,FRA1,Nimes,Matteo Ahlinvi,21.0,1,0,1
+2020-21,FRA1,Nimes,Naomichi Ueda,26.0,1,0,1
+2020-21,FRA1,Nimes,Nassim Chadli,19.0,1,1,1
+2020-21,FRA1,Nimes,Niclas Eliasson,25.0,1,0,1
+2020-21,ESP1,Osasuna,Ezequiel Ávila,26.0,1,0,1
+2020-21,ESP1,Osasuna,Juan Cruz Armada,28.0,1,0,1
+2020-21,ESP1,Osasuna,Rubén,36.0,1,0,1
+2020-21,FRA1,Paris Saint Germain,Danilo Pereira,29.0,1,0,1
+2020-21,FRA1,Paris Saint Germain,Edouard Michut,17.0,1,1,1
+2020-21,FRA1,Paris Saint Germain,Kays Ruiz-Atil,18.0,1,1,1
+2020-21,FRA1,Paris Saint Germain,Kenny Nagera,18.0,1,1,1
+2020-21,FRA1,Paris Saint Germain,Timothee Pembele,18.0,1,1,1
+2020-21,FRA1,Paris Saint Germain,Xavi Simons,17.0,1,1,1
+2020-21,ITA1,Parma Calcio 1913,Botond Balogh,18.0,1,1,1
+2020-21,ITA1,Parma Calcio 1913,Chaka Traore,16.0,1,1,1
+2020-21,ITA1,Parma Calcio 1913,Daan Dierckx,17.0,1,1,1
+2020-21,ITA1,Parma Calcio 1913,Dennis Man,22.0,1,0,1
+2020-21,ITA1,Parma Calcio 1913,Drissa Camara,18.0,1,1,1
+2020-21,ITA1,Parma Calcio 1913,Juan Brunetta,23.0,1,0,1
+2020-21,ITA1,Parma Calcio 1913,Lautaro Valenti,21.0,1,0,1
+2020-21,ITA1,Parma Calcio 1913,Mark Kosznovszky,18.0,1,1,1
+2020-21,ITA1,Parma Calcio 1913,Maxime Busi,21.0,1,0,1
+2020-21,ITA1,Parma Calcio 1913,Simon Sohm,19.0,1,1,1
+2020-21,ITA1,Parma Calcio 1913,Vasilios Zagaritis,19.0,1,1,1
+2020-21,ITA1,Parma Calcio 1913,Yordan Osorio,26.0,1,0,1
+2020-21,GER1,RB Leipzig,Dennis Borkowski,18.0,1,1,1
+2020-21,GER1,RB Leipzig,Hwang Hee-chan,24.0,1,0,1
+2020-21,GER1,RB Leipzig,Joscha Wosz,18.0,1,1,1
+2020-21,GER1,RB Leipzig,Josep Martinez,22.0,1,0,1
+2020-21,ESP1,Real Betis,Paul Akouokou,22.0,1,0,1
+2020-21,ESP1,Real Madrid,Antonio Blanco,20.0,1,1,1
+2020-21,ESP1,Real Madrid,Dani Carvajal,28.0,1,0,1
+2020-21,ESP1,Real Madrid,Marvin,20.0,1,1,1
+2020-21,ESP1,Real Madrid,Miguel Gutiérrez,19.0,1,1,1
+2020-21,ESP1,Real Madrid,Nacho,30.0,1,0,1
+2020-21,ESP1,Real Madrid,Sergio Arribas,18.0,1,1,1
+2020-21,ESP1,Real Madrid,Víctor Chust,20.0,1,1,1
+2020-21,ESP1,Real Sociedad,Roberto Navarro,18.0,1,1,1
+2020-21,ESP1,Real Sociedad,Urko González,19.0,1,1,1
+2020-21,FRA1,Reims,Alexis Flips,20.0,1,1,1
+2020-21,FRA1,Reims,Dion Lopy,18.0,1,1,1
+2020-21,FRA1,Reims,Fode Doucoure,19.0,1,1,1
+2020-21,FRA1,Reims,Fraser Hornby,21.0,1,0,1
+2020-21,FRA1,Reims,Hugo Ekitike,18.0,1,1,1
+2020-21,FRA1,Reims,Moise Sakava,20.0,1,1,1
+2020-21,FRA1,Reims,Mouhamadou Drammeh,21.0,1,0,1
+2020-21,FRA1,Reims,Thibault De Smet,22.0,1,0,1
+2020-21,FRA1,Reims,Wout Faes,22.0,1,0,1
+2020-21,FRA1,Rennes,Adrien Truffert,19.0,1,1,1
+2020-21,FRA1,Rennes,Andy Diouf,17.0,1,1,1
+2020-21,FRA1,Rennes,Brandon Soppy,18.0,1,1,1
+2020-21,FRA1,Rennes,Chimuanya Ugochukwu,16.0,1,1,1
+2020-21,FRA1,Rennes,Jeremy Doku,18.0,1,1,1
+2020-21,FRA1,Rennes,Matthis Abline,17.0,1,1,1
+2020-21,ITA1,Roma,Bryan Reynolds,19.0,1,1,1
+2020-21,ITA1,Roma,Edoardo Bove,18.0,1,1,1
+2020-21,ITA1,Roma,Nicola Zalewski,18.0,1,1,1
+2020-21,ITA1,Roma,Riccardo Calafiori,18.0,1,1,1
+2020-21,FRA1,Saint-Etienne,Abdoulaye Sidibe,18.0,1,1,1
+2020-21,FRA1,Saint-Etienne,Aimen Moueffek,19.0,1,1,1
+2020-21,FRA1,Saint-Etienne,Baptiste Gabard,20.0,1,1,1
+2020-21,FRA1,Saint-Etienne,Bilal Benkhedim,19.0,1,1,1
+2020-21,FRA1,Saint-Etienne,Etienne Green,20.0,1,1,1
+2020-21,FRA1,Saint-Etienne,Lucas Gourna Douath,17.0,1,1,1
+2020-21,FRA1,Saint-Etienne,Marvin Tshibuabua,18.0,1,1,1
+2020-21,FRA1,Saint-Etienne,Mathys Saban,18.0,1,1,1
+2020-21,FRA1,Saint-Etienne,Nelson Sissoko,23.0,1,0,1
+2020-21,FRA1,Saint-Etienne,Pape Abou Cisse,25.0,1,0,1
+2020-21,FRA1,Saint-Etienne,Rayan Souici,22.0,1,0,1
+2020-21,FRA1,Saint-Etienne,Saidou Sow,18.0,1,1,1
+2020-21,FRA1,Saint-Etienne,Tyrone Tormin,19.0,1,1,1
+2020-21,FRA1,Saint-Etienne,Yanis Lhery,17.0,1,1,1
+2020-21,ITA1,Sampdoria,Mikkel Damsgaard,20.0,1,1,1
+2020-21,ITA1,Sassuolo,Brian Oddei,18.0,1,1,1
+2020-21,ITA1,Sassuolo,Isaac Karamoko,18.0,1,1,1
+2020-21,GER1,Schalke 04,Blendi Idrizi,22.0,1,0,1
+2020-21,GER1,Schalke 04,Can Bozdogan,19.0,1,1,1
+2020-21,GER1,Schalke 04,Florian Flick,20.0,1,1,1
+2020-21,GER1,Schalke 04,Henning Matriciani,20.0,1,1,1
+2020-21,GER1,Schalke 04,Jan Luca Schuler,21.0,1,0,1
+2020-21,GER1,Schalke 04,Jimmy Kaparos,18.0,1,1,1
+2020-21,GER1,Schalke 04,Kerim Calhanoglu,17.0,1,1,1
+2020-21,GER1,Schalke 04,Kilian Ludewig,20.0,1,1,1
+2020-21,GER1,Schalke 04,Malick Thiaw,18.0,1,1,1
+2020-21,GER1,Schalke 04,Matthew Hoppe,19.0,1,1,1
+2020-21,GER1,Schalke 04,Mehmet Aydin,18.0,1,1,1
+2020-21,GER1,Schalke 04,Mikail Maden,18.0,1,1,1
+2020-21,GER1,Schalke 04,Vasileios Pavlidis,17.0,1,1,1
+2020-21,ESP1,Sevilla,Marcos Acuña,28.0,1,0,1
+2020-21,ESP1,Sevilla,Oussama Idrissi,24.0,1,0,1
+2020-21,ESP1,Sevilla,Yassine Bounou,29.0,1,0,1
+2020-21,ESP1,Sevilla,Óscar Rodríguez Arnaiz,22.0,1,0,1
+2020-21,ENG1,Sheffield United,Antwoine Hackford,16.0,1,1,1
+2020-21,ENG1,Sheffield United,Daniel Jebbison,16.0,1,1,1
+2020-21,ENG1,Sheffield United,Femi Seriki,18.0,1,1,1
+2020-21,ENG1,Sheffield United,Iliman Ndiaye,20.0,1,1,1
+2020-21,ENG1,Sheffield United,Jayden Bogle,20.0,1,1,1
+2020-21,ENG1,Sheffield United,Max Lowe,23.0,1,0,1
+2020-21,ENG1,Southampton,Alexandre Jankewitz,18.0,1,1,1
+2020-21,ENG1,Southampton,Allan Tchaptchet,18.0,1,1,1
+2020-21,ENG1,Southampton,Caleb Watts,18.0,1,1,1
+2020-21,ENG1,Southampton,Dan Nlundulu,21.0,1,0,1
+2020-21,ENG1,Southampton,Jake Vokins,20.0,1,1,1
+2020-21,ENG1,Southampton,Kayne Ramsey,19.0,1,1,1
+2020-21,ENG1,Southampton,Nathan Tella,21.0,1,0,1
+2020-21,ENG1,Southampton,William Smallbone,20.0,1,1,1
+2020-21,ITA1,Spezia,Ardian Ismajli,24.0,1,0,1
+2020-21,ITA1,Spezia,Claudio Terzi,36.0,1,0,1
+2020-21,ITA1,Spezia,Emmanuel Gyasi,26.0,1,0,1
+2020-21,ITA1,Spezia,Gennaro Acampora,26.0,1,0,1
+2020-21,ITA1,Spezia,Giulio Maggiore,22.0,1,0,1
+2020-21,ITA1,Spezia,Giuseppe Mastinu,29.0,1,0,1
+2020-21,ITA1,Spezia,Jeroen Zoet,29.0,1,0,1
+2020-21,ITA1,Spezia,Leo Sena,25.0,1,0,1
+2020-21,ITA1,Spezia,Luca Vignali,24.0,1,0,1
+2020-21,ITA1,Spezia,M'Bala Nzola,24.0,1,0,1
+2020-21,ITA1,Spezia,Matteo Ricci,26.0,1,0,1
+2020-21,ITA1,Spezia,Nahuel Estevez,25.0,1,0,1
+2020-21,ITA1,Spezia,Paolo Bartolomei,31.0,1,0,1
+2020-21,ITA1,Spezia,Salvador Ferrer,22.0,1,0,1
+2020-21,ITA1,Spezia,Simone Bastoni,24.0,1,0,1
+2020-21,FRA1,Strasbourg,Dion Moise Sahi,19.0,1,1,1
+2020-21,FRA1,Strasbourg,Mahame Siby,24.0,1,0,1
+2020-21,FRA1,Strasbourg,Mehdi Chahiri,24.0,1,0,1
+2020-21,GER1,Stuttgart,Alkhaly Momo Cissé,17.0,1,1,1
+2020-21,GER1,Stuttgart,Atakan Karazor,23.0,1,0,1
+2020-21,GER1,Stuttgart,Hamadi Al Ghaddioui,29.0,1,0,1
+2020-21,GER1,Stuttgart,Lilian Egloff,17.0,1,1,1
+2020-21,GER1,Stuttgart,Luca Mack,20.0,1,1,1
+2020-21,GER1,Stuttgart,Mateo Klimowicz,20.0,1,1,1
+2020-21,GER1,Stuttgart,Mohamed Sankoh,16.0,1,1,1
+2020-21,GER1,Stuttgart,Naouirou Ahamada,18.0,1,1,1
+2020-21,GER1,Stuttgart,Philipp Förster,25.0,1,0,1
+2020-21,GER1,Stuttgart,Saša Kalajdžić,23.0,1,0,1
+2020-21,GER1,Stuttgart,Silas Katompa,21.0,1,0,1
+2020-21,GER1,Stuttgart,Tanguy Coulibaly,19.0,1,1,1
+2020-21,GER1,Stuttgart,Wataru Endo,27.0,1,0,1
+2020-21,ITA1,Torino,Amer Gojak,23.0,1,0,1
+2020-21,ITA1,Torino,Mergim Vojvoda,25.0,1,0,1
+2020-21,ENG1,Tottenham,Dane Scarlett,16.0,1,1,1
+2020-21,ENG1,Tottenham,Joe Rodon,22.0,1,0,1
+2020-21,ENG1,Tottenham,Pierre Højbjerg,24.0,1,0,1
+2020-21,ENG1,Tottenham,Son Heung-min,28.0,1,0,1
+2020-21,ITA1,Udinese,Jayden Braaf,18.0,1,1,1
+2020-21,ITA1,Udinese,Manuel Gasparini,18.0,1,1,1
+2020-21,ITA1,Udinese,Martin Palumbo,18.0,1,1,1
+2020-21,ITA1,Udinese,Nahuel Molina,22.0,1,0,1
+2020-21,ITA1,Udinese,Thomas Ouwejan,24.0,1,0,1
+2020-21,ITA1,Udinese,Tolgay Arslan,30.0,1,0,1
+2020-21,GER1,Union Berlin,Keita Endo,22.0,1,0,1
+2020-21,GER1,Union Berlin,Petar Musa,22.0,1,0,1
+2020-21,GER1,Union Berlin,Sebastian Griesbeck,29.0,1,0,1
+2020-21,GER1,Union Berlin,Tim Maciejewski,19.0,1,1,1
+2020-21,ESP1,Valencia,Alejandro Blanco,21.0,1,0,1
+2020-21,ESP1,Valencia,Francisco Reis Ferreira,23.0,1,0,1
+2020-21,ESP1,Valencia,José Luis Gayà,25.0,1,0,1
+2020-21,ESP1,Valencia,Lee Kang-in,19.0,1,1,1
+2020-21,ESP1,Valencia,Yunus Musah,17.0,1,1,1
+2020-21,ESP1,Valladolid,Jota,21.0,1,0,1
+2020-21,ESP1,Valladolid,Kuki,22.0,1,0,1
+2020-21,ESP1,Valladolid,Luis Pérez,25.0,1,0,1
+2020-21,ESP1,Valladolid,Marcos André,23.0,1,0,1
+2020-21,ESP1,Valladolid,Miguel Ángel Rubio,22.0,1,0,1
+2020-21,ESP1,Valladolid,Míchel,32.0,1,0,1
+2020-21,ESP1,Valladolid,Nacho,31.0,1,0,1
+2020-21,ESP1,Valladolid,Oriol Rey,22.0,1,0,1
+2020-21,ESP1,Valladolid,Sergio Benito,21.0,1,0,1
+2020-21,ESP1,Valladolid,Shon Weissman,24.0,1,0,1
+2020-21,ITA1,Verona,Ivan Ilic,19.0,1,1,1
+2020-21,ITA1,Verona,Ivor Pandur,20.0,1,1,1
+2020-21,ITA1,Verona,Kevin Ruegg,22.0,1,0,1
+2020-21,ITA1,Verona,Yildirim Mert Cetin,23.0,1,0,1
+2020-21,ESP1,Villarreal,Daniel Parejo,31.0,1,0,1
+2020-21,ESP1,Villarreal,Fernando Niño,19.0,1,1,1
+2020-21,ESP1,Villarreal,Sofian Chakla,26.0,1,0,1
+2020-21,ESP1,Villarreal,Yéremy Pino,17.0,1,1,1
+2020-21,ESP1,Villarreal,Álex Millán,20.0,1,1,1
+2020-21,GER1,Werder Bremen,Eren Dinkçi,18.0,1,1,1
+2020-21,GER1,Werder Bremen,Felix Agu,20.0,1,1,1
+2020-21,GER1,Werder Bremen,Romano Schmid,20.0,1,1,1
+2020-21,ENG1,West Brom,Ahmed Hegazi,29.0,1,0,1
+2020-21,ENG1,West Brom,Conor Gallagher,20.0,1,1,1
+2020-21,ENG1,West Brom,Conor Townsend,27.0,1,0,1
+2020-21,ENG1,West Brom,Dara O'Shea,21.0,1,0,1
+2020-21,ENG1,West Brom,Darnell Furlong,24.0,1,0,1
+2020-21,ENG1,West Brom,Filip Krovinović,24.0,1,0,1
+2020-21,ENG1,West Brom,Kyle Edwards,22.0,1,0,1
+2020-21,ENG1,West Brom,Mbaye Diagne,28.0,1,0,1
+2020-21,ENG1,West Brom,Romaine Sawyers,28.0,1,0,1
+2020-21,ENG1,West Brom,Semi Ajayi,26.0,1,0,1
+2020-21,ENG1,West Ham,Ben Johnson,20.0,1,1,1
+2020-21,ENG1,West Ham,Vladimír Coufal,27.0,1,0,1
+2020-21,GER1,Wolfsburg,Bartosz Białek,18.0,1,1,1
+2020-21,GER1,Wolfsburg,John Brooks,27.0,1,0,1
+2020-21,GER1,Wolfsburg,Maxence Lacroix,20.0,1,1,1
+2020-21,GER1,Wolfsburg,Victor Sá,26.0,1,0,1
+2020-21,ENG1,Wolves,Fernando Marçal,31.0,1,0,1
+2020-21,ENG1,Wolves,Fábio Silva,18.0,1,1,1
+2020-21,ENG1,Wolves,Jonny Castro,26.0,1,0,1
+2020-21,ENG1,Wolves,Owen Otasowie,19.0,1,1,1
+2020-21,ENG1,Wolves,Theo Corbeanu,18.0,1,1,1
+2020-21,ENG1,Wolves,Vitinha,20.0,1,1,1
+2021-22,ITA1,AC Milan,Luca Stanga,19.0,0,1,1
+2021-22,ESP1,Alavés,Jesús Owono,20.0,0,1,1
+2021-22,ESP1,Alavés,Mamadou Loum,24.0,0,0,1
+2021-22,ESP1,Alavés,Marc Tenas,20.0,0,1,1
+2021-22,ESP1,Alavés,Martin Agirregabiria,25.0,0,0,0
+2021-22,ESP1,Alavés,Miguel,21.0,0,0,1
+2021-22,ESP1,Alavés,Mircea Ţîrlea,21.0,0,0,1
+2021-22,ESP1,Alavés,Nahuel Tenaglia,25.0,0,0,1
+2021-22,ESP1,Alavés,Tomás Mendes,16.0,0,1,1
+2021-22,ESP1,Alavés,Unai Ropero,19.0,0,1,1
+2021-22,FRA1,Angers,Billal Brahimi,21.0,0,0,1
+2021-22,FRA1,Angers,Guede Nadje,18.0,0,1,1
+2021-22,FRA1,Angers,Jason Mbock,22.0,0,0,1
+2021-22,FRA1,Angers,Marin Jakolis,25.0,0,0,1
+2021-22,GER1,Arminia,Andrés Andrade Cedeño,22.0,0,0,1
+2021-22,GER1,Arminia,Bryan Lasme,22.0,0,0,1
+2021-22,GER1,Arminia,Burak İnce,17.0,0,1,1
+2021-22,GER1,Arminia,Florian Krüger,22.0,0,0,1
+2021-22,GER1,Arminia,George Bello,19.0,0,1,1
+2021-22,GER1,Arminia,Guilherme Ramos,23.0,0,0,1
+2021-22,GER1,Arminia,Janni Serra,23.0,0,0,1
+2021-22,GER1,Arminia,Lennart-Marten Czyborra,22.0,0,0,1
+2021-22,GER1,Arminia,Patrick Wimmer,20.0,0,1,1
+2021-22,ENG1,Arsenal,Albert Sambi Lokonga,21.0,0,0,1
+2021-22,ENG1,Arsenal,Nuno Tavares,21.0,0,0,1
+2021-22,ENG1,Aston Villa,Cameron Archer,20.0,0,1,1
+2021-22,ENG1,Aston Villa,Emi Buendía,24.0,0,0,1
+2021-22,ENG1,Aston Villa,Tim Iroegbunam,18.0,0,1,1
+2021-22,ITA1,Atalanta,Giorgio Cittadini,19.0,0,1,1
+2021-22,ITA1,Atalanta,Giorgio Scalvini,18.0,0,1,1
+2021-22,ITA1,Atalanta,Moustapha Cisse,18.0,0,1,1
+2021-22,ITA1,Atalanta,Teun Koopmeiners,23.0,0,0,1
+2021-22,ITA1,Atalanta,Tommaso De Nipoti,18.0,0,1,1
+2021-22,ESP1,Athletic Club,Alex Petxa,24.0,0,0,1
+2021-22,ESP1,Athletic Club,Daniel Vivian,22.0,0,0,1
+2021-22,ESP1,Athletic Club,Julen Agirrezabala,20.0,0,1,1
+2021-22,ESP1,Athletic Club,Nicolás Serrano,18.0,0,1,1
+2021-22,ESP1,Atlético Madrid,Carlos Martín,19.0,0,1,1
+2021-22,ESP1,Atlético Madrid,Giuliano Simeone,18.0,0,1,1
+2021-22,ESP1,Atlético Madrid,Javier Serrano,18.0,0,1,1
+2021-22,GER1,Augsburg,Frederik Winther,20.0,0,1,1
+2021-22,GER1,Augsburg,Lasse Günther,18.0,0,1,1
+2021-22,GER1,Augsburg,Ricardo Pepi,18.0,0,1,1
+2021-22,ESP1,Barcelona,Abde Ezzalzouli,19.0,0,1,1
+2021-22,ESP1,Barcelona,Alejandro Balde,17.0,0,1,1
+2021-22,ESP1,Barcelona,Alvaro Sanz,20.0,0,1,1
+2021-22,ESP1,Barcelona,Estanis,17.0,0,1,1
+2021-22,ESP1,Barcelona,Gavi,16.0,0,1,1
+2021-22,ESP1,Barcelona,Ilias Akhomach,17.0,0,1,1
+2021-22,ESP1,Barcelona,Memphis,27.0,0,0,1
+2021-22,ESP1,Barcelona,Mika Mármol,20.0,0,1,1
+2021-22,ESP1,Barcelona,Yusuf Demir,18.0,0,1,1
+2021-22,GER1,Bayern Munich,Gabriel Vidovic,17.0,0,1,1
+2021-22,GER1,Bayern Munich,Lucas Copado,17.0,0,1,1
+2021-22,GER1,Bayern Munich,Omar Richards,23.0,0,0,1
+2021-22,GER1,Bayern Munich,Paul Wanner,15.0,0,1,1
+2021-22,GER1,Bochum,Anthony Losilla,35.0,1,0,1
+2021-22,GER1,Bochum,Armel Bella Kotchap,19.0,1,1,1
+2021-22,GER1,Bochum,Erhan Mašović,22.0,1,0,1
+2021-22,GER1,Bochum,Herbert Bockhorn,26.0,1,0,1
+2021-22,GER1,Bochum,Kostas Stafylidis,27.0,1,0,1
+2021-22,GER1,Bochum,Luis Hartwig,18.0,1,1,1
+2021-22,GER1,Bochum,Manuel Riemann,32.0,1,0,1
+2021-22,GER1,Bochum,Maxim Leitsch,23.0,1,0,1
+2021-22,GER1,Bochum,Patrick Osterhage,21.0,1,0,1
+2021-22,GER1,Bochum,Robert Tesche,34.0,1,0,1
+2021-22,GER1,Bochum,Saulo Decarli,29.0,1,0,1
+2021-22,GER1,Bochum,Silvère Ganvoula,25.0,1,0,1
+2021-22,GER1,Bochum,Soma Novothny,27.0,1,0,1
+2021-22,GER1,Bochum,Tarsis Bonga,24.0,1,0,1
+2021-22,GER1,Bochum,Vassilis Lambropoulos,31.0,1,0,1
+2021-22,ITA1,Bologna,Antonio Raimondo,17.0,0,1,0
+2021-22,ITA1,Bologna,Arthur Theate,21.0,0,0,1
+2021-22,ITA1,Bologna,Denso Kasius,19.0,0,1,1
+2021-22,ITA1,Bologna,Ebenezer Annan,19.0,0,1,1
+2021-22,ITA1,Bologna,Luis Binks,20.0,0,1,1
+2021-22,ITA1,Bologna,Michel Aebischer,24.0,0,0,1
+2021-22,ITA1,Bologna,Nicola Bagnolini,17.0,0,1,1
+2021-22,ITA1,Bologna,Niklas Pyyhtia,18.0,0,1,1
+2021-22,ITA1,Bologna,Riccardo Stivanello,17.0,0,1,1
+2021-22,ITA1,Bologna,Sydney van Hooijdonk,21.0,0,0,1
+2021-22,ITA1,Bologna,Wisdom Amey,16.0,0,1,0
+2021-22,FRA1,Bordeaux,Alberth Elis,25.0,0,0,1
+2021-22,FRA1,Bordeaux,Anel Ahmedhodzic,22.0,0,0,1
+2021-22,FRA1,Bordeaux,Danylo Ignatenko,24.0,0,0,1
+2021-22,FRA1,Bordeaux,Fransergio,31.0,0,0,1
+2021-22,FRA1,Bordeaux,Gideon Mensah,23.0,0,0,1
+2021-22,FRA1,Bordeaux,Hwang Ui-Jo,29.0,0,0,0
+2021-22,FRA1,Bordeaux,Johaneko Louis Jean,17.0,0,1,1
+2021-22,FRA1,Bordeaux,Junior Mwanga,18.0,0,1,1
+2021-22,FRA1,Bordeaux,Ricardo Mangas,23.0,0,0,1
+2021-22,FRA1,Bordeaux,Stian Rode Gregersen,26.0,0,0,1
+2021-22,FRA1,Bordeaux,Thibault Klidje,20.0,0,1,1
+2021-22,ENG1,Brentford,Charlie Goode,25.0,1,0,1
+2021-22,ENG1,Brentford,David Raya,25.0,1,0,1
+2021-22,ENG1,Brentford,Dominic Thompson,21.0,1,0,1
+2021-22,ENG1,Brentford,Ethan Pinnock,28.0,1,0,1
+2021-22,ENG1,Brentford,Finley Stevens,18.0,1,1,1
+2021-22,ENG1,Brentford,Frank Onyeka,23.0,1,0,1
+2021-22,ENG1,Brentford,Josh Dasilva,22.0,1,0,1
+2021-22,ENG1,Brentford,Kristoffer Ajer,23.0,1,0,1
+2021-22,ENG1,Brentford,Mads Bech Sørensen,22.0,1,0,1
+2021-22,ENG1,Brentford,Mads Roerslev,22.0,1,0,1
+2021-22,ENG1,Brentford,Marcus Forss,22.0,1,0,1
+2021-22,ENG1,Brentford,Mathias Jørgensen,31.0,1,0,1
+2021-22,ENG1,Brentford,Nathan Young-Coombes,18.0,1,1,1
+2021-22,ENG1,Brentford,Rico Henry,24.0,1,0,1
+2021-22,ENG1,Brentford,Shandon Baptiste,23.0,1,0,1
+2021-22,ENG1,Brentford,Tariqe Fosu,25.0,1,0,1
+2021-22,ENG1,Brentford,Vitaly Janelt,23.0,1,0,1
+2021-22,FRA1,Brest,Jere Uronen,27.0,0,0,1
+2021-22,FRA1,Brest,Marco Bizot,30.0,0,0,1
+2021-22,FRA1,Brest,Rafiki Said,21.0,0,0,1
+2021-22,FRA1,Brest,Youssouph Badji,20.0,0,1,1
+2021-22,ENG1,Brighton,Enock Mwepu,23.0,0,0,1
+2021-22,ENG1,Brighton,Evan Ferguson,16.0,0,1,1
+2021-22,ENG1,Brighton,Jeremy Sarmiento,19.0,0,1,1
+2021-22,ENG1,Brighton,Taylor Richards,20.0,0,1,1
+2021-22,ENG1,Burnley,Nathan Collins,20.0,0,1,1
+2021-22,ITA1,Cagliari,Adam Obert,19.0,0,1,1
+2021-22,ITA1,Cagliari,Christos Kourfalidis,19.0,0,1,1
+2021-22,ESP1,Celta Vigo,Franco Cervi,27.0,0,0,1
+2021-22,ESP1,Celta Vigo,Hugo Sotelo,17.0,0,1,0
+2021-22,ESP1,Celta Vigo,Hugo Álvarez,18.0,0,1,1
+2021-22,ESP1,Celta Vigo,Matías Dituro,34.0,0,0,1
+2021-22,ESP1,Celta Vigo,Orbelín Pineda,25.0,0,0,1
+2021-22,ESP1,Celta Vigo,Thiago Galhardo,32.0,0,0,1
+2021-22,FRA1,Clermont Foot,Akim Zedadka,26.0,1,0,1
+2021-22,FRA1,Clermont Foot,Alidu Seidu,21.0,1,0,1
+2021-22,FRA1,Clermont Foot,Arial Mendy,27.0,1,0,1
+2021-22,FRA1,Clermont Foot,Arthur Desmas,27.0,1,0,1
+2021-22,FRA1,Clermont Foot,Cedric Hountondji,27.0,1,0,1
+2021-22,FRA1,Clermont Foot,Elbasan Rashani,28.0,1,0,1
+2021-22,FRA1,Clermont Foot,Florent Ogier,32.0,1,0,1
+2021-22,FRA1,Clermont Foot,Jason Berthomier,31.0,1,0,1
+2021-22,FRA1,Clermont Foot,Jerome Phojo,28.0,1,0,1
+2021-22,FRA1,Clermont Foot,Jim Allevinah,26.0,1,0,1
+2021-22,FRA1,Clermont Foot,Jodel Dossou,29.0,1,0,1
+2021-22,FRA1,Clermont Foot,Jonathan Iglesias,33.0,1,0,1
+2021-22,FRA1,Clermont Foot,Josue Albert,29.0,1,0,1
+2021-22,FRA1,Clermont Foot,Mohamed Bayo,23.0,1,0,1
+2021-22,FRA1,Clermont Foot,Ouparine Djoco,23.0,1,0,1
+2021-22,FRA1,Clermont Foot,Salis Abdul Samed,21.0,1,0,1
+2021-22,FRA1,Clermont Foot,Vital N'Simba,28.0,1,0,1
+2021-22,FRA1,Clermont Foot,Yadaly Diaby,21.0,1,0,1
+2021-22,FRA1,Clermont Foot,Yohann Magnin,24.0,1,0,1
+2021-22,ENG1,Crystal Palace,Jesurun Rak Sakyi,18.0,0,1,1
+2021-22,ENG1,Crystal Palace,Michael Olise,19.0,0,1,1
+2021-22,ESP1,Cádiz,Chapela,22.0,0,0,1
+2021-22,ESP1,Cádiz,Martín,22.0,0,0,1
+2021-22,ESP1,Cádiz,Milutin Osmajić,22.0,0,0,1
+2021-22,ESP1,Cádiz,Pedro Benito,21.0,0,0,1
+2021-22,ESP1,Cádiz,Raúl Parra,21.0,0,0,1
+2021-22,ESP1,Cádiz,Santiago Arzamendia,23.0,0,0,1
+2021-22,ESP1,Cádiz,Tomás Alarcón,22.0,0,0,1
+2021-22,ESP1,Cádiz,Varazdat Haroyan,28.0,0,0,1
+2021-22,ESP1,Cádiz,Álvaro Bastida,17.0,0,1,0
+2021-22,GER1,Dortmund,Antonios Papadopoulos,21.0,0,0,1
+2021-22,GER1,Dortmund,Donyell Malen,22.0,0,0,1
+2021-22,GER1,Dortmund,Immanuel Pherai,20.0,0,1,1
+2021-22,GER1,Dortmund,Jamie Gittens,16.0,0,1,1
+2021-22,GER1,Dortmund,Lennard Maloney,21.0,0,0,1
+2021-22,GER1,Dortmund,Lion Semić,17.0,0,1,1
+2021-22,GER1,Dortmund,Tom Rothe,16.0,0,1,1
+2021-22,ESP1,Elche,John Donald,20.0,0,1,0
+2021-22,ITA1,Empoli,Fabiano Parisi,21.0,1,0,1
+2021-22,ITA1,Empoli,Kristjan Asllani,19.0,1,1,1
+2021-22,ITA1,Empoli,Liberato Cacace,21.0,1,0,1
+2021-22,ITA1,Empoli,Mattia Viti,19.0,1,1,1
+2021-22,ITA1,Empoli,Nedim Bajrami,22.0,1,0,1
+2021-22,ITA1,Empoli,Petar Stojanovic,26.0,1,0,1
+2021-22,ITA1,Empoli,Samuele Ricci,20.0,1,1,1
+2021-22,ITA1,Empoli,Tommaso Baldanzi,18.0,1,1,1
+2021-22,ESP1,Espanyol,Adri Embarba,29.0,1,0,1
+2021-22,ESP1,Espanyol,Daniel Villahermosa,20.0,1,1,1
+2021-22,ESP1,Espanyol,Gori,19.0,1,1,1
+2021-22,ESP1,Espanyol,Joan García,20.0,1,1,1
+2021-22,ESP1,Espanyol,Jofre,20.0,1,1,1
+2021-22,ESP1,Espanyol,Lluís Recasens,19.0,1,1,1
+2021-22,ESP1,Espanyol,Luca Koleosho,16.0,1,1,1
+2021-22,ESP1,Espanyol,Miguel Juan Llambrich,25.0,1,0,1
+2021-22,ESP1,Espanyol,Nico Ribaudo,20.0,1,1,1
+2021-22,ESP1,Espanyol,Rubén,20.0,1,1,0
+2021-22,ESP1,Espanyol,Tonny Vilhena,26.0,1,0,1
+2021-22,ESP1,Espanyol,Wu Lei,29.0,1,0,1
+2021-22,ENG1,Everton,Ellis Simms,20.0,0,1,1
+2021-22,ENG1,Everton,Isaac Price,17.0,0,1,1
+2021-22,ENG1,Everton,Lewis Dobbin,18.0,0,1,1
+2021-22,ENG1,Everton,Vitaliy Mykolenko,22.0,0,0,1
+2021-22,ITA1,Fiorentina,Arthur Cabral,23.0,0,0,1
+2021-22,ITA1,Fiorentina,Filippo Distefano,18.0,0,1,1
+2021-22,ITA1,Fiorentina,Youssef Maleh,23.0,0,0,1
+2021-22,GER1,Frankfurt,Diant Ramaj,19.0,0,1,1
+2021-22,GER1,Frankfurt,Jesper Lindstrøm,21.0,0,0,1
+2021-22,GER1,Frankfurt,Kristijan Jakić,24.0,0,0,1
+2021-22,GER1,Freiburg,Hugo Siquet,19.0,0,1,1
+2021-22,GER1,Freiburg,Noah Weißhaupt,19.0,0,1,1
+2021-22,GER1,Freiburg,Vincent Vermeij,26.0,0,0,1
+2021-22,ITA1,Genoa,Albert Gudmundsson,24.0,0,0,1
+2021-22,ITA1,Genoa,Aleksander Buksa,18.0,0,1,1
+2021-22,ITA1,Genoa,Andrea Cambiaso,21.0,0,0,1
+2021-22,ITA1,Genoa,Caleb Ekuban,27.0,0,0,1
+2021-22,ITA1,Genoa,Flavio Junior Bianchi,21.0,0,0,1
+2021-22,ITA1,Genoa,Johan Vasquez,23.0,0,0,1
+2021-22,ITA1,Genoa,Kelvin Yeboah,21.0,0,0,1
+2021-22,ITA1,Genoa,Laurens Serpe,20.0,0,1,1
+2021-22,ITA1,Genoa,Morten Frendrup,20.0,0,1,1
+2021-22,ITA1,Genoa,Pablo Galdames,25.0,0,0,1
+2021-22,ITA1,Genoa,Silvan Hefti,24.0,0,0,1
+2021-22,ESP1,Getafe,Diego Conde,22.0,0,0,1
+2021-22,ESP1,Getafe,Florentino Luís,21.0,0,0,0
+2021-22,ESP1,Getafe,José Juan Macías,21.0,0,0,1
+2021-22,GER1,Gladbach,Connor Noß,20.0,0,1,1
+2021-22,ESP1,Granada,Adrián Butzke,22.0,0,0,1
+2021-22,ESP1,Granada,Luis Abram,25.0,0,0,1
+2021-22,ESP1,Granada,Luís Maximiano,22.0,0,0,1
+2021-22,ESP1,Granada,Matias Arezo,18.0,0,1,1
+2021-22,ESP1,Granada,Myrto Uzuni,26.0,0,0,1
+2021-22,ESP1,Granada,Njegoš Petrović,22.0,0,0,1
+2021-22,GER1,Hertha BSC,Anton Kade,17.0,0,1,1
+2021-22,GER1,Hertha BSC,Cimo Röcker,27.0,0,0,1
+2021-22,GER1,Hertha BSC,Fredrik André Bjørkan,22.0,0,0,1
+2021-22,GER1,Hertha BSC,Julian Eitschberger,17.0,0,1,1
+2021-22,GER1,Hertha BSC,Jurgen Ekkelenkamp,21.0,0,0,1
+2021-22,GER1,Hertha BSC,Lee Dongjun,24.0,0,0,1
+2021-22,GER1,Hertha BSC,Linus Gechter,17.0,0,1,1
+2021-22,GER1,Hertha BSC,Luca Wollschläger,18.0,0,1,1
+2021-22,GER1,Hoffenheim,David Raum,23.0,0,0,1
+2021-22,GER1,Hoffenheim,Fisnik Asllani,18.0,0,1,1
+2021-22,GER1,Hoffenheim,Justin Che,17.0,0,1,1
+2021-22,GER1,Hoffenheim,Kasim Nuhu,26.0,0,0,0
+2021-22,GER1,Hoffenheim,Nick Proschwitz,34.0,0,0,1
+2021-22,GER1,Hoffenheim,Tom Bischof,16.0,0,1,1
+2021-22,GER1,Hoffenheim,Umut Tohumcu,16.0,0,1,1
+2021-22,ITA1,Inter,Denzel Dumfries,25.0,0,0,1
+2021-22,ITA1,Inter,Mattia Zanotti,18.0,0,1,1
+2021-22,ITA1,Juventus,Fabio Miretti,18.0,0,1,1
+2021-22,ITA1,Juventus,Kaio Jorge,19.0,0,1,1
+2021-22,GER1,Köln,Dejan Ljubičić,23.0,0,0,1
+2021-22,GER1,Köln,Marvin Schwäbe,26.0,0,0,1
+2021-22,GER1,Köln,Mathias Olesen,20.0,0,1,1
+2021-22,GER1,Köln,Tomáš Ostrák,21.0,0,0,1
+2021-22,ITA1,Lazio,Dimitrije Kamenovic,21.0,0,0,1
+2021-22,ITA1,Lazio,Jovane Cabral,23.0,0,0,1
+2021-22,ITA1,Lazio,Luka Romero,17.0,0,1,1
+2021-22,ITA1,Lazio,Raul Moro,19.0,0,1,0
+2021-22,ENG1,Leeds United,Cody Drameh,19.0,0,1,1
+2021-22,ENG1,Leeds United,Kristoffer Klaesson,20.0,0,1,1
+2021-22,ENG1,Leeds United,Leo Fuhr Hjelde,17.0,0,1,1
+2021-22,ENG1,Leeds United,Lewis Bate,18.0,0,1,1
+2021-22,ENG1,Leeds United,Liam McCarron,20.0,0,1,1
+2021-22,ENG1,Leeds United,Stuart McKinstry,18.0,0,1,1
+2021-22,ENG1,Leicester City,Kasey McAteer,19.0,0,1,1
+2021-22,ENG1,Leicester City,Lewis Brunt,20.0,0,1,1
+2021-22,ENG1,Leicester City,Patson Daka,22.0,0,0,1
+2021-22,FRA1,Lens,Brayann Pereira,18.0,0,1,1
+2021-22,FRA1,Lens,Christopher Wooh,20.0,0,1,1
+2021-22,FRA1,Lens,David Pereira Da Costa,20.0,0,1,0
+2021-22,FRA1,Lens,Deiver Machado,28.0,0,0,1
+2021-22,FRA1,Lens,Ibrahima Balde,18.0,0,1,1
+2021-22,FRA1,Lens,Jonathan Varane,20.0,0,1,1
+2021-22,FRA1,Lens,Patrick Berg,24.0,0,0,1
+2021-22,FRA1,Lens,Przemyslaw Frankowski,26.0,0,0,1
+2021-22,ESP1,Levante,Alejandro Primo,17.0,0,1,1
+2021-22,ESP1,Levante,Enric Franquesa,24.0,0,0,1
+2021-22,ESP1,Levante,José Luis García Vayá,22.0,0,0,1
+2021-22,ESP1,Levante,Marc Pubill,18.0,0,1,1
+2021-22,ESP1,Levante,Omar Faraj,19.0,0,1,1
+2021-22,ESP1,Levante,Son,27.0,0,0,0
+2021-22,GER1,Leverkusen,Andrey Lunyov,29.0,0,0,1
+2021-22,GER1,Leverkusen,Iker Bravo,16.0,0,1,1
+2021-22,GER1,Leverkusen,Odilon Kossounou,20.0,0,1,1
+2021-22,GER1,Leverkusen,Piero Hincapié,19.0,0,1,1
+2021-22,GER1,Leverkusen,Sardar Azmoun,26.0,0,0,1
+2021-22,GER1,Leverkusen,Zidan Sertdemir,16.0,0,1,1
+2021-22,FRA1,Lille,Amadou Onana,20.0,0,1,1
+2021-22,FRA1,Lille,Edon Zhegrova,22.0,0,0,1
+2021-22,FRA1,Lille,Gabriel Gudmundsson,22.0,0,0,1
+2021-22,FRA1,Lille,Leny Yoro,16.0,0,1,1
+2021-22,ENG1,Liverpool,Kaide Gordon,16.0,0,1,1
+2021-22,ENG1,Liverpool,Luis Díaz,24.0,0,0,1
+2021-22,ENG1,Liverpool,Tyler Morton,18.0,0,1,1
+2021-22,FRA1,Lorient,Baptiste Mouazan,20.0,0,1,1
+2021-22,FRA1,Lorient,Bonke Innocent,25.0,0,0,1
+2021-22,FRA1,Lorient,Dango Ouattara,19.0,0,1,1
+2021-22,FRA1,Lorient,Ibrahima Kone,22.0,0,0,1
+2021-22,FRA1,Lorient,Igor Silva,25.0,0,0,1
+2021-22,FRA1,Lorient,Leo Petrot,24.0,0,0,1
+2021-22,FRA1,Lorient,Moritz Jenz,22.0,0,0,1
+2021-22,FRA1,Lorient,Redwan Bourles,18.0,0,1,1
+2021-22,FRA1,Lorient,Sambou Soumano,20.0,0,1,1
+2021-22,FRA1,Lorient,Samuel Loric,21.0,0,0,1
+2021-22,FRA1,Lorient,Theo Le Bris,19.0,0,1,1
+2021-22,FRA1,Lyon,Bradley Barcola,19.0,0,1,1
+2021-22,FRA1,Lyon,Castello Lukeba,19.0,0,1,1
+2021-22,FRA1,Lyon,Habib Keita,19.0,0,1,0
+2021-22,FRA1,Lyon,Tete,21.0,0,0,1
+2021-22,GER1,Mainz 05,Anton Stach,22.0,0,0,1
+2021-22,GER1,Mainz 05,David Nemeth,20.0,0,1,1
+2021-22,GER1,Mainz 05,Delano Burgzorg,22.0,0,0,1
+2021-22,GER1,Mainz 05,Lee Jae-sung,28.0,0,0,1
+2021-22,GER1,Mainz 05,Stephan Fürstner,33.0,0,0,1
+2021-22,ESP1,Mallorca,Amath,25.0,1,0,1
+2021-22,ESP1,Mallorca,Antonio Sánchez,24.0,1,0,1
+2021-22,ESP1,Mallorca,Brian Oliván,27.0,1,0,1
+2021-22,ESP1,Mallorca,Dominik Greif,24.0,1,0,1
+2021-22,ESP1,Mallorca,Franco Russo,26.0,1,0,1
+2021-22,ESP1,Mallorca,Giovanni González,26.0,1,0,1
+2021-22,ESP1,Mallorca,Iñigo Ruiz de Galarreta,27.0,1,0,1
+2021-22,ESP1,Mallorca,Javier Llabrés,18.0,1,1,1
+2021-22,ESP1,Mallorca,Joan Sastre Vanrell,24.0,1,0,1
+2021-22,ESP1,Mallorca,Josep Antoni Gayá,21.0,1,0,1
+2021-22,ESP1,Mallorca,Leo Román,21.0,1,0,1
+2021-22,ENG1,Manchester City,CJ Egan-Riley,18.0,0,1,1
+2021-22,ENG1,Manchester City,James Mcatee,18.0,0,1,1
+2021-22,ENG1,Manchester City,Kayky Chagas,18.0,0,1,1
+2021-22,ENG1,Manchester Utd,Alejandro Garnacho,17.0,0,1,1
+2021-22,FRA1,Marseille,Luan Peres,27.0,0,0,1
+2021-22,FRA1,Metz,Amadou Salif Mbengue,19.0,0,1,1
+2021-22,FRA1,Metz,Amine Bassi,24.0,0,0,1
+2021-22,FRA1,Metz,Didier Lamkel Ze,25.0,0,0,1
+2021-22,FRA1,Metz,Fali Cande,23.0,0,0,1
+2021-22,FRA1,Metz,Georges Mikautadze,21.0,0,0,1
+2021-22,FRA1,Metz,Lenny Joseph,21.0,0,0,1
+2021-22,FRA1,Metz,Louis Mafouta,27.0,0,0,1
+2021-22,FRA1,Monaco,Felix Lemarechal,18.0,0,1,1
+2021-22,FRA1,Monaco,Maghnes Akliouche,19.0,0,1,1
+2021-22,FRA1,Monaco,Myron Boadu,20.0,0,1,1
+2021-22,FRA1,Monaco,Tiago Ribeiro,19.0,0,1,1
+2021-22,FRA1,Monaco,Vanderson,20.0,0,1,1
+2021-22,FRA1,Montpellier,Leo Leroy,21.0,0,0,1
+2021-22,FRA1,Montpellier,Maxime Esteve,19.0,0,1,1
+2021-22,FRA1,Montpellier,Nicholas Gioacchini,21.0,0,0,1
+2021-22,FRA1,Montpellier,Sacha Delaye,19.0,0,1,0
+2021-22,FRA1,Montpellier,Sepe Elye Wahi,18.0,0,1,0
+2021-22,FRA1,Montpellier,Thuler,22.0,0,0,1
+2021-22,FRA1,Montpellier,Yanis Guermouche,20.0,0,1,1
+2021-22,FRA1,Nantes,Lohann Doucet,19.0,0,1,1
+2021-22,FRA1,Nantes,Mohamed Achi,19.0,0,1,1
+2021-22,FRA1,Nantes,Osman Bukari,23.0,0,0,1
+2021-22,FRA1,Nantes,Yannis M'Bemba,20.0,0,1,1
+2021-22,ITA1,Napoli,Alessandro Zanoli,21.0,0,0,1
+2021-22,ITA1,Napoli,Kostas Manolas,30.0,0,0,0
+2021-22,FRA1,Nice,Calvin Stengs,23.0,0,0,1
+2021-22,FRA1,Nice,Pablo Rosario,24.0,0,0,1
+2021-22,ENG1,Norwich City,Andrew Omobamidele,19.0,1,1,1
+2021-22,ENG1,Norwich City,Bali Mumba,19.0,1,1,1
+2021-22,ENG1,Norwich City,Christos Tzolis,19.0,1,1,1
+2021-22,ENG1,Norwich City,Dimitris Giannoulis,25.0,1,0,1
+2021-22,ENG1,Norwich City,Jakob Sørensen,23.0,1,0,1
+2021-22,ENG1,Norwich City,Jonathan Rowe,18.0,1,1,1
+2021-22,ENG1,Norwich City,Mathias Normann,25.0,1,0,1
+2021-22,ENG1,Norwich City,Przemysław Płacheta,23.0,1,0,1
+2021-22,ENG1,Norwich City,Tony Springett,18.0,1,1,1
+2021-22,ESP1,Osasuna,Iker Benito,18.0,0,1,1
+2021-22,ESP1,Osasuna,José Ángel,31.0,0,0,0
+2021-22,ESP1,Osasuna,Robert Ibáñez,28.0,0,0,1
+2021-22,ESP1,Osasuna,Unai Dufur,22.0,0,0,0
+2021-22,FRA1,Paris Saint Germain,Djeidi Gassama,18.0,0,1,1
+2021-22,FRA1,Paris Saint Germain,El Chadaille Bitshiabu,16.0,0,1,1
+2021-22,FRA1,Paris Saint Germain,Ismael Gharbi,17.0,0,1,1
+2021-22,FRA1,Paris Saint Germain,Nathan Bitumazala,19.0,0,1,1
+2021-22,FRA1,Paris Saint Germain,Nuno Mendes,19.0,0,1,1
+2021-22,GER1,RB Leipzig,Brian Brobbey,19.0,0,1,1
+2021-22,GER1,RB Leipzig,Joško Gvardiol,19.0,0,1,1
+2021-22,GER1,RB Leipzig,Sidney Raebiger,16.0,0,1,1
+2021-22,GER1,RB Leipzig,Solomon Bonnah,17.0,0,1,1
+2021-22,ESP1,Rayo Vallecano,Alejandro Asensio,20.0,1,1,1
+2021-22,ESP1,Rayo Vallecano,Andrés Martín,22.0,1,0,1
+2021-22,ESP1,Rayo Vallecano,Catena,26.0,1,0,1
+2021-22,ESP1,Rayo Vallecano,Esteban Saveljich,30.0,1,0,1
+2021-22,ESP1,Rayo Vallecano,Isaac Palazón Camacho,26.0,1,0,1
+2021-22,ESP1,Rayo Vallecano,Mario Hernández,22.0,1,0,1
+2021-22,ESP1,Rayo Vallecano,Nikola Maraš,25.0,1,0,1
+2021-22,ESP1,Rayo Vallecano,Pathé Ciss,27.0,1,0,1
+2021-22,ESP1,Rayo Vallecano,Randy Nteka,23.0,1,0,1
+2021-22,ESP1,Rayo Vallecano,Yacine Qasmi,30.0,1,0,1
+2021-22,ESP1,Rayo Vallecano,Álvaro Aguirre,21.0,1,0,1
+2021-22,ESP1,Rayo Vallecano,Óscar Valentín,26.0,1,0,1
+2021-22,ESP1,Real Betis,Calderón,21.0,0,0,1
+2021-22,ESP1,Real Betis,Kike Hermoso,21.0,0,0,1
+2021-22,ESP1,Real Betis,Raúl,20.0,0,1,1
+2021-22,ESP1,Real Betis,Roberto González,20.0,0,1,1
+2021-22,ESP1,Real Madrid,Juanmi Latasa,20.0,0,1,1
+2021-22,ESP1,Real Madrid,Mario Gila,20.0,0,1,1
+2021-22,ESP1,Real Madrid,Peter González,19.0,0,1,1
+2021-22,ESP1,Real Sociedad,Ander Martin,20.0,0,1,1
+2021-22,FRA1,Reims,Andrew Gravillon,23.0,0,0,0
+2021-22,FRA1,Reims,Azor Matusiwa,23.0,0,0,1
+2021-22,FRA1,Reims,Bradley Locko,19.0,0,1,1
+2021-22,FRA1,Reims,Ibrahim Diakite,18.0,0,1,1
+2021-22,FRA1,Reims,Ilan Kebbal,23.0,0,0,1
+2021-22,FRA1,Reims,Jens Cajuste,22.0,0,0,1
+2021-22,FRA1,Reims,Kamory Doumbia,18.0,0,1,1
+2021-22,FRA1,Reims,Martin Adeline,18.0,0,1,1
+2021-22,FRA1,Reims,Mitchell van Bergen,22.0,0,0,1
+2021-22,FRA1,Reims,Samuel Koeberle,17.0,0,1,1
+2021-22,FRA1,Rennes,Andy Diouf,18.0,0,1,0
+2021-22,FRA1,Rennes,Chimuanya Ugochukwu,17.0,0,1,0
+2021-22,FRA1,Rennes,Dogan Alemdar,19.0,0,1,1
+2021-22,FRA1,Rennes,Jeanuel Belocian,16.0,0,1,1
+2021-22,FRA1,Rennes,Kamaldeen Sulemana,19.0,0,1,1
+2021-22,FRA1,Rennes,Loum Tchaouna,18.0,0,1,1
+2021-22,FRA1,Rennes,Lovro Majer,23.0,0,0,1
+2021-22,FRA1,Rennes,Mathys Tel,16.0,0,1,1
+2021-22,FRA1,Rennes,Matthis Abline,18.0,0,1,0
+2021-22,ITA1,Roma,Cristian Volpato,18.0,0,1,1
+2021-22,ITA1,Roma,Dimitrios Keramitsis,17.0,0,1,1
+2021-22,ITA1,Roma,Edoardo Bove,19.0,0,1,0
+2021-22,ITA1,Roma,Felix Afena-Gyan,18.0,0,1,1
+2021-22,ITA1,Roma,Matias Vina,24.0,0,0,1
+2021-22,ITA1,Roma,Nicola Zalewski,19.0,0,1,0
+2021-22,FRA1,Saint-Etienne,Bryan Djile Nokoue,19.0,0,1,1
+2021-22,FRA1,Saint-Etienne,El Hadji Dieye,19.0,0,1,1
+2021-22,FRA1,Saint-Etienne,Falaye Sacko,26.0,0,0,1
+2021-22,FRA1,Saint-Etienne,Ignacio Ramirez,24.0,0,0,1
+2021-22,FRA1,Saint-Etienne,Lucas Calodat,19.0,0,1,1
+2021-22,FRA1,Saint-Etienne,Mathys Saban,19.0,0,1,0
+2021-22,FRA1,Saint-Etienne,Mickael Nade,22.0,0,0,1
+2021-22,FRA1,Saint-Etienne,Nelson Sissoko,24.0,0,0,0
+2021-22,FRA1,Saint-Etienne,Yanis Lhery,18.0,0,1,0
+2021-22,ITA1,Salernitana,Andrea Schiavone,28.0,1,0,1
+2021-22,ITA1,Salernitana,Andrei Motoc,19.0,1,1,1
+2021-22,ITA1,Salernitana,Cedric Gondo,25.0,1,0,1
+2021-22,ITA1,Salernitana,Emil Bohinen,22.0,1,0,1
+2021-22,ITA1,Salernitana,Francesco Di Tacchio,31.0,1,0,1
+2021-22,ITA1,Salernitana,Julian Kristoffersen,24.0,1,0,1
+2021-22,ITA1,Salernitana,Luka Bogdan,25.0,1,0,1
+2021-22,ITA1,Salernitana,Mario Perrone,18.0,1,1,1
+2021-22,ITA1,Salernitana,Mikael,22.0,1,0,1
+2021-22,ITA1,Salernitana,Milan Djuric,31.0,1,0,1
+2021-22,ITA1,Salernitana,Nadir Zortea,22.0,1,0,1
+2021-22,ITA1,Salernitana,Pasquale Mazzocchi,26.0,1,0,1
+2021-22,ITA1,Salernitana,Ramzi Aya,31.0,1,0,1
+2021-22,ITA1,Salernitana,Stefan Strandberg,31.0,1,0,1
+2021-22,ITA1,Salernitana,Wajdi Kechrida,26.0,1,0,1
+2021-22,ITA1,Sampdoria,Gerard Yepes,19.0,0,1,1
+2021-22,ITA1,Sampdoria,Riccardo Ciervo,19.0,0,1,1
+2021-22,ITA1,Sampdoria,Sebastian Giovinco,34.0,0,0,1
+2021-22,ITA1,Sampdoria,Simone Trimboli,19.0,0,1,1
+2021-22,ITA1,Sassuolo,Abdou Harroui,23.0,0,0,1
+2021-22,ITA1,Sassuolo,Emil Ceide,20.0,0,1,1
+2021-22,ITA1,Sassuolo,Matheus Henrique,24.0,0,0,1
+2021-22,ITA1,Sassuolo,Ruan,22.0,0,0,1
+2021-22,ESP1,Sevilla,Carmona,19.0,0,1,1
+2021-22,ESP1,Sevilla,Gonzalo Montiel,24.0,0,0,1
+2021-22,ESP1,Sevilla,Javier Díaz,24.0,0,0,1
+2021-22,ESP1,Sevilla,Jesús Corona,28.0,0,0,1
+2021-22,ESP1,Sevilla,Pedro Ortiz,20.0,0,1,1
+2021-22,ESP1,Sevilla,Valentino Scotta,19.0,0,1,1
+2021-22,ESP1,Sevilla,Yassine Bounou,30.0,0,0,0
+2021-22,ENG1,Southampton,Armando Broja,19.0,0,1,1
+2021-22,ENG1,Southampton,Tino Livramento,18.0,0,1,1
+2021-22,ITA1,Spezia,Aimar Sher,19.0,0,1,1
+2021-22,ITA1,Spezia,Aurelien Nguiamba,22.0,0,0,1
+2021-22,ITA1,Spezia,David Strelec,20.0,0,1,1
+2021-22,ITA1,Spezia,Dimitris Nikolaou,23.0,0,0,1
+2021-22,ITA1,Spezia,Jakub Kiwior,21.0,0,0,1
+2021-22,ITA1,Spezia,Janis Antiste,19.0,0,1,1
+2021-22,ITA1,Spezia,Nicolo Bertola,18.0,0,1,1
+2021-22,ITA1,Spezia,Petar Zovko,19.0,0,1,1
+2021-22,ITA1,Spezia,Salvador Ferrer,23.0,0,0,0
+2021-22,ITA1,Spezia,Suf Podgoreanu,19.0,0,1,1
+2021-22,FRA1,Strasbourg,Dion Moise Sahi,20.0,0,1,0
+2021-22,FRA1,Strasbourg,Habib Diarra,17.0,0,1,1
+2021-22,FRA1,Strasbourg,Ismael Doukoure,18.0,0,1,1
+2021-22,FRA1,Strasbourg,Karol Fila,23.0,0,0,1
+2021-22,FRA1,Strasbourg,Nordine Kandil,20.0,0,1,1
+2021-22,GER1,Stuttgart,Alexis Tibidi,17.0,0,1,1
+2021-22,GER1,Stuttgart,Hiroki Ito,22.0,0,0,1
+2021-22,GER1,Stuttgart,Matej Maglica,22.0,0,0,1
+2021-22,GER1,Stuttgart,Tiago Tomás,19.0,0,1,1
+2021-22,GER1,Stuttgart,Wahid Faghir,18.0,0,1,1
+2021-22,GER1,Stuttgart,Ömer Faruk Beyaz,17.0,0,1,1
+2021-22,ITA1,Torino,David Zima,21.0,0,0,1
+2021-22,ITA1,Torino,Demba Seck,20.0,0,1,1
+2021-22,ITA1,Torino,Magnus Warming,21.0,0,0,1
+2021-22,FRA1,Troyes,Abdu Conte,23.0,1,0,1
+2021-22,FRA1,Troyes,Brandon Domingues,21.0,1,0,1
+2021-22,FRA1,Troyes,Derek Mazou-Sacko,17.0,1,1,1
+2021-22,FRA1,Troyes,Dylan Chambost,24.0,1,0,1
+2021-22,FRA1,Troyes,Eric N'jo,17.0,1,1,1
+2021-22,FRA1,Troyes,Florian Tardieu,29.0,1,0,1
+2021-22,FRA1,Troyes,Gauthier Gallon,28.0,1,0,1
+2021-22,FRA1,Troyes,Gerson Rodrigues,26.0,1,0,1
+2021-22,FRA1,Troyes,Ike Ugbo,23.0,1,0,1
+2021-22,FRA1,Troyes,Issa Kabore,20.0,1,1,1
+2021-22,FRA1,Troyes,Levi Lumeka,23.0,1,0,1
+2021-22,FRA1,Troyes,Mamadou Camara,20.0,1,1,1
+2021-22,FRA1,Troyes,Mykola Kukharevych,20.0,1,1,1
+2021-22,FRA1,Troyes,Suk Hyun-Jun,30.0,1,0,1
+2021-22,FRA1,Troyes,Tanguy Zoukrou,18.0,1,1,1
+2021-22,FRA1,Troyes,Yoann Touzghar,35.0,1,0,1
+2021-22,ITA1,Udinese,Riccardo Pinzi,18.0,0,1,1
+2021-22,ITA1,Udinese,Simone Pafundi,15.0,0,1,1
+2021-22,GER1,Union Berlin,Kevin Behrens,30.0,0,0,1
+2021-22,ESP1,Valencia,Cristhian Mosquera,17.0,0,1,1
+2021-22,ESP1,Valencia,Eray Cömert,23.0,0,0,1
+2021-22,ESP1,Valencia,Giorgi Mamardashvili,20.0,0,1,1
+2021-22,ESP1,Valencia,Mario Dominguez,17.0,0,1,1
+2021-22,ESP1,Valencia,Ruben Lendinez,18.0,0,1,1
+2021-22,ESP1,Valencia,Yellu Santiago,17.0,0,1,1
+2021-22,ITA1,Venezia,Antonio Vacca,31.0,1,0,1
+2021-22,ITA1,Venezia,Arnor Sigurdsson,22.0,1,0,1
+2021-22,ITA1,Venezia,Daan Heymans,22.0,1,0,1
+2021-22,ITA1,Venezia,David Okereke,24.0,1,0,1
+2021-22,ITA1,Venezia,David Schnegg,23.0,1,0,1
+2021-22,ITA1,Venezia,Dennis Johnsen,23.0,1,0,1
+2021-22,ITA1,Venezia,Domen Crnigoj,26.0,1,0,1
+2021-22,ITA1,Venezia,Dor Peretz,26.0,1,0,1
+2021-22,ITA1,Venezia,Francesco Di Mariano,25.0,1,0,1
+2021-22,ITA1,Venezia,Gianluca Busio,19.0,1,1,1
+2021-22,ITA1,Venezia,Hilmir Rafn Mikaelsson,17.0,1,1,1
+2021-22,ITA1,Venezia,Issa Bah,19.0,1,1,1
+2021-22,ITA1,Venezia,Luca Fiordilino,25.0,1,0,1
+2021-22,ITA1,Venezia,Marco Modolo,32.0,1,0,1
+2021-22,ITA1,Venezia,Maximilian Ullmann,25.0,1,0,1
+2021-22,ITA1,Venezia,Michael Svoboda,23.0,1,0,1
+2021-22,ITA1,Venezia,Nicolas Galazzi,21.0,1,0,1
+2021-22,ITA1,Venezia,Patrick Leal,18.0,1,1,1
+2021-22,ITA1,Venezia,Pietro Ceccaroni,26.0,1,0,1
+2021-22,ITA1,Venezia,Ridgeciano Haps,28.0,1,0,1
+2021-22,ITA1,Venezia,Tanner Tessmann,20.0,1,1,1
+2021-22,ITA1,Venezia,Tyronne Ebuehi,26.0,1,0,1
+2021-22,ITA1,Verona,Diego Coppola,18.0,0,1,1
+2021-22,ITA1,Verona,Filippo Terracciano,18.0,0,1,1
+2021-22,ITA1,Verona,Mateusz Praszelik,21.0,0,0,1
+2021-22,ITA1,Verona,Yildirim Mert Cetin,24.0,0,0,0
+2021-22,ESP1,Villarreal,Carlo,20.0,0,1,1
+2021-22,ESP1,Villarreal,Nicolas Jackson,20.0,0,1,1
+2021-22,ESP1,Villarreal,Nikita Iosifov,20.0,0,1,1
+2021-22,ENG1,Watford,Edo Kayembe,23.0,1,0,1
+2021-22,ENG1,Watford,Oghenekaro Etebo,25.0,1,0,1
+2021-22,ENG1,Watford,Ozan Tufan,26.0,1,0,1
+2021-22,ENG1,Watford,Samir Santos,26.0,1,0,1
+2021-22,ENG1,West Ham,Alex Král,23.0,0,0,1
+2021-22,ENG1,West Ham,Daniel Chesters,19.0,0,1,1
+2021-22,ENG1,West Ham,Sonny Perkins,17.0,0,1,1
+2021-22,GER1,Wolfsburg,Aster Vranckx,18.0,0,1,1
+2021-22,GER1,Wolfsburg,Jonas Wind,22.0,0,0,1
+2021-22,GER1,Wolfsburg,Kevin Paredes,18.0,0,1,1
+2021-22,GER1,Wolfsburg,Micky van de Ven,20.0,0,1,1
+2021-22,ENG1,Wolves,Chem Campbell,18.0,0,1,1
+2021-22,ENG1,Wolves,Chiquinho,21.0,0,0,1
+2021-22,ENG1,Wolves,Jonny Castro,27.0,0,0,0
+2021-22,ENG1,Wolves,José Sá,28.0,0,0,1
+2021-22,ENG1,Wolves,Luke Cundle,19.0,0,1,1
+2021-22,ENG1,Wolves,Toti Gomes,22.0,0,0,1
+2022-23,ITA1,AC Milan,Charles De Ketelaere,21.0,0,0,1
+2022-23,FRA1,Ajaccio,Bevic Moussiti-Oko,27.0,1,0,1
+2022-23,FRA1,Ajaccio,Cedric Avinel,36.0,1,0,1
+2022-23,FRA1,Ajaccio,Fernand Mayembo,26.0,1,0,1
+2022-23,FRA1,Ajaccio,Francois-Joseph Sollacaro,28.0,1,0,1
+2022-23,FRA1,Ajaccio,Ghjuvanni Quilichini,20.0,1,1,1
+2022-23,FRA1,Ajaccio,Jean Botue,20.0,1,1,1
+2022-23,FRA1,Ajaccio,Kevin Spadanuda,25.0,1,0,1
+2022-23,FRA1,Ajaccio,Mathieu Coutadeur,36.0,1,0,1
+2022-23,FRA1,Ajaccio,Mohamed Youssouf,34.0,1,0,1
+2022-23,FRA1,Ajaccio,Mounaim El Idrissy,23.0,1,0,1
+2022-23,FRA1,Ajaccio,Qazim Laci,26.0,1,0,1
+2022-23,FRA1,Ajaccio,Riad Nouri,37.0,1,0,1
+2022-23,FRA1,Ajaccio,Ruan,23.0,1,0,0
+2022-23,FRA1,Ajaccio,Yanis Cimignani,20.0,1,1,1
+2022-23,ESP1,Almería,Curro,26.0,1,0,1
+2022-23,ESP1,Almería,César de la Hoz,30.0,1,0,1
+2022-23,ESP1,Almería,Dyego Sousa,32.0,1,0,1
+2022-23,ESP1,Almería,Kaiky,18.0,1,1,1
+2022-23,ESP1,Almería,Lucas Robertone,25.0,1,0,1
+2022-23,ESP1,Almería,Lázaro,20.0,1,1,1
+2022-23,ESP1,Almería,Marko Milovanović,18.0,1,1,1
+2022-23,ESP1,Almería,Samu Costa,21.0,1,0,1
+2022-23,ESP1,Almería,Srđan Babić,26.0,1,0,1
+2022-23,ESP1,Almería,Íñigo Eguaras,30.0,1,0,1
+2022-23,FRA1,Angers,Amine Salama,22.0,0,0,1
+2022-23,FRA1,Angers,Halid Sabanovic,23.0,0,0,1
+2022-23,FRA1,Angers,Himad Abdelli,23.0,0,0,1
+2022-23,FRA1,Angers,Ilyes Chetti,27.0,0,0,1
+2022-23,FRA1,Angers,Justin-Noel Kalumba,18.0,0,1,1
+2022-23,FRA1,Angers,Miha Blazic,29.0,0,0,1
+2022-23,FRA1,Angers,Ousmane Camara,19.0,0,1,1
+2022-23,FRA1,Angers,Yahia Fofana,22.0,0,0,1
+2022-23,ENG1,Arsenal,Ethan Nwaneri,15.0,0,1,1
+2022-23,ENG1,Arsenal,Fabio Vieira,22.0,0,0,1
+2022-23,ENG1,Aston Villa,Jáder Durán,18.0,0,1,1
+2022-23,ITA1,Atalanta,Rasmus Hojlund,19.0,0,1,1
+2022-23,ESP1,Athletic Club,Adu Ares,20.0,0,1,1
+2022-23,ESP1,Atlético Madrid,Antonio Gomis,19.0,0,1,1
+2022-23,ESP1,Atlético Madrid,Carlos Martín,20.0,0,1,0
+2022-23,ESP1,Atlético Madrid,Pablo Barrios,19.0,0,1,1
+2022-23,GER1,Augsburg,Aaron Zehnter,17.0,0,1,1
+2022-23,GER1,Augsburg,Arne Engels,18.0,0,1,1
+2022-23,GER1,Augsburg,David Čolina,22.0,0,0,1
+2022-23,GER1,Augsburg,Dion Drena Beljo,20.0,0,1,1
+2022-23,GER1,Augsburg,Mergim Berisha,24.0,0,0,1
+2022-23,GER1,Augsburg,Renato Veiga,19.0,0,1,1
+2022-23,FRA1,Auxerre,Jubal,29.0,1,0,1
+2022-23,FRA1,Auxerre,Kenji-Van Boto,26.0,1,0,1
+2022-23,FRA1,Auxerre,Kevin Danois,18.0,1,1,1
+2022-23,FRA1,Auxerre,Lassine Sinayoko,23.0,1,0,1
+2022-23,FRA1,Auxerre,Ousmane Camara,21.0,1,0,1
+2022-23,FRA1,Auxerre,Paul Joly,22.0,1,0,1
+2022-23,FRA1,Auxerre,Rayan Raveloson,25.0,1,0,1
+2022-23,FRA1,Auxerre,Remy Dugimont,36.0,1,0,1
+2022-23,FRA1,Auxerre,Siriki Dembele,26.0,1,0,1
+2022-23,FRA1,Auxerre,Youssouf M'Changama,32.0,1,0,1
+2022-23,ESP1,Barcelona,Aleix Garrido,18.0,0,1,1
+2022-23,ESP1,Barcelona,Chadi Riad,19.0,0,1,1
+2022-23,ESP1,Barcelona,Lamine Yamal,15.0,0,1,1
+2022-23,ESP1,Barcelona,Pablo Torre,19.0,0,1,1
+2022-23,ESP1,Barcelona,Ángel Alarcón,18.0,0,1,1
+2022-23,GER1,Bayern Munich,Arijon Ibrahimović,16.0,0,1,1
+2022-23,GER1,Bayern Munich,Noussair Mazraoui,24.0,0,0,1
+2022-23,GER1,Bayern Munich,Ryan Gravenberch,20.0,0,1,1
+2022-23,GER1,Bochum,Ivan Ordets,30.0,0,0,1
+2022-23,GER1,Bochum,Jacek Góralski,29.0,0,0,1
+2022-23,GER1,Bochum,Jordi Osei-Tutu,23.0,0,0,1
+2022-23,GER1,Bochum,Moritz Broschinski,21.0,0,0,1
+2022-23,GER1,Bochum,Philipp Hofmann,29.0,0,0,1
+2022-23,GER1,Bochum,Tim Oermann,18.0,0,1,1
+2022-23,GER1,Bochum,Vassilis Lambropoulos,32.0,0,0,0
+2022-23,ITA1,Bologna,Antonio Raimondo,18.0,0,1,0
+2022-23,ITA1,Bologna,Jhon Lucumi,24.0,0,0,1
+2022-23,ITA1,Bologna,Joaquin Sosa,20.0,0,1,1
+2022-23,ITA1,Bologna,Lewis Ferguson,23.0,0,0,1
+2022-23,ITA1,Bologna,Nikola Moro,24.0,0,0,1
+2022-23,ENG1,Bournemouth,Antoine Semenyo,22.0,1,0,1
+2022-23,ENG1,Bournemouth,Ben Pearson,27.0,1,0,1
+2022-23,ENG1,Bournemouth,Emiliano Marcondes,27.0,1,0,1
+2022-23,ENG1,Bournemouth,Illia Zabarnyi,19.0,1,1,1
+2022-23,ENG1,Bournemouth,Jaidon Anthony,22.0,1,0,1
+2022-23,ENG1,Bournemouth,Jamal Lowe,28.0,1,0,1
+2022-23,ENG1,Bournemouth,Jordan Zemura,22.0,1,0,1
+2022-23,ENG1,Bournemouth,Kieffer Moore,29.0,1,0,1
+2022-23,ENG1,Bournemouth,Marcos Senesi,25.0,1,0,1
+2022-23,ENG1,Bournemouth,Marcus Tavernier,23.0,1,0,1
+2022-23,ENG1,Bournemouth,Owen Bevan,18.0,1,1,1
+2022-23,ENG1,Bournemouth,Ryan Christie,27.0,1,0,1
+2022-23,ENG1,Bournemouth,Siriki Dembélé,25.0,1,0,1
+2022-23,ENG1,Brentford,Keane Lewis-Potter,21.0,0,0,1
+2022-23,ENG1,Brentford,Mathias Jørgensen,32.0,0,0,0
+2022-23,FRA1,Brest,Achraf Dari,23.0,0,0,1
+2022-23,FRA1,Brest,Joaquin Blazquez,21.0,0,0,1
+2022-23,FRA1,Brest,Karamoko Dembele,19.0,0,1,1
+2022-23,FRA1,Brest,Noah Fadiga,23.0,0,0,1
+2022-23,FRA1,Brest,Tairyk Arconte,19.0,0,1,1
+2022-23,ENG1,Brighton,Andrew Moran,18.0,0,1,1
+2022-23,ENG1,Brighton,Cameron Peupion,19.0,0,1,1
+2022-23,ENG1,Brighton,Deniz Undav,26.0,0,0,1
+2022-23,ENG1,Brighton,Facundo Buonanotte,17.0,0,1,1
+2022-23,ENG1,Brighton,Jack Hinshelwood,17.0,0,1,1
+2022-23,ENG1,Brighton,Julio Enciso,18.0,0,1,1
+2022-23,ENG1,Brighton,Kaoru Mitoma,25.0,0,0,1
+2022-23,ENG1,Brighton,Levi Colwill,19.0,0,1,1
+2022-23,ENG1,Brighton,Odeluga Offiah,19.0,0,1,1
+2022-23,ENG1,Brighton,Yasin Ayari,18.0,0,1,1
+2022-23,ESP1,Celta Vigo,Agustín Marchesín,34.0,0,0,1
+2022-23,ESP1,Celta Vigo,Hugo Sotelo,18.0,0,1,0
+2022-23,ESP1,Celta Vigo,Jørgen Strand Larsen,22.0,0,0,1
+2022-23,ESP1,Celta Vigo,Pablo Durán,21.0,0,0,1
+2022-23,ESP1,Celta Vigo,Williot Swedberg,18.0,0,1,1
+2022-23,ENG1,Chelsea,David Datro Fofana,19.0,0,1,1
+2022-23,ENG1,Chelsea,Enzo Fernández,21.0,0,0,1
+2022-23,ENG1,Chelsea,Lewis Hall,17.0,0,1,1
+2022-23,ENG1,Chelsea,Mykhailo Mudryk,21.0,0,0,1
+2022-23,ENG1,Chelsea,Noni Madueke,20.0,0,1,1
+2022-23,ENG1,Chelsea,Omari Hutchinson,18.0,0,1,1
+2022-23,FRA1,Clermont Foot,Baila Diallo,21.0,0,0,1
+2022-23,FRA1,Clermont Foot,Brandon Baiye,22.0,0,0,1
+2022-23,FRA1,Clermont Foot,Komnen Andric,27.0,0,0,1
+2022-23,FRA1,Clermont Foot,Mateusz Wieteska,25.0,0,0,1
+2022-23,FRA1,Clermont Foot,Maximiliano Caufriez,25.0,0,0,1
+2022-23,FRA1,Clermont Foot,Mory Diaw,29.0,0,0,1
+2022-23,FRA1,Clermont Foot,Neto Borges,26.0,0,0,1
+2022-23,FRA1,Clermont Foot,Souleymane Cisse,20.0,0,1,1
+2022-23,FRA1,Clermont Foot,Yanis Massolin,20.0,0,1,1
+2022-23,ITA1,Cremonese,Charles Pickel,25.0,1,0,1
+2022-23,ITA1,Cremonese,Christian Acella,20.0,1,1,1
+2022-23,ITA1,Cremonese,Cristian Buonaiuto,30.0,1,0,1
+2022-23,ITA1,Cremonese,Cyriel Dessers,28.0,1,0,1
+2022-23,ITA1,Cremonese,Emanuel Aiwu,22.0,1,0,1
+2022-23,ITA1,Cremonese,Emanuele Valeri,24.0,1,0,1
+2022-23,ITA1,Cremonese,Giacomo Quagliata,22.0,1,0,1
+2022-23,ITA1,Cremonese,Jack Hendry,27.0,1,0,1
+2022-23,ITA1,Cremonese,Luka Lochoshvili,24.0,1,0,1
+2022-23,ITA1,Cremonese,Michele Castagnetti,33.0,1,0,1
+2022-23,ITA1,Cremonese,Tommaso Milanese,20.0,1,1,1
+2022-23,ENG1,Crystal Palace,David Ozoh,17.0,0,1,1
+2022-23,ENG1,Crystal Palace,Joseph Whitworth,18.0,0,1,1
+2022-23,ENG1,Crystal Palace,Malcolm Ebiowei,18.0,0,1,1
+2022-23,ESP1,Cádiz,Awer Mabil,26.0,0,0,1
+2022-23,ESP1,Cádiz,Brian Ocampo,23.0,0,0,1
+2022-23,ESP1,Cádiz,Carlos García,22.0,0,0,1
+2022-23,ESP1,Cádiz,Francisco Mwepu,22.0,0,0,1
+2022-23,ESP1,Cádiz,José Antonio,18.0,0,1,1
+2022-23,ESP1,Cádiz,Mamadou Mbaye,24.0,0,0,1
+2022-23,ESP1,Cádiz,Youba Diarra,24.0,0,0,1
+2022-23,GER1,Dortmund,Julien Duranville,16.0,0,1,1
+2022-23,GER1,Dortmund,Karim Adeyemi,20.0,0,1,1
+2022-23,ESP1,Elche,Alejandro Alfaro,20.0,0,1,1
+2022-23,ESP1,Elche,John Donald,21.0,0,0,0
+2022-23,ESP1,Elche,Lautaro Blanco,23.0,0,0,1
+2022-23,ESP1,Elche,Nicolás Fernández,22.0,0,0,1
+2022-23,ESP1,Elche,Pape Cheikh Diop,24.0,0,0,1
+2022-23,ESP1,Espanyol,César Montes,25.0,0,0,1
+2022-23,ESP1,Espanyol,José Gragera,21.0,0,0,1
+2022-23,ESP1,Espanyol,Luca Koleosho,17.0,0,1,0
+2022-23,ESP1,Espanyol,Nabil Touaizi,21.0,0,0,1
+2022-23,ESP1,Espanyol,Nico Ribaudo,21.0,0,0,0
+2022-23,ESP1,Espanyol,Omar El Hilali,18.0,0,1,1
+2022-23,ESP1,Espanyol,Simo,17.0,0,1,1
+2022-23,ESP1,Espanyol,Vinicius Souza,23.0,0,0,1
+2022-23,ENG1,Everton,Isaac Price,18.0,0,1,0
+2022-23,ENG1,Everton,Tom Cannon,19.0,0,1,1
+2022-23,GER1,Frankfurt,Aurélio Buta,25.0,0,0,1
+2022-23,GER1,Frankfurt,Dario Gebuhr,19.0,0,1,1
+2022-23,GER1,Frankfurt,Faride Alidou,21.0,0,0,1
+2022-23,GER1,Frankfurt,Hrvoje Smolčić,21.0,0,0,1
+2022-23,GER1,Frankfurt,Marcel Wenig,18.0,0,1,1
+2022-23,GER1,Frankfurt,Paxten Aaronson,18.0,0,1,1
+2022-23,GER1,Freiburg,Daniel Kyereh,26.0,0,0,1
+2022-23,GER1,Freiburg,Merlin Röhl,20.0,0,1,1
+2022-23,ENG1,Fulham,Jay Stansfield,19.0,1,1,1
+2022-23,ENG1,Fulham,João Palhinha,27.0,1,0,1
+2022-23,ENG1,Fulham,Luke Harris,17.0,1,1,1
+2022-23,ENG1,Fulham,Manor Solomon,23.0,1,0,1
+2022-23,ESP1,Getafe,Alejandro Revuelta Montero,22.0,0,0,1
+2022-23,ESP1,Getafe,Fabrizio Angileri,28.0,0,0,1
+2022-23,ESP1,Getafe,Moises Parra Gutierrez,20.0,0,1,1
+2022-23,ESP1,Girona,Alexander Callens,30.0,1,0,1
+2022-23,ESP1,Girona,Arnau Martinez,19.0,1,1,1
+2022-23,ESP1,Girona,Joel Roca,17.0,1,1,1
+2022-23,ESP1,Girona,Oscar Ureña,19.0,1,1,1
+2022-23,ESP1,Girona,Ramón Terrats,21.0,1,0,1
+2022-23,ESP1,Girona,Ricard Artero,19.0,1,1,1
+2022-23,ESP1,Girona,Samuel Sáiz,31.0,1,0,1
+2022-23,ESP1,Girona,Santiago Bueno,23.0,1,0,1
+2022-23,ESP1,Girona,Valentín Castellanos,23.0,1,0,1
+2022-23,ESP1,Girona,Viktor Tsyhankov,24.0,1,0,1
+2022-23,GER1,Gladbach,Ko Itakura,25.0,0,0,1
+2022-23,GER1,Gladbach,Oscar Fraulo,18.0,0,1,1
+2022-23,GER1,Gladbach,Semir Telalovic,22.0,0,0,1
+2022-23,GER1,Gladbach,Yvandro Borges Sanches,18.0,0,1,1
+2022-23,GER1,Hertha BSC,Chidera Ejuke,24.0,0,0,1
+2022-23,GER1,Hertha BSC,Derry Scherhant,19.0,0,1,1
+2022-23,GER1,Hertha BSC,Filip Uremović,25.0,0,0,1
+2022-23,GER1,Hertha BSC,Ibrahim Maza,16.0,0,1,1
+2022-23,GER1,Hertha BSC,Ivan Šunjić,25.0,0,0,1
+2022-23,GER1,Hertha BSC,Julian Eitschberger,18.0,0,1,0
+2022-23,GER1,Hertha BSC,Pascal Klemens,17.0,0,1,1
+2022-23,GER1,Hertha BSC,Tony Rölke,19.0,0,1,1
+2022-23,GER1,Hertha BSC,Veit Stange,18.0,0,1,1
+2022-23,GER1,Hoffenheim,Eduardo Quaresma,20.0,0,1,1
+2022-23,GER1,Hoffenheim,Finn Ole Becker,22.0,0,0,1
+2022-23,GER1,Hoffenheim,Joshua Quarshie,18.0,0,1,1
+2022-23,GER1,Hoffenheim,Muhammed Damar,18.0,0,1,1
+2022-23,GER1,Hoffenheim,Umut Tohumcu,17.0,0,1,0
+2022-23,ITA1,Inter,Andre Onana,26.0,0,0,1
+2022-23,ITA1,Inter,Valentin Carboni,17.0,0,1,1
+2022-23,ITA1,Juventus,Enzo Barrenechea,21.0,0,0,1
+2022-23,ITA1,Juventus,Federico Gatti,24.0,0,0,1
+2022-23,ITA1,Juventus,Samuel Iling-Junior,19.0,0,1,1
+2022-23,GER1,Köln,Denis Huseinbasic,21.0,0,0,1
+2022-23,GER1,Köln,Florian Dietz,23.0,0,0,1
+2022-23,GER1,Köln,Justin Diehl,17.0,0,1,1
+2022-23,GER1,Köln,Kristian Pedersen,27.0,0,0,1
+2022-23,GER1,Köln,Nikola Soldo,21.0,0,0,1
+2022-23,ITA1,Lazio,Marcos Antonio,22.0,0,0,1
+2022-23,ITA1,Lecce,Assan Ceesay,28.0,1,0,1
+2022-23,ITA1,Lecce,Federico Baschirotto,26.0,1,0,1
+2022-23,ITA1,Lecce,Joan Gonzalez,20.0,1,1,1
+2022-23,ITA1,Lecce,Kristijan Bistrovic,24.0,1,0,1
+2022-23,ITA1,Lecce,Lameck Banda,21.0,1,0,1
+2022-23,ITA1,Lecce,Marcin Listkowski,24.0,1,0,1
+2022-23,ITA1,Lecce,Morten Hjulmand,23.0,1,0,1
+2022-23,ITA1,Lecce,Pablo Rodriguez,21.0,1,0,1
+2022-23,ITA1,Lecce,Yildirim Mert Cetin,25.0,1,0,0
+2022-23,ENG1,Leeds United,Brenden Aaronson,21.0,0,0,1
+2022-23,ENG1,Leeds United,Darko Gyabi,18.0,0,1,1
+2022-23,ENG1,Leeds United,Luis Sinisterra,23.0,0,0,1
+2022-23,ENG1,Leeds United,Mateo Joseph,18.0,0,1,1
+2022-23,ENG1,Leeds United,Rasmus Kristensen,25.0,0,0,1
+2022-23,ENG1,Leeds United,Wilfried Gnonto,18.0,0,1,1
+2022-23,ENG1,Leicester City,Daniel Iversen,25.0,0,0,1
+2022-23,ENG1,Leicester City,Lewis Brunt,21.0,0,0,0
+2022-23,ENG1,Leicester City,Victor Bernth Kristiansen,19.0,0,1,1
+2022-23,FRA1,Lens,Adam Buksa,26.0,0,0,1
+2022-23,FRA1,Lens,David Pereira Da Costa,21.0,0,0,0
+2022-23,FRA1,Lens,Lois Openda,22.0,0,0,1
+2022-23,FRA1,Lens,Lukasz Poreba,22.0,0,0,1
+2022-23,GER1,Leverkusen,Adam Hložek,20.0,0,1,1
+2022-23,GER1,Leverkusen,Andrey Lunyov,30.0,0,0,0
+2022-23,GER1,Leverkusen,Ayman Azhil,21.0,0,0,1
+2022-23,GER1,Leverkusen,Noah Mbamba,17.0,0,1,1
+2022-23,FRA1,Lille,Alan Virginius,19.0,0,1,1
+2022-23,FRA1,Lille,Alexsandro Ribeiro,23.0,0,0,1
+2022-23,FRA1,Lille,Ismaily,32.0,0,0,1
+2022-23,ENG1,Liverpool,Ben Gannon-Doak,16.0,0,1,1
+2022-23,ENG1,Liverpool,Bobby Clark,17.0,0,1,1
+2022-23,ENG1,Liverpool,Cody Gakpo,23.0,0,0,1
+2022-23,ENG1,Liverpool,Darwin Núñez,23.0,0,0,1
+2022-23,ENG1,Liverpool,Stefan Bajcetic,17.0,0,1,1
+2022-23,FRA1,Lorient,Ayman Kari,18.0,0,1,1
+2022-23,FRA1,Lorient,Eli Junior Kroupi,16.0,0,1,1
+2022-23,FRA1,Lorient,Gedeon Kalulu,25.0,0,0,1
+2022-23,FRA1,Lorient,Julien Ponceau,22.0,0,0,1
+2022-23,FRA1,Lorient,Montassar Talbi,24.0,0,0,1
+2022-23,FRA1,Lorient,Yoann Cathline,20.0,0,1,1
+2022-23,FRA1,Lyon,Amin Sarr,21.0,0,0,1
+2022-23,FRA1,Lyon,Johann Lepenant,20.0,0,1,1
+2022-23,FRA1,Lyon,Mamadou Sarr,17.0,0,1,1
+2022-23,FRA1,Lyon,Mohamed El Arouch,18.0,0,1,1
+2022-23,FRA1,Lyon,Nicolas Tagliafico,30.0,0,0,1
+2022-23,FRA1,Lyon,Sael Kumbedi,17.0,0,1,1
+2022-23,GER1,Mainz 05,Andreas Hanche-Olsen,25.0,0,0,1
+2022-23,GER1,Mainz 05,Brajan Gruda,18.0,0,1,1
+2022-23,GER1,Mainz 05,Nelson Weiper,17.0,0,1,1
+2022-23,ESP1,Mallorca,Braian Cufré,25.0,0,0,1
+2022-23,ESP1,Mallorca,Copete,22.0,0,0,1
+2022-23,ESP1,Mallorca,Dennis Hadžikadunić,24.0,0,0,1
+2022-23,ESP1,Mallorca,Javier Llabrés,19.0,0,1,0
+2022-23,ESP1,Mallorca,Josep Antoni Gayá,22.0,0,0,0
+2022-23,ESP1,Mallorca,Rubén Quintanilla,20.0,0,1,1
+2022-23,ENG1,Manchester City,Julián Álvarez,22.0,0,0,1
+2022-23,ENG1,Manchester City,Máximo Perrone,19.0,0,1,1
+2022-23,ENG1,Manchester City,Rico Lewis,17.0,0,1,1
+2022-23,ENG1,Manchester City,Shea Charles,18.0,0,1,1
+2022-23,ENG1,Manchester Utd,Alejandro Garnacho,18.0,0,1,0
+2022-23,ENG1,Manchester Utd,Antony,22.0,0,0,1
+2022-23,ENG1,Manchester Utd,Kobbie Mainoo,17.0,0,1,1
+2022-23,ENG1,Manchester Utd,Lisandro Martínez,24.0,0,0,1
+2022-23,ENG1,Manchester Utd,Tyrell Malacia,22.0,0,0,1
+2022-23,FRA1,Marseille,Samuel Gigot,29.0,0,0,1
+2022-23,FRA1,Monaco,Mohamed Camara,22.0,0,0,1
+2022-23,FRA1,Montpellier,Axel Gueguin,17.0,0,1,1
+2022-23,FRA1,Montpellier,Khalil Fayad,18.0,0,1,1
+2022-23,FRA1,Montpellier,Sepe Elye Wahi,19.0,0,1,0
+2022-23,ITA1,Monza,Carlos Augusto,23.0,1,0,1
+2022-23,ITA1,Monza,Christian Gytkjaer,32.0,1,0,1
+2022-23,ITA1,Monza,Dany Mota,24.0,1,0,1
+2022-23,ITA1,Monza,Patrick Ciurria,27.0,1,0,1
+2022-23,ITA1,Monza,Pepin,26.0,1,0,1
+2022-23,ITA1,Monza,Samuele Birindelli,23.0,1,0,1
+2022-23,ITA1,Monza,Samuele Vignato,18.0,1,1,1
+2022-23,ITA1,Monza,Warren Bondo,19.0,1,1,1
+2022-23,FRA1,Nantes,Mostafa Mohamed,25.0,0,0,1
+2022-23,ITA1,Napoli,Khvicha Kvaratskhelia,21.0,0,0,1
+2022-23,ITA1,Napoli,Kim Min-Jae,26.0,0,0,1
+2022-23,ENG1,Newcastle,Lewis Miley,16.0,0,1,1
+2022-23,FRA1,Nice,Alexis Beka Beka,21.0,0,0,1
+2022-23,FRA1,Nice,Badredine Bouanani,18.0,0,1,1
+2022-23,FRA1,Nice,Rares Ilie,19.0,0,1,1
+2022-23,ENG1,Nottingham,Alex Mighten,20.0,1,1,1
+2022-23,ENG1,Nottingham,Brennan Johnson,21.0,1,0,1
+2022-23,ENG1,Nottingham,Danilo Santos,21.0,1,0,1
+2022-23,ENG1,Nottingham,Gustavo Scarpa,28.0,1,0,1
+2022-23,ENG1,Nottingham,Joe Worrall,25.0,1,0,1
+2022-23,ENG1,Nottingham,Lewis O'Brien,23.0,1,0,1
+2022-23,ENG1,Nottingham,Ryan Yates,24.0,1,0,1
+2022-23,ENG1,Nottingham,Scott McKenna,25.0,1,0,1
+2022-23,ESP1,Osasuna,Abde Ezzalzouli,20.0,0,1,0
+2022-23,ESP1,Osasuna,Diego Moreno,21.0,0,0,1
+2022-23,ESP1,Osasuna,Iker Muñoz,19.0,0,1,1
+2022-23,ESP1,Osasuna,Pablo Ibáñez,23.0,0,0,1
+2022-23,FRA1,Paris Saint Germain,Warren Zaire-Emery,16.0,0,1,1
+2022-23,GER1,RB Leipzig,Janis Blaswich,31.0,0,0,1
+2022-23,GER1,RB Leipzig,Sanoussy Ba,18.0,0,1,1
+2022-23,ESP1,Rayo Vallecano,Abdul Mumin,24.0,0,0,1
+2022-23,ESP1,Rayo Vallecano,Diego Méndez,18.0,0,1,1
+2022-23,ESP1,Rayo Vallecano,Pep Chavarría,24.0,0,0,1
+2022-23,ESP1,Real Betis,Abner,22.0,0,0,1
+2022-23,ESP1,Real Betis,Felix Garreta,18.0,0,1,1
+2022-23,ESP1,Real Betis,Luiz Henrique,21.0,0,0,1
+2022-23,ESP1,Real Betis,Roberto González,21.0,0,0,0
+2022-23,ESP1,Real Madrid,Álvaro Rodríguez,18.0,0,1,1
+2022-23,ESP1,Real Sociedad,Jon Magunazelaia,21.0,0,0,1
+2022-23,ESP1,Real Sociedad,Olasagasti,21.0,0,0,1
+2022-23,ESP1,Real Sociedad,Pablo Marín,19.0,0,1,1
+2022-23,FRA1,Reims,Andrew Gravillon,24.0,0,0,0
+2022-23,FRA1,Reims,Emmanuel Agbadou,25.0,0,0,1
+2022-23,FRA1,Reims,Junya Ito,29.0,0,0,1
+2022-23,FRA1,Reims,Noah Holm,21.0,0,0,1
+2022-23,FRA1,Reims,Patrick Pentz,25.0,0,0,1
+2022-23,FRA1,Rennes,Chimuanya Ugochukwu,18.0,0,1,0
+2022-23,FRA1,Rennes,Djed Spence,22.0,0,0,1
+2022-23,FRA1,Rennes,Guela Doue,20.0,0,1,1
+2022-23,ITA1,Roma,Filippo Missori,18.0,0,1,1
+2022-23,ITA1,Roma,Mile Svilar,23.0,0,0,1
+2022-23,ITA1,Salernitana,Diego Valencia,22.0,0,0,1
+2022-23,ITA1,Salernitana,Erik Botheim,22.0,0,0,1
+2022-23,ITA1,Sampdoria,Emirhan Ilkhan,18.0,0,1,1
+2022-23,ITA1,Sampdoria,Lorenzo Malagrida,19.0,0,1,1
+2022-23,ITA1,Sampdoria,Martin Turk,19.0,0,1,1
+2022-23,ITA1,Sassuolo,Agustin Alvarez Martinez,21.0,0,0,1
+2022-23,ITA1,Sassuolo,Emil Ceide,21.0,0,0,0
+2022-23,ITA1,Sassuolo,Kristian Thorstvedt,23.0,0,0,1
+2022-23,ITA1,Sassuolo,Luca D'Andrea,18.0,0,1,1
+2022-23,ITA1,Sassuolo,Ruan,23.0,0,0,0
+2022-23,GER1,Schalke 04,Andreas Ivan,27.0,1,0,1
+2022-23,GER1,Schalke 04,Jordan Larsson,25.0,1,0,1
+2022-23,GER1,Schalke 04,Keke Topp,18.0,1,1,1
+2022-23,GER1,Schalke 04,Leo Greiml,21.0,1,0,1
+2022-23,GER1,Schalke 04,Michael Frey,28.0,1,0,1
+2022-23,GER1,Schalke 04,Sidi Sané,19.0,1,1,1
+2022-23,GER1,Schalke 04,Soichiro Kozuki,21.0,1,0,1
+2022-23,GER1,Schalke 04,Tim Skarke,25.0,1,0,1
+2022-23,GER1,Schalke 04,Tobias Mohr,26.0,1,0,1
+2022-23,GER1,Schalke 04,Éder Álvarez Balanta,29.0,1,0,1
+2022-23,ESP1,Sevilla,Diego Iturralde,19.0,0,1,1
+2022-23,ESP1,Sevilla,Jesús Corona,29.0,0,0,0
+2022-23,ESP1,Sevilla,Manu Bueno,18.0,0,1,1
+2022-23,ESP1,Sevilla,Marcão,26.0,0,0,1
+2022-23,ESP1,Sevilla,Yassine Bounou,31.0,0,0,0
+2022-23,ENG1,Southampton,Carlos Alcaraz,19.0,0,1,1
+2022-23,ENG1,Southampton,Dominic Ballard,17.0,0,1,1
+2022-23,ENG1,Southampton,Gavin Bazunu,20.0,0,1,1
+2022-23,ENG1,Southampton,Joe Aribo,26.0,0,0,1
+2022-23,ENG1,Southampton,Juan Larios,18.0,0,1,1
+2022-23,ENG1,Southampton,Kami Doyle,16.0,0,1,1
+2022-23,ENG1,Southampton,Mislav Oršić,29.0,0,0,1
+2022-23,ENG1,Southampton,Paul Onuachu,28.0,0,0,1
+2022-23,ENG1,Southampton,Samuel Amo-Ameyaw,16.0,0,1,1
+2022-23,ITA1,Spezia,Dimitris Nikolaou,24.0,0,0,0
+2022-23,ITA1,Spezia,Emil Holm,22.0,0,0,1
+2022-23,ITA1,Spezia,Julius Beck,17.0,0,1,1
+2022-23,ITA1,Spezia,Leandro Sanca,22.0,0,0,1
+2022-23,ITA1,Spezia,Mikael Ellertsson,20.0,0,1,1
+2022-23,ITA1,Spezia,Salvador Ferrer,24.0,0,0,0
+2022-23,FRA1,Strasbourg,Yuito Suzuki,21.0,0,0,1
+2022-23,GER1,Stuttgart,Alou Kuol,21.0,0,0,1
+2022-23,GER1,Stuttgart,Gil Bastião Dias,25.0,0,0,1
+2022-23,GER1,Stuttgart,Juan Perea,22.0,0,0,1
+2022-23,GER1,Stuttgart,Lauren Ulrich,17.0,0,1,1
+2022-23,GER1,Stuttgart,Luca Pfeiffer,25.0,0,0,1
+2022-23,GER1,Stuttgart,Thomas Kastanaras,19.0,0,1,1
+2022-23,ITA1,Torino,Andrew Gravillon,24.0,0,0,0
+2022-23,ITA1,Torino,Brian Bayeye,22.0,0,0,1
+2022-23,ITA1,Torino,Perr Schuurs,23.0,0,0,1
+2022-23,ENG1,Tottenham,Djed Spence,21.0,0,0,1
+2022-23,ENG1,Tottenham,George Abbott,16.0,0,1,1
+2022-23,ENG1,Tottenham,Matthew Craig,19.0,0,1,1
+2022-23,FRA1,Toulouse,Ado Onaiwu,27.0,1,0,1
+2022-23,FRA1,Toulouse,Branco van den Boomen,27.0,1,0,1
+2022-23,FRA1,Toulouse,Brecht Dejaegere,31.0,1,0,1
+2022-23,FRA1,Toulouse,Denis Genreau,23.0,1,0,1
+2022-23,FRA1,Toulouse,Fares Chaibi,20.0,1,1,1
+2022-23,FRA1,Toulouse,Gabriel Suazo,25.0,1,0,1
+2022-23,FRA1,Toulouse,Logan Costa,21.0,1,0,1
+2022-23,FRA1,Toulouse,Mikkel Desler,27.0,1,0,1
+2022-23,FRA1,Toulouse,Naatan Skytta,20.0,1,1,1
+2022-23,FRA1,Toulouse,Oliver Zanden,21.0,1,0,1
+2022-23,FRA1,Toulouse,Rafael Ratao,27.0,1,0,1
+2022-23,FRA1,Toulouse,Rasmus Nicolaisen,25.0,1,0,1
+2022-23,FRA1,Toulouse,Stijn Spierings,26.0,1,0,1
+2022-23,FRA1,Toulouse,Thijs Dallinga,22.0,1,0,1
+2022-23,FRA1,Toulouse,Veljko Birmancevic,24.0,1,0,1
+2022-23,FRA1,Toulouse,Yanis Begraoui,21.0,1,0,1
+2022-23,FRA1,Toulouse,Zakaria Aboukhlal,22.0,1,0,1
+2022-23,FRA1,Troyes,Andreas Bruus,23.0,0,0,1
+2022-23,FRA1,Troyes,Jackson Porozo,22.0,0,0,1
+2022-23,FRA1,Troyes,Kyliane Dong,18.0,0,1,1
+2022-23,FRA1,Troyes,Mateusz Lis,25.0,0,0,1
+2022-23,FRA1,Troyes,Thierno Balde,20.0,0,1,1
+2022-23,FRA1,Troyes,Wilson Odobert,18.0,0,1,1
+2022-23,ITA1,Udinese,Festy Ebosele,20.0,0,1,1
+2022-23,ITA1,Udinese,Jaka Bijol,23.0,0,0,1
+2022-23,ITA1,Udinese,Leonardo Buta,20.0,0,1,1
+2022-23,ITA1,Udinese,Sandi Lovric,24.0,0,0,1
+2022-23,ITA1,Udinese,Simone Pafundi,16.0,0,1,0
+2022-23,GER1,Union Berlin,Danilho Doekhi,24.0,0,0,1
+2022-23,GER1,Union Berlin,Diogo Leite,23.0,0,0,1
+2022-23,GER1,Union Berlin,Jordan Pefok,26.0,0,0,1
+2022-23,GER1,Union Berlin,Josip Juranović,26.0,0,0,1
+2022-23,GER1,Union Berlin,Tim Skarke,25.0,0,0,1
+2022-23,ESP1,Valencia,Alberto Marí,21.0,0,0,1
+2022-23,ESP1,Valencia,André Almeida,22.0,0,0,1
+2022-23,ESP1,Valencia,Francisco Perez,19.0,0,1,1
+2022-23,ESP1,Valencia,Javier Guerra,19.0,0,1,1
+2022-23,ESP1,Valencia,Samuel Lino,22.0,0,0,1
+2022-23,ESP1,Valladolid,Babatunde Akinsola,19.0,1,1,1
+2022-23,ESP1,Valladolid,Cyle Larin,27.0,1,0,1
+2022-23,ESP1,Valladolid,David Torres,19.0,1,1,1
+2022-23,ESP1,Valladolid,Gonzalo Plata,21.0,1,0,1
+2022-23,ESP1,Valladolid,Iván Fresneda,17.0,1,1,1
+2022-23,ESP1,Valladolid,Iván Sánchez,29.0,1,0,1
+2022-23,ESP1,Valladolid,Lucas Oliveira Rosa,22.0,1,0,1
+2022-23,ESP1,Valladolid,Manuel Pozo,20.0,1,1,1
+2022-23,ESP1,Valladolid,Roberto Arroyo,18.0,1,1,1
+2022-23,ESP1,Valladolid,Selim Amallah,25.0,1,0,1
+2022-23,ESP1,Valladolid,Sékou Gassama,27.0,1,0,1
+2022-23,ESP1,Valladolid,Álvaro Aceves,19.0,1,1,1
+2022-23,ITA1,Verona,Cyril Ngonge,22.0,0,0,1
+2022-23,ITA1,Verona,Isak Hien,23.0,0,0,1
+2022-23,ITA1,Verona,Josh Doig,20.0,0,1,1
+2022-23,ITA1,Verona,Juan Cabal,21.0,0,0,1
+2022-23,ITA1,Verona,Simone Perilli,27.0,0,0,1
+2022-23,ESP1,Villarreal,Alberto Del Moral,22.0,0,0,1
+2022-23,ESP1,Villarreal,Diego Collado,21.0,0,0,1
+2022-23,ESP1,Villarreal,Haissem Hassan,20.0,0,1,1
+2022-23,ESP1,Villarreal,Mamadou Fall,19.0,0,1,1
+2022-23,ESP1,Villarreal,Pascu,19.0,0,1,1
+2022-23,ESP1,Villarreal,Ramón Terrats,21.0,0,0,1
+2022-23,GER1,Werder Bremen,Dikeni-Rafid Salifou,19.0,1,1,1
+2022-23,GER1,Werder Bremen,Fabio Chiarodia,17.0,1,1,1
+2022-23,GER1,Werder Bremen,Jens Stage,25.0,1,0,1
+2022-23,GER1,Werder Bremen,Lee Buchanan,21.0,1,0,1
+2022-23,ENG1,West Ham,Divin Mubama,17.0,0,1,1
+2022-23,ENG1,West Ham,Flynn Downes,23.0,0,0,1
+2022-23,GER1,Wolfsburg,Bartol Franjić,22.0,0,0,1
+2022-23,GER1,Wolfsburg,Dženan Pejčinović,17.0,0,1,1
+2022-23,GER1,Wolfsburg,Jakub Kamiński,20.0,0,1,1
+2022-23,GER1,Wolfsburg,Kilian Fischer,21.0,0,0,1
+2022-23,GER1,Wolfsburg,Lukáš Ambros,18.0,0,1,1
+2022-23,ENG1,Wolves,Chem Campbell,19.0,0,1,0
+2022-23,ENG1,Wolves,Daniel Bentley,29.0,0,0,1
+2022-23,ENG1,Wolves,Dexter Lembikisa,18.0,0,1,1
+2022-23,ENG1,Wolves,Hugo Bueno,19.0,0,1,1
+2022-23,ENG1,Wolves,Joe Hodge,19.0,0,1,1
+2022-23,ENG1,Wolves,Jonny Castro,28.0,0,0,0
+2022-23,ENG1,Wolves,João Gomes,21.0,0,0,1
+2022-23,ENG1,Wolves,Matheus Nunes,23.0,0,0,1
+2023-24,ITA1,AC Milan,Chaka Traore,19.0,0,1,0
+2023-24,ITA1,AC Milan,Noah Okafor,23.0,0,0,1
+2023-24,ITA1,AC Milan,Tijjani Reijnders,25.0,0,0,1
+2023-24,ESP1,Alavés,Abde Rebbach,24.0,1,0,1
+2023-24,ESP1,Alavés,Carlos Benavídez,25.0,1,0,1
+2023-24,ESP1,Alavés,Carlos Vicente,24.0,1,0,1
+2023-24,ESP1,Alavés,Eneko Ortiz,20.0,1,1,1
+2023-24,ESP1,Alavés,Joaquín Panichelli,20.0,1,1,1
+2023-24,ESP1,Alavés,Samu Omorodion,19.0,1,1,1
+2023-24,ESP1,Alavés,Tomás Mendes,18.0,1,1,0
+2023-24,ESP1,Alavés,Unai Ropero,21.0,1,0,0
+2023-24,ESP1,Alavés,Victor Parada,21.0,1,0,1
+2023-24,ESP1,Alavés,Xeber,26.0,1,0,1
+2023-24,ESP1,Almería,Bruno Langa,25.0,0,0,1
+2023-24,ESP1,Almería,César Montes,26.0,0,0,0
+2023-24,ESP1,Almería,Lázaro,21.0,0,0,0
+2023-24,ESP1,Almería,Marciano Tchami,19.0,0,1,1
+2023-24,ESP1,Almería,Marcos Peña,18.0,0,1,1
+2023-24,ESP1,Almería,Paco Sanz,18.0,0,1,1
+2023-24,ESP1,Almería,Rachad Fettal,18.0,0,1,1
+2023-24,ENG1,Arsenal,Ethan Nwaneri,16.0,0,1,0
+2023-24,ENG1,Arsenal,Jurriën Timber,22.0,0,0,1
+2023-24,ENG1,Aston Villa,Finley Munroe,18.0,0,1,1
+2023-24,ENG1,Aston Villa,Jáder Durán,19.0,0,1,0
+2023-24,ENG1,Aston Villa,Kaine Kesler-Hayden,20.0,0,1,1
+2023-24,ENG1,Aston Villa,Morgan Rogers,21.0,0,0,1
+2023-24,ENG1,Aston Villa,Omari Kellyman,17.0,0,1,1
+2023-24,ITA1,Atalanta,Isak Hien,24.0,0,0,0
+2023-24,ESP1,Athletic Club,Adu Ares,21.0,0,0,0
+2023-24,ESP1,Athletic Club,Aingeru Olabarrieta,17.0,0,1,1
+2023-24,ESP1,Athletic Club,Imanol,23.0,0,0,1
+2023-24,ESP1,Athletic Club,Mikel Jauregizar,19.0,0,1,1
+2023-24,ESP1,Athletic Club,Unai Gómez,20.0,0,1,1
+2023-24,ESP1,Atlético Madrid,Abdellah Raihani,19.0,0,1,1
+2023-24,ESP1,Atlético Madrid,Arthur Vermeeren,18.0,0,1,1
+2023-24,ESP1,Atlético Madrid,Pablo Barrios,20.0,0,1,0
+2023-24,ESP1,Atlético Madrid,Salim El Jebari,19.0,0,1,1
+2023-24,GER1,Augsburg,Arne Engels,19.0,0,1,0
+2023-24,GER1,Augsburg,Dion Drena Beljo,21.0,0,0,0
+2023-24,GER1,Augsburg,Mahmut Kücüksahin,19.0,0,1,1
+2023-24,GER1,Augsburg,Mergim Berisha,25.0,0,0,0
+2023-24,GER1,Augsburg,Mert Kömür,18.0,0,1,1
+2023-24,GER1,Augsburg,Patric Pfeiffer,23.0,0,0,1
+2023-24,GER1,Augsburg,Pep Biel,26.0,0,0,1
+2023-24,GER1,Augsburg,Phillip Tietz,26.0,0,0,1
+2023-24,GER1,Augsburg,Tim Breithaupt,21.0,0,0,1
+2023-24,ESP1,Barcelona,Abde Ezzalzouli,21.0,0,0,0
+2023-24,ESP1,Barcelona,Fermin López,20.0,0,1,1
+2023-24,ESP1,Barcelona,Héctor Fort,16.0,0,1,1
+2023-24,ESP1,Barcelona,Lamine Yamal,16.0,0,1,0
+2023-24,ESP1,Barcelona,Marc Casado,19.0,0,1,1
+2023-24,ESP1,Barcelona,Marc Guiu,17.0,0,1,1
+2023-24,ESP1,Barcelona,Pau Cubarsí,16.0,0,1,1
+2023-24,ESP1,Barcelona,Vitor Roque,18.0,0,1,1
+2023-24,GER1,Bayern Munich,Aleksandar Pavlovic,19.0,0,1,1
+2023-24,GER1,Bayern Munich,Daniel Peretz,23.0,0,0,1
+2023-24,GER1,Bayern Munich,Frans Krätzig,20.0,0,1,1
+2023-24,GER1,Bayern Munich,Jonathan Asp Jensen,17.0,0,1,1
+2023-24,GER1,Bayern Munich,Kim Min-jae,26.0,0,0,0
+2023-24,GER1,Bayern Munich,Lovro Zvonarek,18.0,0,1,1
+2023-24,GER1,Bayern Munich,Matteo Perez Vinlöf,17.0,0,1,1
+2023-24,GER1,Bochum,Lukas Daschner,24.0,0,0,1
+2023-24,GER1,Bochum,Matúš Bero,27.0,0,0,1
+2023-24,GER1,Bochum,Maximilian Wittek,27.0,0,0,1
+2023-24,GER1,Bochum,Moritz Broschinski,22.0,0,0,0
+2023-24,GER1,Bochum,Moritz-Broni Kwarteng,25.0,0,0,1
+2023-24,GER1,Bochum,Noah Loosli,26.0,0,0,1
+2023-24,ITA1,Bologna,Jhon Lucumi,25.0,0,0,0
+2023-24,ITA1,Bologna,Nicola Bagnolini,19.0,0,1,0
+2023-24,ITA1,Bologna,Nikola Moro,25.0,0,0,0
+2023-24,ENG1,Bournemouth,Alex Scott,19.0,0,1,1
+2023-24,ENG1,Bournemouth,Antoine Semenyo,23.0,0,0,0
+2023-24,ENG1,Bournemouth,Dominic Sadi,19.0,0,1,1
+2023-24,ENG1,Bournemouth,Illia Zabarnyi,20.0,0,1,0
+2023-24,ENG1,Bournemouth,Milos Kerkez,19.0,0,1,1
+2023-24,ENG1,Brentford,Mathias Jørgensen,33.0,0,0,0
+2023-24,ENG1,Brentford,Michael Olakigbe,19.0,0,1,1
+2023-24,ENG1,Brentford,Yehor Yarmoliuk,19.0,0,1,1
+2023-24,ENG1,Brighton,Bart Verbruggen,20.0,0,1,1
+2023-24,ENG1,Brighton,Benicio Boaitey,19.0,0,1,1
+2023-24,ENG1,Brighton,Facundo Buonanotte,18.0,0,1,0
+2023-24,ENG1,Brighton,Jack Hinshelwood,18.0,0,1,0
+2023-24,ENG1,Brighton,Mark O'Mahony,18.0,0,1,1
+2023-24,ENG1,Brighton,Odeluga Offiah,20.0,0,1,0
+2023-24,ENG1,Brighton,Simon Adingra,21.0,0,0,1
+2023-24,ENG1,Brighton,Valentín Barco,19.0,0,1,1
+2023-24,ENG1,Burnley,Ameen Al-Dakhil,21.0,1,0,1
+2023-24,ENG1,Burnley,Anass Zaroury,22.0,1,0,1
+2023-24,ENG1,Burnley,Benson Manuel,26.0,1,0,1
+2023-24,ENG1,Burnley,David Datro Fofana,20.0,1,1,0
+2023-24,ENG1,Burnley,Hannes Delcroix,24.0,1,0,1
+2023-24,ENG1,Burnley,Hjalmar Ekdal,24.0,1,0,1
+2023-24,ENG1,Burnley,James Trafford,20.0,1,1,1
+2023-24,ENG1,Burnley,Luca Koleosho,18.0,1,1,0
+2023-24,ENG1,Burnley,Mike Trésor,24.0,1,0,1
+2023-24,ENG1,Burnley,Vitinho,24.0,1,0,1
+2023-24,ENG1,Burnley,Wilson Odobert,18.0,1,1,0
+2023-24,ENG1,Burnley,Zeki Amdouni,22.0,1,0,1
+2023-24,ESP1,Celta Vigo,Anastasios Douvikas,23.0,0,0,1
+2023-24,ESP1,Celta Vigo,Carl Starfelt,28.0,0,0,1
+2023-24,ESP1,Celta Vigo,Carlos Dotor,22.0,0,0,1
+2023-24,ESP1,Celta Vigo,Damián Rodríguez,20.0,0,1,1
+2023-24,ESP1,Celta Vigo,Hugo Sotelo,19.0,0,1,0
+2023-24,ESP1,Celta Vigo,Hugo Álvarez,20.0,0,1,0
+2023-24,ESP1,Celta Vigo,Jailson Siqueira,27.0,0,0,1
+2023-24,ESP1,Celta Vigo,Javi Rueda,21.0,0,0,1
+2023-24,ESP1,Celta Vigo,Jørgen Strand Larsen,23.0,0,0,0
+2023-24,ESP1,Celta Vigo,Tadeo Allende,24.0,0,0,1
+2023-24,ESP1,Celta Vigo,Yoel Lago,19.0,0,1,1
+2023-24,ENG1,Chelsea,Alex Matos,18.0,0,1,1
+2023-24,ENG1,Chelsea,Alfie Gilchrist,19.0,0,1,1
+2023-24,ENG1,Chelsea,Deivid Washington,18.0,0,1,1
+2023-24,ENG1,Chelsea,Enzo Fernández,22.0,0,0,0
+2023-24,ENG1,Chelsea,Ian Maatsen,21.0,0,0,1
+2023-24,ENG1,Chelsea,Jimi Tauriainen,19.0,0,1,1
+2023-24,ENG1,Chelsea,Joshua Acheampong,17.0,0,1,1
+2023-24,ENG1,Chelsea,Mason Burstow,19.0,0,1,1
+2023-24,ENG1,Chelsea,Mykhailo Mudryk,22.0,0,0,0
+2023-24,ENG1,Chelsea,Noni Madueke,21.0,0,0,0
+2023-24,ENG1,Chelsea,Đorđe Petrović,23.0,0,0,1
+2023-24,FRA1,Clermont Foot,Alan Virginius,20.0,0,1,0
+2023-24,FRA1,Clermont Foot,Jeremy Jacquet,18.0,0,1,1
+2023-24,FRA1,Clermont Foot,Maximiliano Caufriez,26.0,0,0,0
+2023-24,ENG1,Crystal Palace,Adam Wharton,19.0,0,1,1
+2023-24,ENG1,Crystal Palace,Daniel Muñoz,27.0,0,0,1
+2023-24,ENG1,Crystal Palace,David Ozoh,18.0,0,1,0
+2023-24,ENG1,Crystal Palace,Matheus França,19.0,0,1,1
+2023-24,ESP1,Cádiz,Aiham Ousou,23.0,0,0,1
+2023-24,ESP1,Cádiz,Borja Vázquez,18.0,0,1,1
+2023-24,ESP1,Cádiz,Brian Ocampo,24.0,0,0,0
+2023-24,ESP1,Cádiz,Karl Etta Eyong,19.0,0,1,1
+2023-24,ESP1,Cádiz,Lucas,22.0,0,0,1
+2023-24,ESP1,Cádiz,Moussa Diakité,19.0,0,1,1
+2023-24,GER1,Dortmund,Hendry Blank,18.0,0,1,1
+2023-24,GER1,Dortmund,Ian Maatsen,21.0,0,0,1
+2023-24,GER1,Dortmund,Julien Duranville,17.0,0,1,0
+2023-24,GER1,Dortmund,Kjell-Arik Wätjen,17.0,0,1,1
+2023-24,GER1,Dortmund,Ole Pohlmann,22.0,0,0,1
+2023-24,GER1,Dortmund,Samuel Bamba,19.0,0,1,1
+2023-24,ENG1,Everton,Lewis Warrington,20.0,0,1,1
+2023-24,ENG1,Everton,Tom Cannon,20.0,0,1,0
+2023-24,ENG1,Everton,Youssef Chermiti,19.0,0,1,1
+2023-24,ITA1,Fiorentina,Lucas Beltran,22.0,0,0,1
+2023-24,ITA1,Fiorentina,Michael Kayode,19.0,0,1,1
+2023-24,GER1,Frankfurt,Elias Baum,17.0,0,1,1
+2023-24,GER1,Frankfurt,Hugo Larsson,19.0,0,1,1
+2023-24,GER1,Frankfurt,Jean Mattéo Bahoya,18.0,0,1,1
+2023-24,GER1,Frankfurt,Marko Mladenović,18.0,0,1,1
+2023-24,GER1,Frankfurt,Nacho Ferri,18.0,0,1,1
+2023-24,GER1,Frankfurt,Nnamdi Collins,19.0,0,1,1
+2023-24,GER1,Frankfurt,Paxten Aaronson,19.0,0,1,0
+2023-24,GER1,Frankfurt,Willian Pacho,21.0,0,0,1
+2023-24,GER1,Freiburg,Attila Szalai,25.0,0,0,1
+2023-24,GER1,Freiburg,Fabian Rüdlin,26.0,0,0,1
+2023-24,GER1,Freiburg,Jordy Makengo,21.0,0,0,1
+2023-24,GER1,Freiburg,Junior Adamu,22.0,0,0,1
+2023-24,GER1,Freiburg,Maximilian Breunig,22.0,0,0,1
+2023-24,GER1,Freiburg,Merlin Röhl,21.0,0,0,0
+2023-24,ITA1,Frosinone,Arijon Ibrahimovic,18.0,1,1,0
+2023-24,ITA1,Frosinone,Enzo Barrenechea,22.0,1,0,0
+2023-24,ITA1,Frosinone,Walid Cheddira,25.0,1,0,1
+2023-24,ENG1,Fulham,Calvin Bassey,23.0,0,0,1
+2023-24,ENG1,Fulham,Luke Harris,18.0,0,1,0
+2023-24,ITA1,Genoa,Alan Matturro,19.0,1,1,1
+2023-24,ESP1,Getafe,Alberto Risco,17.0,0,1,1
+2023-24,ESP1,Getafe,Gorka Rivera Alonso,18.0,0,1,1
+2023-24,ESP1,Getafe,Jeremy Jorge,20.0,0,1,1
+2023-24,ESP1,Getafe,Jordi,22.0,0,0,1
+2023-24,ESP1,Getafe,Nabil Aberdin,20.0,0,1,1
+2023-24,ESP1,Getafe,Yassin Tallal,18.0,0,1,1
+2023-24,ESP1,Getafe,Yellu Santiago,19.0,0,1,0
+2023-24,ESP1,Girona,Antal Yaakobishvili,19.0,0,1,1
+2023-24,ESP1,Girona,Artem Dovbyk,26.0,0,0,1
+2023-24,ESP1,Girona,Jastin García,19.0,0,1,1
+2023-24,ESP1,Girona,Jhon Solis,18.0,0,1,1
+2023-24,ESP1,Girona,Pablo Torre,20.0,0,1,0
+2023-24,ESP1,Girona,Silvi Clúa,18.0,0,1,1
+2023-24,ESP1,Girona,Sávio,19.0,0,1,1
+2023-24,ESP1,Girona,Viktor Tsyhankov,25.0,0,0,0
+2023-24,GER1,Gladbach,Grant Ranos,20.0,0,1,1
+2023-24,GER1,Gladbach,Jordan Pefok,27.0,0,0,0
+2023-24,GER1,Gladbach,Lukas Ullrich,19.0,0,1,1
+2023-24,GER1,Gladbach,Shiō Fukuda,19.0,0,1,1
+2023-24,GER1,Gladbach,Tomáš Čvančara,22.0,0,0,1
+2023-24,ESP1,Granada,Adri Bosch,22.0,1,0,1
+2023-24,ESP1,Granada,André Ferreira,27.0,1,0,1
+2023-24,ESP1,Granada,Augusto Batalla,27.0,1,0,1
+2023-24,ESP1,Granada,Brau,21.0,1,0,1
+2023-24,ESP1,Granada,Bruno Méndez,23.0,1,0,1
+2023-24,ESP1,Granada,Kamil Jóźwiak,25.0,1,0,1
+2023-24,ESP1,Granada,Kamil Piątkowski,23.0,1,0,1
+2023-24,ESP1,Granada,Marc Martínez,33.0,1,0,1
+2023-24,ESP1,Granada,Pablo Saenz,22.0,1,0,1
+2023-24,ESP1,Granada,Samu Omorodion,19.0,1,1,1
+2023-24,ESP1,Granada,Sergio Rodelas,18.0,1,1,1
+2023-24,ESP1,Granada,Sergio Ruiz,28.0,1,0,1
+2023-24,ESP1,Granada,Wilson Manafá,29.0,1,0,1
+2023-24,ESP1,Granada,Álvaro Carreras,20.0,1,1,1
+2023-24,GER1,Heidenheim,Adrian Beck,26.0,1,0,1
+2023-24,GER1,Heidenheim,Christian Kühlwetter,27.0,1,0,1
+2023-24,GER1,Heidenheim,Denis Thomalla,30.0,1,0,1
+2023-24,GER1,Heidenheim,Florian Pick,27.0,1,0,1
+2023-24,GER1,Heidenheim,Jan Schöppner,24.0,1,0,1
+2023-24,GER1,Heidenheim,Kevin Müller,32.0,1,0,1
+2023-24,GER1,Heidenheim,Kevin Sessa,23.0,1,0,1
+2023-24,GER1,Heidenheim,Marvin Pieringer,23.0,1,0,1
+2023-24,GER1,Heidenheim,Nikola Dovedan,29.0,1,0,1
+2023-24,GER1,Heidenheim,Norman Theuerkauf,36.0,1,0,1
+2023-24,GER1,Heidenheim,Omar Traoré,25.0,1,0,1
+2023-24,GER1,Heidenheim,Patrick Mainka,28.0,1,0,1
+2023-24,GER1,Heidenheim,Stefan Schimmer,29.0,1,0,1
+2023-24,GER1,Heidenheim,Thomas Keller,23.0,1,0,1
+2023-24,GER1,Hoffenheim,Attila Szalai,25.0,0,0,1
+2023-24,GER1,Hoffenheim,Bambasé Conté,20.0,0,1,1
+2023-24,GER1,Hoffenheim,David Jurásek,22.0,0,0,1
+2023-24,GER1,Hoffenheim,Kasim Nuhu,28.0,0,0,0
+2023-24,GER1,Hoffenheim,Max Moerstedt,17.0,0,1,1
+2023-24,GER1,Hoffenheim,Mergim Berisha,25.0,0,0,0
+2023-24,GER1,Hoffenheim,Tim Drexler,18.0,0,1,1
+2023-24,GER1,Hoffenheim,Umut Tohumcu,18.0,0,1,0
+2023-24,ITA1,Inter,Tajon Buchanan,24.0,0,0,1
+2023-24,ITA1,Juventus,Carlos Alcaraz,21.0,0,0,0
+2023-24,ITA1,Juventus,Dean Huijsen,18.0,0,1,1
+2023-24,ITA1,Juventus,Samuel Iling-Junior,20.0,0,1,0
+2023-24,GER1,Köln,Damion Downs,19.0,0,1,1
+2023-24,GER1,Köln,Jacob Christensen,22.0,0,0,1
+2023-24,GER1,Köln,Justin Diehl,18.0,0,1,0
+2023-24,GER1,Köln,Leart Paqarada,28.0,0,0,1
+2023-24,GER1,Köln,Max Finkgräfe,19.0,0,1,1
+2023-24,GER1,Köln,Rasmus Carstensen,22.0,0,0,1
+2023-24,ESP1,Las Palmas,Alberto Moleiro,19.0,1,1,1
+2023-24,ESP1,Las Palmas,Cristian Herrera,32.0,1,0,1
+2023-24,ESP1,Las Palmas,Eric Curbelo,29.0,1,0,1
+2023-24,ESP1,Las Palmas,Iñaki González,19.0,1,1,1
+2023-24,ESP1,Las Palmas,Javier Muñoz,28.0,1,0,1
+2023-24,ESP1,Las Palmas,Juanma Herzog,19.0,1,1,1
+2023-24,ESP1,Las Palmas,Julian Araujo,21.0,1,0,1
+2023-24,ESP1,Las Palmas,Kirian Rodríguez,27.0,1,0,1
+2023-24,ESP1,Las Palmas,Máximo Perrone,20.0,1,1,0
+2023-24,ESP1,Las Palmas,Saúl Coco,24.0,1,0,1
+2023-24,ESP1,Las Palmas,Sergi Cardona,24.0,1,0,1
+2023-24,ESP1,Las Palmas,Álex Suárez,30.0,1,0,1
+2023-24,ESP1,Las Palmas,Álvaro Vallés,26.0,1,0,1
+2023-24,FRA1,Le Havre,Arouna Sangante,21.0,1,0,1
+2023-24,FRA1,Le Havre,Christopher Operi,26.0,1,0,1
+2023-24,FRA1,Le Havre,Loic Nego,32.0,1,0,1
+2023-24,ITA1,Lecce,Patrick Dorgu,19.0,0,1,1
+2023-24,FRA1,Lens,David Pereira Da Costa,22.0,0,0,0
+2023-24,FRA1,Lens,Morgan Guilavogui,25.0,0,0,1
+2023-24,FRA1,Lens,Neil El Aynaoui,22.0,0,0,1
+2023-24,FRA1,Lens,Sepe Elye Wahi,20.0,0,1,0
+2023-24,GER1,Leverkusen,Gustavo Puerta,20.0,0,1,1
+2023-24,GER1,Leverkusen,Noah Mbamba,18.0,0,1,0
+2023-24,GER1,Leverkusen,Victor Boniface,22.0,0,0,1
+2023-24,GER1,Leverkusen,Álex Grimaldo,27.0,0,0,1
+2023-24,FRA1,Lille,Alexsandro Ribeiro,24.0,0,0,0
+2023-24,FRA1,Lille,Andrej Ilic,23.0,0,0,1
+2023-24,FRA1,Lille,Ayyoub Bouaddi,16.0,0,1,1
+2023-24,ENG1,Liverpool,Ben Gannon-Doak,17.0,0,1,0
+2023-24,ENG1,Liverpool,Bobby Clark,18.0,0,1,0
+2023-24,ENG1,Liverpool,Cody Gakpo,24.0,0,0,0
+2023-24,ENG1,Liverpool,James McConnell,18.0,0,1,1
+2023-24,ENG1,Liverpool,Jarell Quansah,20.0,0,1,1
+2023-24,ENG1,Liverpool,Jayden Danns,17.0,0,1,1
+2023-24,ENG1,Liverpool,Stefan Bajcetic,18.0,0,1,0
+2023-24,FRA1,Lorient,Ayman Kari,19.0,0,1,0
+2023-24,FRA1,Lorient,Badredine Bouanani,19.0,0,1,0
+2023-24,FRA1,Lorient,Eli Junior Kroupi,17.0,0,1,0
+2023-24,FRA1,Lorient,Formose Mendy,34.0,0,0,1
+2023-24,ENG1,Luton Town,Alfie Doughty,23.0,1,0,1
+2023-24,ENG1,Luton Town,Amari'i Bell,29.0,1,0,1
+2023-24,ENG1,Luton Town,Cauley Woodrow,28.0,1,0,1
+2023-24,ENG1,Luton Town,Chiedozie Ogbene,26.0,1,0,1
+2023-24,ENG1,Luton Town,Daiki Hashioka,24.0,1,0,1
+2023-24,ENG1,Luton Town,Elijah Adebayo,25.0,1,0,1
+2023-24,ENG1,Luton Town,Fred Onyedinma,26.0,1,0,1
+2023-24,ENG1,Luton Town,Gabriel Osho,24.0,1,0,1
+2023-24,ENG1,Luton Town,Jacob Brown,25.0,1,0,1
+2023-24,ENG1,Luton Town,James Shea,32.0,1,0,1
+2023-24,ENG1,Luton Town,Jordan Clark,29.0,1,0,1
+2023-24,ENG1,Luton Town,Joseph Johnson,17.0,1,1,1
+2023-24,ENG1,Luton Town,Luke Berry,31.0,1,0,1
+2023-24,ENG1,Luton Town,Mads Juel Andersen,25.0,1,0,1
+2023-24,ENG1,Luton Town,Pelly Ruddock Mpanzu,30.0,1,0,1
+2023-24,ENG1,Luton Town,Thomas Kaminski,30.0,1,0,1
+2023-24,ENG1,Luton Town,Tom Lockyer,28.0,1,0,1
+2023-24,ENG1,Luton Town,Zack Nelson,18.0,1,1,1
+2023-24,FRA1,Lyon,Amin Sarr,22.0,0,0,0
+2023-24,FRA1,Lyon,Gift Orban,21.0,0,0,1
+2023-24,FRA1,Lyon,Jake O'Brien,22.0,0,0,1
+2023-24,FRA1,Lyon,Malick Fofana,18.0,0,1,1
+2023-24,FRA1,Lyon,Mamadou Sarr,18.0,0,1,0
+2023-24,FRA1,Lyon,Mohamed El Arouch,19.0,0,1,0
+2023-24,FRA1,Lyon,Sael Kumbedi,18.0,0,1,0
+2023-24,FRA1,Lyon,Skelly Alvero,21.0,0,0,1
+2023-24,GER1,Mainz 05,Andreas Hanche-Olsen,26.0,0,0,0
+2023-24,GER1,Mainz 05,Brajan Gruda,19.0,0,1,0
+2023-24,GER1,Mainz 05,Daniel Batz,32.0,0,0,1
+2023-24,GER1,Mainz 05,David Mamutovic,22.0,0,0,1
+2023-24,GER1,Mainz 05,Marcus Müller,20.0,0,1,1
+2023-24,ESP1,Mallorca,Cyle Larin,28.0,0,0,0
+2023-24,ESP1,Mallorca,Javier Llabrés,20.0,0,1,0
+2023-24,ESP1,Mallorca,Siebe Van Der Heyden,25.0,0,0,1
+2023-24,ENG1,Manchester City,Matheus Nunes,24.0,0,0,0
+2023-24,ENG1,Manchester City,Oscar Bobb,20.0,0,1,1
+2023-24,ENG1,Manchester City,Rico Lewis,18.0,0,1,0
+2023-24,ENG1,Manchester Utd,Antony,23.0,0,0,0
+2023-24,ENG1,Manchester Utd,Daniel Gore,18.0,0,1,1
+2023-24,ENG1,Manchester Utd,Ethan Wheatley,17.0,0,1,1
+2023-24,ENG1,Manchester Utd,Kobbie Mainoo,18.0,0,1,0
+2023-24,ENG1,Manchester Utd,Omari Forson,19.0,0,1,1
+2023-24,ENG1,Manchester Utd,Rasmus Højlund,20.0,0,1,0
+2023-24,ENG1,Manchester Utd,Willy Kambwala,18.0,0,1,1
+2023-24,FRA1,Metz,Maxime Colin,32.0,1,0,1
+2023-24,FRA1,Monaco,Mohamed Camara,33.0,0,0,0
+2023-24,FRA1,Montpellier,Akor Adams,23.0,0,0,1
+2023-24,FRA1,Montpellier,Axel Gueguin,18.0,0,1,0
+2023-24,FRA1,Montpellier,Khalil Fayad,19.0,0,1,0
+2023-24,ITA1,Monza,Pepin,27.0,0,0,0
+2023-24,ITA1,Monza,Valentin Carboni,18.0,0,1,0
+2023-24,FRA1,Nantes,Benie Traore,21.0,0,0,1
+2023-24,ITA1,Napoli,Cyril Ngonge,23.0,0,0,0
+2023-24,ITA1,Napoli,Natan,22.0,0,0,1
+2023-24,ENG1,Newcastle,Alex Murphy,19.0,0,1,1
+2023-24,ENG1,Newcastle,Amadou Diallo,20.0,0,1,1
+2023-24,ENG1,Newcastle,Ben Parkinson,18.0,0,1,1
+2023-24,ENG1,Newcastle,Joe White,20.0,0,1,1
+2023-24,ENG1,Newcastle,Lewis Hall,18.0,0,1,0
+2023-24,ENG1,Newcastle,Lewis Miley,17.0,0,1,0
+2023-24,ENG1,Newcastle,Michael Ndiweni,19.0,0,1,1
+2023-24,ENG1,Nottingham,Andrey Santos,19.0,0,1,1
+2023-24,ENG1,Nottingham,Brandon Aguilera,20.0,0,1,1
+2023-24,ENG1,Nottingham,Danilo Santos,22.0,0,0,0
+2023-24,ENG1,Nottingham,Murillo,21.0,0,0,1
+2023-24,ENG1,Nottingham,Rodrigo Ribeiro,18.0,0,1,1
+2023-24,ESP1,Osasuna,Asier Osambela,19.0,0,1,1
+2023-24,ESP1,Osasuna,Iker Muñoz,20.0,0,1,0
+2023-24,ESP1,Osasuna,Iñigo Arguibide,18.0,0,1,1
+2023-24,ESP1,Osasuna,José Arnaiz,28.0,0,0,1
+2023-24,ESP1,Osasuna,Xabier Huarte Armendáriz,22.0,0,0,1
+2023-24,FRA1,Paris Saint Germain,Manuel Ugarte,22.0,0,0,1
+2023-24,FRA1,Paris Saint Germain,Warren Zaire-Emery,17.0,0,1,0
+2023-24,GER1,RB Leipzig,Benjamin Šeško,20.0,0,1,1
+2023-24,GER1,RB Leipzig,Elif Elmas,23.0,0,0,1
+2023-24,GER1,RB Leipzig,Jonathan Norbye,16.0,0,1,1
+2023-24,GER1,RB Leipzig,Nicolas Seiwald,22.0,0,0,1
+2023-24,GER1,RB Leipzig,Nuha Jatta,17.0,0,1,1
+2023-24,ESP1,Rayo Vallecano,Abdul Mumin,25.0,0,0,0
+2023-24,ESP1,Rayo Vallecano,Crespo,26.0,0,0,1
+2023-24,ESP1,Rayo Vallecano,Diego Méndez,19.0,0,1,0
+2023-24,ESP1,Rayo Vallecano,Pep Chavarría,25.0,0,0,0
+2023-24,ESP1,Real Betis,Abde Ezzalzouli,21.0,0,0,0
+2023-24,ESP1,Real Betis,Abner,23.0,0,0,0
+2023-24,ESP1,Real Betis,Assane Diao,17.0,0,1,1
+2023-24,ESP1,Real Betis,Chadi Riad,20.0,0,1,0
+2023-24,ESP1,Real Betis,Johnny Cardoso,21.0,0,0,1
+2023-24,ESP1,Real Betis,Pablo Busto,17.0,0,1,1
+2023-24,ESP1,Real Betis,Ricardo Visus,22.0,0,0,1
+2023-24,ESP1,Real Betis,Sergi Altimira,21.0,0,0,1
+2023-24,ESP1,Real Madrid,Arda Güler,18.0,0,1,1
+2023-24,ESP1,Real Madrid,Gonzalo García,19.0,0,1,1
+2023-24,ESP1,Real Madrid,Mario Martín,19.0,0,1,1
+2023-24,ESP1,Real Madrid,Nicolás Paz,18.0,0,1,1
+2023-24,ESP1,Real Madrid,Álvaro Rodríguez,19.0,0,1,0
+2023-24,ESP1,Real Sociedad,Alberto Dadie,21.0,0,0,1
+2023-24,ESP1,Real Sociedad,Arsen Zakharyan,20.0,0,1,1
+2023-24,ESP1,Real Sociedad,Jon Aramburu,21.0,0,0,1
+2023-24,ESP1,Real Sociedad,Jon Magunazelaia,22.0,0,0,0
+2023-24,ESP1,Real Sociedad,Jon Martin,17.0,0,1,1
+2023-24,ESP1,Real Sociedad,Olasagasti,22.0,0,0,0
+2023-24,FRA1,Rennes,Bertug Yildirim,21.0,0,0,1
+2023-24,FRA1,Rennes,Fabian Rieder,21.0,0,0,1
+2023-24,FRA1,Rennes,Guela Doue,21.0,0,0,0
+2023-24,ITA1,Salernitana,Kostas Manolas,32.0,0,0,0
+2023-24,ITA1,Sassuolo,Emil Ceide,22.0,0,0,0
+2023-24,ITA1,Sassuolo,Filippo Missori,19.0,0,1,0
+2023-24,ITA1,Sassuolo,Justin Kumi,19.0,0,1,1
+2023-24,ITA1,Sassuolo,Ruan,24.0,0,0,0
+2023-24,ESP1,Sevilla,Alejo Véliz,19.0,0,1,1
+2023-24,ESP1,Sevilla,Diego Iturralde,20.0,0,1,0
+2023-24,ESP1,Sevilla,Federico Gattoni,24.0,0,0,1
+2023-24,ESP1,Sevilla,Isaac Romero,23.0,0,0,1
+2023-24,ESP1,Sevilla,Jesús Corona,30.0,0,0,0
+2023-24,ESP1,Sevilla,Manu Bueno,19.0,0,1,0
+2023-24,ESP1,Sevilla,Yassine Bounou,32.0,0,0,0
+2023-24,ENG1,Sheffield United,Andre Brooks,19.0,1,1,1
+2023-24,ENG1,Sheffield United,Anis Ben Slimane,22.0,1,0,1
+2023-24,ENG1,Sheffield United,Auston Trusty,24.0,1,0,1
+2023-24,ENG1,Sheffield United,Ben Brereton,24.0,1,0,1
+2023-24,ENG1,Sheffield United,Bénie Traoré,20.0,1,1,1
+2023-24,ENG1,Sheffield United,Gustavo Hamer,26.0,1,0,1
+2023-24,ENG1,Sheffield United,Oliver Arblaster,19.0,1,1,1
+2023-24,ENG1,Sheffield United,Ryan One,17.0,1,1,1
+2023-24,ENG1,Sheffield United,Sam Curtis,17.0,1,1,1
+2023-24,ENG1,Sheffield United,Sydie Peck,18.0,1,1,1
+2023-24,ENG1,Sheffield United,William Osula,19.0,1,1,1
+2023-24,FRA1,Strasbourg,Andrey Santos,19.0,0,1,1
+2023-24,FRA1,Strasbourg,Angelo,42.0,0,0,1
+2023-24,FRA1,Strasbourg,Dion Moise Sahi,22.0,0,0,0
+2023-24,GER1,Stuttgart,Jovan Milošević,18.0,0,1,1
+2023-24,GER1,Stuttgart,Leonidas Stergiou,21.0,0,0,1
+2023-24,GER1,Stuttgart,Luca Raimund,18.0,0,1,1
+2023-24,GER1,Stuttgart,Samuele Di Benedetto,18.0,0,1,1
+2023-24,ITA1,Torino,Perr Schuurs,24.0,0,0,0
+2023-24,ITA1,Torino,Saba Sazonov,21.0,0,0,1
+2023-24,ENG1,Tottenham,Alejo Véliz,19.0,0,1,1
+2023-24,ENG1,Tottenham,Jamie Donley,18.0,0,1,1
+2023-24,ENG1,Tottenham,Mikey Moore,15.0,0,1,1
+2023-24,FRA1,Toulouse,Gabriel Suazo,26.0,0,0,0
+2023-24,ITA1,Udinese,Lorenzo Lucca,23.0,0,0,1
+2023-24,ITA1,Udinese,Simone Pafundi,17.0,0,1,0
+2023-24,GER1,Union Berlin,Aljoscha Kemlein,18.0,0,1,1
+2023-24,GER1,Union Berlin,Benedict Hollerbach,22.0,0,0,1
+2023-24,GER1,Union Berlin,Chris Bedia,27.0,0,0,1
+2023-24,GER1,Union Berlin,David Datro Fofana,20.0,0,1,0
+2023-24,GER1,Union Berlin,Jordan Pefok,27.0,0,0,0
+2023-24,GER1,Union Berlin,Josip Juranović,27.0,0,0,0
+2023-24,GER1,Union Berlin,Mikkel Kaufmann,22.0,0,0,1
+2023-24,GER1,Union Berlin,Yorbe Vertessen,22.0,0,0,1
+2023-24,ESP1,Valencia,Alberto Marí,22.0,0,0,0
+2023-24,ESP1,Valencia,André Almeida,23.0,0,0,0
+2023-24,ESP1,Valencia,Cristian,25.0,0,0,1
+2023-24,ESP1,Valencia,César Tárrega,21.0,0,0,1
+2023-24,ESP1,Valencia,Francisco Perez,20.0,0,1,0
+2023-24,ESP1,Valencia,Javier Guerra,20.0,0,1,0
+2023-24,ESP1,Valencia,José Luis García Vayá,24.0,0,0,0
+2023-24,ESP1,Valencia,Mario Dominguez,19.0,0,1,0
+2023-24,ESP1,Valencia,Pablo Gozalbez,22.0,0,0,1
+2023-24,ESP1,Valencia,Roman Yaremchuk,27.0,0,0,1
+2023-24,ESP1,Valencia,Ruben Lendinez,20.0,0,1,0
+2023-24,ESP1,Valencia,Selim Amallah,26.0,0,0,0
+2023-24,ESP1,Valencia,Yarek Gasiorowski,18.0,0,1,1
+2023-24,ITA1,Verona,Jackson Tchatchoua,22.0,0,0,1
+2023-24,ITA1,Verona,Juan Cabal,22.0,0,0,0
+2023-24,ESP1,Villarreal,Adrià Altimira,22.0,0,0,1
+2023-24,ESP1,Villarreal,Ben Brereton,24.0,0,0,1
+2023-24,ESP1,Villarreal,Carlos Romero,21.0,0,0,1
+2023-24,ESP1,Villarreal,Pascu,20.0,0,1,0
+2023-24,ESP1,Villarreal,Stefan Lekovic,19.0,0,1,1
+2023-24,GER1,Werder Bremen,Isak Hansen-Aarøen,18.0,0,1,1
+2023-24,GER1,Werder Bremen,Joel Imasuen,18.0,0,1,1
+2023-24,GER1,Werder Bremen,Julián Malatini,22.0,0,0,1
+2023-24,GER1,Werder Bremen,Leon Opitz,18.0,0,1,1
+2023-24,GER1,Werder Bremen,Olivier Deman,23.0,0,0,1
+2023-24,GER1,Werder Bremen,Senne Lynen,24.0,0,0,1
+2023-24,GER1,Werder Bremen,Skelly Alvero,21.0,0,0,1
+2023-24,ENG1,West Ham,Divin Mubama,18.0,0,1,0
+2023-24,ENG1,West Ham,Edson Álvarez,25.0,0,0,1
+2023-24,ENG1,West Ham,George Earthy,18.0,0,1,1
+2023-24,ENG1,West Ham,Kaelan Casey,18.0,0,1,1
+2023-24,ENG1,West Ham,Mohammed Kudus,22.0,0,0,1
+2023-24,GER1,Wolfsburg,Amin Sarr,22.0,0,0,0
+2023-24,GER1,Wolfsburg,Bennit Bröger,17.0,0,1,1
+2023-24,GER1,Wolfsburg,Cedric Zesiger,25.0,0,0,1
+2023-24,GER1,Wolfsburg,Dženan Pejčinović,18.0,0,1,0
+2023-24,GER1,Wolfsburg,Kofi Amoako,18.0,0,1,1
+2023-24,GER1,Wolfsburg,Václav Černý,25.0,0,0,1
+2023-24,ENG1,Wolves,Daniel Bentley,30.0,0,0,0
+2023-24,ENG1,Wolves,Enso Gonzalez,18.0,0,1,1
+2023-24,ENG1,Wolves,Hugo Bueno,20.0,0,1,0
+2023-24,ENG1,Wolves,Jonny Castro,29.0,0,0,0
+2023-24,ENG1,Wolves,João Gomes,22.0,0,0,0
+2023-24,ENG1,Wolves,Leon Chiwome,17.0,0,1,1
+2023-24,ENG1,Wolves,Matheus Nunes,24.0,0,0,0
+2023-24,ENG1,Wolves,Nathan Fraser,18.0,0,1,1
+2023-24,ENG1,Wolves,Tawanda Chirewa,19.0,0,1,1
+2024-25,ESP1,Alavés,Carlos Benavídez,26.0,0,0,0
+2024-25,ESP1,Alavés,Carlos Martín,22.0,0,0,0
+2024-25,ESP1,Alavés,Facundo Garcés,24.0,0,0,1
+2024-25,ESP1,Alavés,Pau Cabanes,19.0,0,1,1
+2024-25,ESP1,Alavés,Pica,22.0,0,0,1
+2024-25,ESP1,Alavés,Santiago Mouriño,22.0,0,0,1
+2024-25,ESP1,Alavés,Stoichkov,30.0,0,0,1
+2024-25,ESP1,Alavés,Tomás Conechny,26.0,0,0,1
+2024-25,FRA1,Angers,Justin-Noel Kalumba,20.0,1,1,0
+2024-25,FRA1,Angers,Melvin Zinga,22.0,1,0,1
+2024-25,FRA1,Angers,Ousmane Camara,23.0,1,0,0
+2024-25,ENG1,Arsenal,Nathan Butler-Oyedeji,21.0,0,0,1
+2024-25,ENG1,Aston Villa,Andrés García,21.0,0,0,1
+2024-25,ENG1,Aston Villa,Kosta Nedeljković,18.0,0,1,1
+2024-25,ESP1,Athletic Club,Adama Boiro,22.0,0,0,1
+2024-25,ESP1,Athletic Club,Endika Buján,21.0,0,0,1
+2024-25,ESP1,Athletic Club,Maroan Sannadi,23.0,0,0,1
+2024-25,ESP1,Athletic Club,Peio Canales,19.0,0,1,1
+2024-25,ESP1,Athletic Club,Álvaro djaló,24.0,0,0,1
+2024-25,GER1,Augsburg,Nediljko Labrović,24.0,0,0,1
+2024-25,GER1,Augsburg,Noahkai Banks,17.0,0,1,1
+2024-25,GER1,Augsburg,Samuel Essende,26.0,0,0,1
+2024-25,GER1,Augsburg,Yusuf Kabadayı,20.0,0,1,1
+2024-25,ESP1,Barcelona,Daniel Rodriguez,18.0,0,1,1
+2024-25,ESP1,Barcelona,Gerard Martín,22.0,0,0,1
+2024-25,ESP1,Barcelona,Marc Bernal,17.0,0,1,1
+2024-25,ESP1,Barcelona,Sergi Dominguez,19.0,0,1,1
+2024-25,GER1,Bayern Munich,Jonah Kusi-Asare,17.0,0,1,1
+2024-25,GER1,Bochum,Aliou Badara Baldé,21.0,0,0,1
+2024-25,GER1,Bochum,Dani de Wit,26.0,0,0,1
+2024-25,GER1,Bochum,Giorgos Masouras,30.0,0,0,1
+2024-25,GER1,Bochum,Jakov Medić,25.0,0,0,1
+2024-25,GER1,Bochum,Kacper Koscierski,17.0,0,1,1
+2024-25,GER1,Bochum,Koji Miyoshi,27.0,0,0,1
+2024-25,ITA1,Bologna,Estanis Pedrola,21.0,0,0,1
+2024-25,ENG1,Bournemouth,Ben Winterburn,19.0,0,1,1
+2024-25,ENG1,Bournemouth,Evanilson,24.0,0,0,1
+2024-25,ENG1,Bournemouth,Julio Soler,19.0,0,1,1
+2024-25,ENG1,Bournemouth,Remy Rees-Dottin,18.0,0,1,1
+2024-25,ENG1,Bournemouth,Zain Silcott-Duberry,19.0,0,1,1
+2024-25,ENG1,Brentford,Edmond-Paris Maghoma,23.0,0,0,1
+2024-25,ENG1,Brentford,Gustavo Nunes,18.0,0,1,1
+2024-25,ENG1,Brentford,Igor Thiago,23.0,0,0,1
+2024-25,ENG1,Brentford,Jayden Meghoma,18.0,0,1,1
+2024-25,ENG1,Brentford,Kim Jisoo,19.0,0,1,1
+2024-25,ENG1,Brentford,Yehor Yarmoliuk,20.0,0,1,0
+2024-25,ENG1,Brentford,Yunus Emre Konak,18.0,0,1,1
+2024-25,ENG1,Brighton,Eiran Cashin,22.0,0,0,1
+2024-25,ENG1,Brighton,Ferdi Kadioglu,24.0,0,0,1
+2024-25,ENG1,Brighton,Harry Howell,16.0,0,1,1
+2024-25,ENG1,Brighton,Mats Wieffer,24.0,0,0,1
+2024-25,ENG1,Brighton,Matt O'Riley,23.0,0,0,1
+2024-25,ENG1,Brighton,Yankuba Minteh,20.0,0,1,1
+2024-25,ESP1,Celta Vigo,Fer López,20.0,0,1,1
+2024-25,ESP1,Celta Vigo,Pablo Durán,23.0,0,0,0
+2024-25,ENG1,Chelsea,Mathis Amougou,18.0,0,1,1
+2024-25,ENG1,Chelsea,Renato Veiga,21.0,0,0,0
+2024-25,ENG1,Chelsea,Shumaira Mheuka,16.0,0,1,1
+2024-25,ENG1,Chelsea,Tyrique George,18.0,0,1,1
+2024-25,ENG1,Crystal Palace,Asher Agbinone,18.0,0,1,1
+2024-25,ENG1,Crystal Palace,Caleb Kporha,18.0,0,1,1
+2024-25,ENG1,Crystal Palace,Justin Devenny,20.0,0,1,1
+2024-25,ENG1,Crystal Palace,Romain Esse,19.0,0,1,1
+2024-25,GER1,Dortmund,Almugera Kabar,18.0,0,1,1
+2024-25,GER1,Dortmund,Cole Campbell,18.0,0,1,1
+2024-25,GER1,Dortmund,Daniel Svensson,22.0,0,0,1
+2024-25,GER1,Dortmund,Yannik Lührs,20.0,0,1,1
+2024-25,ESP1,Espanyol,Antoniu,21.0,1,0,1
+2024-25,ESP1,Espanyol,José Gragera,23.0,1,0,0
+2024-25,ESP1,Espanyol,Naci Ünüvar,21.0,1,0,1
+2024-25,ESP1,Espanyol,Omar El Hilali,20.0,1,1,0
+2024-25,ESP1,Espanyol,Rafael Bauza,19.0,1,1,1
+2024-25,ESP1,Espanyol,Roberto Férnandez,22.0,1,0,1
+2024-25,ESP1,Espanyol,Roger Hinojo,19.0,1,1,1
+2024-25,ENG1,Everton,Harrison Armstrong,17.0,0,1,1
+2024-25,ENG1,Everton,Roman Dixon,19.0,0,1,1
+2024-25,ITA1,Fiorentina,Matias Moreno,21.0,0,0,1
+2024-25,GER1,Frankfurt,Aurèle Amenda,21.0,0,0,1
+2024-25,GER1,Frankfurt,Can Uzun,18.0,0,1,1
+2024-25,GER1,Frankfurt,Igor Matanović,21.0,0,0,1
+2024-25,GER1,Frankfurt,Nathaniel Brown,21.0,0,0,1
+2024-25,GER1,Frankfurt,Oscar Højlund,19.0,0,1,1
+2024-25,GER1,Freiburg,Ifechukwu Ogbus,18.0,0,1,1
+2024-25,GER1,Freiburg,Johan Manzambi,18.0,0,1,1
+2024-25,ENG1,Fulham,Martial Godo,21.0,0,0,1
+2024-25,ESP1,Getafe,Alberto Risco,18.0,0,1,0
+2024-25,ESP1,Getafe,Christantus Uche,21.0,0,0,1
+2024-25,ESP1,Getafe,Coba da Costa,22.0,0,0,1
+2024-25,ESP1,Getafe,David Argüelles,22.0,0,0,1
+2024-25,ESP1,Getafe,Ismael Bekhoucha,19.0,0,1,1
+2024-25,ESP1,Girona,Alejandro Francés,21.0,0,0,1
+2024-25,ESP1,Girona,Bojan Miovski,25.0,0,0,1
+2024-25,ESP1,Girona,Ferrán Ruiz,21.0,0,0,1
+2024-25,ESP1,Girona,Gabriel Osei Misehouy,19.0,0,1,1
+2024-25,ESP1,Girona,Iker Almena,20.0,0,1,1
+2024-25,ESP1,Girona,Kim Minsu,18.0,0,1,1
+2024-25,ESP1,Girona,Papa Ba,19.0,0,1,1
+2024-25,ESP1,Girona,Silvi Clúa,19.0,0,1,0
+2024-25,ESP1,Girona,Viktor Tsyhankov,26.0,0,0,0
+2024-25,ESP1,Girona,Vladyslav Krapyvtsov,19.0,0,1,1
+2024-25,ESP1,Girona,Yaser Asprilla,20.0,0,1,1
+2024-25,GER1,Gladbach,Noah Pesch,19.0,0,1,1
+2024-25,GER1,Gladbach,Philipp Sander,26.0,0,0,1
+2024-25,GER1,Gladbach,Tiago Cardoso,18.0,0,1,1
+2024-25,GER1,Heidenheim,Budu Zivzivadze,30.0,0,0,1
+2024-25,GER1,Heidenheim,Julian Niehues,23.0,0,0,1
+2024-25,GER1,Heidenheim,Luca Kerber,22.0,0,0,1
+2024-25,GER1,Heidenheim,Léo Scienza,25.0,0,0,1
+2024-25,GER1,Heidenheim,Sirlord Conteh,28.0,0,0,1
+2024-25,GER1,Hoffenheim,Alexander Prass,23.0,0,0,1
+2024-25,GER1,Hoffenheim,Arthur Chaves,23.0,0,0,1
+2024-25,GER1,Hoffenheim,Bazoumana Touré,18.0,0,1,1
+2024-25,GER1,Hoffenheim,David Mokwa,20.0,0,1,1
+2024-25,GER1,Hoffenheim,Erencan Yardimci,22.0,0,0,1
+2024-25,GER1,Hoffenheim,Florian Micheler,19.0,0,1,1
+2024-25,GER1,Hoffenheim,Hannes Behrens,19.0,0,1,1
+2024-25,GER1,Hoffenheim,Haris Tabaković,30.0,0,0,1
+2024-25,GER1,Hoffenheim,Paul Hennrich,19.0,0,1,1
+2024-25,GER1,Hoffenheim,Robin Hranáč,24.0,0,0,1
+2024-25,GER1,Holstein Kiel,Alexander Bernhardsson,25.0,1,0,1
+2024-25,GER1,Holstein Kiel,Andu Kelati,21.0,1,0,1
+2024-25,GER1,Holstein Kiel,Armin Gigovic,22.0,1,0,1
+2024-25,GER1,Holstein Kiel,Benedikt Pichler,27.0,1,0,1
+2024-25,GER1,Holstein Kiel,Carl Johansson,30.0,1,0,1
+2024-25,GER1,Holstein Kiel,David Zec,24.0,1,0,1
+2024-25,GER1,Holstein Kiel,Dominik Javorček,21.0,1,0,1
+2024-25,GER1,Holstein Kiel,Ivan Nekić,23.0,1,0,1
+2024-25,GER1,Holstein Kiel,Jann-Fiete Arp,24.0,1,0,1
+2024-25,GER1,Holstein Kiel,John Tolkin,22.0,1,0,1
+2024-25,GER1,Holstein Kiel,Lasse Rosenboom,22.0,1,0,1
+2024-25,GER1,Holstein Kiel,Magnus Knudsen,23.0,1,0,1
+2024-25,GER1,Holstein Kiel,Marco Komenda,27.0,1,0,1
+2024-25,GER1,Holstein Kiel,Marko Ivezić,22.0,1,0,1
+2024-25,GER1,Holstein Kiel,Nicolai Remberg,24.0,1,0,1
+2024-25,GER1,Holstein Kiel,Phil Harres,22.0,1,0,1
+2024-25,GER1,Holstein Kiel,Shuto Machino,24.0,1,0,1
+2024-25,GER1,Holstein Kiel,Thomas Dähne,30.0,1,0,1
+2024-25,GER1,Holstein Kiel,Timon Weiner,25.0,1,0,1
+2024-25,ENG1,Ipswich Town,Ali Al Hamadi,22.0,1,0,1
+2024-25,ENG1,Ipswich Town,Cameron Burgess,28.0,1,0,1
+2024-25,ENG1,Ipswich Town,Conor Chaplin,27.0,1,0,1
+2024-25,ENG1,Ipswich Town,George Edmundson,26.0,1,0,1
+2024-25,ENG1,Ipswich Town,Harry Clarke,23.0,1,0,1
+2024-25,ENG1,Ipswich Town,Jack Taylor,26.0,1,0,1
+2024-25,ENG1,Ipswich Town,Jacob Greaves,23.0,1,0,1
+2024-25,ENG1,Ipswich Town,Luke Woolfenden,25.0,1,0,1
+2024-25,ENG1,Ipswich Town,Marcus Harness,28.0,1,0,1
+2024-25,ENG1,Ipswich Town,Massimo Luongo,31.0,1,0,1
+2024-25,ENG1,Ipswich Town,Omari Hutchinson,20.0,1,1,0
+2024-25,ENG1,Ipswich Town,Sam Morsy,32.0,1,0,1
+2024-25,ENG1,Ipswich Town,Sammie Szmodics,28.0,1,0,1
+2024-25,ENG1,Ipswich Town,Wes Burns,29.0,1,0,1
+2024-25,ITA1,Juventus,Nicolo Savona,21.0,0,0,1
+2024-25,ITA1,Juventus,Renato Veiga,21.0,0,0,0
+2024-25,ITA1,Juventus,Samuel Mbangula,20.0,0,1,1
+2024-25,ESP1,Las Palmas,Aboubacar Bassinga,19.0,0,1,1
+2024-25,ESP1,Las Palmas,Arturo Rodríguez,17.0,0,1,1
+2024-25,ESP1,Las Palmas,Dario Essugo,19.0,0,1,1
+2024-25,ESP1,Las Palmas,Diego Martín,20.0,0,1,1
+2024-25,ESP1,Las Palmas,Dinko Horkaš,25.0,0,0,1
+2024-25,ESP1,Las Palmas,José Carlos González,18.0,0,1,1
+2024-25,ESP1,Las Palmas,Manuel Fuster,26.0,0,0,1
+2024-25,ESP1,Las Palmas,Sergio Viera,19.0,0,1,1
+2024-25,ESP1,Las Palmas,Valentín Pezzolesi,17.0,0,1,1
+2024-25,ESP1,Las Palmas,Viti,26.0,0,0,1
+2024-25,ITA1,Lecce,Balthazar Pierret,24.0,0,0,1
+2024-25,ESP1,Leganés,Borna Barišić,31.0,1,0,1
+2024-25,ESP1,Leganés,Diego,24.0,1,0,1
+2024-25,ESP1,Leganés,Duk,24.0,1,0,1
+2024-25,ESP1,Leganés,Julián Chicco,26.0,1,0,1
+2024-25,ESP1,Leganés,Sergi,32.0,1,0,1
+2024-25,ESP1,Leganés,Seydouba Cissé,23.0,1,0,1
+2024-25,ESP1,Leganés,Yan Diomandé,17.0,1,1,1
+2024-25,ENG1,Leicester City,Abdul Fatawu Issahaku,20.0,1,1,1
+2024-25,ENG1,Leicester City,Bilal El Khannouss,20.0,1,1,1
+2024-25,ENG1,Leicester City,Jake Evans,15.0,1,1,1
+2024-25,ENG1,Leicester City,Jeremy Monga,15.0,1,1,1
+2024-25,ENG1,Leicester City,Mads Hermansen,24.0,1,0,1
+2024-25,ENG1,Leicester City,Victor Bernth Kristiansen,21.0,1,0,0
+2024-25,ENG1,Leicester City,Will Alves,19.0,1,1,1
+2024-25,ENG1,Leicester City,Woyo Coulibaly,25.0,1,0,1
+2024-25,FRA1,Lens,David Pereira Da Costa,23.0,0,0,0
+2024-25,FRA1,Lens,Goduine Koyalipou,24.0,0,0,1
+2024-25,FRA1,Lille,Alexsandro Ribeiro,25.0,0,0,0
+2024-25,FRA1,Lille,Matias Fernandez-Pardo,19.0,0,1,1
+2024-25,FRA1,Lyon,Thiago Almada,23.0,0,0,1
+2024-25,GER1,Mainz 05,Hong Hyunseok,25.0,0,0,1
+2024-25,GER1,Mainz 05,Kaishū Sano,23.0,0,0,1
+2024-25,GER1,Mainz 05,Nikolas Veratschnig,21.0,0,0,1
+2024-25,ESP1,Mallorca,Jan Salas,18.0,0,1,1
+2024-25,ESP1,Mallorca,Marc Domenech,18.0,0,1,1
+2024-25,ENG1,Manchester City,Claudio Echeverri,18.0,0,1,1
+2024-25,ENG1,Manchester City,Jahmai Simpson-Pusey,18.0,0,1,1
+2024-25,ENG1,Manchester City,Nico O'Reilly,19.0,0,1,1
+2024-25,ENG1,Manchester City,Vitor Reis,18.0,0,1,1
+2024-25,ENG1,Manchester Utd,Chidozie Obi-Martin,16.0,0,1,1
+2024-25,ENG1,Manchester Utd,Harry Amass,17.0,0,1,1
+2024-25,ENG1,Manchester Utd,Tyler Fredricson,19.0,0,1,1
+2024-25,FRA1,Marseille,Amar Dedic,22.0,0,0,1
+2024-25,FRA1,Marseille,Sepe Elye Wahi,21.0,0,0,0
+2024-25,ITA1,Monza,Semuel Pizzignacco,23.0,0,0,1
+2024-25,ENG1,Nottingham,Eric da Silva Moreira,18.0,0,1,1
+2024-25,ENG1,Nottingham,Jota Silva,24.0,0,0,1
+2024-25,ENG1,Nottingham,Morato,23.0,0,0,1
+2024-25,ENG1,Nottingham,Ramón Sosa,24.0,0,0,1
+2024-25,ESP1,Osasuna,Abel Bretones,23.0,0,0,1
+2024-25,ESP1,Osasuna,Enzo Boyomo,22.0,0,0,1
+2024-25,FRA1,Paris Saint Germain,Axel Tape,17.0,0,1,1
+2024-25,ITA1,Parma Calcio 1913,Woyo Coulibaly,25.0,1,0,1
+2024-25,ITA1,Parma Calcio 1913,Zion Suzuki,22.0,1,0,1
+2024-25,GER1,RB Leipzig,Antonio Nusa,19.0,0,1,1
+2024-25,GER1,RB Leipzig,Assan Ouédraogo,18.0,0,1,1
+2024-25,GER1,RB Leipzig,Faik Sakar,16.0,0,1,1
+2024-25,GER1,RB Leipzig,Kosta Nedeljković,18.0,0,1,1
+2024-25,GER1,RB Leipzig,Lutsharel Geertruida,24.0,0,0,1
+2024-25,GER1,RB Leipzig,Maarten Vandevoordt,22.0,0,0,1
+2024-25,GER1,RB Leipzig,Tidiam Gomis,17.0,0,1,1
+2024-25,GER1,RB Leipzig,Viggo Gebel,16.0,0,1,1
+2024-25,ESP1,Rayo Vallecano,Etienne Eto'o,21.0,0,0,1
+2024-25,ESP1,Rayo Vallecano,Pedro Díaz,26.0,0,0,1
+2024-25,ESP1,Rayo Vallecano,Pelayo Fernandez,21.0,0,0,1
+2024-25,ESP1,Real Betis,Carlos Guirao,21.0,0,0,1
+2024-25,ESP1,Real Betis,Mateo Flores,20.0,0,1,1
+2024-25,ESP1,Real Betis,Pablo Garcia,18.0,0,1,1
+2024-25,ESP1,Real Betis,Ángel Ortíz,20.0,0,1,1
+2024-25,ESP1,Real Madrid,Daniel Yáñez,17.0,0,1,1
+2024-25,ESP1,Real Madrid,Endrick,18.0,0,1,1
+2024-25,ESP1,Real Madrid,Fran,19.0,0,1,1
+2024-25,ESP1,Real Madrid,Lorenzo Aguado,21.0,0,0,1
+2024-25,ESP1,Real Madrid,Víctor Muñoz,21.0,0,0,1
+2024-25,ESP1,Real Sociedad,Arkaitz Mariezkurrena,19.0,0,1,1
+2024-25,ESP1,Real Sociedad,Daniel Díaz,18.0,0,1,1
+2024-25,ESP1,Real Sociedad,Luka Sučić,21.0,0,0,1
+2024-25,ESP1,Real Sociedad,Luken Beitia,20.0,0,1,1
+2024-25,ESP1,Real Sociedad,Orri Steinn Óskarsson,19.0,0,1,1
+2024-25,FRA1,Reims,Gabriel Moscardo,19.0,0,1,1
+2024-25,FRA1,Rennes,Albert Gronbaek,23.0,0,0,1
+2024-25,FRA1,Rennes,Glen Kamara,29.0,0,0,1
+2024-25,FRA1,Rennes,Kazeem Olaigbe,21.0,0,0,1
+2024-25,FRA1,Saint-Etienne,Ibrahim Sissoko,33.0,1,0,1
+2024-25,FRA1,Saint-Etienne,Mathis Amougou,18.0,1,1,1
+2024-25,FRA1,Saint-Etienne,Maxime Bernauer,26.0,1,0,1
+2024-25,FRA1,Saint-Etienne,Pierre Ekwah,22.0,1,0,1
+2024-25,ESP1,Sevilla,Darío Fuentes,21.0,0,0,1
+2024-25,ESP1,Sevilla,Diego Iturralde,21.0,0,0,0
+2024-25,ESP1,Sevilla,Israel Domínguez,21.0,0,0,1
+2024-25,ESP1,Sevilla,Leandro Antonetti,21.0,0,0,1
+2024-25,ESP1,Sevilla,Mateo Mejía,21.0,0,0,1
+2024-25,ESP1,Sevilla,Peque,21.0,0,0,1
+2024-25,ESP1,Sevilla,Ramón Martínez,21.0,0,0,1
+2024-25,ESP1,Sevilla,Álvaro Pascual,22.0,0,0,1
+2024-25,ENG1,Southampton,Albert Grønbaek,23.0,1,0,1
+2024-25,ENG1,Southampton,Jay Robinson,17.0,1,1,1
+2024-25,ENG1,Southampton,Joachim Kayi Sanda,17.0,1,1,1
+2024-25,ENG1,Southampton,Joe Lumley,29.0,1,0,1
+2024-25,ENG1,Southampton,Mateus Fernandes,20.0,1,1,1
+2024-25,ENG1,Southampton,Nathan Wood-Gordon,22.0,1,0,1
+2024-25,ENG1,Southampton,Paul Onuachu,30.0,1,0,0
+2024-25,ENG1,Southampton,Ronnie Edwards,21.0,1,0,1
+2024-25,ENG1,Southampton,Ross Stewart,28.0,1,0,1
+2024-25,ENG1,Southampton,Ryan Manning,28.0,1,0,1
+2024-25,ENG1,Southampton,Samuel Amo-Ameyaw,18.0,1,1,0
+2024-25,ENG1,Southampton,Tyler Dibling,18.0,1,1,1
+2024-25,ENG1,Southampton,Welington,23.0,1,0,1
+2024-25,ENG1,Southampton,Yukinari Sugawara,24.0,1,0,1
+2024-25,GER1,St Pauli,Abdoulie Ceesay,20.0,1,1,1
+2024-25,GER1,St Pauli,Adam Dźwigała,28.0,1,0,1
+2024-25,GER1,St Pauli,Andreas Albers,34.0,1,0,1
+2024-25,GER1,St Pauli,Ben Alexander Voll,23.0,1,0,1
+2024-25,GER1,St Pauli,Connor Metcalfe,24.0,1,0,1
+2024-25,GER1,St Pauli,Dapo Afolayan,26.0,1,0,1
+2024-25,GER1,St Pauli,Elias Saad,24.0,1,0,1
+2024-25,GER1,St Pauli,Eric Smith,27.0,1,0,1
+2024-25,GER1,St Pauli,Erik Ahlstrand,22.0,1,0,1
+2024-25,GER1,St Pauli,Jackson Irvine,31.0,1,0,1
+2024-25,GER1,St Pauli,James Sands,24.0,1,0,1
+2024-25,GER1,St Pauli,Karol Mets,31.0,1,0,1
+2024-25,GER1,St Pauli,Lars Ritzka,26.0,1,0,1
+2024-25,GER1,St Pauli,Manolis Saliakas,27.0,1,0,1
+2024-25,GER1,St Pauli,Maurides,30.0,1,0,1
+2024-25,GER1,St Pauli,Nikola Vasilj,28.0,1,0,1
+2024-25,GER1,St Pauli,Philipp Treu,23.0,1,0,1
+2024-25,FRA1,Strasbourg,Samuel Amo-Ameyaw,18.0,0,1,0
+2024-25,GER1,Stuttgart,Finn Jeltsch,18.0,0,1,1
+2024-25,GER1,Stuttgart,Jarzinho Malanga,18.0,0,1,1
+2024-25,GER1,Stuttgart,Luca Jaquez,21.0,0,0,1
+2024-25,GER1,Stuttgart,Ramon Hendriks,23.0,0,0,1
+2024-25,ENG1,Tottenham,Antonín Kinský,21.0,0,0,1
+2024-25,ENG1,Tottenham,Archie Gray,18.0,0,1,1
+2024-25,ENG1,Tottenham,Lucas Bergvall,18.0,0,1,1
+2024-25,ENG1,Tottenham,Mikey Moore,16.0,0,1,0
+2024-25,ENG1,Tottenham,Will Lankshear,19.0,0,1,1
+2024-25,FRA1,Toulouse,Jaydee Canvot,18.0,0,1,1
+2024-25,GER1,Union Berlin,David Preu,19.0,0,1,1
+2024-25,GER1,Union Berlin,Ivan Prtajin,28.0,0,0,1
+2024-25,GER1,Union Berlin,Leopold Querfeld,20.0,0,1,1
+2024-25,GER1,Union Berlin,Marin Ljubicic,22.0,0,0,1
+2024-25,ESP1,Valencia,Francisco Perez,21.0,0,0,0
+2024-25,ESP1,Valencia,Iker Córdoba,18.0,0,1,1
+2024-25,ESP1,Valencia,Ivan Jaime Pajuelo,23.0,0,0,1
+2024-25,ESP1,Valencia,José Luis García Vayá,25.0,0,0,0
+2024-25,ESP1,Valencia,Rodrigo Abajas,21.0,0,0,1
+2024-25,ESP1,Valladolid,Abdulai Juma Bah,18.0,1,1,1
+2024-25,ESP1,Valladolid,Adrian Baquerin,17.0,1,1,1
+2024-25,ESP1,Valladolid,Arnau Rafús,21.0,1,0,1
+2024-25,ESP1,Valladolid,Chuky san jose,20.0,1,1,1
+2024-25,ESP1,Valladolid,David Torres,21.0,1,0,0
+2024-25,ESP1,Valladolid,Enzo Boyomo,22.0,1,0,1
+2024-25,ESP1,Valladolid,Iago Parente,18.0,1,1,1
+2024-25,ESP1,Valladolid,Ibrahim Alani,18.0,1,1,1
+2024-25,ESP1,Valladolid,Karl Jakob Hein,22.0,1,0,1
+2024-25,ESP1,Valladolid,Lucas Oliveira Rosa,24.0,1,0,0
+2024-25,ESP1,Valladolid,Mario Maroto,20.0,1,1,1
+2024-25,ESP1,Valladolid,Raúl Chasco,20.0,1,1,1
+2024-25,ESP1,Valladolid,Stanko Jurić,27.0,1,0,1
+2024-25,ESP1,Valladolid,Tamás Nikitscher,24.0,1,0,1
+2024-25,ESP1,Valladolid,Víctor Meseguer,25.0,1,0,1
+2024-25,ESP1,Valladolid,Xavier Moreno,19.0,1,1,1
+2024-25,ITA1,Venezia,Antonio Raimondo,20.0,1,1,0
+2024-25,ITA1,Venezia,Mikael Ellertsson,22.0,1,0,0
+2024-25,ITA1,Verona,Daniel Oyegoke,21.0,0,0,1
+2024-25,ITA1,Verona,Nicolas Valentini,23.0,0,0,1
+2024-25,ESP1,Villarreal,Daniel Requena,20.0,0,1,1
+2024-25,ESP1,Villarreal,Luiz Lúcio Reis Júnior,23.0,0,0,1
+2024-25,ESP1,Villarreal,Pau Cabanes,19.0,0,1,1
+2024-25,ESP1,Villarreal,Pau Navarro,19.0,0,1,1
+2024-25,ESP1,Villarreal,Thiago Ojeda,21.0,0,0,1
+2024-25,ESP1,Villarreal,Thierno Barry,21.0,0,0,1
+2024-25,GER1,Werder Bremen,Derrick Köhn,25.0,0,0,1
+2024-25,GER1,Werder Bremen,Keke Topp,20.0,0,1,0
+2024-25,GER1,Werder Bremen,Marco Grüll,26.0,0,0,1
+2024-25,ENG1,West Ham,Andy Irving,24.0,0,0,1
+2024-25,ENG1,West Ham,Luis Guilherme,18.0,0,1,1
+2024-25,GER1,Wolfsburg,Bence Dárdai,18.0,0,1,1
+2024-25,GER1,Wolfsburg,David Odogu,18.0,0,1,1
+2024-25,GER1,Wolfsburg,Konstantinos Koulierakis,20.0,0,1,1
+2024-25,GER1,Wolfsburg,Mohamed Amoura,24.0,0,0,1
+2024-25,ENG1,Wolves,André,23.0,0,0,1
+2024-25,ENG1,Wolves,Carlos Forbs,20.0,0,1,1
+2024-25,ENG1,Wolves,Mateus Mane,16.0,0,1,1
+2024-25,ENG1,Wolves,Nasser Djiga,21.0,0,0,1
+2024-25,ENG1,Wolves,Pedro Lima,18.0,0,1,1
+2024-25,ENG1,Wolves,Rodrigo Gomes,21.0,0,0,1
+2025-26,ESP1,Alavés,Aitor Mañas,22.0,0,0,1
+2025-26,ESP1,Alavés,Calebe,25.0,0,0,1
+2025-26,ESP1,Alavés,Carlos Ballestero,21.0,0,0,1
+2025-26,ESP1,Alavés,Carlos Benavídez,27.0,0,0,0
+2025-26,ESP1,Alavés,Diego Morcillo,22.0,0,0,1
+2025-26,ESP1,Alavés,Ibrahim Diabaté,25.0,0,0,1
+2025-26,ESP1,Alavés,Jonny Castro,31.0,0,0,0
+2025-26,ESP1,Alavés,Ville Koski,23.0,0,0,1
+2025-26,ESP1,Alavés,Youssef Lekhedim,19.0,0,1,1
+2025-26,ESP1,Alavés,Ángel Pérez,22.0,0,0,1
+2025-26,FRA1,Angers,Justin-Noel Kalumba,21.0,0,0,0
+2025-26,ENG1,Arsenal,Max Dowman,15.0,0,1,1
+2025-26,ENG1,Aston Villa,Alysson,19.0,0,1,1
+2025-26,ENG1,Aston Villa,Bradley Burrowes,17.0,0,1,1
+2025-26,ENG1,Aston Villa,George Hemmings,18.0,0,1,1
+2025-26,ENG1,Aston Villa,Jamaldeen Jimoh,18.0,0,1,1
+2025-26,ESP1,Athletic Club,Asier Hierro,20.0,0,1,1
+2025-26,ESP1,Athletic Club,Eder García,21.0,0,0,1
+2025-26,ESP1,Athletic Club,Selton Sánchez,18.0,0,1,1
+2025-26,ESP1,Athletic Club,Urko Izeta,25.0,0,0,1
+2025-26,ESP1,Atlético Madrid,Aleksa Puric,22.0,0,0,1
+2025-26,ESP1,Atlético Madrid,Daniel Martinez,21.0,0,0,1
+2025-26,ESP1,Atlético Madrid,Iker Luque,20.0,0,1,1
+2025-26,ESP1,Atlético Madrid,Jano Monserrate,19.0,0,1,1
+2025-26,ESP1,Atlético Madrid,Javi Morcillo,19.0,0,1,1
+2025-26,ESP1,Atlético Madrid,Julio Diaz,20.0,0,1,1
+2025-26,ESP1,Atlético Madrid,Miguel Cubo,17.0,0,1,1
+2025-26,ESP1,Atlético Madrid,Obed Vargas,19.0,0,1,1
+2025-26,ESP1,Atlético Madrid,Rodrigo Mendoza,20.0,0,1,1
+2025-26,ESP1,Atlético Madrid,Taufik Seidu,17.0,0,1,1
+2025-26,GER1,Augsburg,Aiman Dardari,20.0,0,1,1
+2025-26,GER1,Augsburg,Robin Fellhauer,27.0,0,0,1
+2025-26,GER1,Augsburg,Tim Schnitzer,17.0,0,1,1
+2025-26,GER1,Augsburg,Uchenna Ogundu,19.0,0,1,1
+2025-26,FRA1,Auxerre,Ibrahim Osman,21.0,0,0,1
+2025-26,ESP1,Barcelona,Dro Fernández,17.0,0,1,1
+2025-26,ESP1,Barcelona,Jofre Torrents,18.0,0,1,1
+2025-26,ESP1,Barcelona,Roony Bardghji,19.0,0,1,1
+2025-26,ESP1,Barcelona,Tomas Marques,18.0,0,1,1
+2025-26,ESP1,Barcelona,Xavi Espart,18.0,0,1,1
+2025-26,GER1,Bayern Munich,Bara Sapoko Ndiaye,17.0,0,1,1
+2025-26,GER1,Bayern Munich,Cassiano Kiala,16.0,0,1,1
+2025-26,GER1,Bayern Munich,David Daiber,18.0,0,1,1
+2025-26,GER1,Bayern Munich,Deniz Ofli,18.0,0,1,1
+2025-26,GER1,Bayern Munich,Erblin Osmani,16.0,0,1,1
+2025-26,GER1,Bayern Munich,Felipe Chávez,18.0,0,1,1
+2025-26,GER1,Bayern Munich,Maycon Cardozo,16.0,0,1,1
+2025-26,GER1,Bayern Munich,Wisdom Mike,16.0,0,1,1
+2025-26,ENG1,Bournemouth,Alex Tóth,19.0,0,1,1
+2025-26,ENG1,Bournemouth,Eli Junior Kroupi,19.0,0,1,0
+2025-26,ENG1,Bournemouth,Rayan,18.0,0,1,1
+2025-26,ENG1,Bournemouth,Veljko Milosavljević,18.0,0,1,1
+2025-26,ENG1,Brentford,Antoni Milambo,20.0,0,1,1
+2025-26,ENG1,Brentford,Kaye Furo,18.0,0,1,1
+2025-26,ENG1,Brentford,Romelle Donovan,18.0,0,1,1
+2025-26,ENG1,Brentford,Yehor Yarmoliuk,21.0,0,0,0
+2025-26,ENG1,Brighton,Charalampos Kostoulas,18.0,0,1,1
+2025-26,ENG1,Brighton,Harry Howell,17.0,0,1,0
+2025-26,ENG1,Brighton,Joe Knight,19.0,0,1,1
+2025-26,ENG1,Brighton,Maxim De Cuyper,24.0,0,0,1
+2025-26,ENG1,Brighton,Nehemiah Oriola,18.0,0,1,1
+2025-26,ENG1,Brighton,Stefanos Tzimas,19.0,0,1,1
+2025-26,ENG1,Brighton,Tom Watson,19.0,0,1,1
+2025-26,ENG1,Burnley,Jaydon Amauri Banel,20.0,1,1,1
+2025-26,ENG1,Burnley,Josh Laurent,30.0,1,0,1
+2025-26,ENG1,Burnley,Marcus Edwards,26.0,1,0,1
+2025-26,ENG1,Burnley,Max Weiß,21.0,1,0,1
+2025-26,ENG1,Burnley,Oliver Sonne,24.0,1,0,1
+2025-26,ENG1,Burnley,Quilindschy Hartman,23.0,1,0,1
+2025-26,ENG1,Burnley,Zian Flemming,26.0,1,0,1
+2025-26,ESP1,Celta Vigo,Andrés Antañón,18.0,0,1,1
+2025-26,ESP1,Celta Vigo,Hugo García,18.0,0,1,1
+2025-26,ESP1,Celta Vigo,Álvaro Núñez,25.0,0,0,1
+2025-26,ENG1,Chelsea,Estêvão Willian,18.0,0,1,1
+2025-26,ENG1,Chelsea,Jesse Derry,18.0,0,1,1
+2025-26,ENG1,Chelsea,Jorrel Hato,19.0,0,1,1
+2025-26,ENG1,Crystal Palace,Joél Drakes-Thomas,16.0,0,1,1
+2025-26,ENG1,Crystal Palace,Rio Cardines,19.0,0,1,1
+2025-26,GER1,Dortmund,Luca Reggiani,17.0,0,1,1
+2025-26,GER1,Dortmund,Mathis Albert,16.0,0,1,1
+2025-26,GER1,Dortmund,Samuele Inácio,17.0,0,1,1
+2025-26,ESP1,Elche,Adam Boayar,19.0,1,1,1
+2025-26,ESP1,Elche,Ali Houary,19.0,1,1,1
+2025-26,ESP1,Elche,David Affengruber,24.0,1,0,1
+2025-26,ESP1,Elche,Federico Redondo,22.0,1,0,1
+2025-26,ESP1,Elche,John Donald,24.0,1,0,0
+2025-26,ESP1,Elche,Lucas Cepeda,22.0,1,0,1
+2025-26,ESP1,Elche,Marc Aguado,25.0,1,0,1
+2025-26,ESP1,Elche,Martim Neto,22.0,1,0,1
+2025-26,ESP1,Elche,Rodrigo Mendoza,20.0,1,1,1
+2025-26,ESP1,Elche,Álex Sánchez,19.0,1,1,1
+2025-26,ESP1,Elche,Álvaro Núñez,25.0,1,0,1
+2025-26,ESP1,Espanyol,Fortuño,23.0,0,0,1
+2025-26,ESP1,Espanyol,José Salinas,24.0,0,0,1
+2025-26,ESP1,Espanyol,Lluc Castell,18.0,0,1,1
+2025-26,ESP1,Espanyol,Tyrhys Dolan,23.0,0,0,1
+2025-26,GER1,Frankfurt,Ayoube Amaimouni,20.0,0,1,1
+2025-26,GER1,Frankfurt,Love Arrhov,17.0,0,1,1
+2025-26,GER1,Frankfurt,Younes Ebnoutalib,21.0,0,0,1
+2025-26,GER1,Freiburg,Cyriaque Irié,20.0,0,1,1
+2025-26,GER1,Freiburg,Rouven Tarnutzer,18.0,0,1,1
+2025-26,GER1,Freiburg,Yuito Suzuki,23.0,0,0,0
+2025-26,ENG1,Fulham,Kevin,22.0,0,0,1
+2025-26,ITA1,Genoa,Mikael Ellertsson,23.0,0,0,0
+2025-26,ESP1,Getafe,Abu Kamara,22.0,0,0,1
+2025-26,ESP1,Getafe,Adrián Liso,20.0,0,1,1
+2025-26,ESP1,Getafe,Alejandro Mestanza,20.0,0,1,1
+2025-26,ESP1,Getafe,Damián,22.0,0,0,1
+2025-26,ESP1,Getafe,Davinchi,17.0,0,1,1
+2025-26,ESP1,Getafe,Hugo Solozabal,22.0,0,0,1
+2025-26,ESP1,Getafe,Jorge Montes,21.0,0,0,1
+2025-26,ESP1,Getafe,Luis Vázquez,24.0,0,0,1
+2025-26,ESP1,Getafe,Sebastián Boselli,21.0,0,0,1
+2025-26,ESP1,Getafe,Veljko Birmančević,27.0,0,0,0
+2025-26,ESP1,Getafe,Zaid Romero,25.0,0,0,1
+2025-26,ESP1,Getafe,Álex Sancris,28.0,0,0,1
+2025-26,ESP1,Girona,Dawda Camara,22.0,0,0,1
+2025-26,ESP1,Girona,Juan Arango,19.0,0,1,1
+2025-26,ESP1,Girona,Lancinet Kourouma,21.0,0,0,1
+2025-26,ESP1,Girona,Viktor Tsyhankov,27.0,0,0,0
+2025-26,ESP1,Girona,Vladyslav Vanat,23.0,0,0,1
+2025-26,GER1,Gladbach,Hugo Bolin,22.0,0,0,1
+2025-26,GER1,Gladbach,Jan Urbich,21.0,0,0,1
+2025-26,GER1,Gladbach,Kōta Takai,20.0,0,1,1
+2025-26,GER1,Gladbach,Wael Mohya,16.0,0,1,1
+2025-26,GER1,Hamburger SV,Aboubaka Soumahoro,20.0,1,1,1
+2025-26,GER1,Hamburger SV,Alexander Røssing-Lelesiit,18.0,1,1,1
+2025-26,GER1,Hamburger SV,Daniel Elfadli,28.0,1,0,1
+2025-26,GER1,Hamburger SV,Emir Sahiti,26.0,1,0,1
+2025-26,GER1,Hamburger SV,Fabio Baldé,20.0,1,1,1
+2025-26,GER1,Hamburger SV,Giorgi Gocholeishvili,24.0,1,0,1
+2025-26,GER1,Hamburger SV,Louis Lemke,15.0,1,1,1
+2025-26,GER1,Hamburger SV,Luka Vušković,18.0,1,1,1
+2025-26,GER1,Hamburger SV,Miro Muheim,27.0,1,0,1
+2025-26,GER1,Hamburger SV,Nicolás Capaldo,26.0,1,0,1
+2025-26,GER1,Hamburger SV,Otto Stange,18.0,1,1,1
+2025-26,GER1,Hamburger SV,Philip Otele,26.0,1,0,1
+2025-26,GER1,Hamburger SV,Ransford Königsdörffer,23.0,1,0,1
+2025-26,GER1,Hamburger SV,Sander Tangvik,22.0,1,0,1
+2025-26,GER1,Hamburger SV,Shafiq Nandja,18.0,1,1,1
+2025-26,GER1,Heidenheim,Adam Kölle,19.0,0,1,1
+2025-26,GER1,Heidenheim,Christian Conteh,25.0,0,0,1
+2025-26,GER1,Heidenheim,Leart Paqarada,30.0,0,0,0
+2025-26,GER1,Heidenheim,Tobias Weigel,18.0,0,1,1
+2025-26,GER1,Heidenheim,Yannik Wagner,18.0,0,1,1
+2025-26,GER1,Hoffenheim,Albian Hajdari,22.0,0,0,1
+2025-26,GER1,Hoffenheim,Koki Machida,27.0,0,0,1
+2025-26,GER1,Hoffenheim,Leon Avdullahu,21.0,0,0,1
+2025-26,GER1,Hoffenheim,Luka Đurić,22.0,0,0,1
+2025-26,GER1,Hoffenheim,Muhammed Damar,21.0,0,0,0
+2025-26,GER1,Hoffenheim,Wouter Burger,24.0,0,0,1
+2025-26,GER1,Hoffenheim,Yannick Eduardo,19.0,0,1,1
+2025-26,GER1,Köln,Alessio Castro-Montes,28.0,1,0,1
+2025-26,GER1,Köln,Cenny Neumann,18.0,1,1,1
+2025-26,GER1,Köln,Felipe Chávez,18.0,1,1,1
+2025-26,GER1,Köln,Fynn Schenten,17.0,1,1,1
+2025-26,GER1,Köln,Joël Schmied,26.0,1,0,1
+2025-26,GER1,Köln,Jusuf Gazibegović,25.0,1,0,1
+2025-26,GER1,Köln,Kristoffer Lund,23.0,1,0,1
+2025-26,GER1,Köln,Rav van den Berg,21.0,1,0,1
+2025-26,GER1,Köln,Said El Mala,18.0,1,1,1
+2025-26,GER1,Köln,Sebastian Sebulonsen,25.0,1,0,1
+2025-26,GER1,Köln,Youssoupha Niang,19.0,1,1,1
+2025-26,GER1,Köln,Ísak Jóhannesson,22.0,1,0,1
+2025-26,FRA1,Le Havre,Godson Kyeremeh,25.0,0,0,1
+2025-26,ITA1,Lecce,Sadik Fofana,22.0,0,0,1
+2025-26,ENG1,Leeds United,Ao Tanaka,26.0,1,0,1
+2025-26,ENG1,Leeds United,Joël Piroe,25.0,1,0,1
+2025-26,ENG1,Leeds United,Wilfried Gnonto,21.0,1,0,0
+2025-26,FRA1,Lens,Mamadou Sangare,23.0,0,0,1
+2025-26,ESP1,Levante,Brugui,28.0,1,0,1
+2025-26,ESP1,Levante,Carlos Espí,20.0,1,1,1
+2025-26,ESP1,Levante,Jorge Cabello,21.0,1,0,1
+2025-26,ESP1,Levante,Kareem Tunde,19.0,1,1,1
+2025-26,ESP1,Levante,Kervin Arriaga,27.0,1,0,1
+2025-26,ESP1,Levante,Nacho Pérez,16.0,1,1,1
+2025-26,ESP1,Levante,Paco Cortés,17.0,1,1,1
+2025-26,ESP1,Levante,Tay Abed,21.0,1,0,1
+2025-26,ESP1,Levante,Unai Elgezabal,32.0,1,0,1
+2025-26,GER1,Leverkusen,Christian Kofane,19.0,0,1,1
+2025-26,GER1,Leverkusen,Ernest Poku,21.0,0,0,1
+2025-26,GER1,Leverkusen,Ezequiél Fernández,23.0,0,0,1
+2025-26,GER1,Leverkusen,Ibrahim Maza,19.0,0,1,0
+2025-26,GER1,Leverkusen,Montrell Culbreath,17.0,0,1,1
+2025-26,FRA1,Lille,Alexsandro Ribeiro,26.0,0,0,0
+2025-26,ENG1,Liverpool,Rio Ngumoha,16.0,0,1,1
+2025-26,FRA1,Lorient,Abdoulaye Faye,47.0,1,0,1
+2025-26,FRA1,Lyon,Afonso Moreira,20.0,0,1,1
+2025-26,GER1,Mainz 05,Fabio Moreno Fell,25.0,0,0,1
+2025-26,GER1,Mainz 05,Kacper Potulski,17.0,0,1,1
+2025-26,GER1,Mainz 05,Sota Kawasaki,24.0,0,0,1
+2025-26,GER1,Mainz 05,William Bøving,22.0,0,0,1
+2025-26,ESP1,Mallorca,Jan Virgili,19.0,0,1,1
+2025-26,ESP1,Mallorca,Javier Olaizola,18.0,0,1,1
+2025-26,ESP1,Mallorca,Justin-Noël Kalumba,20.0,0,1,0
+2025-26,ESP1,Mallorca,Mateo Joseph,21.0,0,0,0
+2025-26,ESP1,Mallorca,Miguel Calatayud,19.0,0,1,1
+2025-26,ENG1,Manchester City,Divine Mukasa,17.0,0,1,1
+2025-26,ENG1,Manchester Utd,Bendito Mantato,17.0,0,1,1
+2025-26,ENG1,Manchester Utd,Jack Fletcher,18.0,0,1,1
+2025-26,ENG1,Manchester Utd,Senne Lammens,23.0,0,0,1
+2025-26,ENG1,Manchester Utd,Shea Lacey,18.0,0,1,1
+2025-26,ENG1,Manchester Utd,Tyler Fletcher,18.0,0,1,1
+2025-26,FRA1,Marseille,Quinten Timber,24.0,0,0,1
+2025-26,FRA1,Monaco,Aladji Bamba,19.0,0,1,1
+2025-26,FRA1,Nantes,Uros Radakovic,31.0,0,0,1
+2025-26,ENG1,Newcastle,Sean Neave,18.0,0,1,1
+2025-26,FRA1,Nice,Kevin Omoruyi,24.0,0,0,1
+2025-26,FRA1,Nice,Sepe Elye Wahi,22.0,0,0,0
+2025-26,ENG1,Nottingham,Igor Jesus,24.0,0,0,1
+2025-26,ENG1,Nottingham,Jair Cunha,20.0,0,1,1
+2025-26,ENG1,Nottingham,John,29.0,0,0,1
+2025-26,ESP1,Oviedo,Alberto Reina,27.0,1,0,1
+2025-26,ESP1,Oviedo,Borja Sánchez Laborde,29.0,1,0,1
+2025-26,ESP1,Oviedo,David Carmo,26.0,1,0,1
+2025-26,ESP1,Oviedo,Federico Viñas,27.0,1,0,1
+2025-26,ESP1,Oviedo,Haissem Hassan,23.0,1,0,0
+2025-26,ESP1,Oviedo,Ilyas Chaira,24.0,1,0,1
+2025-26,ESP1,Oviedo,Lucas Ahijado,30.0,1,0,1
+2025-26,ESP1,Oviedo,Marco Esteban,19.0,1,1,1
+2025-26,ESP1,Oviedo,Nicolas Fonseca,26.0,1,0,1
+2025-26,ESP1,Oviedo,Oier Luengo,27.0,1,0,1
+2025-26,ESP1,Oviedo,Omar Falah,21.0,1,0,1
+2025-26,ESP1,Oviedo,Pablo Agudín,17.0,1,1,1
+2025-26,ESP1,Oviedo,Rahim Bonkano,23.0,1,0,1
+2025-26,ESP1,Oviedo,Thiago Borbas,23.0,1,0,1
+2025-26,ESP1,Oviedo,Thiago Fernández,21.0,1,0,1
+2025-26,FRA1,Paris FC,Nouha Dicko,33.0,1,0,1
+2025-26,FRA1,Paris Saint Germain,Dro Fernandez,17.0,0,1,1
+2025-26,GER1,RB Leipzig,Andrija Maksimović,18.0,0,1,1
+2025-26,GER1,RB Leipzig,Conrad Harder,20.0,0,1,1
+2025-26,GER1,RB Leipzig,Ezechiel Banzuzi,20.0,0,1,1
+2025-26,GER1,RB Leipzig,Johan Bakayoko,22.0,0,0,1
+2025-26,GER1,RB Leipzig,Samba Konaté,16.0,0,1,1
+2025-26,ESP1,Rayo Vallecano,Alexandre Alemão,27.0,0,0,1
+2025-26,ESP1,Rayo Vallecano,Jozhua Vertrouwd,20.0,0,1,1
+2025-26,ESP1,Rayo Vallecano,Samu Becerra,19.0,0,1,1
+2025-26,ESP1,Real Betis,Daniel Guerrero,20.0,0,1,1
+2025-26,ESP1,Real Betis,Iván Corralejo,18.0,0,1,1
+2025-26,ESP1,Real Betis,Nelson Deossa,25.0,0,0,1
+2025-26,ESP1,Real Betis,Valentín Gómez,22.0,0,0,1
+2025-26,ESP1,Real Madrid,César Palacios,20.0,0,1,1
+2025-26,ESP1,Real Madrid,Franco Mastantuono,17.0,0,1,1
+2025-26,ESP1,Real Madrid,Jorge Cestero,19.0,0,1,1
+2025-26,ESP1,Real Madrid,Manuel Serrano,21.0,0,0,1
+2025-26,ESP1,Real Madrid,Manuel Ángel,21.0,0,0,1
+2025-26,ESP1,Real Madrid,Thiago Pinar,17.0,0,1,1
+2025-26,ESP1,Real Madrid,Álvaro Leiva,22.0,0,0,1
+2025-26,ESP1,Real Sociedad,Gorka Carrera,20.0,0,1,1
+2025-26,ESP1,Real Sociedad,Ibai Aguirre,18.0,0,1,1
+2025-26,ESP1,Real Sociedad,Job Ochieng',22.0,0,0,1
+2025-26,ESP1,Real Sociedad,Jon Gorrotxategi,23.0,0,0,1
+2025-26,ESP1,Real Sociedad,Lander Astiazaran,19.0,0,1,1
+2025-26,ESP1,Sevilla,Castrin,22.0,0,0,1
+2025-26,ESP1,Sevilla,Fábio Cardoso,31.0,0,0,1
+2025-26,ESP1,Sevilla,Joaquín Martínez Gauna,22.0,0,0,1
+2025-26,ESP1,Sevilla,Miguel Ángel Sierra,21.0,0,0,1
+2025-26,GER1,St Pauli,Andreas Hountondji,23.0,0,0,1
+2025-26,GER1,St Pauli,Arkadiusz Pyrka,22.0,0,0,1
+2025-26,GER1,St Pauli,Joel Fujita,23.0,0,0,1
+2025-26,GER1,St Pauli,Louis Oppie,23.0,0,0,1
+2025-26,GER1,St Pauli,Martijn Kaars,26.0,0,0,1
+2025-26,GER1,St Pauli,Mathias Rasmussen,27.0,0,0,1
+2025-26,GER1,St Pauli,Ricky-Jade Jones,24.0,0,0,1
+2025-26,GER1,St Pauli,Tomoya Ando,26.0,0,0,1
+2025-26,GER1,Stuttgart,Jeremy Arévalo,20.0,0,1,1
+2025-26,GER1,Stuttgart,Lazar Jovanović,18.0,0,1,1
+2025-26,ENG1,Sunderland,Chemsdine Talbi,20.0,1,1,1
+2025-26,ENG1,Sunderland,Chris Rigg,18.0,1,1,1
+2025-26,ENG1,Sunderland,Dan Neil,23.0,1,0,1
+2025-26,ENG1,Sunderland,Daniel Ballard,25.0,1,0,1
+2025-26,ENG1,Sunderland,Dennis Cirkin,23.0,1,0,1
+2025-26,ENG1,Sunderland,Eliezer Mayenda,20.0,1,1,1
+2025-26,ENG1,Sunderland,Jenson Seelt,22.0,1,0,1
+2025-26,ENG1,Sunderland,Jocelin Ta Bi,20.0,1,1,1
+2025-26,ENG1,Sunderland,Luke O'Nien,30.0,1,0,1
+2025-26,ENG1,Sunderland,Melker Ellborg,22.0,1,0,1
+2025-26,ENG1,Sunderland,Nilson Angulo,22.0,1,0,1
+2025-26,ENG1,Sunderland,Noah Sadiki,20.0,1,1,1
+2025-26,ENG1,Sunderland,Robin Roefs,22.0,1,0,1
+2025-26,ENG1,Sunderland,Romaine Mundle,22.0,1,0,1
+2025-26,ENG1,Sunderland,Trai Hume,23.0,1,0,1
+2025-26,ITA1,Torino,Rafael Obrador,21.0,0,0,1
+2025-26,ENG1,Tottenham,James Rowswell,19.0,0,1,1
+2025-26,ENG1,Tottenham,Jun'ai Byfield,16.0,0,1,1
+2025-26,ENG1,Tottenham,Souza,19.0,0,1,1
+2025-26,FRA1,Toulouse,Emersonn,21.0,0,0,1
+2025-26,GER1,Union Berlin,Dmytro Bohdanov,18.0,0,1,1
+2025-26,GER1,Union Berlin,Ilyas Ansah,20.0,0,1,1
+2025-26,GER1,Union Berlin,Linus Güther,15.0,0,1,1
+2025-26,GER1,Union Berlin,Livan Burcu,20.0,0,1,1
+2025-26,GER1,Union Berlin,Matheo Raab,26.0,0,0,1
+2025-26,ESP1,Valencia,Filip Ugrinic,26.0,0,0,1
+2025-26,ESP1,Valencia,José Luis García Vayá,26.0,0,0,0
+2025-26,ESP1,Valencia,Renzo Saravia,32.0,0,0,1
+2025-26,ESP1,Valencia,Ruben Lendinez,22.0,0,0,0
+2025-26,ITA1,Verona,Jesus Santiago,21.0,0,0,1
+2025-26,ESP1,Villarreal,Alex Freeman,20.0,0,1,1
+2025-26,ESP1,Villarreal,Carlos Macià,16.0,0,1,1
+2025-26,ESP1,Villarreal,Hugo López,18.0,0,1,1
+2025-26,ESP1,Villarreal,Tani Oluwaseyi,25.0,0,0,1
+2025-26,GER1,Werder Bremen,Abdoul Coulibaly,18.0,0,1,1
+2025-26,GER1,Werder Bremen,Cameron Puertas,26.0,0,0,1
+2025-26,GER1,Werder Bremen,Isaac Schmidt,25.0,0,0,1
+2025-26,GER1,Werder Bremen,Mick Schmetgens,17.0,0,1,1
+2025-26,GER1,Werder Bremen,Patrice Čović,18.0,0,1,1
+2025-26,GER1,Werder Bremen,Salim Musah,19.0,0,1,1
+2025-26,ENG1,West Ham,El Hadji Malick Diouf,20.0,0,1,1
+2025-26,ENG1,West Ham,Ezra Mayers,18.0,0,1,1
+2025-26,ENG1,West Ham,Mohamadou Kanté,19.0,0,1,1
+2025-26,GER1,Wolfsburg,Adam Daghim,19.0,0,1,1
+2025-26,GER1,Wolfsburg,Jan Bürger,18.0,0,1,1
+2025-26,GER1,Wolfsburg,Jenson Seelt,22.0,0,0,1
+2025-26,GER1,Wolfsburg,Jonas Adjetey,21.0,0,0,1
+2025-26,GER1,Wolfsburg,Kento Shiogai,20.0,0,1,1
+2025-26,GER1,Wolfsburg,Pharell Hensel,18.0,0,1,1
+2025-26,ENG1,Wolves,David Møller Wolfe,23.0,0,0,1
+2025-26,ENG1,Wolves,Jerome Abbey,15.0,0,1,1
+2025-26,ENG1,Wolves,Jhon Arias,27.0,0,0,1
+2025-26,ENG1,Wolves,Tom Edozie,19.0,0,1,1
+2026-27,ESP1,Alavés,Carlos Benavídez,28.0,0,0,0
+2026-27,ESP1,Alavés,Jonny Castro,32.0,0,0,0
+2026-27,ESP1,Alavés,Youssef Lekhedim,21.0,0,0,0
+2026-27,ESP1,Athletic Club,Beñat Gerenabarrena,23.0,0,0,1
+2026-27,ESP1,Athletic Club,Johaneko Louisjean,22.0,0,0,1
+2026-27,ESP1,Atlético Madrid,Arnau Ortiz,25.0,0,0,1
+2026-27,ESP1,Atlético Madrid,Jorge Domínguez,17.0,0,1,1
+2026-27,GER1,Augsburg,Calvin Brackelmann,27.0,0,0,1
+2026-27,GER1,Augsburg,Seol Young-woo,28.0,0,0,1
+2026-27,ESP1,Barcelona,Hamza Abdelkarim,18.0,0,1,1
+2026-27,GER1,Bayern Munich,Ismael Saibari,25.0,0,0,1
+2026-27,ENG1,Bournemouth,António Silva,23.0,0,0,1
+2026-27,ENG1,Brentford,Jannik Schuster,20.0,0,1,1
+2026-27,ENG1,Brentford,Yehor Yarmoliuk,22.0,0,0,0
+2026-27,ENG1,Brighton,Costinha,26.0,0,0,1
+2026-27,ENG1,Brighton,Promise David,25.0,0,0,1
+2026-27,ENG1,Brighton,Zadok Yohanna,19.0,0,1,1
+2026-27,ITA1,Cagliari,Kevin Omoruyi,25.0,0,0,0
+2026-27,ESP1,Celta Vigo,Couhaib Driouech,24.0,0,0,1
+2026-27,ENG1,Chelsea,Geovany Quenda,19.0,0,1,1
+2026-27,ENG1,Crystal Palace,Anan Khalaili,22.0,0,0,1
+2026-27,ENG1,Crystal Palace,Darío Osorio,22.0,0,0,1
+2026-27,ENG1,Crystal Palace,Zavier Gozo,19.0,0,1,1
+2026-27,GER1,Dortmund,Giannis Konstantelias,23.0,0,0,1
+2026-27,GER1,Dortmund,Joey Veerman,28.0,0,0,1
+2026-27,GER1,Dortmund,Kauã Prates,18.0,0,1,1
+2026-27,GER1,Dortmund,Kos Karetsas,19.0,0,1,1
+2026-27,GER1,Dortmund,Kouakou Gadou,19.0,0,1,1
+2026-27,ESP1,Elche,Umaru Konare,22.0,0,0,1
+2026-27,ESP1,Elche,Álvaro Padilla,20.0,0,1,1
+2026-27,ESP1,Espanyol,Javier Hernández,22.0,0,0,1
+2026-27,ESP1,Espanyol,Vanja Drkušič,27.0,0,0,1
+2026-27,ENG1,Everton,Hayden Hackney,24.0,0,0,1
+2026-27,GER1,Frankfurt,Jeremiaha Maluze,22.0,0,0,1
+2026-27,GER1,Frankfurt,Malik Pimpong,18.0,0,1,1
+2026-27,GER1,Frankfurt,Raphael Onyedika,25.0,0,0,1
+2026-27,GER1,Freiburg,Berkay Yılmaz,21.0,0,0,1
+2026-27,GER1,Freiburg,Keisuke Gotō,21.0,0,0,1
+2026-27,ITA1,Frosinone,Wisdom Amey,21.0,1,0,0
+2026-27,ITA1,Genoa,Mikael Ellertsson,24.0,0,0,0
+2026-27,ESP1,Getafe,Francho Serrano,25.0,0,0,1
+2026-27,ESP1,Getafe,Jean Valou,20.0,0,1,1
+2026-27,GER1,Gladbach,David Herold,23.0,0,0,1
+2026-27,GER1,Gladbach,Isac Lidberg,28.0,0,0,1
+2026-27,GER1,Gladbach,Jan Leszczyński,19.0,0,1,1
+2026-27,GER1,Gladbach,Mathieu Nguefack,18.0,0,1,1
+2026-27,GER1,Gladbach,Nicolas Kuhn,26.0,0,0,1
+2026-27,GER1,Hoffenheim,Mats Rots,20.0,0,1,1
+2026-27,GER1,Hoffenheim,Nathan De Cat,18.0,0,1,1
+2026-27,ENG1,Ipswich Town,Daizen Maeda,29.0,1,0,1
+2026-27,ENG1,Ipswich Town,Marcelino Núñez,26.0,1,0,1
+2026-27,ENG1,Ipswich Town,Sindre Egeli,20.0,1,1,1
+2026-27,GER1,Köln,Imad Rondić,27.0,0,0,1
+2026-27,GER1,Köln,Paul Okon-Engstler,21.0,0,0,1
+2026-27,GER1,Köln,Reigan Heskey,18.0,0,1,1
+2026-27,FRA1,Le Mans,Ewan Hatfout,26.0,1,0,1
+2026-27,ESP1,Levante,Brugui,30.0,0,0,0
+2026-27,ESP1,Levante,Enzo Bardeli,25.0,0,0,1
+2026-27,ESP1,Levante,Marc Santos,16.0,0,1,1
+2026-27,FRA1,Lille,Alexsandro Ribeiro,27.0,0,0,0
+2026-27,GER1,Mainz 05,Fabio Gruber,24.0,0,0,1
+2026-27,GER1,Mainz 05,Otto Ruoppi,20.0,0,1,1
+2026-27,ENG1,Manchester City,Kaden Braithwaite,18.0,0,1,1
+2026-27,ENG1,Manchester City,Ryan Mcaidoo,18.0,0,1,1
+2026-27,ITA1,Monza,Jay Robinson,19.0,1,1,0
+2026-27,ENG1,Newcastle,Lukáš Horníček,24.0,0,0,1
+2026-27,ENG1,Newcastle,Sean Steur,18.0,0,1,1
+2026-27,FRA1,Nice,Sepe Elye Wahi,23.0,0,0,0
+2026-27,ENG1,Nottingham,Ousmane Diomande,23.0,0,0,1
+2026-27,ESP1,Osasuna,Jonathan Dubasin,26.0,0,0,1
+2026-27,GER1,Paderborn,Luka Đurić,23.0,1,0,0
+2026-27,ESP1,Rayo Vallecano,Gnangoro,22.0,0,0,1
+2026-27,ESP1,Rayo Vallecano,Heorhii Tsitaishvili,26.0,0,0,1
+2026-27,ESP1,Real Betis,Facundo Bernal,23.0,0,0,1
+2026-27,ITA1,Sassuolo,Rafael Obrador,22.0,0,0,0
+2026-27,GER1,Schalke 04,Hasan Kuruçay,29.0,1,0,1
+2026-27,GER1,Schalke 04,Luca Vozar,19.0,1,1,1
+2026-27,GER1,Schalke 04,Mertcan Ayhan,20.0,1,1,1
+2026-27,GER1,Schalke 04,Nikola Katić,30.0,1,0,1
+2026-27,GER1,Schalke 04,Ron Schallenberg,28.0,1,0,1
+2026-27,GER1,Schalke 04,Satoshi Tanaka,24.0,1,0,1
+2026-27,GER1,Schalke 04,Soufiane El-Faouzi,24.0,1,0,1
+2026-27,GER1,Schalke 04,Vitalie Becker,21.0,1,0,1
+2026-27,ESP1,Sevilla,Joaquín Martínez Gauna,23.0,0,0,0
+2026-27,ESP1,Sevilla,Nicolás Guilén Peguero,18.0,0,1,1
+2026-27,ESP1,Sevilla,Robbie Ure,22.0,0,0,1
+2026-27,GER1,Stuttgart,Leo Sauer,21.0,0,0,1
+2026-27,GER1,Union Berlin,Zeno Van den Bosch,23.0,0,0,1
+2026-27,ESP1,Valencia,Aliou Dieng,29.0,0,0,1
+2026-27,ESP1,Valencia,José Luis García Vayá,28.0,0,0,0
+2026-27,ESP1,Valencia,Justin de Haas,26.0,0,0,1
+2026-27,ESP1,Valencia,Ryūnosuke Satō,20.0,0,1,1
+2026-27,ESP1,Villarreal,Nathan Saliba,22.0,0,0,1
+2026-27,GER1,Werder Bremen,Chuky san jose,22.0,0,0,0
+2026-27,GER1,Werder Bremen,Dariusz Stalmach,21.0,0,0,1
+2026-27,GER1,Werder Bremen,Paul Erevbenagie,19.0,0,1,1
+2026-27,GER1,Werder Bremen,Youri Regeer,23.0,0,0,1

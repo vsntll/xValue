@@ -1,0 +1,1195 @@
+player_name,season,joined,fee_eur,fee_is_loan,fee_is_free
+Anthony Losilla,2014-15,VfL Bochum,,0,1
+Gaetano Berardi,2014-15,Leeds,100000.0,0,0
+Liam Cooper,2014-15,Leeds,750000.0,0,0
+Stuart Dallas,2015-16,Leeds,1900000.0,0,0
+Claudio Terzi,2015-16,Spezia Calcio,,0,1
+Marco Modolo,2015-16,Venezia,,0,1
+Kalvin Phillips,2015-16,Leeds,,0,1
+Manuel Riemann,2015-16,VfL Bochum,,0,1
+Alberto Cifuentes,2015-16,Cádiz CF,,0,1
+Jonathan Iglesias,2016-17,Clermont Foot,,0,1
+Nino,2016-17,Elche CF,,0,1
+Rico Henry,2016-17,Brentford,1800000.0,0,0
+Giulio Maggiore,2016-17,Spezia Calcio,,0,1
+Giuseppe Mastinu,2016-17,Spezia Calcio,,0,1
+Ezgjan Alioski,2017-18,Leeds,2500000.0,0,0
+Jerome Phojo,2017-18,Clermont Foot,,0,0
+Gonzalo Verdú,2017-18,Elche CF,,0,1
+Gennaro Acampora,2017-18,Spezia Calcio,,1,0
+Emmanuel Gyasi,2017-18,Spezia Calcio,,1,0
+Marcos Mauro,2017-18,Cádiz CF,,0,1
+Josan,2017-18,Elche CF,,0,1
+Kyle Edwards,2017-18,West Brom,,0,1
+Maxim Leitsch,2017-18,VfL Bochum,,0,1
+Mathieu Coutadeur,2017-18,AC Ajaccio,,0,0
+Ryan Yates,2017-18,Nott'm Forest,,1,0
+Franklin Wadja,2017-18,FC Lorient,,0,1
+Álex Fernández,2017-18,Cádiz CF,,0,1
+Mateusz Klich,2017-18,Leeds,1700000.0,0,0
+David Gil,2018-19,Cádiz CF,,0,1
+Riccardo Improta,2018-19,Benevento,,0,1
+Josue Albert,2018-19,Clermont Foot,,0,1
+Remy Dugimont,2018-19,AJ Auxerre,,0,0
+Michele Castagnetti,2018-19,Cremonese,1000000.0,0,0
+Matteo Ricci,2018-19,Spezia Calcio,1000.0,0,0
+Tomislav Gomelt,2018-19,Crotone,,0,1
+César de la Hoz,2018-19,UD Almería,,0,1
+Paolo Bartolomei,2018-19,Spezia Calcio,200000.0,0,0
+Qazim Laci,2018-19,AC Ajaccio,,0,1
+Jason Berthomier,2018-19,Clermont Foot,,0,0
+Alfonso Espino,2018-19,Cádiz CF,,0,1
+Francois-Joseph Sollacaro,2018-19,AC Ajaccio,,0,1
+Aleksandar Radovanovic,2018-19,Lens,650000.0,0,0
+Robert Tesche,2018-19,VfL Bochum,,0,1
+Houboulang Mendes,2018-19,FC Lorient,,0,1
+Armel Bella Kotchap,2018-19,VfL Bochum,,0,1
+Mohamed Youssouf,2018-19,AC Ajaccio,,0,1
+Yohann Magnin,2018-19,Clermont Foot,,0,1
+Milan Djuric,2018-19,Salernitana,650000.0,0,0
+Yoann Touzghar,2018-19,Troyes,,0,1
+Alessandro Tuia,2018-19,Benevento,,0,1
+Francesco Di Tacchio,2018-19,Salernitana,,0,1
+Florent Ogier,2018-19,Clermont Foot,,0,1
+Alberto Perea,2018-19,Cádiz CF,,1,0
+Iñigo Ruiz de Galarreta,2019-20,RCD Mallorca,,0,0
+Nicolo Manfredini,2019-20,Benevento,,0,1
+Fidel,2019-20,Elche CF,,0,1
+Saulo Decarli,2019-20,VfL Bochum,,0,0
+Manuel Perez,2019-20,Lens,,0,1
+Philipp Förster,2019-20,Stuttgart,3000000.0,0,0
+Marek Rodák,2019-20,Fulham,,0,1
+Gauthier Gallon,2019-20,Troyes,,0,1
+Hamadi Al Ghaddioui,2019-20,Stuttgart,300000.0,0,0
+Cedric Hountondji,2019-20,Clermont Foot,,0,1
+Florian Tardieu,2019-20,Troyes,,0,0
+Atakan Karazor,2019-20,Stuttgart,800000.0,0,0
+Laurent Abergel,2019-20,FC Lorient,500000.0,0,0
+Francesco Di Mariano,2019-20,Venezia,,1,0
+Esteban Saveljich,2019-20,Rayo Vallecano,400000.0,0,0
+Semi Ajayi,2019-20,West Brom,1650000.0,0,0
+Fali,2019-20,Cádiz CF,250000.0,0,0
+Tony Mauricio,2019-20,Lens,1000000.0,0,0
+Wout Faes,2019-20,Stade Reims,3000000.0,0,0
+Jerome Hergault,2019-20,FC Lorient,,0,0
+Rayan Souici,2019-20,Saint-Étienne,,1,0
+Dani Calvo,2019-20,Elche CF,,0,1
+Akim Zedadka,2019-20,Clermont Foot,,0,1
+Ben White,2019-20,Brighton,,1,0
+Romano Schmid,2019-20,Werder Bremen,,1,0
+Darnell Furlong,2019-20,West Brom,1700000.0,0,0
+Luca Mack,2019-20,Stuttgart,,0,1
+Saša Kalajdžić,2019-20,Stuttgart,6000000.0,0,0
+Franco Russo,2019-20,RCD Mallorca,,1,0
+Julien Laporte,2019-20,FC Lorient,1200000.0,0,0
+Dara O'Shea,2019-20,West Brom,,0,1
+Pascal Struijk,2019-20,Leeds,,0,1
+Santiago Bueno,2019-20,Girona,,0,1
+Ethan Pinnock,2019-20,Brentford,3350000.0,0,0
+Christian Pastina,2019-20,Benevento,,0,1
+Dylan Chambost,2019-20,Troyes,,0,1
+Antonio Sánchez,2019-20,RCD Mallorca,,1,0
+Óscar Valentín,2019-20,Rayo Vallecano,,0,1
+Shandon Baptiste,2019-20,Brentford,2250000.0,0,0
+Lassine Sinayoko,2019-20,AJ Auxerre,,0,1
+Mohamed Bayo,2019-20,Clermont Foot,,1,0
+Mario Hernández,2019-20,Rayo Vallecano,,1,0
+Bilal Benkhedim,2019-20,Saint-Étienne,,0,1
+Liam McCarron,2019-20,Leeds,290000.0,0,0
+Antonio Mazzotta,2019-20,Crotone,,0,1
+Tanguy Coulibaly,2019-20,Stuttgart,,0,1
+Mounaim El Idrissy,2019-20,AC Ajaccio,,0,1
+Enzo Le Fee,2019-20,FC Lorient,,0,1
+Jim Allevinah,2019-20,Clermont Foot,,0,0
+Pedri,2019-20,Barcelona,23000000.0,0,0
+Yacine Qasmi,2019-20,Rayo Vallecano,1500000.0,0,0
+Joël Veltman,2020-21,Brighton,1000000.0,0,0
+Wataru Endo,2020-21,Stuttgart,1700000.0,0,0
+Jens Jønsson,2020-21,Cádiz CF,,0,1
+Abdoulay Diaby,2020-21,Getafe,,1,0
+Soma Novothny,2020-21,VfL Bochum,,0,1
+Jubal,2020-21,AJ Auxerre,,0,1
+Sebastian Griesbeck,2020-21,Union Berlin,,0,1
+Vladimír Coufal,2020-21,West Ham,6000000.0,0,0
+Filip Malbašić,2020-21,Cádiz CF,1000000.0,0,0
+Brian Oliván,2020-21,RCD Mallorca,,0,1
+Juan Sánchez Miño,2020-21,Elche CF,,0,1
+Jonathan Clauss,2020-21,Lens,,0,1
+Herbert Bockhorn,2020-21,VfL Bochum,,0,1
+Cristian Buonaiuto,2020-21,Cremonese,250000.0,0,0
+Robert Glatzel,2020-21,Mainz,,1,0
+Damian Kądzior,2020-21,SD Eibar,2000000.0,0,0
+Branco van den Boomen,2020-21,Toulouse,350000.0,0,0
+Mickael Malsa,2020-21,Levante,,0,1
+Helibelton Palacios,2020-21,Elche CF,,0,1
+Kiki Kouyate,2020-21,FC Metz,3500000.0,0,0
+Eduardo Henrique,2020-21,Crotone,,1,0
+Jodel Dossou,2020-21,Clermont Foot,,0,0
+Valentin Antov,2020-21,Bologna,,1,0
+Thomas Ouwejan,2020-21,Udinese,,1,0
+Jonas Omlin,2020-21,Montpellier,6000000.0,0,0
+Rúben Dias,2020-21,Man City,71600000.0,0,0
+Filip Krovinović,2020-21,West Brom,,1,0
+Ajdin Hrustic,2020-21,Frankfurt,1000000.0,0,0
+Vitaly Janelt,2020-21,Brentford,600000.0,0,0
+Milos Vulic,2020-21,Crotone,800000.0,0,0
+Mbaye Diagne,2020-21,West Brom,,1,0
+Jerome Onguene,2020-21,Genoa,,1,0
+Renato Tapia,2020-21,Celta de Vigo,,0,1
+Anibal Chala,2020-21,Dijon,,1,0
+Luis Milla,2020-21,Granada CF,5000000.0,0,0
+Augusto Solari,2020-21,Celta de Vigo,500000.0,0,0
+Tarsis Bonga,2020-21,VfL Bochum,,0,1
+Ramón Folch,2020-21,Elche CF,,1,0
+Amer Gojak,2020-21,Torino,,1,0
+Steffen Tigges,2020-21,Dortmund,,0,1
+Jordan Lotomba,2020-21,Nice,7000000.0,0,0
+Flavius Daniliuc,2020-21,Nice,,0,1
+Ollie Watkins,2020-21,Aston Villa,34000000.0,0,0
+Jota,2020-21,Real Valladolid,,1,0
+Mergim Vojvoda,2020-21,Torino,5200000.0,0,0
+Daam Foulon,2020-21,Benevento,500000.0,0,0
+Enzo Ebosse,2020-21,Angers SCO,500000.0,0,0
+Yassin Fortune,2020-21,Angers SCO,,1,0
+Erhan Mašović,2020-21,VfL Bochum,,0,1
+Trevoh Chalobah,2020-21,FC Lorient,,1,0
+Dany Mota,2020-21,Monza,4860000.0,0,0
+Antonee Robinson,2020-21,Fulham,2100000.0,0,0
+Burak Yilmaz,2020-21,Lille,,0,1
+Jeison Lucumí,2020-21,Elche CF,,0,1
+Robert Gumny,2020-21,Augsburg,2000000.0,0,0
+M'Bala Nzola,2020-21,Spezia Calcio,,0,1
+Luis Pérez,2020-21,Real Valladolid,,0,1
+Yordan Osorio,2020-21,Parma,4099999.9999999995,0,0
+Eldor Shomurodov,2020-21,Genoa,9500000.0,0,0
+Sven Botman,2020-21,Lille,8000000.0,0,0
+Kilian Ludewig,2020-21,FC Schalke 04,,1,0
+Pape Abou Cisse,2020-21,Saint-Étienne,,1,0
+Bevic Moussiti-Oko,2020-21,AC Ajaccio,,0,1
+Joakim Maehle,2020-21,Atalanta,13700000.0,0,0
+Ante Palaversa,2020-21,Getafe,,1,0
+Guus Til,2020-21,Freiburg,,1,0
+Lucas Martinez Quarta,2020-21,Fiorentina,13000000.0,0,0
+Arthur Desmas,2020-21,Clermont Foot,,0,1
+Kelechi Nwakali,2020-21,SD Huesca,,1,0
+Jakub Moder,2020-21,Brighton,11000000.0,0,0
+Petar Musa,2020-21,Union Berlin,,1,0
+Felix Agu,2020-21,Werder Bremen,,0,1
+Josh Benson,2020-21,Burnley,,0,1
+Dennis Man,2020-21,Parma,12600000.0,0,0
+Robert Sánchez,2020-21,Brighton,,0,1
+Denis Dragus,2020-21,Crotone,,1,0
+Dennis Johnsen,2020-21,Venezia,2400000.0,0,0
+Immanuel Pherai,2020-21,Dortmund,,0,1
+Nahuel Molina,2020-21,Udinese,,0,1
+Matty Cash,2020-21,Aston Villa,15750000.0,0,0
+Tomáš Ostrák,2020-21,1.FC Köln,,1,0
+Paul Akouokou,2020-21,Real Betis,,0,1
+Tiago Dantas,2020-21,Bayern Munich,,1,0
+Idrissa Doumbia,2020-21,SD Huesca,,1,0
+Maxence Lacroix,2020-21,Wolfsburg,5000000.0,0,0
+Ardian Ismajli,2020-21,Spezia Calcio,2200000.0,0,0
+Sergio González,2020-21,Cádiz CF,,0,1
+Michael Svoboda,2020-21,Venezia,,0,1
+Emanuele Valeri,2020-21,Cremonese,100000.0,0,0
+Heriberto Tavares,2020-21,Stade Brestois,1200000.0,0,0
+Emmanuel Dennis,2020-21,1.FC Köln,,1,0
+Andrea Cambiaso,2020-21,Genoa,,1,0
+Morten Hjulmand,2020-21,Lecce,2500000.0,0,0
+Juan Brunetta,2020-21,Parma,,1,0
+Ben Johnson,2020-21,West Ham,,0,1
+Jayden Braaf,2020-21,Udinese,,1,0
+Brennan Johnson,2020-21,Nott'm Forest,,1,0
+Lilian Egloff,2020-21,Stuttgart,,0,1
+Eberechi Eze,2020-21,Crystal Palace,17800000.0,0,0
+Jeremie Frimpong,2020-21,Leverkusen,11000000.0,0,0
+Jeremy Doku,2020-21,Stade Rennais,26000000.0,0,0
+Vitinha,2020-21,Wolves,,1,0
+Conor Gallagher,2020-21,West Brom,,1,0
+Krepin Diatta,2020-21,Monaco,16700000.0,0,0
+Mickael Nade,2020-21,Saint-Étienne,,0,1
+Aurelien Scheidler,2020-21,Dijon,,1,0
+Jacob Ramsey,2020-21,Aston Villa,,0,1
+Yunus Musah,2020-21,Valencia,,0,1
+Simon Sohm,2020-21,Parma,6400000.0,0,0
+Owen Otasowie,2020-21,Wolves,,0,1
+Malick Thiaw,2020-21,FC Schalke 04,,0,1
+Oier Zarraga,2020-21,Athletic Club,,0,1
+Luca Netz,2020-21,Hertha BSC,,0,1
+Melvin Bard,2020-21,Lyon,,0,1
+Tolgay Arslan,2020-21,Udinese,,0,1
+Kays Ruiz-Atil,2020-21,PSG,,0,1
+Mikkel Damsgaard,2020-21,Sampdoria,6750000.0,0,0
+Illan Meslier,2020-21,Leeds,6500000.0,0,0
+Brandon Soppy,2020-21,Stade Rennais,,0,1
+Fabiano Parisi,2020-21,Empoli,450000.0,0,0
+Augustus Kargbo,2020-21,Crotone,,1,0
+Tomás Tavares,2020-21,Alavés,,1,0
+Nahuel Estevez,2020-21,Spezia Calcio,,1,0
+Yéremy Pino,2020-21,Villarreal,,0,1
+Enzo Millot,2020-21,Monaco,,0,1
+Ramzi Aya,2020-21,Salernitana,,0,0
+Jamal Musiala,2020-21,Bayern Munich,,0,1
+Emrehan Gedikli,2020-21,Leverkusen,,0,1
+Jude Bellingham,2020-21,Dortmund,30150000.0,0,0
+Bandiougou Fadiga,2020-21,Stade Brestois,,1,0
+Aaron Hickey,2020-21,Bologna,1700000.0,0,0
+Florian Wirtz,2020-21,Leverkusen,,0,1
+Marcos Acuña,2020-21,Sevilla FC,11250000.0,0,0
+Adolfo Gaich,2020-21,Benevento,,1,0
+Vasilios Zagaritis,2020-21,Parma,380000.0,0,0
+Lucas Gourna Douath,2020-21,Saint-Étienne,,0,1
+Andrew Omobamidele,2020-21,Norwich,,0,1
+Jordan Zemura,2020-21,Bournemouth,,0,1
+Jean Botue,2020-21,AC Ajaccio,,0,0
+Adrien Truffert,2020-21,Stade Rennais,,0,1
+Mohamed Ali-Cho,2020-21,Angers SCO,,0,1
+Matthew Hoppe,2020-21,FC Schalke 04,,0,1
+Tolu Arokodare,2020-21,1.FC Köln,,1,0
+Rayan Philippe,2020-21,Dijon,,0,1
+Etienne Green,2020-21,Saint-Étienne,,0,1
+Sinaly Diomande,2020-21,Lyon,,0,1
+Loic Bade,2020-21,Lens,,0,1
+Tyrick Mitchell,2020-21,Crystal Palace,,0,1
+Jeremy Le Douaron,2020-21,Stade Brestois,,0,1
+Christian Gytkjaer,2020-21,Monza,,0,1
+Rafiki Said,2020-21,Stade Brestois,,0,1
+Jeroen Zoet,2020-21,Spezia Calcio,1500000.0,0,0
+Alidu Seidu,2020-21,Clermont Foot,,0,1
+Yanis Cimignani,2020-21,AC Ajaccio,,0,1
+Brandon Domingues,2020-21,Troyes,,0,1
+Wilitty Younoussa,2020-21,Dijon,,0,1
+Saidou Sow,2020-21,Saint-Étienne,,0,1
+Arnau Martinez,2020-21,Girona,,0,1
+Rodrigo Battaglia,2020-21,Alavés,,1,0
+Romaine Sawyers,2021-22,West Brom,,1,0
+Kevin Behrens,2021-22,Union Berlin,,0,1
+Marco Bizot,2021-22,Stade Brestois,1000000.0,0,0
+Andrea Schiavone,2021-22,Salernitana,35000.0,0,0
+Danilo Pereira,2021-22,PSG,16000000.0,0,0
+Matías Dituro,2021-22,Celta de Vigo,,1,0
+Elbasan Rashani,2021-22,Clermont Foot,,0,1
+Varazdat Haroyan,2021-22,Cádiz CF,,0,1
+Dyego Sousa,2021-22,UD Almería,,0,1
+Jon Ander Garrido,2021-22,Cádiz CF,,1,0
+Brecht Dejaegere,2021-22,Toulouse,1500000.0,0,0
+Marvin Schwäbe,2021-22,1.FC Köln,,0,1
+Alberto Paleari,2021-22,Genoa,2000000.0,0,0
+Vladimir Golemic,2021-22,Crotone,,0,1
+Thiago Galhardo,2021-22,Celta de Vigo,,1,0
+Ryan Christie,2021-22,Bournemouth,2900000.0,0,0
+Caleb Ekuban,2021-22,Genoa,2600000.0,0,0
+Dor Peretz,2021-22,Venezia,,0,1
+Cedric Gondo,2021-22,Salernitana,,0,1
+Mikkel Desler,2021-22,Toulouse,500000.0,0,0
+Kenji-Van Boto,2021-22,AJ Auxerre,,1,0
+Ozan Tufan,2021-22,Watford,,1,0
+Lorenzo Montipo,2021-22,Benevento,,1,0
+José Sá,2021-22,Wolves,8000000.0,0,0
+Patrick Ciurria,2021-22,Monza,1700000.0,0,0
+Josema,2021-22,Elche CF,,1,0
+Vedat Muriqi,2021-22,Lazio,,1,0
+Mathias Normann,2021-22,Norwich,,1,0
+Nikola Maraš,2021-22,Rayo Vallecano,,1,0
+Saturnin Allagbe,2021-22,Dijon,,1,0
+Gerson Rodrigues,2021-22,Troyes,,1,0
+Rasmus Nicolaisen,2021-22,Toulouse,538000.0,0,0
+Jeremías Ledesma,2021-22,Cádiz CF,1800000.0,0,0
+Guglielmo Vicario,2021-22,Cagliari,,1,0
+Dejan Ljubičić,2021-22,1.FC Köln,,0,1
+Rafael Ratao,2021-22,Toulouse,1200000.0,0,0
+Ado Onaiwu,2021-22,Toulouse,700000.0,0,0
+Patrick Berg,2021-22,Lens,4500000.0,0,0
+Tyronne Ebuehi,2021-22,Venezia,,1,0
+Silvère Ganvoula,2021-22,VfL Bochum,,1,0
+Azor Matusiwa,2021-22,Stade Reims,4000000.0,0,0
+Myrto Uzuni,2021-22,Granada CF,5100000.0,0,0
+Dominik Greif,2021-22,RCD Mallorca,2500000.0,0,0
+David Raum,2021-22,Hoffenheim,,0,1
+Denzel Dumfries,2021-22,Inter,14250000.0,0,0
+Donyell Malen,2021-22,Dortmund,30000000.0,0,0
+Kristoffer Ajer,2021-22,Brentford,15700000.0,0,0
+Deiver Machado,2021-22,Lens,1800000.0,0,0
+Bonke Innocent,2021-22,FC Lorient,,0,1
+Jorge Pombo,2021-22,Cádiz CF,,1,0
+Alex Král,2021-22,West Ham,,1,0
+Giovanni González,2021-22,RCD Mallorca,,0,1
+Franco Cervi,2021-22,Celta de Vigo,5000000.0,0,0
+Diego Conde,2021-22,Getafe,,0,1
+Anton Stach,2021-22,Mainz,4500000.0,0,0
+Simon Banza,2021-22,Lens,,1,0
+Luan Peres,2021-22,Marseille,4500000.0,0,0
+Brandon Baiye,2021-22,Clermont Foot,,1,0
+Teun Koopmeiners,2021-22,Atalanta,17900000.0,0,0
+Jurgen Ekkelenkamp,2021-22,Hertha BSC,3000000.0,0,0
+Gabriel Gudmundsson,2021-22,Lille,6000000.0,0,0
+Mamadou Loum,2021-22,Alavés,,1,0
+Falaye Sacko,2021-22,Saint-Étienne,,1,0
+Dan Ndoye,2021-22,Nice,,1,0
+Patson Daka,2021-22,Leicester,30000000.0,0,0
+Luís Maximiano,2021-22,Granada CF,5500000.0,0,0
+Pablo Rosario,2021-22,Nice,6000000.0,0,0
+Wuilker Farinez,2021-22,Lens,1500000.0,0,0
+Arnor Sigurdsson,2021-22,Venezia,,1,0
+David Schnegg,2021-22,Venezia,250000.0,0,0
+Lovro Majer,2021-22,Stade Rennais,12000000.0,0,0
+Arthur Cabral,2021-22,Fiorentina,15500000.0,0,0
+Jonas Wind,2021-22,Wolfsburg,12000000.0,0,0
+Igor Silva,2021-22,FC Lorient,2500000.0,0,0
+Tim Maciejewski,2021-22,Union Berlin,,1,0
+Nadir Zortea,2021-22,Salernitana,,1,0
+Mitchell van Bergen,2021-22,Stade Reims,2000000.0,0,0
+Alexis Flips,2021-22,Stade Reims,,0,1
+Ignacio Ramirez,2021-22,Saint-Étienne,,1,0
+Marcus Forss,2021-22,Brentford,,1,0
+Vitaliy Mykolenko,2021-22,Everton,23500000.0,0,0
+Wajdi Kechrida,2021-22,Salernitana,,0,1
+Leo Petrot,2021-22,FC Lorient,,0,1
+David Okereke,2021-22,Venezia,,1,0
+Kristoffer Klaesson,2021-22,Leeds,2400000.0,0,0
+Jens Petter Hauge,2021-22,AC Milan,,1,0
+Arial Mendy,2021-22,Clermont Foot,,0,0
+Omar Richards,2021-22,Bayern Munich,,0,1
+Jakub Kiwior,2021-22,Spezia Calcio,2400000.0,0,0
+Leo Sena,2021-22,Spezia Calcio,1250000.0,0,0
+Patrick Osterhage,2021-22,VfL Bochum,,0,1
+Jovane Cabral,2021-22,Lazio,,1,0
+Diant Ramaj,2021-22,Frankfurt,100000.0,0,0
+Junior Messias,2021-22,Crotone,,1,0
+David Nemeth,2021-22,Mainz,,0,1
+Ayman Azhil,2021-22,Leverkusen,,1,0
+Louis Mafouta,2021-22,FC Metz,,1,0
+Samuele Ricci,2021-22,FC Empoli,,1,0
+Jens Cajuste,2021-22,Stade Reims,10000000.0,0,0
+Nathan Collins,2021-22,Burnley,14000000.0,0,0
+Denis Genreau,2021-22,Toulouse,500000.0,0,0
+Brian Brobbey,2021-22,Leipzig,,0,1
+Matteo Tramoni,2021-22,Cagliari,,1,0
+Joško Gvardiol,2021-22,Leipzig,36800000.0,0,0
+Luis Díaz,2021-22,Liverpool,49000000.0,0,0
+Youssef Maziz,2021-22,FC Metz,,1,0
+Simone Rabbi,2021-22,Bologna,,1,0
+Logan Costa,2021-22,Toulouse,500000.0,0,0
+Amadou Onana,2021-22,Lille,13570000.0,0,0
+Edo Kayembe,2021-22,Watford,4700000.0,0,0
+Manuel Gasparini,2021-22,Udinese,,1,0
+Ibrahima Kone,2021-22,FC Lorient,4000000.0,0,0
+Enock Mwepu,2021-22,Brighton,23000000.0,0,0
+Víctor Chust,2021-22,Real Madrid,,0,1
+Edon Zhegrova,2021-22,Lille,7000000.0,0,0
+Laurens Serpe,2021-22,Genoa,,0,1
+Riccardo Calafiori,2021-22,Roma,,1,0
+Neco Williams,2021-22,Liverpool,,1,0
+Dominic Thompson,2021-22,Brentford,,1,0
+Morten Frendrup,2021-22,Genoa,4400000.0,0,0
+Tino Livramento,2021-22,Southampton,26200000.0,0,0
+Gianluca Busio,2021-22,Venezia,6000000.0,0,0
+Kaoru Mitoma,2021-22,Brighton,3000000.0,0,0
+Amine Bassi,2021-22,FC Metz,,0,1
+Stefan Strandberg,2021-22,Salernitana,,0,1
+Federico Gatti,2021-22,Juventus,9000000.0,0,0
+Jesper Lindstrøm,2021-22,Frankfurt,7000000.0,0,0
+Sebastian Giovinco,2021-22,Sampdoria,,0,1
+Nicolas Galazzi,2021-22,Venezia,,1,0
+Pathé Ciss,2021-22,Rayo Vallecano,1000000.0,0,0
+Giuseppe Di Serio,2021-22,Benevento,,1,0
+Levi Lumeka,2021-22,Troyes,,1,0
+Naouirou Ahamada,2021-22,Stuttgart,4099999.9999999995,0,0
+Janis Antiste,2021-22,Spezia Calcio,4600000.0,0,0
+Timothee Pembele,2021-22,PSG,,1,0
+Siriki Sanogo,2021-22,Benevento,,1,0
+Billal Brahimi,2021-22,Angers SCO,1300000.0,0,0
+David Zima,2021-22,Torino,5900000.0,0,0
+Yusuf Demir,2021-22,Barcelona,,1,0
+Osman Bukari,2021-22,FC Nantes,,1,0
+Thuler,2021-22,Montpellier,,1,0
+Omar Khailoti,2021-22,Bologna,,0,1
+Micky van de Ven,2021-22,Wolfsburg,8500000.0,0,0
+Fabio Carvalho,2021-22,Fulham,,0,1
+Joan García,2021-22,Espanyol,,0,1
+Michael Olise,2021-22,Crystal Palace,9300000.0,0,0
+Dennis Cirkin,2021-22,Sunderland,,0,0
+Adam Obert,2021-22,Cagliari,,0,1
+Pape Sarr,2021-22,FC Metz,,1,0
+Lamine Gueye,2021-22,FC Metz,,1,0
+Elias Bördner,2021-22,Frankfurt,,1,0
+Julien Ponceau,2021-22,FC Lorient,,1,0
+Maxime Busi,2021-22,Parma,,1,0
+Giorgio Scalvini,2021-22,Atalanta,,0,1
+Armando Broja,2021-22,Southampton,,1,0
+Christopher Wooh,2021-22,Lens,,0,1
+Strahinja Pavlovic,2021-22,Monaco,,1,0
+Álvaro Giménez,2021-22,Cádiz CF,,1,0
+Anthony Elanga,2021-22,Man Utd,,0,1
+Leif Davis,2021-22,Leeds,,1,0
+Joscha Wosz,2021-22,Leipzig,,0,1
+Petar Zovko,2021-22,Spezia Calcio,,0,1
+Drissa Camara,2021-22,Parma,,0,1
+Matteo Ruggeri,2021-22,Atalanta,,1,0
+Ilaix Moriba,2021-22,Barcelona,,0,1
+Nathan Bitumazala,2021-22,PSG,,0,1
+Castello Lukeba,2021-22,Lyon,,0,1
+Lautaro Valenti,2021-22,Parma,10500000.0,0,0
+Riccardo Ciervo,2021-22,Sampdoria,,1,0
+Tommaso Baldanzi,2021-22,FC Empoli,,0,1
+Gavi,2021-22,Barcelona,,0,1
+Dion Lopy,2021-22,Stade Reims,,0,1
+Youssouph Badji,2021-22,Stade Brestois,,1,0
+Issa Kabore,2021-22,Troyes,,1,0
+Leo Leroy,2021-22,Montpellier,,0,1
+Samuele Vignato,2021-22,Monza,,0,1
+Anton Kade,2021-22,Hertha BSC,,0,1
+Samu Costa,2021-22,UD Almería,5250000.0,0,0
+Carney Chukwuemeka,2021-22,Aston Villa,,0,1
+Diego Coppola,2021-22,Hellas Verona,,0,1
+Tanner Tessmann,2021-22,Venezia,3640000.0,0,0
+Facundo Pellistri,2021-22,Alavés,,1,0
+Waniss Taibi,2021-22,Angers SCO,,0,1
+Salis Abdul Samed,2021-22,Clermont Foot,,0,0
+Nicholas Gioacchini,2021-22,Montpellier,,1,0
+Bradley Barcola,2021-22,Lyon,,0,1
+Nico Williams,2021-22,Athletic Club,,0,1
+Kevin Paredes,2021-22,Wolfsburg,6680000.0,0,0
+Sidney Raebiger,2021-22,Leipzig,,0,1
+Fabio Chiarodia,2021-22,Werder Bremen,,0,1
+Kamaldeen Sulemana,2021-22,Stade Rennais,17000000.0,0,0
+Reinhold Yabo,2021-22,Retired,,0,1
+Luka Romero,2021-22,Lazio,200000.0,0,0
+Ismael Boura,2021-22,Lens,,1,0
+Ismael Doukoure,2021-22,R. Strasbourg,1500000.0,0,0
+Zidan Sertdemir,2021-22,Leverkusen,2500000.0,0,0
+Vanderson,2021-22,Monaco,11000000.0,0,0
+Fode Doucoure,2021-22,Stade Reims,,0,1
+Mathys Tel,2021-22,Stade Rennais,,0,1
+Jonathan Varane,2021-22,Lens,,0,1
+Lenny Joseph,2021-22,FC Metz,,0,0
+Tom Bischof,2021-22,Hoffenheim,,0,1
+Dango Ouattara,2021-22,FC Lorient,,0,1
+Felix Afena-Gyan,2021-22,Roma,,0,1
+Íñigo Eguaras,2021-22,UD Almería,600000.0,0,0
+Iván Marcone,2021-22,Elche CF,4000000.0,0,0
+Philipp Hofmann,2022-23,VfL Bochum,,0,1
+Ismaily,2022-23,Lille,,0,1
+Nicolas Tagliafico,2022-23,Lyon,4200000.0,0,0
+Jere Uronen,2022-23,Stade Brestois,,1,0
+Tobias Mohr,2022-23,FC Schalke 04,1100000.0,0,0
+Youssouf M'Changama,2022-23,AJ Auxerre,,0,1
+Miha Blazic,2022-23,Angers SCO,,0,1
+Tonny Vilhena,2022-23,Espanyol,2500000.0,0,0
+Ben Pearson,2022-23,Bournemouth,,1,0
+Naomichi Ueda,2022-23,Kashima Antlers,,0,0
+Jacek Góralski,2022-23,VfL Bochum,,0,1
+Mateusz Wieteska,2022-23,Clermont Foot,1300000.0,0,0
+Iván Sánchez,2022-23,Real Valladolid,100000.0,0,0
+Srđan Babić,2022-23,UD Almería,1100000.0,0,0
+Patrick Pentz,2022-23,Stade Reims,,0,1
+Luka Bogdan,2022-23,Salernitana,,1,0
+Ivan Šunjić,2022-23,Hertha BSC,,1,0
+Andre Onana,2022-23,Inter,,0,1
+Pietro Ceccaroni,2022-23,Venezia,,1,0
+Maximilian Ullmann,2022-23,Venezia,,1,0
+Simone Perilli,2022-23,Hellas Verona,,0,1
+Oussama Idrissi,2022-23,Sevilla FC,,1,0
+Charles Pickel,2022-23,Cremonese,3800000.0,0,0
+Shon Weissman,2022-23,Real Valladolid,,1,0
+Tariqe Fosu,2022-23,Brentford,,1,0
+Pasquale Mazzocchi,2022-23,Salernitana,1000000.0,0,0
+Aleksey Miranchuk,2022-23,Atalanta,,1,0
+Awer Mabil,2022-23,Cádiz CF,,0,1
+João Palhinha,2022-23,Fulham,24900000.0,0,0
+Komnen Andric,2022-23,Clermont Foot,1000000.0,0,0
+Julian Kristoffersen,2022-23,Salernitana,,1,0
+Fabrizio Angileri,2022-23,Getafe,,0,1
+Blendi Idrizi,2022-23,FC Schalke 04,,1,0
+Jens Stage,2022-23,Werder Bremen,4000000.0,0,0
+Jordan Larsson,2022-23,FC Schalke 04,,0,1
+Lennart Grill,2022-23,Leverkusen,,1,0
+Pablo Galdames,2022-23,Genoa,,1,0
+Cyriel Dessers,2022-23,Cremonese,6500000.0,0,0
+Youssef Maleh,2022-23,Fiorentina,,1,0
+Filip Uremović,2022-23,Hertha BSC,,0,1
+Luis Abram,2022-23,Granada CF,,1,0
+Kristian Pedersen,2022-23,1.FC Köln,,0,1
+Orbelín Pineda,2022-23,Celta de Vigo,,1,0
+Finn Ole Becker,2022-23,Hoffenheim,,0,1
+Sékou Gassama,2022-23,Real Valladolid,,1,0
+Deyovaisio Zeefuik,2022-23,Hertha BSC,,1,0
+Mile Svilar,2022-23,Roma,,0,1
+Nathan Tella,2022-23,Southampton,,1,0
+Noussair Mazraoui,2022-23,Bayern Munich,,0,1
+Nathan Broadhead,2022-23,Everton,,0,1
+Rayan Raveloson,2022-23,AJ Auxerre,1750000.0,0,0
+Aurelien Nguiamba,2022-23,Spezia Calcio,,1,0
+Mateusz Lis,2022-23,Troyes,,1,0
+Andi Zeqiri,2022-23,Brighton,,1,0
+Dan Nlundulu,2022-23,Southampton,,1,0
+Nishan Burkart,2022-23,Freiburg,,1,0
+Junya Ito,2022-23,Stade Reims,10000000.0,0,0
+Federico Baschirotto,2022-23,Lecce,280000.0,0,0
+Omar Alderete,2022-23,Hertha BSC,,1,0
+Hiroki Ito,2022-23,Stuttgart,400000.0,0,0
+Stephan Fürstner,2022-23,Retired,,0,1
+Jayson Molumby,2022-23,West Brom,1000000.0,0,0
+Fredrik André Bjørkan,2022-23,Hertha BSC,,1,0
+Lois Openda,2022-23,Lens,15390000.0,0,0
+Ivor Pandur,2022-23,Hellas Verona,,1,0
+Tete,2022-23,Lyon,,1,0
+Kevin Spadanuda,2022-23,AC Ajaccio,,0,0
+Jaka Bijol,2022-23,Udinese,5760000.0,0,0
+Mads Bech Sørensen,2022-23,Brentford,,1,0
+Kristijan Bistrovic,2022-23,Lecce,,1,0
+Noah Fadiga,2022-23,Stade Brestois,350000.0,0,0
+Wesley Moraes,2022-23,Aston Villa,,1,0
+Przemysław Płacheta,2022-23,Norwich,,1,0
+Sam Lammers,2022-23,Atalanta,,1,0
+Danilho Doekhi,2022-23,Union Berlin,,0,1
+Fraser Hornby,2022-23,Stade Reims,,1,0
+Assan Ceesay,2022-23,Lecce,,0,1
+Josep Martinez,2022-23,Leipzig,,1,0
+Nedim Bajrami,2022-23,FC Empoli,,1,0
+Zakaria Aboukhlal,2022-23,Toulouse,2000000.0,0,0
+Gedeon Kalulu,2022-23,FC Lorient,,0,1
+Manor Solomon,2022-23,Fulham,,1,0
+Marcus Tavernier,2022-23,Bournemouth,11900000.0,0,0
+Can Bozdogan,2022-23,FC Schalke 04,,1,0
+Calvin Stengs,2022-23,Nice,,1,0
+Álex Millán,2022-23,Villarreal,,1,0
+Francisco Trincão,2022-23,Barcelona,,1,0
+Fernand Mayembo,2022-23,AC Ajaccio,300000.0,0,0
+Ragnar Ache,2022-23,Frankfurt,,1,0
+Abdou Harroui,2022-23,Sassuolo,1000000.0,0,0
+Erik Botheim,2022-23,Salernitana,,0,1
+Yahia Fofana,2022-23,Angers SCO,,0,1
+Davide Ghislandi,2022-23,Atalanta,,1,0
+Lewis Ferguson,2022-23,Bologna,2000000.0,0,0
+Ansgar Knauff,2022-23,Dortmund,,1,0
+Emmanuel Gyabuaa,2022-23,Atalanta,,1,0
+Bali Mumba,2022-23,Norwich,,1,0
+Leo Greiml,2022-23,FC Schalke 04,,0,1
+Kilian Fischer,2022-23,Wolfsburg,2500000.0,0,0
+Marcão,2022-23,Sevilla FC,13000000.0,0,0
+Daan Heymans,2022-23,Venezia,,1,0
+Marco John,2022-23,Hoffenheim,,1,0
+Moritz Jenz,2022-23,FC Lorient,,1,0
+Samuele Birindelli,2022-23,Monza,1600000.0,0,0
+Rocco Reitz,2022-23,Mönchengladbach,,1,0
+Liberato Cacace,2022-23,FC Empoli,3000000.0,0,0
+Marcos Senesi,2022-23,Bournemouth,15000000.0,0,0
+Ivan Ilic,2022-23,Hellas Verona,,1,0
+Bryan Reynolds,2022-23,Roma,,1,0
+Melayro Bogarde,2022-23,Hoffenheim,,1,0
+Ilyes Chetti,2022-23,Angers SCO,,0,1
+Ryan Gravenberch,2022-23,Bayern Munich,18500000.0,0,0
+Lisandro Martínez,2022-23,Man Utd,57370000.0,0,0
+Magnus Warming,2022-23,Torino,,1,0
+Taylor Richards,2022-23,Brighton,,1,0
+Simone Trimboli,2022-23,Sampdoria,,1,0
+Siriki Dembélé,2022-23,Bournemouth,,1,0
+Antonio Blanco,2022-23,Real Madrid,,0,1
+Karim Adeyemi,2022-23,Dortmund,30000000.0,0,0
+Montassar Talbi,2022-23,FC Lorient,1500000.0,0,0
+Chidera Ejuke,2022-23,Hertha BSC,,1,0
+Evann Guessand,2022-23,Nice,,1,0
+Khvicha Kvaratskhelia,2022-23,Napoli,13300000.0,0,0
+Eduardo Quaresma,2022-23,Hoffenheim,,1,0
+Gian Marco Crespi,2022-23,Crotone,,1,0
+Solomon Bonnah,2022-23,Leipzig,,0,1
+Ellis Simms,2022-23,Everton,,0,1
+Miguel Gutiérrez,2022-23,Real Madrid,,0,1
+Alex Petxa,2022-23,Athletic Club,,1,0
+Lee Buchanan,2022-23,Werder Bremen,,0,1
+Johan Vasquez,2022-23,Genoa,,1,0
+Jamie Shackleton,2022-23,Leeds,,1,0
+Amad Diallo,2022-23,Man Utd,,1,0
+Thijs Dallinga,2022-23,Toulouse,2500000.0,0,0
+Alexis Beka Beka,2022-23,Nice,12000000.0,0,0
+Leandro Sanca,2022-23,Spezia Calcio,,1,0
+Suf Podgoreanu,2022-23,Spezia Calcio,,1,0
+Milutin Osmajić,2022-23,Cádiz CF,,1,0
+Kristjan Asllani,2022-23,FC Empoli,,1,0
+Agustín Marchesín,2022-23,Celta de Vigo,1000000.0,0,0
+Lameck Banda,2022-23,Lecce,2000000.0,0,0
+Brian Oddei,2022-23,Sassuolo,,1,0
+Darwin Núñez,2022-23,Liverpool,85000000.0,0,0
+Melvin Zinga,2022-23,Angers SCO,,0,1
+Adam Hložek,2022-23,Leverkusen,13000000.0,0,0
+Matheus Henrique,2022-23,Sassuolo,7000000.0,0,0
+Kerim Calhanoglu,2022-23,FC Schalke 04,,1,0
+Neto Borges,2022-23,Clermont Foot,,0,1
+Randy Nteka,2022-23,Rayo Vallecano,,1,0
+Kristian Thorstvedt,2022-23,Sassuolo,10150000.0,0,0
+Josh Doig,2022-23,Hellas Verona,3400000.0,0,0
+Naatan Skytta,2022-23,Toulouse,,1,0
+Elliot Anderson,2022-23,Newcastle,,0,1
+Radu Dragusin,2022-23,Juventus,,1,0
+Luis Hartwig,2022-23,VfL Bochum,,1,0
+Julián Álvarez,2022-23,Man City,,1,0
+Denso Kasius,2022-23,Bologna,,1,0
+Aimar Sher,2022-23,Spezia Calcio,,1,0
+Tim Civeja,2022-23,Augsburg,,1,0
+Niels Nkounkou,2022-23,Everton,,1,0
+Warren Tchimbembe,2022-23,FC Metz,,1,0
+Gonzalo Plata,2022-23,Real Valladolid,9000000.0,0,0
+Himad Abdelli,2022-23,Angers SCO,,0,1
+Florian Flick,2022-23,FC Schalke 04,,1,0
+Adrián Butzke,2022-23,Granada CF,,1,0
+Loum Tchaouna,2022-23,Stade Rennais,,1,0
+Levi Colwill,2022-23,Brighton,,1,0
+Nuno Mendes,2022-23,PSG,38000000.0,0,0
+Martin Palumbo,2022-23,Udinese,,1,0
+Kenny Nagera,2022-23,PSG,,1,0
+Malo Gusto,2022-23,Lyon,,1,0
+Daan Dierckx,2022-23,Parma,,1,0
+Yayah Kallon,2022-23,Genoa,,1,0
+Patrick Leal,2022-23,Venezia,,0,1
+Gerard Yepes,2022-23,Sampdoria,,0,1
+Ricardo Pepi,2022-23,Augsburg,,1,0
+Filippo Terracciano,2022-23,Hellas Verona,,0,1
+Nicolo Bertola,2022-23,Spezia Calcio,,1,0
+Keane Lewis-Potter,2022-23,Brentford,19000000.0,0,0
+Cristhian Mosquera,2022-23,Valencia,,0,1
+Samuel Loric,2022-23,FC Lorient,,1,0
+Warren Bondo,2022-23,Monza,,0,1
+Leo Fuhr Hjelde,2022-23,Leeds,,1,0
+Vinicius Souza,2022-23,Espanyol,,1,0
+Joaquin Blazquez,2022-23,Stade Brestois,,1,0
+Habib Keita,2022-23,Lyon,,1,0
+Luca Wollschläger,2022-23,Hertha BSC,,0,1
+Denis Huseinbasic,2022-23,1.FC Köln,50000.0,0,0
+Emmanuel Agbadou,2022-23,Stade Reims,2600000.0,0,0
+Joan Gonzalez,2022-23,Lecce,,0,1
+Linus Gechter,2022-23,Hertha BSC,,1,0
+Samuel Lino,2022-23,Valencia,,1,0
+Tim Oermann,2022-23,VfL Bochum,,0,1
+Tim Iroegbunam,2022-23,Aston Villa,,1,0
+Gabriel Veiga,2022-23,Celta de Vigo,,0,1
+Martin Turk,2022-23,Sampdoria,,1,0
+Noah Fatar,2022-23,Angers SCO,,0,1
+Thierno Balde,2022-23,Troyes,3000000.0,0,0
+Hugo Ekitike,2022-23,Stade Reims,,1,0
+Andy Diouf,2022-23,Stade Rennais,,1,0
+Guela Doue,2022-23,Stade Rennais,,0,1
+Mykola Kukharevych,2022-23,Troyes,,1,0
+Aaron Zehnter,2022-23,Augsburg,,0,1
+Ilan Kebbal,2022-23,Stade Reims,,1,0
+Emirhan Ilkhan,2022-23,Sampdoria,,1,0
+Kevin Danois,2022-23,AJ Auxerre,,0,1
+Mohamed El Arouch,2022-23,Lyon,,0,1
+Maghnes Akliouche,2022-23,Monaco,,0,1
+Cristian Volpato,2022-23,Roma,,0,1
+Alou Kuol,2022-23,Stuttgart,,0,1
+Alexis Tibidi,2022-23,Stuttgart,,1,0
+Williot Swedberg,2022-23,Celta de Vigo,5500000.0,0,0
+Pablo Barrios,2022-23,Atlético,,0,1
+Nicolas Jackson,2022-23,Villarreal,,0,1
+Khalil Fayad,2022-23,Montpellier,,0,1
+Raúl Parra,2022-23,Cádiz CF,,0,1
+Pablo Ibáñez,2022-23,CA Osasuna,,0,1
+El Chadaille Bitshiabu,2022-23,PSG,,0,1
+Djeidi Gassama,2022-23,PSG,,0,1
+Justin Che,2022-23,Hoffenheim,,0,1
+Loris Mouyokolo,2022-23,FC Lorient,,1,0
+Luiz Henrique,2022-23,Real Betis,10400000.0,0,0
+Ibrahima Balde,2022-23,Lens,,1,0
+Bradley Locko,2022-23,Stade Reims,,1,0
+Souleymane Cisse,2022-23,Clermont Foot,,0,1
+Warren Zaire-Emery,2022-23,PSG,,0,1
+Ayman Kari,2022-23,FC Lorient,,1,0
+Alejandro Garnacho,2022-23,Man Utd,,0,1
+Derry Scherhant,2022-23,Hertha BSC,,0,1
+Sacha Delaye,2022-23,Montpellier,,1,0
+Marc Pubill,2022-23,Levante,,0,1
+Fares Chaibi,2022-23,Toulouse,,0,1
+Mohamed Achi,2022-23,FC Nantes,,0,1
+Yanis Guermouche,2022-23,Montpellier,,1,0
+Yanis Massolin,2022-23,Clermont Foot,,0,1
+Tanguy Zoukrou,2022-23,Troyes,,0,1
+Jeanuel Belocian,2022-23,Stade Rennais,,0,1
+Leny Yoro,2022-23,Lille,,0,1
+Iván Fresneda,2022-23,Real Valladolid,,0,1
+Amine Salama,2022-23,Angers SCO,,0,1
+Moustapha Cisse,2022-23,Atalanta,,0,1
+Eric N'jo,2022-23,Troyes,,0,1
+Édgar Badía,2023-24,Elche CF,,1,0
+Cimo Röcker,2023-24,W. Bremen II,,0,1
+Adrian Grbic,2023-24,FC Lorient,,1,0
+Sardar Azmoun,2023-24,Leverkusen,,1,0
+Viktor Kovalenko,2023-24,Atalanta,,1,0
+Domen Crnigoj,2023-24,Venezia,,1,0
+Hakim Ziyech,2023-24,Chelsea,,1,0
+Ridgeciano Haps,2023-24,Venezia,,1,0
+Bersant Celina,2023-24,Dijon,,1,0
+Emiliano Marcondes,2023-24,Bournemouth,,1,0
+Silvan Hefti,2023-24,Genoa,,1,0
+Jamal Lowe,2023-24,Bournemouth,,1,0
+Stijn Spierings,2023-24,Toulouse,,1,0
+Scott McKenna,2023-24,Nott'm Forest,,1,0
+Daniel Iversen,2023-24,Leicester,,1,0
+Marin Jakolis,2023-24,Angers SCO,,1,0
+David Raya,2023-24,Brentford,,1,0
+Adam Buksa,2023-24,Lens,,1,0
+Kieffer Moore,2023-24,Bournemouth,,1,0
+Birger Meling,2023-24,Copenhagen,2000000.0,0,0
+Enric Franquesa,2023-24,Levante,,1,0
+Luca Fiordilino,2023-24,Venezia,,1,0
+Tim Skarke,2023-24,Union Berlin,,1,0
+Donny van de Beek,2023-24,Man Utd,,1,0
+Kevin Ruegg,2023-24,Hellas Verona,,1,0
+Marcin Listkowski,2023-24,Lecce,,1,0
+Oriol Rey,2023-24,Levante,,0,1
+Razvan Marin,2023-24,Cagliari,,1,0
+Joe Rodon,2023-24,Tottenham,,1,0
+Raúl Guti,2023-24,Elche CF,,1,0
+Deniz Undav,2023-24,Brighton,,1,0
+Ike Ugbo,2023-24,Troyes,,1,0
+Diogo Leite,2023-24,Union Berlin,7000000.0,0,0
+Sergiño Dest,2023-24,Barcelona,,1,0
+Kristijan Jakić,2023-24,Frankfurt,,1,0
+Njegoš Petrović,2023-24,Granada CF,,1,0
+Charlie Goode,2023-24,Brentford,,1,0
+Brenden Aaronson,2023-24,Leeds,,1,0
+Emanuel Aiwu,2023-24,Cremonese,,1,0
+Jordi Osei-Tutu,2023-24,VfL Bochum,,1,0
+Braian Cufré,2023-24,RCD Mallorca,,1,0
+Lukas Petkov,2023-24,Augsburg,,1,0
+Gonzalo Montiel,2023-24,Sevilla FC,,1,0
+Reda Khadra,2023-24,Brighton,,0,1
+Emil Bohinen,2023-24,Salernitana,,1,0
+Joe Worrall,2023-24,Nott'm Forest,,1,0
+Halid Sabanovic,2023-24,Angers SCO,,1,0
+Stephane Diarra,2023-24,FC Lorient,,1,0
+Matej Maglica,2023-24,Stuttgart,450000.0,0,0
+Charles De Ketelaere,2023-24,AC Milan,,1,0
+Delano Burgzorg,2023-24,Mainz,,1,0
+Matias Vina,2023-24,Roma,,1,0
+Sydney van Hooijdonk,2023-24,Bologna,,1,0
+Didier Lamkel Ze,2023-24,FC Metz,,1,0
+Christos Tzolis,2023-24,Norwich,,1,0
+Tomás Alarcón,2023-24,Cádiz CF,,1,0
+Jon Morcillo,2023-24,Athletic Club,,1,0
+Robson Bambu,2023-24,Nice,,1,0
+Mostafa Mohamed,2023-24,FC Nantes,5750000.0,0,0
+Dennis Borkowski,2023-24,Leipzig,,1,0
+Luis Binks,2023-24,Bologna,,1,0
+Mehmet Aydin,2023-24,FC Schalke 04,,1,0
+Marcos André,2023-24,Real Valladolid,1800000.0,0,0
+David Strelec,2023-24,Spezia Calcio,,1,0
+Josip Stanišić,2023-24,Bayern Munich,,1,0
+Djed Spence,2023-24,Tottenham,,1,0
+Alberto Soro,2023-24,Granada CF,,1,0
+Mathias Olesen,2023-24,1.FC Köln,,1,0
+Diego Valencia,2023-24,Salernitana,,1,0
+Emil Holm,2023-24,Spezia Calcio,,1,0
+Paul Nebel,2023-24,Mainz,,1,0
+Christopher Scott,2023-24,Hannover 96,,1,0
+Alex Mighten,2023-24,Nott'm Forest,,1,0
+George Bello,2023-24,LASK,,0,1
+Luke Thomas,2023-24,Leicester,,1,0
+Flynn Downes,2023-24,West Ham,,1,0
+Luis Sinisterra,2023-24,Leeds,,1,0
+Santiago Arzamendia,2023-24,Cádiz CF,,1,0
+Miguel Baeza,2023-24,Celta de Vigo,,1,0
+Tyrese Francois,2023-24,Fulham,,1,0
+Andrés Martín,2023-24,Rayo Vallecano,,1,0
+Cody Drameh,2023-24,Leeds,,1,0
+Lukasz Poreba,2023-24,Lens,,1,0
+Luke Cundle,2023-24,Wolves,,1,0
+Nahuel Tenaglia,2023-24,Alavés,1000000.0,0,0
+Bartosz Białek,2023-24,Wolfsburg,,1,0
+Eliot Matazo,2023-24,Monaco,,1,0
+Sergio Arribas,2023-24,Real Madrid,,0,1
+Mateo Klimowicz,2023-24,Stuttgart,,1,0
+Aleksander Buksa,2023-24,Genoa,,1,0
+Leo Román,2023-24,RCD Mallorca,,1,0
+James Trafford,2023-24,Burnley,17300000.0,0,0
+Achraf Dari,2023-24,Stade Brestois,,1,0
+Frederik Winther,2023-24,Augsburg,,1,0
+Yanis Begraoui,2023-24,Toulouse,,1,0
+Tony Springett,2023-24,Norwich,,0,1
+Marten Winkler,2023-24,Hertha BSC,,0,1
+Dogan Alemdar,2023-24,Stade Rennais,,1,0
+Hugo Siquet,2023-24,Freiburg,,1,0
+Mattia Zanotti,2023-24,Inter,,1,0
+James Mcatee,2023-24,Man City,,0,1
+Carlos Augusto,2023-24,Monza,,1,0
+Yvandro Borges Sanches,2023-24,Mönchengladbach,,1,0
+Kelvin Yeboah,2023-24,Genoa,,1,0
+Mikail Maden,2023-24,Esbjerg fB,,0,1
+Hannibal Mejbri,2023-24,Man Utd,,1,0
+Florent da Silva,2023-24,Lyon,,1,0
+Wahid Faghir,2023-24,Stuttgart,,1,0
+Matias Arezo,2023-24,Granada CF,,1,0
+Mattia Pagliuca,2023-24,Bologna,,1,0
+Kaio Jorge,2023-24,Juventus,,1,0
+Kasey McAteer,2023-24,Leicester,,0,1
+Juanmi Latasa,2023-24,Real Madrid,,1,0
+Raul Moro,2023-24,Lazio,,1,0
+Lewis Dobbin,2023-24,Everton,,0,1
+Jarell Quansah,2023-24,Liverpool,,0,1
+Femi Seriki,2023-24,Sheff Utd,,0,1
+Mikael,2023-24,Salernitana,,1,0
+Sabit Abdulai,2023-24,Getafe,,1,0
+Christos Kourfalidis,2023-24,Cagliari,,1,0
+Marcel Wenig,2023-24,Frankfurt,,1,0
+Felix Lemarechal,2023-24,Monaco,,1,0
+Edouard Michut,2023-24,PSG,,1,0
+Matthis Abline,2023-24,Stade Rennais,,1,0
+Oscar Bobb,2023-24,Man City,,0,1
+Kamory Doumbia,2023-24,Stade Reims,,1,0
+Luke Ayling,2023-24,Leeds,,1,0
+Thomas Kastanaras,2023-24,Stuttgart,,1,0
+Luis Henrique,2023-24,Marseille,,1,0
+Romaine Mundle,2023-24,Sunderland,1800000.0,0,0
+Chaka Traore,2023-24,AC Milan,,0,1
+Sambou Soumano,2023-24,FC Lorient,,1,0
+Badredine Bouanani,2023-24,FC Lorient,,1,0
+César Tárrega,2023-24,Valencia,,0,1
+Sanoussy Ba,2023-24,Leipzig,,1,0
+Giuliano Simeone,2023-24,Atlético,,1,0
+Wilson Odobert,2023-24,Burnley,12000000.0,0,0
+Kaiky,2023-24,UD Almería,,1,0
+Arijon Ibrahimovic,2023-24,Frosinone,,1,0
+Tom Rothe,2023-24,Dortmund,,1,0
+Yadaly Diaby,2023-24,Clermont Foot,,1,0
+Ismael Gharbi,2023-24,PSG,,1,0
+Martin Adeline,2023-24,Stade Reims,,1,0
+Andrei Motoc,2023-24,Salernitana,,1,0
+Lohann Doucet,2023-24,FC Nantes,,1,0
+Maxime Esteve,2023-24,Montpellier,,1,0
+Ghjuvanni Quilichini,2023-24,AC Ajaccio,,1,0
+Tairyk Arconte,2023-24,Stade Brestois,,1,0
+Baila Diallo,2023-24,Clermont Foot,,1,0
+Ebenezer Annan,2023-24,Bologna,,1,0
+Aleksandr Kokorin,2023-24,Fiorentina,,1,0
+Derek Mazou-Sacko,2023-24,Troyes,,0,1
+Ibrahim Diakite,2023-24,Stade Reims,,1,0
+Yellu Santiago,2023-24,Getafe,,0,0
+Ivan Ordets,2024-25,VfL Bochum,,0,1
+Jóan Símun Edmundsson,2024-25,KA Akureyri,,0,1
+Manuel Prietl,2024-25,Retired,,0,1
+Mory Diaw,2024-25,Clermont Foot,,1,0
+Petar Stojanovic,2024-25,FC Empoli,,1,0
+Luca Pfeiffer,2024-25,Stuttgart,,1,0
+Przemyslaw Frankowski,2024-25,Lens,,1,0
+Aurélio Buta,2024-25,Frankfurt,,1,0
+Max Lowe,2024-25,Sheff Wed,,0,1
+Samuel Gigot,2024-25,Marseille,,1,0
+Nils Seufert,2024-25,Jerv,,0,1
+Florian Dietz,2024-25,1.FC Köln,,1,0
+Luca Vignali,2024-25,Spezia Calcio,,0,0
+Janni Serra,2024-25,1.FC Nuremberg,,1,0
+Eray Cömert,2024-25,Valencia,,1,0
+Albert Gudmundsson,2024-25,Genoa,,1,0
+Masaya Okugawa,2024-25,Kyoto Sanga,,0,0
+Nick Proschwitz,2024-25,Retired,,0,1
+Abdu Conte,2024-25,Troyes,,1,0
+Tyrell Malacia,2024-25,Man Utd,,1,0
+Thibault De Smet,2024-25,Stade Reims,,1,0
+Luka Lochoshvili,2024-25,Cremonese,,1,0
+Andreas Bruus,2024-25,Troyes,,1,0
+Rasmus Kristensen,2024-25,Leeds,,1,0
+Loic Bessile,2024-25,AS Trencin,,0,1
+Mateusz Praszelik,2024-25,Hellas Verona,,1,0
+Danylo Ignatenko,2024-25,Slo. Bratislava,,0,1
+Albert Sambi Lokonga,2024-25,Arsenal,,1,0
+Marc Baró,2024-25,Leiria,120000.0,0,0
+Lennard Maloney,2024-25,Mainz,500000.0,0,0
+Myron Boadu,2024-25,Monaco,,1,0
+Keita Endo,2024-25,Union Berlin,,1,0
+Dani Gómez,2024-25,Levante,,1,0
+Jordan Holsgrove,2024-25,Estoril,,0,1
+Nicolo Fagioli,2024-25,Juventus,,1,0
+Faride Alidou,2024-25,Frankfurt,,1,0
+Giacomo Quagliata,2024-25,Cremonese,,1,0
+Andri Fannar Baldursson,2024-25,Bologna,,1,0
+Dimitrije Kamenovic,2024-25,Lazio,,1,0
+Jayden Bogle,2024-25,Leeds,5950000.0,0,0
+Karamoko Dembele,2024-25,Stade Brestois,,1,0
+Youssoufa Moukoko,2024-25,Dortmund,,1,0
+Bryan Lasme,2024-25,Grasshoppers,,1,0
+Antonios Papadopoulos,2024-25,FC Lugano,,0,1
+Lilian Brassier,2024-25,Stade Brestois,,1,0
+Mattia Viti,2024-25,FC Empoli,,1,0
+Giorgi Mamardashvili,2024-25,Valencia,,1,0
+Rhys Williams,2024-25,Liverpool,,1,0
+Fábio Silva,2024-25,Wolves,,1,0
+Alexandre Jankewitz,2024-25,FC Winterthur,,0,0
+Malcolm Ebiowei,2024-25,Crystal Palace,,1,0
+Moise Sakava,2024-25,Without Club,,0,1
+Fali Cande,2024-25,FC Metz,,1,0
+Lasse Günther,2024-25,Augsburg,,1,0
+Fisnik Asllani,2024-25,Hoffenheim,,1,0
+Cameron Archer,2024-25,Aston Villa,16649999.999999998,0,0
+Nuno Tavares,2024-25,Arsenal,,1,0
+Pablo Rodriguez,2024-25,Lecce,,1,0
+Nicola Zalewski,2024-25,Roma,,1,0
+Lewis O'Brien,2024-25,Nott'm Forest,,1,0
+Edoardo Bove,2024-25,Roma,,1,0
+Kazeem Olaigbe,2024-25,Stade Rennais,5250000.0,0,0
+Issa Bah,2024-25,Radnicki 1923,,0,0
+Xavi Simons,2024-25,PSG,,1,0
+Cheick Souare,2024-25,Viktoria Plzeň,,0,0
+Chrislain Matsima,2024-25,Monaco,,1,0
+Henning Matriciani,2024-25,FC Schalke 04,,1,0
+Mohamed Sankoh,2024-25,Stuttgart,,1,0
+Johann Lepenant,2024-25,Lyon,,1,0
+Festy Ebosele,2024-25,Udinese,,1,0
+Daniel Oyegoke,2024-25,Hellas Verona,400000.0,0,0
+Lewis Bate,2024-25,Stockport,,0,1
+Stuart McKinstry,2024-25,Without Club,,0,1
+Ouparine Djoco,2024-25,Clermont Foot,,1,0
+Gabriel Vidovic,2024-25,Bayern Munich,,1,0
+Jonas Dirkner,2024-25,Hansa Rostock,,0,1
+William Osula,2024-25,Newcastle,11600000.0,0,0
+Pedro Ortiz,2024-25,Sevilla FC,,0,1
+Oscar Fraulo,2024-25,Mönchengladbach,,1,0
+Oliver Zanden,2024-25,Toulouse,,1,0
+Isaac Price,2024-25,West Brom,3000000.0,0,0
+Marco Bertini,2024-25,Lazio,,1,0
+Chem Campbell,2024-25,Wolves,,1,0
+Tyler Morton,2024-25,Liverpool,,0,1
+Carlos Martín,2024-25,Alavés,,1,0
+Urko González,2024-25,Real Sociedad,,1,0
+Miguel Rodríguez,2024-25,Celta de Vigo,,1,0
+Will Fish,2024-25,Cardiff,1200000.0,0,0
+Odilon Kossounou,2024-25,Leverkusen,,1,0
+Julio Enciso,2024-25,Brighton,,1,0
+Luis Rojas,2024-25,Crotone,,1,0
+Darko Gyabi,2024-25,Leeds,,1,0
+Jaden Philogene Bidace,2024-25,Aston Villa,16000000.0,0,0
+Lewis Hall,2024-25,Newcastle,33000000.0,0,0
+Jonathan Rowe,2024-25,Norwich,,1,0
+Jaidon Anthony,2024-25,Bournemouth,,1,0
+Chiquinho,2024-25,Wolves,,1,0
+Lorenzo Malagrida,2024-25,Sampdoria,,1,0
+Hugo Bueno,2024-25,Wolves,,1,0
+Kacper Urbanski,2024-25,Bologna,,1,0
+Javier Llabrés,2024-25,RCD Mallorca,,1,0
+Julian Eitschberger,2024-25,Hertha BSC,,1,0
+Iker Benito,2024-25,CA Osasuna,,1,0
+Brian Bayeye,2024-25,Torino,,1,0
+Georges Mikautadze,2024-25,FC Metz,13000000.0,0,0
+Kaide Gordon,2024-25,Norwich,,1,0
+Issouf Sissokho,2024-25,M. Tel Aviv,,0,1
+Omari Hutchinson,2024-25,Ipswich,23500000.0,0,0
+Iker Bravo,2024-25,Leverkusen,,0,1
+Theo Le Bris,2024-25,FC Lorient,,1,0
+Fabian Klos,2024-25,Retired,,0,1
+Muhammed Damar,2024-25,Hoffenheim,,1,0
+Hilmir Rafn Mikaelsson,2024-25,Venezia,,1,0
+Janis Blaswich,2024-25,Leipzig,,1,0
+Antonio Raimondo,2024-25,Venezia,,1,0
+Dženan Pejčinović,2024-25,Wolfsburg,,1,0
+Yannis M'Bemba,2024-25,FC Dordrecht,,0,1
+Ousmane Camara,2024-25,Castellón,500000.0,0,0
+Cebio Soukou,2024-25,Ümraniyespor,,0,1
+Guede Nadje,2024-25,Angers SCO,,1,0
+Lucas Calodat,2024-25,Le Mans FC,,0,1
+Dimitrios Keramitsis,2024-25,Pogon Szczecin,,0,1
+Tyler Dibling,2024-25,Southampton,,0,1
+Álvaro Aguirre,2024-25,Without Club,,0,1
+Alejandro Asensio,2024-25,Retired,,0,1
+Hugo Álvarez,2024-25,Celta de Vigo,,0,1
+Paul Wanner,2024-25,Bayern Munich,,1,0
+Estanis Pedrola,2024-25,Bologna,,1,0
+Archie Gray,2024-25,Tottenham,41250000.0,0,0
+Johaneko Louis Jean,2024-25,Bilbao Athletic,,0,1
+Fransergio,2025-26,Luverdense-MT,,0,0
+Riad Nouri,2025-26,AC Ajaccio,,0,1
+Jacob Barrett Laursen,2025-26,Retired,,0,1
+Vital N'Simba,2025-26,Clermont Foot,,0,1
+Michel Aebischer,2025-26,Bologna,,1,0
+Anderson Lucoqui,2025-26,Energie Cottbus,,0,1
+Sandi Lovric,2025-26,Udinese,,1,0
+Vincent Vermeij,2025-26,Dynamo Dresden,250000.0,0,0
+Christian Gebauer,2025-26,A. Salzburg,,0,1
+Florian Krüger,2025-26,MSV Duisburg,,0,1
+Fabian Kunze,2025-26,1.FC K'lautern,,0,1
+Tete Morente,2025-26,Elche CF,,0,1
+Josh Dasilva,2025-26,Brentford,,0,1
+Guilherme Ramos,2025-26,BJ Guoan,100000.0,0,0
+Yoann Etienne,2025-26,Étoile Bobigny,,0,1
+Michel Vlap,2025-26,Al-Ahli SC,2000000.0,0,0
+Álex Martín,2025-26,Córdoba CF,,0,1
+Ritsu Doan,2025-26,Frankfurt,21000000.0,0,0
+Mehdi Chahiri,2025-26,Without Club,,0,1
+Bartol Franjić,2025-26,Wolfsburg,,1,0
+Karol Fila,2025-26,Wieczysta,,0,1
+Noah Weißhaupt,2025-26,Freiburg,,1,0
+Alessandro Zanoli,2025-26,Napoli,,1,0
+Mouhamadou Drammeh,2025-26,U Cluj,,0,1
+Jakub Kamiński,2025-26,Wolfsburg,,1,0
+Frank Onyeka,2025-26,Brentford,,1,0
+Cedric Avinel,2025-26,AC Ajaccio,,0,1
+Alessandro Di Pardo,2025-26,Sampdoria,200000.0,0,0
+Mehdi Zerkane,2025-26,Carolina Core,,0,1
+Alvaro Sanz,2025-26,Al-Shahania SC,,0,1
+Joe Aribo,2025-26,Southampton,,1,0
+Marcos Antonio,2025-26,Lazio,,1,0
+Jimmy Kaparos,2025-26,Patro Eisden,,0,1
+Jonas Michelbrink,2025-26,Fortuna Köln,,0,1
+Facundo Medina,2025-26,Lens,,1,0
+Lorenzo Colombo,2025-26,AC Milan,,1,0
+Jackson Porozo,2025-26,Troyes,,1,0
+Tyrone Tormin,2025-26,NK Vukovar 1991,,0,1
+Aster Vranckx,2025-26,Wolfsburg,,1,0
+Fabio Vieira,2025-26,Arsenal,,1,0
+Tommaso Milanese,2025-26,Cremonese,,1,0
+Botond Balogh,2025-26,Parma,,1,0
+Mark Kosznovszky,2025-26,Portsmouth,1380000.0,0,0
+Demba Seck,2025-26,Torino,,1,0
+Sekou Mara,2025-26,AJ Auxerre,,1,0
+Marvin Tshibuabua,2025-26,Without Club,,0,1
+Antonio Cioffi,2025-26,Napoli,,1,0
+Jeremy Sarmiento,2025-26,Brighton,,1,0
+Theo Corbeanu,2025-26,Granada CF,,1,0
+Hrvoje Smolčić,2025-26,Frankfurt,,1,0
+Bambasé Conté,2025-26,Hoffenheim,,1,0
+Thibault Klidje,2025-26,Hibernian FC,1150000.0,0,0
+CJ Egan-Riley,2025-26,Marseille,,0,1
+Nathan Young-Coombes,2025-26,Wealdstone,,0,1
+Gavin Bazunu,2025-26,Southampton,,1,0
+Caleb Watts,2025-26,Plymouth,,0,1
+Christian Acella,2025-26,Cremonese,,1,0
+Joe White,2025-26,Newcastle,,1,0
+Tiago Tomás,2025-26,Stuttgart,13000000.0,0,0
+Tommaso De Nipoti,2025-26,Castellón,,1,0
+Julen Agirrezabala,2025-26,Athletic Club,,1,0
+Jesús Owono,2025-26,Alavés,,1,0
+Abdoulaye Sidibe,2025-26,Auda,,0,1
+Shola Shoretire,2025-26,PEC Zwolle,,1,0
+Sadik Fofana,2025-26,Lecce,600000.0,0,0
+Evan Ferguson,2025-26,Brighton,,1,0
+Leonardo Buta,2025-26,Udinese,,0,0
+Lewis Richardson,2025-26,Boreham Wood,,0,1
+Piero Hincapié,2025-26,Leverkusen,,1,0
+Omar Faraj,2025-26,Zamalek,,1,0
+Filippo Distefano,2025-26,Fiorentina,,1,0
+Dane Scarlett,2025-26,Tottenham,,1,0
+Abu Kamara,2025-26,Getafe,,1,0
+Lluís Recasens,2025-26,Reus FCR,,0,1
+Amadou Diambo,2025-26,Renato Curi Ang,,0,1
+Mario Perrone,2025-26,Palmese,,0,1
+Ilias Akhomach,2025-26,Rayo Vallecano,,1,0
+Mamor Niang,2025-26,Mafra,,0,1
+Isaac Karamoko,2025-26,R. Strasbourg B,,0,1
+Luca Koleosho,2025-26,Burnley,,1,0
+Daniel Jebbison,2025-26,Preston,,1,0
+Ramón Terrats,2025-26,Villarreal,,1,0
+Jony Álamo,2025-26,Algeciras CF,,0,1
+Baptiste Mouazan,2025-26,Grenoble,,0,1
+Adrien Louveau,2025-26,US Créteil-L,,0,1
+Jacques Siwe,2025-26,Rubin Kazan,2500000.0,0,0
+Paul Joly,2025-26,AJ Auxerre,,1,0
+Amadou Salif Mbengue,2025-26,QPR,,0,0
+Abdoulaye Sylla,2025-26,Pribram,,0,1
+Rares Ilie,2025-26,Nice,,1,0
+Marko Milovanović,2025-26,UD Almería,,1,0
+Adilson Malanda,2025-26,Middlesbrough,6900000.0,0,0
+Brian Behrendt,2025-26,FSV Schöningen,,0,1
+Will Alves,2025-26,Leicester,,0,1
+Habib Diarra,2025-26,Sunderland,31500000.0,0,0
+Eneko Ortiz,2025-26,Villarreal CF B,,0,1
+Erwan Belhadji,2025-26,AS Saint-Priest,,0,1
+Mamadou Camara,2025-26,Sutjeska Niksic,,0,1
+Antonio Gomis,2025-26,Vizela,,0,1
+El Hadji Dieye,2025-26,Without Club,,0,1
+Andreas Voglsammer,2025-26,Hansa Rostock,,0,1
+Junior Mwanga,2026-27,Le Havre AC,1500000.0,0,0
+Conor Townsend,2026-27,West Brom,,0,1
+Cédric Brunner,2026-27,Retired,,0,1
+Joakim Nilsson,2026-27,Retired,,0,1
+Niclas Eliasson,2026-27,Internacional,,1,0
+Simone Bastoni,2026-27,Spezia Calcio,,0,1
+Alberth Elis,2026-27,Marathón,,0,1
+Álvaro Bravo,2026-27,Al-Ittifaq,,0,1
+Nathan de Medina,2026-27,Würzb. Kickers,,0,1
+Ricardo Mangas,2026-27,Monza,,1,0
+Radoslaw Majecki,2026-27,Monaco,,1,0
+Ko Itakura,2026-27,Mönchengladbach,3500000.0,0,0
+Kingsley Fobi,2026-27,St Joseph's FC,,0,1
+Arthur Theate,2026-27,Bologna,,1,0
+Anel Ahmedhodzic,2026-27,Burnley,7000000.0,0,0
+Joel Mumbongo,2026-27,Without Club,,0,1
+Sebastian Müller,2026-27,Stuttg. Kickers,,0,1
+Gideon Mensah,2026-27,1.FC Köln,,0,1
+Jake Vokins,2026-27,Ebbsfleet,,0,1
+Edgar Sevikyan,2026-27,AD Ceuta,,1,0
+Karim Aribi,2026-27,Al-Mina'a SC,,0,1
+Lucas Robertone,2026-27,UD Almería,,1,0
+Jason Mbock,2026-27,US Créteil,,0,1
+Allan Tchaptchet,2026-27,RE Virton,,0,0
+Felix Correia,2026-27,Sevilla FC,,1,0
+Aimen Moueffek,2026-27,Saint-Étienne,,1,0
+Tiago Ribeiro,2026-27,Santa Clara,,0,0
+Matteo Ahlinvi,2026-27,FCV Farul,,0,1
+Sidnei Tavares,2026-27,Wisla Plock,,1,0
+Lion Semić,2026-27,Greifswalder FC,,1,0
+Kike Hermoso,2026-27,CD Lugo,,0,1
+Sergio Benito,2026-27,CF Talavera,,0,1
+Patrick Wimmer,2026-27,Hoffenheim,10000000.0,0,0
+Lewis Brunt,2026-27,Bolton,585000.0,0,0
+Pierre Ekwah,2026-27,Saint-Étienne,,1,0
+Dilane Bakwa,2026-27,Lille,,1,0
+Amadou Traore,2026-27,FK TransINVEST,,1,0
+Niall Huggins,2026-27,Without Club,,0,1
+Umut Tohumcu,2026-27,Hoffenheim,,1,0
+Fabio Miretti,2026-27,Juventus,,1,0
+Jesurun Rak Sakyi,2026-27,Crystal Palace,,1,0
+Mahame Siby,2026-27,Without Club,,0,1
+Ansou Sow,2026-27,Poiré-sur-Vie,,0,1
+Sergi García,2026-27,Europa FC,,0,1
+Liam Delap,2026-27,Nott'm Forest,52500000.0,0,0
+Dani Plomer,2026-27,Without Club,,0,1
+Nikita Iosifov,2026-27,Sporting Gijón,,0,1
+Giorgio Cittadini,2026-27,Atalanta,,1,0
+Mika Mármol,2026-27,Feyenoord,,0,1
+Mario Gila,2026-27,AC Milan,30000000.0,0,0
+Brayann Pereira,2026-27,West Brom,1500000.0,0,0
+Luca Stanga,2026-27,Derthona,,0,1
+Iliman Ndiaye,2026-27,Man City,70000000.0,0,0
+Ander Martin,2026-27,Real Unión,,0,1
+Marc Tenas,2026-27,UE Olot,,0,1
+Matthew Craig,2026-27,Port Vale,,0,1
+Carlos Dominguez,2026-27,Celta de Vigo,,1,0
+Lucas Copado,2026-27,Energie Cottbus,,0,0
+Eren Dinkçi,2026-27,Werder Bremen,,1,0
+Tomás Mendes,2026-27,Without Club,,0,1
+Filippo Missori,2026-27,Sassuolo,,1,0
+Yanis Lhery,2026-27,Without Club,,0,1
+Antwoine Hackford,2026-27,Swindon Town,,0,0
+Sonny Perkins,2026-27,Wigan,,0,0
+Niklas Pyyhtia,2026-27,Bologna,,1,0
+Juan Brunet,2026-27,Scafatese,,0,0
+Burak İnce,2026-27,FC Baniyas,,0,1
+Riccardo Pinzi,2026-27,Lanciano FC,,0,1
+Gori,2026-27,CE Europa,,0,1
+Antoine Valerio,2026-27,RE Virton,,0,1
+Salim Ben Seghir,2026-27,KSC Lokeren,,0,1
+Peter González,2026-27,Górnik Zabrze,,0,1
+Dexter Lembikisa,2026-27,Without Club,,0,1
+Damián Rodríguez,2026-27,Celta de Vigo,,1,0
+Unai Ropero,2026-27,Alavés,,1,0
+Kevin Omoruyi,2026-27,Cagliari,,1,0
+Nassim Chadli,2026-27,Al-Nasr,,1,0
+Unai Dufur,2026-27,Zamora CF,,0,1
+Mathys Saban,2026-27,Mâcon 71,,0,1
+Nelson Weiper,2026-27,Mainz,,1,0
+Redwan Bourles,2026-27,Without Club,,0,1
+Justin Kumi,2026-27,Sassuolo,,1,0
+Malik Sellouki,2026-27,Rio Ave,300000.0,0,0
+Wisdom Amey,2026-27,Frosinone,,1,0
+Riccardo Stivanello,2026-27,Bologna,,1,0
+Nicola Bagnolini,2026-27,Bologna,,1,0
+Pedro Benito,2026-27,CyD Leonesa,,0,1
+Tom Lacoux,2026-27,HNK Gorica,,0,0
+Baptiste Gabard,2026-27,Crest-Aouste,,0,1
+Stefan Ortega,2026-27,Olympiacos,,0,1
+Mahamadou Doucoure,2026-27,Sisaket Utd.,,0,1
+Simone Pafundi,2026-27,Udinese,,1,0
+Álvaro Bastida,2026-27,UD Ourense,,0,1
+Nordine Kandil,2026-27,AS Nancy,150000.0,0,0
+Hugo Sotelo,2026-27,Celta de Vigo,,1,0
+Samuel Koeberle,2026-27,US Orléans B,,0,1
+Jean Mattéo Bahoya,2026-27,Frankfurt,,1,0
+Mario Dominguez,2026-27,Valencia,,0,1
