@@ -123,6 +123,7 @@ jobs:
       - name: Retrain models
         run: |
           python src/train_value_model.py
+          python src/build_match_lineups.py || echo "(no lineup cache yet - skipping)"
           python src/build_form_momentum.py
           python src/build_match_model_table.py
           python src/train_outcome_model.py --hybrid
