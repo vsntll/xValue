@@ -48,7 +48,7 @@ FEATURES = [
     "fa_pts", "fa_gf", "fa_ga", "fa_xgf", "fa_xga",
     "all_h_pts", "all_a_pts", "all_h_xgd", "all_a_xgd",
     "h_att", "a_att", "form_pts_gap",
-    "value_log_ratio", "age_gap", "days_rest_h", "days_rest_a",
+    "xi_value_ratio", "xi_value_known", "age_gap", "days_rest_h", "days_rest_a",
     "promoted_h", "promoted_a", "h2h_h_pts",
     "h_momentum", "a_momentum",
 ]
@@ -65,12 +65,12 @@ def _order(clf, p):
 
 _H_FEATS = ["elo_diff", "xelo_diff", "elo_exp_h", "xelo_exp_h",
             "fh_xgf", "fa_xga", "fh_gf", "fa_ga", "fh_pts", "fa_pts",
-            "all_h_xgd", "all_a_xgd", "all_h_pts", "value_log_ratio",
+            "all_h_xgd", "all_a_xgd", "all_h_pts", "xi_value_ratio",
             "h_att", "a_att", "promoted_h", "promoted_a", "days_rest_h", "h2h_h_pts",
             "h_momentum", "a_momentum"]
 _A_FEATS = ["elo_diff", "xelo_diff", "elo_exp_h", "xelo_exp_h",
             "fa_xgf", "fh_xga", "fa_gf", "fh_ga", "fa_pts", "fh_pts",
-            "all_a_xgd", "all_h_xgd", "all_a_pts", "value_log_ratio",
+            "all_a_xgd", "all_h_xgd", "all_a_pts", "xi_value_ratio",
             "a_att", "h_att", "promoted_a", "promoted_h", "days_rest_a", "h2h_h_pts",
             "a_momentum", "h_momentum"]
 MAXG = 8

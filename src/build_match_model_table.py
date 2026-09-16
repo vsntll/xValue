@@ -14,7 +14,12 @@ Features:
                                  uses the continuous columns above, not these.
   form_* (home/away split)      rolling-6 pts / GF / GA / xGF / xGA, split by venue
   gf/ga/xg rolling (all venues) rolling-8
-  value_log_ratio, age_gap      squad strength
+  value_log_ratio, age_gap      squad strength (season-level, previous season's value)
+  xi_value_ratio, xi_value_known  same, using the confirmed starting XI where
+                                 known (build_match_lineups.py); falls back to
+                                 value_log_ratio otherwise - see the comment at
+                                 its computation for why it's rarely populated
+                                 at normal pre-match prediction time
   promoted_h, promoted_a        first season in this league
   days_rest_h/a, h2h_h_pts      congestion, head-to-head
 Output: data/processed/match_model_table.csv
@@ -220,6 +225,33 @@ def build() -> pd.DataFrame:
     df["age_gap"] = hk.map(amap) - ak.map(amap)
     df["days_rest_h"] = df["days_rest_h"].clip(0, 14)
     df["days_rest_a"] = df["days_rest_a"].clip(0, 14)
+
+    # per-match XI value (src/build_match_lineups.py) - a dynamic refinement of
+    # value_log_ratio above using who actually started rather than the whole
+    # squad's PREVIOUS-season value. Confirmed lineups only exist for matches
+    # already played (backfilled from FotMob) or ~1hr pre-kickoff, so for any
+    # match scored well ahead of that window (the model's normal day(s)-ahead
+    # use case) this is NaN and falls back to value_log_ratio - flag + fallback,
+    # same style as market_value_imputed. Mostly useful for backtesting and
+    # near-kickoff scoring, not the standard pre-match prediction.
+    lf_path = PROC / "match_lineup_features.csv"
+    if lf_path.exists():
+        lf = pd.read_csv(lf_path)
+        lf["_k"] = lf["team_key"] + "|" + lf["date"]
+        xmap = lf.set_index("_k")["xi_value_eur"].to_dict()
+        kfmap = lf.set_index("_k")["xi_value_known_frac"].to_dict()
+        dstr_xi = df["Date"].dt.strftime("%Y-%m-%d")
+        hk_xi = df["HomeTeam"].map(normalize_team) + "|" + dstr_xi
+        ak_xi = df["AwayTeam"].map(normalize_team) + "|" + dstr_xi
+        xh, xa = hk_xi.map(xmap), ak_xi.map(xmap)
+        kh, ka = hk_xi.map(kfmap).fillna(0), ak_xi.map(kfmap).fillna(0)
+        have_xi = xh.notna() & xa.notna() & (kh >= 0.5) & (ka >= 0.5)
+        df["xi_value_ratio"] = np.where(
+            have_xi, np.log((xh.fillna(0) + 5e6) / (xa.fillna(0) + 5e6)), df["value_log_ratio"])
+        df["xi_value_known"] = have_xi.astype(int)
+    else:
+        df["xi_value_ratio"] = df["value_log_ratio"]
+        df["xi_value_known"] = 0
 
     # form/momentum: value-model-implied output vs. recent actual output
     # (src/build_form_momentum.py) - the dynamic counterpart to value_log_ratio
