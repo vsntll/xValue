@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-13T12:11:26+00:00",
+  "checked_at": "2026-09-16T11:53:36+00:00",
   "results": {
     "fbref (browser scrape)": {
       "status": "blocked (known)",
@@ -9,7 +9,7 @@
     "transfermarkt (browser scrape)": {
       "status": "blocked (known)",
       "detail": "HTTP 202 - the standing non-browser block",
-      "seconds": 0.1
+      "seconds": 0.2
     },
     "worldfootballR mirror": {
       "status": "ok",
@@ -23,15 +23,15 @@
     },
     "fotmob": {
       "status": "ok",
-      "detail": "37 rows",
-      "n": 37,
-      "seconds": 0.9
+      "detail": "40 rows",
+      "n": 40,
+      "seconds": 0.8
     },
     "understat (live match schema)": {
       "status": "ok",
       "detail": "380 rows",
       "n": 380,
-      "seconds": 3.9
+      "seconds": 3.8
     },
     "football-data.org": {
       "status": "ok",
@@ -41,8 +41,8 @@
     },
     "football-data.co.uk": {
       "status": "ok",
-      "detail": "15154 bytes",
-      "seconds": 0.4
+      "detail": "20004 bytes",
+      "seconds": 0.5
     },
     "sofascore (values API)": {
       "status": "blocked (known)",
