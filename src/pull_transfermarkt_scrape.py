@@ -62,7 +62,7 @@ from pathlib import Path
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from live.schema import deaccent  # noqa: E402
+from live.schema import deaccent, normalize_team  # noqa: E402
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 BROWSER = r"C:/Users/avasa/chrome-for-testing/chrome-win64/chrome.exe"
@@ -208,7 +208,6 @@ JSON.stringify((() => {
     });
 })())
 """
-RESTART_EVERY = 150  # long-lived Chrome sessions have degraded/crashed on long runs
 PAGE_TIMEOUT = 25    # seconds - a wedged navigation/evaluate call raises instead of hanging
 
 
@@ -238,15 +237,12 @@ async def scrape_profiles() -> None:
             if not (PROFILE_DIR / f"{p}.json").exists()]
     print(f"{len(todo)} profiles to fetch")
 
+    # one browser session for the whole run - restarting means a fresh profile,
+    # which means re-clicking consent every time. Only restart reactively, on
+    # an actual error, not on a fixed schedule.
     browser = await _start_browser(uc)
-    done_since_restart = 0
     try:
         for slug, pid in todo:
-            if done_since_restart >= RESTART_EVERY:
-                print(f"  -- restarting browser after {RESTART_EVERY} profiles --")
-                browser.stop()
-                browser = await _start_browser(uc)
-                done_since_restart = 0
             try:
                 page = await asyncio.wait_for(
                     browser.get(f"{BASE}/{slug}/transfers/spieler/{pid}"), PAGE_TIMEOUT)
@@ -262,7 +258,6 @@ async def scrape_profiles() -> None:
                 except Exception:
                     pass
                 browser = await _start_browser(uc)
-                done_since_restart = 0
                 continue
             if not rows:
                 print(f"  !! {slug} ({pid}): no transfer rows in shadow DOM")
@@ -270,7 +265,6 @@ async def scrape_profiles() -> None:
             (PROFILE_DIR / f"{pid}.json").write_text(
                 json.dumps(rows), encoding="utf-8")
             print(f"  ok {slug} ({pid}) - {len(rows)} transfers")
-            done_since_restart += 1
             await asyncio.sleep(random.uniform(1.5, 3.0))
     finally:
         browser.stop()
@@ -310,12 +304,13 @@ def parse_profiles() -> None:
             mv = _value_eur(str(r.get("mv") or ""))
             if mv is not None:
                 val_rows.append({"tm_player_id": pid, "season": season,
-                                  "market_value_eur": mv})
+                                  "joined": r.get("joined"), "market_value_eur": mv})
             fee_txt = str(r.get("fee") or "").strip().lower()
             is_loan = "loan" in fee_txt
             is_free = "free" in fee_txt or fee_txt in ("", "-")
             fee = None if (is_loan or is_free) else _value_eur(fee_txt)
             fee_rows.append({"tm_player_id": pid, "season": season,
+                              "joined": r.get("joined"),
                               "fee_eur": fee, "fee_is_loan": int(is_loan),
                               "fee_is_free": int(is_free)})
         if not seasons_seen:
@@ -334,34 +329,57 @@ def parse_profiles() -> None:
     # resolution step - re-derive it rather than thread it through.
     cold = pd.read_csv(COLD_LIST) if COLD_LIST.exists() else pd.DataFrame()
     id_to_name = {}
+    id_to_squad = {}
     if len(cold):
         ids = _resolve_ids({_key(n) for n in cold["Player"].dropna().unique()})
         name_by_key = {_key(n): n for n in cold["Player"].dropna().unique()}
+        # most recent cold-start row per player = the squad his current-season
+        # value should be anchored to, to sanity-check which transfer is "his
+        # move to his current club" rather than trusting season-string order
+        # alone (a fallen-through rumour or same-season loan-then-permanent
+        # move could otherwise pick the wrong row).
+        squad_by_key = (cold.assign(_k=cold["Player"].map(_key))
+                        .sort_values("season").groupby("_k")["Squad"].last())
         for k, (slug, pid) in ids.items():
             id_to_name[pid] = name_by_key.get(k, slug.replace("-", " ").title())
+            if k in squad_by_key.index:
+                id_to_squad[pid] = squad_by_key[k]
 
     if val_rows:
         vdf = pd.DataFrame(val_rows)
         vdf["player_name"] = vdf["tm_player_id"].astype(str).map(
             lambda i: id_to_name.get(i, i))
-        vdf[["player_name", "season", "market_value_eur"]].drop_duplicates().to_csv(
+        vdf[["player_name", "season", "joined", "market_value_eur"]].drop_duplicates().to_csv(
             TRANSFER_OUT, index=False)
         print(f"wrote {TRANSFER_OUT}  ({len(vdf)} transfer-value snapshots)")
 
     if fee_rows:
-        fdf = pd.DataFrame(fee_rows)
-        # last (most recent season) transfer per player = the move to his
-        # current club - that fee is the feature; earlier ones are noise for
-        # this purpose.
+        fdf = pd.DataFrame(fee_rows).sort_values("season")
+        # the move to his CURRENT club is the feature; prefer the row whose
+        # "joined" club matches his known current squad over just trusting the
+        # latest season string, which a fallen-through rumour or a same-season
+        # loan-then-permanent move could get wrong.
+        target = fdf["tm_player_id"].map(id_to_squad).map(
+            lambda s: normalize_team(s) if pd.notna(s) else None)
+        joined_norm = fdf["joined"].map(lambda s: normalize_team(s) if pd.notna(s) else None)
+        fdf["_matches_squad"] = (target.notna() & (target == joined_norm))
+        mismatched = (fdf.groupby("tm_player_id")["_matches_squad"].transform("any")
+                      & ~fdf["_matches_squad"])
+        fdf = fdf[~mismatched]
         # groupby().last() takes each COLUMN's last non-null value independently,
         # which mixes fields across different transfers (e.g. a free transfer's
         # fee_is_free=1 paired with an earlier transfer's real fee_eur) - tail(1)
         # keeps one real row intact.
-        fdf = fdf.sort_values("season").groupby("tm_player_id").tail(1)
+        fdf = fdf.groupby("tm_player_id").tail(1)
+        unmatched = int((~fdf["_matches_squad"] & fdf["tm_player_id"].map(id_to_squad).notna()).sum())
+        if unmatched:
+            print(f"  note: {unmatched} players' latest transfer row doesn't "
+                  f"name their known current squad as 'joined' - used anyway "
+                  f"(no other row matched either); spot-check these")
         fdf["player_name"] = fdf["tm_player_id"].astype(str).map(
             lambda i: id_to_name.get(i, i))
-        fdf[["player_name", "season", "fee_eur", "fee_is_loan", "fee_is_free"]].to_csv(
-            FEE_OUT, index=False)
+        fdf[["player_name", "season", "joined", "fee_eur", "fee_is_loan",
+             "fee_is_free"]].to_csv(FEE_OUT, index=False)
         print(f"wrote {FEE_OUT}  ({len(fdf)} players' most recent transfer fee)")
 
 
