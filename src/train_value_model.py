@@ -28,7 +28,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from live.schema import deaccent  # noqa: E402
+from live.schema import deaccent, normalize_team  # noqa: E402
 from sklearn.base import clone
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import ExtraTreesRegressor, HistGradientBoostingRegressor
@@ -186,6 +186,36 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
         d["prev_squad_value"] = d["squad_xg"] = d["squad_xa"] = np.nan
         d["mean_age_wtd"] = d["prev_core18_value"] = np.nan
 
+    # three reasons a row can lack a usable prior value - surfaced as features
+    # (not just used for the site's baseline-value imputation) since they matter
+    # beyond the cold-start segment: is_promoted flags a club new to its league
+    # this season (build_current_season_stats.py's PROMO_FACTOR division
+    # adjustment uses the same test); is_academy_age proxies a first-team debut
+    # too early for scouting-driven output stats to have caught up with
+    # reputation; is_brand_new means this dataset has never seen the player
+    # before at all (vs. a cross-league mover we've tracked without a value).
+    _team_key = d["Squad"].map(normalize_team)
+    _seen_pairs = set(zip(d["src_league"], _team_key, d["_ord"]))
+    d["is_promoted"] = [
+        (lg, tk, o - 1) not in _seen_pairs
+        for lg, tk, o in zip(d["src_league"], _team_key, d["_ord"])
+    ]
+    d["is_academy_age"] = d["age"] <= 20
+    d["is_brand_new"] = d["_ord"] == d.groupby("_pk")["_ord"].transform("min")
+
+    # last transfer fee (targeted TM profile backfill - pull_transfermarkt_scrape.py
+    # --profiles): a fee negotiated for the move to the player's current club is a
+    # strong value proxy even with zero minutes played, cheapest to get right where
+    # has_any_prev == 0 has no better anchor.
+    fee_path = SRC.parent / "tm_transfer_fees.csv"
+    if fee_path.exists():
+        fee = pd.read_csv(fee_path)
+        fee["_pk"] = fee["player_name"].map(_key)
+        d = d.merge(fee[["_pk", "season", "fee_eur", "fee_is_loan", "fee_is_free"]],
+                    on=["_pk", "season"], how="left")
+    else:
+        d["fee_eur"] = d["fee_is_loan"] = d["fee_is_free"] = np.nan
+
     d["imputed"] = pd.to_numeric(d.get("market_value_imputed"), errors="coerce").fillna(0)
     # keep anyone with a value or any minutes (the n90 >= 8 cut for fit/eval is
     # applied in main; current-season rows have few minutes but still need a
@@ -215,6 +245,12 @@ def build_xy(df: pd.DataFrame) -> pd.DataFrame:
         "prev_x_age": prev_best * (d["age"] - 26),
         "has_prev": d["prev1_mv"].notna().astype(int),
         "has_any_prev": d["prev_any_mv"].notna().astype(int),
+        "is_promoted": d["is_promoted"].astype(int),
+        "is_academy_age": d["is_academy_age"].astype(int),
+        "is_brand_new": d["is_brand_new"].astype(int),
+        "last_transfer_fee_log": np.log1p(pd.to_numeric(d["fee_eur"], errors="coerce")),
+        "fee_is_loan": pd.to_numeric(d["fee_is_loan"], errors="coerce").fillna(0),
+        "fee_is_free": pd.to_numeric(d["fee_is_free"], errors="coerce").fillna(0),
         "contract_years": d["contract_years"],
         "minutes_trend": np.log1p(d["_min"]) - np.log1p(d["prev1_min"]),
         "club_log_value": np.log1p(d["prev_squad_value"]),
@@ -252,9 +288,9 @@ def main() -> None:
     df["nation_premium"] = df["nation"].map(_enc).fillna(_glob)
     df = df.drop(columns=["nation"])
 
-    feat_num = [c for c in df.columns
-                if c not in ("season", "src_league", "Player", "Squad", "pos", "y",
-                             "market_value_eur", "imputed", "n90")]
+    feat_num_all = [c for c in df.columns
+                    if c not in ("season", "src_league", "Player", "Squad", "pos", "y",
+                                 "market_value_eur", "imputed", "n90")]
     feat_cat = ["pos", "src_league"]
 
     # fit + evaluate only on rows with a *real* value and a real sample of the
@@ -263,50 +299,74 @@ def main() -> None:
     fit_ok = (df["imputed"] == 0) & (df["y"].notna()) & (df["n90"] >= 8)
     tr = df[fit_ok & df["season"].isin(TRAIN_SEASONS)]
     te = df[fit_ok & df["season"].isin(TEST_SEASONS)]
-    # drop features that are mostly missing in the training window
-    feat_num = [c for c in feat_num
-                if pd.to_numeric(tr[c], errors="coerce").notna().mean() > 0.5]
+    is_cold_tr = (tr["has_any_prev"] == 0).to_numpy()
+    tr_warm, tr_cold = tr[~is_cold_tr], tr[is_cold_tr]
+
+    # cold-start rows (has_any_prev == 0, ~10% of fit rows) have never had a
+    # market value recorded, so prev_log_value is anchored on the global median
+    # rather than anything specific to the player - a residual-from-anchor view
+    # is meaningless for them, and the anchor-derived features just add noise.
+    # They're a different regime (debutants, promotions, cross-league movers)
+    # and get their own direct-only stack, trained on its own feature set.
+    COLD_DROP = {"prev_log_value", "prev1_log_value", "prev2_log_value",
+                 "value_momentum", "prev_x_youth", "prev_x_age", "prev_staleness"}
+
+    # coverage filters are computed PER SEGMENT, not over the combined tr: a
+    # targeted-backfill feature (e.g. last_transfer_fee_log) will never reach
+    # 50% coverage across the whole training set, only within the cold rows
+    # it's scraped for - filtering against the mixed population would silently
+    # drop it the moment it's added, before it ever gets a chance to help.
+    feat_num = [c for c in feat_num_all
+                if pd.to_numeric(tr_warm[c], errors="coerce").notna().mean() > 0.5]
+    feat_num_cold = [c for c in feat_num_all if c not in COLD_DROP
+                     and pd.to_numeric(tr_cold[c], errors="coerce").notna().mean() > 0.5]
     print(f"train {len(tr)} (seasons {TRAIN_SEASONS})  |  test {len(te)} ({TEST_SEASONS})"
           f"  |  GK in train: {(tr['pos'] == 'GK').sum()}")
-    print(f"features: {len(feat_num)} numeric + {feat_cat}")
+    print(f"features: {len(feat_num)} warm numeric, {len(feat_num_cold)} cold numeric, "
+          f"+ {feat_cat}")
 
-    ridge_pre = ColumnTransformer([
-        ("num", Pipeline([("imp", SimpleImputer(strategy="median")),
-                          ("sc", StandardScaler())]), feat_num),
-        ("cat", OneHotEncoder(handle_unknown="ignore"), feat_cat),
-    ])
-    ohe_pre = ColumnTransformer([
-        ("cat", OneHotEncoder(handle_unknown="ignore"), feat_cat),
-    ], remainder="passthrough")
+    def _make_bases(fnum):
+        ridge_pre = ColumnTransformer([
+            ("num", Pipeline([("imp", SimpleImputer(strategy="median")),
+                              ("sc", StandardScaler())]), fnum),
+            ("cat", OneHotEncoder(handle_unknown="ignore"), feat_cat),
+        ])
+        ohe_pre = ColumnTransformer([
+            ("cat", OneHotEncoder(handle_unknown="ignore"), feat_cat),
+        ], remainder="passthrough")
+        # base learners - two boosted-tree fits at different depth/shrinkage, a
+        # bagged tree, and a linear model. Their errors are only partly correlated
+        # so a stack of them beats any one.
+        return {
+            "hgb_shallow": Pipeline([("pre", ohe_pre), ("m", HistGradientBoostingRegressor(
+                random_state=0, max_depth=3, learning_rate=0.03, max_iter=700,
+                l2_regularization=2.0, min_samples_leaf=25, max_leaf_nodes=31))]),
+            "hgb_deep": Pipeline([("pre", ohe_pre), ("m", HistGradientBoostingRegressor(
+                random_state=0, learning_rate=0.02, max_iter=1500, l2_regularization=1.0,
+                min_samples_leaf=15, max_leaf_nodes=63, early_stopping=True,
+                validation_fraction=0.15, n_iter_no_change=40))]),
+            "extratrees": Pipeline([("pre", ohe_pre), ("m", ExtraTreesRegressor(
+                n_estimators=600, min_samples_leaf=3, n_jobs=-1, random_state=0))]),
+            "ridge": Pipeline([("pre", ridge_pre),
+                               ("m", RidgeCV(alphas=np.logspace(-2, 3, 30)))]),
+        }
+    bases_warm = _make_bases(feat_num)
+    bases_cold = _make_bases(feat_num_cold)
 
-    # base learners - two boosted-tree fits at different depth/shrinkage, a
-    # bagged tree, and a linear model. Their errors are only partly correlated
-    # so a stack of them beats any one.
-    bases = {
-        "hgb_shallow": Pipeline([("pre", ohe_pre), ("m", HistGradientBoostingRegressor(
-            random_state=0, max_depth=3, learning_rate=0.03, max_iter=700,
-            l2_regularization=2.0, min_samples_leaf=25, max_leaf_nodes=31))]),
-        "hgb_deep": Pipeline([("pre", ohe_pre), ("m", HistGradientBoostingRegressor(
-            random_state=0, learning_rate=0.02, max_iter=1500, l2_regularization=1.0,
-            min_samples_leaf=15, max_leaf_nodes=63, early_stopping=True,
-            validation_fraction=0.15, n_iter_no_change=40))]),
-        "extratrees": Pipeline([("pre", ohe_pre), ("m", ExtraTreesRegressor(
-            n_estimators=600, min_samples_leaf=3, n_jobs=-1, random_state=0))]),
-        "ridge": Pipeline([("pre", ridge_pre),
-                           ("m", RidgeCV(alphas=np.logspace(-2, 3, 30)))]),
-    }
-
-    def _prep(frame):
-        X = frame[feat_num + feat_cat].copy()
-        for c in feat_num:
+    def _prep(frame, fnum):
+        X = frame[fnum + feat_cat].copy()
+        for c in fnum:
             X[c] = pd.to_numeric(X[c], errors="coerce")
         # low-minute current-season rows can blow a per-90 rate up to inf
-        X[feat_num] = X[feat_num].replace([np.inf, -np.inf], np.nan)
+        X[fnum] = X[fnum].replace([np.inf, -np.inf], np.nan)
         return X
-    Xtr, Xte = _prep(tr), _prep(te)
+
+    Xtr_warm, Xtr_cold = _prep(tr_warm, feat_num), _prep(tr_cold, feat_num_cold)
     cv = KFold(n_splits=5, shuffle=True, random_state=0)
 
-    ytr = tr["y"].to_numpy()
+    ytr, ytr_warm, ytr_cold = tr["y"].to_numpy(), tr_warm["y"].to_numpy(), tr_cold["y"].to_numpy()
+    print(f"cold-start split: {len(tr_warm)} warm / {len(tr_cold)} cold "
+          f"({len(tr_cold) / len(tr):.0%}) of fit rows")
     # Transfermarkt caps its listings near this; the best players sit just under
     # it. Predictions are squeezed into (~0, CAP] so no one is valued above it
     # and the elite gravitate toward it.
@@ -316,14 +376,14 @@ def main() -> None:
     def _anchor(frame):
         return frame["prev_log_value"].fillna(anchor_fill).to_numpy()
 
-    def _train_stack(target):
+    def _train_stack(X, target, bases):
         """Fit the base learners + a ridge meta-model on `target`. Returns the
         fitted {name: pipe} dict + meta model, and the OOF meta prediction."""
         bs = {n: clone(p) for n, p in bases.items()}
         oof_ = {}
         for n, p in bs.items():
-            oof_[n] = cross_val_predict(p, Xtr, target, cv=cv, n_jobs=-1)
-            p.fit(Xtr, target)
+            oof_[n] = cross_val_predict(p, X, target, cv=cv, n_jobs=-1)
+            p.fit(X, target)
         cols = list(bs)
         mt = RidgeCV(alphas=np.logspace(-3, 2, 20)).fit(
             np.column_stack([oof_[n] for n in cols]), target)
@@ -334,18 +394,25 @@ def main() -> None:
         return st["meta"].predict(
             np.column_stack([st["bases"][n].predict(Xf) for n in st["cols"]]))
 
-    # two views of the target: predict log-value directly, and predict the
-    # *change* from the last known value (small, bounded - keeps mid-range tight
-    # and lets a superstar's prediction climb back toward his prior value).
-    direct_st, direct_oof = _train_stack(ytr)
-    anch_tr = _anchor(tr)
-    resid_tgt = ytr - anch_tr
-    resid_st, resid_oof = _train_stack(resid_tgt)
+    # warm rows: two views of the target - predict log-value directly, and
+    # predict the *change* from the last known value (small, bounded - keeps
+    # mid-range tight and lets a superstar's prediction climb back toward his
+    # prior value). has_any_prev==1 guarantees prev_log_value is never NaN here,
+    # so the anchor is always a real prior value, never the global median.
+    direct_st, direct_oof = _train_stack(Xtr_warm, ytr_warm, bases_warm)
+    anch_tr = _anchor(tr_warm)
+    resid_tgt = ytr_warm - anch_tr
+    resid_st, resid_oof = _train_stack(Xtr_warm, resid_tgt, bases_warm)
+
+    # cold rows: no anchor to residual against - direct log-value only, on the
+    # cold-only feature set (no prior-value-derived columns).
+    cold_st, cold_oof = _train_stack(Xtr_cold, ytr_cold, bases_cold)
 
     # de-shrink the DIRECT view against y; de-shrink only the residual *delta*
     # (the anchor passes through at slope 1, so a EUR200M prior stays near EUR200M).
-    da1, da0 = np.polyfit(direct_oof, ytr, 1)
+    da1, da0 = np.polyfit(direct_oof, ytr_warm, 1)
     ra1, ra0 = np.polyfit(resid_oof, resid_tgt, 1)
+    ca1, ca0 = np.polyfit(cold_oof, ytr_cold, 1)
 
     # small age curve for carrying a value forward: flat through the mid-20s,
     # about -6%/yr after 30, +4%/yr for U21 (fit loosely to how TM values age)
@@ -355,10 +422,13 @@ def main() -> None:
                         np.where(a <= 21, 0.04 * (21 - a), 0.0))
 
     def _predict_eur(frame):
-        Xf = _prep(frame)
-        d = da0 + da1 * _stack_pred(direct_st, Xf)
-        r = _anchor(frame) + ra0 + ra1 * _stack_pred(resid_st, Xf)
-        blended = np.clip(BLEND_W * r + (1 - BLEND_W) * d, None, CAP_LOG)
+        Xf_warm, Xf_cold = _prep(frame, feat_num), _prep(frame, feat_num_cold)
+        d = da0 + da1 * _stack_pred(direct_st, Xf_warm)
+        r = _anchor(frame) + ra0 + ra1 * _stack_pred(resid_st, Xf_warm)
+        warm_blend = np.clip(BLEND_W * r + (1 - BLEND_W) * d, None, CAP_LOG)
+        cold_direct = np.clip(ca0 + ca1 * _stack_pred(cold_st, Xf_cold), None, CAP_LOG)
+        is_cold = (frame["has_any_prev"] == 0).to_numpy()
+        blended = np.where(is_cold, cold_direct, warm_blend)
         # too few minutes this season for any form signal - the best estimate is
         # simply last known value, nudged along an age curve.
         n90 = pd.to_numeric(frame["n90"], errors="coerce").fillna(0).to_numpy()
@@ -379,8 +449,8 @@ def main() -> None:
     # segment diagnostics - error by value band and by group
     for lbl, m in [("outfield", (te["pos"] != "GK").to_numpy()),
                    ("goalkeepers", (te["pos"] == "GK").to_numpy()),
-                   ("with prev value", te["prev1_log_value"].notna().to_numpy()),
-                   ("cold start", te["prev1_log_value"].isna().to_numpy()),
+                   ("with prev value", (te["has_any_prev"] == 1).to_numpy()),
+                   ("cold start", (te["has_any_prev"] == 0).to_numpy()),
                    ("mid  EUR3-40M", ((act >= 3e6) & (act < 40e6))),
                    ("high EUR40-100M", ((act >= 40e6) & (act < 100e6))),
                    ("elite EUR100M+", (act >= 100e6))]:
@@ -404,10 +474,12 @@ def main() -> None:
 
     MODEL.parent.mkdir(exist_ok=True)
     with MODEL.open("wb") as fh:
-        pickle.dump({"direct": direct_st, "resid": resid_st,
+        pickle.dump({"direct": direct_st, "resid": resid_st, "cold": cold_st,
                      "anchor_fill": anchor_fill, "blend_w": BLEND_W,
                      "cap_eur": CAP_EUR, "cal": (da0, da1, ra0, ra1),
-                     "features": feat_num + feat_cat}, fh)
+                     "cold_cal": (ca0, ca1),
+                     "features": feat_num + feat_cat,
+                     "features_cold": feat_num_cold + feat_cat}, fh)
     print(f"wrote {MODEL}")
 
     print("\nbiggest over/under-valuations by the model (test set):")
