@@ -18,7 +18,11 @@ squad value, this moves week to week.
      his last 6 appearances.
   3. gap = recent - baseline, minutes-weighted up across the players who
      actually featured in a given match, for the team that fielded them -
-     one momentum value per (team, match).
+     one momentum value per (team, match). Restricted to the confirmed
+     starting XI where a lineup is known (data/processed/match_lineup_players.csv,
+     from build_match_lineups.py) - a bench player's output otherwise dilutes
+     the read for a squad that started its best XI; falls back to the whole
+     match-day squad where no lineup is cached.
 
 Needs data/processed/understat_player_matches.csv - only a partial pull is
 fine, a (team, date) with no player-match data simply gets no momentum value
@@ -132,6 +136,28 @@ def main() -> None:
     have["baseline"] = model.predict(have[FEAT_NUM + FEAT_CAT])
     have["gap"] = have["recent_contribution"] - have["baseline"]
     have["team_key"] = have["team"].map(normalize_team)
+
+    # restrict to the confirmed starting XI where a lineup is known (see
+    # build_match_lineups.py) - a bench player's output otherwise dilutes the
+    # "recent output vs. peer baseline" read for a squad that started its best
+    # XI. Falls back to the whole match-day squad (as before) for any (team,
+    # date) with no cached lineup - flag + fallback, same style as
+    # market_value_imputed.
+    lp_path = PROC / "match_lineup_players.csv"
+    if lp_path.exists():
+        lp = pd.read_csv(lp_path)
+        lp["date"] = pd.to_datetime(lp["date"], errors="coerce")
+        starters = set(zip(lp.loc[lp["is_starter"] == 1, "team_key"],
+                           lp.loc[lp["is_starter"] == 1, "date"],
+                           lp.loc[lp["is_starter"] == 1, "_pk"]))
+        lineup_known = set(zip(lp["team_key"], lp["date"]))
+        have_date = have["date"].dt.normalize()
+        is_starter = [k in starters for k in zip(have["team_key"], have_date, have["_pk"])]
+        known = [k in lineup_known for k in zip(have["team_key"], have_date)]
+        before = len(have)
+        have = have[~pd.Series(known, index=have.index) | pd.Series(is_starter, index=have.index)]
+        print(f"  starters-only filter: {sum(known)} player-match rows had a known lineup, "
+              f"dropped {before - len(have)} bench appearances from those matches")
 
     sq = have.groupby(["season", "src_league", "team_key", "date", "game_id"]).apply(
         lambda g: pd.Series({"squad_momentum": np.average(g["gap"], weights=g["minutes"]),
