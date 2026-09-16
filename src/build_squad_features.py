@@ -1,8 +1,13 @@
 """Step 6 - squad rollup: aggregate the player table to one row per (team, season).
 
 Feeds the outcome model a cheap proxy for squad strength (total market value,
-value of the most-used XI, age profile, attacking output). Per-match starting-XI
-rollups would need lineup data we only have for 2026-27, so this is season-level.
+value of the most-used XI by minutes, age profile, attacking output).
+Season-level - `xi_proxy_value_eur` here is a top-11-by-minutes proxy for lack
+of real lineups, not the actual XI that started any given match. The real
+per-match rollup (confirmed starting XI, from FotMob's cached lineup data)
+lives in `build_match_lineups.py` -> `match_lineup_features.csv`'s
+`xi_value_eur`, and is what `build_match_model_table.py` prefers when it's
+available for a given match.
 
 Run:  py -3.11 src/build_squad_features.py
 Output: data/processed/squad_season_features.csv
@@ -44,7 +49,7 @@ def main() -> None:
             "team_key": normalize_team(team),
             "squad_value_eur": g["mv"].sum(skipna=True),
             "core18_value_eur": core["mv"].sum(skipna=True),
-            "xi_value_eur": xi["mv"].sum(skipna=True),
+            "xi_proxy_value_eur": xi["mv"].sum(skipna=True),
             "value_known_frac": g["mv"].notna().mean(),
             "mean_age_wtd": np.average(g["age"].fillna(g["age"].mean()),
                                        weights=g["min"] + 1),
