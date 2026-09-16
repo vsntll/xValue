@@ -22,27 +22,70 @@ Output:
     data/processed/tm_values_scraped.csv   -> folded into value_history.csv (all
                                               leagues) + fbref_player_season_stats
                                               (our 3) by their union steps
+
+--profiles mode: a targeted backfill for the value model's cold-start segment
+(has_any_prev == 0 - see train_value_model.py and build_cold_start_list.py). A
+player's TM profile /transfers/ sub-page lists his whole transfer history with
+the market value AND fee at each move, so one page visit per cold-start player
+gives both prev_any_mv (the value at the transfer that brought him to his
+current club) and a transfer-fee signal, without mirroring a whole league:
+
+    py -3.11 src/build_cold_start_list.py          # -> cold_start_players.csv
+    py -3.11 src/pull_transfermarkt_scrape.py --profiles
+    py -3.11 src/pull_transfermarkt_scrape.py --profiles --parse-only
+
+Player ids are resolved from data the pipeline already has - tm_player_values.csv
+(the worldfootballR mirror's player_url, 2020-23) and the squad HTML this same
+script caches under data/raw/tm/squads/ (2023-26; run the squad scrape for
+whatever seasons your cold-start list covers first if an id doesn't resolve).
+
+Output:
+    data/raw/tm/profiles/<tm_player_id>.json   (transfer rows extracted from the
+                                                 shadow-DOM grid via JS, not raw HTML)
+    data/processed/tm_transfer_history.csv  -> folds into value_history.csv,
+                                                same union pattern as tm_values_scraped.csv
+    data/processed/tm_transfer_fees.csv     -> last_transfer_fee_eur / fee_is_loan /
+                                                fee_is_free features in train_value_model.py
 """
 
 from __future__ import annotations
 
 import argparse
 import asyncio
+import json
 import random
 import re
+import sys
 from io import StringIO
 from pathlib import Path
 
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from live.schema import deaccent  # noqa: E402
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 BROWSER = r"C:/Users/avasa/chrome-for-testing/chrome-win64/chrome.exe"
 SQUAD_DIR = PROJECT_ROOT / "data" / "raw" / "tm" / "squads"
 OUT = PROJECT_ROOT / "data" / "processed" / "tm_values_scraped.csv"
 
+PROFILE_DIR = PROJECT_ROOT / "data" / "raw" / "tm" / "profiles"
+COLD_LIST = PROJECT_ROOT / "data" / "processed" / "cold_start_players.csv"
+TM_PLAYER_VALUES = PROJECT_ROOT / "data" / "processed" / "tm_player_values.csv"
+TRANSFER_OUT = PROJECT_ROOT / "data" / "processed" / "tm_transfer_history.csv"
+FEE_OUT = PROJECT_ROOT / "data" / "processed" / "tm_transfer_fees.csv"
+
 COMPS = {"ENG1": "GB1", "GER1": "L1", "ESP1": "ES1", "ITA1": "IT1", "FRA1": "FR1"}
 DEFAULT_SEASONS = ["2023-24", "2024-25", "2025-26"]
 BASE = "https://www.transfermarkt.com"
+
+
+def _key(s) -> str:
+    """Same bare-ascii-lowercase join key as build_value_history.py, so a
+    fbref Player name and a TM slug/player_name land on the same key."""
+    if not isinstance(s, str):
+        return ""
+    return " ".join(re.sub(r"[^a-z0-9 ]", " ", deaccent(s).lower().replace("'", "")).split())
 
 
 def _saison(season: str) -> str:
@@ -123,6 +166,205 @@ async def scrape(seasons: list[str], comps: list[str]) -> None:
         browser.stop()
 
 
+def _resolve_ids(names: set[str]) -> dict[str, tuple[str, str]]:
+    """{_key(name): (slug, tm_player_id)} for as many `names` as we can resolve
+    from data the pipeline already has, no new requests: the worldfootballR
+    mirror's player_url (2020-23) and the profile links already sitting in this
+    script's own cached squad HTML (2023-26, whatever's been scraped so far)."""
+    found: dict[str, tuple[str, str]] = {}
+    if TM_PLAYER_VALUES.exists():
+        d = pd.read_csv(TM_PLAYER_VALUES, usecols=["player_url"]).dropna()
+        for m in d["player_url"]:
+            mm = re.search(r"transfermarkt\.com/([a-z0-9-]+)/profil/spieler/(\d+)", str(m))
+            if mm:
+                slug, pid = mm.groups()
+                found.setdefault(_key(slug.replace("-", " ")), (slug, pid))
+    for path in sorted(SQUAD_DIR.glob("*.html")):
+        html = path.read_text(encoding="utf-8")
+        for slug, pid in re.findall(r'href="/([a-z0-9-]+)/profil/spieler/(\d+)"', html):
+            found.setdefault(_key(slug.replace("-", " ")), (slug, pid))
+    return {k: v for k, v in found.items() if k in names}
+
+
+# the transfer-history grid is a Svelte web component (<tm-player-transfer-history>)
+# rendered into an OPEN shadow root, not a <table> - nothing server-rendered, so
+# pd.read_html can never see it. Pull the rows out with JS instead. Scoped-CSS
+# class names (the "svelte-xxxxx" hashes) change on every TM deploy, so this
+# matches structurally: a real transfer row is any <section> containing a club
+# link, not the header row. JSON.stringify inside the JS itself - nodriver's
+# evaluate() returns object results as CDP remote-object wrappers, not plain
+# Python values, but a plain string round-trips cleanly through json.loads.
+_EXTRACT_JS = r"""
+JSON.stringify((() => {
+    const el = document.querySelector('tm-player-transfer-history');
+    if (!el || !el.shadowRoot) return null;
+    const rows = Array.from(el.shadowRoot.querySelectorAll('section'))
+        .filter(s => s.querySelector('a[href*="/verein/"]'));
+    return rows.map(row => {
+        const divs = Array.from(row.querySelectorAll(':scope > div'));
+        const text = i => divs[i] ? divs[i].textContent.replace(/\s+/g, ' ').trim() : null;
+        return {season: text(0), date: text(1), left: text(2), joined: text(3),
+                mv: text(4), fee: text(5)};
+    });
+})())
+"""
+RESTART_EVERY = 150  # long-lived Chrome sessions have degraded/crashed on long runs
+PAGE_TIMEOUT = 25    # seconds - a wedged navigation/evaluate call raises instead of hanging
+
+
+async def _start_browser(uc):
+    browser = await uc.start(browser_executable_path=BROWSER, headless=False)
+    first = await browser.get(f"{BASE}/premier-league/startseite/wettbewerb/GB1")
+    await _accept_consent(first)
+    await first.sleep(2)
+    return browser
+
+
+async def scrape_profiles() -> None:
+    import nodriver as uc
+
+    if not COLD_LIST.exists():
+        raise SystemExit(f"no {COLD_LIST} - run build_cold_start_list.py first")
+    cold = pd.read_csv(COLD_LIST)
+    names = {_key(n) for n in cold["Player"].dropna().unique()}
+    ids = _resolve_ids(names)
+    missing = len(names) - len(ids)
+    print(f"resolved {len(ids)}/{len(names)} cold-start players to a TM id "
+          f"({missing} unmatched - not in tm_player_values.csv or any cached "
+          f"squad page; scrape squad pages for their season/comp first)")
+
+    PROFILE_DIR.mkdir(parents=True, exist_ok=True)
+    todo = [(s, p) for s, p in sorted(set(ids.values()), key=lambda t: t[1])
+            if not (PROFILE_DIR / f"{p}.json").exists()]
+    print(f"{len(todo)} profiles to fetch")
+
+    browser = await _start_browser(uc)
+    done_since_restart = 0
+    try:
+        for slug, pid in todo:
+            if done_since_restart >= RESTART_EVERY:
+                print(f"  -- restarting browser after {RESTART_EVERY} profiles --")
+                browser.stop()
+                browser = await _start_browser(uc)
+                done_since_restart = 0
+            try:
+                page = await asyncio.wait_for(
+                    browser.get(f"{BASE}/{slug}/transfers/spieler/{pid}"), PAGE_TIMEOUT)
+                await page.sleep(4)
+                raw = await asyncio.wait_for(
+                    page.evaluate(_EXTRACT_JS, await_promise=True), PAGE_TIMEOUT)
+                rows = json.loads(raw) if raw else None
+            except Exception as e:
+                print(f"  !! {slug} ({pid}): {type(e).__name__}: {str(e)[:100]} "
+                      f"- restarting browser")
+                try:
+                    browser.stop()
+                except Exception:
+                    pass
+                browser = await _start_browser(uc)
+                done_since_restart = 0
+                continue
+            if not rows:
+                print(f"  !! {slug} ({pid}): no transfer rows in shadow DOM")
+                continue
+            (PROFILE_DIR / f"{pid}.json").write_text(
+                json.dumps(rows), encoding="utf-8")
+            print(f"  ok {slug} ({pid}) - {len(rows)} transfers")
+            done_since_restart += 1
+            await asyncio.sleep(random.uniform(1.5, 3.0))
+    finally:
+        browser.stop()
+
+
+def _season_from_short(txt: str) -> str | None:
+    """TM's short season form ("23/24") -> our "2023-24"."""
+    m = re.search(r"(\d{2})\s*/\s*(\d{2})", str(txt))
+    if not m:
+        return None
+    y = int(m.group(1))
+    y += 2000 if y < 50 else 1900
+    return f"{y}-{str(y + 1)[-2:]}"
+
+
+def parse_profiles() -> None:
+    """Each cached profile's transfer-row JSON (see _EXTRACT_JS in
+    scrape_profiles) -> a value snapshot per transfer (feeds value_history.csv
+    the same way tm_values_scraped.csv does) + the most recent transfer's fee
+    (feeds train_value_model.py)."""
+    val_rows, fee_rows = [], []
+    for path in sorted(PROFILE_DIR.glob("*.json")):
+        pid = path.stem
+        try:
+            rows = json.loads(path.read_text(encoding="utf-8"))
+        except ValueError:
+            continue
+        if not rows:
+            continue
+
+        seasons_seen = []
+        for r in rows:
+            season = _season_from_short(r.get("season") or "")
+            if season is None:
+                continue
+            seasons_seen.append(season)
+            mv = _value_eur(str(r.get("mv") or ""))
+            if mv is not None:
+                val_rows.append({"tm_player_id": pid, "season": season,
+                                  "market_value_eur": mv})
+            fee_txt = str(r.get("fee") or "").strip().lower()
+            is_loan = "loan" in fee_txt
+            is_free = "free" in fee_txt or fee_txt in ("", "-")
+            fee = None if (is_loan or is_free) else _value_eur(fee_txt)
+            fee_rows.append({"tm_player_id": pid, "season": season,
+                              "fee_eur": fee, "fee_is_loan": int(is_loan),
+                              "fee_is_free": int(is_free)})
+        if not seasons_seen:
+            print(f"  !! {pid}: {len(rows)} rows but none had a parseable season "
+                  f"(sample: {rows[0]})")
+
+    if not val_rows and not fee_rows:
+        print("no transfer rows parsed - inspect a cached profile page's table "
+              "layout by hand and adjust parse_profiles()")
+        return
+
+    # tm_transfer_history.csv unions into value_history.csv exactly like
+    # tm_values_scraped.csv - one row per (player, season, value) snapshot.
+    # It's keyed by tm_player_id here; build_value_history.py joins by name, so
+    # we need the id -> name map we already have from cold_start_players.csv's
+    # resolution step - re-derive it rather than thread it through.
+    cold = pd.read_csv(COLD_LIST) if COLD_LIST.exists() else pd.DataFrame()
+    id_to_name = {}
+    if len(cold):
+        ids = _resolve_ids({_key(n) for n in cold["Player"].dropna().unique()})
+        name_by_key = {_key(n): n for n in cold["Player"].dropna().unique()}
+        for k, (slug, pid) in ids.items():
+            id_to_name[pid] = name_by_key.get(k, slug.replace("-", " ").title())
+
+    if val_rows:
+        vdf = pd.DataFrame(val_rows)
+        vdf["player_name"] = vdf["tm_player_id"].astype(str).map(
+            lambda i: id_to_name.get(i, i))
+        vdf[["player_name", "season", "market_value_eur"]].drop_duplicates().to_csv(
+            TRANSFER_OUT, index=False)
+        print(f"wrote {TRANSFER_OUT}  ({len(vdf)} transfer-value snapshots)")
+
+    if fee_rows:
+        fdf = pd.DataFrame(fee_rows)
+        # last (most recent season) transfer per player = the move to his
+        # current club - that fee is the feature; earlier ones are noise for
+        # this purpose.
+        # groupby().last() takes each COLUMN's last non-null value independently,
+        # which mixes fields across different transfers (e.g. a free transfer's
+        # fee_is_free=1 paired with an earlier transfer's real fee_eur) - tail(1)
+        # keeps one real row intact.
+        fdf = fdf.sort_values("season").groupby("tm_player_id").tail(1)
+        fdf["player_name"] = fdf["tm_player_id"].astype(str).map(
+            lambda i: id_to_name.get(i, i))
+        fdf[["player_name", "season", "fee_eur", "fee_is_loan", "fee_is_free"]].to_csv(
+            FEE_OUT, index=False)
+        print(f"wrote {FEE_OUT}  ({len(fdf)} players' most recent transfer fee)")
+
+
 _POSITIONS = [
     "Goalkeeper", "Centre-Back", "Left-Back", "Right-Back", "Sweeper",
     "Defensive Midfield", "Central Midfield", "Attacking Midfield",
@@ -190,7 +432,17 @@ def main() -> None:
     ap.add_argument("--seasons", nargs="+", default=DEFAULT_SEASONS)
     ap.add_argument("--comps", nargs="+", default=list(COMPS), choices=list(COMPS))
     ap.add_argument("--parse-only", action="store_true")
+    ap.add_argument("--profiles", action="store_true",
+                     help="targeted cold-start backfill (see module docstring) "
+                          "instead of the squad-page scrape")
     args = ap.parse_args()
+
+    if args.profiles:
+        if not args.parse_only:
+            import nodriver as uc
+            uc.loop().run_until_complete(scrape_profiles())
+        parse_profiles()
+        return
 
     if not args.parse_only:
         import nodriver as uc
