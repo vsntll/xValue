@@ -87,34 +87,58 @@ Predicts a player's market value from his season + his value history.
   de-shrunk on OOF and blended `0.5 / 0.5`, then clipped to €220M in log space.
   Rows with < 8 full-90s this season (all of the current season, early on) skip
   the models and predict the last known value along a light age curve.
-- **Result**: R2(log) **0.89**, MAE **EUR4.1M**, medAPE **22%**, within-2x
-  **91%** (0.92 with a prior value, 0.72 cold-start, 0.87 keepers). €100M+ band
-  medAPE **15%**, median pred/listed **0.85**.
+- **Cold-start rows** (`has_any_prev == 0`, ~10% of fit rows - debutants,
+  promotions, cross-league movers) get their own direct-only stack: no
+  residual-from-anchor view (there's no real prior value to residual
+  against), and a feature set with every prior-value-derived column dropped
+  (`prev_log_value`, `value_momentum`, ...). They also get three cheap
+  derived flags (`is_promoted`, `is_academy_age`, `is_brand_new`) and, where
+  scraped, `last_transfer_fee_log` / `fee_is_loan` / `fee_is_free` from a
+  targeted Transfermarkt profile backfill (`pull_transfermarkt_scrape.py`) -
+  a fee negotiated for the move is a strong value proxy even at zero minutes.
+- **Result**: R2(log) **0.88**, MAE **EUR4.2M**, medAPE **22%**, within-2x
+  **91%** (0.90 with a prior value, 0.62 cold-start on its own stack -
+  medAPE 40%, up from 0.72 R2(log) gap-to-warm before the split - 0.87
+  keepers). €100M+ band medAPE **16%**, median pred/listed **0.85**.
 - Output: `value_model_predictions.csv` (**every player, every season incl. the
   current one**, with `value_imputed` flag), `models/value_model.pkl`
-  (`{bases, meta, cal, features}`).
+  (`{direct, resid, cold, cal, cold_cal, features, features_cold}`).
 
 ## Step 6 - squad rollup  (`src/build_squad_features.py`)
 
 `data/processed/squad_season_features.csv` - one row per (team, season):
-`squad_value_eur`, `core18_value_eur`, `xi_value_eur` (top-N by minutes),
+`squad_value_eur`, `core18_value_eur`, `xi_proxy_value_eur` (top-11 by
+minutes - a season-level proxy, not any specific match's real lineup),
 `value_known_frac`, minutes-weighted `mean_age_wtd`, `squad_xg`, `squad_xa`.
-Season-level (per-match XI rollups need lineup data we only have for 2026-27).
+The real per-match XI rollup (confirmed starters, from FotMob's cached
+lineup data - `src/build_match_lineups.py` -> `match_lineup_features.csv`)
+feeds `build_match_model_table.py`'s `xi_value_ratio` directly; see Step 8.
 
 ## Step 8 - outcome classifier  (`src/train_outcome_model.py` + `build_match_model_table.py`)
 
 Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
 
-- **Feature table** `build_match_model_table.py` (54 cols): **goals-Elo and
+- **Feature table** `build_match_model_table.py` (56 cols): **goals-Elo and
   xG-Elo** (updated across all competitions, seeded with 2014-20 warmup results
   so ratings have converged); home/away-**split** rolling-8 form (pts / goals /
   xG for & against); Elo-implied home prob; squad-value ratio; promoted flags;
   days rest; head-to-head; **squad momentum** (`h/a_momentum` — each side's
   recent player output vs. the value model's peer baseline, from
   `build_form_momentum.py` → `squad_momentum.csv`, folded in on a second
-  `build_match_model_table.py` pass). The season-scoped Elo twins (`elo_*_s`)
-  are emitted for the site Rankings view only; the model uses the continuous
-  columns.
+  `build_match_model_table.py` pass, restricted to the confirmed starting XI
+  where a lineup is known rather than every player who featured). The
+  season-scoped Elo twins (`elo_*_s`) are emitted for the site Rankings view
+  only; the model uses the continuous columns.
+- **`xi_value_ratio`** refines the squad-value ratio with the confirmed
+  starting XI's value (`build_match_lineups.py`, off the lineup block
+  `pull_fotmob_players.py` already caches for free) in place of last season's
+  whole-squad value, for any match where that lineup is known. Falls back to
+  `value_log_ratio` otherwise (flag `xi_value_known`) - same pattern as
+  `market_value_imputed`. Since confirmed lineups exist only for matches
+  already played or ~1hr pre-kickoff, this is populated for backtesting and
+  near-kickoff scoring, essentially never for the model's normal day(s)-ahead
+  use case - it's used in `train_outcome_model.py`'s `FEATURES` in place of
+  `value_log_ratio` precisely because it degrades to that column when unknown.
 - **Models**:
   - logreg on the features
   - **Poisson-Skellam**: two Poisson GLMs (home goals, away goals) -> full
@@ -145,12 +169,18 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
 
 ## Obvious next improvements
 
-- **Value model → 0.95**: the has-prev segment is already at 0.92 (Transfermarkt's
-  own estimate noise is roughly the ceiling there), so the gain is in the
-  cold-start rows (R²(log) 0.72, ~1 in 6 of the holdout). Needs a prior value for players arriving from outside the
-  big-5: a Championship / Eredivisie / Primeira Liga TM scrape, or transfer-fee
-  data, or salaries. Also worth trying: a dedicated cold-start sub-model, and a
-  real 2022-23 TM scrape to fill the mirror hole.
-- Per-match XI values once lineup history exists (API-Football paid, or FotMob).
+- **Value model → 0.95**: the has-prev segment is already at 0.90 (Transfermarkt's
+  own estimate noise is roughly the ceiling there); cold-start rows have their
+  own sub-model now (R²(log) 0.62, up from a 0.72 gap-to-warm pre-split) but
+  are still the weak segment. Remaining lever: a prior value for players
+  arriving from outside the big-5 - a Championship / Eredivisie / Primeira
+  Liga TM scrape, or more transfer-fee / salary coverage beyond the current
+  targeted profile backfill - plus a real 2022-23 TM scrape to fill the
+  mirror hole.
 - Advanced player stats for 2023-26 (blocked - FBref gates, mirror stale).
-- Outcome model: confirmed lineups / injuries to close the last of the bookmaker gap.
+- Outcome model: `xi_value_ratio` (Step 8) only closes the gap for matches
+  already played or scored near kickoff, not the model's normal day(s)-ahead
+  predictions - confirmed lineups / injuries are still the sliver Bet365's
+  closing line has that this model doesn't. A cheap proxy worth backtesting
+  as an upper bound before building anything live: whether a squad's
+  highest-value player is NOT in the confirmed XI (`match_lineup_players.csv`).
