@@ -9,9 +9,15 @@ FotMob's `playerStats` block is keyed with stable slugs (`ShotsOnTarget`,
 cached under data/raw/live/fotmob_players/<id>.json - re-runs only fetch new
 matches. FotMob's ToS restricts programmatic use; keep volume low.
 
+The same matchDetails payload also carries the starting-XI lineup
+(content.lineup), so it's saved alongside the player stats at zero extra
+request cost, under data/raw/live/fotmob_lineups/<id>.json - see
+build_match_lineups.py.
+
 Run:  py -3.11 src/pull_fotmob_players.py --current      # season in progress
       py -3.11 src/pull_fotmob_players.py --seasons 2025-26 2026-27
 Output: data/processed/fotmob_player_season.csv  (one row per player-team-season)
+        data/processed/fotmob_match_meta.csv     (match id -> season/league/date)
 """
 
 from __future__ import annotations
@@ -32,7 +38,9 @@ from live.schema import deaccent, normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 CACHE = ROOT / "data" / "raw" / "live" / "fotmob_players"
+LINEUP_CACHE = ROOT / "data" / "raw" / "live" / "fotmob_lineups"
 OUT = PROC / "fotmob_player_season.csv"
+MATCH_META = PROC / "fotmob_match_meta.csv"
 BASE = "https://www.fotmob.com/api/data"
 HDRS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)", "Accept": "application/json"}
 SLEEP = 0.5
@@ -68,15 +76,27 @@ def _stat(entry: dict):
 
 
 def _parse_match(mid: str) -> list[dict] | None:
-    """Per-player rows for one match. Cached (a finished match never changes)."""
+    """Per-player rows for one match, plus its starting-XI lineup - both come
+    off the same matchDetails payload, so caching the lineup costs zero extra
+    requests. Each cached independently (a finished match never changes); a
+    match cached before the lineup cache existed gets exactly one re-fetch to
+    backfill it (bounded to that known set, not open-ended re-scraping)."""
     CACHE.mkdir(parents=True, exist_ok=True)
+    LINEUP_CACHE.mkdir(parents=True, exist_ok=True)
     cf = CACHE / f"{mid}.json"
-    if cf.exists():
+    lf = LINEUP_CACHE / f"{mid}.json"
+    if cf.exists() and lf.exists():
         return json.loads(cf.read_text())
     try:
         d = _get("matchDetails", matchId=mid)
     except requests.HTTPError:
-        return None
+        return json.loads(cf.read_text()) if cf.exists() else None
+
+    lineup = (d.get("content") or {}).get("lineup") or {}
+    lf.write_text(json.dumps({k: lineup.get(k) for k in ("homeTeam", "awayTeam")}))
+    if cf.exists():
+        return json.loads(cf.read_text())
+
     ps = ((d.get("content") or {}).get("playerStats")) or {}
     if not ps:
         cf.write_text("[]")
@@ -104,30 +124,36 @@ def _parse_match(mid: str) -> list[dict] | None:
     return rows
 
 
-def pull_season(code: str, season: str) -> pd.DataFrame | None:
+def pull_season(code: str, season: str) -> tuple[pd.DataFrame | None, pd.DataFrame]:
     start = int(season.split("-")[0])
     try:
         fixtures = _get("fixtures", id=LEAGUE_ID[code], season=f"{start}/{start + 1}")
     except requests.HTTPError as e:
         print(f"  {code} {season}: fixtures failed ({e})")
-        return None
+        return None, pd.DataFrame()
     if not isinstance(fixtures, list):
-        return None
+        return None, pd.DataFrame()
     done = [f for f in fixtures if f.get("status", {}).get("finished")]
     print(f"  {code} {season}: {len(done)} finished matches", end="", flush=True)
-    frames, n_new = [], 0
+    frames, meta_rows, n_new = [], [], 0
     for fx in done:
-        if not (CACHE / f"{fx['id']}.json").exists():
+        mid = str(fx["id"])
+        if not (CACHE / f"{mid}.json").exists():
             n_new += 1
-        rows = _parse_match(str(fx["id"]))
+        rows = _parse_match(mid)
         if rows:
             frames.append(pd.DataFrame(rows))
+        # match metadata (id -> season/league/date) so build_match_lineups.py can
+        # resolve the lineup cache offline, without re-hitting the fixtures endpoint
+        meta_rows.append({"match_id": mid, "season": season, "src_league": code,
+                          "date": (fx.get("status") or {}).get("utcTime", "")[:10]})
     print(f"  ({n_new} newly fetched)")
+    meta = pd.DataFrame(meta_rows)
     if not frames:
-        return None
+        return None, meta
     pm = pd.concat(frames, ignore_index=True)
     pm["season"], pm["src_league"] = season, code
-    return pm
+    return pm, meta
 
 
 def _aggregate(pm: pd.DataFrame) -> pd.DataFrame:
@@ -149,10 +175,13 @@ def main() -> None:
     args = ap.parse_args()
     seasons = [current_season()] if args.current else args.seasons
 
-    frames, refreshed = [], set()
+    frames, metas, refreshed, meta_refreshed = [], [], set(), set()
     for season in seasons:
         for code in LEAGUE_ID:
-            pm = pull_season(code, season)
+            pm, meta = pull_season(code, season)
+            if not meta.empty:
+                metas.append(meta)
+                meta_refreshed.add((code, season))
             if pm is not None and not pm.empty:
                 frames.append(_aggregate(pm))
                 refreshed.add((code, season))
@@ -168,6 +197,15 @@ def main() -> None:
     new.to_csv(OUT, index=False)
     print(f"\nwrote {OUT}  ({len(new)} player-team-seasons, "
           f"{new['fotmob_id'].nunique()} players, seasons {sorted(new['season'].unique())})")
+
+    if metas:
+        new_meta = pd.concat(metas, ignore_index=True)
+        if MATCH_META.exists():
+            prior_meta = pd.read_csv(MATCH_META, dtype={"match_id": str})
+            keep = ~prior_meta.set_index(["src_league", "season"]).index.isin(meta_refreshed)
+            new_meta = pd.concat([prior_meta[keep], new_meta], ignore_index=True)
+        new_meta.to_csv(MATCH_META, index=False)
+        print(f"wrote {MATCH_META}  ({len(new_meta)} matches)")
 
 
 if __name__ == "__main__":
