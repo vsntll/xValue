@@ -14,6 +14,8 @@ season_start_year 2015..2022**, not just our three leagues / three seasons:
     data/raw/tm/big5_player_vals.rds     worldfootballR mirror (2015-22, big-5)
     data/processed/tm_values_scraped.csv nodriver scrape        (2023-26, our 3)
     data/processed/sofascore_values.csv  Sofascore              (2026-27, our 3)
+    data/processed/tm_transfer_history.csv  cold-start profile backfill (targeted,
+                                              see pull_transfermarkt_scrape.py --profiles)
     data/processed/fbref_player_season_stats.csv  final labelled values (all fills)
 
 Output: data/processed/value_history.csv  -  player_key, season, market_value_eur
@@ -88,6 +90,10 @@ def main() -> None:
         _from_mirror(),
         _simple(PROC / "tm_values_scraped.csv", "player_name"),
         _simple(PROC / "sofascore_values.csv", "player_name"),
+        # targeted cold-start backfill (pull_transfermarkt_scrape.py --profiles):
+        # the value at each transfer in a player's TM history, so has_any_prev
+        # picks up a real anchor instead of the global-median fallback.
+        _simple(PROC / "tm_transfer_history.csv", "player_name"),
     ]
     # the parser's own column carries the fuzzy fills and carried-forward values,
     # but NOT its peer-median imputations (those would feed a circular lag).
