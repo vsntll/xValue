@@ -825,7 +825,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30525.0,Maximilian Eggestein,125,freiburg,leipzig,MF,90,0.0367,0.1033,1684.8,1308.3,1303.3
 2026-27,GER1,2026-08-30,32253.0,Maximilian Eggestein,125,freiburg,werder bremen,MF,90,0.0672,0.1963,1499.2,1401.6,1391.9
 2026-27,GER1,2026-09-05,32259.0,Maximilian Eggestein,125,freiburg,paderborn,MF,90,0.56,0.1856,1513.7,1391.9,1420.2
-2026-27,GER1,2026-09-12,32264.0,Maximilian Eggestein,125,freiburg,borussia monchengladbach,MF,90,0.2148,0.1844,1544.9,1420.2,1422.5
+2026-27,GER1,2026-09-12,32264.0,Maximilian Eggestein,125,freiburg,borussia monchengladbach,MF,90,0.2148,0.1845,1544.7,1420.2,1422.5
 2024-25,GER1,2024-08-24,27746.0,Michael Zetterer,126,werder bremen,augsburg,GK,90,0.0,0.0025,1517.0,1500.0,1497.7
 2024-25,GER1,2024-08-31,27753.0,Michael Zetterer,126,werder bremen,borussia dortmund,GK,90,0.0,0.0017,1676.0,1497.7,1496.1
 2024-25,GER1,2024-09-15,27768.0,Michael Zetterer,126,werder bremen,mainz 05,GK,90,0.0,0.0023,1545.5,1496.1,1494.0
@@ -1931,7 +1931,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30522.0,Joshua Kimmich,223,bayern munich,cologne,MF,90,0.416,0.3163,1461.4,1571.1,1578.7
 2026-27,GER1,2026-08-28,32247.0,Joshua Kimmich,223,bayern munich,stuttgart,MF,90,0.6346,0.1907,1649.3,1539.3,1573.0
 2026-27,GER1,2026-09-05,32260.0,Joshua Kimmich,223,bayern munich,schalke,MF,90,0.339,0.3297,1445.2,1573.0,1573.7
-2026-27,GER1,2026-09-13,32760.0,Joshua Kimmich,223,bayern munich,elversberg,MF,20,0.0526,0.0611,1525.1,1573.7,1573.0
+2026-27,GER1,2026-09-13,32760.0,Joshua Kimmich,223,bayern munich,elversberg,MF,20,0.0526,0.0611,1525.0,1573.7,1573.0
 2024-25,GER1,2024-08-25,27749.0,Thomas Müller,224,bayern munich,wolfsburg,FW,22,0.0951,0.1241,1514.9,1500.0,1498.5
 2024-25,GER1,2024-09-01,27759.0,Thomas Müller,224,bayern munich,freiburg,FW,27,0.2843,0.1331,1571.8,1498.5,1506.2
 2024-25,GER1,2024-09-14,27766.0,Thomas Müller,224,bayern munich,holstein kiel,FW,43,0.1035,0.2691,1475.9,1506.2,1497.8
@@ -2812,7 +2812,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30525.0,Matthias Ginter,315,freiburg,leipzig,DF,75,0.5232,0.0569,1684.8,1551.3,1591.3
 2026-27,GER1,2026-08-30,32253.0,Matthias Ginter,315,freiburg,werder bremen,DF,90,0.1389,0.1034,1499.2,1545.7,1550.1
 2026-27,GER1,2026-09-05,32259.0,Matthias Ginter,315,freiburg,paderborn,DF,90,0.0284,0.1011,1513.7,1550.1,1541.0
-2026-27,GER1,2026-09-12,32264.0,Matthias Ginter,315,freiburg,borussia monchengladbach,DF,90,0.3376,0.0921,1544.9,1541.0,1571.8
+2026-27,GER1,2026-09-12,32264.0,Matthias Ginter,315,freiburg,borussia monchengladbach,DF,90,0.3376,0.0921,1544.7,1541.0,1571.8
 2024-25,ITA1,2024-08-17,27362.0,Henrikh Mkhitaryan,317,inter,genoa,MF,69,0.0548,0.2023,1469.1,1500.0,1488.8
 2024-25,ITA1,2024-08-24,27375.0,Henrikh Mkhitaryan,317,inter,lecce,MF,90,0.0,0.2817,1429.5,1488.8,1467.5
 2024-25,ITA1,2024-08-30,27383.0,Henrikh Mkhitaryan,317,inter,atalanta,MF,90,0.0488,0.1681,1632.2,1467.5,1458.4
@@ -6061,7 +6061,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30522.0,Harry Kane,647,bayern munich,cologne,FW,90,1.014,1.1483,1461.4,1885.3,1878.6
 2026-27,GER1,2026-08-28,32247.0,Harry Kane,647,bayern munich,stuttgart,FW,85,0.4061,0.544,1649.3,1689.3,1682.3
 2026-27,GER1,2026-09-05,32260.0,Harry Kane,647,bayern munich,schalke,FW,42,0.2622,0.4232,1445.2,1682.3,1674.2
-2026-27,GER1,2026-09-13,32760.0,Harry Kane,647,bayern munich,elversberg,FW,90,1.294,0.7405,1525.1,1674.2,1702.1
+2026-27,GER1,2026-09-13,32760.0,Harry Kane,647,bayern munich,elversberg,FW,90,1.294,0.7407,1525.0,1674.2,1702.1
 2024-25,ENG1,2024-08-25,26620.0,Kieran Trippier,652,newcastle united,bournemouth,DF,29,0.0,0.0283,1523.8,1500.0,1496.4
 2024-25,ENG1,2024-09-15,26641.0,Kieran Trippier,652,newcastle united,wolverhampton wanderers,DF,24,0.0,0.0249,1495.1,1496.4,1493.3
 2024-25,ENG1,2024-09-21,26646.0,Kieran Trippier,652,newcastle united,fulham,DF,75,0.0,0.0674,1553.8,1493.3,1484.9
@@ -18028,6 +18028,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-29,,Morales,2186,levante,,MF,0,,,,1530.1,1529.2
 2026-27,,2026-09-06,,Morales,2186,levante,,MF,0,,,,1529.2,1528.4
 2026-27,,2026-09-13,,Morales,2186,levante,,MF,0,,,,1528.4,1527.5
+2026-27,,2026-09-16,,Morales,2186,levante,,MF,0,,,,1527.5,1526.7
 2024-25,ESP1,2024-09-15,27025.0,Vicente Guaita,2190,celta vigo,real valladolid,GK,90,0.0,0.0028,1466.8,1500.0,1497.4
 2024-25,ESP1,2024-09-22,27032.0,Vicente Guaita,2190,celta vigo,athletic club,GK,90,0.0,0.0017,1668.4,1497.4,1495.8
 2024-25,ESP1,2024-09-26,27048.0,Vicente Guaita,2190,celta vigo,atletico madrid,GK,90,0.0,0.0016,1692.5,1495.8,1494.3
@@ -20396,6 +20397,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-30,,Íñigo Lekue,2403,athletic club,,DF,0,,,,1483.4,1483.9
 2026-27,,2026-09-05,,Íñigo Lekue,2403,athletic club,,DF,0,,,,1483.9,1484.4
 2026-27,,2026-09-12,,Íñigo Lekue,2403,athletic club,,DF,0,,,,1484.4,1484.9
+2026-27,,2026-09-16,,Íñigo Lekue,2403,athletic club,,DF,0,,,,1484.9,1485.3
 2024-25,ESP1,2024-08-15,26982.0,David Soria,2415,getafe,athletic club,GK,90,0.0,0.0018,1666.8,1500.0,1498.4
 2024-25,ESP1,2024-08-24,26996.0,David Soria,2415,getafe,rayo vallecano,GK,90,0.0,0.0025,1506.6,1498.4,1496.0
 2024-25,ESP1,2024-09-01,27020.0,David Soria,2415,getafe,real sociedad,GK,90,0.0,0.002,1615.3,1496.0,1494.2
@@ -20790,6 +20792,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-30,,De Marcos,2452,athletic club,,DF,0,,,,1510.0,1509.7
 2026-27,,2026-09-05,,De Marcos,2452,athletic club,,DF,0,,,,1509.7,1509.4
 2026-27,,2026-09-12,,De Marcos,2452,athletic club,,DF,0,,,,1509.4,1509.1
+2026-27,,2026-09-16,,De Marcos,2452,athletic club,,DF,0,,,,1509.1,1508.8
 2024-25,ESP1,2024-08-15,26983.0,Marc Bartra,2453,real betis,girona,DF,90,0.3703,0.0664,1646.3,1500.0,1538.1
 2024-25,ESP1,2024-08-25,27000.0,Marc Bartra,2453,real betis,alaves,DF,86,0.0,0.0948,1509.9,1538.1,1526.2
 2024-25,,2024-09-18,,Marc Bartra,2453,real betis,,DF,0,,,,1526.2,1525.4
@@ -22162,7 +22165,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30525.0,Philipp Lienhart,2611,freiburg,leipzig,DF,90,0.0,0.0539,1684.8,1448.6,1441.9
 2026-27,GER1,2026-08-30,32253.0,Philipp Lienhart,2611,freiburg,werder bremen,DF,70,0.0417,0.0677,1499.2,1470.9,1467.7
 2026-27,GER1,2026-09-05,32259.0,Philipp Lienhart,2611,freiburg,paderborn,DF,90,0.0,0.0836,1513.7,1467.7,1457.2
-2026-27,GER1,2026-09-12,32264.0,Philipp Lienhart,2611,freiburg,borussia monchengladbach,DF,90,0.0,0.0759,1544.9,1457.2,1447.7
+2026-27,GER1,2026-09-12,32264.0,Philipp Lienhart,2611,freiburg,borussia monchengladbach,DF,90,0.0,0.076,1544.7,1457.2,1447.7
 2024-25,ESP1,2024-12-13,27147.0,Stole Dimitrievski,2619,valencia,real valladolid,GK,90,0.0,0.0029,1453.7,1500.0,1497.3
 2024-25,ESP1,2024-12-18,27102.0,Stole Dimitrievski,2619,valencia,espanyol,GK,90,0.0,0.0027,1471.7,1497.3,1494.8
 2024-25,ESP1,2024-12-22,27161.0,Stole Dimitrievski,2619,valencia,alaves,GK,90,0.0,0.0026,1497.7,1494.8,1492.4
@@ -24684,7 +24687,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,FRA1,2026-05-17,29840.0,Djibril Sidibe,3357,toulouse,nantes,DF,90,0.0,0.1349,1382.6,1544.5,1527.5
 2026-27,,2026-09-03,,Djibril Sidibe,3357,toulouse,,DF,0,,,,1513.8,1513.4
 2026-27,,2026-09-12,,Djibril Sidibe,3357,toulouse,,DF,0,,,,1513.4,1513.0
-2026-27,FRA1,2026-09-13,31974.0,Djibril Sidibe,3357,le mans,lens,DF,42,0.0566,0.0353,1601.8,1513.0,1515.6
+2026-27,FRA1,2026-09-13,31974.0,Djibril Sidibe,3357,le mans,lens,DF,42,0.0566,0.0353,1602.2,1513.0,1515.6
 2024-25,ITA1,2024-08-24,27375.0,Benjamin Pavard,3363,inter,lecce,DF,90,0.0,0.1093,1429.5,1500.0,1486.3
 2024-25,ITA1,2024-08-30,27383.0,Benjamin Pavard,3363,inter,atalanta,DF,90,0.0468,0.0664,1632.2,1486.3,1483.8
 2024-25,ITA1,2024-09-15,27399.0,Benjamin Pavard,3363,inter,monza,DF,90,0.2331,0.0957,1471.0,1483.8,1501.1
@@ -26220,7 +26223,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,FRA1,2026-05-17,29837.0,Gautier Lloris,3701,le havre,lorient,DF,90,0.0,0.0669,1497.8,1355.1,1346.7
 2026-27,FRA1,2026-08-29,31952.0,Gautier Lloris,3701,brest,toulouse,DF,87,0.0575,0.0742,1506.3,1423.4,1421.3
 2026-27,FRA1,2026-09-05,31963.0,Gautier Lloris,3701,brest,le havre,DF,90,0.0,0.0883,1443.2,1421.3,1410.2
-2026-27,FRA1,2026-09-13,31975.0,Gautier Lloris,3701,brest,paris saint germain,DF,90,0.0,0.0431,1744.2,1410.2,1404.8
+2026-27,FRA1,2026-09-13,31975.0,Gautier Lloris,3701,brest,paris saint germain,DF,90,0.0,0.043,1744.7,1410.2,1404.8
 2024-25,FRA1,2024-09-15,28082.0,Samuel Grandsir,3713,le havre,toulouse,MF,26,0.0,0.0716,1496.0,1500.0,1494.6
 2024-25,,2024-10-06,,Samuel Grandsir,3713,le havre,,MF,0,,,,1494.6,1494.7
 2024-25,,2024-10-20,,Samuel Grandsir,3713,le havre,,MF,0,,,,1494.7,1494.9
@@ -30387,6 +30390,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-30,,Mikel Vesga,5077,athletic club,,MF,0,,,,1478.8,1479.4
 2026-27,,2026-09-05,,Mikel Vesga,5077,athletic club,,MF,0,,,,1479.4,1480.0
 2026-27,,2026-09-12,,Mikel Vesga,5077,athletic club,,MF,0,,,,1480.0,1480.6
+2026-27,,2026-09-16,,Mikel Vesga,5077,athletic club,,MF,0,,,,1480.6,1481.2
 2024-25,ESP1,2024-12-22,27152.0,Edu Expósito,5081,espanyol,las palmas,MF,14,0.0497,0.0345,1544.3,1500.0,1501.2
 2024-25,ESP1,2025-01-11,27171.0,Edu Expósito,5081,espanyol,leganes,MF,26,0.1182,0.0711,1500.7,1501.2,1504.7
 2024-25,ESP1,2025-01-17,27172.0,Edu Expósito,5081,espanyol,real valladolid,MF,25,0.1447,0.0759,1458.6,1504.7,1509.9
@@ -32069,7 +32073,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30522.0,Dayotchanculle Upamecano,5243,bayern munich,cologne,DF,90,0.0311,0.1064,1461.4,1520.0,1510.6
 2026-27,GER1,2026-08-28,32247.0,Dayotchanculle Upamecano,5243,bayern munich,stuttgart,DF,90,0.5386,0.0667,1649.3,1505.3,1545.3
 2026-27,GER1,2026-09-05,32260.0,Dayotchanculle Upamecano,5243,bayern munich,schalke,DF,90,0.1907,0.117,1445.2,1545.3,1554.5
-2026-27,GER1,2026-09-13,32760.0,Dayotchanculle Upamecano,5243,bayern munich,elversberg,DF,90,0.0726,0.0994,1525.1,1554.5,1551.2
+2026-27,GER1,2026-09-13,32760.0,Dayotchanculle Upamecano,5243,bayern munich,elversberg,DF,90,0.0726,0.0995,1525.0,1554.5,1551.2
 2024-25,GER1,2024-11-23,27833.0,Bernardo,5245,bochum,stuttgart,DF,26,0.0,0.0188,1654.8,1500.0,1497.6
 2024-25,GER1,2024-11-30,27846.0,Bernardo,5245,bochum,augsburg,DF,43,0.0,0.0429,1512.6,1497.6,1492.3
 2024-25,GER1,2024-12-07,27855.0,Bernardo,5245,bochum,werder bremen,DF,90,0.0477,0.0843,1534.5,1492.3,1487.7
@@ -32683,7 +32687,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-10,30515.0,Vincenzo Grifo,5266,freiburg,hamburger,MF,90,0.0866,0.4035,1483.7,1699.1,1675.1
 2025-26,GER1,2026-05-16,30525.0,Vincenzo Grifo,5266,freiburg,leipzig,MF,27,0.0,0.0721,1684.8,1675.1,1669.6
 2026-27,GER1,2026-09-05,32259.0,Vincenzo Grifo,5266,freiburg,paderborn,MF,15,0.0,0.0482,1513.7,1584.8,1581.2
-2026-27,GER1,2026-09-12,32264.0,Vincenzo Grifo,5266,freiburg,borussia monchengladbach,MF,22,0.0606,0.0653,1544.9,1581.2,1580.8
+2026-27,GER1,2026-09-12,32264.0,Vincenzo Grifo,5266,freiburg,borussia monchengladbach,MF,22,0.0606,0.0653,1544.7,1581.2,1580.8
 2024-25,GER1,2024-10-19,27799.0,Gerrit Holtmann,5270,bochum,tsg hoffenheim,DF,12,0.0,0.012,1512.2,1500.0,1498.5
 2024-25,GER1,2024-11-02,27817.0,Gerrit Holtmann,5270,bochum,eintracht frankfurt,DF,58,0.0,0.0429,1643.1,1498.5,1493.1
 2024-25,GER1,2024-11-09,27830.0,Gerrit Holtmann,5270,bochum,bayer leverkusen,DF,71,0.0173,0.0401,1754.6,1493.1,1490.2
@@ -36395,7 +36399,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,FRA1,2026-05-17,29835.0,Hugo Magnetti,5742,brest,angers,MF,15,0.023,0.0264,1390.5,1161.0,1160.8
 2026-27,FRA1,2026-08-29,31952.0,Hugo Magnetti,5742,brest,toulouse,MF,11,0.3515,0.02,1506.3,1330.4,1355.5
 2026-27,FRA1,2026-09-05,31963.0,Hugo Magnetti,5742,brest,le havre,MF,77,0.0505,0.1718,1443.2,1355.5,1346.3
-2026-27,FRA1,2026-09-13,31975.0,Hugo Magnetti,5742,brest,paris saint germain,MF,90,0.0241,0.0983,1744.2,1346.3,1340.7
+2026-27,FRA1,2026-09-13,31975.0,Hugo Magnetti,5742,brest,paris saint germain,MF,90,0.0241,0.0982,1744.7,1346.3,1340.7
 2024-25,FRA1,2024-08-16,28048.0,Randal Kolo Muani,5743,paris saint germain,le havre,FW,71,1.3813,0.4608,1453.9,1500.0,1540.0
 2024-25,FRA1,2024-08-23,28057.0,Randal Kolo Muani,5743,paris saint germain,montpellier,FW,25,0.8406,0.1552,1513.2,1540.0,1574.6
 2024-25,FRA1,2024-09-01,28074.0,Randal Kolo Muani,5743,paris saint germain,lille,FW,12,0.376,0.064,1614.0,1574.6,1590.4
@@ -36811,7 +36815,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,FRA1,2026-04-19,29803.0,Habib Diallo,5769,metz,paris fc,FW,29,0.0,0.1273,1485.2,1361.2,1354.8
 2025-26,FRA1,2026-05-10,29830.0,Habib Diallo,5769,metz,lorient,FW,23,0.09,0.0996,1484.5,1354.8,1354.3
 2026-27,FRA1,2026-09-05,31962.0,Habib Diallo,5769,le mans,nice,FW,28,0.0379,0.1581,1441.5,1427.2,1421.1
-2026-27,FRA1,2026-09-13,31974.0,Habib Diallo,5769,le mans,lens,FW,23,0.0,0.0885,1601.8,1421.1,1416.6
+2026-27,FRA1,2026-09-13,31974.0,Habib Diallo,5769,le mans,lens,FW,23,0.0,0.0885,1602.2,1421.1,1416.6
 2024-25,ENG1,2024-08-18,26609.0,Yoane Wissa,5786,brentford,crystal palace,FW,87,0.8062,0.4449,1557.4,1500.0,1518.3
 2024-25,ENG1,2024-08-25,26621.0,Yoane Wissa,5786,brentford,liverpool,FW,75,0.0,0.2789,1714.1,1518.3,1504.2
 2024-25,ENG1,2024-08-31,26623.0,Yoane Wissa,5786,brentford,southampton,FW,90,1.8801,0.5972,1448.5,1504.2,1544.2
@@ -37455,7 +37459,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-22,31944.0,Kenny Lala,5975,brest,le mans,DF,90,0.166,0.096,1500.0,1514.0,1522.8
 2026-27,FRA1,2026-08-29,31952.0,Kenny Lala,5975,brest,toulouse,DF,90,0.1064,0.0965,1506.3,1522.8,1524.0
 2026-27,FRA1,2026-09-05,31963.0,Kenny Lala,5975,brest,le havre,DF,21,0.0,0.0261,1443.2,1524.0,1520.7
-2026-27,FRA1,2026-09-13,31975.0,Kenny Lala,5975,brest,paris saint germain,DF,90,0.0193,0.0556,1744.2,1520.7,1516.2
+2026-27,FRA1,2026-09-13,31975.0,Kenny Lala,5975,brest,paris saint germain,DF,90,0.0193,0.0555,1744.7,1520.7,1516.2
 2024-25,FRA1,2024-08-24,28060.0,Yoann Salmier,5976,le havre,saint etienne,DF,14,0.0,0.0179,1406.1,1500.0,1497.8
 2024-25,FRA1,2024-09-01,28071.0,Yoann Salmier,5976,le havre,auxerre,DF,90,0.0,0.1062,1439.6,1497.8,1484.4
 2024-25,FRA1,2024-09-15,28082.0,Yoann Salmier,5976,le havre,toulouse,DF,77,0.0,0.0774,1496.0,1484.4,1474.7
@@ -41849,6 +41853,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-29,,Diego Pampín,6291,levante,,DF,0,,,,1490.7,1490.9
 2026-27,,2026-09-06,,Diego Pampín,6291,levante,,DF,0,,,,1490.9,1491.2
 2026-27,,2026-09-13,,Diego Pampín,6291,levante,,DF,0,,,,1491.2,1491.5
+2026-27,,2026-09-16,,Diego Pampín,6291,levante,,DF,0,,,,1491.5,1491.7
 2025-26,ITA1,2025-10-26,29917.0,Abdelhamid Sabiri,6296,fiorentina,bologna,MF,24,0.1143,0.0534,1588.9,1500.0,1504.6
 2025-26,,2025-11-09,,Abdelhamid Sabiri,6296,fiorentina,,MF,0,,,,1504.6,1504.5
 2025-26,,2025-11-22,,Abdelhamid Sabiri,6296,fiorentina,,MF,0,,,,1504.5,1504.3
@@ -42217,6 +42222,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-30,,Andoni Gorosabel,6325,athletic club,,DF,0,,,,1511.0,1510.6
 2026-27,,2026-09-05,,Andoni Gorosabel,6325,athletic club,,DF,0,,,,1510.6,1510.3
 2026-27,,2026-09-12,,Andoni Gorosabel,6325,athletic club,,DF,0,,,,1510.3,1510.0
+2026-27,,2026-09-16,,Andoni Gorosabel,6325,athletic club,,DF,0,,,,1510.0,1509.7
 2024-25,ENG1,2024-08-17,26603.0,Ibrahima Konaté,6326,liverpool,ipswich town,DF,43,0.0,0.0456,1488.1,1500.0,1494.3
 2024-25,ENG1,2024-08-25,26621.0,Ibrahima Konaté,6326,liverpool,brentford,DF,90,0.1273,0.0859,1528.4,1494.3,1499.5
 2024-25,ENG1,2024-09-01,26631.0,Ibrahima Konaté,6326,liverpool,manchester united,DF,90,0.0802,0.072,1610.2,1499.5,1500.5
@@ -44113,7 +44119,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-10,30515.0,Lucas Höler,6475,freiburg,hamburger,FW,90,0.011,0.4335,1483.7,1400.2,1378.9
 2025-26,GER1,2026-05-16,30525.0,Lucas Höler,6475,freiburg,leipzig,FW,15,0.0525,0.0433,1684.8,1378.9,1379.3
 2026-27,GER1,2026-08-30,32253.0,Lucas Höler,6475,freiburg,werder bremen,FW,16,0.0408,0.0814,1499.2,1439.7,1437.6
-2026-27,GER1,2026-09-12,32264.0,Lucas Höler,6475,freiburg,borussia monchengladbach,FW,11,0.0,0.0502,1544.9,1437.6,1435.1
+2026-27,GER1,2026-09-12,32264.0,Lucas Höler,6475,freiburg,borussia monchengladbach,FW,11,0.0,0.0502,1544.7,1437.6,1435.1
 2024-25,ENG1,2024-09-14,26636.0,Eddie Nketiah,6482,crystal palace,leicester city,FW,90,0.484,0.5151,1508.6,1500.0,1498.4
 2024-25,ENG1,2024-09-21,26649.0,Eddie Nketiah,6482,crystal palace,manchester united,FW,66,0.0704,0.2915,1619.5,1498.4,1487.3
 2024-25,ENG1,2024-09-28,26654.0,Eddie Nketiah,6482,crystal palace,everton,FW,74,0.1081,0.4203,1499.2,1487.3,1471.5
@@ -46842,6 +46848,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-30,,Dani Vivian,6766,athletic club,,DF,0,,,,1518.4,1517.8
 2026-27,,2026-09-05,,Dani Vivian,6766,athletic club,,DF,0,,,,1517.8,1517.3
 2026-27,,2026-09-12,,Dani Vivian,6766,athletic club,,DF,0,,,,1517.3,1516.8
+2026-27,,2026-09-16,,Dani Vivian,6766,athletic club,,DF,0,,,,1516.8,1516.3
 2024-25,ITA1,2024-10-31,27454.0,Samuel Gigot,6773,lazio,como,DF,10,0.0,0.0106,1489.9,1500.0,1498.7
 2024-25,ITA1,2024-11-24,27486.0,Samuel Gigot,6773,lazio,bologna,DF,43,0.7591,0.0368,1579.7,1498.7,1538.7
 2024-25,ITA1,2024-12-16,27515.0,Samuel Gigot,6773,lazio,inter,DF,25,0.0,0.0152,1767.9,1538.7,1536.8
@@ -48193,7 +48200,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-22,31944.0,Ludovic Ajorque,6905,brest,le mans,FW,90,0.5056,0.464,1500.0,1446.1,1448.2
 2026-27,FRA1,2026-08-29,31952.0,Ludovic Ajorque,6905,brest,toulouse,FW,90,0.9375,0.4595,1506.3,1448.2,1472.3
 2026-27,FRA1,2026-09-05,31963.0,Ludovic Ajorque,6905,brest,le havre,FW,90,0.3955,0.5617,1443.2,1472.3,1463.9
-2026-27,FRA1,2026-09-13,31975.0,Ludovic Ajorque,6905,brest,paris saint germain,FW,90,0.2825,0.2756,1744.2,1463.9,1464.3
+2026-27,FRA1,2026-09-13,31975.0,Ludovic Ajorque,6905,brest,paris saint germain,FW,90,0.2825,0.2752,1744.7,1463.9,1464.3
 2024-25,ENG1,2024-08-19,26611.0,Pedro Porro,6912,tottenham hotspur,leicester city,DF,90,0.3199,0.0913,1507.6,1500.0,1528.6
 2024-25,ENG1,2024-08-24,26617.0,Pedro Porro,6912,tottenham hotspur,everton,DF,90,0.0749,0.0997,1498.0,1528.6,1525.5
 2024-25,ENG1,2024-09-01,26629.0,Pedro Porro,6912,tottenham hotspur,newcastle united,DF,90,0.2442,0.0729,1631.2,1525.5,1547.0
@@ -50018,6 +50025,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,ESP1,2026-08-22,30778.0,Gorka Guruzeta,7020,athletic club,sevilla,FW,61,0.0631,0.3643,1522.0,1531.8,1516.6
 2026-27,ESP1,2026-08-27,30789.0,Gorka Guruzeta,7020,athletic club,barcelona,FW,85,0.0,0.2718,1778.1,1516.6,1502.9
 2026-27,ESP1,2026-08-30,30797.0,Gorka Guruzeta,7020,athletic club,celta vigo,FW,23,0.3133,0.1151,1569.9,1502.9,1512.9
+2026-27,,2026-09-16,,Gorka Guruzeta,7020,athletic club,,FW,0,,,,1512.9,1512.5
 2024-25,ENG1,2024-08-24,26615.0,Arijanet Muric,7027,ipswich town,manchester city,GK,90,0.0,0.0013,1808.6,1500.0,1498.8
 2024-25,ENG1,2024-08-31,26625.0,Arijanet Muric,7027,ipswich town,fulham,GK,90,0.0,0.0023,1553.8,1498.8,1496.7
 2024-25,ENG1,2024-09-14,26633.0,Arijanet Muric,7027,ipswich town,brighton hove albion,GK,90,0.0,0.0021,1587.1,1496.7,1494.8
@@ -53985,7 +53993,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-02,30504.0,Alphonso Davies,7345,bayern munich,heidenheim,DF,10,0.0106,0.0145,1426.3,1573.6,1573.1
 2026-27,GER1,2026-08-28,32247.0,Alphonso Davies,7345,bayern munich,stuttgart,DF,75,0.5737,0.0597,1649.3,1536.5,1576.5
 2026-27,GER1,2026-09-05,32260.0,Alphonso Davies,7345,bayern munich,schalke,DF,90,0.2404,0.1257,1445.2,1576.5,1590.9
-2026-27,GER1,2026-09-13,32760.0,Alphonso Davies,7345,bayern munich,elversberg,DF,20,0.1373,0.024,1525.1,1590.9,1605.1
+2026-27,GER1,2026-09-13,32760.0,Alphonso Davies,7345,bayern munich,elversberg,DF,20,0.1373,0.024,1525.0,1590.9,1605.1
 2024-25,ESP1,2024-08-15,26983.0,Yangel Herrera,7350,girona,real betis,MF,73,0.3434,0.1654,1581.1,1500.0,1513.5
 2024-25,ESP1,2024-08-25,27001.0,Yangel Herrera,7350,girona,atletico madrid,MF,90,0.0251,0.1771,1655.8,1513.5,1502.0
 2024-25,ESP1,2024-08-29,27010.0,Yangel Herrera,7350,girona,osasuna,MF,68,0.0517,0.1807,1513.8,1502.0,1492.2
@@ -56402,7 +56410,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-22,31944.0,Alexandre Lauray,7556,le mans,brest,MF,66,0.0,0.1875,1482.8,1500.0,1485.8
 2026-27,FRA1,2026-08-30,31956.0,Alexandre Lauray,7556,le mans,rennes,MF,90,0.1659,0.2029,1569.0,1485.8,1483.0
 2026-27,FRA1,2026-09-05,31962.0,Alexandre Lauray,7556,le mans,nice,MF,90,0.0654,0.2704,1441.5,1483.0,1467.5
-2026-27,FRA1,2026-09-13,31974.0,Alexandre Lauray,7556,le mans,lens,MF,23,0.0704,0.0461,1601.8,1467.5,1469.3
+2026-27,FRA1,2026-09-13,31974.0,Alexandre Lauray,7556,le mans,lens,MF,23,0.0704,0.046,1602.2,1467.5,1469.3
 2024-25,GER1,2024-09-21,27774.0,Eric Junior Dina Ebimbe,7562,eintracht frankfurt,borussia monchengladbach,MF,19,0.0,0.0519,1500.0,1500.0,1496.1
 2024-25,GER1,2024-09-29,27785.0,Eric Junior Dina Ebimbe,7562,eintracht frankfurt,holstein kiel,MF,71,0.4656,0.2081,1465.3,1496.1,1515.6
 2024-25,GER1,2024-10-06,27787.0,Eric Junior Dina Ebimbe,7562,eintracht frankfurt,bayern munich,MF,22,0.826,0.0365,1731.6,1515.6,1555.6
@@ -58039,7 +58047,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-22,31944.0,Joris Chotard,7739,brest,le mans,MF,90,0.352,0.172,1500.0,1345.1,1358.8
 2026-27,FRA1,2026-08-29,31952.0,Joris Chotard,7739,brest,toulouse,MF,90,0.8838,0.1749,1506.3,1358.8,1398.8
 2026-27,FRA1,2026-09-05,31963.0,Joris Chotard,7739,brest,le havre,MF,90,0.1988,0.2218,1443.2,1398.8,1397.0
-2026-27,FRA1,2026-09-13,31975.0,Joris Chotard,7739,brest,paris saint germain,MF,82,0.0151,0.1007,1744.2,1397.0,1390.6
+2026-27,FRA1,2026-09-13,31975.0,Joris Chotard,7739,brest,paris saint germain,MF,82,0.0151,0.1005,1744.7,1397.0,1390.6
 2024-25,ITA1,2024-08-19,27370.0,Valentin Gendrey,7742,lecce,atalanta,DF,90,0.2313,0.069,1629.2,1500.0,1520.3
 2024-25,ITA1,2024-08-24,27375.0,Valentin Gendrey,7742,lecce,inter,DF,90,0.0212,0.0587,1719.5,1520.3,1515.6
 2024-25,GER1,2024-09-14,27761.0,Valentin Gendrey,7742,tsg hoffenheim,bayer leverkusen,DF,26,0.0,0.0161,1737.8,1515.6,1513.6
@@ -59250,6 +59258,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-29,,Iker Losada,7825,levante,,MF,0,,,,1512.3,1511.9
 2026-27,,2026-09-06,,Iker Losada,7825,levante,,MF,0,,,,1511.9,1511.6
 2026-27,,2026-09-13,,Iker Losada,7825,levante,,MF,0,,,,1511.6,1511.2
+2026-27,,2026-09-16,,Iker Losada,7825,levante,,MF,0,,,,1511.2,1510.9
 2024-25,ESP1,2025-02-07,27211.0,Joseph Aidoo,7826,real valladolid,rayo vallecano,DF,90,0.0,0.0789,1570.9,1500.0,1490.1
 2024-25,ESP1,2025-02-16,27215.0,Joseph Aidoo,7826,real valladolid,sevilla,DF,90,0.0,0.0794,1558.6,1490.1,1480.2
 2024-25,ESP1,2025-02-23,27222.0,Joseph Aidoo,7826,real valladolid,athletic club,DF,68,0.0,0.0416,1707.6,1480.2,1475.0
@@ -64460,7 +64469,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,ITA1,2026-09-07,31588.0,Daniel Maldini,8163,cagliari,lecce,MF,68,1.0382,0.2336,1428.2,1528.0,1568.0
 2026-27,ITA1,2026-09-12,31593.0,Daniel Maldini,8163,cagliari,atalanta,MF,80,0.7797,0.1985,1609.5,1568.0,1608.0
 2026-27,FRA1,2026-09-05,31962.0,Ewan Hatfout,8164,le mans,nice,GK,90,0.0,0.0029,1441.5,1500.0,1497.3
-2026-27,FRA1,2026-09-13,31974.0,Ewan Hatfout,8164,le mans,lens,GK,90,0.0,0.002,1601.8,1497.3,1495.4
+2026-27,FRA1,2026-09-13,31974.0,Ewan Hatfout,8164,le mans,lens,GK,90,0.0,0.002,1602.2,1497.3,1495.4
 2024-25,ESP1,2024-08-16,26985.0,Lucien Agoume,8165,sevilla,las palmas,MF,90,0.0,0.2485,1495.1,1500.0,1481.2
 2024-25,ESP1,2024-08-23,26993.0,Lucien Agoume,8165,sevilla,villarreal,MF,90,0.0189,0.183,1609.2,1481.2,1468.7
 2024-25,ESP1,2024-09-01,27019.0,Lucien Agoume,8165,sevilla,girona,MF,85,0.0314,0.1555,1642.7,1468.7,1459.3
@@ -66838,6 +66847,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-29,,Unai Vencedor,8329,levante,,MF,0,,,,1482.9,1483.4
 2026-27,,2026-09-06,,Unai Vencedor,8329,levante,,MF,0,,,,1483.4,1483.9
 2026-27,,2026-09-13,,Unai Vencedor,8329,levante,,MF,0,,,,1483.9,1484.4
+2026-27,,2026-09-16,,Unai Vencedor,8329,levante,,MF,0,,,,1484.4,1484.8
 2024-25,ITA1,2025-02-22,27614.0,Jean Onana,8330,genoa,inter,MF,17,0.0098,0.0241,1783.8,1500.0,1498.9
 2024-25,ITA1,2025-03-02,27625.0,Jean Onana,8330,genoa,empoli,MF,22,0.0,0.0749,1403.3,1498.9,1493.2
 2024-25,ITA1,2025-03-29,27659.0,Jean Onana,8330,genoa,juventus,MF,72,0.0575,0.1371,1649.7,1493.2,1487.2
@@ -67901,7 +67911,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-09,30520.0,Jamal Musiala,8418,bayern munich,wolfsburg,MF,79,0.6299,0.433,1470.2,1772.9,1787.8
 2025-26,GER1,2026-05-16,30522.0,Jamal Musiala,8418,bayern munich,cologne,MF,74,0.3595,0.4284,1461.4,1787.8,1782.6
 2026-27,GER1,2026-09-05,32260.0,Jamal Musiala,8418,bayern munich,schalke,MF,31,0.0994,0.1329,1445.2,1641.3,1638.8
-2026-27,GER1,2026-09-13,32760.0,Jamal Musiala,8418,bayern munich,elversberg,MF,20,0.1134,0.0709,1525.1,1638.8,1642.0
+2026-27,GER1,2026-09-13,32760.0,Jamal Musiala,8418,bayern munich,elversberg,MF,20,0.1134,0.071,1525.0,1638.8,1642.0
 2024-25,ESP1,2024-08-17,26986.0,Javi Hernández,8422,leganes,osasuna,DF,90,0.6878,0.0916,1506.0,1500.0,1540.0
 2024-25,ESP1,2024-08-25,26999.0,Javi Hernández,8422,leganes,las palmas,DF,90,0.0,0.103,1495.1,1540.0,1527.1
 2024-25,ESP1,2024-08-28,27005.0,Javi Hernández,8422,leganes,real valladolid,DF,90,0.0446,0.1052,1473.4,1527.1,1519.5
@@ -77268,7 +77278,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,ITA1,2026-09-12,31593.0,Giorgio Scalvini,9107,atalanta,cagliari,DF,90,0.0,0.1157,1452.1,1547.3,1532.8
 2026-27,GER1,2026-08-29,32758.0,Lukas Petkov,9127,elversberg,bayer leverkusen,MF,90,0.5952,0.1653,1672.3,1500.0,1532.6
 2026-27,GER1,2026-09-05,32759.0,Lukas Petkov,9127,elversberg,borussia monchengladbach,MF,90,0.1303,0.2331,1555.5,1532.6,1524.8
-2026-27,GER1,2026-09-13,32760.0,Lukas Petkov,9127,elversberg,bayern munich,MF,88,0.2986,0.1272,1855.9,1524.8,1537.8
+2026-27,GER1,2026-09-13,32760.0,Lukas Petkov,9127,elversberg,bayern munich,MF,88,0.2986,0.1272,1855.4,1524.8,1537.8
 2024-25,FRA1,2024-09-14,28076.0,Youssoufa Moukoko,9133,nice,marseille,FW,19,0.3806,0.0867,1607.0,1500.0,1514.9
 2024-25,FRA1,2024-09-20,28085.0,Youssoufa Moukoko,9133,nice,saint etienne,FW,68,1.5974,0.5236,1394.5,1514.9,1554.9
 2024-25,FRA1,2024-09-28,28096.0,Youssoufa Moukoko,9133,nice,lens,FW,12,0.1603,0.0642,1593.0,1554.9,1559.7
@@ -79358,7 +79368,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-30,31956.0,Quentin Merlin,9399,rennes,le mans,MF,80,0.0,0.1929,1500.0,1446.1,1431.5
 2026-27,FRA1,2026-09-06,31965.0,Quentin Merlin,9399,rennes,angers,MF,72,0.314,0.199,1426.2,1431.5,1440.2
 2026-27,FRA1,2026-09-05,31962.0,Raúl Torrente,9403,le mans,nice,DF,62,0.0,0.0733,1441.5,1500.0,1490.8
-2026-27,FRA1,2026-09-13,31974.0,Raúl Torrente,9403,le mans,lens,DF,11,0.0,0.0088,1601.8,1490.8,1489.7
+2026-27,FRA1,2026-09-13,31974.0,Raúl Torrente,9403,le mans,lens,DF,11,0.0,0.0088,1602.2,1490.8,1489.7
 2024-25,ENG1,2024-12-03,26737.0,Nathan Broadhead,9406,ipswich town,crystal palace,MF,21,0.0,0.0516,1545.5,1500.0,1496.1
 2024-25,,2024-12-21,,Nathan Broadhead,9406,ipswich town,,MF,0,,,,1496.1,1496.2
 2024-25,,2024-12-27,,Nathan Broadhead,9406,ipswich town,,MF,0,,,,1496.2,1496.3
@@ -79712,7 +79722,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-09,30520.0,Josip Stanisic,9458,bayern munich,wolfsburg,DF,90,0.114,0.1293,1470.2,1613.6,1611.7
 2025-26,GER1,2026-05-16,30522.0,Josip Stanisic,9458,bayern munich,cologne,DF,41,0.0555,0.0598,1461.4,1611.7,1611.2
 2026-27,GER1,2026-08-28,32247.0,Josip Stanisic,9458,bayern munich,stuttgart,DF,15,0.0,0.0125,1649.3,1555.6,1554.0
-2026-27,GER1,2026-09-13,32760.0,Josip Stanisic,9458,bayern munich,elversberg,DF,90,0.2448,0.0993,1525.1,1554.0,1572.3
+2026-27,GER1,2026-09-13,32760.0,Josip Stanisic,9458,bayern munich,elversberg,DF,90,0.2448,0.0994,1525.0,1554.0,1572.3
 2024-25,ESP1,2024-08-18,26988.0,Beñat Turrientes,9465,real sociedad,rayo vallecano,MF,69,0.0277,0.1907,1494.7,1500.0,1487.6
 2024-25,ESP1,2024-08-24,26997.0,Beñat Turrientes,9465,real sociedad,espanyol,MF,70,0.0702,0.1974,1473.7,1487.6,1478.0
 2024-25,ESP1,2024-09-01,27020.0,Beñat Turrientes,9465,real sociedad,getafe,MF,90,0.0,0.2354,1496.6,1478.0,1460.2
@@ -80187,6 +80197,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-30,,Beñat Prados,9505,athletic club,,MF,0,,,,1488.1,1488.4
 2026-27,,2026-09-05,,Beñat Prados,9505,athletic club,,MF,0,,,,1488.4,1488.8
 2026-27,,2026-09-12,,Beñat Prados,9505,athletic club,,MF,0,,,,1488.8,1489.1
+2026-27,,2026-09-16,,Beñat Prados,9505,athletic club,,MF,0,,,,1489.1,1489.4
 2024-25,ENG1,2024-08-17,26607.0,Daniel Jebbison,9509,bournemouth,nottingham forest,FW,10,0.0148,0.0611,1480.1,1500.0,1497.7
 2024-25,ENG1,2025-05-25,26979.0,Daniel Jebbison,9509,bournemouth,leicester city,FW,23,0.3027,0.1624,1415.0,1497.7,1504.8
 2026-27,ENG1,2026-08-23,31187.0,Daniel Jebbison,9509,bournemouth,manchester city,FW,13,0.0825,0.0398,1781.6,1501.2,1503.3
@@ -81783,7 +81794,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-22,31944.0,Bradley Locko,9659,brest,le mans,DF,90,0.0229,0.0907,1500.0,1489.6,1481.1
 2026-27,FRA1,2026-08-29,31952.0,Bradley Locko,9659,brest,toulouse,DF,90,0.0353,0.0877,1506.3,1481.1,1474.6
 2026-27,FRA1,2026-09-05,31963.0,Bradley Locko,9659,brest,le havre,DF,90,0.0353,0.0999,1443.2,1474.6,1466.5
-2026-27,FRA1,2026-09-13,31975.0,Bradley Locko,9659,brest,paris saint germain,DF,90,0.196,0.049,1744.2,1466.5,1484.9
+2026-27,FRA1,2026-09-13,31975.0,Bradley Locko,9659,brest,paris saint germain,DF,90,0.196,0.049,1744.7,1466.5,1484.9
 2025-26,FRA1,2025-08-17,29543.0,Igor Silva,9661,lorient,auxerre,DF,90,0.0158,0.0963,1484.6,1500.0,1489.9
 2025-26,FRA1,2025-08-24,29551.0,Igor Silva,9661,lorient,rennes,DF,90,0.0136,0.0866,1520.4,1489.9,1480.8
 2025-26,FRA1,2025-08-30,29557.0,Igor Silva,9661,lorient,lille,DF,90,0.1378,0.0681,1616.1,1480.8,1489.5
@@ -86455,7 +86466,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-02,30504.0,Jonas Urbig,9861,bayern munich,heidenheim,GK,90,0.0,0.0032,1426.3,1515.4,1512.5
 2025-26,GER1,2026-05-09,30520.0,Jonas Urbig,9861,bayern munich,wolfsburg,GK,90,0.0,0.0028,1470.2,1512.5,1509.8
 2025-26,GER1,2026-05-16,30522.0,Jonas Urbig,9861,bayern munich,cologne,GK,27,0.0,0.0009,1461.4,1509.8,1509.0
-2026-27,GER1,2026-09-13,32760.0,Jonas Urbig,9861,bayern munich,elversberg,GK,90,0.0,0.0025,1525.1,1504.5,1502.2
+2026-27,GER1,2026-09-13,32760.0,Jonas Urbig,9861,bayern munich,elversberg,GK,90,0.0,0.0025,1525.0,1504.5,1502.2
 2024-25,ITA1,2024-09-15,27395.0,Nadir Zortea,9866,cagliari,napoli,MF,22,0.0,0.0504,1575.8,1500.0,1496.2
 2024-25,ITA1,2024-09-20,27403.0,Nadir Zortea,9866,cagliari,empoli,MF,90,0.166,0.2662,1461.4,1496.2,1488.6
 2024-25,ITA1,2024-09-30,27419.0,Nadir Zortea,9866,cagliari,parma,MF,90,0.5586,0.3245,1367.9,1488.6,1506.3
@@ -87583,7 +87594,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30522.0,Michael Olise,9948,bayern munich,cologne,MF,26,0.134,0.1552,1461.4,2285.2,2283.6
 2026-27,GER1,2026-08-28,32247.0,Michael Olise,9948,bayern munich,stuttgart,MF,90,1.2047,0.3485,1649.3,1891.8,1931.8
 2026-27,GER1,2026-09-05,32260.0,Michael Olise,9948,bayern munich,schalke,MF,31,0.1154,0.192,1445.2,1931.8,1926.0
-2026-27,GER1,2026-09-13,32760.0,Michael Olise,9948,bayern munich,elversberg,MF,90,0.9321,0.4638,1525.1,1926.0,1961.5
+2026-27,GER1,2026-09-13,32760.0,Michael Olise,9948,bayern munich,elversberg,MF,90,0.9321,0.464,1525.0,1926.0,1961.5
 2024-25,ITA1,2024-08-18,27368.0,Tommaso Baldanzi,9951,roma,cagliari,MF,29,0.0534,0.0975,1409.8,1500.0,1496.7
 2024-25,ITA1,2024-08-25,27379.0,Tommaso Baldanzi,9951,roma,empoli,MF,26,0.2162,0.0791,1449.6,1496.7,1507.1
 2024-25,ITA1,2024-09-15,27394.0,Tommaso Baldanzi,9951,roma,genoa,MF,21,0.0734,0.0635,1462.5,1507.1,1507.8
@@ -87678,7 +87689,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,GER1,2026-09-05,32256.0,Cedric Itten,9954,werder bremen,leipzig,FW,13,0.0471,0.0519,1661.4,1496.3,1496.1
 2026-27,GER1,2026-08-29,32758.0,Lasse Günther,9955,elversberg,bayer leverkusen,DF,90,0.0711,0.0625,1672.3,1500.0,1501.1
 2026-27,GER1,2026-09-05,32759.0,Lasse Günther,9955,elversberg,borussia monchengladbach,DF,77,0.2708,0.0702,1555.5,1501.1,1526.2
-2026-27,GER1,2026-09-13,32760.0,Lasse Günther,9955,elversberg,bayern munich,DF,90,0.0788,0.0494,1855.9,1526.2,1529.9
+2026-27,GER1,2026-09-13,32760.0,Lasse Günther,9955,elversberg,bayern munich,DF,90,0.0788,0.0494,1855.4,1526.2,1529.9
 2024-25,ENG1,2024-08-17,26604.0,Yerson Mosquera,9958,wolverhampton wanderers,arsenal,DF,90,0.024,0.057,1712.5,1500.0,1495.9
 2024-25,ENG1,2024-08-25,26619.0,Yerson Mosquera,9958,wolverhampton wanderers,chelsea,DF,90,0.4122,0.0691,1624.8,1495.9,1535.9
 2024-25,ENG1,2024-08-31,26627.0,Yerson Mosquera,9958,wolverhampton wanderers,nottingham forest,DF,90,0.0,0.1036,1488.8,1535.9,1522.9
@@ -89856,7 +89867,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-22,31944.0,Kamory Doumbia,10100,brest,le mans,MF,90,1.4045,0.3027,1500.0,1590.6,1630.6
 2026-27,FRA1,2026-08-29,31952.0,Kamory Doumbia,10100,brest,toulouse,MF,79,0.4893,0.2872,1506.3,1630.6,1646.0
 2026-27,FRA1,2026-09-05,31963.0,Kamory Doumbia,10100,brest,le havre,MF,77,1.9925,0.3353,1443.2,1646.0,1686.0
-2026-27,FRA1,2026-09-13,31975.0,Kamory Doumbia,10100,brest,paris saint germain,MF,82,0.7282,0.1958,1744.2,1686.0,1726.0
+2026-27,FRA1,2026-09-13,31975.0,Kamory Doumbia,10100,brest,paris saint germain,MF,82,0.7282,0.1956,1744.7,1686.0,1726.0
 2024-25,ESP1,2024-08-25,27000.0,Carlos Martín,10101,alaves,real betis,MF,29,0.0,0.0639,1593.2,1500.0,1495.2
 2024-25,ESP1,2024-09-01,27017.0,Carlos Martín,10101,alaves,las palmas,MF,23,0.0,0.0638,1488.3,1495.2,1490.3
 2024-25,ESP1,2024-09-20,27035.0,Carlos Martín,10101,alaves,sevilla,MF,81,0.8754,0.1996,1534.8,1490.3,1530.3
@@ -90245,7 +90256,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,,2026-05-23,,Javi Llabrés,10128,mallorca,,MF,0,,,,1491.5,1491.8
 2026-27,FRA1,2026-08-30,31956.0,Lucas Calodat,10131,le mans,rennes,MF,70,0.4473,0.163,1569.0,1500.0,1521.5
 2026-27,FRA1,2026-09-05,31962.0,Lucas Calodat,10131,le mans,nice,MF,79,0.262,0.2594,1441.5,1521.5,1521.7
-2026-27,FRA1,2026-09-13,31974.0,Lucas Calodat,10131,le mans,lens,MF,90,0.6481,0.2043,1601.8,1521.7,1555.4
+2026-27,FRA1,2026-09-13,31974.0,Lucas Calodat,10131,le mans,lens,MF,90,0.6481,0.2042,1602.2,1521.7,1555.4
 2025-26,ENG1,2025-08-16,28783.0,Hugo Bueno,10140,wolverhampton wanderers,manchester city,MF,13,0.0381,0.0224,1699.9,1500.0,1501.2
 2025-26,ENG1,2025-08-23,28792.0,Hugo Bueno,10140,wolverhampton wanderers,bournemouth,MF,39,0.0966,0.0899,1574.5,1501.2,1501.7
 2025-26,ENG1,2025-08-30,28800.0,Hugo Bueno,10140,wolverhampton wanderers,everton,MF,78,0.0065,0.1823,1569.1,1501.7,1488.4
@@ -91620,7 +91631,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-09,30520.0,Tom Bischof,10289,bayern munich,wolfsburg,MF,90,0.1413,0.2594,1470.2,1493.7,1484.8
 2025-26,GER1,2026-05-16,30522.0,Tom Bischof,10289,bayern munich,cologne,MF,90,0.105,0.2593,1461.4,1484.8,1473.1
 2026-27,GER1,2026-09-05,32260.0,Tom Bischof,10289,bayern munich,schalke,MF,14,0.018,0.042,1445.2,1486.6,1484.7
-2026-27,GER1,2026-09-13,32760.0,Tom Bischof,10289,bayern munich,elversberg,MF,70,0.0376,0.1741,1525.1,1484.7,1474.4
+2026-27,GER1,2026-09-13,32760.0,Tom Bischof,10289,bayern munich,elversberg,MF,70,0.0376,0.1742,1525.0,1484.7,1474.4
 2024-25,ENG1,2024-08-17,26605.0,Vitalii Mykolenko,10291,everton,brighton hove albion,DF,90,0.0,0.083,1549.2,1500.0,1489.6
 2024-25,ENG1,2024-08-24,26617.0,Vitalii Mykolenko,10291,everton,tottenham hotspur,DF,90,0.0,0.0751,1582.1,1489.6,1480.2
 2024-25,ENG1,2024-08-31,26624.0,Vitalii Mykolenko,10291,everton,bournemouth,DF,90,0.0178,0.0852,1517.7,1480.2,1471.7
@@ -92256,7 +92267,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-22,31944.0,Louis Mafouta,10342,le mans,brest,FW,66,0.4649,0.4008,1482.8,1500.0,1503.2
 2026-27,FRA1,2026-08-30,31956.0,Louis Mafouta,10342,le mans,rennes,FW,90,2.3513,0.4515,1569.0,1503.2,1543.2
 2026-27,FRA1,2026-09-05,31962.0,Louis Mafouta,10342,le mans,nice,FW,90,0.6589,0.6641,1441.5,1543.2,1543.0
-2026-27,FRA1,2026-09-13,31974.0,Louis Mafouta,10342,le mans,lens,FW,90,0.9119,0.4588,1601.8,1543.0,1565.9
+2026-27,FRA1,2026-09-13,31974.0,Louis Mafouta,10342,le mans,lens,FW,90,0.9119,0.4584,1602.2,1543.0,1565.9
 2025-26,ITA1,2025-08-24,29850.0,Samuele Angori,10345,pisa,atalanta,MF,90,0.5069,0.1718,1655.4,1500.0,1525.4
 2025-26,ITA1,2025-08-30,29858.0,Samuele Angori,10345,pisa,roma,MF,84,0.0,0.1864,1615.4,1525.4,1511.3
 2025-26,ITA1,2025-09-14,29868.0,Samuele Angori,10345,pisa,udinese,MF,47,0.0,0.1448,1458.9,1511.3,1500.3
@@ -93212,6 +93223,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-29,,Ugo Raghouber,10397,levante,,MF,0,,,,1457.6,1458.9
 2026-27,,2026-09-06,,Ugo Raghouber,10397,levante,,MF,0,,,,1458.9,1460.1
 2026-27,,2026-09-13,,Ugo Raghouber,10397,levante,,MF,0,,,,1460.1,1461.3
+2026-27,,2026-09-16,,Ugo Raghouber,10397,levante,,MF,0,,,,1461.3,1462.5
 2024-25,ESP1,2024-08-28,27005.0,Juan Latasa,10399,real valladolid,leganes,FW,25,0.1225,0.1469,1497.2,1500.0,1498.8
 2024-25,ESP1,2024-08-31,27012.0,Juan Latasa,10399,real valladolid,barcelona,FW,31,0.0,0.1106,1712.5,1498.8,1493.2
 2024-25,ESP1,2024-09-15,27025.0,Juan Latasa,10399,real valladolid,celta vigo,FW,90,0.1952,0.4625,1548.5,1493.2,1479.7
@@ -93381,7 +93393,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30522.0,Luis Díaz,10408,bayern munich,cologne,MF,90,1.0984,0.5371,1461.4,2212.1,2252.1
 2026-27,GER1,2026-08-28,32247.0,Luis Díaz,10408,bayern munich,stuttgart,MF,90,1.3486,0.3485,1649.3,1876.1,1916.1
 2026-27,GER1,2026-09-05,32260.0,Luis Díaz,10408,bayern munich,schalke,MF,90,0.8505,0.5575,1445.2,1916.1,1938.3
-2026-27,GER1,2026-09-13,32760.0,Luis Díaz,10408,bayern munich,elversberg,MF,20,0.7438,0.1031,1525.1,1938.3,1978.3
+2026-27,GER1,2026-09-13,32760.0,Luis Díaz,10408,bayern munich,elversberg,MF,20,0.7438,0.1031,1525.0,1938.3,1978.3
 2025-26,ITA1,2025-09-14,29868.0,Giovanni Bonfanti,10413,pisa,udinese,DF,43,0.0553,0.0488,1458.9,1500.0,1500.8
 2025-26,ITA1,2025-09-22,29883.0,Giovanni Bonfanti,10413,pisa,napoli,DF,78,0.0345,0.0565,1654.8,1500.8,1498.1
 2025-26,ITA1,2025-09-28,29891.0,Giovanni Bonfanti,10413,pisa,fiorentina,DF,90,0.0873,0.0787,1570.0,1498.1,1499.1
@@ -93869,7 +93881,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30523.0,Yannick Engelhardt,10497,borussia monchengladbach,tsg hoffenheim,MF,90,0.1482,0.1265,1620.3,1331.9,1333.5
 2026-27,GER1,2026-08-30,32253.0,Yannick Engelhardt,10497,freiburg,werder bremen,MF,90,0.0475,0.2032,1499.2,1416.8,1405.0
 2026-27,GER1,2026-09-05,32259.0,Yannick Engelhardt,10497,freiburg,paderborn,MF,83,0.0752,0.1764,1513.7,1405.0,1397.3
-2026-27,GER1,2026-09-12,32264.0,Yannick Engelhardt,10497,freiburg,borussia monchengladbach,MF,90,0.317,0.1749,1544.9,1397.3,1408.1
+2026-27,GER1,2026-09-12,32264.0,Yannick Engelhardt,10497,freiburg,borussia monchengladbach,MF,90,0.317,0.175,1544.7,1397.3,1408.1
 2024-25,FRA1,2024-08-18,28055.0,Yassin Belkhdim,10517,angers,lens,MF,73,0.0819,0.166,1579.5,1500.0,1493.6
 2024-25,FRA1,2024-08-24,28059.0,Yassin Belkhdim,10517,angers,lille,MF,90,0.2138,0.1876,1610.9,1493.6,1495.6
 2024-25,FRA1,2024-09-01,28073.0,Yassin Belkhdim,10517,angers,nice,MF,79,0.0916,0.1862,1559.5,1495.6,1488.5
@@ -98483,7 +98495,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-09-12,31969.0,Loïs Openda,10832,lyon,paris fc,FW,75,0.0259,0.4866,1530.3,1576.1,1552.9
 2026-27,GER1,2026-08-29,32758.0,Lukasz Poreba,10833,elversberg,bayer leverkusen,MF,90,0.0244,0.1653,1672.3,1500.0,1489.3
 2026-27,GER1,2026-09-05,32759.0,Lukasz Poreba,10833,elversberg,borussia monchengladbach,MF,90,0.0,0.211,1555.5,1489.3,1473.3
-2026-27,GER1,2026-09-13,32760.0,Lukasz Poreba,10833,elversberg,bayern munich,MF,90,0.0,0.1155,1855.9,1473.3,1464.6
+2026-27,GER1,2026-09-13,32760.0,Lukasz Poreba,10833,elversberg,bayern munich,MF,90,0.0,0.1155,1855.4,1473.3,1464.6
 2025-26,FRA1,2025-08-17,29543.0,Darline Yongwa,10844,lorient,auxerre,DF,11,0.1254,0.0118,1484.6,1500.0,1514.2
 2025-26,FRA1,2025-08-24,29551.0,Darline Yongwa,10844,lorient,rennes,DF,11,0.5028,0.0112,1520.4,1514.2,1554.2
 2025-26,,2025-09-21,,Darline Yongwa,10844,lorient,,DF,0,,,,1554.2,1552.6
@@ -98930,7 +98942,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30525.0,Derry Scherhant,10860,freiburg,leipzig,MF,90,0.6101,0.1924,1684.8,1578.5,1610.2
 2026-27,GER1,2026-08-30,32253.0,Derry Scherhant,10860,freiburg,werder bremen,MF,90,0.1283,0.2795,1499.2,1555.1,1543.6
 2026-27,GER1,2026-09-05,32259.0,Derry Scherhant,10860,freiburg,paderborn,MF,75,0.2772,0.2194,1513.7,1543.6,1548.0
-2026-27,GER1,2026-09-12,32264.0,Derry Scherhant,10860,freiburg,borussia monchengladbach,MF,68,0.1627,0.187,1544.9,1548.0,1546.2
+2026-27,GER1,2026-09-12,32264.0,Derry Scherhant,10860,freiburg,borussia monchengladbach,MF,68,0.1627,0.1871,1544.7,1548.0,1546.2
 2024-25,GER1,2024-09-27,27778.0,Tim Oermann,10862,bochum,borussia dortmund,DF,90,0.0,0.0619,1676.4,1500.0,1492.2
 2024-25,GER1,2024-10-27,27812.0,Tim Oermann,10862,bochum,bayern munich,DF,63,0.0,0.0375,1730.9,1492.2,1487.5
 2024-25,GER1,2024-11-02,27817.0,Tim Oermann,10862,bochum,eintracht frankfurt,DF,40,0.0,0.0289,1643.1,1487.5,1483.9
@@ -100515,6 +100527,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,,2026-05-23,,Etta Eyong,10930,levante,,FW,0,,,,1594.0,1591.2
 2026-27,ESP1,2026-08-16,30773.0,Etta Eyong,10930,levante,espanyol,FW,39,0.0544,0.2463,1511.4,1545.6,1535.9
 2026-27,ESP1,2026-08-29,30792.0,Etta Eyong,10930,levante,real betis,FW,12,0.3573,0.0554,1638.1,1535.9,1551.1
+2026-27,,2026-09-16,,Etta Eyong,10930,levante,,FW,0,,,,1551.1,1549.6
 2024-25,ITA1,2024-08-17,27363.0,Dodô,10935,fiorentina,parma,DF,90,0.049,0.1265,1366.1,1500.0,1490.3
 2024-25,ITA1,2024-08-25,27376.0,Dodô,10935,fiorentina,venezia,DF,90,0.0649,0.1147,1398.8,1490.3,1484.1
 2024-25,ITA1,2024-09-01,27388.0,Dodô,10935,fiorentina,monza,DF,90,0.3235,0.0958,1471.0,1484.1,1512.6
@@ -101640,7 +101653,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-02,30504.0,Kim Min-Jae,10986,bayern munich,heidenheim,DF,90,0.191,0.0923,1426.3,1423.2,1435.5
 2025-26,GER1,2026-05-09,30520.0,Kim Min-Jae,10986,bayern munich,wolfsburg,DF,49,0.0,0.0467,1470.2,1435.5,1429.7
 2026-27,GER1,2026-08-28,32247.0,Kim Min-Jae,10986,bayern munich,stuttgart,DF,85,0.0409,0.0574,1649.3,1464.8,1462.8
-2026-27,GER1,2026-09-13,32760.0,Kim Min-Jae,10986,bayern munich,elversberg,DF,90,0.0,0.0805,1525.1,1462.8,1452.7
+2026-27,GER1,2026-09-13,32760.0,Kim Min-Jae,10986,bayern munich,elversberg,DF,90,0.0,0.0805,1525.0,1462.8,1452.7
 2024-25,ESP1,2024-09-14,27029.0,Gorka Rivera,10991,getafe,sevilla,MF,15,0.0,0.0383,1528.9,1500.0,1497.1
 2024-25,ITA1,2024-08-19,27371.0,Federico Gatti,10993,juventus,como,DF,90,0.0079,0.0929,1500.0,1500.0,1489.3
 2024-25,ITA1,2024-08-26,27381.0,Federico Gatti,10993,juventus,verona,DF,88,0.0,0.0991,1451.6,1489.3,1476.9
@@ -104584,6 +104597,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,ESP1,2026-08-16,30773.0,Carlos Álvarez,11264,levante,espanyol,MF,51,0.0166,0.1453,1511.4,1530.1,1520.3
 2026-27,,2026-09-06,,Carlos Álvarez,11264,levante,,MF,0,,,,1520.3,1519.7
 2026-27,,2026-09-13,,Carlos Álvarez,11264,levante,,MF,0,,,,1519.7,1519.1
+2026-27,,2026-09-16,,Carlos Álvarez,11264,levante,,MF,0,,,,1519.1,1518.6
 2024-25,ESP1,2025-04-24,27309.0,Diego Hormigo,11265,sevilla,osasuna,MF,37,0.1153,0.0864,1567.8,1500.0,1502.2
 2024-25,ESP1,2024-12-14,27145.0,Manu Bueno,11266,sevilla,celta vigo,MF,71,0.0924,0.1529,1603.0,1500.0,1495.4
 2024-25,,2025-01-18,,Manu Bueno,11266,sevilla,,MF,0,,,,1495.4,1495.5
@@ -106302,7 +106316,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-03,30507.0,Yuito Suzuki,11354,freiburg,wolfsburg,MF,83,0.0897,0.2991,1470.2,1590.8,1574.9
 2026-27,GER1,2026-08-30,32253.0,Yuito Suzuki,11354,freiburg,werder bremen,MF,81,1.8282,0.2415,1499.2,1537.5,1577.5
 2026-27,GER1,2026-09-05,32259.0,Yuito Suzuki,11354,freiburg,paderborn,MF,83,0.1443,0.2625,1513.7,1577.5,1568.5
-2026-27,GER1,2026-09-12,32264.0,Yuito Suzuki,11354,freiburg,borussia monchengladbach,MF,79,0.3296,0.2277,1544.9,1568.5,1576.2
+2026-27,GER1,2026-09-12,32264.0,Yuito Suzuki,11354,freiburg,borussia monchengladbach,MF,79,0.3296,0.2278,1544.7,1568.5,1576.2
 2026-27,FRA1,2026-09-05,31961.0,Noah Mbamba-Muanda,11355,lorient,lens,MF,68,0.0,0.1452,1606.8,1500.0,1489.0
 2026-27,FRA1,2026-09-12,31972.0,Noah Mbamba-Muanda,11355,lorient,toulouse,MF,71,0.1288,0.1895,1498.7,1489.0,1484.4
 2024-25,ENG1,2024-08-18,26610.0,Enzo Fernández,11356,chelsea,manchester city,MF,90,0.2011,0.1231,1800.1,1500.0,1505.9
@@ -107484,7 +107498,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,ESP1,2026-08-28,30791.0,Carlos Romero,11402,villarreal,alaves,DF,90,0.106,0.0979,1545.2,1567.7,1568.7
 2026-27,ESP1,2026-09-14,30819.0,Carlos Romero,11402,villarreal,real betis,DF,90,0.0972,0.0793,1637.4,1568.7,1571.0
 2026-27,FRA1,2026-09-05,31963.0,Giovani Versini,11406,brest,le havre,MF,13,0.1128,0.0404,1443.2,1500.0,1505.5
-2026-27,FRA1,2026-09-13,31975.0,Giovani Versini,11406,brest,paris saint germain,MF,70,0.0379,0.1103,1744.2,1505.5,1500.0
+2026-27,FRA1,2026-09-13,31975.0,Giovani Versini,11406,brest,paris saint germain,MF,70,0.0379,0.1102,1744.7,1505.5,1500.0
 2025-26,GER1,2026-01-10,30363.0,Damion Downs,11411,hamburger,freiburg,FW,80,0.039,0.3486,1626.9,1500.0,1484.4
 2025-26,GER1,2026-01-17,30380.0,Damion Downs,11411,hamburger,borussia monchengladbach,FW,80,0.4178,0.4505,1500.0,1484.4,1482.7
 2025-26,GER1,2026-01-23,30393.0,Damion Downs,11411,hamburger,st pauli,FW,73,0.1606,0.4785,1432.3,1482.7,1466.6
@@ -108186,7 +108200,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-02,30504.0,Aleksandar Pavlovic,11547,bayern munich,heidenheim,MF,49,0.0919,0.1297,1426.3,1412.9,1410.1
 2026-27,GER1,2026-08-28,32247.0,Aleksandar Pavlovic,11547,bayern munich,stuttgart,MF,85,0.8279,0.1484,1649.3,1455.0,1495.0
 2026-27,GER1,2026-09-05,32260.0,Aleksandar Pavlovic,11547,bayern munich,schalke,MF,76,0.2987,0.2327,1445.2,1495.0,1500.0
-2026-27,GER1,2026-09-13,32760.0,Aleksandar Pavlovic,11547,bayern munich,elversberg,MF,90,0.3257,0.2319,1525.1,1500.0,1507.1
+2026-27,GER1,2026-09-13,32760.0,Aleksandar Pavlovic,11547,bayern munich,elversberg,MF,90,0.3257,0.232,1525.0,1500.0,1507.1
 2024-25,ITA1,2024-08-25,27377.0,Marco Palestra,11551,atalanta,torino,MF,16,0.1085,0.0396,1542.5,1500.0,1505.2
 2024-25,,2024-09-24,,Marco Palestra,11551,atalanta,,MF,0,,,,1505.2,1505.1
 2024-25,,2024-09-28,,Marco Palestra,11551,atalanta,,MF,0,,,,1505.1,1504.9
@@ -115639,7 +115653,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30525.0,Jan-Niklas Beste,11982,freiburg,leipzig,MF,63,0.5982,0.1314,1684.8,1568.1,1603.4
 2026-27,GER1,2026-08-30,32253.0,Jan-Niklas Beste,11982,freiburg,werder bremen,MF,47,0.4594,0.1448,1499.2,1551.7,1575.5
 2026-27,GER1,2026-09-05,32259.0,Jan-Niklas Beste,11982,freiburg,paderborn,MF,75,0.0835,0.2361,1513.7,1575.5,1564.0
-2026-27,GER1,2026-09-12,32264.0,Jan-Niklas Beste,11982,freiburg,borussia monchengladbach,MF,83,0.0836,0.2368,1544.9,1564.0,1552.4
+2026-27,GER1,2026-09-12,32264.0,Jan-Niklas Beste,11982,freiburg,borussia monchengladbach,MF,83,0.0836,0.2369,1544.7,1564.0,1552.4
 2024-25,GER1,2024-08-24,27743.0,Matús Bero,11983,bochum,leipzig,MF,90,0.0363,0.154,1703.1,1500.0,1491.1
 2024-25,GER1,2024-08-31,27752.0,Matús Bero,11983,bochum,borussia monchengladbach,MF,90,0.0639,0.2407,1500.0,1491.1,1477.7
 2024-25,GER1,2024-09-14,27762.0,Matús Bero,11983,bochum,freiburg,MF,80,0.0,0.1783,1565.7,1477.7,1464.2
@@ -117417,7 +117431,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30525.0,Jordy Makengo,12070,freiburg,leipzig,DF,90,0.3333,0.0496,1684.8,1412.5,1448.0
 2026-27,GER1,2026-08-30,32253.0,Jordy Makengo,12070,freiburg,werder bremen,DF,90,0.0,0.0877,1499.2,1474.0,1463.0
 2026-27,GER1,2026-09-05,32259.0,Jordy Makengo,12070,freiburg,paderborn,DF,90,0.0619,0.0827,1513.7,1463.0,1460.4
-2026-27,GER1,2026-09-12,32264.0,Jordy Makengo,12070,freiburg,borussia monchengladbach,DF,90,0.532,0.0765,1544.9,1460.4,1500.4
+2026-27,GER1,2026-09-12,32264.0,Jordy Makengo,12070,freiburg,borussia monchengladbach,DF,90,0.532,0.0765,1544.7,1460.4,1500.4
 2024-25,ESP1,2025-03-30,27267.0,David López,12074,mallorca,valencia,DF,82,0.0,0.0757,1548.6,1500.0,1490.5
 2024-25,,2025-04-19,,David López,12074,mallorca,,DF,0,,,,1490.5,1490.8
 2024-25,,2025-04-22,,David López,12074,mallorca,,DF,0,,,,1490.8,1491.1
@@ -117565,6 +117579,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-29,,Alan Matturro,12078,levante,,DF,0,,,,1509.9,1509.6
 2026-27,,2026-09-06,,Alan Matturro,12078,levante,,DF,0,,,,1509.6,1509.4
 2026-27,,2026-09-13,,Alan Matturro,12078,levante,,DF,0,,,,1509.4,1509.1
+2026-27,,2026-09-16,,Alan Matturro,12078,levante,,DF,0,,,,1509.1,1508.8
 2024-25,ESP1,2024-09-01,27021.0,Assane Diao,12081,real betis,real madrid,MF,15,0.0,0.0205,1801.8,1500.0,1498.4
 2024-25,ESP1,2024-09-13,27024.0,Assane Diao,12081,real betis,leganes,MF,67,0.0832,0.1871,1488.7,1498.4,1490.6
 2024-25,ESP1,2024-09-26,27049.0,Assane Diao,12081,real betis,las palmas,MF,67,1.0622,0.1929,1467.4,1490.6,1530.6
@@ -118742,7 +118757,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-22,31944.0,Joseph Nonge,12170,brest,le mans,MF,66,0.0,0.1802,1500.0,1500.0,1486.3
 2026-27,FRA1,2026-08-29,31952.0,Joseph Nonge,12170,brest,toulouse,MF,11,0.0,0.0287,1506.3,1486.3,1484.2
 2026-27,FRA1,2026-09-05,31963.0,Joseph Nonge,12170,brest,le havre,MF,13,0.0,0.039,1443.2,1484.2,1481.2
-2026-27,FRA1,2026-09-13,31975.0,Joseph Nonge,12170,brest,paris saint germain,MF,20,0.0161,0.0298,1744.2,1481.2,1480.2
+2026-27,FRA1,2026-09-13,31975.0,Joseph Nonge,12170,brest,paris saint germain,MF,20,0.0161,0.0298,1744.7,1481.2,1480.2
 2024-25,ESP1,2024-09-15,27028.0,Hector Fort,12171,barcelona,girona,DF,25,0.0474,0.0181,1653.9,1500.0,1503.7
 2024-25,,2024-09-28,,Hector Fort,12171,barcelona,,DF,0,,,,1503.7,1503.6
 2024-25,ESP1,2024-10-06,27064.0,Hector Fort,12171,barcelona,alaves,DF,72,0.0,0.0722,1516.3,1503.6,1494.5
@@ -119080,6 +119095,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,ESP1,2026-08-22,30778.0,Hugo Rincón,12189,athletic club,sevilla,DF,13,0.0,0.0127,1522.0,1497.1,1495.5
 2026-27,ESP1,2026-08-27,30789.0,Hugo Rincón,12189,athletic club,barcelona,DF,90,0.0,0.0485,1778.1,1495.5,1489.4
 2026-27,,2026-09-12,,Hugo Rincón,12189,athletic club,,DF,0,,,,1489.4,1489.8
+2026-27,,2026-09-16,,Hugo Rincón,12189,athletic club,,DF,0,,,,1489.8,1490.1
 2024-25,ESP1,2024-08-25,26998.0,Arda Güler,12190,real madrid,real valladolid,MF,73,0.5117,0.2105,1476.2,1500.0,1522.8
 2024-25,ESP1,2024-08-29,27011.0,Arda Güler,12190,real madrid,las palmas,MF,26,0.6481,0.0769,1488.3,1522.8,1562.8
 2024-25,ESP1,2024-09-14,27031.0,Arda Güler,12190,real madrid,real sociedad,MF,80,0.1173,0.1935,1615.3,1562.8,1557.0
@@ -119650,7 +119666,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-09-05,,Willy Kambwala,12275,villarreal,,DF,0,,,,1490.6,1490.9
 2026-27,,2026-09-14,,Willy Kambwala,12275,villarreal,,DF,0,,,,1490.9,1491.2
 2026-27,GER1,2026-09-12,32266.0,Noel Aséko Nkili,12276,eintracht frankfurt,mainz 05,MF,62,0.0,0.1346,1599.6,1500.0,1489.8
-2026-27,FRA1,2026-09-13,31974.0,Daouda Traoré,12283,le mans,lens,MF,23,0.0707,0.0497,1601.8,1500.0,1501.6
+2026-27,FRA1,2026-09-13,31974.0,Daouda Traoré,12283,le mans,lens,MF,23,0.0707,0.0496,1602.2,1500.0,1501.6
 2025-26,FRA1,2025-08-17,29545.0,Samir El Mourabet,12284,strasbourg,metz,MF,74,0.014,0.2487,1409.7,1500.0,1482.2
 2025-26,FRA1,2025-08-24,29552.0,Samir El Mourabet,12284,strasbourg,nantes,MF,68,0.0807,0.2087,1431.4,1482.2,1472.5
 2025-26,FRA1,2025-08-31,29563.0,Samir El Mourabet,12284,strasbourg,monaco,MF,14,0.0861,0.0282,1604.4,1472.5,1476.9
@@ -120090,7 +120106,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-09-13,,Stefan Lekovic,12310,monza,,DF,0,,,,1487.0,1487.4
 2026-27,GER1,2026-08-29,32758.0,Francis-Ikechukwu Onyeka,12313,elversberg,bayer leverkusen,MF,67,0.3553,0.123,1672.3,1500.0,1517.6
 2026-27,GER1,2026-09-05,32759.0,Francis-Ikechukwu Onyeka,12313,elversberg,borussia monchengladbach,MF,77,0.2867,0.1927,1555.5,1517.6,1524.7
-2026-27,GER1,2026-09-13,32760.0,Francis-Ikechukwu Onyeka,12313,elversberg,bayern munich,MF,10,0.0,0.0145,1855.9,1524.7,1523.6
+2026-27,GER1,2026-09-13,32760.0,Francis-Ikechukwu Onyeka,12313,elversberg,bayern munich,MF,10,0.0,0.0145,1855.4,1524.7,1523.6
 2024-25,FRA1,2024-08-25,28065.0,Nhoa Sangui,12317,reims,marseille,DF,90,0.0485,0.0747,1595.1,1500.0,1496.7
 2024-25,FRA1,2024-09-01,28072.0,Nhoa Sangui,12317,reims,rennes,DF,90,0.0,0.0834,1543.5,1496.7,1486.3
 2024-25,FRA1,2024-09-15,28081.0,Nhoa Sangui,12317,reims,nantes,DF,90,0.0628,0.1015,1447.8,1486.3,1481.4
@@ -122989,7 +123005,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2024-25,,2025-05-17,,Amidou Doumbouya,12538,nice,,MF,0,,,,1495.1,1495.3
 2026-27,FRA1,2026-08-22,31944.0,Rayan Bamba,12556,le mans,brest,MF,90,0.0166,0.2556,1482.8,1500.0,1481.9
 2026-27,FRA1,2026-09-05,31962.0,Rayan Bamba,12556,le mans,nice,MF,90,0.0,0.2697,1441.5,1481.9,1461.5
-2026-27,FRA1,2026-09-13,31974.0,Rayan Bamba,12556,le mans,lens,MF,90,0.0736,0.1779,1601.8,1461.5,1453.6
+2026-27,FRA1,2026-09-13,31974.0,Rayan Bamba,12556,le mans,lens,MF,90,0.0736,0.1777,1602.2,1461.5,1453.6
 2024-25,ENG1,2025-03-16,26888.0,Harry Amass,12559,manchester united,leicester city,MF,20,0.0,0.0653,1422.1,1500.0,1495.0
 2024-25,ENG1,2025-04-13,26918.0,Harry Amass,12559,manchester united,newcastle united,MF,57,0.0148,0.0946,1711.5,1495.0,1489.0
 2024-25,ENG1,2025-04-20,26929.0,Harry Amass,12559,manchester united,wolverhampton wanderers,MF,90,0.0344,0.2116,1553.8,1489.0,1475.6
@@ -123842,6 +123858,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,ESP1,2026-05-23,29532.0,Adama Boiro,12724,athletic club,real madrid,DF,90,0.0163,0.0425,1785.5,1446.1,1442.9
 2026-27,ESP1,2026-08-27,30789.0,Adama Boiro,12724,athletic club,barcelona,DF,16,0.0,0.0082,1778.1,1471.4,1470.4
 2026-27,,2026-09-12,,Adama Boiro,12724,athletic club,,DF,0,,,,1470.4,1471.3
+2026-27,,2026-09-16,,Adama Boiro,12724,athletic club,,DF,0,,,,1471.3,1472.2
 2024-25,ESP1,2024-08-15,26982.0,Christantus Uche,12726,getafe,athletic club,FW,90,0.0891,0.3578,1666.8,1500.0,1486.4
 2024-25,ESP1,2024-08-24,26996.0,Christantus Uche,12726,getafe,rayo vallecano,FW,90,0.0767,0.5015,1506.6,1486.4,1465.0
 2024-25,ESP1,2024-09-01,27020.0,Christantus Uche,12726,getafe,real sociedad,FW,90,0.156,0.3716,1615.3,1465.0,1454.1
@@ -130107,7 +130124,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30529.0,Mio Backhaus,12925,werder bremen,borussia dortmund,GK,90,0.0,0.0013,1722.0,1439.3,1438.1
 2026-27,GER1,2026-08-30,32253.0,Mio Backhaus,12925,freiburg,werder bremen,GK,90,0.0,0.0024,1499.2,1469.0,1466.8
 2026-27,GER1,2026-09-05,32259.0,Mio Backhaus,12925,freiburg,paderborn,GK,90,0.0,0.0023,1513.7,1466.8,1464.6
-2026-27,GER1,2026-09-12,32264.0,Mio Backhaus,12925,freiburg,borussia monchengladbach,GK,90,0.1793,0.0021,1544.9,1464.6,1504.6
+2026-27,GER1,2026-09-12,32264.0,Mio Backhaus,12925,freiburg,borussia monchengladbach,GK,90,0.1793,0.0021,1544.7,1464.6,1504.6
 2025-26,GER1,2026-01-14,30374.0,Bruno Ogbus,12926,freiburg,leipzig,DF,90,0.0,0.065,1655.3,1500.0,1491.9
 2025-26,GER1,2026-01-18,30377.0,Bruno Ogbus,12926,freiburg,augsburg,DF,90,0.0342,0.0966,1475.2,1491.9,1484.0
 2025-26,GER1,2026-01-25,30390.0,Bruno Ogbus,12926,freiburg,cologne,DF,25,0.0,0.0254,1491.8,1484.0,1480.9
@@ -130971,7 +130988,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30525.0,Igor Matanovic,12953,freiburg,leipzig,FW,89,1.0089,0.3606,1684.8,1526.2,1559.0
 2026-27,GER1,2026-08-30,32253.0,Igor Matanovic,12953,freiburg,werder bremen,FW,74,0.6671,0.4632,1499.2,1529.5,1539.8
 2026-27,GER1,2026-09-05,32259.0,Igor Matanovic,12953,freiburg,paderborn,FW,90,0.385,0.5579,1513.7,1539.8,1531.1
-2026-27,GER1,2026-09-12,32264.0,Igor Matanovic,12953,freiburg,borussia monchengladbach,FW,79,0.8109,0.4467,1544.9,1531.1,1549.5
+2026-27,GER1,2026-09-12,32264.0,Igor Matanovic,12953,freiburg,borussia monchengladbach,FW,79,0.8109,0.4469,1544.7,1531.1,1549.5
 2024-25,GER1,2024-08-24,27748.0,Can Uzun,12954,eintracht frankfurt,borussia dortmund,MF,12,0.0,0.0223,1667.9,1500.0,1498.3
 2024-25,GER1,2024-09-29,27785.0,Can Uzun,12954,eintracht frankfurt,holstein kiel,MF,19,0.0,0.056,1465.3,1498.3,1494.1
 2024-25,,2024-10-27,,Can Uzun,12954,eintracht frankfurt,,MF,0,,,,1494.1,1494.3
@@ -131789,7 +131806,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30525.0,Philipp Treu,12976,freiburg,leipzig,MF,90,0.3285,0.1059,1684.8,1319.4,1336.2
 2026-27,GER1,2026-08-30,32253.0,Philipp Treu,12976,freiburg,werder bremen,MF,20,0.0,0.0453,1499.2,1418.1,1414.7
 2026-27,GER1,2026-09-05,32259.0,Philipp Treu,12976,freiburg,paderborn,MF,90,0.1123,0.1956,1513.7,1414.7,1408.4
-2026-27,GER1,2026-09-12,32264.0,Philipp Treu,12976,freiburg,borussia monchengladbach,MF,83,0.0374,0.1655,1544.9,1408.4,1398.7
+2026-27,GER1,2026-09-12,32264.0,Philipp Treu,12976,freiburg,borussia monchengladbach,MF,83,0.0374,0.1656,1544.7,1408.4,1398.7
 2024-25,GER1,2024-08-25,27750.0,Lars Ritzka,12977,st pauli,heidenheim,MF,76,0.1036,0.186,1547.4,1500.0,1493.8
 2024-25,GER1,2024-08-30,27751.0,Lars Ritzka,12977,st pauli,union berlin,MF,84,0.0146,0.2273,1497.6,1493.8,1477.6
 2024-25,GER1,2024-09-15,27767.0,Lars Ritzka,12977,st pauli,augsburg,MF,48,0.0,0.1233,1504.1,1477.6,1468.3
@@ -135780,7 +135797,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30524.0,Nathaniel Brown,13122,eintracht frankfurt,stuttgart,MF,90,0.0216,0.1233,1693.1,1393.7,1386.0
 2026-27,GER1,2026-08-28,32247.0,Nathaniel Brown,13122,bayern munich,stuttgart,MF,62,0.1304,0.1053,1649.3,1443.0,1444.9
 2026-27,GER1,2026-09-05,32260.0,Nathaniel Brown,13122,bayern munich,schalke,MF,48,0.3677,0.131,1445.2,1444.9,1462.8
-2026-27,GER1,2026-09-13,32760.0,Nathaniel Brown,13122,bayern munich,elversberg,MF,70,0.0769,0.1656,1525.1,1462.8,1456.1
+2026-27,GER1,2026-09-13,32760.0,Nathaniel Brown,13122,bayern munich,elversberg,MF,70,0.0769,0.1656,1525.0,1462.8,1456.1
 2024-25,ESP1,2024-09-29,27052.0,Peio Canales,13123,athletic club,sevilla,MF,18,0.0311,0.0456,1532.9,1500.0,1498.9
 2024-25,ESP1,2025-02-23,27222.0,Peio Canales,13123,athletic club,real valladolid,MF,19,0.0494,0.062,1421.8,1498.9,1498.0
 2024-25,ESP1,2025-03-09,27243.0,Peio Canales,13123,athletic club,mallorca,MF,55,0.0,0.1385,1533.1,1498.0,1487.5
@@ -135793,6 +135810,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,ESP1,2026-08-22,30778.0,Peio Canales,13123,athletic club,sevilla,MF,90,0.2766,0.2331,1522.0,1499.0,1502.3
 2026-27,ESP1,2026-08-27,30789.0,Peio Canales,13123,athletic club,barcelona,MF,90,0.016,0.1302,1778.1,1502.3,1493.7
 2026-27,ESP1,2026-08-30,30797.0,Peio Canales,13123,athletic club,celta vigo,MF,23,0.0,0.0527,1569.9,1493.7,1489.7
+2026-27,,2026-09-16,,Peio Canales,13123,athletic club,,MF,0,,,,1489.7,1490.0
 2024-25,FRA1,2025-01-04,28186.0,Igor Miladinovic,13125,saint etienne,reims,MF,15,0.0,0.0412,1497.0,1500.0,1496.9
 2024-25,,2025-01-24,,Igor Miladinovic,13125,saint etienne,,MF,0,,,,1496.9,1497.0
 2024-25,,2025-02-01,,Igor Miladinovic,13125,saint etienne,,MF,0,,,,1497.0,1497.1
@@ -135854,7 +135872,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-16,30523.0,Cole Campbell,13131,tsg hoffenheim,borussia monchengladbach,MF,24,0.0675,0.0658,1500.0,1501.8,1501.9
 2026-27,GER1,2026-08-29,32758.0,Cole Campbell,13131,elversberg,bayer leverkusen,MF,67,0.4567,0.1233,1672.3,1501.0,1526.2
 2026-27,GER1,2026-09-05,32759.0,Cole Campbell,13131,elversberg,borussia monchengladbach,MF,66,0.1895,0.1685,1555.5,1526.2,1527.8
-2026-27,GER1,2026-09-13,32760.0,Cole Campbell,13131,elversberg,bayern munich,MF,51,0.0521,0.0742,1855.9,1527.8,1526.2
+2026-27,GER1,2026-09-13,32760.0,Cole Campbell,13131,elversberg,bayern munich,MF,51,0.0521,0.0742,1855.4,1527.8,1526.2
 2024-25,ENG1,2024-10-19,26674.0,Harry Clarke,13133,ipswich town,everton,DF,21,0.0,0.0213,1507.2,1500.0,1497.3
 2024-25,ENG1,2024-10-26,26685.0,Harry Clarke,13133,ipswich town,brentford,DF,77,0.0,0.0707,1548.3,1497.3,1488.5
 2024-25,,2024-11-24,,Harry Clarke,13133,ipswich town,,DF,0,,,,1488.5,1488.8
@@ -136693,7 +136711,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,ENG1,2026-09-12,31210.0,Thiago,13222,brentford,bournemouth,FW,90,0.1724,0.5173,1608.4,1601.7,1584.2
 2025-26,ENG1,2026-03-15,29073.0,Callum Olusesi,13224,tottenham hotspur,liverpool,MF,12,0.0,0.0188,1742.0,1500.0,1498.6
 2026-27,GER1,2026-08-29,32758.0,Noah Darvich,13226,elversberg,bayer leverkusen,MF,23,0.0,0.0422,1672.3,1500.0,1496.8
-2026-27,GER1,2026-09-13,32760.0,Noah Darvich,13226,elversberg,bayern munich,MF,80,0.4595,0.1084,1855.9,1496.8,1523.4
+2026-27,GER1,2026-09-13,32760.0,Noah Darvich,13226,elversberg,bayern munich,MF,80,0.4595,0.1084,1855.4,1496.8,1523.4
 2025-26,ESP1,2026-05-13,29508.0,Álvaro Cortés,13227,barcelona,alaves,DF,90,0.0,0.0869,1529.2,1500.0,1489.1
 2026-27,,2026-08-23,,Álvaro Cortés,13227,barcelona,,DF,0,,,,1494.6,1494.7
 2026-27,,2026-08-27,,Álvaro Cortés,13227,barcelona,,DF,0,,,,1494.7,1494.9
@@ -136943,7 +136961,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-22,31944.0,Raphaël Le Guen,13283,brest,le mans,DF,90,0.2713,0.0917,1500.0,1494.4,1516.9
 2026-27,FRA1,2026-08-29,31952.0,Raphaël Le Guen,13283,brest,toulouse,DF,90,0.671,0.0952,1506.3,1516.9,1556.9
 2026-27,FRA1,2026-09-05,31963.0,Raphaël Le Guen,13283,brest,le havre,DF,90,0.0301,0.1207,1443.2,1556.9,1545.5
-2026-27,FRA1,2026-09-13,31975.0,Raphaël Le Guen,13283,brest,paris saint germain,DF,90,0.0309,0.0588,1744.2,1545.5,1542.0
+2026-27,FRA1,2026-09-13,31975.0,Raphaël Le Guen,13283,brest,paris saint germain,DF,90,0.0309,0.0587,1744.7,1545.5,1542.0
 2024-25,GER1,2024-12-15,27860.0,Paul Hennrich,13284,tsg hoffenheim,borussia dortmund,MF,10,0.0,0.0186,1665.9,1500.0,1498.6
 2024-25,GER1,2025-02-02,27916.0,David Mokwa,13289,tsg hoffenheim,bayer leverkusen,FW,13,0.1293,0.0379,1803.4,1500.0,1504.6
 2024-25,,2025-02-23,,David Mokwa,13289,tsg hoffenheim,,FW,0,,,,1504.6,1504.5
@@ -136960,7 +136978,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2024-25,,2025-05-17,,David Mokwa,13289,tsg hoffenheim,,FW,0,,,,1503.3,1503.2
 2026-27,GER1,2026-08-29,32758.0,David Mokwa,13289,elversberg,bayer leverkusen,FW,77,0.6718,0.3029,1672.3,1500.8,1519.4
 2026-27,GER1,2026-09-05,32759.0,David Mokwa,13289,elversberg,borussia monchengladbach,FW,90,0.7477,0.4836,1555.5,1519.4,1532.8
-2026-27,GER1,2026-09-13,32760.0,David Mokwa,13289,elversberg,bayern munich,FW,78,0.0604,0.2455,1855.9,1532.8,1523.4
+2026-27,GER1,2026-09-13,32760.0,David Mokwa,13289,elversberg,bayern munich,FW,78,0.0604,0.2455,1855.4,1532.8,1523.4
 2025-26,GER1,2025-08-23,30228.0,Patrice Covic,13291,werder bremen,eintracht frankfurt,MF,23,0.0,0.0457,1638.4,1500.0,1496.5
 2025-26,GER1,2025-08-30,30236.0,Patrice Covic,13291,werder bremen,bayer leverkusen,MF,72,0.0143,0.1225,1702.1,1496.5,1488.3
 2025-26,GER1,2025-09-20,30252.0,Patrice Covic,13291,werder bremen,freiburg,MF,15,0.0,0.0358,1546.6,1488.3,1485.6
@@ -137993,7 +138011,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-22,31944.0,Egil Selvik,13372,brest,le mans,GK,90,0.0,0.0026,1500.0,1500.0,1497.6
 2026-27,FRA1,2026-08-29,31952.0,Egil Selvik,13372,brest,toulouse,GK,90,0.0,0.0025,1506.3,1497.6,1495.3
 2026-27,FRA1,2026-09-05,31963.0,Egil Selvik,13372,brest,le havre,GK,90,0.0,0.0029,1443.2,1495.3,1492.6
-2026-27,FRA1,2026-09-13,31975.0,Egil Selvik,13372,brest,paris saint germain,GK,90,0.0128,0.0014,1744.2,1492.6,1503.1
+2026-27,FRA1,2026-09-13,31975.0,Egil Selvik,13372,brest,paris saint germain,GK,90,0.0128,0.0014,1744.7,1492.6,1503.1
 2024-25,ESP1,2025-01-25,27187.0,Ángel Ortiz,13374,real betis,mallorca,DF,90,0.2426,0.0858,1534.8,1500.0,1519.7
 2024-25,ESP1,2025-02-02,27198.0,Ángel Ortiz,13374,real betis,athletic club,DF,90,0.0129,0.0614,1699.6,1519.7,1513.6
 2024-25,ESP1,2025-02-08,27207.0,Ángel Ortiz,13374,real betis,celta vigo,DF,90,0.0147,0.0784,1587.4,1513.6,1505.6
@@ -138688,6 +138706,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,ESP1,2026-08-22,30778.0,Maroan Sannadi,13417,athletic club,sevilla,FW,29,0.0,0.1602,1522.0,1498.0,1489.9
 2026-27,,2026-09-05,,Maroan Sannadi,13417,athletic club,,FW,0,,,,1489.9,1490.2
 2026-27,,2026-09-12,,Maroan Sannadi,13417,athletic club,,FW,0,,,,1490.2,1490.5
+2026-27,,2026-09-16,,Maroan Sannadi,13417,athletic club,,FW,0,,,,1490.5,1490.8
 2024-25,ESP1,2025-05-18,27347.0,Vladyslav Krapyvtsov,13420,girona,real sociedad,GK,90,0.0,0.0021,1586.4,1500.0,1498.0
 2024-25,ESP1,2025-05-25,27358.0,Vladyslav Krapyvtsov,13420,girona,atletico madrid,GK,90,0.0,0.0014,1758.9,1498.0,1496.7
 2025-26,ESP1,2025-08-15,29158.0,Vladyslav Krapyvtsov,13420,girona,rayo vallecano,GK,46,0.0,0.0012,1549.5,1498.4,1497.3
@@ -139917,7 +139936,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2025-26,GER1,2026-05-09,30520.0,Lennart Karl,13573,bayern munich,wolfsburg,MF,11,0.0272,0.0542,1470.2,1726.2,1724.2
 2025-26,GER1,2026-05-16,30522.0,Lennart Karl,13573,bayern munich,cologne,MF,64,0.3767,0.32,1461.4,1724.2,1728.5
 2026-27,GER1,2026-09-05,32260.0,Lennart Karl,13573,bayern munich,schalke,MF,59,0.023,0.2377,1445.2,1614.2,1598.0
-2026-27,GER1,2026-09-13,32760.0,Lennart Karl,13573,bayern munich,elversberg,MF,70,0.548,0.226,1525.1,1598.0,1622.4
+2026-27,GER1,2026-09-13,32760.0,Lennart Karl,13573,bayern munich,elversberg,MF,70,0.548,0.2261,1525.0,1598.0,1622.4
 2024-25,FRA1,2025-04-20,28312.0,Rudy Matondo,13577,auxerre,lille,MF,21,0.0,0.0408,1647.8,1500.0,1496.9
 2024-25,FRA1,2025-04-27,28322.0,Rudy Matondo,13577,auxerre,lens,MF,10,0.0,0.0243,1547.7,1496.9,1495.1
 2024-25,FRA1,2025-05-04,28329.0,Rudy Matondo,13577,auxerre,le havre,MF,13,0.0,0.0459,1383.6,1495.1,1491.6
@@ -140283,6 +140302,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-30,,Alejandro Rego,13627,athletic club,,MF,0,,,,1450.1,1451.6
 2026-27,,2026-09-05,,Alejandro Rego,13627,athletic club,,MF,0,,,,1451.6,1453.0
 2026-27,,2026-09-12,,Alejandro Rego,13627,athletic club,,MF,0,,,,1453.0,1454.4
+2026-27,,2026-09-16,,Alejandro Rego,13627,athletic club,,MF,0,,,,1454.4,1455.8
 2024-25,ESP1,2025-05-13,27338.0,Ibrahim Alani,13629,real valladolid,girona,MF,23,0.0,0.059,1526.7,1500.0,1495.5
 2024-25,ESP1,2025-05-18,27349.0,Ibrahim Alani,13629,real valladolid,alaves,MF,41,0.0,0.1085,1508.9,1495.5,1487.3
 2024-25,ESP1,2025-05-24,27357.0,Ibrahim Alani,13629,real valladolid,leganes,MF,90,0.0154,0.2396,1498.3,1487.3,1470.3
@@ -141782,6 +141802,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-29,,Unai Elgezabal,13765,levante,,DF,0,,,,1493.9,1494.1
 2026-27,,2026-09-06,,Unai Elgezabal,13765,levante,,DF,0,,,,1494.1,1494.3
 2026-27,,2026-09-13,,Unai Elgezabal,13765,levante,,DF,0,,,,1494.3,1494.4
+2026-27,,2026-09-16,,Unai Elgezabal,13765,levante,,DF,0,,,,1494.4,1494.6
 2025-26,ESP1,2025-08-16,29161.0,Jorge Cabello,13766,levante,alaves,DF,90,0.0,0.0905,1511.3,1500.0,1488.7
 2025-26,ESP1,2025-08-23,29171.0,Jorge Cabello,13766,levante,barcelona,DF,90,0.0,0.0453,1802.5,1488.7,1483.0
 2025-26,ESP1,2025-08-29,29179.0,Jorge Cabello,13766,levante,elche,DF,67,0.0,0.0693,1482.1,1483.0,1474.3
@@ -141821,6 +141842,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-29,,Jorge Cabello,13766,levante,,DF,0,,,,1492.0,1492.2
 2026-27,,2026-09-06,,Jorge Cabello,13766,levante,,DF,0,,,,1492.2,1492.5
 2026-27,,2026-09-13,,Jorge Cabello,13766,levante,,DF,0,,,,1492.5,1492.7
+2026-27,,2026-09-16,,Jorge Cabello,13766,levante,,DF,0,,,,1492.7,1492.9
 2025-26,ESP1,2025-08-16,29161.0,Roger Brugué,13767,levante,alaves,MF,90,0.048,0.2394,1511.3,1500.0,1485.5
 2025-26,ESP1,2025-08-23,29171.0,Roger Brugué,13767,levante,barcelona,MF,83,0.8064,0.1096,1802.5,1485.5,1525.5
 2025-26,ESP1,2025-08-29,29179.0,Roger Brugué,13767,levante,elche,MF,90,0.3607,0.2715,1482.1,1525.5,1532.3
@@ -141887,6 +141909,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-29,,Carlos Espí,13769,levante,,FW,0,,,,1571.9,1569.7
 2026-27,,2026-09-06,,Carlos Espí,13769,levante,,FW,0,,,,1569.7,1567.6
 2026-27,,2026-09-13,,Carlos Espí,13769,levante,,FW,0,,,,1567.6,1565.6
+2026-27,,2026-09-16,,Carlos Espí,13769,levante,,FW,0,,,,1565.6,1563.7
 2025-26,ESP1,2026-01-23,29363.0,Paco Cortés,13770,levante,elche,MF,44,0.0,0.1075,1548.2,1500.0,1491.9
 2025-26,ESP1,2026-01-31,29372.0,Paco Cortés,13770,levante,atletico madrid,MF,11,0.0452,0.0164,1754.3,1491.9,1494.0
 2025-26,ESP1,2026-02-15,29390.0,Paco Cortés,13770,levante,valencia,MF,12,0.0,0.0273,1572.8,1494.0,1492.0
@@ -141904,6 +141927,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,ESP1,2026-08-16,30773.0,Paco Cortés,13770,levante,espanyol,MF,51,0.0,0.1369,1511.4,1504.2,1493.8
 2026-27,,2026-09-06,,Paco Cortés,13770,levante,,MF,0,,,,1493.8,1494.0
 2026-27,,2026-09-13,,Paco Cortés,13770,levante,,MF,0,,,,1494.0,1494.2
+2026-27,,2026-09-16,,Paco Cortés,13770,levante,,MF,0,,,,1494.2,1494.3
 2025-26,ESP1,2026-02-15,29390.0,Nacho Pérez,13772,levante,valencia,DF,78,0.017,0.0681,1572.8,1500.0,1493.6
 2025-26,,2026-02-27,,Nacho Pérez,13772,levante,,DF,0,,,,1493.6,1493.8
 2025-26,,2026-03-07,,Nacho Pérez,13772,levante,,DF,0,,,,1493.8,1494.0
@@ -143012,6 +143036,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-30,,Urko Izeta,13821,athletic club,,FW,0,,,,1526.1,1525.3
 2026-27,,2026-09-05,,Urko Izeta,13821,athletic club,,FW,0,,,,1525.3,1524.6
 2026-27,,2026-09-12,,Urko Izeta,13821,athletic club,,FW,0,,,,1524.6,1523.8
+2026-27,,2026-09-16,,Urko Izeta,13821,athletic club,,FW,0,,,,1523.8,1523.1
 2025-26,ESP1,2025-11-30,29296.0,Miguel Sierra,13823,sevilla,real betis,MF,11,0.0198,0.0196,1686.4,1500.0,1500.0
 2025-26,ESP1,2026-01-19,29354.0,Miguel Sierra,13823,sevilla,elche,MF,26,0.0879,0.0635,1548.2,1500.0,1501.9
 2026-27,ESP1,2026-08-15,30771.0,Miguel Sierra,13823,sevilla,rayo vallecano,MF,75,0.0937,0.1662,1591.5,1500.9,1495.4
@@ -147123,6 +147148,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-29,,Kervin Arriaga,14050,levante,,MF,0,,,,1465.1,1466.2
 2026-27,,2026-09-06,,Kervin Arriaga,14050,levante,,MF,0,,,,1466.2,1467.2
 2026-27,,2026-09-13,,Kervin Arriaga,14050,levante,,MF,0,,,,1467.2,1468.2
+2026-27,,2026-09-16,,Kervin Arriaga,14050,levante,,MF,0,,,,1468.2,1469.1
 2025-26,FRA1,2025-09-14,29566.0,Pathé Mboup,14052,brest,paris fc,MF,42,0.0776,0.1182,1486.9,1500.0,1496.9
 2025-26,FRA1,2025-09-20,29575.0,Pathé Mboup,14052,brest,nice,MF,65,0.3484,0.1559,1553.3,1496.9,1511.5
 2025-26,FRA1,2025-09-28,29583.0,Pathé Mboup,14052,brest,angers,MF,25,0.0,0.0859,1411.6,1511.5,1505.0
@@ -147151,7 +147177,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-22,31944.0,Pathé Mboup,14052,brest,le mans,MF,74,0.1745,0.2074,1500.0,1511.3,1508.8
 2026-27,FRA1,2026-08-29,31952.0,Pathé Mboup,14052,brest,toulouse,MF,87,0.8472,0.2389,1506.3,1508.8,1548.8
 2026-27,FRA1,2026-09-05,31963.0,Pathé Mboup,14052,brest,le havre,MF,77,0.6834,0.2681,1443.2,1548.8,1580.3
-2026-27,FRA1,2026-09-13,31975.0,Pathé Mboup,14052,brest,paris saint germain,MF,90,0.3951,0.1685,1744.2,1580.3,1597.5
+2026-27,FRA1,2026-09-13,31975.0,Pathé Mboup,14052,brest,paris saint germain,MF,90,0.3951,0.1683,1744.7,1580.3,1597.5
 2025-26,ENG1,2025-12-20,28944.0,Divine Mukasa,14055,manchester city,west ham united,MF,13,0.1085,0.0376,1475.1,1500.0,1505.4
 2025-26,,2026-01-04,,Divine Mukasa,14055,manchester city,,MF,0,,,,1505.4,1505.2
 2025-26,,2026-01-07,,Divine Mukasa,14055,manchester city,,MF,0,,,,1505.2,1505.1
@@ -147961,6 +147987,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-29,,Kareem Tunde,14258,levante,,MF,0,,,,1471.5,1472.4
 2026-27,,2026-09-06,,Kareem Tunde,14258,levante,,MF,0,,,,1472.4,1473.2
 2026-27,,2026-09-13,,Kareem Tunde,14258,levante,,MF,0,,,,1473.2,1474.0
+2026-27,,2026-09-16,,Kareem Tunde,14258,levante,,MF,0,,,,1474.0,1474.8
 2025-26,ITA1,2026-02-16,30084.0,Yael Trepy,14264,cagliari,lecce,MF,10,0.0879,0.0356,1385.3,1500.0,1504.0
 2025-26,ITA1,2026-02-21,30096.0,Yael Trepy,14264,cagliari,lazio,MF,16,0.0,0.038,1564.0,1504.0,1501.1
 2025-26,ITA1,2026-03-15,30129.0,Yael Trepy,14264,cagliari,pisa,MF,21,0.3049,0.0734,1393.7,1501.1,1518.6
@@ -148609,6 +148636,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,,2026-08-29,,Tai Abed,14397,levante,,MF,0,,,,1513.0,1512.6
 2026-27,,2026-09-06,,Tai Abed,14397,levante,,MF,0,,,,1512.6,1512.2
 2026-27,,2026-09-13,,Tai Abed,14397,levante,,MF,0,,,,1512.2,1511.8
+2026-27,,2026-09-16,,Tai Abed,14397,levante,,MF,0,,,,1511.8,1511.5
 2026-27,GER1,2026-08-29,32252.0,Louis Lemke,14398,hamburger,borussia dortmund,MF,90,0.083,0.1657,1671.2,1500.0,1493.7
 2025-26,ITA1,2026-05-09,30195.0,Agustín Albarracín,14399,cagliari,udinese,MF,14,0.0,0.0385,1497.2,1500.0,1497.1
 2025-26,ESP1,2026-01-31,29373.0,Lucas Cepeda,14400,elche,barcelona,MF,12,0.281,0.0164,1854.3,1500.0,1520.1
@@ -149464,22 +149492,22 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-22,31944.0,Noa Boissé,14815,le mans,brest,DF,90,0.0,0.0967,1482.8,1500.0,1487.9
 2026-27,FRA1,2026-08-30,31956.0,Noa Boissé,14815,le mans,rennes,DF,90,0.0,0.0771,1569.0,1487.9,1478.2
 2026-27,FRA1,2026-09-05,31962.0,Noa Boissé,14815,le mans,nice,DF,90,0.0,0.1011,1441.5,1478.2,1465.6
-2026-27,FRA1,2026-09-13,31974.0,Noa Boissé,14815,le mans,lens,DF,48,0.0311,0.0362,1601.8,1465.6,1464.9
+2026-27,FRA1,2026-09-13,31974.0,Noa Boissé,14815,le mans,lens,DF,48,0.0311,0.0362,1602.2,1465.6,1464.9
 2026-27,FRA1,2026-08-22,31944.0,Théo Eyoum,14816,le mans,brest,DF,90,0.0,0.0967,1482.8,1500.0,1487.9
 2026-27,FRA1,2026-08-30,31956.0,Théo Eyoum,14816,le mans,rennes,DF,90,0.0,0.0771,1569.0,1487.9,1478.2
 2026-27,FRA1,2026-08-22,31944.0,Adil Bourabaa,14817,le mans,brest,MF,75,0.1596,0.213,1482.8,1500.0,1496.0
 2026-27,FRA1,2026-08-30,31956.0,Adil Bourabaa,14817,le mans,rennes,MF,83,0.0849,0.1915,1569.0,1496.0,1487.9
 2026-27,FRA1,2026-09-05,31962.0,Adil Bourabaa,14817,le mans,nice,MF,71,0.0227,0.2157,1441.5,1487.9,1473.3
-2026-27,FRA1,2026-09-13,31974.0,Adil Bourabaa,14817,le mans,lens,MF,90,1.3015,0.1828,1601.8,1473.3,1513.3
+2026-27,FRA1,2026-09-13,31974.0,Adil Bourabaa,14817,le mans,lens,MF,90,1.3015,0.1826,1602.2,1473.3,1513.3
 2026-27,FRA1,2026-08-22,31944.0,Dame Gueye,14818,le mans,brest,FW,75,0.4559,0.4555,1482.8,1500.0,1500.0
 2026-27,FRA1,2026-08-30,31956.0,Dame Gueye,14818,le mans,rennes,FW,70,0.5336,0.3486,1569.0,1500.0,1509.4
 2026-27,FRA1,2026-09-05,31962.0,Dame Gueye,14818,le mans,nice,FW,62,0.3633,0.4232,1441.5,1509.4,1506.3
-2026-27,FRA1,2026-09-13,31974.0,Dame Gueye,14818,le mans,lens,FW,67,0.346,0.3139,1601.8,1506.3,1508.0
+2026-27,FRA1,2026-09-13,31974.0,Dame Gueye,14818,le mans,lens,FW,67,0.346,0.3136,1602.2,1506.3,1508.0
 2026-27,FRA1,2026-08-22,31944.0,Erwan Colas,14819,le mans,brest,MF,24,0.0,0.0682,1482.8,1500.0,1494.8
 2026-27,,2026-09-13,,Erwan Colas,14819,le mans,,MF,0,,,,1494.8,1495.0
 2026-27,FRA1,2026-08-22,31944.0,Lucas Bretelle,14820,le mans,brest,MF,24,0.0,0.0682,1482.8,1500.0,1494.8
 2026-27,FRA1,2026-08-30,31956.0,Lucas Bretelle,14820,le mans,rennes,MF,62,0.01,0.1427,1569.0,1494.8,1484.8
-2026-27,FRA1,2026-09-13,31974.0,Lucas Bretelle,14820,le mans,lens,MF,67,0.0,0.1397,1601.8,1484.8,1474.2
+2026-27,FRA1,2026-09-13,31974.0,Lucas Bretelle,14820,le mans,lens,MF,67,0.0,0.1396,1602.2,1484.8,1474.2
 2026-27,FRA1,2026-08-22,31944.0,William Harhouz,14821,le mans,brest,MF,15,0.0,0.0426,1482.8,1500.0,1496.8
 2026-27,,2026-09-13,,William Harhouz,14821,le mans,,MF,0,,,,1496.8,1496.9
 2026-27,FRA1,2026-08-22,31944.0,Mamady Diambou,14823,brest,le mans,MF,24,0.1167,0.0655,1500.0,1500.0,1503.9
@@ -149650,30 +149678,30 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,ESP1,2026-09-14,30819.0,Nathan Saliba,14936,villarreal,real betis,MF,32,0.0,0.0628,1637.4,1494.3,1489.5
 2026-27,GER1,2026-08-28,32247.0,Ismael Saibari,14937,bayern munich,stuttgart,FW,28,0.7806,0.1159,1649.3,1500.0,1533.6
 2026-27,GER1,2026-09-05,32260.0,Ismael Saibari,14937,bayern munich,schalke,FW,59,0.0751,0.4221,1445.2,1533.6,1516.1
-2026-27,GER1,2026-09-13,32760.0,Ismael Saibari,14937,bayern munich,elversberg,FW,70,0.4274,0.4002,1525.1,1516.1,1517.4
+2026-27,GER1,2026-09-13,32760.0,Ismael Saibari,14937,bayern munich,elversberg,FW,70,0.4274,0.4003,1525.0,1516.1,1517.4
 2026-27,GER1,2026-08-29,32758.0,Nicolas Kristof,14939,elversberg,bayer leverkusen,GK,90,0.0,0.0017,1672.3,1500.0,1498.4
 2026-27,GER1,2026-09-05,32759.0,Nicolas Kristof,14939,elversberg,borussia monchengladbach,GK,90,0.0,0.0023,1555.5,1498.4,1496.3
-2026-27,GER1,2026-09-13,32760.0,Nicolas Kristof,14939,elversberg,bayern munich,GK,90,0.0,0.0013,1855.9,1496.3,1495.1
+2026-27,GER1,2026-09-13,32760.0,Nicolas Kristof,14939,elversberg,bayern munich,GK,90,0.0,0.0013,1855.4,1496.3,1495.1
 2026-27,GER1,2026-08-29,32758.0,Jan Gyamerah,14940,elversberg,bayer leverkusen,DF,77,0.0,0.0535,1672.3,1500.0,1493.3
 2026-27,GER1,2026-09-05,32759.0,Jan Gyamerah,14940,elversberg,borussia monchengladbach,DF,90,0.2563,0.0805,1555.5,1493.3,1515.3
-2026-27,GER1,2026-09-13,32760.0,Jan Gyamerah,14940,elversberg,bayern munich,DF,90,0.0,0.0481,1855.9,1515.3,1509.3
+2026-27,GER1,2026-09-13,32760.0,Jan Gyamerah,14940,elversberg,bayern munich,DF,90,0.0,0.0481,1855.4,1515.3,1509.3
 2026-27,GER1,2026-08-29,32758.0,Maximilian Rohr,14941,elversberg,bayer leverkusen,DF,84,0.0387,0.0583,1672.3,1500.0,1497.5
 2026-27,GER1,2026-09-05,32759.0,Maximilian Rohr,14941,elversberg,borussia monchengladbach,DF,90,0.0,0.0813,1555.5,1497.5,1487.3
-2026-27,GER1,2026-09-13,32760.0,Maximilian Rohr,14941,elversberg,bayern munich,DF,90,0.0,0.0451,1855.9,1487.3,1481.7
+2026-27,GER1,2026-09-13,32760.0,Maximilian Rohr,14941,elversberg,bayern munich,DF,90,0.0,0.0451,1855.4,1487.3,1481.7
 2026-27,GER1,2026-08-29,32758.0,Lukas Pinckert,14942,elversberg,bayer leverkusen,DF,90,0.0,0.0625,1672.3,1500.0,1492.2
 2026-27,GER1,2026-09-05,32759.0,Lukas Pinckert,14942,elversberg,borussia monchengladbach,DF,90,0.3699,0.0803,1555.5,1492.2,1528.5
-2026-27,GER1,2026-09-13,32760.0,Lukas Pinckert,14942,elversberg,bayern munich,DF,90,0.0,0.0496,1855.9,1528.5,1522.2
+2026-27,GER1,2026-09-13,32760.0,Lukas Pinckert,14942,elversberg,bayern munich,DF,90,0.0,0.0496,1855.4,1528.5,1522.2
 2026-27,GER1,2026-08-29,32758.0,Felix Keidel,14943,elversberg,bayer leverkusen,MF,90,0.0287,0.1653,1672.3,1500.0,1489.7
 2026-27,GER1,2026-09-05,32759.0,Felix Keidel,14943,elversberg,borussia monchengladbach,MF,90,0.2327,0.2112,1555.5,1489.7,1491.3
-2026-27,GER1,2026-09-13,32760.0,Felix Keidel,14943,elversberg,bayern munich,MF,78,0.0,0.1044,1855.9,1491.3,1483.4
+2026-27,GER1,2026-09-13,32760.0,Felix Keidel,14943,elversberg,bayern munich,MF,78,0.0,0.1044,1855.4,1491.3,1483.4
 2026-27,GER1,2026-08-29,32758.0,Luca Schnellbacher,14944,elversberg,bayer leverkusen,MF,13,0.0,0.0239,1672.3,1500.0,1498.2
 2026-27,GER1,2026-08-29,32758.0,Luca Sirch,14945,elversberg,bayer leverkusen,MF,13,0.0,0.0239,1672.3,1500.0,1498.2
 2026-27,GER1,2026-08-29,32758.0,Maurice Krattenmacher,14946,elversberg,bayer leverkusen,MF,23,0.0348,0.0422,1672.3,1500.0,1499.4
 2026-27,GER1,2026-09-05,32759.0,Maurice Krattenmacher,14946,elversberg,borussia monchengladbach,MF,24,2.1927,0.0576,1555.5,1499.4,1539.4
-2026-27,GER1,2026-09-13,32760.0,Maurice Krattenmacher,14946,elversberg,bayern munich,MF,39,0.047,0.0583,1855.9,1539.4,1538.6
-2026-27,GER1,2026-09-13,32760.0,Amara Condé,14947,elversberg,bayern munich,MF,12,0.0,0.0164,1855.9,1500.0,1498.8
+2026-27,GER1,2026-09-13,32760.0,Maurice Krattenmacher,14946,elversberg,bayern munich,MF,39,0.047,0.0583,1855.4,1539.4,1538.6
+2026-27,GER1,2026-09-13,32760.0,Amara Condé,14947,elversberg,bayern munich,MF,12,0.0,0.0164,1855.4,1500.0,1498.8
 2026-27,GER1,2026-09-05,32759.0,Noel Futkeu,14949,elversberg,borussia monchengladbach,MF,13,0.3539,0.0312,1555.5,1500.0,1524.5
-2026-27,GER1,2026-09-13,32760.0,Noel Futkeu,14949,elversberg,bayern munich,MF,12,0.4436,0.0173,1855.9,1524.5,1556.7
+2026-27,GER1,2026-09-13,32760.0,Noel Futkeu,14949,elversberg,bayern munich,MF,12,0.4436,0.0173,1855.4,1524.5,1556.7
 2026-27,GER1,2026-09-05,32759.0,Nicholas Mickelson,14950,elversberg,borussia monchengladbach,MF,13,0.0174,0.0312,1555.5,1500.0,1499.0
 2026-27,GER1,2026-08-29,32251.0,Fabio Gruber,14951,mainz 05,paderborn,DF,90,0.0311,0.09,1513.7,1500.0,1492.6
 2026-27,GER1,2026-09-06,32261.0,Fabio Gruber,14951,mainz 05,hamburger,DF,90,0.1138,0.0894,1509.4,1492.6,1495.7
@@ -149738,7 +149766,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,FRA1,2026-08-29,31953.0,Lucas Maronnier,14997,troyes,lorient,DF,88,0.4674,0.0941,1485.0,1500.0,1540.0
 2026-27,FRA1,2026-09-06,31964.0,Lucas Maronnier,14997,troyes,strasbourg,DF,89,0.1993,0.0876,1560.6,1540.0,1554.0
 2026-27,FRA1,2026-09-13,31973.0,Lucas Maronnier,14997,troyes,lille,DF,50,0.0149,0.0477,1588.7,1554.0,1549.9
-2026-27,GER1,2026-09-12,32264.0,Keisuke Goto,15002,freiburg,borussia monchengladbach,FW,11,0.1256,0.0579,1544.9,1500.0,1503.4
+2026-27,GER1,2026-09-12,32264.0,Keisuke Goto,15002,freiburg,borussia monchengladbach,FW,11,0.1256,0.0579,1544.7,1500.0,1503.4
 2026-27,GER1,2026-08-30,32253.0,Ludovit Reis,15004,werder bremen,freiburg,MF,86,0.0836,0.1868,1599.4,1500.0,1492.2
 2026-27,GER1,2026-09-05,32256.0,Ludovit Reis,15004,werder bremen,leipzig,MF,90,0.0,0.1664,1661.4,1492.2,1479.6
 2026-27,GER1,2026-09-12,32269.0,Ludovit Reis,15004,werder bremen,cologne,MF,72,0.0,0.1952,1482.5,1479.6,1464.8
@@ -149747,10 +149775,10 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,GER1,2026-09-05,32256.0,Paul Erevbenagie,15007,werder bremen,leipzig,MF,20,0.0739,0.0377,1661.4,1500.0,1502.7
 2026-27,FRA1,2026-08-30,31956.0,Harold Voyer,15008,le mans,rennes,DF,90,0.0,0.0793,1569.0,1500.0,1490.1
 2026-27,FRA1,2026-09-05,31962.0,Harold Voyer,15008,le mans,nice,DF,90,0.0179,0.1039,1441.5,1490.1,1479.3
-2026-27,FRA1,2026-09-13,31974.0,Harold Voyer,15008,le mans,lens,DF,90,0.0,0.0701,1601.8,1479.3,1470.5
+2026-27,FRA1,2026-09-13,31974.0,Harold Voyer,15008,le mans,lens,DF,90,0.0,0.07,1602.2,1479.3,1470.5
 2026-27,FRA1,2026-08-30,31956.0,Jean Vercruysse,15009,le mans,rennes,MF,28,0.0636,0.0652,1569.0,1500.0,1499.9
 2026-27,FRA1,2026-09-05,31962.0,Jean Vercruysse,15009,le mans,nice,MF,62,0.0571,0.1936,1441.5,1499.9,1489.5
-2026-27,FRA1,2026-09-13,31974.0,Jean Vercruysse,15009,le mans,lens,MF,67,0.1505,0.1412,1601.8,1489.5,1490.2
+2026-27,FRA1,2026-09-13,31974.0,Jean Vercruysse,15009,le mans,lens,MF,67,0.1505,0.1411,1602.2,1489.5,1490.2
 2026-27,GER1,2026-08-30,32254.0,Calvin Brackelmann,15010,augsburg,schalke,DF,90,0.1305,0.103,1455.5,1500.0,1503.5
 2026-27,GER1,2026-09-06,32262.0,Calvin Brackelmann,15010,augsburg,eintracht frankfurt,DF,85,0.0149,0.076,1565.9,1503.5,1495.8
 2026-27,GER1,2026-09-12,32267.0,Calvin Brackelmann,15010,augsburg,bayer leverkusen,DF,90,0.0,0.0622,1670.3,1495.8,1488.0
@@ -149794,7 +149822,7 @@ season,src_league,date,game_id,player,player_id,team_key,opp_key,pos_group,minut
 2026-27,GER1,2026-09-05,32256.0,Youri Regeer,15041,werder bremen,leipzig,MF,86,0.0382,0.1619,1661.4,1500.0,1490.6
 2026-27,GER1,2026-09-12,32269.0,Youri Regeer,15041,werder bremen,cologne,MF,85,0.067,0.2364,1482.5,1490.6,1477.8
 2026-27,FRA1,2026-09-05,31962.0,Samuel Yohou,15049,le mans,nice,DF,28,0.0,0.0331,1441.5,1500.0,1495.9
-2026-27,FRA1,2026-09-13,31974.0,Samuel Yohou,15049,le mans,lens,DF,79,0.0,0.0639,1601.8,1495.9,1487.8
+2026-27,FRA1,2026-09-13,31974.0,Samuel Yohou,15049,le mans,lens,DF,79,0.0,0.0639,1602.2,1495.9,1487.9
 2026-27,ITA1,2026-09-12,31591.0,Tomás Bobcek,15053,frosinone,genoa,MF,16,0.1157,0.0485,1454.6,1500.0,1505.1
 2026-27,GER1,2026-09-06,32261.0,Zakaria El Ouahdi,15056,hamburger,mainz 05,MF,90,0.0,0.2048,1579.0,1500.0,1484.5
 2026-27,GER1,2026-09-13,32270.0,Zakaria El Ouahdi,15056,hamburger,leipzig,MF,90,0.148,0.1751,1631.6,1484.5,1482.4
