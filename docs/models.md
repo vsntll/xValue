@@ -4,9 +4,9 @@
 
 | | value model | outcome (pure) | outcome (hybrid) |
 | --- | --- | --- | --- |
-| metric | R²(log) **0.89**, MAE **€4.1M**, within-2x **91%**, medAPE 22% | log-loss **0.981**, acc **0.529** | log-loss **0.972**, acc **0.534** |
+| metric | R²(log) **0.89**, MAE **€4.2M**, within-2x **91%**, medAPE 22% | log-loss **0.980**, acc **0.532** | log-loss **0.973**, acc **0.537** |
 | v1 was | 0.70 / €9.1M / 68% | 1.014 / 0.511 | — |
-| reference | — | Bet365 closing 0.971 / 0.539 | (uses market opening odds as a feature) |
+| reference | — | Bet365 closing 0.970 / 0.539 | (uses market opening odds as a feature) |
 
 Trajectory: value R²(log) 0.70 → 0.82 (prev-value) → 0.835 (contract/minutes) →
 0.87 (prev-season club value + xG-share) → 0.88 (name-resolution, coverage
@@ -14,8 +14,10 @@ Trajectory: value R²(log) 0.70 → 0.82 (prev-value) → 0.835 (contract/minute
 → 0.907 (defensive-volume + team-success features, Serie A/Ligue 1 value backfill)
 → **0.89** (Serie A + Ligue 1 folded in as full leagues 2026-09-06: +7.7k
 player-seasons, most without the team-success columns and cold-start-heavy, so
-the holdout got bigger and harder even as MAE fell to €4.1M). Outcome
-1.014 → 0.997 → 0.990 → 0.988 → **0.981** (pure). Hybrid **0.972** ≈ Bet365 0.971.
+the holdout got bigger and harder even as MAE fell to €4.2M). Outcome
+1.014 → 0.997 → 0.990 → 0.988 → 0.981 → **0.980** (pure - HGB's blend weight
+was 0 until this was tuned; now genuinely contributes). Hybrid **0.973**,
+closing ~97% of the base-rate → Bet365-closing gap (was ~90%).
 
 The value model splits cleanly by whether a prior-season value exists:
 **R²(log) 0.92** for the ~82% that have one, **0.72** for cold-start arrivals with
@@ -140,29 +142,37 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
   use case - it's used in `train_outcome_model.py`'s `FEATURES` in place of
   `value_log_ratio` precisely because it degrades to that column when unknown.
 - **Models**:
-  - logreg on the features
+  - logreg and HGB on the features, each with its own small hyperparameter
+    search (logreg's `C`, HGB's depth/learning-rate/l2/min-leaf) picked on
+    the validation season only - both were hardcoded guesses before
   - **Poisson-Skellam**: two Poisson GLMs (home goals, away goals) -> full
     scoreline distribution with a Dixon-Coles low-score correction (rho tuned on
     a validation season); recency-weighted (2-season half-life). **Best single
     model.**
-  - a logreg stack of {poisson, logreg} calibrated on 2023-24
-- **Split**: train <= 2022-23, val 2023-24, test 2024-26 (~3,480).
+  - a 3-way geometric blend of {poisson, logreg, hgb}, weights grid-searched
+    on the validation season (2 free weights on the simplex) - HGB used to be
+    fit and reported but never actually blended in; its errors are only
+    partly correlated with the other two, same reasoning train_value_model.py's
+    multi-learner stacks already use
+- **Split**: train <= 2022-23, val 2023-24, test 2024-26 (~3,470).
 - **Result** (log-loss / accuracy):
 
   | model | acc | log-loss |
   | --- | --- | --- |
-  | base rate | .430 | 1.075 |
-  | logreg | .527 | 0.977 |
-  | poisson-Skellam | .529 | 0.981 |
-  | poisson + xG | .532 | 0.980 |
-  | blend {poisson, logreg} | .532 | 0.974 |
-  | **hybrid (+ market opening odds)** | **.534** | **0.972** |
-  | Bet365 closing | .539 | 0.971 |
+  | base rate | .429 | 1.075 |
+  | logreg | .524 | 0.998 |
+  | hgb | .527 | 0.991 |
+  | poisson-Skellam | .529 | 0.982 |
+  | poisson + xG | .529 | 0.980 |
+  | blend {poisson, logreg, hgb} | .532 | 0.980 |
+  | **hybrid (+ market opening odds)** | **.537** | **0.973** |
+  | Bet365 closing | .539 | 0.970 |
 
   The pure model closes ~90% of the base-rate → bookmaker gap on log-loss; the
-  hybrid, which adds the market's *opening* line as a feature, lands level with
-  Bet365's *closing*-odds performance. The last sliver is information the market
-  has and we don't (confirmed lineups, injuries, sharp money).
+  hybrid, which adds the market's *opening* line as a feature, closes ~97% of
+  it - very close to (not quite level with) Bet365's *closing*-odds
+  performance. The last sliver is information the market has and we don't
+  (confirmed lineups, injuries, sharp money).
 - Output: `data/processed/outcome_model_predictions.csv` (pure),
   `outcome_model_predictions_hybrid.csv` (+ opening odds),
   `outcome_model_predictions_all.csv` (every split, incl. the live 2026-27 rows).
@@ -277,17 +287,21 @@ motivated this backtest. Pure model, edge > 2%, flat stake:
 
 | odds bucket | n bets | win rate | ROI |
 | --- | --- | --- | --- |
-| 1.0-1.5 (fav) | 89 | 84% | **+12.0%** |
-| 1.5-2.0 | 302 | 59% | +3.9% |
-| 2.0-3.0 | 650 | 42% | +3.4% |
-| 3.0-5.0 | 1,668 | 25% | -3.0% |
-| 5.0+ (longshot) | 681 | 14% | **-12.3%** |
+| 1.0-1.5 (fav) | 188 | 77% | **+3.0%** |
+| 1.5-2.0 | 419 | 58% | **+2.0%** |
+| 2.0-3.0 | 724 | 41% | -0.1% |
+| 3.0-5.0 | 1,603 | 26% | -2.9% |
+| 5.0+ (longshot) | 502 | 13% | **-18.6%** |
 
 This is the textbook favourite-longshot bias (bettors systematically
 overvalue longshots, the market prices that in, so longshots are
 structurally worse bets) - consistent across both the pure and hybrid model,
-and the opposite of "residual edge sits in the longshots." Take the
-favourites bucket's +12% with real caution though: n=89.
+and the opposite of "residual edge sits in the longshots." The exact
+bucket-by-bucket numbers move with each retrain (the favourite/mid-range
+buckets have swung between roughly +2% and +12% across reruns so far, always
+positive; the longshot bucket has stayed clearly, and increasingly,
+negative) - take any single bucket's number with real caution, n=188-1,603;
+the favourite-side-vs-longshot-side DIRECTION is the robust part.
 
 **Sliced by league**: no clean signal - Bundesliga and Premier League
 positive, La Liga/Ligue 1/Serie A negative, for the pure model; a different
