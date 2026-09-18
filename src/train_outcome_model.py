@@ -76,12 +76,11 @@ _A_FEATS = ["elo_diff", "xelo_diff", "elo_exp_h", "xelo_exp_h",
 MAXG = 8
 
 
-def _fit_grid(tr, te, ytr_h, ytr_a, rho=-0.11, alpha=1e-2, w=None):
-    """Fit home-goals and away-goals Poisson GLMs; return the full scoreline
-    distribution P(i home goals, j away goals) for every row of te, as an
-    (MAXG, MAXG, n) array, with a Dixon-Coles low-score tweak and normalised to
-    sum to 1 per match. Every market (1X2, O/U, BTTS, correct score) is just a
-    different sum over this one grid."""
+def fit_lambdas(tr, te, ytr_h, ytr_a, alpha=1e-2, w=None):
+    """Fit home-goals and away-goals Poisson GLMs on tr, return the predicted
+    (lh, la) - full-90-minute expected goals - for every row of te. Reused by
+    _fit_grid below, and by live_win_prob.py's backtest (which needs the raw
+    lambdas, not the pre-match grid, to re-convolve against a live state)."""
     def fit(cols, y):
         p = Pipeline([("imp", SimpleImputer(strategy="median")),
                       ("sc", StandardScaler()),
@@ -91,6 +90,16 @@ def _fit_grid(tr, te, ytr_h, ytr_a, rho=-0.11, alpha=1e-2, w=None):
     mh, ma = fit(_H_FEATS, ytr_h), fit(_A_FEATS, ytr_a)
     lh = np.clip(mh.predict(te[_H_FEATS]), 0.15, 6)
     la = np.clip(ma.predict(te[_A_FEATS]), 0.15, 6)
+    return lh, la
+
+
+def _fit_grid(tr, te, ytr_h, ytr_a, rho=-0.11, alpha=1e-2, w=None):
+    """Fit home-goals and away-goals Poisson GLMs; return the full scoreline
+    distribution P(i home goals, j away goals) for every row of te, as an
+    (MAXG, MAXG, n) array, with a Dixon-Coles low-score tweak and normalised to
+    sum to 1 per match. Every market (1X2, O/U, BTTS, correct score) is just a
+    different sum over this one grid."""
+    lh, la = fit_lambdas(tr, te, ytr_h, ytr_a, alpha=alpha, w=w)
     ph = poisson.pmf(np.arange(MAXG)[:, None], lh)   # (MAXG, n)
     pa = poisson.pmf(np.arange(MAXG)[:, None], la)
     grid = ph[:, None, :] * pa[None, :, :]           # (i, j, n)
