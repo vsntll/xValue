@@ -12,10 +12,15 @@ matches. FotMob's ToS restricts programmatic use; keep volume low.
 The same matchDetails payload also carries the starting-XI lineup
 (content.lineup), so it's saved alongside the player stats at zero extra
 request cost, under data/raw/live/fotmob_lineups/<id>.json - see
-build_match_lineups.py.
+build_match_lineups.py. Same for the goal/red-card event timeline
+(content.matchFacts.events), under data/raw/live/fotmob_events/<id>.json -
+see live_win_prob.py's backtest. The events cache is opportunistic for new
+matches only; backfilling it for already-pulled seasons needs the separate
+--events flag (a deliberate, bounded re-fetch, not automatic).
 
 Run:  py -3.11 src/pull_fotmob_players.py --current      # season in progress
       py -3.11 src/pull_fotmob_players.py --seasons 2025-26 2026-27
+      py -3.11 src/pull_fotmob_players.py --events 2025-26   # backfill event timelines
 Output: data/processed/fotmob_player_season.csv  (one row per player-team-season)
         data/processed/fotmob_match_meta.csv     (match id -> season/league/date)
 """
@@ -39,6 +44,7 @@ from live.schema import deaccent, normalize_team  # noqa: E402
 PROC = ROOT / "data" / "processed"
 CACHE = ROOT / "data" / "raw" / "live" / "fotmob_players"
 LINEUP_CACHE = ROOT / "data" / "raw" / "live" / "fotmob_lineups"
+EVENTS_CACHE = ROOT / "data" / "raw" / "live" / "fotmob_events"
 OUT = PROC / "fotmob_player_season.csv"
 MATCH_META = PROC / "fotmob_match_meta.csv"
 BASE = "https://www.fotmob.com/api/data"
@@ -75,6 +81,27 @@ def _stat(entry: dict):
     return s.get("value")
 
 
+def _extract_events(d: dict) -> list[dict]:
+    """Goal + red-card timeline from matchFacts.events - each goal's newScore
+    is the authoritative running score (own goals already resolved into it;
+    the top-level homeScore/awayScore fields on each event are stale and NOT
+    reliable). Used by live_win_prob.py's backtest to replay a finished match
+    minute-by-minute."""
+    mf = (d.get("content") or {}).get("matchFacts") or {}
+    ev = (mf.get("events") or {}).get("events") or []
+    out = []
+    for e in ev:
+        t = e.get("type")
+        if t == "Goal":
+            ns = e.get("newScore") or [None, None]
+            out.append({"time": e.get("time"), "type": "Goal",
+                        "isHome": bool(e.get("isHome")),
+                        "home_score": ns[0], "away_score": ns[1]})
+        elif t == "Card" and e.get("card") in ("Red", "YellowRed"):
+            out.append({"time": e.get("time"), "type": "Red", "isHome": bool(e.get("isHome"))})
+    return out
+
+
 def _parse_match(mid: str) -> list[dict] | None:
     """Per-player rows for one match, plus its starting-XI lineup - both come
     off the same matchDetails payload, so caching the lineup costs zero extra
@@ -83,8 +110,10 @@ def _parse_match(mid: str) -> list[dict] | None:
     backfill it (bounded to that known set, not open-ended re-scraping)."""
     CACHE.mkdir(parents=True, exist_ok=True)
     LINEUP_CACHE.mkdir(parents=True, exist_ok=True)
+    EVENTS_CACHE.mkdir(parents=True, exist_ok=True)
     cf = CACHE / f"{mid}.json"
     lf = LINEUP_CACHE / f"{mid}.json"
+    ef = EVENTS_CACHE / f"{mid}.json"
     if cf.exists() and lf.exists():
         return json.loads(cf.read_text())
     try:
@@ -94,6 +123,12 @@ def _parse_match(mid: str) -> list[dict] | None:
 
     lineup = (d.get("content") or {}).get("lineup") or {}
     lf.write_text(json.dumps({k: lineup.get(k) for k in ("homeTeam", "awayTeam")}))
+    # opportunistic, best-effort - written whenever we already fetched `d` for
+    # a NEW match, but its absence never forces its own re-fetch (unlike cf/lf
+    # above) so this doesn't re-trigger a full historical re-scrape; a
+    # deliberate, bounded backfill for existing matches is --events below.
+    if not ef.exists():
+        ef.write_text(json.dumps(_extract_events(d)))
     if cf.exists():
         return json.loads(cf.read_text())
 
@@ -168,11 +203,49 @@ def _aggregate(pm: pd.DataFrame) -> pd.DataFrame:
     return agg
 
 
+def backfill_events(seasons: list[str]) -> None:
+    """Deliberate, bounded backfill of the goal/red-card timeline for matches
+    that already have player stats + a lineup cached (from an earlier pull)
+    but never got matchFacts.events saved - a match needs a fresh request for
+    this regardless of what's already cached, since events weren't captured
+    before this feature existed. Scoped to specific seasons, not the whole
+    history, per the ToS "keep volume low" note above."""
+    if not MATCH_META.exists():
+        raise SystemExit(f"{MATCH_META} not found - pull player stats for these seasons first")
+    EVENTS_CACHE.mkdir(parents=True, exist_ok=True)
+    meta = pd.read_csv(MATCH_META, dtype={"match_id": str})
+    meta = meta[meta["season"].isin(seasons)]
+    print(f"backfilling match events for {len(meta)} matches ({seasons})")
+    n_new = n_fail = 0
+    for i, mid in enumerate(meta["match_id"]):
+        ef = EVENTS_CACHE / f"{mid}.json"
+        if ef.exists():
+            continue
+        try:
+            d = _get("matchDetails", matchId=mid)
+        except requests.HTTPError:
+            n_fail += 1
+            continue
+        ef.write_text(json.dumps(_extract_events(d)))
+        n_new += 1
+        if n_new % 200 == 0:
+            print(f"  {i + 1}/{len(meta)}  ({n_new} newly fetched, {n_fail} failed)")
+    print(f"done: {n_new} newly fetched, {n_fail} failed, "
+          f"{len(list(EVENTS_CACHE.glob('*.json')))} total cached")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--seasons", nargs="+", default=[current_season()])
     ap.add_argument("--current", action="store_true", help="just the season in progress")
+    ap.add_argument("--events", nargs="+", metavar="SEASON",
+                    help="backfill the goal/red-card event timeline for these seasons "
+                         "(needs fotmob_match_meta.csv already built) instead of the "
+                         "normal player-stats pull")
     args = ap.parse_args()
+    if args.events:
+        backfill_events(args.events)
+        return
     seasons = [current_season()] if args.current else args.seasons
 
     frames, metas, refreshed, meta_refreshed = [], [], set(), set()
