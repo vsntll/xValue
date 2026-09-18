@@ -390,7 +390,14 @@ def build_cup_finals(m: pd.DataFrame) -> list[dict]:
         last = grp.sort_values("Date").iloc[-1]
         gh, ga_ = last["FTHG"], last["FTAG"]
         decided_by_pens = gh == ga_
-        winner_key = None if decided_by_pens else (last["h"] if gh > ga_ else last["a"])
+        hp, ap = pd.to_numeric(last.get("HPen"), errors="coerce"), pd.to_numeric(last.get("APen"), errors="coerce")
+        has_pens_score = decided_by_pens and pd.notna(hp) and pd.notna(ap) and hp != ap
+        if has_pens_score:
+            winner_key = last["h"] if hp > ap else last["a"]
+        elif not decided_by_pens:
+            winner_key = last["h"] if gh > ga_ else last["a"]
+        else:
+            winner_key = None  # went to penalties but FBref didn't record the shootout score
         winner_name = None
         if winner_key == last["h"]:
             winner_name = last["HomeTeam"]
@@ -402,6 +409,7 @@ def build_cup_finals(m: pd.DataFrame) -> list[dict]:
             "home": last["HomeTeam"], "away": last["AwayTeam"],
             "home_key": last["h"], "away_key": last["a"],
             "score": f"{int(gh)}-{int(ga_)}",
+            "pens_score": f"{int(hp)}-{int(ap)}" if has_pens_score else None,
             "decided_by_penalties": bool(decided_by_pens),
             "winner_key": winner_key, "winner_name": winner_name,
         })
@@ -968,7 +976,7 @@ def main() -> None:
             "value": "Predicted market value from the trained value-regression model (current season preferred, else last season; R2(log) 0.89, MAE EUR4.1M, within-2x 91%) vs listed market value.",
             "match_odds": "Win/draw/loss odds from a Dixon-Coles attack/defence model fit on all competitions through the date above.",
             "player_props": "Anytime goal/assist odds: team's Dixon-Coles expected goals split across the matchday squad by each player's (non-penalty xG90 or xA90, shrunk toward last season's rate early in the current season) x season minutes-share, then Poisson P(>=1).",
-            "cup_finals": "Each competition's final is inferred as the last-dated match of that season/competition in the results data - not read from an official bracket. When it ended level (decided on penalties/extra time not recorded here), no winner is shown. The in-progress 2026-27 season is excluded.",
+            "cup_finals": "Each competition's final is inferred as the last-dated match of that season/competition in the results data - not read from an official bracket. When it ended level, the winner is taken from FBref's recorded penalty-shootout score where available; otherwise no winner is shown. The in-progress 2026-27 season is excluded.",
             "standings": "Full league tables computed directly from match results (3 pts/win). The 2026-27 table is the live in-progress standing.",
             "projected_table": "Current points + expected points (3xP(win)+P(draw) per game, not simulated results) from each team's remaining fixtures, using the same Dixon-Coles model as the match odds. A projection, not a guarantee - form, injuries and transfers between now and kickoff aren't in it.",
             "value_leaderboard": "The value model's biggest gaps between predicted and listed value, both directions, among players with at least 180 minutes this season.",

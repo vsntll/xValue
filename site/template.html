@@ -1041,12 +1041,14 @@
 
   function trophyRowHtml(f, teamKey){
     var isHome = f.home_key===teamKey, opp = isHome ? f.away : f.home;
-    var outcomeClass = 'runnerup', outcomeTxt = 'Runner-up';
-    if(f.decided_by_penalties){ outcomeClass='pens'; outcomeTxt='Penalties (n/a)'; }
-    else if(f.winner_key===teamKey){ outcomeClass='won'; outcomeTxt='Won'; }
+    var outcomeClass, outcomeTxt;
+    if(f.winner_key===null){ outcomeClass='pens'; outcomeTxt='Penalties (n/a)'; }
+    else if(f.winner_key===teamKey){ outcomeClass='won'; outcomeTxt = f.decided_by_penalties ? 'Won (pens)' : 'Won'; }
+    else { outcomeClass='runnerup'; outcomeTxt = f.decided_by_penalties ? 'Lost (pens)' : 'Runner-up'; }
+    var scoreTxt = f.score + (f.pens_score ? ' ('+f.pens_score+' pens)' : '');
     return (
       '<div class="trophy-row">' +
-        '<span class="comp">'+esc(f.comp)+' final vs '+esc(teamShort(opp))+' ('+esc(f.score)+')</span>' +
+        '<span class="comp">'+esc(f.comp)+' final vs '+esc(teamShort(opp))+' ('+esc(scoreTxt)+')</span>' +
         '<span class="season">'+esc(f.season)+'</span>' +
         '<span class="trophy-outcome '+outcomeClass+'">'+esc(outcomeTxt)+'</span>' +
       '</div>'

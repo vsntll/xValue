@@ -30,7 +30,7 @@ COLS = [
     "season", "competition_type", "comp", "Date", "HomeTeam", "AwayTeam",
     "FTHG", "FTAG", "FTR", "HTHG", "HTAG", "HTR",
     "HS", "AS", "HST", "AST", "HC", "AC", "HF", "AF", "HY", "AY", "HR", "AR",
-    "HPoss", "APoss", "HxG", "AxG", "source",
+    "HPoss", "APoss", "HxG", "AxG", "HPen", "APen", "source",
 ]
 DIV_LEAGUE = {"E0": "Premier League", "D1": "Bundesliga", "SP1": "La Liga",
               "I1": "Serie A", "F1": "Ligue 1"}
@@ -120,11 +120,15 @@ def cup_history() -> pd.DataFrame:
     tm["AwayTeam"] = tm["Opponent"].where(home_is_team, tm["team"])
     tm["FTHG"] = tm["GF"].where(home_is_team, tm["GA"])
     tm["FTAG"] = tm["GA"].where(home_is_team, tm["GF"])
+    # penalty-shootout score, when FBref recorded one (went_to_penalties) - lets
+    # a level-scoring final resolve to a real winner instead of "no winner shown"
+    tm["HPen"] = tm["GF_pens"].where(home_is_team, tm["GA_pens"])
+    tm["APen"] = tm["GA_pens"].where(home_is_team, tm["GF_pens"])
     # neutral venue: order the pair deterministically so both perspectives collapse
     neu = tm["Venue"].eq("Neutral")
     swap = neu & (tm["team"].map(normalize_team) > tm["Opponent"].map(normalize_team))
-    tm.loc[swap, ["HomeTeam", "AwayTeam", "FTHG", "FTAG"]] = tm.loc[
-        swap, ["AwayTeam", "HomeTeam", "FTAG", "FTHG"]].values
+    tm.loc[swap, ["HomeTeam", "AwayTeam", "FTHG", "FTAG", "HPen", "APen"]] = tm.loc[
+        swap, ["AwayTeam", "HomeTeam", "FTAG", "FTHG", "APen", "HPen"]].values
 
     tm["comp"] = tm["Comp"]
     tm["source"] = "fbref"
