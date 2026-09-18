@@ -217,17 +217,40 @@ def main() -> None:
     print(f"\n{'model':14}{'acc':>7}{'logloss':>10}")
     print(f"{'base-rate':14}{(yte == 'H').mean():7.3f}{_ll(yte, np.tile(base, (len(yte), 1))):10.3f}")
 
-    logreg = Pipeline([("imp", SimpleImputer(strategy="median")),
-                       ("sc", StandardScaler()),
-                       ("m", LogisticRegression(max_iter=4000, C=0.3))])
-    hgb = Pipeline([("imp", SimpleImputer(strategy="median")),
-                    ("m", HistGradientBoostingClassifier(
-                        max_depth=3, learning_rate=0.03, max_iter=600,
-                        l2_regularization=2.0, min_samples_leaf=40))])
+    # hyperparameter search for both classifiers, selected on the VALIDATION
+    # season only (2023-24) - same principle as the poisson rho/alpha tuning
+    # below, never touching test. Previously both were hardcoded guesses.
+    best_lr, best_lr_ll = None, 9.9
+    for C in (0.1, 0.2, 0.3, 0.5, 1.0):
+        m = Pipeline([("imp", SimpleImputer(strategy="median")),
+                      ("sc", StandardScaler()), ("m", LogisticRegression(max_iter=4000, C=C))])
+        m.fit(Xtr, ytr)
+        ll = _ll(yva, _order(m, m.predict_proba(Xva)))
+        if ll < best_lr_ll:
+            best_lr, best_lr_ll = m, ll
+    logreg = best_lr
+    print(f"logreg tuned: C={logreg.named_steps['m'].C}  (val logloss {best_lr_ll:.3f})")
+
+    best_hgb, best_hgb_ll, best_hgb_params = None, 9.9, None
+    for max_depth in (2, 3):
+        for lr in (0.02, 0.03, 0.05):
+            for l2 in (1.0, 2.0, 4.0):
+                for leaf in (20, 40, 60):
+                    m = Pipeline([("imp", SimpleImputer(strategy="median")),
+                                 ("m", HistGradientBoostingClassifier(
+                                     max_depth=max_depth, learning_rate=lr, max_iter=600,
+                                     l2_regularization=l2, min_samples_leaf=leaf, random_state=0))])
+                    m.fit(Xtr, ytr)
+                    ll = _ll(yva, _order(m, m.predict_proba(Xva)))
+                    if ll < best_hgb_ll:
+                        best_hgb, best_hgb_ll = m, ll
+                        best_hgb_params = (max_depth, lr, l2, leaf)
+    hgb = best_hgb
+    print(f"hgb tuned: max_depth={best_hgb_params[0]} lr={best_hgb_params[1]} "
+          f"l2={best_hgb_params[2]} min_leaf={best_hgb_params[3]}  (val logloss {best_hgb_ll:.3f})")
 
     preds, preds_va = {}, {}
     for name, clf in {"logreg": logreg, "hgb": hgb}.items():
-        clf.fit(Xtr, ytr)
         preds[name] = _order(clf, clf.predict_proba(Xte))
         preds_va[name] = _order(clf, clf.predict_proba(Xva))
         print(f"{name:14}{accuracy_score(yte, LABELS_pred(preds[name])):7.3f}{_ll(yte, preds[name]):10.3f}")
@@ -301,17 +324,30 @@ def main() -> None:
     print("(no Bet365 BTTS line in this data - football-data.co.uk doesn't carry one - "
           "BTTS is reported unbenchmarked)")
 
-    # geometric blend of poisson + logreg, weight tuned on val (keeps if it helps)
+    # geometric blend of poisson + logreg + hgb, weights tuned on val - hgb
+    # was fit and reported above but never actually blended in before, even
+    # though its errors are only partly correlated with the other two (the
+    # whole reason train_value_model.py's stacks use multiple base learners).
+    # 2 free weights (the third is 1 - the other two) -> a grid search over
+    # the simplex (0.05 steps) is simple and robust here, no need for a
+    # gradient optimizer that could catch a bad local optimum on this surface.
     def _gblend(ps, w):
         z = np.exp(sum(wi * np.log(np.clip(p, 1e-6, 1)) for wi, p in zip(w, ps)))
         return z / z.sum(1, keepdims=True)
     from scipy.optimize import minimize_scalar
-    a = minimize_scalar(lambda a: _ll(yva, _gblend(
-        [preds_va["poisson"], preds_va["logreg"]], [a, 1 - a])),
-        bounds=(0.3, 1.0), method="bounded").x
-    pf_va = _gblend([preds_va["poisson"], preds_va["logreg"]], [a, 1 - a])
-    pf = _gblend([preds["poisson"], preds["logreg"]], [a, 1 - a])
-    print(f"{'blend(a=%.2f)' % a:14}{accuracy_score(yte, LABELS_pred(pf)):7.3f}{_ll(yte, pf):10.3f}")
+    grid = np.arange(0, 1.001, 0.05)
+    best_w, best_bll = (1.0, 0.0, 0.0), 9.9
+    for w1 in grid:
+        for w2 in grid[grid <= 1.0 - w1 + 1e-9]:
+            w3 = 1.0 - w1 - w2
+            pv = _gblend([preds_va["poisson"], preds_va["logreg"], preds_va["hgb"]], [w1, w2, w3])
+            ll = _ll(yva, pv)
+            if ll < best_bll:
+                best_w, best_bll = (w1, w2, w3), ll
+    pf_va = _gblend([preds_va["poisson"], preds_va["logreg"], preds_va["hgb"]], best_w)
+    pf = _gblend([preds["poisson"], preds["logreg"], preds["hgb"]], best_w)
+    print(f"{'blend(poi=%.2f,lr=%.2f,hgb=%.2f)' % best_w:28}"
+          f"{accuracy_score(yte, LABELS_pred(pf)):7.3f}{_ll(yte, pf):10.3f}  (val logloss {best_bll:.3f})")
 
     if args.hybrid and {"mkt_pA", "mkt_pD", "mkt_pH"}.issubset(df.columns):
         mk_va = np.where(np.isnan(va[["mkt_pA", "mkt_pD", "mkt_pH"]].to_numpy()),
@@ -360,11 +396,13 @@ def main() -> None:
     print(f"wrote {PROC / 'outcome_model_predictions_all.csv'}  ({len(all_out)} rows, "
           f"{(split == 'live').sum()} live/2026-27)")
 
-    # pure output = the best single model (poisson+xg); hybrid = the market blend
-    # for 1X2. O/U, BTTS and correct score aren't touched by --hybrid - there's
+    # pure output = the {poisson, logreg, hgb} blend (now genuinely better
+    # than poisson+xg alone on its own - see the printed table above);
+    # hybrid = that same blend further blended with the market's opening
+    # odds. O/U, BTTS and correct score aren't touched by --hybrid - there's
     # no market opening line for them to blend against, only the Bet365 O/U
     # closing line to benchmark against below.
-    final = pf if args.hybrid else preds["poisson"]
+    final = pf
     out = te[["season", "comp", "Date", "HomeTeam", "AwayTeam", "FTR"]].copy()
     out[["p_away", "p_draw", "p_home"]] = np.round(final, 4)
     out["p_over25"] = np.round(ou[:, 0], 4)
