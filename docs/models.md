@@ -256,6 +256,49 @@ scoped as a standalone, backtested function first, per the caveat that
 confirmed lineups (and by extension live match state) aren't available at
 the model's normal day(s)-ahead prediction time anyway.
 
+## Betting-strategy backtester  (`src/backtest_betting_strategy.py`)
+
+Pure downstream analysis of data that already exists: the test-set (2024-26,
+genuinely out-of-sample) 1X2 probabilities against the market's OPENING
+consensus (`AvgH/D/A` - the odds actually bettable at prediction time; the
+closing line would be leakage), devigged the same way `_book()` already does
+for the closing line. `edge = model_p - devigged_market_p`; flat-stake (bet a
+unit past an edge threshold) and fractional-Kelly (quarter-Kelly, capped at
+5%/bet - raw Kelly on a noisy edge estimate is a bankroll-ruin machine)
+staking, both reported as ROI per unit staked.
+
+**Result, pooled**: flat and Kelly are both roughly break-even-to-negative
+across every edge threshold, for both the pure and hybrid model - no free
+lunch against an efficient market, as expected.
+
+**Sliced by odds bucket, the story flips**: edge concentrates in
+**favourites**, not longshots - the opposite of the hypothesis that
+motivated this backtest. Pure model, edge > 2%, flat stake:
+
+| odds bucket | n bets | win rate | ROI |
+| --- | --- | --- | --- |
+| 1.0-1.5 (fav) | 89 | 84% | **+12.0%** |
+| 1.5-2.0 | 302 | 59% | +3.9% |
+| 2.0-3.0 | 650 | 42% | +3.4% |
+| 3.0-5.0 | 1,668 | 25% | -3.0% |
+| 5.0+ (longshot) | 681 | 14% | **-12.3%** |
+
+This is the textbook favourite-longshot bias (bettors systematically
+overvalue longshots, the market prices that in, so longshots are
+structurally worse bets) - consistent across both the pure and hybrid model,
+and the opposite of "residual edge sits in the longshots." Take the
+favourites bucket's +12% with real caution though: n=89.
+
+**Sliced by league**: no clean signal - Bundesliga and Premier League
+positive, La Liga/Ligue 1/Serie A negative, for the pure model; a different
+mix for the hybrid model. Likely noise at ~500-900 bets/league rather than a
+structural effect. Also: **the "low-liquidity leagues" hypothesis isn't
+really testable with this data** - all 5 tracked leagues are big-5,
+high-liquidity top-flight competitions; there's no genuinely thin market
+(Eredivisie, Championship, ...) in the dataset to compare against.
+
+Output: `data/processed/betting_backtest.csv` (bet-level detail, pure model).
+
 ## Obvious next improvements
 
 - **Value model → 0.95**: the has-prev segment is already at 0.90 (Transfermarkt's
@@ -283,3 +326,7 @@ the model's normal day(s)-ahead prediction time anyway.
   top-5 league at 35+, who are mostly backups by then) - a true delta method
   (pairing each player's own year-over-year change, not levels) would net
   that out; not attempted here.
+- Betting backtester: the favourite-side edge (+12% ROI on 1.0-1.5 odds, n=89)
+  is worth re-checking as more test-set seasons accumulate before trusting it
+  - and testing the actual "low-liquidity leagues" hypothesis needs a market
+  outside the big-5 (Eredivisie, Championship, ...) this dataset doesn't have.
