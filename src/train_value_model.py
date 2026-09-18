@@ -42,6 +42,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data" / "processed" / "fbref_player_season_stats.csv"
 PRED = ROOT / "data" / "processed" / "value_model_predictions.csv"
+AGING_CURVE = ROOT / "data" / "processed" / "aging_curve.csv"
 MODEL = ROOT / "models" / "value_model.pkl"
 
 TRAIN_SEASONS = ["2020-21", "2021-22", "2022-23", "2023-24"]
@@ -414,12 +415,27 @@ def main() -> None:
     ra1, ra0 = np.polyfit(resid_oof, resid_tgt, 1)
     ca1, ca0 = np.polyfit(cold_oof, ytr_cold, 1)
 
-    # small age curve for carrying a value forward: flat through the mid-20s,
-    # about -6%/yr after 30, +4%/yr for U21 (fit loosely to how TM values age)
+    # age curve for carrying a value forward, fit per position by
+    # build_aging_curves.py from this model's own real-valued output history
+    # (0 at each position's own fitted peak age - see that script). Falls
+    # back to the old hand-tuned guess (flat 22-29, -6%/yr after 30, +4%/yr
+    # under 21, same for every position) on a fresh clone, before
+    # build_aging_curves.py has run once to produce aging_curve.csv.
+    if AGING_CURVE.exists():
+        _ac = pd.read_csv(AGING_CURVE)
+        _age_curve = {pos: dict(zip(g["age"], g["log_adj"])) for pos, g in _ac.groupby("pos")}
+    else:
+        _age_curve = None
+
     def _age_adj(frame):
         a = pd.to_numeric(frame["age"], errors="coerce").fillna(26).to_numpy()
-        return np.where(a >= 30, -0.06 * (a - 30),
-                        np.where(a <= 21, 0.04 * (21 - a), 0.0))
+        if _age_curve is None:
+            return np.where(a >= 30, -0.06 * (a - 30),
+                            np.where(a <= 21, 0.04 * (21 - a), 0.0))
+        a_int = np.clip(np.round(a), 16, 42).astype(int)
+        pos = frame["pos"].to_numpy()
+        fallback = _age_curve.get("MF", {})
+        return np.array([_age_curve.get(p, fallback).get(ai, 0.0) for p, ai in zip(pos, a_int)])
 
     def _predict_eur(frame):
         Xf_warm, Xf_cold = _prep(frame, feat_num), _prep(frame, feat_num_cold)
