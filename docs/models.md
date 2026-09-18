@@ -167,6 +167,95 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
   `outcome_model_predictions_hybrid.csv` (+ opening odds),
   `outcome_model_predictions_all.csv` (every split, incl. the live 2026-27 rows).
 
+## Value screen + bargain validation  (`src/export_site_data.py`)
+
+The homepage tile only ever showed the top-8 predicted-vs-listed value gaps
+each way. The **Value Screen** tab exposes the full qualifying pool (same
+guards as the tile: 180+ minutes, listed >= EUR1.5M, not an imputed listing)
+with client-side league/position/direction filters and sort, plus a
+**validation** table: the model's biggest "bargain" calls from
+`BARGAIN_VALIDATION_SEASON` (2025-26), checked against what actually happened
+to the listing (and, where scraped, a real transfer fee via
+`tm_transfer_fees.csv`) by 2026-27 - most of these calls are small-value
+players (near the EUR1.5M floor) whose listings mostly didn't move toward the
+model's prediction, which is a useful, honest finding in itself: the value
+gap is least trustworthy exactly where it's largest in relative terms.
+
+## Aging curves + value forecast  (`src/build_aging_curves.py`)
+
+Population curve: `log(value) ~ age + age^2`, fit separately per position
+group (GK/DF/MF/FW) with season fixed effects (to net out cross-season market
+inflation, then discarded - only the age SHAPE is kept), on real-valued
+player-seasons with 3+ real seasons of history. Peak ages land at 23-25
+across positions (steeper decline after than the old flat-22-29 guess), and
+this curve now drives `train_value_model.py`'s `_age_adj` (falls back to the
+old hand-tuned guess if `aging_curve.csv` doesn't exist yet - a fresh clone,
+before this script has run once).
+
+Player forecast (Marcel/delta-method style): a player's own deviation from
+the curve, recency-weighted (2-season half-life) and Bayesian-shrunk toward
+the position's population level (not toward 0 - shrinking toward a value of
+~EUR1 was the first, wrong version of this) by how many real-valued seasons
+he has. `SHRINK_K=0.5` - small, since transfer-market value is far stickier
+year to year than the batting-average-style rate stats Marcel projections
+were designed for. A hard multiplicative cap (`RATIO_CAP_1Y`/`_2Y`, e.g.
+[0.2x, 3x] at 1 year) guards against the shrinkage's own heavy-tail
+sensitivity: on a market this skewed, even a small shrinkage *weight* toward
+the position mean is a large swing for a cheap fringe player whose own level
+sits many log-units below it.
+
+Output: `value_forecast.csv` (`player_key, player, squad, pos, season, age,
+n_real_seasons, forecast_1y_eur, forecast_2y_eur`), folded into the player
+detail panel on the site (not a separate tab).
+
+## In-play win probability  (`src/live_win_prob.py`)
+
+Not a new model - `live_win_prob(lh, la, minute, cur_h, cur_a, home_reds=,
+away_reds=)` rescales the SAME pre-match Poisson lambdas
+(`train_outcome_model.fit_lambdas`, extracted from `_fit_grid` for reuse
+here) to the goals still expected in the time remaining (linear in minutes
+left), re-runs the same Dixon-Coles-corrected grid on that REMAINING-goals
+distribution, and reads the 1X2 probabilities off `(i+cur_h) vs (j+cur_a)`
+instead of `i vs j`. A red card multiplies the disadvantaged team's remaining
+lambda by a fixed `RED_CARD_FACTOR=0.73` (literature range ~0.70-0.75 for a
+team down to 10 men), applied per card.
+
+Data: the goal/red-card timeline comes from the same FotMob `matchDetails`
+payload `pull_fotmob_players.py` already polls (`content.matchFacts.events`)
+- cached opportunistically for new matches at zero extra request cost, same
+pattern as the lineup cache; backfilling it for already-pulled seasons needs
+`pull_fotmob_players.py --events <season>` (a deliberate, bounded re-fetch).
+
+**Backtest** (`src/backtest_live_win_prob.py`): replays every 2025-26 match
+with a cached event timeline minute-by-minute against the REAL final
+outcome (1,620 matches, 1,718/1,752 resolved to a match_model_table.csv row
+- a full-season backfill via `pull_fotmob_players.py --events 2025-26`),
+Brier score by minute checkpoint, against a static (never-updated, minute-0)
+baseline:
+
+| minute | live Brier | static Brier |
+| --- | --- | --- |
+| 0 | 0.585 | 0.585 |
+| 30 | 0.532 | 0.585 |
+| 60 | 0.425 | 0.585 |
+| 90 | 0.000 | 0.585 |
+
+Live re-conditioning beats the static baseline at every checkpoint past
+kickoff, monotonically improving as the match progresses (minute 90 is
+trivially perfect - no time left means the current score IS the final
+score). On the red-card subset (292 matches), checkpoints in the first
+~40 minutes after the card show the 0.73 multiplier clearly outperforming
+ignoring the card entirely (e.g. 0.46 vs 0.52 Brier at the 30-minute mark,
+0.40 vs 0.44 at 40); the gap narrows through 50-70 minutes and mildly
+reverses by 80, where little remaining time makes the multiplier matter
+less either way and the shrinking red-card subsample (12 matches at the
+10-minute checkpoint, growing to 292 by full time) gets noisier.
+
+**Not built**: a live poller / in-play scoring service - this is deliberately
+scoped as a standalone, backtested function first, per the caveat that
+confirmed lineups (and by extension live match state) aren't available at
+the model's normal day(s)-ahead prediction time anyway.
+
 ## Obvious next improvements
 
 - **Value model → 0.95**: the has-prev segment is already at 0.90 (Transfermarkt's
@@ -181,6 +270,16 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
 - Outcome model: `xi_value_ratio` (Step 8) only closes the gap for matches
   already played or scored near kickoff, not the model's normal day(s)-ahead
   predictions - confirmed lineups / injuries are still the sliver Bet365's
-  closing line has that this model doesn't. A cheap proxy worth backtesting
-  as an upper bound before building anything live: whether a squad's
-  highest-value player is NOT in the confirmed XI (`match_lineup_players.csv`).
+  closing line has that this model doesn't. Still worth backtesting before
+  building anything live: whether a squad's highest-value player is NOT in
+  the confirmed XI (`match_lineup_players.csv`) as a cheap injury/rotation
+  proxy - `live_win_prob.py`'s backtest above answers the adjacent "does
+  re-conditioning on game state help" question, not this one.
+- A live poller / in-play scoring service on top of `live_win_prob.py`,
+  backed by the FotMob `matchDetails` clock (`d["general"]`) - the backtest
+  validates the math; nothing polls a live match yet.
+- Aging-curve population shape likely has some survivorship bias baked in
+  (the cross-sectional fit only sees players still good enough to be in a
+  top-5 league at 35+, who are mostly backups by then) - a true delta method
+  (pairing each player's own year-over-year change, not levels) would net
+  that out; not attempted here.
