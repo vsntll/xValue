@@ -49,6 +49,7 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ENG1,Manchester City,Rico Lewis,1136731,D,2004-11-20,Right,170.0,England,2030-06-29,26000000.0
 2026-27,ENG1,Manchester City,Vitor Reis,1485300,D,2006-01-11,Right,186.0,Brazil,2029-06-29,31000000.0
 2026-27,ENG1,Manchester City,Josh Wilson-Esbrand,1017915,D,2002-12-25,Left,176.0,England,2027-06-29,2400000.0
+2026-27,ENG1,Manchester City,Kaden Braithwaite,1899484,D,2008-02-07,Right,194.0,England,,
 2026-27,ENG1,Manchester City,Gianluigi Donnarumma,824509,G,1999-02-24,Right,196.0,Italy,2030-06-29,46000000.0
 2026-27,ENG1,Manchester City,Gerónimo Rulli,128383,G,1992-05-19,Right,189.0,Argentina,2028-06-29,5800000.0
 2026-27,ENG1,Manchester City,Marcus Bettinelli,257993,G,1992-05-23,Right,194.0,England,2027-06-29,320000.0
@@ -128,8 +129,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ENG1,Brighton & Hove Albion,Jack Hinshelwood,1142315,M,2005-04-10,Right,182.0,England,2029-06-29,27000000.0
 2026-27,ENG1,Brighton & Hove Albion,Ibrahim Osman,1471095,M,2004-11-28,Right,177.0,Ghana,2029-06-29,7400000.0
 2026-27,ENG1,Brighton & Hove Albion,Femi Azeez,1007093,M,2001-06-04,Left,181.0,Nigeria,2030-06-29,14500000.0
-2026-27,ENG1,Brighton & Hove Albion,Shane Nti,1899618,M,2007-03-09,,182.0,England,,
 2026-27,ENG1,Brighton & Hove Albion,Younes Ibrahim,1899640,M,2008-02-15,Left,182.0,Egypt,,
+2026-27,ENG1,Brighton & Hove Albion,Shane Nti,1899618,M,2007-03-09,,182.0,England,,
 2026-27,ENG1,Brighton & Hove Albion,Ferdi Kadıoğlu,825844,D,1999-10-06,Right,174.0,Türkiye,2028-06-29,36000000.0
 2026-27,ENG1,Brighton & Hove Albion,Luka Vušković,1405212,D,2007-02-23,Right,193.0,Croatia,2031-06-29,64000000.0
 2026-27,ENG1,Brighton & Hove Albion,Jaouen Hadjam,1049534,D,2003-03-25,Left,184.0,Algeria,2031-06-29,6600000.0
@@ -379,7 +380,7 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ENG1,Sunderland,Jules Ahoka,2137673,M,2006-05-07,Right,190.0,DR Congo,2031-06-29,290000.0
 2026-27,ENG1,Sunderland,Dayann Methalie,1894003,M,2006-02-14,Left,186.0,France,2031-06-29,19700000.0
 2026-27,ENG1,Sunderland,Jocelin Ta Bi,2138729,M,2005-02-08,Left,175.0,Côte d'Ivoire,2030-06-29,2600000.0
-2026-27,ENG1,Sunderland,Abdoullah Ba,1000139,M,2003-07-30,Both,180.0,France,2027-06-29,1400000.0
+2026-27,ENG1,Sunderland,Abdoullah Ba,1000139,M,2003-07-30,Both,180.0,Mauritania,2027-06-29,1400000.0
 2026-27,ENG1,Sunderland,Alan Browne,247459,M,1995-04-14,Right,179.0,Ireland,2027-06-29,2100000.0
 2026-27,ENG1,Sunderland,Jack Whittaker,1805616,M,2006-10-13,Right,178.0,England,2028-06-29,
 2026-27,ENG1,Sunderland,Tom Proctor,2029595,M,2009-06-18,Right,,England,,
@@ -425,6 +426,7 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ENG1,Bournemouth,Đorđe Petrović,882604,G,1999-10-07,Right,194.0,Serbia,2030-06-29,29000000.0
 2026-27,ENG1,Bournemouth,Michele Di Gregorio,844609,G,1997-07-26,Right,187.0,Italy,2027-06-29,9600000.0
 2026-27,ENG1,Bournemouth,Fraser Forster,19314,G,1988-03-16,Right,201.0,England,2027-06-29,440000.0
+2026-27,ENG1,Bournemouth,Mack Allan,2571521,G,2006-02-18,Right,,England,,
 2026-27,ENG1,Crystal Palace,Ismaïla Sarr,845286,F,1998-02-24,Right,185.0,Senegal,2029-06-29,43000000.0
 2026-27,ENG1,Crystal Palace,Jean-Philippe Mateta,848276,F,1997-06-27,Right,192.0,France,2027-06-29,29000000.0
 2026-27,ENG1,Crystal Palace,Yéremy Pino,984624,F,2002-10-19,Right,172.0,Spain,2030-06-29,27000000.0
@@ -443,6 +445,7 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ENG1,Crystal Palace,Cheick Doucouré,906047,M,2000-01-07,Right,181.0,Mali,2029-06-29,10600000.0
 2026-27,ENG1,Crystal Palace,Will Hughes,193554,M,1995-04-16,Left,185.0,England,2027-06-29,4600000.0
 2026-27,ENG1,Crystal Palace,Zavier Gozo,1578999,M,2007-03-21,Right,180.0,USA,2031-06-29,6400000.0
+2026-27,ENG1,Crystal Palace,Sebastian Williams,1822527,M,2007-01-09,Right,185.0,England,,
 2026-27,ENG1,Crystal Palace,Chadi Riad,1064218,D,2003-03-16,Left,186.0,Morocco,2029-06-29,19400000.0
 2026-27,ENG1,Crystal Palace,Takehiro Tomiyasu,804434,D,1998-11-04,Right,188.0,Japan,,5400000.0
 2026-27,ENG1,Crystal Palace,Axel Disasi,827243,D,1998-03-10,Right,190.0,France,2027-05-30,15500000.0
@@ -453,6 +456,7 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ENG1,Crystal Palace,Dean Henderson,788134,G,1997-03-11,Right,188.0,England,2028-06-29,29000000.0
 2026-27,ENG1,Crystal Palace,Walter Benítez,249859,G,1993-01-18,Right,193.0,Argentina,2028-06-29,3700000.0
 2026-27,ENG1,Crystal Palace,Remi Matthews,581610,G,1994-02-09,Right,184.0,England,2027-06-29,220000.0
+2026-27,ENG1,Crystal Palace,Lucca Benetton,2154554,G,2010-08-06,,,England,2028-06-29,
 2026-27,ENG1,Tottenham Hotspur,Omar Marmoush,873554,F,1999-02-06,Right,183.0,Egypt,2027-06-29,55000000.0
 2026-27,ENG1,Tottenham Hotspur,Richarlison,840217,F,1997-05-09,Right,184.0,Brazil,2027-06-29,24000000.0
 2026-27,ENG1,Tottenham Hotspur,Mathys Tel,1048888,F,2005-04-26,Right,183.0,France,2031-06-29,23000000.0
@@ -588,8 +592,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,GER1,SC Freiburg,Christian Günter,142231,D,1993-02-27,Left,184.0,Germany,,1900000.0
 2026-27,GER1,SC Freiburg,Bruno Ogbus,1596573,D,2005-12-16,Right,188.0,Switzerland,,14000000.0
 2026-27,GER1,SC Freiburg,Philipp Treu,979820,D,2000-12-02,Right,172.0,Germany,,15900000.0
-2026-27,GER1,SC Freiburg,Lukas Kübler,142525,D,1992-08-29,Right,183.0,Germany,,1500000.0
 2026-27,GER1,SC Freiburg,Maximilian Rosenfelder,1131337,D,2003-02-09,Right,186.0,Germany,,6300000.0
+2026-27,GER1,SC Freiburg,Lukas Kübler,142525,D,1992-08-29,Right,183.0,Germany,,1500000.0
 2026-27,GER1,SC Freiburg,Anthony Jung,103442,D,1991-11-02,Left,186.0,Germany,2027-06-29,580000.0
 2026-27,GER1,SC Freiburg,Mio Backhaus,1083390,G,2004-04-15,Right,194.0,Germany,,14400000.0
 2026-27,GER1,SC Freiburg,Florian Müller,842858,G,1997-11-12,Left,190.0,Germany,,1200000.0
@@ -603,8 +607,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,GER1,Borussia Dortmund,Konstantinos Karetsas,1468744,M,2007-11-18,Left,171.0,Greece,2031-06-29,34000000.0
 2026-27,GER1,Borussia Dortmund,Felix Nmecha,907463,M,2000-10-09,Right,190.0,Germany,2030-06-29,53000000.0
 2026-27,GER1,Borussia Dortmund,Carney Chukwuemeka,994556,M,2003-10-19,Right,185.0,Austria,2030-06-29,18100000.0
-2026-27,GER1,Borussia Dortmund,Marcel Sabitzer,133908,M,1994-03-16,Right,177.0,Austria,2027-06-29,6200000.0
 2026-27,GER1,Borussia Dortmund,Giannis Konstantelias,1002007,M,2003-03-04,Both,178.0,Greece,2031-06-29,20000000.0
+2026-27,GER1,Borussia Dortmund,Marcel Sabitzer,133908,M,1994-03-16,Right,177.0,Austria,2027-06-29,6200000.0
 2026-27,GER1,Borussia Dortmund,Julian Ryerson,800951,M,1997-11-16,Right,183.0,Norway,2028-06-29,24000000.0
 2026-27,GER1,Borussia Dortmund,Samuele Inacio,1861666,M,2008-04-01,Right,175.0,Italy,2029-06-29,15900000.0
 2026-27,GER1,Borussia Dortmund,Joey Veerman,850816,M,1998-11-18,Right,185.0,Netherlands,2031-06-29,26000000.0
@@ -995,8 +999,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,GER1,1. FC Union Berlin,Woo-Yeong Jeong,927405,F,1999-09-19,Right,179.0,South Korea,,3700000.0
 2026-27,GER1,1. FC Union Berlin,Emmanuel Latte Lath,848074,F,1998-12-31,Right,180.0,Côte d'Ivoire,2027-06-29,10400000.0
 2026-27,GER1,1. FC Union Berlin,Andrej Ilić,953767,F,2000-04-02,Right,189.0,Serbia,,8300000.0
-2026-27,GER1,1. FC Union Berlin,Oliver Burke,608362,F,1997-04-06,Right,188.0,Scotland,2029-06-29,2900000.0
 2026-27,GER1,1. FC Union Berlin,Livan Burcu,1513469,F,2004-09-27,Right,178.0,Türkiye,,4200000.0
+2026-27,GER1,1. FC Union Berlin,Oliver Burke,608362,F,1997-04-06,Right,188.0,Scotland,2029-06-29,2900000.0
 2026-27,GER1,1. FC Union Berlin,Linus Guther,2311163,F,2010-04-07,Right,175.0,Germany,2028-06-29,1000000.0
 2026-27,GER1,1. FC Union Berlin,Mekhi Gray,1989789,F,2007-02-18,Right,194.0,Germany,,
 2026-27,GER1,1. FC Union Berlin,Julien Friedrich,1534058,F,2006-11-11,Left,176.0,Germany,,130000.0
@@ -1063,8 +1067,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,GER1,Hamburger SV,Miro Muheim,798303,M,1998-03-23,Left,182.0,Switzerland,2027-06-29,5300000.0
 2026-27,GER1,Hamburger SV,Martin Adeline,1158529,M,2003-12-01,Right,180.0,France,2030-06-29,9200000.0
 2026-27,GER1,Hamburger SV,Bakery Jatta,842526,M,1998-06-05,Right,184.0,Gambia,2029-06-29,1000000.0
-2026-27,GER1,Hamburger SV,Immanuel Pherai,989203,M,2001-04-24,Right,175.0,Suriname,2027-06-29,1600000.0
 2026-27,GER1,Hamburger SV,Nicolai Remberg,1064305,M,2000-06-18,Right,187.0,Germany,2028-06-29,8400000.0
+2026-27,GER1,Hamburger SV,Immanuel Pherai,989203,M,2001-04-24,Right,175.0,Suriname,2027-06-29,1600000.0
 2026-27,GER1,Hamburger SV,Kofi Jeremy Amoako,1467703,M,2005-05-05,Right,186.0,Germany,2030-06-29,3800000.0
 2026-27,GER1,Hamburger SV,Zakaria El Ouahdi,1134470,D,2001-12-30,Right,172.0,Morocco,2031-06-29,18500000.0
 2026-27,GER1,Hamburger SV,David Møller Wolfe,1031283,D,2002-04-22,Left,185.0,Norway,2027-06-29,11000000.0
@@ -1081,7 +1085,7 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,GER1,Hamburger SV,Fernando Dickes,1489167,G,2007-10-12,Left,192.0,Germany,2028-06-29,285000.0
 2026-27,GER1,Hamburger SV,Elias Lahti,1971557,G,2009-01-08,,,Finland,2028-06-29,
 2026-27,ESP1,FC Barcelona,Anthony Gordon,914902,F,2001-02-23,Right,183.0,England,2031-06-29,82000000.0
-2026-27,ESP1,FC Barcelona,Hamza Abdelkarim,1961596,F,2007-12-31,Right,182.0,Egypt,2029-06-29,1500000.0
+2026-27,ESP1,FC Barcelona,Hamza Abdelkarim,1961596,F,2007-12-31,Both,182.0,Egypt,2029-06-29,1500000.0
 2026-27,ESP1,FC Barcelona,Gabriel Jesus,794839,F,1997-04-02,Right,175.0,Brazil,2029-06-29,17600000.0
 2026-27,ESP1,FC Barcelona,Roony Bardghji,1162107,F,2005-11-14,Left,173.0,Sweden,2029-06-29,15500000.0
 2026-27,ESP1,FC Barcelona,Karim Adeyemi,940054,F,2002-01-17,Left,180.0,Germany,2031-06-29,41000000.0
@@ -1138,60 +1142,6 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ESP1,Real Madrid,Thibaut Courtois,70988,G,1992-05-10,Left,200.0,Belgium,2027-06-29,14500000.0
 2026-27,ESP1,Real Madrid,Andriy Lunin,857574,G,1999-02-10,Right,191.0,Ukraine,2030-06-29,11300000.0
 2026-27,ESP1,Real Madrid,Sergio Mestre,1403015,G,2005-02-12,Right,193.0,Spain,2028-06-29,190000.0
-2026-27,ESP1,Atlético Madrid,Julián Alvarez,944656,F,2000-01-30,Right,170.0,Argentina,2030-06-29,116000000.0
-2026-27,ESP1,Atlético Madrid,Ademola Lookman,824200,F,1997-10-19,Right,174.0,Nigeria,2030-06-29,44000000.0
-2026-27,ESP1,Atlético Madrid,Jonathan David,935564,F,2000-01-13,Both,180.0,Canada,2030-06-29,29000000.0
-2026-27,ESP1,Atlético Madrid,Alexander Sørloth,309078,F,1995-12-04,Left,195.0,Norway,2028-06-29,18600000.0
-2026-27,ESP1,Atlético Madrid,Kang-in Lee,917087,M,2001-02-18,Left,173.0,South Korea,2031-06-29,30000000.0
-2026-27,ESP1,Atlético Madrid,Giuliano Simeone,1099352,M,2002-12-17,Right,173.0,Argentina,2030-06-29,44000000.0
-2026-27,ESP1,Atlético Madrid,Alex Baena,910031,M,2001-07-18,Right,174.0,Spain,2030-06-29,43000000.0
-2026-27,ESP1,Atlético Madrid,Alejandro Grimaldo,177177,M,1995-09-19,Left,171.0,Spain,2030-06-29,19400000.0
-2026-27,ESP1,Atlético Madrid,Obed Vargas,1119345,M,2005-08-04,Right,175.0,Mexico,2030-06-29,9300000.0
-2026-27,ESP1,Atlético Madrid,Pablo Barrios,1142588,M,2003-06-14,Right,181.0,Spain,2030-06-29,60000000.0
-2026-27,ESP1,Atlético Madrid,Johnny Cardoso,990169,M,2001-09-19,Right,186.0,USA,2030-06-29,18700000.0
-2026-27,ESP1,Atlético Madrid,Morten Hjulmand,859917,M,1999-06-24,Right,185.0,Denmark,2031-06-29,48000000.0
-2026-27,ESP1,Atlético Madrid,Koke,84539,M,1992-01-07,Right,177.0,Spain,2027-06-29,4600000.0
-2026-27,ESP1,Atlético Madrid,Rodrigo Mendoza,1391752,M,2005-03-14,Right,182.0,Spain,2031-06-29,21000000.0
-2026-27,ESP1,Atlético Madrid,Arnau Ortiz,1143553,M,2001-10-28,Both,175.0,Spain,2028-06-29,1200000.0
-2026-27,ESP1,Atlético Madrid,Jorge Castillo,1402996,M,2006-05-22,Right,180.0,Spain,2028-06-29,155000.0
-2026-27,ESP1,Atlético Madrid,Cristian Romero,829932,D,1998-04-26,Right,185.0,Argentina,2031-06-29,46000000.0
-2026-27,ESP1,Atlético Madrid,Marcos Llorente,353138,D,1995-01-29,Right,184.0,Spain,2027-06-29,21000000.0
-2026-27,ESP1,Atlético Madrid,Robin Le Normand,787751,D,1996-11-10,Right,187.0,Spain,2029-06-29,19100000.0
-2026-27,ESP1,Atlético Madrid,Marc Pubill,1094106,D,2003-06-19,Right,190.0,Spain,2030-06-29,33000000.0
-2026-27,ESP1,Atlético Madrid,Dávid Hancko,807771,D,1997-12-12,Left,188.0,Slovakia,2030-06-29,36000000.0
-2026-27,ESP1,Atlético Madrid,Jorge Domínguez,2271379,D,2009-12-20,Right,192.0,Spain,2028-06-29,7600000.0
-2026-27,ESP1,Atlético Madrid,Dani Martinez,1414932,D,2004-05-04,Left,186.0,Spain,2027-06-29,550000.0
-2026-27,ESP1,Atlético Madrid,Juan Musso,263651,G,1994-05-05,Right,191.0,Argentina,2028-06-29,3200000.0
-2026-27,ESP1,Atlético Madrid,Jan Oblak,69768,G,1993-01-06,Right,189.0,Slovenia,2028-06-29,16000000.0
-2026-27,ESP1,Atlético Madrid,Salvi Esquivel,1179149,G,2005-09-29,Left,193.0,Spain,2028-06-29,970000.0
-2026-27,ESP1,Sevilla,Chidera Ejuke,875890,F,1998-01-01,Right,176.0,Nigeria,2027-06-29,3700000.0
-2026-27,ESP1,Sevilla,Lucas Stassin,1126521,F,2004-11-28,Right,184.0,Belgium,2027-06-29,15700000.0
-2026-27,ESP1,Sevilla,Robbie Ure,1142351,F,2004-02-25,Right,189.0,Scotland,2031-06-29,4800000.0
-2026-27,ESP1,Sevilla,Isaac Romero,1018190,F,2000-05-17,Left,184.0,Spain,2028-06-29,5200000.0
-2026-27,ESP1,Sevilla,Alfon González,1468090,F,1999-05-03,Right,172.0,Spain,2028-06-29,3300000.0
-2026-27,ESP1,Sevilla,Manuel Angel Castillo Rodrguez,2725914,F,2008-06-11,,177.0,Spain,,
-2026-27,ESP1,Sevilla,Youssouf Fofana,945062,M,1999-01-09,Right,185.0,France,2027-06-29,25000000.0
-2026-27,ESP1,Sevilla,Rubén Vargas,872919,M,1998-08-04,Right,179.0,Switzerland,2029-06-29,13900000.0
-2026-27,ESP1,Sevilla,Giorgi Kochorashvili,886402,M,1999-06-27,Right,176.0,Georgia,2030-06-29,3800000.0
-2026-27,ESP1,Sevilla,Lucien Agoumé,960006,M,2002-02-08,Right,185.0,France,2028-06-29,15500000.0
-2026-27,ESP1,Sevilla,Félix Correia,934498,M,2001-01-21,Right,178.0,Portugal,2027-06-29,9700000.0
-2026-27,ESP1,Sevilla,Peque Fernández,997033,M,2002-10-03,Right,168.0,Spain,2028-06-29,3300000.0
-2026-27,ESP1,Sevilla,Jon Guridi,788141,M,1995-02-27,Left,179.0,Spain,2028-06-29,1700000.0
-2026-27,ESP1,Sevilla,Miguel Sierra,2509247,M,2004-07-13,Left,181.0,Spain,2029-06-29,330000.0
-2026-27,ESP1,Sevilla,Manu Bueno,1142094,M,2004-07-26,Left,178.0,Spain,2027-06-29,1500000.0
-2026-27,ESP1,Sevilla,Nico Guillén,1892023,M,2008-01-29,Left,190.0,Spain,2029-06-29,1100000.0
-2026-27,ESP1,Sevilla,Gabriel Suazo,818986,D,1997-08-08,Left,178.0,Chile,2028-06-29,6600000.0
-2026-27,ESP1,Sevilla,Kike Salas,1097719,D,2002-04-21,Left,186.0,Spain,2029-06-29,15400000.0
-2026-27,ESP1,Sevilla,Marcão,840951,D,1996-06-04,Left,185.0,Brazil,2028-06-29,2600000.0
-2026-27,ESP1,Sevilla,Arouna Sangante,1035988,D,2002-04-11,Right,189.0,Senegal,2031-06-29,7700000.0
-2026-27,ESP1,Sevilla,José Ángel Carmona,1015240,D,2002-01-28,Right,183.0,Spain,2028-06-29,11100000.0
-2026-27,ESP1,Sevilla,Juan Iglesias,949707,D,1998-07-02,Right,185.0,Spain,2030-06-29,4800000.0
-2026-27,ESP1,Sevilla,Julio Díaz,1402990,D,2005-01-09,Left,174.0,Spain,2031-06-29,1400000.0
-2026-27,ESP1,Sevilla,Fábio Cardoso,252815,D,1994-04-18,Right,187.0,Portugal,2028-06-29,1400000.0
-2026-27,ESP1,Sevilla,Andrés Castrin,1428699,D,2003-05-25,Right,188.0,Spain,2027-06-29,6500000.0
-2026-27,ESP1,Sevilla,Iker Muñoz,1402720,D,2004-01-04,Right,186.0,Spain,2027-06-29,195000.0
-2026-27,ESP1,Sevilla,Fran González,1493226,G,2005-06-23,Right,199.0,Spain,2031-06-29,2700000.0
-2026-27,ESP1,Sevilla,Odysseas Vlachodimos,138149,G,1994-04-25,Right,191.0,Greece,2027-06-29,3200000.0
 2026-27,ESP1,Real Betis,Troy Parrott,966555,F,2002-02-03,Right,185.0,Ireland,2031-06-29,23000000.0
 2026-27,ESP1,Real Betis,Cucho Hernández,887055,F,1999-04-19,Right,175.0,Colombia,2030-06-29,16500000.0
 2026-27,ESP1,Real Betis,Antony,958380,M,2000-02-23,Left,172.0,Brazil,2030-06-29,37000000.0
@@ -1220,6 +1170,60 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ESP1,Real Betis,Álvaro Valles,964983,G,1997-07-24,Right,192.0,Spain,2030-06-29,6500000.0
 2026-27,ESP1,Real Betis,Diego Conde,951008,G,1998-10-27,Right,188.0,Spain,2027-06-29,3200000.0
 2026-27,ESP1,Real Betis,Manu González,1823954,G,2007-04-17,Right,191.0,Spain,2028-06-29,315000.0
+2026-27,ESP1,Atlético Madrid,Julián Alvarez,944656,F,2000-01-30,Right,170.0,Argentina,2030-06-29,116000000.0
+2026-27,ESP1,Atlético Madrid,Ademola Lookman,824200,F,1997-10-19,Right,174.0,Nigeria,2030-06-29,44000000.0
+2026-27,ESP1,Atlético Madrid,Jonathan David,935564,F,2000-01-13,Both,180.0,Canada,2030-06-29,29000000.0
+2026-27,ESP1,Atlético Madrid,Alexander Sørloth,309078,F,1995-12-04,Left,195.0,Norway,2028-06-29,18600000.0
+2026-27,ESP1,Atlético Madrid,Kang-in Lee,917087,M,2001-02-18,Left,173.0,South Korea,2031-06-29,30000000.0
+2026-27,ESP1,Atlético Madrid,Giuliano Simeone,1099352,M,2002-12-17,Right,173.0,Argentina,2030-06-29,44000000.0
+2026-27,ESP1,Atlético Madrid,Alex Baena,910031,M,2001-07-18,Right,174.0,Spain,2030-06-29,43000000.0
+2026-27,ESP1,Atlético Madrid,Alejandro Grimaldo,177177,M,1995-09-19,Left,171.0,Spain,2030-06-29,19400000.0
+2026-27,ESP1,Atlético Madrid,Obed Vargas,1119345,M,2005-08-04,Right,175.0,Mexico,2030-06-29,9300000.0
+2026-27,ESP1,Atlético Madrid,Pablo Barrios,1142588,M,2003-06-14,Right,181.0,Spain,2030-06-29,60000000.0
+2026-27,ESP1,Atlético Madrid,Johnny Cardoso,990169,M,2001-09-19,Right,186.0,USA,2030-06-29,18700000.0
+2026-27,ESP1,Atlético Madrid,Morten Hjulmand,859917,M,1999-06-24,Right,185.0,Denmark,2031-06-29,48000000.0
+2026-27,ESP1,Atlético Madrid,Koke,84539,M,1992-01-07,Right,177.0,Spain,2027-06-29,4600000.0
+2026-27,ESP1,Atlético Madrid,Rodrigo Mendoza,1391752,M,2005-03-14,Right,182.0,Spain,2031-06-29,21000000.0
+2026-27,ESP1,Atlético Madrid,Arnau Ortiz,1143553,M,2001-10-28,Both,175.0,Spain,2028-06-29,1200000.0
+2026-27,ESP1,Atlético Madrid,Jorge Castillo,1402996,M,2006-05-22,Right,180.0,Spain,2028-06-29,155000.0
+2026-27,ESP1,Atlético Madrid,Cristian Romero,829932,D,1998-04-26,Right,185.0,Argentina,2031-06-29,46000000.0
+2026-27,ESP1,Atlético Madrid,Marcos Llorente,353138,D,1995-01-29,Right,184.0,Spain,2027-06-29,21000000.0
+2026-27,ESP1,Atlético Madrid,Robin Le Normand,787751,D,1996-11-10,Right,187.0,Spain,2029-06-29,19100000.0
+2026-27,ESP1,Atlético Madrid,Marc Pubill,1094106,D,2003-06-19,Right,190.0,Spain,2030-06-29,33000000.0
+2026-27,ESP1,Atlético Madrid,Dávid Hancko,807771,D,1997-12-12,Left,188.0,Slovakia,2030-06-29,36000000.0
+2026-27,ESP1,Atlético Madrid,Jorge Domínguez,2271379,D,2009-12-20,Right,192.0,Spain,2028-06-29,7600000.0
+2026-27,ESP1,Atlético Madrid,Dani Martinez,1414932,D,2004-05-04,Left,186.0,Spain,2027-06-29,550000.0
+2026-27,ESP1,Atlético Madrid,Juan Musso,263651,G,1994-05-05,Right,191.0,Argentina,2028-06-29,3200000.0
+2026-27,ESP1,Atlético Madrid,Jan Oblak,69768,G,1993-01-06,Right,189.0,Slovenia,2028-06-29,16000000.0
+2026-27,ESP1,Atlético Madrid,Salvi Esquivel,1179149,G,2005-09-29,Left,193.0,Spain,2028-06-29,970000.0
+2026-27,ESP1,Sevilla,Lucas Stassin,1126521,F,2004-11-28,Right,184.0,Belgium,2027-06-29,15700000.0
+2026-27,ESP1,Sevilla,Chidera Ejuke,875890,F,1998-01-01,Right,176.0,Nigeria,2027-06-29,3700000.0
+2026-27,ESP1,Sevilla,Robbie Ure,1142351,F,2004-02-25,Right,189.0,Scotland,2031-06-29,4800000.0
+2026-27,ESP1,Sevilla,Isaac Romero,1018190,F,2000-05-17,Left,184.0,Spain,2028-06-29,5200000.0
+2026-27,ESP1,Sevilla,Alfon González,1468090,F,1999-05-03,Right,172.0,Spain,2028-06-29,3300000.0
+2026-27,ESP1,Sevilla,Manuel Angel Castillo Rodrguez,2725914,F,2008-06-11,,177.0,Spain,,
+2026-27,ESP1,Sevilla,Youssouf Fofana,945062,M,1999-01-09,Right,185.0,France,2027-06-29,25000000.0
+2026-27,ESP1,Sevilla,Rubén Vargas,872919,M,1998-08-04,Right,179.0,Switzerland,2029-06-29,13900000.0
+2026-27,ESP1,Sevilla,Giorgi Kochorashvili,886402,M,1999-06-27,Right,176.0,Georgia,2030-06-29,3800000.0
+2026-27,ESP1,Sevilla,Lucien Agoumé,960006,M,2002-02-08,Right,185.0,France,2028-06-29,15500000.0
+2026-27,ESP1,Sevilla,Félix Correia,934498,M,2001-01-21,Right,178.0,Portugal,2027-06-29,9700000.0
+2026-27,ESP1,Sevilla,Peque Fernández,997033,M,2002-10-03,Right,168.0,Spain,2028-06-29,3300000.0
+2026-27,ESP1,Sevilla,Jon Guridi,788141,M,1995-02-27,Left,179.0,Spain,2028-06-29,1700000.0
+2026-27,ESP1,Sevilla,Miguel Sierra,2509247,M,2004-07-13,Left,181.0,Spain,2029-06-29,330000.0
+2026-27,ESP1,Sevilla,Manu Bueno,1142094,M,2004-07-26,Left,178.0,Spain,2027-06-29,1500000.0
+2026-27,ESP1,Sevilla,Nico Guillén,1892023,M,2008-01-29,Left,190.0,Spain,2029-06-29,1100000.0
+2026-27,ESP1,Sevilla,Gabriel Suazo,818986,D,1997-08-08,Left,178.0,Chile,2028-06-29,6600000.0
+2026-27,ESP1,Sevilla,Kike Salas,1097719,D,2002-04-21,Left,186.0,Spain,2029-06-29,15400000.0
+2026-27,ESP1,Sevilla,Marcão,840951,D,1996-06-04,Left,185.0,Brazil,2028-06-29,2600000.0
+2026-27,ESP1,Sevilla,Arouna Sangante,1035988,D,2002-04-11,Right,189.0,Senegal,2031-06-29,7700000.0
+2026-27,ESP1,Sevilla,José Ángel Carmona,1015240,D,2002-01-28,Right,183.0,Spain,2028-06-29,11100000.0
+2026-27,ESP1,Sevilla,Juan Iglesias,949707,D,1998-07-02,Right,185.0,Spain,2030-06-29,4800000.0
+2026-27,ESP1,Sevilla,Julio Díaz,1402990,D,2005-01-09,Left,174.0,Spain,2031-06-29,1400000.0
+2026-27,ESP1,Sevilla,Fábio Cardoso,252815,D,1994-04-18,Right,187.0,Portugal,2028-06-29,1400000.0
+2026-27,ESP1,Sevilla,Andrés Castrin,1428699,D,2003-05-25,Right,188.0,Spain,2027-06-29,6500000.0
+2026-27,ESP1,Sevilla,Iker Muñoz,1402720,D,2004-01-04,Right,186.0,Spain,2027-06-29,195000.0
+2026-27,ESP1,Sevilla,Fran González,1493226,G,2005-06-23,Right,199.0,Spain,2031-06-29,2700000.0
+2026-27,ESP1,Sevilla,Odysseas Vlachodimos,138149,G,1994-04-25,Right,191.0,Greece,2027-06-29,3200000.0
 2026-27,ESP1,Deportivo Alavés,Mariano Díaz,175753,F,1993-07-31,Right,180.0,Dominican Republic,2027-06-29,285000.0
 2026-27,ESP1,Deportivo Alavés,Lucas Boyé,814385,F,1996-02-27,Right,183.0,Argentina,2029-06-29,5300000.0
 2026-27,ESP1,Deportivo Alavés,Toni Martínez,831253,F,1997-06-29,Right,180.0,Spain,2028-06-29,7300000.0
@@ -1311,8 +1315,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ESP1,Athletic Club,Mikel Jauregizar,1495844,M,2003-11-12,Right,177.0,Spain,2031-06-29,31000000.0
 2026-27,ESP1,Athletic Club,Robert Navarro,944165,M,2002-04-11,Right,178.0,Spain,2030-06-29,6500000.0
 2026-27,ESP1,Athletic Club,Iñigo Ruiz de Galarreta,96365,M,1993-08-05,Right,174.0,Spain,2027-06-29,1800000.0
-2026-27,ESP1,Athletic Club,Peio Canales,1464648,M,2005-01-16,Right,175.0,Spain,2027-06-29,9700000.0
 2026-27,ESP1,Athletic Club,Alejandro Rego Mora,2110897,M,2003-06-10,Right,192.0,Spain,2030-06-29,5500000.0
+2026-27,ESP1,Athletic Club,Peio Canales,1464648,M,2005-01-16,Right,175.0,Spain,2027-06-29,9700000.0
 2026-27,ESP1,Athletic Club,Beñat Prados,1012409,M,2001-02-07,Right,179.0,Spain,2031-06-29,15500000.0
 2026-27,ESP1,Athletic Club,Selton Sanchez,1953923,M,2007-02-19,Right,185.0,Spain,2029-06-29,2900000.0
 2026-27,ESP1,Athletic Club,Nico Serrano,1019318,M,2003-03-04,Left,178.0,Spain,2028-06-29,1600000.0
@@ -1337,8 +1341,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ESP1,Real Racing Club,Pablo García,1893910,M,2006-06-12,Left,175.0,Spain,2030-06-29,8199999.0
 2026-27,ESP1,Real Racing Club,Sergio Canales,41560,M,1991-02-15,Left,176.0,Spain,2028-06-29,3200000.0
 2026-27,ESP1,Real Racing Club,Belal Attia,1961600,M,2007-12-31,Right,170.0,Egypt,2027-06-29,
-2026-27,ESP1,Real Racing Club,Andrés Martín,922939,M,1999-07-10,Left,178.0,Spain,2028-06-29,8199999.0
 2026-27,ESP1,Real Racing Club,Maguette Gueye,1383421,M,2002-12-29,Left,183.0,Senegal,2029-06-29,2100000.0
+2026-27,ESP1,Real Racing Club,Andrés Martín,922939,M,1999-07-10,Left,178.0,Spain,2028-06-29,8199999.0
 2026-27,ESP1,Real Racing Club,Iker Luque,1544428,M,2005-06-04,Right,168.0,Spain,2030-06-29,2200000.0
 2026-27,ESP1,Real Racing Club,Iñigo Vicente,605674,M,1998-01-05,Right,178.0,Spain,2030-06-29,6600000.0
 2026-27,ESP1,Real Racing Club,André Almeida,845693,M,2000-05-29,Right,176.0,Portugal,2027-06-29,6200000.0
@@ -1366,8 +1370,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ESP1,Rayo Vallecano,Rayane Belaid,1179148,M,2005-11-01,Right,175.0,Spain,2030-06-29,565000.0
 2026-27,ESP1,Rayo Vallecano,Giorgi Tsitaishvili,875677,M,2000-11-17,Left,171.0,Georgia,2029-06-29,2700000.0
 2026-27,ESP1,Rayo Vallecano,Álvaro García,345111,M,1992-10-26,Both,168.0,Spain,2028-06-29,1500000.0
-2026-27,ESP1,Rayo Vallecano,Unai López,588566,M,1995-10-29,Right,169.0,Spain,2029-06-29,2600000.0
 2026-27,ESP1,Rayo Vallecano,Gnangoro Bouaré,2038238,M,2004-08-12,Left,184.0,Spain,2031-06-29,47000.0
+2026-27,ESP1,Rayo Vallecano,Unai López,588566,M,1995-10-29,Right,169.0,Spain,2029-06-29,2600000.0
 2026-27,ESP1,Rayo Vallecano,Pedro Díaz,900669,M,1998-06-04,Right,180.0,Spain,2028-06-29,2900000.0
 2026-27,ESP1,Rayo Vallecano,Óscar Valentín,900008,M,1994-08-19,Right,177.0,Spain,2027-06-29,1900000.0
 2026-27,ESP1,Rayo Vallecano,Fran Pérez,966637,M,2002-09-08,Right,176.0,Spain,2029-06-29,2300000.0
@@ -1412,6 +1416,7 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ESP1,Real Sociedad,Igor Zubeldia,838159,D,1997-03-29,Right,180.0,Spain,2029-06-29,6300000.0
 2026-27,ESP1,Real Sociedad,Jon Pacheco,934383,D,2001-01-07,Left,184.0,Spain,2030-06-29,5200000.0
 2026-27,ESP1,Real Sociedad,Aihen Muñoz,966441,D,1997-08-15,Left,175.0,Spain,2027-06-29,2600000.0
+2026-27,ESP1,Real Sociedad,Luken Beitia,1539149,D,2004-06-29,Right,191.0,Spain,2030-06-29,1100000.0
 2026-27,ESP1,Real Sociedad,Álex Remiro,791773,G,1995-03-23,Right,191.0,Spain,2027-06-29,9600000.0
 2026-27,ESP1,Real Sociedad,Unai Marrero,1094782,G,2001-10-08,Right,187.0,Spain,2030-06-29,1100000.0
 2026-27,ESP1,Osasuna,Ante Budimir,37318,F,1991-07-21,Left,190.0,Croatia,2027-06-29,2600000.0
@@ -1441,6 +1446,31 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ESP1,Osasuna,Sergio Herrera,294377,G,1993-05-05,Right,192.0,Spain,2028-06-29,2600000.0
 2026-27,ESP1,Osasuna,Aitor Fernández,99516,G,1991-05-02,Right,182.0,Spain,2027-06-29,465000.0
 2026-27,ESP1,Osasuna,Rafa Fernandez,2030379,G,2004-05-01,Left,187.0,Spain,2027-06-29,105000.0
+2026-27,ESP1,Villarreal,Nicolas Pépé,593526,F,1995-05-28,Left,183.0,Côte d'Ivoire,2028-06-29,6600000.0
+2026-27,ESP1,Villarreal,Georges Mikautadze,1009372,F,2000-10-30,Right,176.0,Georgia,2031-06-29,32000000.0
+2026-27,ESP1,Villarreal,Gerard Moreno,146866,F,1992-04-06,Left,180.0,Spain,2027-06-29,2400000.0
+2026-27,ESP1,Villarreal,Ayoze Pérez,345195,F,1993-07-22,Right,180.0,Spain,2028-06-29,5400000.0
+2026-27,ESP1,Villarreal,Tani Oluwaseyi,1172477,F,2000-05-14,Left,188.0,Canada,2030-06-29,7500000.0
+2026-27,ESP1,Villarreal,Pape Gueye,879694,M,1999-01-23,Left,187.0,Senegal,2028-06-29,39000000.0
+2026-27,ESP1,Villarreal,Ilias Akhomach,1089108,M,2004-04-15,Left,175.0,Morocco,2028-06-29,11100000.0
+2026-27,ESP1,Villarreal,Tajon Buchanan,973290,M,1999-02-07,Right,183.0,Canada,2030-06-29,13000000.0
+2026-27,ESP1,Villarreal,Alberto Moleiro,1012444,M,2003-09-29,Right,172.0,Spain,2030-06-29,54000000.0
+2026-27,ESP1,Villarreal,Nathan-Dylan Saliba,1093229,M,2004-02-06,Both,173.0,Canada,2031-06-29,9200000.0
+2026-27,ESP1,Villarreal,Alassane Diatta,1893907,M,2005-05-13,Left,190.0,Senegal,2030-06-29,660000.0
+2026-27,ESP1,Villarreal,Santi Comesaña,843678,M,1996-10-04,Both,187.0,Spain,2028-06-29,8400000.0
+2026-27,ESP1,Villarreal,Carlos Maciá,2238900,M,2008-08-31,Right,194.0,Spain,2031-06-29,2900000.0
+2026-27,ESP1,Villarreal,Nizar El Jmili,2419210,M,2004-11-29,Both,172.0,Spain,2027-06-29,160000.0
+2026-27,ESP1,Villarreal,Renato Veiga,1087359,D,2003-07-28,Left,190.0,Portugal,2032-06-29,29000000.0
+2026-27,ESP1,Villarreal,Juan Foyth,873189,D,1998-01-11,Right,187.0,Argentina,2029-06-29,8600000.0
+2026-27,ESP1,Villarreal,Santiago Mouriño,1468046,D,2002-02-12,Right,186.0,Uruguay,2030-06-29,19400000.0
+2026-27,ESP1,Villarreal,Alexander Freeman,1184541,D,2004-08-08,Right,188.0,USA,2032-06-29,9200000.0
+2026-27,ESP1,Villarreal,Carlos Romero,1396048,D,2001-10-28,Left,174.0,Spain,2031-06-29,24000000.0
+2026-27,ESP1,Villarreal,Logan Costa,911853,D,2001-03-31,Right,188.0,Cape Verde,2030-06-29,14600000.0
+2026-27,ESP1,Villarreal,Sergi Cardona,986245,D,1999-07-07,Left,186.0,Spain,2027-06-29,8600000.0
+2026-27,ESP1,Villarreal,Pau Navarro,1525863,D,2005-04-24,Right,185.0,Spain,2031-06-29,14600000.0
+2026-27,ESP1,Villarreal,Luiz Júnior,1066603,G,2001-01-13,Left,192.0,Brazil,2030-06-29,12400000.0
+2026-27,ESP1,Villarreal,Péter Gulácsi,37096,G,1990-05-05,Right,190.0,Hungary,2028-06-29,970000.0
+2026-27,ESP1,Villarreal,Rubén Gómez,1407702,G,2002-01-23,Right,185.0,Spain,2027-06-29,390000.0
 2026-27,ESP1,Levante UD,Etta Eyong,1393673,F,2003-10-13,Right,181.0,Cameroon,2029-06-29,15600000.0
 2026-27,ESP1,Levante UD,Petar Ratkov,1101942,F,2003-08-17,Right,187.0,Serbia,2027-06-29,8400000.0
 2026-27,ESP1,Levante UD,Iván Romero,1014042,F,2001-04-09,Right,172.0,Spain,2028-06-29,7400000.0
@@ -1477,11 +1507,12 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ESP1,Getafe,José Luis Pérez,1491660,F,2004-03-11,Right,183.0,Spain,2027-06-29,190000.0
 2026-27,ESP1,Getafe,Ebrahima Drammeh Jaiteh,2279635,F,2007-01-05,Right,180.0,Gambia,2030-06-29,
 2026-27,ESP1,Getafe,Mario Martín,1154549,M,2004-03-04,Right,177.0,Spain,2030-06-29,10700000.0
-2026-27,ESP1,Getafe,Nemanja Gudelj,68332,M,1991-11-15,Right,187.0,Serbia,2027-06-29,1900000.0
 2026-27,ESP1,Getafe,Orel Mangala,793988,M,1998-03-17,Right,178.0,Belgium,2027-06-29,8600000.0
+2026-27,ESP1,Getafe,Nemanja Gudelj,68332,M,1991-11-15,Right,187.0,Serbia,2027-06-29,1900000.0
 2026-27,ESP1,Getafe,Ramón Terrats,1088565,M,2000-10-17,Left,179.0,Spain,2029-06-29,3200000.0
 2026-27,ESP1,Getafe,Oscar Lopez,1994823,M,2006-08-12,Left,180.0,Bolivia,2029-06-29,220000.0
 2026-27,ESP1,Getafe,Francho Serrano,1000676,M,2001-10-16,Right,177.0,Spain,2029-06-29,3100000.0
+2026-27,ESP1,Getafe,Alberto Risco,1841875,M,2005-08-29,Right,178.0,Spain,2027-06-29,190000.0
 2026-27,ESP1,Getafe,Johan Mojica,344847,D,1992-08-20,Left,185.0,Colombia,2027-06-29,1400000.0
 2026-27,ESP1,Getafe,Abdel Abqar,1101232,D,1999-03-09,Right,188.0,Morocco,2028-06-29,3300000.0
 2026-27,ESP1,Getafe,Djené,307702,D,1991-12-30,Both,178.0,Togo,2027-06-29,1500000.0
@@ -1586,31 +1617,6 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ESP1,Málaga CF,Álex Pastor,928825,D,1999-09-30,Right,185.0,Spain,2028-06-29,310000.0
 2026-27,ESP1,Málaga CF,Alfonso Herrero,96371,G,1994-04-20,Right,180.0,Spain,2028-06-29,420000.0
 2026-27,ESP1,Málaga CF,Carlos Lopez,1442178,G,2004-11-12,Right,184.0,Spain,2029-06-29,95000.0
-2026-27,ESP1,Villarreal,Nicolas Pépé,593526,F,1995-05-28,Left,183.0,Côte d'Ivoire,2028-06-29,6600000.0
-2026-27,ESP1,Villarreal,Georges Mikautadze,1009372,F,2000-10-30,Right,176.0,Georgia,2031-06-29,32000000.0
-2026-27,ESP1,Villarreal,Gerard Moreno,146866,F,1992-04-06,Left,180.0,Spain,2027-06-29,2400000.0
-2026-27,ESP1,Villarreal,Ayoze Pérez,345195,F,1993-07-22,Right,180.0,Spain,2028-06-29,5400000.0
-2026-27,ESP1,Villarreal,Tani Oluwaseyi,1172477,F,2000-05-14,Left,188.0,Canada,2030-06-29,7500000.0
-2026-27,ESP1,Villarreal,Pape Gueye,879694,M,1999-01-23,Left,187.0,Senegal,2028-06-29,39000000.0
-2026-27,ESP1,Villarreal,Ilias Akhomach,1089108,M,2004-04-15,Left,175.0,Morocco,2028-06-29,11100000.0
-2026-27,ESP1,Villarreal,Tajon Buchanan,973290,M,1999-02-07,Right,183.0,Canada,2030-06-29,13000000.0
-2026-27,ESP1,Villarreal,Alberto Moleiro,1012444,M,2003-09-29,Right,172.0,Spain,2030-06-29,54000000.0
-2026-27,ESP1,Villarreal,Nathan-Dylan Saliba,1093229,M,2004-02-06,Both,173.0,Canada,2031-06-29,9200000.0
-2026-27,ESP1,Villarreal,Alassane Diatta,1893907,M,2005-05-13,Left,190.0,Senegal,2030-06-29,660000.0
-2026-27,ESP1,Villarreal,Santi Comesaña,843678,M,1996-10-04,Both,187.0,Spain,2028-06-29,8400000.0
-2026-27,ESP1,Villarreal,Carlos Maciá,2238900,M,2008-08-31,Right,194.0,Spain,2031-06-29,2900000.0
-2026-27,ESP1,Villarreal,Nizar El Jmili,2419210,M,2004-11-29,Both,172.0,Spain,2027-06-29,160000.0
-2026-27,ESP1,Villarreal,Renato Veiga,1087359,D,2003-07-28,Left,190.0,Portugal,2032-06-29,29000000.0
-2026-27,ESP1,Villarreal,Juan Foyth,873189,D,1998-01-11,Right,187.0,Argentina,2029-06-29,8600000.0
-2026-27,ESP1,Villarreal,Santiago Mouriño,1468046,D,2002-02-12,Right,186.0,Uruguay,2030-06-29,19400000.0
-2026-27,ESP1,Villarreal,Alexander Freeman,1184541,D,2004-08-08,Right,188.0,USA,2032-06-29,9200000.0
-2026-27,ESP1,Villarreal,Carlos Romero,1396048,D,2001-10-28,Left,174.0,Spain,2031-06-29,24000000.0
-2026-27,ESP1,Villarreal,Logan Costa,911853,D,2001-03-31,Right,188.0,Cape Verde,2030-06-29,14600000.0
-2026-27,ESP1,Villarreal,Sergi Cardona,986245,D,1999-07-07,Left,186.0,Spain,2027-06-29,8600000.0
-2026-27,ESP1,Villarreal,Pau Navarro,1525863,D,2005-04-24,Right,185.0,Spain,2031-06-29,14600000.0
-2026-27,ESP1,Villarreal,Luiz Júnior,1066603,G,2001-01-13,Left,192.0,Brazil,2030-06-29,12400000.0
-2026-27,ESP1,Villarreal,Péter Gulácsi,37096,G,1990-05-05,Right,190.0,Hungary,2028-06-29,970000.0
-2026-27,ESP1,Villarreal,Rubén Gómez,1407702,G,2002-01-23,Right,185.0,Spain,2027-06-29,390000.0
 2026-27,ESP1,Elche,Adam Boayar,1518971,F,2005-10-12,Right,180.0,Morocco,2027-06-29,825000.0
 2026-27,ESP1,Elche,Ezequiel Ponce,356444,F,1997-03-28,Right,178.0,Argentina,2027-06-29,3600000.0
 2026-27,ESP1,Elche,Fernando Niño,1016019,F,2000-10-23,Right,190.0,Spain,2030-06-29,1800000.0
@@ -1769,8 +1775,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ITA1,Cagliari,Alessandro Deiola,328109,M,1995-07-31,Right,189.0,Italy,2029-06-29,1400000.0
 2026-27,ITA1,Cagliari,Riccardo Ciervo,1019953,M,2002-03-31,Right,190.0,Italy,2027-06-29,1900000.0
 2026-27,ITA1,Cagliari,Ivan Sulev,1151647,M,2005-12-31,Right,180.0,Bulgaria,2029-06-29,205000.0
-2026-27,ITA1,Cagliari,Giuseppe Aurelio,928889,M,2000-03-21,Left,185.0,Italy,2029-06-29,645000.0
 2026-27,ITA1,Cagliari,Demi Akarakiri,1899742,M,2008-09-15,Right,190.0,England,2030-06-29,
+2026-27,ITA1,Cagliari,Giuseppe Aurelio,928889,M,2000-03-21,Left,185.0,Italy,2029-06-29,645000.0
 2026-27,ITA1,Cagliari,Yerry Mina,360396,D,1994-09-22,Right,195.0,Colombia,2028-06-29,2300000.0
 2026-27,ITA1,Cagliari,Yukinari Sugawara,905347,D,2000-06-27,Right,179.0,Japan,2028-06-29,5000000.0
 2026-27,ITA1,Cagliari,Juan Rodríguez,1485391,D,2005-05-29,Left,190.0,Uruguay,2030-06-29,9400000.0
@@ -1795,8 +1801,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ITA1,AC Milan,Ruben Loftus-Cheek,284441,M,1996-01-22,Right,191.0,England,2027-06-29,9000000.0
 2026-27,ITA1,AC Milan,Davide Bartesaghi,1390489,M,2005-12-28,Left,193.0,Italy,2030-06-29,20000000.0
 2026-27,ITA1,AC Milan,Ardon Jashari,1034082,M,2002-07-29,Left,180.0,Switzerland,2030-06-29,24000000.0
-2026-27,ITA1,AC Milan,Yunus Musah,983815,M,2002-11-28,Right,178.0,USA,2028-06-29,14500000.0
 2026-27,ITA1,AC Milan,Omari Hutchinson,1090963,M,2003-10-28,Left,174.0,England,2027-06-29,28000000.0
+2026-27,ITA1,AC Milan,Yunus Musah,983815,M,2002-11-28,Right,178.0,USA,2028-06-29,14500000.0
 2026-27,ITA1,AC Milan,Warren Bondo,1000366,M,2003-09-14,Right,177.0,France,2029-06-29,5700000.0
 2026-27,ITA1,AC Milan,Christian Comotto,1622149,M,2008-04-24,Right,183.0,Italy,2031-06-29,5500000.0
 2026-27,ITA1,AC Milan,Strahinja Pavlović,965893,D,2001-05-23,Left,194.0,Serbia,2028-06-29,38000000.0
@@ -1848,7 +1854,6 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ITA1,Juventus,Edon Zhegrova,887766,F,1999-03-30,Left,181.0,Kosovo,2030-06-29,9500000.0
 2026-27,ITA1,Juventus,Jérémie Boga,367056,F,1997-01-02,Right,172.0,Côte d'Ivoire,2029-06-29,7700000.0
 2026-27,ITA1,Juventus,Jeff Ekhator,1613917,F,2006-11-10,Right,188.0,Italy,2031-06-29,19200000.0
-2026-27,ITA1,Juventus,Justin Oboavwoduo,1400670,F,2006-08-22,Right,179.0,England,2028-06-29,515000.0
 2026-27,ITA1,Juventus,Pape Matar Sarr,1002711,M,2002-09-13,Right,185.0,Senegal,2027-06-29,28000000.0
 2026-27,ITA1,Juventus,Nicolás González,901325,M,1998-04-05,Left,180.0,Argentina,2029-06-29,23000000.0
 2026-27,ITA1,Juventus,Kerim Alajbegović,1425366,M,2007-09-20,Both,185.0,Bosnia & Herzegovina,2031-06-29,23000000.0
@@ -1858,6 +1863,7 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ITA1,Juventus,Weston McKennie,881931,M,1998-08-27,Right,180.0,USA,2030-06-29,31000000.0
 2026-27,ITA1,Juventus,Teun Koopmeiners,803033,M,1998-02-27,Left,183.0,Netherlands,2029-06-29,13200000.0
 2026-27,ITA1,Juventus,Andrea Cambiaso,917048,M,2000-02-19,Both,181.0,Italy,2029-06-29,21000000.0
+2026-27,ITA1,Juventus,Destiny Elimoghale,1908261,M,2009-04-22,Right,182.0,Italy,2028-06-29,
 2026-27,ITA1,Juventus,Augusto Owusu,1526401,M,2005-01-27,Right,189.0,Italy,2028-06-29,580000.0
 2026-27,ITA1,Juventus,Filippo Pagnucco,1466133,M,2006-02-08,Left,180.0,Italy,2028-06-29,650000.0
 2026-27,ITA1,Juventus,Gleison Bremer,885197,D,1997-03-17,Right,188.0,Brazil,2029-06-29,33000000.0
@@ -1923,8 +1929,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ITA1,SSC Napoli,Costantino Favasuli,1100544,M,2004-04-25,Right,178.0,Italy,2027-06-29,4200000.0
 2026-27,ITA1,SSC Napoli,Benoît Badiashile,904827,D,2001-03-25,Left,194.0,France,2027-06-29,14500000.0
 2026-27,ITA1,SSC Napoli,Giovanni Di Lorenzo,153257,D,1993-08-03,Right,182.0,Italy,2030-06-29,6800000.0
-2026-27,ITA1,SSC Napoli,Alessandro Buongiorno,870263,D,1999-06-05,Left,191.0,Italy,2029-06-29,32000000.0
 2026-27,ITA1,SSC Napoli,Amir Rrahmani,332155,D,1994-02-23,Both,190.0,Kosovo,2027-06-29,10600000.0
+2026-27,ITA1,SSC Napoli,Alessandro Buongiorno,870263,D,1999-06-05,Left,191.0,Italy,2029-06-29,32000000.0
 2026-27,ITA1,SSC Napoli,Leonardo Spinazzola,148899,D,1993-03-24,Right,185.0,Italy,2028-06-29,3400000.0
 2026-27,ITA1,SSC Napoli,Mathías Olivera,805078,D,1997-10-30,Left,184.0,Uruguay,2030-06-29,14500000.0
 2026-27,ITA1,SSC Napoli,Rafa Marín,984623,D,2002-05-18,Right,190.0,Spain,2029-06-29,11600000.0
@@ -1969,8 +1975,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ITA1,Lecce,Lassana Coulibaly,804621,M,1996-04-09,Right,183.0,Mali,2027-06-29,2300000.0
 2026-27,ITA1,Lecce,Ivan Ilić,877371,M,2001-03-16,Left,185.0,Serbia,2027-06-29,6800000.0
 2026-27,ITA1,Lecce,Youssef Maleh,849274,M,1998-08-21,Left,177.0,Morocco,2027-06-29,1600000.0
-2026-27,ITA1,Lecce,Medon Berisha,1142149,M,2003-10-20,Right,186.0,Albania,2028-06-29,4900000.0
 2026-27,ITA1,Lecce,Oumar Ngom,1175854,M,2004-03-08,Right,184.0,Mauritania,2029-06-29,2700000.0
+2026-27,ITA1,Lecce,Medon Berisha,1142149,M,2003-10-20,Right,186.0,Albania,2028-06-29,4900000.0
 2026-27,ITA1,Lecce,Omri Gandelman,1019125,M,2000-05-15,Left,188.0,Israel,2029-06-29,2800000.0
 2026-27,ITA1,Lecce,Mohamed Kaba,1127590,M,2001-10-26,Right,185.0,Guinea,2027-06-29,2400000.0
 2026-27,ITA1,Lecce,Sadik Fofana,1130662,M,2003-05-14,Right,192.0,Togo,2029-06-29,760000.0
@@ -2111,8 +2117,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,ITA1,Parma,David Romero,1118606,F,2003-03-24,Right,179.0,Argentina,2031-06-29,4900000.0
 2026-27,ITA1,Parma,Matija Frigan,1092081,F,2003-02-10,Left,184.0,Croatia,2030-06-29,7600000.0
 2026-27,ITA1,Parma,Nesta Elphege,1486729,F,2001-01-08,Left,196.0,France,2030-06-29,3700000.0
-2026-27,ITA1,Parma,Ousmane Diallo,1542807,F,2007-06-11,Right,181.0,Spain,2031-06-29,1600000.0
 2026-27,ITA1,Parma,Simone Lontani,1912962,F,2008-01-17,Right,181.0,Italy,2030-06-29,2400000.0
+2026-27,ITA1,Parma,Ousmane Diallo,1542807,F,2007-06-11,Right,181.0,Spain,2031-06-29,1600000.0
 2026-27,ITA1,Parma,Thomas de Martis,2082104,F,2008-06-25,Right,181.0,Argentina,2027-06-29,135000.0
 2026-27,ITA1,Parma,Pontus Almqvist,856065,F,1999-07-09,Left,183.0,Sweden,2027-06-29,1700000.0
 2026-27,ITA1,Parma,El Bilal Touré,982615,M,2001-10-02,Both,185.0,Mali,2027-06-29,11700000.0
@@ -2302,7 +2308,7 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,FRA1,Stade Rennais,Sebastian Szymański,847983,M,1999-05-09,Left,174.0,Poland,2029-06-29,12600000.0
 2026-27,FRA1,Stade Rennais,Przemysław Frankowski,286909,M,1995-04-11,Right,176.0,Poland,2027-06-29,6500000.0
 2026-27,FRA1,Stade Rennais,Valentin Rongier,581314,M,1994-12-06,Right,172.0,France,2028-06-29,7700000.0
-2026-27,FRA1,Stade Rennais,Ludovic Blas,806076,M,1997-12-30,Left,180.0,France,2027-06-29,9300000.0
+2026-27,FRA1,Stade Rennais,Ludovic Blas,806076,M,1997-12-30,Left,180.0,Martinique,2027-06-29,9300000.0
 2026-27,FRA1,Stade Rennais,Djaoui Cissé,1445628,M,2004-01-30,Right,188.0,France,2030-06-29,9300000.0
 2026-27,FRA1,Stade Rennais,Mahdi Camara,916041,M,1998-06-29,Right,178.0,France,2029-06-29,12900000.0
 2026-27,FRA1,Stade Rennais,Adrien Thomasson,231946,M,1993-12-09,Right,177.0,France,2029-06-29,4300000.0
@@ -2390,8 +2396,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,FRA1,RC Strasbourg,Maxi Oyedele,1153355,M,2004-11-06,Right,183.0,Poland,2030-06-29,5200000.0
 2026-27,FRA1,RC Strasbourg,Omari Kellyman,1162083,M,2005-09-24,Left,191.0,England,2031-06-29,1600000.0
 2026-27,FRA1,RC Strasbourg,Martial Godo,1190938,M,2003-03-13,Right,177.0,Côte d'Ivoire,2030-06-29,23000000.0
-2026-27,FRA1,RC Strasbourg,Sebastian Nanasi,962068,M,2002-05-15,Right,178.0,Sweden,2029-06-29,15500000.0
 2026-27,FRA1,RC Strasbourg,Pape Diop,1410217,M,2003-09-03,Right,182.0,Senegal,2030-06-29,8199999.0
+2026-27,FRA1,RC Strasbourg,Sebastian Nanasi,962068,M,2002-05-15,Right,178.0,Sweden,2029-06-29,15500000.0
 2026-27,FRA1,RC Strasbourg,Oso,1534422,M,2003-07-08,Left,183.0,Spain,2031-06-29,10500000.0
 2026-27,FRA1,RC Strasbourg,Diogo Sousa,1434543,M,2006-01-19,Right,176.0,Portugal,2031-06-29,8500000.0
 2026-27,FRA1,RC Strasbourg,Benjamin Brantlind,1650623,M,2008-08-14,Right,183.0,Sweden,2031-06-29,535000.0
@@ -2446,9 +2452,9 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,FRA1,Stade Brestois,Hugo Magnetti,861324,M,1998-05-29,Left,173.0,France,2027-06-29,5500000.0
 2026-27,FRA1,Stade Brestois,Luc Zogbé,1499870,D,2005-03-23,Left,178.0,Côte d'Ivoire,2029-06-29,1300000.0
 2026-27,FRA1,Stade Brestois,Bradley Locko,1129382,D,2002-05-05,Left,180.0,Congo Republic,2027-06-29,6200000.0
-2026-27,FRA1,Stade Brestois,Kenny Lala,141080,D,1991-10-02,Right,178.0,France,2027-06-29,1400000.0
-2026-27,FRA1,Stade Brestois,Brendan Chardonnet,328035,D,1994-12-21,Right,181.0,France,2027-06-29,4099999.0
+2026-27,FRA1,Stade Brestois,Kenny Lala,141080,D,1991-10-02,Right,178.0,Martinique,2027-06-29,1400000.0
 2026-27,FRA1,Stade Brestois,Raphaël Le Guen,1894085,D,2006-08-30,Right,196.0,France,,
+2026-27,FRA1,Stade Brestois,Brendan Chardonnet,328035,D,1994-12-21,Right,181.0,France,2027-06-29,4099999.0
 2026-27,FRA1,Stade Brestois,Gautier Lloris,287887,D,1995-07-17,Left,188.0,France,2028-06-29,3100000.0
 2026-27,FRA1,Stade Brestois,Justin Bourgault,1891025,D,2005-09-13,Left,185.0,France,2029-06-29,1100000.0
 2026-27,FRA1,Stade Brestois,Evan Mailly,2725940,D,2007-11-08,,,France,,
@@ -2576,12 +2582,14 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,FRA1,Olympique de Marseille,Geoffrey Kondogbia,96544,M,1993-02-14,Left,188.0,Central African Republic,2027-06-29,2900000.0
 2026-27,FRA1,Olympique de Marseille,Tochukwu Nnadi,1191892,M,2003-06-29,Right,176.0,Nigeria,2030-06-29,4800000.0
 2026-27,FRA1,Olympique de Marseille,Keyliane Abdallah,1844117,M,2006-04-04,Left,185.0,France,2028-06-29,46000.0
+2026-27,FRA1,Olympique de Marseille,Nouhoum Kamissoko,2011326,M,2004-12-22,Right,183.0,Mali,,70000.0
 2026-27,FRA1,Olympique de Marseille,Nayef Aguerd,877102,D,1996-03-29,Left,188.0,Morocco,2030-06-29,15900000.0
 2026-27,FRA1,Olympique de Marseille,Emerson,155997,D,1994-08-02,Left,176.0,Italy,2027-06-29,8199999.0
 2026-27,FRA1,Olympique de Marseille,Derek Cornelius,801411,D,1997-11-24,Left,188.0,Canada,2028-06-29,2300000.0
 2026-27,FRA1,Olympique de Marseille,Conrad Jaden Egan-Riley,1131448,D,2003-01-01,Right,183.0,England,2029-06-29,9400000.0
 2026-27,FRA1,Olympique de Marseille,Ulisses Garcia,558320,D,1996-01-10,Left,185.0,Switzerland,2028-06-29,2900000.0
 2026-27,FRA1,Olympique de Marseille,Bamo Meïté,1131541,D,2001-06-19,Right,183.0,Côte d'Ivoire,2028-06-29,6800000.0
+2026-27,FRA1,Olympique de Marseille,Alexi Koum,1913447,D,2006-01-31,Left,180.0,Cameroon,2027-06-29,
 2026-27,FRA1,Olympique de Marseille,Jeffrey De Lange,803034,G,1998-03-31,Both,188.0,Netherlands,2027-06-29,2700000.0
 2026-27,FRA1,Olympique de Marseille,Jelle Van Neck,1142668,G,2004-03-05,Right,191.0,Belgium,2027-06-29,155000.0
 2026-27,FRA1,Olympique de Marseille,Théo Vermot,952626,G,1997-01-25,Right,190.0,France,,94000.0
@@ -2646,13 +2654,13 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,FRA1,Auxerre,Paul Nardi,155717,G,1994-05-17,Right,187.0,France,2028-06-29,1300000.0
 2026-27,FRA1,Auxerre,Louis Mezerette,2221903,G,2006-08-27,Right,184.0,France,,
 2026-27,FRA1,Le Havre,Ally Samatta,825088,F,1992-12-22,Right,183.0,Tanzania,2027-06-29,770000.0
-2026-27,FRA1,Le Havre,Rayan Fofana,1545376,F,2006-02-11,Right,180.0,France,2027-06-29,8300000.0
+2026-27,FRA1,Le Havre,Rayan Fofana,1545376,F,2006-02-11,Right,180.0,Côte d'Ivoire,2027-06-29,8300000.0
 2026-27,FRA1,Le Havre,Josh Maja,852145,F,1998-12-26,Right,180.0,Nigeria,2027-06-29,4400000.0
 2026-27,FRA1,Le Havre,Sota Nakamura,2039286,F,2002-10-14,Right,168.0,Japan,2027-06-29,945000.0
 2026-27,FRA1,Le Havre,Felix Mambimbi,910076,F,2001-01-17,Right,170.0,Switzerland,2027-06-29,470000.0
 2026-27,FRA1,Le Havre,Joan Tincres,1493489,F,2006-06-16,Right,188.0,France,2030-06-29,105000.0
-2026-27,FRA1,Le Havre,Elysée Logbo,1494855,F,2004-05-05,Left,188.0,France,2027-06-29,195000.0
 2026-27,FRA1,Le Havre,Enzo Koffi,2277165,F,2006-03-03,Left,178.0,France,,
+2026-27,FRA1,Le Havre,Elysée Logbo,1494855,F,2004-05-05,Left,188.0,France,2027-06-29,195000.0
 2026-27,FRA1,Le Havre,Amir Richardson,1121333,M,2002-01-23,Left,195.0,Morocco,2027-06-29,3900000.0
 2026-27,FRA1,Le Havre,Rassoul Ndiaye,992026,M,2001-12-10,Right,179.0,Senegal,2028-06-29,8700000.0
 2026-27,FRA1,Le Havre,Ismail Bouneb,1426243,M,2006-06-06,Right,182.0,France,2028-06-29,365000.0
@@ -2705,8 +2713,8 @@ season,src_league,club,player_name,sofascore_id,position,dob,foot,height_cm,coun
 2026-27,FRA1,Nice,Hicham Boudaoui,985923,M,1999-09-22,Right,176.0,Algeria,2027-06-29,11300000.0
 2026-27,FRA1,Nice,Axel Witsel,35612,M,1989-01-11,Right,186.0,Belgium,2027-06-29,1300000.0
 2026-27,FRA1,Nice,Sofiane Diop,944164,M,2000-06-08,Right,175.0,Morocco,2027-06-29,13900000.0
-2026-27,FRA1,Nice,Jonathan Clauss,821728,M,1992-09-24,Right,178.0,France,2028-06-29,3600000.0
 2026-27,FRA1,Nice,Salis Abdul Samed,993455,M,2000-03-25,Right,180.0,Ghana,2028-06-29,4300000.0
+2026-27,FRA1,Nice,Jonathan Clauss,821728,M,1992-09-24,Right,178.0,France,2028-06-29,3600000.0
 2026-27,FRA1,Nice,Nathan N'Goumou,962409,M,2000-03-13,Right,182.0,Cameroon,,3600000.0
 2026-27,FRA1,Nice,Gauthier Hein,842391,M,1996-08-06,Left,170.0,France,2029-06-29,5200000.0
 2026-27,FRA1,Nice,Morgan Sanson,250133,M,1994-08-17,Right,182.0,France,2027-06-29,3700000.0

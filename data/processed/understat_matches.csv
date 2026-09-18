@@ -11476,9 +11476,8 @@ ESP1,2026-27,30829,2026-09-15 17:00:00,Rayo Vallecano,Espanyol,2.0,1.0,1.8328,1.
 ESP1,2026-27,30822,2026-09-16 17:00:00,Atletico Madrid,Osasuna,4.0,0.0,5.14269,0.717926,True,https://understat.com/match/30822
 ESP1,2026-27,30826,2026-09-16 19:30:00,Barcelona,Racing Santander,7.0,2.0,7.47528,1.38402,True,https://understat.com/match/30826
 ESP1,2026-27,30824,2026-09-16 17:00:00,Deportivo La Coruna,Sevilla,0.0,1.0,0.192171,0.853244,True,https://understat.com/match/30824
-ESP1,2026-27,30827,2026-09-16 19:30:00,Levante,Athletic Club,,,,,False,https://understat.com/match/30827
-ESP1,2026-27,30828,2026-09-17 19:30:00,Malaga,Villarreal,,,,,False,https://understat.com/match/30828
-ESP1,2026-27,30823,2026-09-17 17:00:00,Real Betis,Getafe,,,,,False,https://understat.com/match/30823
+ESP1,2026-27,30828,2026-09-17 19:30:00,Malaga,Villarreal,1.0,3.0,0.361392,4.2474,True,https://understat.com/match/30828
+ESP1,2026-27,30823,2026-09-17 17:00:00,Real Betis,Getafe,1.0,0.0,2.60912,0.327032,True,https://understat.com/match/30823
 ESP1,2026-27,30834,2026-09-18 19:00:00,Espanyol,Elche,,,,,False,https://understat.com/match/30834
 ESP1,2026-27,30830,2026-09-19 14:15:00,Athletic Club,Alaves,,,,,False,https://understat.com/match/30830
 ESP1,2026-27,30832,2026-09-19 16:30:00,Celta Vigo,Racing Santander,,,,,False,https://understat.com/match/30832
@@ -11509,6 +11508,7 @@ ESP1,2026-27,30850,2026-10-18 15:00:00,Real Betis,Barcelona,,,,,False,https://un
 ESP1,2026-27,30857,2026-10-18 15:00:00,Real Madrid,Sevilla,,,,,False,https://understat.com/match/30857
 ESP1,2026-27,30858,2026-10-18 15:00:00,Valencia,Athletic Club,,,,,False,https://understat.com/match/30858
 ESP1,2026-27,30859,2026-10-18 15:00:00,Villarreal,Elche,,,,,False,https://understat.com/match/30859
+ESP1,2026-27,30827,2026-10-21 19:30:00,Levante,Athletic Club,,,,,False,https://understat.com/match/30827
 ESP1,2026-27,30860,2026-10-25 16:00:00,Alaves,Malaga,,,,,False,https://understat.com/match/30860
 ESP1,2026-27,30861,2026-10-25 16:00:00,Athletic Club,Getafe,,,,,False,https://understat.com/match/30861
 ESP1,2026-27,30862,2026-10-25 16:00:00,Atletico Madrid,Deportivo La Coruna,,,,,False,https://understat.com/match/30862
