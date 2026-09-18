@@ -40,6 +40,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from build_match_model_table import _elo_update, _res  # noqa: E402
 from dixon_coles import fit, match_probs  # noqa: E402
 from live.schema import deaccent, normalize_team  # noqa: E402
+from parse_fbref_player_stats import _norm_name  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 OUT = ROOT / "site" / "data.json"
@@ -127,6 +128,20 @@ def load_value_predictions(src_league: str) -> pd.DataFrame:
         columns={"Player": "player", "market_value_eur": "listed_value_eur"})
 
 
+def load_value_forecast(src_league: str) -> pd.DataFrame:
+    """1y/2y value forecast (src/build_aging_curves.py), scoped to the
+    player's most recent real-valued season - not tied to a fixed season the
+    way load_value_predictions is, so no season filter here."""
+    f = PROC / "value_forecast.csv"
+    if not f.exists():
+        return pd.DataFrame(columns=["player", "team_key", "forecast_1y_eur", "forecast_2y_eur"])
+    v = pd.read_csv(f, encoding="utf-8")
+    v = v[v["src_league"] == src_league].copy()
+    v = _fix_names(v, ["player", "squad"])
+    v["team_key"] = v["squad"].map(normalize_team)
+    return v[["player", "team_key", "forecast_1y_eur", "forecast_2y_eur"]]
+
+
 SHRINK_MIN = 400  # minutes of current-season data at which blended rate is ~50/50 cur/prior
 
 
@@ -149,6 +164,7 @@ def _blend_rate(cur_min, cur_rate, prior_rate):
 def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict], dict[str, str], pd.DataFrame]:
     df = load_players(src_league)
     vpred = load_value_predictions(src_league)
+    vfc = load_value_forecast(src_league)
 
     cur = df[df["season"] == "2026-27"]
     prev = df[df["season"] == "2025-26"].set_index(["player", "team_key"])
@@ -217,6 +233,11 @@ def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict]
                 "as_of_season": vr["season"],
                 "listed_is_estimate": bool(pd.to_numeric(vr.get("value_imputed"), errors="coerce")),
             }
+            frow = vfc[(vfc["player"] == r["player"]) & (vfc["team_key"] == r["team_key"])]
+            if len(frow):
+                fr = frow.iloc[0]
+                rec["value"]["forecast_1y_eur"] = _num(fr["forecast_1y_eur"])
+                rec["value"]["forecast_2y_eur"] = _num(fr["forecast_2y_eur"])
         out.append(rec)
     return out, team_display, pd.DataFrame(blended_rows)
 
@@ -493,7 +514,13 @@ MIN_LISTED_FOR_LEADERBOARD = 1_500_000  # floor so a nominal sub-1M TM listing c
 
 def build_value_leaderboard(all_players: list[dict], n: int = 8) -> dict:
     """Biggest gaps between the model's predicted value and the listed value,
-    both directions - a live demo of the value model, not just a single-player tile."""
+    both directions - a live demo of the value model, not just a single-player tile.
+    `screen` is the full qualifying pool (both directions, unsliced) for the
+    dedicated Value Screen tab, which sorts/filters it client-side; `bargains`/
+    `overpriced` stay top-n for the homepage tile, same guards as before
+    (MIN_LISTED_FOR_LEADERBOARD, listed_is_estimate) so a fuller, more-browsed
+    screen doesn't surface fake 10x "bargains" off an imputed or near-zero
+    listing any more than the tile already didn't."""
     pool = [p for p in all_players if p.get("value") and (p["current"]["min"] or 0) >= MIN_MIN_PROJECT
             and (p["value"]["listed_value_eur"] or 0) >= MIN_LISTED_FOR_LEADERBOARD
             and not p["value"].get("listed_is_estimate")]  # can't call a player a bargain vs a value we imputed
@@ -504,9 +531,55 @@ def build_value_leaderboard(all_players: list[dict], n: int = 8) -> dict:
             "listed_value_eur": p["value"]["listed_value_eur"], "predicted_eur": p["value"]["predicted_eur"],
             "ratio": p["value"]["ratio"],
         }
-    bargains = sorted(pool, key=lambda p: p["value"]["ratio"], reverse=True)[:n]
-    overpriced = sorted(pool, key=lambda p: p["value"]["ratio"])[:n]
-    return {"bargains": [slim(p) for p in bargains], "overpriced": [slim(p) for p in overpriced]}
+    ranked = sorted(pool, key=lambda p: p["value"]["ratio"], reverse=True)
+    bargains, overpriced = ranked[:n], ranked[::-1][:n]
+    return {"bargains": [slim(p) for p in bargains], "overpriced": [slim(p) for p in overpriced],
+            "screen": [slim(p) for p in ranked]}
+
+
+BARGAIN_VALIDATION_SEASON = "2025-26"  # "last summer's" calls - the most
+                                       # recent complete season, checked against
+                                       # this season's listing / a real transfer fee
+
+
+def build_bargain_validation(n: int = 25) -> list[dict]:
+    """Closes the loop on last season's biggest 'bargain' calls: for each
+    player the model flagged as most underpriced as of BARGAIN_VALIDATION_SEASON,
+    what actually happened to his listed value (and, where scraped, his real
+    transfer fee) by this season - the leaderboard is a claim until this
+    exists, then it's a tracked prediction. Same MIN_LISTED_FOR_LEADERBOARD /
+    listed_is_estimate guards as build_value_leaderboard."""
+    v = pd.read_csv(PROC / "value_model_predictions.csv", encoding="utf-8")
+    v = _fix_names(v, ["Player", "Squad"])
+    if "value_imputed" not in v.columns:
+        v["value_imputed"] = 0
+    v["_pk"] = v["Player"].map(_norm_name)
+
+    prior = v[(v["season"] == BARGAIN_VALIDATION_SEASON) & (v["value_imputed"] == 0)
+              & (v["market_value_eur"] >= MIN_LISTED_FOR_LEADERBOARD)]
+    top = prior.sort_values("ratio", ascending=False).drop_duplicates("_pk").head(n)
+
+    cur = v[v["season"] == "2026-27"].drop_duplicates("_pk").set_index("_pk")
+
+    fee_path = PROC / "tm_transfer_fees.csv"
+    fees = pd.read_csv(fee_path) if fee_path.exists() else pd.DataFrame(columns=["player_name", "season", "fee_eur"])
+    if not fees.empty:
+        fees["_pk"] = fees["player_name"].map(_norm_name)
+
+    rows = []
+    for _, r in top.iterrows():
+        pk = r["_pk"]
+        cur_row = cur.loc[pk] if pk in cur.index else None
+        cur_listed = _num(cur_row["market_value_eur"]) if cur_row is not None else None
+        frow = fees[(fees.get("_pk") == pk) & (fees["season"].isin(["2025-26", "2026-27"]))] if not fees.empty else fees
+        fee = _num(frow.iloc[0]["fee_eur"]) if len(frow) and pd.notna(frow.iloc[0]["fee_eur"]) else None
+        rows.append({
+            "player": r["Player"], "squad": r["Squad"], "pos": r["pos"],
+            "prior_listed_eur": _num(r["market_value_eur"]), "prior_predicted_eur": _num(r["predicted_eur"]),
+            "prior_ratio": _num(r["ratio"]), "current_listed_eur": cur_listed,
+            "realized_transfer_fee_eur": fee,
+        })
+    return rows
 
 
 def _rank(rows: list[dict], key: str = "elo") -> list[dict]:
@@ -947,6 +1020,7 @@ def main() -> None:
     full_schedule = build_full_schedule(asof)
     projected_table = build_projected_table(model, standings, full_schedule)
     value_leaderboard = build_value_leaderboard(all_players)
+    bargain_validation = build_bargain_validation()
     team_elo_rankings = build_team_elo_rankings(teams)
     player_elo_leaderboard = build_player_elo_leaderboard(teams)
     player_elo_index = build_player_elo_index()
@@ -964,6 +1038,7 @@ def main() -> None:
         "cup_finals": cup_finals,
         "projected_table": projected_table,
         "value_leaderboard": value_leaderboard,
+        "bargain_validation": bargain_validation,
         "team_elo_rankings": team_elo_rankings,
         "player_elo_leaderboard": player_elo_leaderboard,
         "player_elo_index": player_elo_index,
@@ -980,6 +1055,7 @@ def main() -> None:
             "standings": "Full league tables computed directly from match results (3 pts/win). The 2026-27 table is the live in-progress standing.",
             "projected_table": "Current points + expected points (3xP(win)+P(draw) per game, not simulated results) from each team's remaining fixtures, using the same Dixon-Coles model as the match odds. A projection, not a guarantee - form, injuries and transfers between now and kickoff aren't in it.",
             "value_leaderboard": "The value model's biggest gaps between predicted and listed value, both directions, among players with at least 180 minutes this season.",
+            "bargain_validation": f"The model's biggest '{BARGAIN_VALIDATION_SEASON}' bargain calls (predicted well above listed value that season), checked against this season's listed value and, where scraped, a real transfer fee - closes the loop from claim to tracked prediction.",
             "team_elo": "Goals-based Elo (all competitions - league, cup, European), the same rating the outcome model uses. Everyone starts at 1500; a win moves a team's rating up by K x a margin-of-victory factor x (1 - their pre-match win probability), a loss moves it down the same way, draws split the difference. 'Overall' carries across seasons with a quarter of each team's gap from 1500 reverting each summer; a season ladder resets harder - it starts every team at 1500 + half its previous final's gap from 1500 (promoted sides at 1400) and only counts that season's matches, so it shows how the season played out on its own.",
             "player_elo": "A separate, from-scratch Elo for individual players - no market value anywhere in it. Built purely from real match output (non-penalty xG + 0.7x xA per appearance) vs. an opponent-adjusted expectation, over the last three seasons; a player's own rating feeds back into next match's bar, same as a team's does. Half of the gap from 1500 reverts between seasons, and a player who stops featuring (injury, benched, or gone) bleeds toward 1500 for every match his club plays without him after a two-game grace. 'Overall' needs at least 5 appearances in the window; a season ladder needs 3 that season.",
         },

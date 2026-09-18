@@ -438,6 +438,7 @@
       <button class="tab-btn active" data-tab="players">Players</button>
       <button class="tab-btn" data-tab="fixtures">Fixtures &amp; Odds</button>
       <button class="tab-btn" data-tab="teams">Teams</button>
+      <button class="tab-btn" data-tab="screen">Value Screen</button>
       <button class="tab-btn" data-tab="rankings">Rankings</button>
       <button class="tab-btn" data-tab="sim">Match Sim</button>
       <button class="tab-btn" data-tab="streak">Streak</button>
@@ -512,6 +513,61 @@
       <select class="sortsel" id="teamSelect"></select>
     </div>
     <div id="teamPanel"></div>
+  </section>
+
+  <section id="tab-screen" hidden>
+    <p class="method-intro">Every player who clears the value model's leaderboard guards (180+ minutes, a real
+      market listing of at least &euro;1.5M - no imputed or near-zero listings), sorted by the gap between the
+      model's predicted value and what he's listed for. Use the league picker above and the filters below to dig
+      past the top-8 on the homepage tile.</p>
+    <div class="controls">
+      <div class="chipset" id="screenPosChips"></div>
+      <select class="sortsel" id="screenDirSel">
+        <option value="all">All players</option>
+        <option value="bargain">Bargains only (model &gt; listed)</option>
+        <option value="over">Overpriced only (model &lt; listed)</option>
+      </select>
+      <select class="sortsel" id="screenSortSel">
+        <option value="ratio">Sort: Value gap</option>
+        <option value="predicted_eur">Sort: Predicted value</option>
+        <option value="listed_value_eur">Sort: Listed value</option>
+      </select>
+    </div>
+    <div class="table-wrap">
+      <table id="screenTable">
+        <thead>
+          <tr>
+            <th data-k="player">Player</th>
+            <th data-k="league">League</th>
+            <th class="num-col" data-k="predicted_eur">Predicted value</th>
+            <th class="num-col" data-k="listed_value_eur">Listed value</th>
+            <th class="num-col" data-k="ratio">Model / listed</th>
+          </tr>
+        </thead>
+        <tbody id="screenBody"></tbody>
+      </table>
+      <div class="empty" id="screenEmpty" hidden>No players match that filter.</div>
+    </div>
+
+    <p class="method-intro" style="margin-top:28px;">
+      <b>Validation - last season's bargain calls.</b> The model's biggest "predicted well above listed"
+      calls from a season ago, checked against what actually happened to the listing since - the leaderboard
+      is a claim until it's checked against what came next.</p>
+    <div class="table-wrap">
+      <table id="validationTable">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th class="num-col">Prior listed</th>
+            <th class="num-col">Prior model</th>
+            <th class="num-col">Prior gap</th>
+            <th class="num-col">Listed now</th>
+            <th class="num-col">Change</th>
+          </tr>
+        </thead>
+        <tbody id="validationBody"></tbody>
+      </table>
+    </div>
   </section>
 
   <section id="tab-rankings" hidden>
@@ -601,7 +657,7 @@
     leagueChips.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});
     b.classList.add('active');
     leagueState.league = b.getAttribute('data-league');
-    renderTiles(); renderPlayers(); renderFixtures(); renderLeaderboard(); renderRankings();
+    renderTiles(); renderPlayers(); renderFixtures(); renderLeaderboard(); renderRankings(); renderScreen();
   });
   function inLeague(item){ return leagueState.league==='ALL' || item.league===leagueState.league; }
 
@@ -650,12 +706,13 @@
       tabBtns.forEach(function(x){x.classList.remove('active');});
       b.classList.add('active');
       var t = b.getAttribute('data-tab');
-      ['players','fixtures','teams','rankings','sim','streak','method'].forEach(function(name){
+      ['players','fixtures','teams','screen','rankings','sim','streak','method'].forEach(function(name){
         document.getElementById('tab-'+name).hidden = t!==name;
       });
       if(t==='sim' && !simInited){ simInited = true; initSim(); }
       if(t==='streak' && !streakInited){ streakInited = true; initStreak(); }
       if(t==='rankings' && !rankingsInited){ rankingsInited = true; initRankings(); }
+      if(t==='screen' && !screenInited){ screenInited = true; initScreen(); }
     });
   });
 
@@ -777,6 +834,12 @@
         '<div class="row"><span>Listed'+estMark+'</span><b>'+eur(v.listed_value_eur)+'</b></div>' +
         '<div class="valuebar"><b style="width:'+((v.predicted_eur/span)*100).toFixed(0)+'%"></b><i style="left:'+((v.listed_value_eur/span)*100).toFixed(0)+'%"></i></div>' +
         '<div class="note">Bar = model prediction; line = listed value'+(v.listed_is_estimate?' (a promoted-club estimate, not a market listing)':'')+'.</div></div>');
+      if(v.forecast_1y_eur!=null){
+        blocks.push('<div class="blk"><div class="k">Value forecast (aging curve)</div>' +
+          '<div class="row"><span>+1 season</span><b>'+eur(v.forecast_1y_eur)+'</b></div>' +
+          '<div class="row"><span>+2 seasons</span><b>'+eur(v.forecast_2y_eur)+'</b></div>' +
+          '<div class="note">Population age curve for his position, blended with his own value history (shrunk toward the position typical the fewer real seasons he has) - not a trained model.</div></div>');
+      }
     }
     return '<div class="detail">'+blocks.join('')+'</div>';
   }
@@ -1331,6 +1394,71 @@
   var LG_SHORT = { 'Premier League':'PL', 'La Liga':'LL', 'Bundesliga':'BL', 'Serie A':'SA', 'Ligue 1':'L1' };
   function lgShort(l){ return LG_SHORT[l] || esc(l||''); }
 
+  // ---------- value screen ----------
+  var screenState = { pos:'ALL', dir:'all', sort:'ratio' };
+
+  function initScreen(){
+    var posOpts = ['ALL','FW','MF','DF','GK'];
+    var chipset = document.getElementById('screenPosChips');
+    chipset.innerHTML = posOpts.map(function(p,i){
+      return '<button class="chip'+(i===0?' active':'')+'" data-pos="'+p+'">'+p+'</button>';
+    }).join('');
+    chipset.addEventListener('click', function(e){
+      var b = e.target.closest('.chip'); if(!b) return;
+      chipset.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active');
+      screenState.pos = b.getAttribute('data-pos');
+      renderScreen();
+    });
+    document.getElementById('screenDirSel').addEventListener('change', function(e){
+      screenState.dir = e.target.value; renderScreen();
+    });
+    document.getElementById('screenSortSel').addEventListener('change', function(e){
+      screenState.sort = e.target.value; renderScreen();
+    });
+    renderScreen();
+    renderValidation();
+  }
+
+  function renderScreen(){
+    var pool = (DATA.value_leaderboard && DATA.value_leaderboard.screen) || [];
+    var rows = pool.filter(function(p){
+      if(!inLeague(p)) return false;
+      if(screenState.pos!=='ALL' && p.pos.indexOf(screenState.pos)<0) return false;
+      if(screenState.dir==='bargain' && p.ratio<1) return false;
+      if(screenState.dir==='over' && p.ratio>1) return false;
+      return true;
+    });
+    rows.sort(function(a,b){ return (b[screenState.sort]||0) - (a[screenState.sort]||0); });
+    var body = document.getElementById('screenBody');
+    document.getElementById('screenEmpty').hidden = rows.length>0;
+    body.innerHTML = rows.map(function(p){
+      var cls = p.ratio>=1 ? 'won' : 'runnerup';
+      return '<tr><td>'+esc(p.player)+' <span class="pos-badge">'+esc(p.pos)+'</span><br><span class="meta">'+esc(p.squad)+'</span></td>' +
+        '<td>'+lgShort(p.league)+'</td>' +
+        '<td class="num num-col">'+eur(p.predicted_eur)+'</td>' +
+        '<td class="num num-col">'+eur(p.listed_value_eur)+'</td>' +
+        '<td class="num num-col"><span class="trophy-outcome '+cls+'">'+num(p.ratio,2)+'x</span></td></tr>';
+    }).join('');
+  }
+
+  function renderValidation(){
+    var rows = DATA.bargain_validation || [];
+    var body = document.getElementById('validationBody');
+    body.innerHTML = rows.map(function(r){
+      var chg = (r.current_listed_eur!=null) ? (r.current_listed_eur/r.prior_listed_eur - 1) : null;
+      var chgTxt = chg==null ? 'no longer listed' : (chg>=0?'+':'') + (chg*100).toFixed(0) + '%';
+      var chgCls = chg==null ? '' : (chg>=0 ? 'won' : 'runnerup');
+      return '<tr><td>'+esc(r.player)+' <span class="pos-badge">'+esc(r.pos)+'</span><br><span class="meta">'+esc(r.squad)+'</span></td>' +
+        '<td class="num num-col">'+eur(r.prior_listed_eur)+'</td>' +
+        '<td class="num num-col">'+eur(r.prior_predicted_eur)+'</td>' +
+        '<td class="num num-col">'+num(r.prior_ratio,2)+'x</td>' +
+        '<td class="num num-col">'+(r.current_listed_eur!=null?eur(r.current_listed_eur):'&mdash;')+
+        (r.realized_transfer_fee_eur!=null?' <span class="meta">(fee '+eur(r.realized_transfer_fee_eur)+')</span>':'')+'</td>' +
+        '<td class="num num-col"><span class="trophy-outcome '+chgCls+'">'+chgTxt+'</span></td></tr>';
+    }).join('');
+  }
+
   function initRankings(){
     var teamElo = DATA.team_elo_rankings || {overall:[], seasons:{}};
     var playerElo = DATA.player_elo_leaderboard || {overall:[], by_position:{}, seasons:{}};
@@ -1412,7 +1540,7 @@
 
   // ================= GAMES =================
   var GAMES = DATA.games || {};
-  var simInited = false, streakInited = false;
+  var simInited = false, streakInited = false, screenInited = false;
 
   // shared: Poisson sampler (Knuth) + Dixon-Coles W/D/L grid
   function poissonSample(lam){
