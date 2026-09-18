@@ -134,10 +134,24 @@ def main() -> None:
     team_out["bench_value_eur"] = team_out["bench_value_eur"].round(0)
     team_out["xi_mean_age"] = team_out["xi_mean_age"].round(1)
     team_out["xi_value_known_frac"] = team_out["xi_value_known_frac"].round(2)
+    player_out = pd.DataFrame(player_rows)
+
+    # upsert by match_id, not overwrite: this environment's lineup cache may
+    # only cover a subset of matches (e.g. CI's actions/cache, restored fresh
+    # each run, vs. a one-off local historical backfill's much larger cache) -
+    # a plain overwrite would silently regress the committed file back down
+    # to whatever this run's cache happens to hold.
+    if OUT_TEAM.exists():
+        prior = pd.read_csv(OUT_TEAM, dtype={"match_id": str})
+        keep = ~prior["match_id"].isin(team_out["match_id"])
+        team_out = pd.concat([prior[keep], team_out], ignore_index=True)
+    if OUT_PLAYERS.exists():
+        prior_p = pd.read_csv(OUT_PLAYERS, dtype={"match_id": str})
+        keep_p = ~prior_p["match_id"].isin(player_out["match_id"])
+        player_out = pd.concat([prior_p[keep_p], player_out], ignore_index=True)
+
     PROC.mkdir(parents=True, exist_ok=True)
     team_out.to_csv(OUT_TEAM, index=False)
-
-    player_out = pd.DataFrame(player_rows)
     player_out.to_csv(OUT_PLAYERS, index=False)
 
     print(f"wrote {OUT_TEAM}  ({len(team_out)} team-matches, "
