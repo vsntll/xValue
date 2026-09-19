@@ -53,6 +53,11 @@ def fetch(comp_codes: list[str], season: str, with_stats: bool = False) -> "obje
         matches = r.json().get("matches", [])
         print(f"  football-data.org {code}: {len(matches)} matches")
         for m in matches:
+            # fullTime score is only meaningful once the match has actually
+            # started - for TIMED/SCHEDULED fixtures the API sometimes returns
+            # {home: 0, away: 0} instead of null, which would look like a real
+            # 0-0 result if taken unconditionally.
+            live_score = m["status"] not in ("TIMED", "SCHEDULED", "POSTPONED", "CANCELLED")
             ft = m["score"]["fullTime"]
             row = {
                 "season": season, "league": cfg["name"], "tier": cfg["tier"],
@@ -60,7 +65,8 @@ def fetch(comp_codes: list[str], season: str, with_stats: bool = False) -> "obje
                 "Date": m["utcDate"][:10], "Time": m["utcDate"][11:16],
                 "HomeTeam": m["homeTeam"]["name"], "AwayTeam": m["awayTeam"]["name"],
                 "status": m["status"],
-                "FTHG": ft["home"], "FTAG": ft["away"],
+                "FTHG": ft["home"] if live_score else None,
+                "FTAG": ft["away"] if live_score else None,
                 "match_id": f"fdorg:{m['id']}",
             }
             if m["status"] == "FINISHED":
