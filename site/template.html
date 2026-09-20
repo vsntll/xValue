@@ -111,7 +111,8 @@
   tbody tr.prow:hover{ background:var(--surface-2); }
   tbody tr.prow.open{ background:var(--surface-2); }
   .pname{ font-weight:600; }
-  .psquad{ color:var(--text-dim); font-size:11.5px; }
+  .psquad{ color:var(--text-dim); font-size:11.5px; display:flex; align-items:center; gap:4px; }
+  .prow-id{ display:flex; align-items:center; gap:8px; }
   .pos-badge{ display:inline-block; font-size:10px; font-weight:700; padding:2px 6px; border-radius:5px;
               background:var(--chip-bg); color:var(--text-dim); letter-spacing:.3px; }
   .ratio-badge{ display:inline-flex; align-items:center; gap:4px; font-size:11.5px; font-weight:700;
@@ -258,6 +259,9 @@
   .crest{ display:inline-flex; align-items:center; justify-content:center; border-radius:7px;
           color:#fff; font-family:var(--font-display); font-weight:700; flex:none; letter-spacing:.2px;
           text-shadow:0 1px 1px rgba(0,0,0,.25); }
+  .crest-img{ object-fit:contain; flex:none; vertical-align:middle; }
+  .player-photo{ border-radius:50%; object-fit:cover; flex:none; vertical-align:middle;
+                 background:var(--surface-3); }
   .form-pills{ display:inline-flex; gap:3px; vertical-align:middle; }
   .form-pill{ width:17px; height:17px; border-radius:4px; display:inline-flex; align-items:center;
               justify-content:center; font-size:9px; font-weight:800; color:#fff; flex:none; }
@@ -786,7 +790,7 @@
     var ferm = FERMIN && isFermin(p);
     return (
       '<tr class="prow'+(state.openKey===key?' open':'')+(ferm?' fermin-row':'')+'" data-key="'+key+'">' +
-        '<td><div class="pname">'+(ferm?'🐐 ':'')+esc(p.player)+' <span class="pos-badge">'+esc(p.pos)+'</span>'+eloTag(p.player,p.team_key)+'</div><div class="psquad">'+esc(p.squad)+' &middot; '+esc(p.league)+'</div></td>' +
+        '<td><div class="prow-id">'+playerPhoto(p.fotmob_id,32)+'<div><div class="pname">'+(ferm?'🐐 ':'')+esc(p.player)+' <span class="pos-badge">'+esc(p.pos)+'</span>'+eloTag(p.player,p.team_key)+'</div><div class="psquad">'+crest(p.team_key,p.squad,14)+esc(p.squad)+' &middot; '+esc(p.league)+'</div></div></div></td>' +
         '<td class="num num-col">'+num(p.current.min)+'</td>' +
         '<td class="num num-col">'+num(p.current.gls)+'</td>' +
         '<td class="num num-col">'+num(p.current.ast)+'</td>' +
@@ -901,7 +905,7 @@
   }
   function lbRowHtml(p, i){
     var pct2 = (p.value.ratio>=1?'+':'') + Math.round((p.value.ratio-1)*100) + '%';
-    return '<div class="lb-row"><span class="lb-rank">'+(i+1)+'</span>'+crest(p.squad,26)+
+    return '<div class="lb-row"><span class="lb-rank">'+(i+1)+'</span>'+playerPhoto(p.fotmob_id,26)+crest(p.team_key,p.squad,20)+
       '<div class="lb-name"><span class="p">'+esc(p.player)+eloTag(p.player,p.team_key)+'</span><span class="s">'+esc(p.squad)+' &middot; '+esc(p.league)+'</span></div>' +
       '<span class="lb-ratio">'+pct2+'</span></div>';
   }
@@ -937,9 +941,27 @@
     if(words.length===1) return words[0].slice(0,2).toUpperCase();
     return (words[0][0]+words[words.length-1][0]).toUpperCase();
   }
-  function crest(name, size){
+  function crestFallbackHtml(name, size){
     size = size || 22;
     return '<span class="crest" style="width:'+size+'px;height:'+size+'px;font-size:'+Math.round(size*0.42)+'px;background:'+teamColor(name)+'">'+esc(initials(name))+'</span>';
+  }
+  function crest(key, name, size){
+    size = size || 22;
+    var id = TEAM_CREST_ID[key];
+    if(!id) return crestFallbackHtml(name, size);
+    return '<img class="crest-img" src="https://images.fotmob.com/image_resources/logo/teamlogo/'+id+'.png" ' +
+      'width="'+size+'" height="'+size+'" alt="" loading="lazy" data-name="'+esc(name)+'" data-size="'+size+'" ' +
+      'onerror="this.outerHTML=crestFallbackHtml(this.dataset.name,this.dataset.size);">';
+  }
+  function playerPhotoFallbackHtml(size){
+    return '<span class="player-photo" style="display:inline-block;width:'+size+'px;height:'+size+'px;"></span>';
+  }
+  function playerPhoto(fotmobId, size){
+    size = size || 28;
+    if(!fotmobId) return playerPhotoFallbackHtml(size);
+    return '<img class="player-photo" src="https://images.fotmob.com/image_resources/playerimages/'+fotmobId+'.png" ' +
+      'width="'+size+'" height="'+size+'" alt="" loading="lazy" data-size="'+size+'" ' +
+      'onerror="this.outerHTML=playerPhotoFallbackHtml(this.dataset.size);">';
   }
   function formPills(matches, n){
     n = n || 5;
@@ -997,10 +1019,10 @@
       '<div class="fx-card'+(isOpen?' open':'')+'">' +
         '<div class="fx-head"><span class="fx-date">'+esc(fx.date.slice(0,10))+'</span><span class="pos-badge">'+esc(fx.league)+'</span></div>' +
         '<div class="fx-teams">' +
-          '<div class="fx-team home"><div class="fx-team-row">'+crest(fx.home,24)+'<span>'+esc(teamShort(fx.home))+'</span></div>' +
+          '<div class="fx-team home"><div class="fx-team-row">'+crest(fx.home_key,fx.home,24)+'<span>'+esc(teamShort(fx.home))+'</span></div>' +
             '<div class="fx-xg">xG '+num(fx.exp_goals_home,2)+'</div>'+formPills(recentMatches[fx.home_key])+'</div>' +
           '<div class="fx-vs">vs</div>' +
-          '<div class="fx-team away"><div class="fx-team-row">'+crest(fx.away,24)+'<span>'+esc(teamShort(fx.away))+'</span></div>' +
+          '<div class="fx-team away"><div class="fx-team-row">'+crest(fx.away_key,fx.away,24)+'<span>'+esc(teamShort(fx.away))+'</span></div>' +
             '<div class="fx-xg">xG '+num(fx.exp_goals_away,2)+'</div>'+formPills(recentMatches[fx.away_key])+'</div>' +
         '</div>' +
         '<div class="oddsbar">' +
@@ -1070,6 +1092,8 @@
 
   // ---------- teams ----------
   var teamsList = DATA.teams || [];
+  var TEAM_CREST_ID = {};
+  teamsList.forEach(function(t){ if(t.fotmob_id) TEAM_CREST_ID[t.team_key] = t.fotmob_id; });
   var recentMatches = DATA.recent_matches || {};
   var standings = DATA.standings || [];
   var cupFinals = DATA.cup_finals || [];
@@ -1125,7 +1149,7 @@
         '<th class="num-col">Ast</th><th class="num-col">npxG/90</th></tr></thead><tbody>' +
       roster.map(function(p){
         return (
-          '<tr><td><button type="button" class="playerlink linkbtn" data-player="'+esc(p.player)+'" data-team="'+esc(p.team_key)+'">'+esc(p.player)+'</button> <span class="pos-badge">'+esc(p.pos)+'</span>'+eloTag(p.player,p.team_key)+'</td>' +
+          '<tr><td>'+playerPhoto(p.fotmob_id,22)+' <button type="button" class="playerlink linkbtn" data-player="'+esc(p.player)+'" data-team="'+esc(p.team_key)+'">'+esc(p.player)+'</button> <span class="pos-badge">'+esc(p.pos)+'</span>'+eloTag(p.player,p.team_key)+'</td>' +
           '<td class="num num-col">'+num(p.age)+'</td><td class="num num-col">'+num(p.current.min)+'</td>' +
           '<td class="num num-col">'+num(p.current.gls)+'</td><td class="num num-col">'+num(p.current.ast)+'</td>' +
           '<td class="num num-col">'+num(p.current.npxg90,2)+'</td></tr>'
@@ -1154,7 +1178,7 @@
       }).filter(Boolean).sort(function(a,b){ return a.season<b.season?1:-1; });
     var cur = mySeasons[0];
 
-    var html = '<div class="team-header"><div style="display:flex;align-items:center;gap:12px;">'+crest(team.name,44)+
+    var html = '<div class="team-header"><div style="display:flex;align-items:center;gap:12px;">'+crest(team.team_key,team.name,44)+
       '<div><h2>'+esc(team.name)+'</h2><div class="lg">'+esc(team.league)+'</div>'+formPills(matches)+'</div></div>';
     if(cur) html += '<div class="tile" style="margin:0;min-width:180px;"><div class="k">'+esc(cur.season)+' position</div>' +
       '<div class="v">#'+cur.row.rank+'</div><div class="d">'+cur.row.played+' played &middot; '+cur.row.pts+' pts</div></div>';
@@ -1193,7 +1217,7 @@
           var moveCls = r.projected_rank<r.current_rank ? 'up' : r.projected_rank>r.current_rank ? 'down' : 'same';
           var moveTxt = r.projected_rank===r.current_rank ? '&mdash;' : (r.projected_rank<r.current_rank?'&uarr;':'&darr;')+Math.abs(r.projected_rank-r.current_rank);
           return '<tr style="'+(mine?'font-weight:700;background:var(--surface-3);':'')+'"><td class="num num-col">#'+r.projected_rank+'</td>' +
-            '<td>'+crest(r.name,16)+' '+esc(teamShort(r.name))+' <span class="proj-move '+moveCls+'">'+moveTxt+'</span></td>' +
+            '<td>'+crest(r.team_key,r.name,16)+' '+esc(teamShort(r.name))+' <span class="proj-move '+moveCls+'">'+moveTxt+'</span></td>' +
             '<td class="num num-col">#'+r.current_rank+' &middot; '+r.current_pts+'</td>' +
             '<td class="num num-col">'+r.games_remaining+'</td><td class="num num-col">'+r.projected_pts+'</td></tr>';
         }).join('') + '</tbody></table></div></div>';
@@ -1508,7 +1532,7 @@
         : rankingsState.season + ' final';
       document.getElementById('teamEloSub').textContent = '— ' + when + (capped ? ' · top 30' : '');
       document.getElementById('teamEloBody').innerHTML = rows.length ? rows.map(function(r,i){
-        return '<tr><td>'+(i+1)+'</td><td>'+crest(r.name,16)+' '+esc(teamShort(r.name))+'</td>' +
+        return '<tr><td>'+(i+1)+'</td><td>'+crest(r.team_key,r.name,16)+' '+esc(teamShort(r.name))+'</td>' +
           '<td><span class="pos-badge">'+lgShort(r.league)+'</span></td><td class="num-col">'+num(r.elo,0)+'</td></tr>';
       }).join('') : '<tr><td colspan="4" class="spark-empty">No teams for this filter.</td></tr>';
     }
@@ -1645,9 +1669,9 @@
       }
       document.getElementById('simOut').innerHTML =
         '<div class="sim-head">' +
-          '<span class="sim-team">'+crest(L.h.name,20)+esc(L.h.name)+'</span>' +
+          '<span class="sim-team">'+crest(L.h.key,L.h.name,20)+esc(L.h.name)+'</span>' +
           '<span class="sim-score">'+r.gh+'–'+r.ga+'</span>' +
-          '<span class="sim-team">'+esc(L.a.name)+crest(L.a.name,20)+'</span>' +
+          '<span class="sim-team">'+esc(L.a.name)+crest(L.a.key,L.a.name,20)+'</span>' +
         '</div>' +
         '<div class="sim-line">expected goals '+L.lh.toFixed(2)+' – '+L.la.toFixed(2)+
           ' &nbsp;·&nbsp; most likely score '+grid.top[0]+'–'+grid.top[1]+'</div>' +
