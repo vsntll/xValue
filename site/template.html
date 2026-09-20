@@ -645,6 +645,8 @@
   var DATA = JSON.parse(document.getElementById('site-data').textContent);
   var players = DATA.players, fixtures = DATA.fixtures, notes = DATA.notes;
   var leagues = DATA.leagues || [];
+  var TEAM_CREST_ID = {};                     // team_key -> FotMob team id, for crest()
+  (DATA.teams || []).forEach(function(t){ if(t.fotmob_id) TEAM_CREST_ID[t.team_key] = t.fotmob_id; });
   var FERMIN = false;                        // easter egg — see the bottom of this script
   var FERMIN_NAME = 'Fermin López', FERMIN_KEY = 'barcelona';
 
@@ -1092,8 +1094,6 @@
 
   // ---------- teams ----------
   var teamsList = DATA.teams || [];
-  var TEAM_CREST_ID = {};
-  teamsList.forEach(function(t){ if(t.fotmob_id) TEAM_CREST_ID[t.team_key] = t.fotmob_id; });
   var recentMatches = DATA.recent_matches || {};
   var standings = DATA.standings || [];
   var cupFinals = DATA.cup_finals || [];
