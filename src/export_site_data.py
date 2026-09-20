@@ -142,6 +142,34 @@ def load_value_forecast(src_league: str) -> pd.DataFrame:
     return v[["player", "team_key", "forecast_1y_eur", "forecast_2y_eur"]]
 
 
+def load_fotmob_player_ids(src_league: str) -> dict:
+    """(player, team_key) -> FotMob player id, for the FotMob-hosted headshot
+    images (images.fotmob.com/image_resources/playerimages/{id}.png - public,
+    no auth). Scoped to the two seasons the site shows."""
+    f = PROC / "fotmob_player_season.csv"
+    if not f.exists():
+        return {}
+    fm = pd.read_csv(f, encoding="utf-8")
+    fm = fm[(fm["src_league"] == src_league) & fm["season"].isin(["2025-26", "2026-27"])].copy()
+    fm = _fix_names(fm, ["player", "team"])
+    fm["pk"] = fm["player"].map(_norm_name)
+    # prefer the current season's id over last season's, per player+team
+    fm = fm.sort_values("season").drop_duplicates(subset=["pk", "team_key"], keep="last")
+    return {(r.pk, r.team_key): int(r.fotmob_id) for r in fm.itertuples(index=False)}
+
+
+def load_fotmob_team_ids() -> dict:
+    """team_key -> FotMob team id, for the club crest images
+    (images.fotmob.com/image_resources/logo/teamlogo/{id}.png - public, no
+    auth). One id per team_key regardless of league/season."""
+    f = PROC / "fotmob_player_season.csv"
+    if not f.exists():
+        return {}
+    fm = pd.read_csv(f, encoding="utf-8")
+    fm = fm[fm["season"].isin(["2025-26", "2026-27"]) & fm["team_id"].notna()]
+    return {r.team_key: int(r.team_id) for r in fm.drop_duplicates("team_key").itertuples(index=False)}
+
+
 SHRINK_MIN = 400  # minutes of current-season data at which blended rate is ~50/50 cur/prior
 
 
@@ -165,6 +193,7 @@ def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict]
     df = load_players(src_league)
     vpred = load_value_predictions(src_league)
     vfc = load_value_forecast(src_league)
+    fotmob_ids = load_fotmob_player_ids(src_league)
 
     cur = df[df["season"] == "2026-27"]
     prev = df[df["season"] == "2025-26"].set_index(["player", "team_key"])
@@ -193,6 +222,7 @@ def build_players_payload(src_league: str, league_name: str) -> tuple[list[dict]
         rec = {
             "player": r["player"], "squad": r["squad"], "team_key": r["team_key"],
             "league": league_name,
+            "fotmob_id": fotmob_ids.get((_norm_name(r["player"]), r["team_key"])),
             "pos": r["pos"], "age": _num(age),
             "current": {
                 "mp": _num(r["mp"]), "starts": _num(r["starts"]), "min": _num(r["min"]),
@@ -335,8 +365,10 @@ def build_teams_list() -> list[dict]:
     sq = sq[sq["src_league"].isin(LEAGUES)].copy()
     sq["league"] = sq["src_league"].map(LEAGUES)
     latest = sq.sort_values("season").groupby(["team_key", "league"], as_index=False).last()
+    fotmob_team_ids = load_fotmob_team_ids()
     return [
-        {"team_key": r["team_key"], "name": r["team"], "league": r["league"]}
+        {"team_key": r["team_key"], "name": r["team"], "league": r["league"],
+         "fotmob_id": fotmob_team_ids.get(r["team_key"])}
         for _, r in latest.iterrows()
     ]
 

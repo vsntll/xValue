@@ -199,7 +199,7 @@ def _aggregate(pm: pd.DataFrame) -> pd.DataFrame:
     pm["team_key"] = pm["team"].map(normalize_team)
     agg = (pm.groupby(["season", "src_league", "fotmob_id", "team_key"], as_index=False)
              .agg({**{c: "sum" for c in SUM_COLS},
-                   "player": "last", "team": "last", "position": "last"}))
+                   "player": "last", "team": "last", "position": "last", "team_id": "last"}))
     return agg
 
 
