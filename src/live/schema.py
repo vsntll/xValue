@@ -94,6 +94,7 @@ _ALIASES = {
     "man united": "manchester united", "man utd": "manchester united",
     "man city": "manchester city", "spurs": "tottenham hotspur", "tottenham": "tottenham hotspur",
     "wolves": "wolverhampton wanderers", "wolverhampton": "wolverhampton wanderers",
+    "sport freiburg": "freiburg",  # FotMob's raw name is "Sport-Club Freiburg" - "sport" isn't a drop token
     "newcastle": "newcastle united", "west ham": "west ham united",
     "brighton": "brighton hove albion", "brighton and hove albion": "brighton hove albion",
     "nottm forest": "nottingham forest", "nottingham": "nottingham forest",
