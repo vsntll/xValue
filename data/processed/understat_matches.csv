@@ -10779,10 +10779,10 @@ ENG1,2026-27,31226,2026-09-19 14:00:00,Everton,Ipswich,1.0,0.0,2.58285,1.10179,T
 ENG1,2026-27,31223,2026-09-19 14:00:00,Newcastle United,Hull,2.0,1.0,1.37521,1.15888,True,https://understat.com/match/31223
 ENG1,2026-27,31227,2026-09-19 16:30:00,Nottingham Forest,Coventry,0.0,1.0,1.31852,0.69375,True,https://understat.com/match/31227
 ENG1,2026-27,31221,2026-09-19 11:30:00,Tottenham,Aston Villa,2.0,3.0,1.72177,1.7092,True,https://understat.com/match/31221
-ENG1,2026-27,31228,2026-09-20 13:00:00,Bournemouth,Liverpool,,,,,False,https://understat.com/match/31228
-ENG1,2026-27,31229,2026-09-20 15:30:00,Fulham,Manchester United,,,,,False,https://understat.com/match/31229
-ENG1,2026-27,31225,2026-09-20 13:00:00,Leeds,Crystal Palace,,,,,False,https://understat.com/match/31225
-ENG1,2026-27,31222,2026-09-20 13:00:00,Manchester City,Sunderland,,,,,False,https://understat.com/match/31222
+ENG1,2026-27,31228,2026-09-20 13:00:00,Bournemouth,Liverpool,0.0,1.0,0.944706,1.29116,True,https://understat.com/match/31228
+ENG1,2026-27,31229,2026-09-20 15:30:00,Fulham,Manchester United,1.0,1.0,1.71719,2.12453,True,https://understat.com/match/31229
+ENG1,2026-27,31225,2026-09-20 13:00:00,Leeds,Crystal Palace,0.0,0.0,1.08552,1.12905,True,https://understat.com/match/31225
+ENG1,2026-27,31222,2026-09-20 13:00:00,Manchester City,Sunderland,5.0,3.0,2.66856,3.10661,True,https://understat.com/match/31222
 ENG1,2026-27,31230,2026-10-10 11:30:00,Arsenal,Leeds,,,,,False,https://understat.com/match/31230
 ENG1,2026-27,31231,2026-10-10 14:00:00,Aston Villa,Brentford,,,,,False,https://understat.com/match/31231
 ENG1,2026-27,31232,2026-10-10 14:00:00,Chelsea,Bournemouth,,,,,False,https://understat.com/match/31232
@@ -11146,9 +11146,9 @@ GER1,2026-27,32273,2026-09-19 13:30:00,Eintracht Frankfurt,Freiburg,2.0,2.0,2.08
 GER1,2026-27,32274,2026-09-19 13:30:00,Hamburger SV,FC Cologne,2.0,1.0,2.07655,2.15949,True,https://understat.com/match/32274
 GER1,2026-27,32276,2026-09-19 16:30:00,VfB Stuttgart,Borussia Dortmund,0.0,1.0,0.666049,2.11223,True,https://understat.com/match/32276
 GER1,2026-27,32275,2026-09-19 13:30:00,Werder Bremen,Augsburg,3.0,2.0,2.30122,0.742238,True,https://understat.com/match/32275
-GER1,2026-27,32277,2026-09-20 13:30:00,Bayer Leverkusen,RasenBallsport Leipzig,,,,,False,https://understat.com/match/32277
-GER1,2026-27,32278,2026-09-20 17:30:00,Paderborn,Hoffenheim,,,,,False,https://understat.com/match/32278
-GER1,2026-27,32761,2026-09-20 15:30:00,Schalke 04,Elversberg,,,,,False,https://understat.com/match/32761
+GER1,2026-27,32277,2026-09-20 13:30:00,Bayer Leverkusen,RasenBallsport Leipzig,2.0,0.0,2.54515,0.929998,True,https://understat.com/match/32277
+GER1,2026-27,32278,2026-09-20 17:30:00,Paderborn,Hoffenheim,3.0,1.0,1.34065,1.67256,True,https://understat.com/match/32278
+GER1,2026-27,32761,2026-09-20 15:30:00,Schalke 04,Elversberg,0.0,0.0,1.26962,0.795372,True,https://understat.com/match/32761
 GER1,2026-27,32282,2026-10-10 13:30:00,Augsburg,Bayern Munich,,,,,False,https://understat.com/match/32282
 GER1,2026-27,32283,2026-10-10 13:30:00,Borussia Dortmund,Werder Bremen,,,,,False,https://understat.com/match/32283
 GER1,2026-27,32284,2026-10-10 13:30:00,FC Cologne,Borussia M.Gladbach,,,,,False,https://understat.com/match/32284
@@ -11483,11 +11483,11 @@ ESP1,2026-27,30830,2026-09-19 14:15:00,Athletic Club,Alaves,0.0,0.0,1.46153,0.04
 ESP1,2026-27,30832,2026-09-19 16:30:00,Celta Vigo,Racing Santander,5.0,0.0,2.2295,0.719901,True,https://understat.com/match/30832
 ESP1,2026-27,30836,2026-09-19 12:00:00,Osasuna,Rayo Vallecano,1.0,1.0,0.926414,1.35649,True,https://understat.com/match/30836
 ESP1,2026-27,30837,2026-09-19 19:00:00,Sevilla,Barcelona,1.0,3.0,0.758355,3.56261,True,https://understat.com/match/30837
-ESP1,2026-27,30831,2026-09-20 14:15:00,Atletico Madrid,Real Madrid,,,,,False,https://understat.com/match/30831
-ESP1,2026-27,30833,2026-09-20 16:30:00,Deportivo La Coruna,Real Betis,,,,,False,https://understat.com/match/30833
-ESP1,2026-27,30835,2026-09-20 12:00:00,Getafe,Malaga,,,,,False,https://understat.com/match/30835
-ESP1,2026-27,30838,2026-09-20 19:00:00,Valencia,Real Sociedad,,,,,False,https://understat.com/match/30838
-ESP1,2026-27,30839,2026-09-20 16:30:00,Villarreal,Levante,,,,,False,https://understat.com/match/30839
+ESP1,2026-27,30831,2026-09-20 14:15:00,Atletico Madrid,Real Madrid,2.0,1.0,2.40619,0.420774,True,https://understat.com/match/30831
+ESP1,2026-27,30833,2026-09-20 16:30:00,Deportivo La Coruna,Real Betis,1.0,1.0,1.93872,1.00253,True,https://understat.com/match/30833
+ESP1,2026-27,30835,2026-09-20 12:00:00,Getafe,Malaga,1.0,0.0,1.18796,0.660498,True,https://understat.com/match/30835
+ESP1,2026-27,30838,2026-09-20 19:00:00,Valencia,Real Sociedad,2.0,3.0,1.52762,2.33411,True,https://understat.com/match/30838
+ESP1,2026-27,30839,2026-09-20 16:30:00,Villarreal,Levante,3.0,1.0,4.28569,0.941792,True,https://understat.com/match/30839
 ESP1,2026-27,30840,2026-10-11 15:00:00,Alaves,Atletico Madrid,,,,,False,https://understat.com/match/30840
 ESP1,2026-27,30843,2026-10-11 15:00:00,Barcelona,Getafe,,,,,False,https://understat.com/match/30843
 ESP1,2026-27,30842,2026-10-11 15:00:00,Elche,Celta Vigo,,,,,False,https://understat.com/match/30842
@@ -11844,11 +11844,11 @@ ITA1,2026-27,31602,2026-09-19 13:00:00,Bologna,Torino,1.0,1.0,0.699269,0.958071,
 ITA1,2026-27,31603,2026-09-19 16:00:00,Roma,Inter,2.0,2.0,2.31246,2.58716,True,https://understat.com/match/31603
 ITA1,2026-27,31601,2026-09-19 13:00:00,Udinese,Cagliari,0.0,1.0,1.8486,0.636351,True,https://understat.com/match/31601
 ITA1,2026-27,31604,2026-09-19 18:45:00,Venezia,Lazio,0.0,2.0,1.84911,1.7718,True,https://understat.com/match/31604
-ITA1,2026-27,31609,2026-09-20 18:45:00,AC Milan,Lecce,,,,,False,https://understat.com/match/31609
-ITA1,2026-27,31605,2026-09-20 10:30:00,Fiorentina,Napoli,,,,,False,https://understat.com/match/31605
-ITA1,2026-27,31606,2026-09-20 13:00:00,Frosinone,Como,,,,,False,https://understat.com/match/31606
-ITA1,2026-27,31608,2026-09-20 16:00:00,Juventus,Atalanta,,,,,False,https://understat.com/match/31608
-ITA1,2026-27,31607,2026-09-20 13:00:00,Parma Calcio 1913,Genoa,,,,,False,https://understat.com/match/31607
+ITA1,2026-27,31609,2026-09-20 18:45:00,AC Milan,Lecce,3.0,0.0,2.47529,0.217933,True,https://understat.com/match/31609
+ITA1,2026-27,31605,2026-09-20 10:30:00,Fiorentina,Napoli,1.0,1.0,1.06168,2.13022,True,https://understat.com/match/31605
+ITA1,2026-27,31606,2026-09-20 13:00:00,Frosinone,Como,2.0,0.0,2.26034,2.28858,True,https://understat.com/match/31606
+ITA1,2026-27,31608,2026-09-20 16:00:00,Juventus,Atalanta,2.0,0.0,1.91682,0.489173,True,https://understat.com/match/31608
+ITA1,2026-27,31607,2026-09-20 13:00:00,Parma Calcio 1913,Genoa,2.0,1.0,0.860604,0.86391,True,https://understat.com/match/31607
 ITA1,2026-27,31610,2026-10-11 13:00:00,Atalanta,Venezia,,,,,False,https://understat.com/match/31610
 ITA1,2026-27,31611,2026-10-11 13:00:00,Cagliari,Juventus,,,,,False,https://understat.com/match/31611
 ITA1,2026-27,31612,2026-10-11 13:00:00,Como,Roma,,,,,False,https://understat.com/match/31612
@@ -12221,9 +12221,9 @@ FRA1,2026-27,31982,2026-09-19 18:45:00,Le Mans,Lorient,2.0,1.0,0.959241,1.07323,
 FRA1,2026-27,31983,2026-09-19 18:45:00,Lyon,Rennes,4.0,0.0,3.60496,1.15783,True,https://understat.com/match/31983
 FRA1,2026-27,31978,2026-09-19 15:15:00,Paris FC,Strasbourg,2.0,1.0,0.907233,0.230224,True,https://understat.com/match/31978
 FRA1,2026-27,31979,2026-09-19 18:45:00,Toulouse,Le Havre,3.0,2.0,2.82989,2.15515,True,https://understat.com/match/31979
-FRA1,2026-27,31981,2026-09-20 13:00:00,Auxerre,Brest,,,,,False,https://understat.com/match/31981
-FRA1,2026-27,31984,2026-09-20 18:45:00,Marseille,Paris Saint Germain,,,,,False,https://understat.com/match/31984
-FRA1,2026-27,31977,2026-09-20 15:15:00,Nice,Lille,,,,,False,https://understat.com/match/31977
+FRA1,2026-27,31981,2026-09-20 13:00:00,Auxerre,Brest,2.0,1.0,0.769606,0.304072,True,https://understat.com/match/31981
+FRA1,2026-27,31984,2026-09-20 18:45:00,Marseille,Paris Saint Germain,1.0,2.0,1.86575,4.67277,True,https://understat.com/match/31984
+FRA1,2026-27,31977,2026-09-20 15:15:00,Nice,Lille,2.0,1.0,1.93232,1.93315,True,https://understat.com/match/31977
 FRA1,2026-27,31985,2026-10-10 13:00:00,Brest,Angers,,,,,False,https://understat.com/match/31985
 FRA1,2026-27,31986,2026-10-10 13:00:00,Lens,Lyon,,,,,False,https://understat.com/match/31986
 FRA1,2026-27,31987,2026-10-10 13:00:00,Lille,Le Havre,,,,,False,https://understat.com/match/31987
