@@ -7,3 +7,7 @@
 # -text stops any CRLF munging on Windows checkouts (would show the whole file
 # as modified and thrash the weekly diff); no textual diff for multi-MB CSVs.
 data/processed/*.csv  -text
+
+# SQLite mirror of data/processed/*.csv (src/build_sqlite_db.py) - binary,
+# fully rewritten each run; no diff worth showing.
+data/processed/xvalue.db  -diff -text

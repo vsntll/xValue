@@ -54,6 +54,10 @@ py -3.11 src/export_site_data.py   -> site/data.json + site/index.html
 `export_site_data.py` now splices the payload into `site/template.html` itself;
 `site/index.html` is the committed, self-contained deliverable.
 
+```
+py -3.11 src/build_sqlite_db.py   -> data/processed/xvalue.db  (read-only SQL mirror of every processed CSV, one table per file)
+```
+
 ## 5. Dashboard + source health (optional, local)
 
 ```

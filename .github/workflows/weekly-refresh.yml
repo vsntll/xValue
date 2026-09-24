@@ -135,6 +135,9 @@ jobs:
       - name: Regenerate the site
         run: python src/export_site_data.py
 
+      - name: Sync processed CSVs into a SQLite database
+        run: python src/build_sqlite_db.py
+
       - name: Commit refreshed data + site and deploy
         env:
           GH_TOKEN: ${{ github.token }}
