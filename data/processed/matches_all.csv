@@ -13638,34 +13638,56 @@ season,competition_type,comp,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,
 2026-27,league,La Liga,2026-09-16,FC Barcelona,Real Racing Club de Santander,7.0,2.0,H,4.0,1.0,,30.0,5.0,9.0,3.0,18.0,0.0,,,3.0,2.0,,,69.0,31.0,7.475,1.384,,,football-data.org+fotmob+understat
 2026-27,league,La Liga,2026-09-17,Betis,Getafe,1.0,0.0,H,1.0,0.0,H,22.0,8.0,8.0,2.0,4.0,3.0,13.0,24.0,0.0,0.0,0.0,0.0,75.0,25.0,2.60912,0.327032,,,football-data.co.uk
 2026-27,league,La Liga,2026-09-17,Malaga,Villarreal,1.0,3.0,A,1.0,2.0,A,5.0,16.0,1.0,7.0,4.0,8.0,17.0,10.0,0.0,0.0,0.0,0.0,37.0,63.0,0.361392,4.2474,,,football-data.co.uk
-2026-27,league,Premier League,2026-09-18,Brentford FC,Chelsea FC,3.0,0.0,H,0.0,0.0,,13.0,12.0,6.0,2.0,4.0,12.0,,,2.0,0.0,,,40.0,60.0,2.479,0.885,,,football-data.org+fotmob+understat
-2026-27,league,La Liga,2026-09-18,RCD Espanyol de Barcelona,Elche CF,1.0,3.0,A,0.0,2.0,,23.0,9.0,4.0,6.0,3.0,3.0,,,2.0,2.0,,,66.0,34.0,1.077,1.251,,,football-data.org+fotmob+understat
-2026-27,league,Ligue 1,2026-09-18,AS Monaco FC,Racing Club de Lens,2.0,1.0,H,1.0,0.0,,9.0,12.0,6.0,4.0,2.0,8.0,,,1.0,1.0,,,50.0,50.0,1.75,1.19,,,football-data.org+fotmob
-2026-27,league,Bundesliga,2026-09-18,FC Bayern München,1. FC Union Berlin,7.0,0.0,H,3.0,0.0,,23.0,3.0,15.0,2.0,9.0,2.0,,,1.0,3.0,,,68.0,32.0,4.131,0.472,,,football-data.org+fotmob+understat
-2026-27,league,Serie A,2026-09-18,AC Monza,US Sassuolo Calcio,2.0,1.0,H,0.0,0.0,,15.0,20.0,6.0,8.0,7.0,5.0,,,4.0,1.0,,,35.0,65.0,1.51,1.47,,,football-data.org+fotmob
-2026-27,league,Premier League,2026-09-19,Tottenham Hotspur FC,Aston Villa FC,2.0,3.0,A,0.0,1.0,,20.0,15.0,7.0,6.0,11.0,1.0,,,1.0,2.0,,,64.0,36.0,1.722,1.709,,,football-data.org+fotmob+understat
-2026-27,league,Premier League,2026-09-19,Everton FC,Ipswich Town FC,1.0,0.0,H,1.0,0.0,,21.0,13.0,2.0,4.0,4.0,4.0,,,2.0,1.0,,,52.0,48.0,2.583,1.102,,,football-data.org+fotmob+understat
-2026-27,league,Premier League,2026-09-19,Brighton & Hove Albion FC,Arsenal FC,3.0,0.0,H,2.0,0.0,,17.0,11.0,5.0,2.0,5.0,6.0,,,4.0,1.0,,,40.0,60.0,2.113,1.24,,,football-data.org+fotmob+understat
-2026-27,league,Premier League,2026-09-19,Newcastle United FC,Hull City AFC,2.0,1.0,H,2.0,0.0,,12.0,22.0,5.0,4.0,4.0,7.0,,,1.0,4.0,,,56.0,44.0,1.375,1.159,,,football-data.org+fotmob+understat
-2026-27,league,Premier League,2026-09-19,Nottingham Forest FC,Coventry City FC,0.0,1.0,A,0.0,0.0,,24.0,10.0,3.0,3.0,6.0,2.0,,,2.0,0.0,,,62.0,38.0,1.319,0.694,,,football-data.org+fotmob+understat
-2026-27,league,La Liga,2026-09-19,CA Osasuna,Rayo Vallecano de Madrid,1.0,1.0,D,1.0,0.0,,10.0,19.0,3.0,2.0,4.0,4.0,,,3.0,2.0,,,37.0,63.0,0.926,1.356,,,football-data.org+fotmob+understat
-2026-27,league,La Liga,2026-09-19,Athletic Club,Deportivo Alavés,0.0,0.0,D,0.0,0.0,,24.0,2.0,6.0,0.0,5.0,1.0,,,2.0,0.0,,,69.0,31.0,1.462,0.046,,,football-data.org+fotmob+understat
+2026-27,league,Bundesliga,2026-09-18,Bayern Munich,Union Berlin,7.0,0.0,H,3.0,0.0,H,23.0,3.0,15.0,2.0,9.0,2.0,12.0,9.0,1.0,3.0,0.0,0.0,68.0,32.0,4.1308,0.471553,,,football-data.co.uk
+2026-27,league,La Liga,2026-09-18,Espanol,Elche,1.0,3.0,A,0.0,2.0,A,23.0,9.0,4.0,6.0,3.0,3.0,14.0,9.0,2.0,2.0,0.0,1.0,66.0,34.0,1.07744,1.25113,,,football-data.co.uk
+2026-27,league,Ligue 1,2026-09-18,Monaco,Lens,2.0,1.0,H,1.0,0.0,H,9.0,12.0,6.0,4.0,2.0,8.0,13.0,11.0,1.0,1.0,0.0,0.0,50.0,50.0,1.53599,1.46144,,,football-data.co.uk
+2026-27,league,Premier League,2026-09-18,Brentford,Chelsea,3.0,0.0,H,0.0,0.0,D,13.0,12.0,6.0,2.0,4.0,12.0,10.0,7.0,2.0,0.0,0.0,0.0,40.0,60.0,2.47935,0.885111,,,football-data.co.uk
+2026-27,league,Serie A,2026-09-18,Monza,Sassuolo,2.0,1.0,H,0.0,0.0,D,15.0,20.0,6.0,8.0,7.0,5.0,13.0,6.0,4.0,1.0,0.0,0.0,35.0,65.0,1.6104,2.27094,,,football-data.co.uk
+2026-27,league,Bundesliga,2026-09-19,Ein Frankfurt,Freiburg,2.0,2.0,D,2.0,1.0,H,10.0,22.0,3.0,7.0,3.0,5.0,12.0,11.0,2.0,2.0,0.0,0.0,42.0,58.0,2.08323,2.93158,,,football-data.co.uk
+2026-27,league,Bundesliga,2026-09-19,Hamburg,FC Koln,2.0,1.0,H,1.0,0.0,H,12.0,18.0,7.0,5.0,3.0,5.0,12.0,14.0,1.0,3.0,0.0,0.0,32.0,68.0,2.07655,2.15949,,,football-data.co.uk
+2026-27,league,Bundesliga,2026-09-19,M'gladbach,Mainz,3.0,4.0,A,1.0,2.0,A,21.0,17.0,7.0,8.0,6.0,4.0,12.0,14.0,6.0,5.0,0.0,0.0,,,,,,,football-data.co.uk
+2026-27,league,Bundesliga,2026-09-19,Werder Bremen,Augsburg,3.0,2.0,H,0.0,1.0,A,20.0,7.0,11.0,4.0,2.0,2.0,10.0,11.0,2.0,2.0,0.0,0.0,66.0,34.0,2.30122,0.742238,,,football-data.co.uk
+2026-27,league,Bundesliga,2026-09-19,Stuttgart,Dortmund,0.0,1.0,A,0.0,0.0,D,12.0,13.0,5.0,2.0,6.0,2.0,9.0,14.0,2.0,5.0,0.0,0.0,56.0,44.0,0.666049,2.11223,,,football-data.co.uk
+2026-27,league,La Liga,2026-09-19,Osasuna,Vallecano,1.0,1.0,D,1.0,0.0,H,10.0,19.0,3.0,2.0,4.0,4.0,21.0,13.0,3.0,2.0,0.0,0.0,37.0,63.0,0.926414,1.35649,,,football-data.co.uk
+2026-27,league,La Liga,2026-09-19,Ath Bilbao,Alaves,0.0,0.0,D,0.0,0.0,D,24.0,2.0,6.0,0.0,5.0,1.0,14.0,13.0,2.0,0.0,0.0,0.0,69.0,31.0,1.46153,0.0461634,,,football-data.co.uk
+2026-27,league,La Liga,2026-09-19,Celta,Santander,5.0,0.0,H,2.0,0.0,H,13.0,11.0,9.0,5.0,3.0,3.0,13.0,11.0,2.0,5.0,0.0,0.0,,,,,,,football-data.co.uk
+2026-27,league,La Liga,2026-09-19,Sevilla,Barcelona,1.0,3.0,A,1.0,1.0,D,7.0,24.0,3.0,7.0,1.0,3.0,10.0,11.0,1.0,0.0,0.0,0.0,30.0,70.0,0.758355,3.56261,,,football-data.co.uk
+2026-27,league,Ligue 1,2026-09-19,Paris FC,Strasbourg,2.0,1.0,H,1.0,0.0,H,17.0,5.0,7.0,1.0,3.0,0.0,17.0,12.0,3.0,2.0,0.0,0.0,51.0,49.0,0.907233,0.230224,,,football-data.co.uk
+2026-27,league,Ligue 1,2026-09-19,Angers,Troyes,2.0,0.0,H,1.0,0.0,H,12.0,19.0,3.0,3.0,2.0,11.0,14.0,15.0,3.0,2.0,0.0,0.0,61.0,39.0,2.38813,1.16391,,,football-data.co.uk
+2026-27,league,Ligue 1,2026-09-19,Le Mans,Lorient,2.0,1.0,H,1.0,0.0,H,11.0,9.0,7.0,2.0,1.0,3.0,15.0,15.0,3.0,3.0,0.0,0.0,51.0,49.0,0.959241,1.07323,,,football-data.co.uk
+2026-27,league,Ligue 1,2026-09-19,Lyon,Rennes,4.0,0.0,H,2.0,0.0,H,15.0,13.0,9.0,4.0,3.0,8.0,13.0,14.0,4.0,2.0,0.0,0.0,45.0,55.0,3.60496,1.15783,,,football-data.co.uk
+2026-27,league,Ligue 1,2026-09-19,Toulouse,Le Havre,3.0,2.0,H,0.0,0.0,D,14.0,18.0,5.0,7.0,6.0,7.0,17.0,15.0,3.0,1.0,0.0,0.0,53.0,47.0,2.82989,2.15515,,,football-data.co.uk
+2026-27,league,Premier League,2026-09-19,Tottenham,Aston Villa,2.0,3.0,A,0.0,1.0,A,20.0,15.0,7.0,6.0,11.0,1.0,9.0,13.0,1.0,2.0,0.0,0.0,64.0,36.0,1.72177,1.7092,,,football-data.co.uk
+2026-27,league,Premier League,2026-09-19,Brighton,Arsenal,3.0,0.0,H,2.0,0.0,H,17.0,11.0,5.0,2.0,5.0,6.0,13.0,11.0,4.0,1.0,0.0,0.0,40.0,60.0,2.11268,1.23979,,,football-data.co.uk
+2026-27,league,Premier League,2026-09-19,Everton,Ipswich,1.0,0.0,H,1.0,0.0,H,21.0,13.0,2.0,4.0,4.0,4.0,6.0,12.0,2.0,1.0,0.0,1.0,52.0,48.0,2.58285,1.10179,,,football-data.co.uk
+2026-27,league,Premier League,2026-09-19,Newcastle,Hull,2.0,1.0,H,2.0,0.0,H,12.0,22.0,5.0,4.0,4.0,7.0,4.0,10.0,1.0,4.0,0.0,0.0,56.0,44.0,1.37521,1.15888,,,football-data.co.uk
+2026-27,league,Premier League,2026-09-19,Nott'm Forest,Coventry,0.0,1.0,A,0.0,0.0,D,24.0,10.0,3.0,3.0,6.0,2.0,12.0,10.0,2.0,0.0,0.0,0.0,62.0,38.0,1.31852,0.69375,,,football-data.co.uk
+2026-27,league,Serie A,2026-09-19,Bologna,Torino,1.0,1.0,D,1.0,0.0,H,11.0,14.0,1.0,3.0,1.0,6.0,18.0,12.0,0.0,3.0,0.0,0.0,40.0,60.0,0.699269,0.958071,,,football-data.co.uk
+2026-27,league,Serie A,2026-09-19,Udinese,Cagliari,0.0,1.0,A,0.0,0.0,D,26.0,5.0,5.0,2.0,16.0,1.0,10.0,8.0,2.0,0.0,0.0,0.0,65.0,35.0,1.8486,0.636351,,,football-data.co.uk
+2026-27,league,Serie A,2026-09-19,Roma,Inter,2.0,2.0,D,2.0,0.0,H,18.0,16.0,4.0,5.0,4.0,2.0,13.0,7.0,3.0,3.0,0.0,0.0,49.0,51.0,2.31246,2.58716,,,football-data.co.uk
+2026-27,league,Serie A,2026-09-19,Venezia,Lazio,0.0,2.0,A,0.0,0.0,D,17.0,12.0,6.0,2.0,7.0,2.0,14.0,8.0,6.0,0.0,0.0,0.0,49.0,51.0,1.84911,1.7718,,,football-data.co.uk
 2026-27,league,La Liga,2026-09-19,RC Celta de Vigo,Real Racing Club de Santander,5.0,0.0,H,2.0,0.0,,13.0,11.0,9.0,5.0,3.0,3.0,,,2.0,5.0,,,41.0,59.0,2.229,0.72,,,football-data.org+fotmob+understat
-2026-27,league,La Liga,2026-09-19,Sevilla FC,FC Barcelona,1.0,3.0,A,1.0,1.0,,7.0,24.0,3.0,7.0,1.0,3.0,,,1.0,0.0,,,30.0,70.0,0.758,3.563,,,football-data.org+fotmob+understat
-2026-27,league,Ligue 1,2026-09-19,Paris FC,RC Strasbourg Alsace,2.0,1.0,H,1.0,0.0,,17.0,5.0,7.0,1.0,3.0,0.0,,,3.0,2.0,,,51.0,49.0,1.05,0.24,,,football-data.org+fotmob
-2026-27,league,Ligue 1,2026-09-19,Le Mans FC,FC Lorient,2.0,1.0,H,1.0,0.0,,11.0,9.0,7.0,2.0,1.0,3.0,,,3.0,3.0,,,51.0,49.0,0.84,0.97,,,football-data.org+fotmob
-2026-27,league,Ligue 1,2026-09-19,Toulouse FC,Le Havre AC,3.0,2.0,H,0.0,0.0,,14.0,18.0,5.0,7.0,6.0,7.0,,,3.0,1.0,,,53.0,47.0,1.95,2.34,,,football-data.org+fotmob
-2026-27,league,Ligue 1,2026-09-19,Angers SCO,ES Troyes AC,2.0,0.0,H,1.0,0.0,,12.0,19.0,3.0,3.0,2.0,11.0,,,3.0,2.0,,,61.0,39.0,2.25,1.02,,,football-data.org+fotmob
-2026-27,league,Ligue 1,2026-09-19,Olympique Lyonnais,Stade Rennais FC 1901,4.0,0.0,H,2.0,0.0,,15.0,13.0,9.0,4.0,3.0,8.0,,,4.0,2.0,,,45.0,55.0,3.13,1.37,,,football-data.org+fotmob
-2026-27,league,Bundesliga,2026-09-19,Hamburger SV,1. FC Köln,2.0,1.0,H,1.0,0.0,,12.0,18.0,7.0,5.0,3.0,5.0,,,1.0,3.0,,,32.0,68.0,2.077,2.159,,,football-data.org+fotmob+understat
 2026-27,league,Bundesliga,2026-09-19,Borussia Mönchengladbach,1. FSV Mainz 05,3.0,4.0,A,1.0,2.0,,21.0,17.0,7.0,8.0,6.0,4.0,,,6.0,5.0,,,47.0,53.0,3.09,3.47,,,football-data.org+fotmob+understat
-2026-27,league,Bundesliga,2026-09-19,SV Werder Bremen,FC Augsburg,3.0,2.0,H,0.0,1.0,,20.0,7.0,11.0,4.0,2.0,2.0,,,2.0,2.0,,,66.0,34.0,2.301,0.742,,,football-data.org+fotmob+understat
-2026-27,league,Bundesliga,2026-09-19,Eintracht Frankfurt,SC Freiburg,2.0,2.0,D,2.0,1.0,,10.0,22.0,3.0,7.0,3.0,5.0,,,2.0,2.0,,,42.0,58.0,2.083,2.932,,,football-data.org+fotmob+understat
-2026-27,league,Bundesliga,2026-09-19,VfB Stuttgart,Borussia Dortmund,0.0,1.0,A,0.0,0.0,,12.0,13.0,5.0,2.0,6.0,2.0,,,2.0,5.0,,,56.0,44.0,0.666,2.112,,,football-data.org+fotmob+understat
-2026-27,league,Serie A,2026-09-19,Bologna FC 1909,Torino FC,1.0,1.0,D,1.0,0.0,,11.0,14.0,1.0,3.0,1.0,6.0,,,0.0,3.0,,,40.0,60.0,0.92,1.14,,,football-data.org+fotmob
-2026-27,league,Serie A,2026-09-19,Udinese Calcio,Cagliari Calcio,0.0,1.0,A,0.0,0.0,,26.0,5.0,5.0,2.0,16.0,1.0,,,2.0,0.0,,,65.0,35.0,2.13,1.12,,,football-data.org+fotmob
-2026-27,league,Serie A,2026-09-19,AS Roma,FC Internazionale Milano,2.0,2.0,D,2.0,0.0,,18.0,16.0,4.0,5.0,4.0,2.0,,,3.0,3.0,,,49.0,51.0,1.69,2.37,,,football-data.org+fotmob
-2026-27,league,Serie A,2026-09-19,Venezia FC,SS Lazio,0.0,2.0,A,0.0,0.0,,17.0,12.0,6.0,2.0,7.0,2.0,,,6.0,0.0,,,49.0,51.0,1.89,1.6,,,football-data.org+fotmob
+2026-27,league,Bundesliga,2026-09-20,Leverkusen,RB Leipzig,2.0,0.0,H,1.0,0.0,H,18.0,12.0,6.0,3.0,9.0,6.0,14.0,8.0,2.0,3.0,0.0,0.0,51.0,49.0,2.54515,0.929998,,,football-data.co.uk
+2026-27,league,Bundesliga,2026-09-20,Schalke 04,Elversberg,0.0,0.0,D,0.0,0.0,D,13.0,11.0,1.0,1.0,4.0,4.0,10.0,10.0,1.0,2.0,0.0,0.0,41.0,59.0,1.26962,0.795372,,,football-data.co.uk
+2026-27,league,Bundesliga,2026-09-20,Paderborn,Hoffenheim,3.0,1.0,H,2.0,0.0,H,13.0,23.0,5.0,2.0,6.0,5.0,6.0,14.0,0.0,1.0,0.0,0.0,34.0,66.0,1.34065,1.67256,,,football-data.co.uk
+2026-27,league,La Liga,2026-09-20,Getafe,Malaga,1.0,0.0,H,0.0,0.0,D,20.0,11.0,7.0,4.0,5.0,9.0,16.0,16.0,4.0,2.0,0.0,0.0,44.0,56.0,1.18796,0.660498,,,football-data.co.uk
+2026-27,league,La Liga,2026-09-20,Ath Madrid,Real Madrid,2.0,1.0,H,0.0,0.0,D,18.0,8.0,9.0,3.0,3.0,1.0,19.0,6.0,2.0,2.0,0.0,1.0,61.0,39.0,2.40619,0.420774,,,football-data.co.uk
+2026-27,league,La Liga,2026-09-20,La Coruna,Betis,1.0,1.0,D,0.0,1.0,A,24.0,11.0,7.0,4.0,11.0,5.0,6.0,9.0,1.0,1.0,0.0,0.0,43.0,57.0,1.93872,1.00253,,,football-data.co.uk
+2026-27,league,La Liga,2026-09-20,Villarreal,Levante,3.0,1.0,H,1.0,1.0,D,21.0,6.0,7.0,1.0,7.0,1.0,9.0,10.0,1.0,1.0,0.0,0.0,62.0,38.0,4.28569,0.941792,,,football-data.co.uk
+2026-27,league,La Liga,2026-09-20,Valencia,Sociedad,2.0,3.0,A,0.0,1.0,A,22.0,21.0,5.0,6.0,7.0,5.0,9.0,12.0,2.0,1.0,0.0,1.0,54.0,46.0,1.52762,2.33411,,,football-data.co.uk
+2026-27,league,Ligue 1,2026-09-20,Auxerre,Brest,2.0,1.0,H,0.0,1.0,A,11.0,8.0,4.0,2.0,8.0,3.0,19.0,13.0,1.0,1.0,0.0,0.0,52.0,48.0,0.769606,0.304072,,,football-data.co.uk
+2026-27,league,Ligue 1,2026-09-20,Nice,Lille,2.0,1.0,H,1.0,0.0,H,10.0,21.0,4.0,8.0,3.0,7.0,16.0,9.0,3.0,1.0,0.0,0.0,42.0,58.0,1.93232,1.93315,,,football-data.co.uk
+2026-27,league,Ligue 1,2026-09-20,Marseille,Paris SG,1.0,2.0,A,0.0,0.0,D,12.0,31.0,4.0,10.0,3.0,7.0,9.0,3.0,2.0,1.0,1.0,0.0,39.0,61.0,1.86575,4.67277,,,football-data.co.uk
+2026-27,league,Premier League,2026-09-20,Bournemouth,Liverpool,0.0,1.0,A,0.0,0.0,D,9.0,12.0,2.0,3.0,3.0,3.0,11.0,13.0,1.0,2.0,0.0,0.0,46.0,54.0,0.944706,1.29116,,,football-data.co.uk
+2026-27,league,Premier League,2026-09-20,Leeds,Crystal Palace,0.0,0.0,D,0.0,0.0,D,13.0,12.0,2.0,4.0,4.0,3.0,10.0,12.0,2.0,3.0,0.0,0.0,51.0,49.0,1.08552,1.12905,,,football-data.co.uk
+2026-27,league,Premier League,2026-09-20,Man City,Sunderland,5.0,3.0,H,3.0,2.0,H,16.0,17.0,6.0,9.0,6.0,5.0,14.0,14.0,0.0,1.0,0.0,0.0,55.0,45.0,2.66856,3.10661,,,football-data.co.uk
+2026-27,league,Premier League,2026-09-20,Fulham,Man United,1.0,1.0,D,0.0,0.0,D,12.0,29.0,6.0,6.0,3.0,13.0,9.0,5.0,3.0,0.0,0.0,0.0,42.0,58.0,1.71719,2.12453,,,football-data.co.uk
+2026-27,league,Serie A,2026-09-20,Fiorentina,Napoli,1.0,1.0,D,0.0,1.0,A,17.0,13.0,4.0,5.0,4.0,5.0,11.0,9.0,3.0,0.0,0.0,0.0,42.0,58.0,1.06168,2.13022,,,football-data.co.uk
+2026-27,league,Serie A,2026-09-20,Frosinone,Como,2.0,0.0,H,2.0,0.0,H,22.0,27.0,6.0,8.0,7.0,8.0,21.0,8.0,3.0,2.0,0.0,0.0,35.0,65.0,2.26034,2.28858,,,football-data.co.uk
+2026-27,league,Serie A,2026-09-20,Parma,Genoa,2.0,1.0,H,1.0,0.0,H,5.0,12.0,2.0,5.0,2.0,5.0,17.0,14.0,3.0,3.0,0.0,0.0,42.0,58.0,0.860604,0.86391,,,football-data.co.uk
+2026-27,league,Serie A,2026-09-20,Juventus,Atalanta,2.0,0.0,H,1.0,0.0,H,14.0,11.0,5.0,2.0,4.0,5.0,10.0,10.0,1.0,2.0,0.0,0.0,52.0,48.0,1.91682,0.489173,,,football-data.co.uk
+2026-27,league,Serie A,2026-09-20,Milan,Lecce,3.0,0.0,H,1.0,0.0,H,10.0,6.0,4.0,3.0,2.0,3.0,9.0,15.0,0.0,1.0,0.0,0.0,69.0,31.0,2.47529,0.217933,,,football-data.co.uk
 2026-27,league_cup,EFL Cup,2026-08-25,Ipswich Town,Leicester City,3.0,1.0,H,,,,15.0,22.0,9.0,8.0,5.0,3.0,,,3.0,2.0,,,42.0,58.0,1.23,1.98,,,fotmob
 2026-27,league_cup,EFL Cup,2026-08-25,Plymouth Argyle,Coventry City,2.0,4.0,A,,,,11.0,12.0,5.0,5.0,3.0,3.0,,,1.0,2.0,,,34.0,66.0,1.45,3.06,,,fotmob
 2026-27,league_cup,EFL Cup,2026-08-25,Stoke City,Hull City,1.0,1.0,D,,,,10.0,18.0,4.0,6.0,1.0,4.0,,,1.0,1.0,,,44.0,56.0,0.93,1.94,,,fotmob
