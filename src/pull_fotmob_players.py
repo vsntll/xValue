@@ -21,6 +21,7 @@ matches only; backfilling it for already-pulled seasons needs the separate
 Run:  py -3.11 src/pull_fotmob_players.py --current      # season in progress
       py -3.11 src/pull_fotmob_players.py --seasons 2025-26 2026-27
       py -3.11 src/pull_fotmob_players.py --events 2025-26   # backfill event timelines
+      py -3.11 src/pull_fotmob_players.py --backfill-passes 2024-25 2025-26 2026-27
 Output: data/processed/fotmob_player_season.csv  (one row per player-team-season)
         data/processed/fotmob_match_meta.csv     (match id -> season/league/date)
 """
@@ -246,6 +247,38 @@ def backfill_events(seasons: list[str]) -> None:
           f"{len(list(EVENTS_CACHE.glob('*.json')))} total cached")
 
 
+def backfill_player_stats(seasons: list[str]) -> None:
+    """Deliberate, bounded re-fetch of matches whose player-stats cache predates
+    passes_completed/passes_attempted (added for build_player_elo.py's role-
+    weighted rating - see PASS_KEY above). A match's cache is only overwritten
+    if it's missing these fields; already-backfilled matches are skipped, so a
+    re-run after an interruption picks up where it left off. Scoped to
+    specific seasons, per the ToS "keep volume low" note above."""
+    if not MATCH_META.exists():
+        raise SystemExit(f"{MATCH_META} not found - pull player stats for these seasons first")
+    meta = pd.read_csv(MATCH_META, dtype={"match_id": str})
+    meta = meta[meta["season"].isin(seasons)]
+    print(f"backfilling pass stats for {len(meta)} matches ({seasons})")
+    n_new = n_skip = n_fail = 0
+    for i, mid in enumerate(meta["match_id"]):
+        cf = CACHE / f"{mid}.json"
+        if cf.exists():
+            cached = json.loads(cf.read_text())
+            if not cached or "passes_attempted" in cached[0]:
+                n_skip += 1
+                continue
+        try:
+            d = _get("matchDetails", matchId=mid)
+        except requests.HTTPError:
+            n_fail += 1
+            continue
+        cf.write_text(json.dumps(_extract_player_rows(d, mid)))
+        n_new += 1
+        if n_new % 200 == 0:
+            print(f"  {i + 1}/{len(meta)}  ({n_new} newly fetched, {n_skip} already done, {n_fail} failed)")
+    print(f"done: {n_new} newly fetched, {n_skip} already done, {n_fail} failed")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--seasons", nargs="+", default=[current_season()])
@@ -254,9 +287,15 @@ def main() -> None:
                     help="backfill the goal/red-card event timeline for these seasons "
                          "(needs fotmob_match_meta.csv already built) instead of the "
                          "normal player-stats pull")
+    ap.add_argument("--backfill-passes", nargs="+", metavar="SEASON",
+                    help="backfill passes_completed/passes_attempted for these seasons' "
+                         "already-cached matches instead of the normal player-stats pull")
     args = ap.parse_args()
     if args.events:
         backfill_events(args.events)
+        return
+    if args.backfill_passes:
+        backfill_player_stats(args.backfill_passes)
         return
     seasons = [current_season()] if args.current else args.seasons
 
