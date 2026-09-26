@@ -18,23 +18,46 @@ featuring - injury, benched, or transferred out of these leagues - decays
 toward 1500 for every match his club plays without him, after a two-match
 grace (DECAY_GRACE / DECAY_RATE), so a stale rating doesn't sit frozen.
 
-"Expected" per match = position-group baseline output/90 (purely empirical,
-computed from this same windowed data - nothing from train_value_model.py or
-build_form_momentum.py touches this file) x minutes played x an opponent-
-strength multiplier x the player's own current-rating multiplier.
+Per match, "actual" is a role-weighted blend of three components (ROLE_WEIGHTS),
+not attacking output alone - a defender or keeper who's excellent at their
+actual job shouldn't need to also produce like a forward to rate well, and an
+attacking full-back's forward contributions shouldn't quietly stand in for
+his defending:
+  atk  - npxG + 0.7xA (Understat, per match)
+  def  - tackles+interceptions+blocks+clearances for outfield players;
+         saves-goals_conceded for keepers (FotMob, per match)
+  pass - completions above a position-average passer attempting the same
+         number of passes that match (FotMob, per match)
+Each component is independently converted to a position-group-relative
+z-score (empirical baseline output/90 and residual std, same technique as
+before, computed separately per component) before blending - so "expected"
+per match is still baseline90 x minutes x opponent-strength multiplier x the
+player's own current-rating multiplier, just applied to this blended
+composite instead of attacking output alone. A component missing for a match
+(FotMob's per-match cache doesn't cover every game, and passes_completed/
+passes_attempted specifically needs the `--backfill-passes` re-fetch - see
+src/pull_fotmob_players.py) drops out and the remaining weights renormalize,
+rather than counting as a zero.
 
 Identity is tracked by Understat's own numeric player_id, NOT by name -
 verified two real, different players ("Alvaro Fernandez": a Sevilla keeper
 and an unrelated Real Madrid full-back) share a normalized name, which would
-silently fuse their histories into one rating if grouped by name.
+silently fuse their histories into one rating if grouped by name. The FotMob
+join (def/pass) has no such id in common with Understat, so it's matched on
+(normalised name, team, date) instead - good enough in practice since it's
+scoped to one real match, but a name collision within the same match/team
+(vanishingly unlikely) would fuse two players there the way it would for the
+primary identity if not id-based.
 
 Needs data/processed/understat_player_matches.csv (match-level actual output,
 with player_id/team_id - re-pull via src/pull_understat_player_matches.py if
-missing) and data/processed/match_model_table.csv (opponent's own team Elo -
+missing), data/processed/match_model_table.csv (opponent's own team Elo -
 reused, not recomputed, so the two Elo systems stay consistent with each
-other) and fbref_player_season_stats.csv (position only, name-joined - a
-lookup, not a model input; Understat's own per-match position field just
-says "Sub" for anyone who came off the bench, which is useless for grouping).
+other), fbref_player_season_stats.csv (position only, name-joined - a lookup,
+not a model input; Understat's own per-match position field just says "Sub"
+for anyone who came off the bench, which is useless for grouping), and
+FotMob's per-match player-stats cache (data/raw/live/fotmob_players/*.json,
+from src/pull_fotmob_players.py) for the def/pass components.
 
 Run:  py -3.11 src/build_player_elo.py
 Output: data/processed/player_elo.csv  (one row per player-match: rating before/after)
