@@ -177,6 +177,51 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
   `outcome_model_predictions_hybrid.csv` (+ opening odds),
   `outcome_model_predictions_all.csv` (every split, incl. the live 2026-27 rows).
 
+## Player Elo  (`src/build_player_elo.py`)
+
+A self-contained, match-by-match performance rating for individual players -
+no value-model inputs anywhere in it, and not a feature of the outcome model
+(it feeds the site's Rankings tab only). Same mechanic as the team Elo: start
+at 1500, move by `K * (actual - expected)` (`K=20`, per-match delta clipped at
+±40). Windowed to 2024-25 → 2026-27; half of each rating's gap from 1500
+reverts between seasons, and a player who stops featuring decays 3% toward
+1500 per club match missed after a two-match grace.
+
+- **Actual** is a role-weighted blend of three per-match components, not
+  attacking output alone:
+  - `atk` - npxG + 0.7 × xA (Understat, `understat_player_matches.csv`)
+  - `def` - tackles + interceptions + blocks + clearances for outfield
+    players; saves − goals conceded for keepers (FotMob per-match cache)
+  - `pass` - passes completed minus what a position-average passer would
+    complete on the same attempts (FotMob; matches with < 5 attempts are
+    treated as missing)
+
+  Each component is z-scored against its own position-group baseline/90 and
+  residual std before blending with `ROLE_WEIGHTS`:
+
+  | pos | atk | def | pass |
+  | --- | --- | --- | --- |
+  | FW | 0.70 | 0.15 | 0.15 |
+  | MF | 0.45 | 0.30 | 0.25 |
+  | DF | 0.20 | 0.50 | 0.30 |
+  | GK | 0.05 | 0.55 | 0.40 |
+
+  A component missing for a match (no FotMob cache, or pre-backfill pass data)
+  drops out and the remaining weights renormalize - never counted as zero.
+- **Expected** = position baseline/90 of the blended composite × minutes ×
+  opponent-strength multiplier (opponent's own goals-Elo from
+  `match_model_table.csv`, reused so the two Elo systems agree) × the player's
+  own current-rating multiplier.
+- **Identity**: Understat's numeric `player_id` (two different "Alvaro
+  Fernandez"es share a normalized name). The FotMob join has no shared id, so
+  it matches on (normalized name, team, date) - scoped to one real match.
+  Position comes from `fbref_player_season_stats.csv` (Understat says "Sub"
+  for anyone off the bench).
+- **Pass data** needs `pull_fotmob_players.py --backfill-passes <seasons>` for
+  matches cached before `passes_completed`/`passes_attempted` were captured;
+  the script prints its FotMob join + pass coverage each run.
+- Output: `player_elo.csv` (one row per player-match, rating before/after).
+
 ## Value screen + bargain validation  (`src/export_site_data.py`)
 
 The homepage tile only ever showed the top-8 predicted-vs-listed value gaps
