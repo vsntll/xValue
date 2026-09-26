@@ -176,6 +176,22 @@ def _fotmob_match_stats(seasons: list[str]) -> pd.DataFrame:
                 "clearances", "saves", "goals_conceded", "passes_completed", "passes_attempted"]])
 
 
+def _baseline_and_std(df: pd.DataFrame, raw_col: str) -> tuple[dict, dict]:
+    """Empirical per-position-group (baseline output/90, residual std) for any
+    per-match raw quantity that scales with minutes played - the same
+    minutes-weighted-baseline technique already used for attacking output,
+    applied identically to the defensive and passing components so all three
+    land on a comparable, position-relative scale before being blended."""
+    baseline90, resid_std = {}, {}
+    for pos, g in df.groupby("pos_group"):
+        n90 = (g["minutes"] / 90.0).sum()
+        vals = g[raw_col].fillna(0.0)
+        baseline90[pos] = float(vals.sum() / n90) if n90 > 0 else 0.0
+        resid = vals - baseline90[pos] * (g["minutes"] / 90.0)
+        resid_std[pos] = float(resid.std()) or 1.0
+    return baseline90, resid_std
+
+
 def _opponent_elo_lookup() -> pd.DataFrame:
     """(season, team_key, 'YYYY-MM-DD') -> that team's pre-match Elo, straight
     from build_match_model_table.py's own goals-based Elo - reused, not
@@ -266,17 +282,39 @@ def main() -> None:
         np.nan,
     )
 
-    pm["contribution"] = pm["attack_raw"]
+    # position-group baseline: minutes-weighted output/90, purely empirical over
+    # this same window - computed independently for each of the three components
+    # so they land on a comparable position-relative scale before being blended
+    # by role (ROLE_WEIGHTS) into one "contribution" the rest of the model reacts
+    # to exactly as it always did (opponent adjustment, form, K, decay, revert).
+    base_atk, std_atk = _baseline_and_std(pm, "attack_raw")
+    base_def, std_def = _baseline_and_std(pm.dropna(subset=["def_raw"]), "def_raw")
+    base_pass, std_pass = _baseline_and_std(pm.dropna(subset=["pass_raw"]), "pass_raw")
 
-    # position-group baseline: minutes-weighted output/90, purely empirical
-    # over this same window - the only thing "expected" is built from.
-    baseline90, resid_std = {}, {}
+    def _z(raw, pos, frac, base, std):
+        if pd.isna(raw):
+            return None
+        return (raw - base.get(pos, 0.0) * frac) / std.get(pos, 1.0)
+
+    contribution, baseline90, resid_std = [], {}, {}
+    for r in pm.itertuples(index=False):
+        frac = r.minutes / 90.0
+        w = ROLE_WEIGHTS[r.pos_group]
+        z_atk = _z(r.attack_raw, r.pos_group, frac, base_atk, std_atk)
+        z_def = _z(r.def_raw, r.pos_group, frac, base_def, std_def)
+        z_pass = _z(r.pass_raw, r.pos_group, frac, base_pass, std_pass)
+        parts = [(w["atk"], z_atk), (w["def"], z_def), (w["pass"], z_pass)]
+        have = [(wt, z) for wt, z in parts if z is not None]
+        wsum = sum(wt for wt, _ in have) or 1.0
+        contribution.append(sum(wt * z for wt, z in have) / wsum)
+    pm["contribution"] = contribution
+
     for pos, g in pm.groupby("pos_group"):
         n90 = (g["minutes"] / 90.0).sum()
         baseline90[pos] = float(g["contribution"].sum() / n90) if n90 > 0 else 0.05
         resid = g["contribution"] - baseline90[pos] * (g["minutes"] / 90.0)
         resid_std[pos] = float(resid.std()) or 0.2
-    print("position baselines (output/90) and residual std, this window:")
+    print("position baselines (blended output/90) and residual std, this window:")
     for pos in POS_MAP.values():
         print(f"  {pos}: baseline={baseline90.get(pos, 0):.3f}  std={resid_std.get(pos, 0):.3f}")
 
