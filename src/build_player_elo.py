@@ -42,6 +42,7 @@ Output: data/processed/player_elo.csv  (one row per player-match: rating before/
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -55,6 +56,21 @@ from live.schema import deaccent, normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 OUT = PROC / "player_elo.csv"
+FOTMOB_MATCH_CACHE = ROOT / "data" / "raw" / "live" / "fotmob_players"
+FOTMOB_MATCH_META = PROC / "fotmob_match_meta.csv"
+
+# How much each position group's rating rides on attacking output vs. defensive
+# actions vs. passing, so a defender is judged mainly on defending well - not on
+# the same npxG+xA bar as a forward - and a leaky attacking full-back doesn't
+# outrate a genuine two-way one. GK's "def" is shot-stopping (saves vs. goals
+# conceded), not tackles/interceptions - see def_raw below.
+ROLE_WEIGHTS = {
+    "FW": {"atk": 0.70, "def": 0.15, "pass": 0.15},
+    "MF": {"atk": 0.45, "def": 0.30, "pass": 0.25},
+    "DF": {"atk": 0.20, "def": 0.50, "pass": 0.30},
+    "GK": {"atk": 0.05, "def": 0.55, "pass": 0.40},
+}
+PASS_MIN_ATTEMPTS = 5  # below this, a match's pass% is too noisy to trust - treat as missing
 
 WINDOW_SEASONS = ["2024-25", "2025-26", "2026-27"]  # last 2-3 seasons, per design
 MIN_MATCH_MINUTES = 10
@@ -125,6 +141,39 @@ def _pos_lookup() -> tuple[dict[tuple, str], dict[str, str]]:
               .set_index(["_pk", "team_key"])["pos_group"].to_dict())
     by_name = s.groupby("_pk")["pos_group"].agg(lambda x: x.mode().iat[0]).to_dict()
     return by_team, by_name
+
+
+def _fotmob_match_stats(seasons: list[str]) -> pd.DataFrame:
+    """Per-player, per-match defensive/passing stats from FotMob's cache
+    (src/pull_fotmob_players.py) - tackles/interceptions/blocks/clearances and
+    passes_completed/passes_attempted, keyed by (name, team, date) since
+    FotMob's own match/player ids live in a different id space than
+    Understat's (no shared key to join on). passes_attempted needs the
+    `--backfill-passes` re-fetch (see that script) - matches never backfilled
+    just carry NaN there, handled as "missing" below, not zero."""
+    if not FOTMOB_MATCH_META.exists():
+        return pd.DataFrame()
+    meta = pd.read_csv(FOTMOB_MATCH_META, dtype={"match_id": str})
+    meta = meta[meta["season"].isin(seasons)]
+    rows = []
+    for mid in meta["match_id"]:
+        f = FOTMOB_MATCH_CACHE / f"{mid}.json"
+        if not f.exists():
+            continue
+        rows.extend(json.loads(f.read_text()))
+    if not rows:
+        return pd.DataFrame()
+    fm = pd.DataFrame(rows)
+    fm["_pk"] = fm["player"].map(_pk)
+    fm["team_key"] = fm["team"].map(normalize_team)
+    fm["date"] = pd.to_datetime(fm["date"], errors="coerce")
+    for c in ("tackles", "interceptions", "blocks", "clearances", "saves",
+              "goals_conceded", "passes_completed", "passes_attempted"):
+        fm[c] = pd.to_numeric(fm[c], errors="coerce")
+    return (fm.dropna(subset=["date"])
+              .drop_duplicates(subset=["_pk", "team_key", "date"])
+              [["_pk", "team_key", "date", "tackles", "interceptions", "blocks",
+                "clearances", "saves", "goals_conceded", "passes_completed", "passes_attempted"]])
 
 
 def _opponent_elo_lookup() -> pd.DataFrame:
