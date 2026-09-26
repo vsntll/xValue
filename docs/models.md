@@ -183,13 +183,14 @@ A self-contained, match-by-match performance rating for individual players -
 no value-model inputs anywhere in it, and not a feature of the outcome model
 (it feeds the site's Rankings tab only). Same mechanic as the team Elo: start
 at 1500, move by `K * (actual - expected)` (`K=20`, per-match delta clipped at
-±40). Windowed to 2024-25 → 2026-27; half of each rating's gap from 1500
-reverts between seasons, and a player who stops featuring decays 3% toward
-1500 per club match missed after a two-match grace.
+±40). Windowed to 2024-25 → 2026-27. Ratings carry across seasons with no
+summer reset; the only pull back toward 1500 is inactivity - a player who
+stops featuring decays 3% toward 1500 per club match missed after a
+two-match grace.
 
 - **Actual** is a role-weighted blend of three per-match components, not
   attacking output alone:
-  - `atk` - npxG + 0.7 × xA (Understat, `understat_player_matches.csv`)
+  - `atk` - xG + 0.7 × xA (Understat, `understat_player_matches.csv`; xG includes penalties)
   - `def` - tackles + interceptions + blocks + clearances for outfield
     players; saves − goals conceded for keepers (FotMob per-match cache)
   - `pass` - passes completed minus what a position-average passer would
@@ -208,10 +209,16 @@ reverts between seasons, and a player who stops featuring decays 3% toward
 
   A component missing for a match (no FotMob cache, or pre-backfill pass data)
   drops out and the remaining weights renormalize - never counted as zero.
-- **Expected** = position baseline/90 of the blended composite × minutes ×
-  opponent-strength multiplier (opponent's own goals-Elo from
-  `match_model_table.csv`, reused so the two Elo systems agree) × the player's
-  own current-rating multiplier.
+- **Expected**, in the same z units, per 90 minutes played:
+  `baseline + (rating − 1500) / SPREAD + OPP_BETA × (opponent Elo − average opponent)`.
+  `SPREAD = 500`, so a player settles at 1500 + 500 × his average blended z
+  per 90 (top 1% ≈ 1,900). `OPP_BETA` is fitted each run - the minutes-weighted
+  slope of output on opponent Elo, per position (≈ −0.09 z/90 per 100 Elo for
+  forwards, −0.02 for defenders) and separately for international rows.
+  Opponent Elo is the club goals-Elo from `match_model_table.csv`, reused so
+  the two Elo systems agree. (An earlier version multiplied the z-score
+  baseline - ≈ 0 - by opponent and rating factors, so neither had any effect
+  and strong players' ratings climbed without limit.)
 - **Identity**: Understat's numeric `player_id` (two different "Alvaro
   Fernandez"es share a normalized name). The FotMob join has no shared id, so
   it matches on (normalized name, team, date) - scoped to one real match.
@@ -220,7 +227,25 @@ reverts between seasons, and a player who stops featuring decays 3% toward
 - **Pass data** needs `pull_fotmob_players.py --backfill-passes <seasons>` for
   matches cached before `passes_completed`/`passes_attempted` were captured;
   the script prints its FotMob join + pass coverage each run.
-- Output: `player_elo.csv` (one row per player-match, rating before/after).
+- **International appearances** move the same rating. Box scores come from
+  FotMob (`pull_fotmob_internationals.py` → `fotmob_intl_player_matches.csv`:
+  World Cup, continental finals, every confederation's qualifiers, Nations
+  Leagues, friendlies - FotMob only exposes friendlies from 2026) with the same
+  three components. A player is linked by his FotMob player id, paired with
+  his Understat id through his own matched club rows (one-to-one pairs only) -
+  never through a club or a name - so international rows carry the national
+  team, not a club. Opponent strength is a national-team Elo
+  (`build_national_elo.py`, World Football Elo weights over every result since
+  1872 from `pull_international_results.py`), recentred so the average
+  international opponent sits at 1500. Position baselines stay club-only, so
+  internationals are measured against the same bar. Friendlies count at half
+  K (`INTL_K_MULT`). Inactivity decay stays club-only: an international
+  appearance never counts as a played or missed club match, and a call-up
+  mid-absence doesn't reset the two-match grace. Tournaments in June/July
+  belong to the season just ended (seasons split on 1 August).
+- Output: `player_elo.csv` (one row per player-match, rating before/after;
+  `is_international` / `competition` mark international rows). The site
+  always lists a player at the club of his last club appearance.
 
 ## Value screen + bargain validation  (`src/export_site_data.py`)
 
