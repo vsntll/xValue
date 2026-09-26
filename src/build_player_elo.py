@@ -3,17 +3,19 @@ match from real output vs. an opponent-adjusted expectation - no value-model
 inputs anywhere in it. Same mechanic as the team Elo already used for the
 outcome model (src/build_match_model_table.py): everyone starts at 1500 and
 moves by K * (actual - expected), where "expected" bakes in opponent strength
-(harder to produce against a good defence) via the same base-10/exponent
-curve as classical Elo's expected-score formula. The player's OWN current
-rating feeds back into the NEXT match's expectation too - the whole point of
-an Elo system - so a player who's already rated well has to keep performing
-at that level to gain more, not just clear a fixed bar forever.
+(harder to produce against a good defence - OPP_BETA, fitted from the data)
+and the player's OWN current rating, so a player who's already rated well has
+to keep performing at that level to gain more, not just clear a fixed bar
+forever - the whole point of an Elo system. Both are additive in the blended
+z-score's units: expected per 90 = baseline + (rating - 1500) / SPREAD +
+OPP_BETA * (opponent - average opponent), so a rating settles where the
+player's output matches it.
 
 Windowed to the last three seasons (WINDOW_SEASONS below): this is about who
 is playing well NOW, not a decade-old peak, and every player starts near the
 population mean at the top of the window rather than dragging in a rating
-from a different team, league, or level of first-team involvement. Between
-seasons the rating sheds half its gap from 1500 (REVERT); a player who stops
+from a different team, league, or level of first-team involvement. Ratings
+carry across seasons untouched - no summer reset; a player who stops
 featuring - injury, benched, or transferred out of these leagues - decays
 toward 1500 for every match his club plays without him, after a two-match
 grace (DECAY_GRACE / DECAY_RATE), so a stale rating doesn't sit frozen.
@@ -23,17 +25,15 @@ not attacking output alone - a defender or keeper who's excellent at their
 actual job shouldn't need to also produce like a forward to rate well, and an
 attacking full-back's forward contributions shouldn't quietly stand in for
 his defending:
-  atk  - npxG + 0.7xA (Understat, per match)
+  atk  - xG + 0.7xA (Understat, per match; xG includes penalties)
   def  - tackles+interceptions+blocks+clearances for outfield players;
          saves-goals_conceded for keepers (FotMob, per match)
   pass - completions above a position-average passer attempting the same
          number of passes that match (FotMob, per match)
 Each component is independently converted to a position-group-relative
 z-score (empirical baseline output/90 and residual std, same technique as
-before, computed separately per component) before blending - so "expected"
-per match is still baseline90 x minutes x opponent-strength multiplier x the
-player's own current-rating multiplier, just applied to this blended
-composite instead of attacking output alone. A component missing for a match
+before, computed separately per component) before blending, and "expected"
+is built in the same z units (see the top of this docstring). A component missing for a match
 (FotMob's per-match cache doesn't cover every game, and passes_completed/
 passes_attempted specifically needs the `--backfill-passes` re-fetch - see
 src/pull_fotmob_players.py) drops out and the remaining weights renormalize,
@@ -81,10 +81,12 @@ PROC = ROOT / "data" / "processed"
 OUT = PROC / "player_elo.csv"
 FOTMOB_MATCH_CACHE = ROOT / "data" / "raw" / "live" / "fotmob_players"
 FOTMOB_MATCH_META = PROC / "fotmob_match_meta.csv"
+INTL_MATCHES = PROC / "fotmob_intl_player_matches.csv"   # src/pull_fotmob_internationals.py
+NATIONAL_ELO = PROC / "national_team_elo.csv"             # src/build_national_elo.py
 
 # How much each position group's rating rides on attacking output vs. defensive
 # actions vs. passing, so a defender is judged mainly on defending well - not on
-# the same npxG+xA bar as a forward - and a leaky attacking full-back doesn't
+# the same xG+xA bar as a forward - and a leaky attacking full-back doesn't
 # outrate a genuine two-way one. GK's "def" is shot-stopping (saves vs. goals
 # conceded), not tackles/interceptions - see def_raw below.
 ROLE_WEIGHTS = {
@@ -94,23 +96,22 @@ ROLE_WEIGHTS = {
     "GK": {"atk": 0.05, "def": 0.55, "pass": 0.40},
 }
 PASS_MIN_ATTEMPTS = 5  # below this, a match's pass% is too noisy to trust - treat as missing
+# International appearances move the same rating, scaled by match weight - a
+# friendly is rotated, low-intensity and often subbed at half time, so it counts half.
+INTL_K_MULT = {"competitive": 1.0, "friendly": 0.5}
 
 WINDOW_SEASONS = ["2024-25", "2025-26", "2026-27"]  # last 2-3 seasons, per design
 MIN_MATCH_MINUTES = 10
 START_RATING = 1500.0
-REVERT = 0.5           # fraction of the gap from 1500 shed between seasons (seed =
-                       # 1500 + 0.5*(last season's final - 1500)) - matches the team
-                       # season-scoped Elo's SEASON_CARRY in build_match_model_table.py
 DECAY_GRACE = 2        # team matches a player can miss with no penalty (rotation, a knock)
 DECAY_RATE = 0.03      # each further missed match pulls the rating this fraction toward
                        # 1500 - ~23 missed matches to halve the gap, so a month out barely
                        # moves it but a lost season, or leaving the league entirely, bleeds
 DECAY_TARGET = START_RATING
 K = 20.0
-OPP_SCALE = 1000.0     # opponent-strength exponent divisor (gentler than classical Elo's 400 -
-                       # output varies ~2x facing a good vs. bad defence, not 10x)
-FORM_SCALE = 1000.0    # same curve, applied to the player's own rating
-MULT_CLIP = (0.5, 2.0)
+SPREAD = 500.0         # rating points per +1 blended z per 90 at equilibrium - puts the
+                       # top 1% of players (~+0.8 z/90) near 1900, the top 0.1% near 2150
+OPP_BETA_MIN_ROWS = 300  # fewer international rows than this for a position - use the club slope
 DELTA_CLIP = 40.0
 
 POS_MAP = {"GK": "GK", "DF": "DF", "MF": "MF", "FW": "FW"}
@@ -195,8 +196,69 @@ def _fotmob_match_stats(seasons: list[str]) -> pd.DataFrame:
         fm[c] = pd.to_numeric(fm[c], errors="coerce")
     return (fm.dropna(subset=["date"])
               .drop_duplicates(subset=["_pk", "team_key", "date"])
-              [["_pk", "team_key", "date", "tackles", "interceptions", "blocks",
+              [["_pk", "team_key", "date", "fotmob_id", "tackles", "interceptions", "blocks",
                 "clearances", "saves", "goals_conceded", "passes_completed", "passes_attempted"]])
+
+
+def _season_of(d: pd.Timestamp) -> str:
+    """Club-season label for a date, split on 1 August - so a June/July
+    tournament (World Cup, EURO, Copa) belongs to the season that just ended."""
+    y = d.year if d.month >= 8 else d.year - 1
+    return f"{y}-{(y + 1) % 100:02d}"
+
+
+def _international_rows(pm: pd.DataFrame) -> pd.DataFrame:
+    """International appearances (src/pull_fotmob_internationals.py) for players
+    already in `pm`, shaped like its club rows. FotMob's player id is the bridge:
+    each club row matched to FotMob on (name, team, date) pairs a fotmob_id with
+    an Understat player_id, and only one-to-one pairs are trusted - so a player
+    is linked to his country through his own id, never through a club or a name.
+    team_key/opp_key are the national teams; opponent strength is the national
+    Elo (src/build_national_elo.py) - on its own scale, which main() centres
+    and fits a separate opponent slope for."""
+    if not INTL_MATCHES.exists() or not NATIONAL_ELO.exists() or "fotmob_id" not in pm:
+        return pd.DataFrame()
+    pairs = pm.dropna(subset=["fotmob_id"]).drop_duplicates(subset=["player_id", "fotmob_id"])
+    pairs = pairs[~pairs["player_id"].duplicated(keep=False) & ~pairs["fotmob_id"].duplicated(keep=False)]
+    fm_to_pid = dict(zip(pairs["fotmob_id"].astype("int64"), pairs["player_id"]))
+    pid_info = (pm.sort_values("date").drop_duplicates("player_id", keep="last")
+                  .set_index("player_id")[["player", "pos_group"]])
+
+    it = pd.read_csv(INTL_MATCHES)
+    it["player_id"] = it["fotmob_id"].map(fm_to_pid)
+    it = it.dropna(subset=["player_id"])
+    it["player_id"] = it["player_id"].astype("int64")
+    it["date"] = pd.to_datetime(it["date"], errors="coerce")
+    it = it.dropna(subset=["date"])
+    it["minutes"] = pd.to_numeric(it["minutes"], errors="coerce").fillna(0)
+    it = it[it["minutes"] >= MIN_MATCH_MINUTES].copy()
+    it["season"] = it["date"].map(_season_of)
+    it = it[it["season"].isin(WINDOW_SEASONS)]
+    if it.empty:
+        return pd.DataFrame()
+
+    ne = pd.read_csv(NATIONAL_ELO)
+    ne["date"] = pd.to_datetime(ne["date"])
+    # results-feed dates are local, FotMob's UTC - allow a day or two either way
+    it = pd.merge_asof(it.sort_values("date"), ne.sort_values("date")[["date", "team", "opponent", "opp_elo"]],
+                       on="date", by=["team", "opponent"], direction="nearest",
+                       tolerance=pd.Timedelta(days=2))
+    it = it.dropna(subset=["opp_elo"])
+
+    return pd.DataFrame({
+        "season": it["season"], "src_league": "INTL", "date": it["date"],
+        "game_id": it["match_id"], "player": it["player_id"].map(pid_info["player"]),
+        "player_id": it["player_id"], "team_key": it["team"], "opp_key": it["opponent"],
+        "pos_group": it["player_id"].map(pid_info["pos_group"]), "minutes": it["minutes"],
+        "attack_raw": pd.to_numeric(it["xg"], errors="coerce").fillna(0)
+                      + 0.7 * pd.to_numeric(it["xa"], errors="coerce").fillna(0),
+        "opp_elo": it["opp_elo"], "d": it["date"].dt.strftime("%Y-%m-%d"),
+        **{c: pd.to_numeric(it[c], errors="coerce") for c in (
+            "tackles", "interceptions", "blocks", "clearances", "saves",
+            "goals_conceded", "passes_completed", "passes_attempted")},
+        "is_international": 1, "k_mult": it["comp_type"].map(INTL_K_MULT).fillna(1.0),
+        "competition": it["competition"],
+    })
 
 
 def _baseline_and_std(df: pd.DataFrame, raw_col: str) -> tuple[dict, dict]:
@@ -279,7 +341,9 @@ def main() -> None:
     # would otherwise look like a shutout of a passing performance.
     fm = _fotmob_match_stats(WINDOW_SEASONS)
     if not fm.empty:
-        pm = pm.merge(fm, on=["_pk", "team_key", "date"], how="left")
+        # on the calendar day: Understat's date carries the kickoff time, FotMob's doesn't
+        pm = pm.merge(fm.assign(d=fm["date"].dt.strftime("%Y-%m-%d")).drop(columns="date"),
+                      on=["_pk", "team_key", "d"], how="left")
     else:
         for c in ("tackles", "interceptions", "blocks", "clearances", "saves",
                   "goals_conceded", "passes_completed", "passes_attempted"):
@@ -287,6 +351,14 @@ def main() -> None:
     match_rate = pm["tackles"].notna().mean()
     pass_rate = pm["passes_attempted"].notna().mean()
     print(f"FotMob match-stat join: {match_rate:.0%} of rows matched, {pass_rate:.0%} with pass data")
+
+    pm["is_international"], pm["k_mult"], pm["competition"] = 0, 1.0, None
+    intl = _international_rows(pm)
+    if not intl.empty:
+        pm = pd.concat([pm, intl], ignore_index=True)
+    print(f"international appearances: {len(intl)} rows, "
+          f"{intl['player_id'].nunique() if not intl.empty else 0} players")
+    club = pm["is_international"].eq(0)
 
     is_gk = pm["pos_group"].eq("GK")
     def_outfield = (pm[["tackles", "interceptions", "blocks", "clearances"]].fillna(0).sum(axis=1))
@@ -296,9 +368,9 @@ def main() -> None:
     pm.loc[unmatched, "def_raw"] = np.nan  # unmatched row - missing, not 0
 
     reliable_pass = pm["passes_attempted"] >= PASS_MIN_ATTEMPTS
-    pass_pct_baseline = (pm.loc[reliable_pass].groupby("pos_group")
-                         .apply(lambda g: g["passes_completed"].sum() / g["passes_attempted"].sum(),
-                                include_groups=False))
+    pass_tot = (pm.loc[reliable_pass & club].groupby("pos_group")
+                [["passes_completed", "passes_attempted"]].sum())
+    pass_pct_baseline = pass_tot["passes_completed"] / pass_tot["passes_attempted"]
     pm["pass_raw"] = np.where(
         reliable_pass,
         pm["passes_completed"] - pm["pos_group"].map(pass_pct_baseline) * pm["passes_attempted"],
@@ -309,10 +381,12 @@ def main() -> None:
     # this same window - computed independently for each of the three components
     # so they land on a comparable position-relative scale before being blended
     # by role (ROLE_WEIGHTS) into one "contribution" the rest of the model reacts
-    # to exactly as it always did (opponent adjustment, form, K, decay, revert).
-    base_atk, std_atk = _baseline_and_std(pm, "attack_raw")
-    base_def, std_def = _baseline_and_std(pm.dropna(subset=["def_raw"]), "def_raw")
-    base_pass, std_pass = _baseline_and_std(pm.dropna(subset=["pass_raw"]), "pass_raw")
+    # to exactly as it always did (opponent adjustment, form, K, decay).
+    # Club rows only - international appearances are measured against the same
+    # club bar, with the national opponent's strength doing the adjusting.
+    base_atk, std_atk = _baseline_and_std(pm[club], "attack_raw")
+    base_def, std_def = _baseline_and_std(pm[club].dropna(subset=["def_raw"]), "def_raw")
+    base_pass, std_pass = _baseline_and_std(pm[club].dropna(subset=["pass_raw"]), "pass_raw")
 
     def _z(raw, pos, frac, base, std):
         if pd.isna(raw):
@@ -332,14 +406,34 @@ def main() -> None:
         contribution.append(sum(wt * z for wt, z in have) / wsum)
     pm["contribution"] = contribution
 
-    for pos, g in pm.groupby("pos_group"):
+    for pos, g in pm[club].groupby("pos_group"):
         n90 = (g["minutes"] / 90.0).sum()
         baseline90[pos] = float(g["contribution"].sum() / n90) if n90 > 0 else 0.05
         resid = g["contribution"] - baseline90[pos] * (g["minutes"] / 90.0)
         resid_std[pos] = float(resid.std()) or 0.2
-    print("position baselines (blended output/90) and residual std, this window:")
+
+    # opponent effect: minutes-weighted slope of blended output/90 on the
+    # opponent's Elo, per position (it's far steeper for forwards than for
+    # defenders) and separately for international rows, whose national-Elo
+    # scale differs from the club one. Opponent Elo is centred on its own
+    # average, so an average opponent leaves the bar at the baseline.
+    opp_center, opp_beta = {}, {}
+    for is_intl, grp in pm[pm["minutes"] >= 45].groupby("is_international"):
+        w = grp["minutes"] / 90.0
+        opp_center[is_intl] = float(np.average(grp["opp_elo"], weights=w))
+        for pos, g in grp.groupby("pos_group"):
+            if is_intl and len(g) < OPP_BETA_MIN_ROWS:
+                continue
+            wg = g["minutes"] / 90.0
+            x = g["opp_elo"] - np.average(g["opp_elo"], weights=wg)
+            y = g["contribution"] / wg
+            opp_beta[(is_intl, pos)] = float(np.sum(wg * x * (y - np.average(y, weights=wg)))
+                                             / np.sum(wg * x * x))
+    print("position baselines (blended output/90), residual std, opponent slope per 100 Elo (club / intl):")
     for pos in POS_MAP.values():
-        print(f"  {pos}: baseline={baseline90.get(pos, 0):.3f}  std={resid_std.get(pos, 0):.3f}")
+        b_club, b_intl = opp_beta.get((0, pos), 0.0), opp_beta.get((1, pos))
+        print(f"  {pos}: baseline={baseline90.get(pos, 0):.3f}  std={resid_std.get(pos, 0):.3f}  "
+              f"opp={100 * b_club:+.3f} / {'n/a' if b_intl is None else f'{100 * b_intl:+.3f}'}")
 
     pm = pm.sort_values(["player_id", "date"]).reset_index(drop=True)
 
@@ -359,21 +453,16 @@ def main() -> None:
     }
 
     rating: dict[int, float] = {}
-    cur_season: dict[int, str] = {}
     rows = []
 
-    def _advance_season(pid: int, seas: str) -> None:
-        if cur_season.get(pid) is not None and cur_season[pid] != seas:
-            rating[pid] = START_RATING + (1 - REVERT) * (rating[pid] - START_RATING)
-        cur_season[pid] = seas
-
-    def _decay(pid, missed, player, team_key, pos_group):
+    def _decay(pid, missed, player, team_key, pos_group, already=0):
         """`missed` = (date, season) team matches the player sat out since his last
         appearance. The first DECAY_GRACE are free (rotation); each one after that
         pulls the rating DECAY_RATE of the way to 1500. Emitted as minutes=0 rows
-        so the decline shows on the sparkline."""
-        for i, (d, seas) in enumerate(missed):
-            _advance_season(pid, seas)
+        so the decline shows on the sparkline. `already` = club matches missed
+        before an international appearance split this gap - the grace spans the
+        whole club absence, so a call-up in the middle doesn't reset it."""
+        for i, (d, seas) in enumerate(missed, start=already):
             if i < DECAY_GRACE:
                 continue
             if abs(rating[pid] - DECAY_TARGET) < 3.0:
@@ -386,27 +475,33 @@ def main() -> None:
                 "opp_key": None, "pos_group": pos_group, "minutes": 0,
                 "actual": None, "expected": None, "opp_elo": None,
                 "rating_before": round(before, 1), "rating_after": round(rating[pid], 1),
+                "is_international": 0, "competition": None,
             })
 
     for pid, g in pm.groupby("player_id", sort=False):
         g = g.sort_values("date")
         rating[pid] = START_RATING
         prev_date = team_rec = pos_rec = name_rec = None
+        n_missed = 0  # club matches missed since his last CLUB appearance
 
+        # decay is club-only: it charges the club matches a player sat out, keyed
+        # to his last club (team_rec); an international appearance updates the
+        # rating but is never itself a "missed" or "played" club match.
         for r in g.itertuples(index=False):
             here = pd.Timestamp(r.date).normalize()
             if team_rec is not None:
-                _decay(pid, [(d, s) for d, s in team_cal.get(team_rec, [])
-                             if prev_date < d < here], name_rec, team_rec, pos_rec)
-            _advance_season(pid, r.season)
+                missed = [(d, s) for d, s in team_cal.get(team_rec, []) if prev_date < d < here]
+                _decay(pid, missed, name_rec, team_rec, pos_rec, already=n_missed)
+                n_missed += len(missed)
 
             rp = rating[pid]
-            opp_mult = np.clip(10 ** ((START_RATING - r.opp_elo) / OPP_SCALE), *MULT_CLIP)
-            form_mult = np.clip(10 ** ((rp - START_RATING) / FORM_SCALE), *MULT_CLIP)
-            expected = baseline90[r.pos_group] * (r.minutes / 90.0) * opp_mult * form_mult
+            beta = opp_beta.get((r.is_international, r.pos_group), opp_beta.get((0, r.pos_group), 0.0))
+            expected = (r.minutes / 90.0) * (baseline90[r.pos_group]
+                                             + (rp - START_RATING) / SPREAD
+                                             + beta * (r.opp_elo - opp_center[r.is_international]))
             actual = r.contribution
             std = resid_std[r.pos_group]
-            delta = float(np.clip(K * (actual - expected) / std, -DELTA_CLIP, DELTA_CLIP))
+            delta = float(np.clip(K * r.k_mult * (actual - expected) / std, -DELTA_CLIP, DELTA_CLIP))
             rating[pid] = rp + delta
 
             rows.append({
@@ -416,18 +511,24 @@ def main() -> None:
                 "actual": round(actual, 4), "expected": round(expected, 4),
                 "opp_elo": round(r.opp_elo, 1),
                 "rating_before": round(rp, 1), "rating_after": round(rating[pid], 1),
+                "is_international": r.is_international, "competition": r.competition,
             })
-            prev_date, team_rec, pos_rec, name_rec = here, r.team_key, r.pos_group, r.player
+            prev_date = here
+            if not r.is_international:
+                team_rec, pos_rec, name_rec, n_missed = r.team_key, r.pos_group, r.player, 0
 
         if team_rec is not None:  # trailing decay past the last appearance
             _decay(pid, [(d, s) for d, s in team_cal.get(team_rec, []) if d > prev_date],
-                   name_rec, team_rec, pos_rec)
+                   name_rec, team_rec, pos_rec, already=n_missed)
 
     out = pd.DataFrame(rows)
     out.to_csv(OUT, index=False)
 
     played = out[out["minutes"] > 0]
     latest = out.sort_values("date").drop_duplicates(subset="player_id", keep="last")
+    club_rows = played[played["is_international"] == 0].sort_values("date")
+    latest["team_key"] = latest["player_id"].map(  # listed at his club, not his country
+        club_rows.drop_duplicates("player_id", keep="last").set_index("player_id")["team_key"])
     print(f"\nwrote {OUT}  ({len(played)} player-match rows + {len(out) - len(played)} "
           f"inactivity-decay rows, {out['player_id'].nunique()} players, seasons {WINDOW_SEASONS})")
     print("\ntop 10 current ratings:")
