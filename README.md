@@ -15,7 +15,8 @@ Spain, Germany, Italy, France, 2020-21 → 2026-27** (+ the cups those clubs pla
 
 Alongside them, a **player Elo** (no market value anywhere in it) rates every
 player match by match on a role-weighted blend of attacking output, defensive
-actions and passing, against an opponent-adjusted expectation.
+actions and passing, against an opponent-adjusted expectation — in club matches
+and international appearances alike.
 
 ![Merged predictor architecture](merged_predictor_architecture.png)
 
@@ -32,6 +33,8 @@ actions and passing, against an opponent-adjusted expectation.
 | Transfermarkt (mirror + nodriver) + Sofascore | market values, 2020-27 | `pull_transfermarkt*.py`, `pull_sofascore_values.py` |
 | worldfootballR mirror | advanced player stats (xAG, progressive, tackles…), 2020-22 | `pull_wfr_advanced.py` |
 | ESPN / FotMob / football-data.org | current-season fixtures/results + cup stats & xG | `pull_live.py`, `src/live/` |
+| FotMob (internationals) | senior men's international box scores (World Cup, continental finals, qualifiers, Nations Leagues, friendlies), 2024-25 on | `pull_fotmob_internationals.py` |
+| martj42/international_results | every men's international result since 1872 — national-team Elo | `pull_international_results.py` |
 
 Unofficial JSON APIs are behind one pluggable schema (`src/live/`) so a source
 going dark is swapped without touching anything downstream.
@@ -51,7 +54,7 @@ going dark is swapped without touching anything downstream.
 | 9 | Value model | `train_value_model.py` | `models/value_model.pkl`, `value_model_predictions.csv` |
 | 10 | Form / momentum | `build_form_momentum.py` (peer-baseline value vs. actual output) → re-run `build_match_model_table.py` | `squad_momentum.csv` |
 | 11 | Outcome model | `build_match_model_table.py` → `train_outcome_model.py [--hybrid]` | `outcome_model_predictions*.csv` |
-| 12 | Player Elo | `build_player_elo.py` (opponent-adjusted, no market value; role-weighted attack / defence / passing from Understat + FotMob) | `player_elo.csv` |
+| 12 | Player Elo | `build_national_elo.py` → `build_player_elo.py` (opponent-adjusted, no market value; role-weighted attack / defence / passing from Understat + FotMob, club + international) | `national_team_elo.csv`, `player_elo.csv` |
 | 13 | Site | `export_site_data.py` | `site/index.html` |
 | 14 | SQLite mirror | `build_sqlite_db.py` (one table per CSV, fully replaced each run) | `data/processed/xvalue.db` |
 

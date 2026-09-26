@@ -48,12 +48,14 @@ The **Rankings** tab has two from-scratch Elo systems, no market value in either
 - **Player Elo leaderboard** — an opponent-adjusted rating built purely from
   real match output vs. an expectation that folds in the opponent's strength
   and the player's own current rating, over the last three seasons. Output is a
-  **role-weighted** blend of attack (npxG + 0.7 × xA), defence (tackles +
+  **role-weighted** blend of attack (xG + 0.7 × xA), defence (tackles +
   interceptions + blocks + clearances; saves − goals conceded for keepers) and
   passing (completions above a positional-average passer), each z-scored within
   the position group first — so a defender is judged mainly on defending, not
-  on a forward's npxG bar (see `docs/models.md`). Half the gap from 1500 reverts between
-  seasons; a player who stops featuring bleeds toward 1500 for every match his
+  on a forward's xG bar (see `docs/models.md`). International appearances
+  move the rating too (opponent = the national team's Elo, friendlies at half
+  weight), but a player is always listed at his club. Ratings carry across
+  seasons with no reset; a player who stops featuring bleeds toward 1500 for every match his
   club plays without him, after a two-game grace. Overall (≥ 5 appearances in
   the window) plus per-position and per-season views.
 

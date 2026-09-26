@@ -21,6 +21,8 @@ py -3.11 src/pull_live.py --seasons 2024-25 2025-26 --comps UCL UEL UECL FA EFL 
 py -3.11 src/pull_understat_player_matches.py           # per-player per-match xG/xA (Understat, ~1-1.5h, resumable)
 py -3.11 src/pull_fotmob_players.py --current           # per-player SoT/fouls/tackles/passes/... (FotMob, current season, cached)
 py -3.11 src/pull_fotmob_players.py --backfill-passes 2024-25 2025-26 2026-27   # one-off: re-fetch cached matches that predate passes_completed/attempted (resumable, skips done ones)
+py -3.11 src/pull_international_results.py             # every men's international result since 1872 (martj42 dataset, one download)
+py -3.11 src/pull_fotmob_internationals.py             # per-player international box scores since 2024-07-01 (FotMob, cached; first run ~1h)
 ```
 
 ## 2. Build the modelling tables
@@ -48,7 +50,8 @@ py -3.11 src/train_outcome_model.py --hybrid -> outcome_model_predictions_hybrid
 ## 4. Build the site
 
 ```
-py -3.11 src/build_player_elo.py   -> player_elo.csv  (genuine, no-value-model player Elo, last 3 seasons, role-weighted attack/defence/passing - needs match_model_table.csv + understat_player_matches.csv from steps 1-2, and FotMob's per-match cache for the def/pass components; prints the FotMob join + pass-data coverage)
+py -3.11 src/build_national_elo.py -> national_team_elo.csv  (World Football Elo over all international history - opponent strength for international appearances)
+py -3.11 src/build_player_elo.py   -> player_elo.csv  (genuine, no-value-model player Elo, last 3 seasons, role-weighted attack/defence/passing - needs match_model_table.csv + understat_player_matches.csv from steps 1-2, and FotMob's per-match cache for the def/pass components, plus fotmob_intl_player_matches.csv + national_team_elo.csv for international appearances; prints the FotMob join, pass-data and international coverage)
 py -3.11 src/export_site_data.py   -> site/data.json + site/index.html
 ```
 
