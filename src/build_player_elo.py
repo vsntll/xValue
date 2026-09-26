@@ -206,8 +206,8 @@ def main() -> None:
     pm = pm.dropna(subset=["date"])
     pm["minutes"] = pd.to_numeric(pm["minutes"], errors="coerce").fillna(0)
     pm = pm[pm["minutes"] >= MIN_MATCH_MINUTES].copy()
-    pm["contribution"] = (pd.to_numeric(pm["xg"], errors="coerce").fillna(0)
-                          + 0.7 * pd.to_numeric(pm["xa"], errors="coerce").fillna(0))
+    pm["attack_raw"] = (pd.to_numeric(pm["xg"], errors="coerce").fillna(0)
+                        + 0.7 * pd.to_numeric(pm["xa"], errors="coerce").fillna(0))
     pm["team_key"] = pm["team"].map(normalize_team)
     pm["_pk"] = pm["player"].map(_pk)
     pm["d"] = pm["date"].dt.strftime("%Y-%m-%d")
@@ -232,6 +232,41 @@ def main() -> None:
     elo_lu = _opponent_elo_lookup().rename(columns={"team_key": "opp_key", "elo": "opp_elo"})
     pm = pm.merge(elo_lu, on=["season", "opp_key", "d"], how="left")
     pm["opp_elo"] = pm["opp_elo"].fillna(START_RATING)
+
+    # defensive/passing side, from FotMob's per-match cache (name+team+date join -
+    # no shared id with Understat). A match FotMob has no cache for at all (or
+    # that predates the passes_completed/passes_attempted backfill) just leaves
+    # those columns NaN, handled as "missing" below - never as a zero, which
+    # would otherwise look like a shutout of a passing performance.
+    fm = _fotmob_match_stats(WINDOW_SEASONS)
+    if not fm.empty:
+        pm = pm.merge(fm, on=["_pk", "team_key", "date"], how="left")
+    else:
+        for c in ("tackles", "interceptions", "blocks", "clearances", "saves",
+                  "goals_conceded", "passes_completed", "passes_attempted"):
+            pm[c] = np.nan
+    match_rate = pm["tackles"].notna().mean()
+    pass_rate = pm["passes_attempted"].notna().mean()
+    print(f"FotMob match-stat join: {match_rate:.0%} of rows matched, {pass_rate:.0%} with pass data")
+
+    is_gk = pm["pos_group"].eq("GK")
+    def_outfield = (pm[["tackles", "interceptions", "blocks", "clearances"]].fillna(0).sum(axis=1))
+    def_gk = pm["saves"].fillna(0) - pm["goals_conceded"].fillna(0)
+    pm["def_raw"] = np.where(is_gk, def_gk, def_outfield)
+    unmatched = np.where(is_gk, pm["saves"].isna(), pm["tackles"].isna())
+    pm.loc[unmatched, "def_raw"] = np.nan  # unmatched row - missing, not 0
+
+    reliable_pass = pm["passes_attempted"] >= PASS_MIN_ATTEMPTS
+    pass_pct_baseline = (pm.loc[reliable_pass].groupby("pos_group")
+                         .apply(lambda g: g["passes_completed"].sum() / g["passes_attempted"].sum(),
+                                include_groups=False))
+    pm["pass_raw"] = np.where(
+        reliable_pass,
+        pm["passes_completed"] - pm["pos_group"].map(pass_pct_baseline) * pm["passes_attempted"],
+        np.nan,
+    )
+
+    pm["contribution"] = pm["attack_raw"]
 
     # position-group baseline: minutes-weighted output/90, purely empirical
     # over this same window - the only thing "expected" is built from.
