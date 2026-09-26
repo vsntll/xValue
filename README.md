@@ -13,6 +13,12 @@ Spain, Germany, Italy, France, 2020-21 → 2026-27** (+ the cups those clubs pla
   on Elo + form + xG, log-loss **0.981** (pure) / **0.972** (with market odds),
   vs Bet365 closing 0.971 — at the market ceiling.
 
+Alongside them, a **player Elo** (no market value anywhere in it) rates every
+player match by match on a role-weighted blend of attacking output, defensive
+actions and passing, against an opponent-adjusted expectation.
+
+![Merged predictor architecture](merged_predictor_architecture.png)
+
 `docs/models.md` has the full model detail; `run_pipeline.md` is the runbook.
 
 ## Data sources
@@ -22,7 +28,7 @@ Spain, Germany, Italy, France, 2020-21 → 2026-27** (+ the cups those clubs pla
 | football-data.co.uk | league results + bookmaker odds, 2014-26 (all big-5) | `pull_match_archive.py` |
 | FBref (nodriver) | finished-season player stats (PL/BL/La Liga) + the deep columns nothing live carries, all-comps team match logs | `pull_fbref_*.py` |
 | Understat (soccerdata) | per-match + per-player xG, 2020-now; the current-season goals/assists/minutes/xG and the Serie A / Ligue 1 player spine | `pull_understat*.py` |
-| FotMob | current-season SoT / fouls / tackles / interceptions / blocks / clearances / touches / saves (per-match box scores) | `pull_fotmob_players.py` |
+| FotMob | per-match box scores: SoT / fouls / tackles / interceptions / blocks / clearances / touches / saves / passes completed + attempted; confirmed XIs + goal/red-card timelines | `pull_fotmob_players.py` |
 | Transfermarkt (mirror + nodriver) + Sofascore | market values, 2020-27 | `pull_transfermarkt*.py`, `pull_sofascore_values.py` |
 | worldfootballR mirror | advanced player stats (xAG, progressive, tackles…), 2020-22 | `pull_wfr_advanced.py` |
 | ESPN / FotMob / football-data.org | current-season fixtures/results + cup stats & xG | `pull_live.py`, `src/live/` |
@@ -45,7 +51,7 @@ going dark is swapped without touching anything downstream.
 | 9 | Value model | `train_value_model.py` | `models/value_model.pkl`, `value_model_predictions.csv` |
 | 10 | Form / momentum | `build_form_momentum.py` (peer-baseline value vs. actual output) → re-run `build_match_model_table.py` | `squad_momentum.csv` |
 | 11 | Outcome model | `build_match_model_table.py` → `train_outcome_model.py [--hybrid]` | `outcome_model_predictions*.csv` |
-| 12 | Player Elo | `build_player_elo.py` (opponent-adjusted, no market value) | `player_elo.csv` |
+| 12 | Player Elo | `build_player_elo.py` (opponent-adjusted, no market value; role-weighted attack / defence / passing from Understat + FotMob) | `player_elo.csv` |
 | 13 | Site | `export_site_data.py` | `site/index.html` |
 | 14 | SQLite mirror | `build_sqlite_db.py` (one table per CSV, fully replaced each run) | `data/processed/xvalue.db` |
 
