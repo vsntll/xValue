@@ -66,7 +66,10 @@ STAT_KEYS = {
     "aerials_won": "aerials_won", "chances_created": "chances_created",
     "saves": "saves", "goals_conceded": "goals_conceded",
 }
-SUM_COLS = [c for c in STAT_KEYS.values() if c != "minutes"] + ["minutes", "matches"]
+SUM_COLS = [c for c in STAT_KEYS.values() if c != "minutes"] + ["minutes", "matches",
+                                                                 "passes_completed", "passes_attempted"]
+PASS_KEY = "accurate_passes"  # fractionWithPercentage: {value: completed, total: attempted} -
+                              # needs both, unlike every other STAT_KEYS entry (value only)
 
 
 def _get(path: str, **params) -> object:
@@ -102,6 +105,37 @@ def _extract_events(d: dict) -> list[dict]:
     return out
 
 
+def _extract_player_rows(d: dict, mid: str) -> list[dict]:
+    ps = ((d.get("content") or {}).get("playerStats")) or {}
+    if not ps:
+        return []
+    g = d.get("general") or {}
+    date = (g.get("matchTimeUTCDate") or "")[:10]
+    rows = []
+    for pid, p in ps.items():
+        flat = {}
+        for grp in p.get("stats", []):
+            for _title, entry in (grp.get("stats") or {}).items():
+                key = entry.get("key")
+                if key == PASS_KEY:
+                    s = entry.get("stat") or {}
+                    flat.setdefault("passes_completed", s.get("value"))
+                    flat.setdefault("passes_attempted", s.get("total"))
+                elif key in STAT_KEYS:
+                    flat.setdefault(STAT_KEYS[key], _stat(entry))
+        if flat.get("minutes") in (None, 0):
+            continue
+        rows.append({
+            "fotmob_id": int(pid), "player": p.get("name"),
+            "team": p.get("teamName"), "team_id": p.get("teamId"),
+            "date": date, "match_id": f"fotmob:{mid}",
+            "position": p.get("usualPosition"),
+            **{c: flat.get(c) for c in STAT_KEYS.values()},
+            "passes_completed": flat.get("passes_completed"), "passes_attempted": flat.get("passes_attempted"),
+        })
+    return rows
+
+
 def _parse_match(mid: str) -> list[dict] | None:
     """Per-player rows for one match, plus its starting-XI lineup - both come
     off the same matchDetails payload, so caching the lineup costs zero extra
@@ -132,29 +166,7 @@ def _parse_match(mid: str) -> list[dict] | None:
     if cf.exists():
         return json.loads(cf.read_text())
 
-    ps = ((d.get("content") or {}).get("playerStats")) or {}
-    if not ps:
-        cf.write_text("[]")
-        return []
-    g = d.get("general") or {}
-    date = (g.get("matchTimeUTCDate") or "")[:10]
-    rows = []
-    for pid, p in ps.items():
-        flat = {}
-        for grp in p.get("stats", []):
-            for _title, entry in (grp.get("stats") or {}).items():
-                key = entry.get("key")
-                if key in STAT_KEYS:
-                    flat.setdefault(STAT_KEYS[key], _stat(entry))
-        if flat.get("minutes") in (None, 0):
-            continue
-        rows.append({
-            "fotmob_id": int(pid), "player": p.get("name"),
-            "team": p.get("teamName"), "team_id": p.get("teamId"),
-            "date": date, "match_id": f"fotmob:{mid}",
-            "position": p.get("usualPosition"),
-            **{c: flat.get(c) for c in STAT_KEYS.values()},
-        })
+    rows = _extract_player_rows(d, mid)
     cf.write_text(json.dumps(rows))
     return rows
 
