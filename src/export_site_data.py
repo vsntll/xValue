@@ -698,7 +698,9 @@ def build_player_elo_leaderboard(teams_list: list[dict]) -> dict | None:
         anyone with PLAYER_ELO_SEASON_MIN real appearances that season.
 
     Decay rows (minutes 0) count for the rating trajectory but never as an
-    'appearance'. Capped for payload size - the full history is player_elo.csv."""
+    'appearance'. International appearances count as appearances and move the
+    rating, but a player is always shown at the club/position of his last CLUB
+    appearance. Capped for payload size - the full history is player_elo.csv."""
     p = PROC / "player_elo.csv"
     if not p.exists():
         return None
@@ -710,6 +712,7 @@ def build_player_elo_leaderboard(teams_list: list[dict]) -> dict | None:
         pe["player"] = pe["player"].replace(dict(zip(nm["understat_name"], nm["canonical_name"])))
     pe = pe.sort_values("date")
     played = pe[pe["minutes"].fillna(0) > 0]
+    club_played = played[_is_club(played)]
 
     key2name = {t["team_key"]: t["name"] for t in teams_list}
     key2league = {t["team_key"]: t["league"] for t in teams_list}
@@ -742,7 +745,7 @@ def build_player_elo_leaderboard(teams_list: list[dict]) -> dict | None:
                 "leagues_missing": [lg for lg in LEAGUES.values() if lg not in present]}
 
     real_counts = played.groupby("player_id").size()
-    last_real = played.drop_duplicates("player_id", keep="last").set_index("player_id")
+    last_real = club_played.drop_duplicates("player_id", keep="last").set_index("player_id")
 
     # current board: latest row per player (may be a decay row) but shown at the
     # club/position of their last real appearance, filtered on real activity.
@@ -758,14 +761,23 @@ def build_player_elo_leaderboard(teams_list: list[dict]) -> dict | None:
     for seas in sorted(s for s in pe["season"].dropna().unique()):
         sp = played[played["season"] == seas]
         sc = sp.groupby("player_id").size()
-        keep = set(sc[sc >= PLAYER_ELO_SEASON_MIN].index)
-        s_last_real = sp.drop_duplicates("player_id", keep="last").set_index("player_id")
+        keep = set(sc[sc >= PLAYER_ELO_SEASON_MIN].index) & set(sp.loc[_is_club(sp), "player_id"])
+        s_last_real = sp[_is_club(sp)].drop_duplicates("player_id", keep="last").set_index("player_id")
         s_last = pe[(pe["season"] == seas) & pe["player_id"].isin(keep)].drop_duplicates(
             "player_id", keep="last").copy()
         s_last["team_key"] = s_last["player_id"].map(s_last_real["team_key"])
         s_last["pos_group"] = s_last["player_id"].map(s_last_real["pos_group"])
         result["seasons"][seas] = board(s_last, season=seas)
     return result
+
+
+def _is_club(pe: pd.DataFrame) -> pd.Series:
+    """Club rows of player_elo.csv - international appearances carry a national
+    team in team_key, never where a player should be listed. Older files without
+    the column are all-club."""
+    if "is_international" not in pe:
+        return pd.Series(True, index=pe.index)
+    return pe["is_international"].fillna(0).eq(0)
 
 
 def _pname_key(s) -> str:
@@ -801,7 +813,7 @@ def build_player_elo_index() -> dict:
     played = pe[pe["minutes"].fillna(0) > 0]
     if played.empty:
         return {"by_key": {}, "by_name": {}}
-    last_real = played.drop_duplicates("player_id", keep="last")
+    last_real = played[_is_club(played)].drop_duplicates("player_id", keep="last")
     latest_rating = pe.drop_duplicates("player_id", keep="last").set_index("player_id")["rating_after"]
     by_key, by_name = {}, {}
     for _, lr in last_real.iterrows():
@@ -1089,7 +1101,7 @@ def main() -> None:
             "value_leaderboard": "The value model's biggest gaps between predicted and listed value, both directions, among players with at least 180 minutes this season.",
             "bargain_validation": f"The model's biggest '{BARGAIN_VALIDATION_SEASON}' bargain calls (predicted well above listed value that season), checked against this season's listed value and, where scraped, a real transfer fee - closes the loop from claim to tracked prediction.",
             "team_elo": "Goals-based Elo (all competitions - league, cup, European), the same rating the outcome model uses. Everyone starts at 1500; a win moves a team's rating up by K x a margin-of-victory factor x (1 - their pre-match win probability), a loss moves it down the same way, draws split the difference. 'Overall' carries across seasons with a quarter of each team's gap from 1500 reverting each summer; a season ladder resets harder - it starts every team at 1500 + half its previous final's gap from 1500 (promoted sides at 1400) and only counts that season's matches, so it shows how the season played out on its own.",
-            "player_elo": "A separate, from-scratch Elo for individual players - no market value anywhere in it. Built purely from real match output - a position-weighted blend of attack (non-penalty xG + 0.7x xA), defensive actions (tackles, interceptions, blocks, clearances; saves vs. goals conceded for keepers) and passing (completions above a typical passer at that position), so a defender is judged mainly on defending - vs. an opponent-adjusted expectation, over the last three seasons; a player's own rating feeds back into next match's bar, same as a team's does. Half of the gap from 1500 reverts between seasons, and a player who stops featuring (injury, benched, or gone) bleeds toward 1500 for every match his club plays without him after a two-game grace. 'Overall' needs at least 5 appearances in the window; a season ladder needs 3 that season.",
+            "player_elo": "A separate, from-scratch Elo for individual players - no market value anywhere in it. Built purely from real match output - a position-weighted blend of attack (xG + 0.7x xA), defensive actions (tackles, interceptions, blocks, clearances; saves vs. goals conceded for keepers) and passing (completions above a typical passer at that position), so a defender is judged mainly on defending - vs. an opponent-adjusted expectation, over the last three seasons, in club matches and international appearances alike (a national team's opponent strength comes from its own international Elo; friendlies count half); a player's own rating feeds back into next match's bar, same as a team's does. Ratings carry over from one season to the next with no reset; a player who stops featuring (injury, benched, or gone) bleeds toward 1500 for every match his club plays without him after a two-game grace. 'Overall' needs at least 5 appearances in the window; a season ladder needs 3 that season.",
         },
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
