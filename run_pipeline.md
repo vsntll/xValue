@@ -19,7 +19,8 @@ py -3.11 src/pull_sofascore_values.py                   # current-season values 
 py -3.11 src/pull_live.py --season 2026-27              # live season, all comps   (ESPN+fdorg+Understat+FotMob)
 py -3.11 src/pull_live.py --seasons 2024-25 2025-26 --comps UCL UEL UECL FA EFL DFB CDR --sources espn fotmob
 py -3.11 src/pull_understat_player_matches.py           # per-player per-match xG/xA (Understat, ~1-1.5h, resumable)
-py -3.11 src/pull_fotmob_players.py --current           # per-player SoT/fouls/tackles/... (FotMob, current season, cached)
+py -3.11 src/pull_fotmob_players.py --current           # per-player SoT/fouls/tackles/passes/... (FotMob, current season, cached)
+py -3.11 src/pull_fotmob_players.py --backfill-passes 2024-25 2025-26 2026-27   # one-off: re-fetch cached matches that predate passes_completed/attempted (resumable, skips done ones)
 ```
 
 ## 2. Build the modelling tables
@@ -47,7 +48,7 @@ py -3.11 src/train_outcome_model.py --hybrid -> outcome_model_predictions_hybrid
 ## 4. Build the site
 
 ```
-py -3.11 src/build_player_elo.py   -> player_elo.csv  (genuine, no-value-model player Elo, last 3 seasons - needs match_model_table.csv + understat_player_matches.csv from steps 1-2)
+py -3.11 src/build_player_elo.py   -> player_elo.csv  (genuine, no-value-model player Elo, last 3 seasons, role-weighted attack/defence/passing - needs match_model_table.csv + understat_player_matches.csv from steps 1-2, and FotMob's per-match cache for the def/pass components; prints the FotMob join + pass-data coverage)
 py -3.11 src/export_site_data.py   -> site/data.json + site/index.html
 ```
 
