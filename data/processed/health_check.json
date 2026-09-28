@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-25T12:03:19+00:00",
+  "checked_at": "2026-09-28T14:17:25+00:00",
   "results": {
     "fbref (browser scrape)": {
       "status": "blocked (known)",
@@ -14,7 +14,7 @@
     "worldfootballR mirror": {
       "status": "ok",
       "detail": "1.9 MB",
-      "seconds": 0.5
+      "seconds": 0.3
     },
     "espn": {
       "status": "unreachable",
@@ -25,19 +25,19 @@
       "status": "ok",
       "detail": "50 rows",
       "n": 50,
-      "seconds": 0.9
+      "seconds": 1.4
     },
     "understat (live match schema)": {
       "status": "ok",
       "detail": "380 rows",
       "n": 380,
-      "seconds": 4.4
+      "seconds": 4.7
     },
     "football-data.org": {
       "status": "ok",
       "detail": "380 rows",
       "n": 380,
-      "seconds": 7.5
+      "seconds": 7.3
     },
     "football-data.co.uk": {
       "status": "ok",
