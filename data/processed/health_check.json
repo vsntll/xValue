@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-09-28T14:17:25+00:00",
+  "checked_at": "2026-10-01T13:39:36+00:00",
   "results": {
     "fbref (browser scrape)": {
       "status": "blocked (known)",
       "detail": "HTTP 403 - Cloudflare bot-blocks plain requests, as always",
-      "seconds": 0.1
+      "seconds": 0.2
     },
     "transfermarkt (browser scrape)": {
       "status": "blocked (known)",
@@ -14,7 +14,7 @@
     "worldfootballR mirror": {
       "status": "ok",
       "detail": "1.9 MB",
-      "seconds": 0.3
+      "seconds": 0.4
     },
     "espn": {
       "status": "unreachable",
@@ -25,29 +25,29 @@
       "status": "ok",
       "detail": "50 rows",
       "n": 50,
-      "seconds": 1.4
+      "seconds": 0.8
     },
     "understat (live match schema)": {
       "status": "ok",
       "detail": "380 rows",
       "n": 380,
-      "seconds": 4.7
+      "seconds": 4.8
     },
     "football-data.org": {
       "status": "ok",
       "detail": "380 rows",
       "n": 380,
-      "seconds": 7.3
+      "seconds": 7.4
     },
     "football-data.co.uk": {
       "status": "ok",
       "detail": "24803 bytes",
-      "seconds": 0.6
+      "seconds": 0.5
     },
     "sofascore (values API)": {
       "status": "blocked (known)",
       "detail": "403 even with a browser TLS fingerprint - IP block on this network",
-      "seconds": 0.1
+      "seconds": 0.2
     }
   }
 }
