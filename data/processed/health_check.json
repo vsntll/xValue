@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-16T11:43:27+00:00",
+  "checked_at": "2026-10-19T13:46:06+00:00",
   "results": {
     "fbref (browser scrape)": {
       "status": "blocked (known)",
@@ -14,35 +14,35 @@
     "worldfootballR mirror": {
       "status": "ok",
       "detail": "1.9 MB",
-      "seconds": 0.5
+      "seconds": 0.3
     },
     "espn": {
       "status": "unreachable",
       "detail": "returned 0 rows for the current top flight - upstream hiccup, transient",
-      "seconds": 0.3
+      "seconds": 0.2
     },
     "fotmob": {
       "status": "ok",
-      "detail": "60 rows",
-      "n": 60,
+      "detail": "69 rows",
+      "n": 69,
       "seconds": 0.8
     },
     "understat (live match schema)": {
       "status": "ok",
       "detail": "380 rows",
       "n": 380,
-      "seconds": 6.4
+      "seconds": 4.6
     },
     "football-data.org": {
       "status": "ok",
       "detail": "380 rows",
       "n": 380,
-      "seconds": 7.4
+      "seconds": 10.6
     },
     "football-data.co.uk": {
       "status": "ok",
       "detail": "29659 bytes",
-      "seconds": 0.7
+      "seconds": 0.6
     },
     "sofascore (values API)": {
       "status": "blocked (known)",
