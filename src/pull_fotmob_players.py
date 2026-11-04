@@ -31,7 +31,6 @@ from __future__ import annotations
 
 import argparse
 import sys
-import threading
 import time
 from pathlib import Path
 
@@ -43,15 +42,14 @@ sys.path.insert(0, str(ROOT / "src"))
 import fotmob_store as store  # noqa: E402
 from fbref_common import current_season  # noqa: E402
 from live.schema import deaccent, normalize_team  # noqa: E402
+from net import get_json  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 OUT = PROC / "fotmob_player_season.csv"
 BASE = "https://www.fotmob.com/api/data"
 HDRS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)", "Accept": "application/json"}
 SLEEP = 0.5
-MAX_REQUEST_S = 45  # hard cap on one request, start to last byte - requests' own
-                    # timeout only bounds each socket read, so a trickling reply
-                    # could otherwise outlast --budget-min and the step timeout
+MAX_REQUEST_S = 45  # hard cap on one request, start to last byte (see src/net.py)
 
 LEAGUE_ID = {"ENG1": 47, "GER1": 54, "ESP1": 87, "ITA1": 55, "FRA1": 53}
 
@@ -75,30 +73,11 @@ PASS_KEY = "accurate_passes"  # fractionWithPercentage: {value: completed, total
 
 
 def _get(path: str, **params) -> object:
-    """GET one FotMob endpoint as JSON. Raises requests.RequestException (HTTP
-    error, timeout, dropped connection) - callers skip the match and retry it
-    next run. The request runs on a daemon thread so MAX_REQUEST_S is a hard
-    wall-clock cap: a reply that never finishes is abandoned, not waited on."""
-    box: dict = {}
-
-    def run() -> None:
-        try:
-            r = requests.get(f"{BASE}/{path}", params=params, headers=HDRS, timeout=(10, 20))
-            r.raise_for_status()
-            box["v"] = r.json()
-        except Exception as e:  # noqa: BLE001 - re-raised below as a RequestException
-            box["e"] = e
-
-    t = threading.Thread(target=run, daemon=True)
-    t.start()
-    t.join(MAX_REQUEST_S)
-    if t.is_alive():
-        raise requests.Timeout(f"{path}: no full reply after {MAX_REQUEST_S}s")
-    if "e" in box:
-        e = box["e"]
-        raise e if isinstance(e, requests.RequestException) else requests.RequestException(f"{path}: {e}")
+    """GET one FotMob endpoint as JSON, hard-capped at MAX_REQUEST_S (src/net.py).
+    Raises requests.RequestException - callers skip the match, retry next run."""
+    out = get_json(f"{BASE}/{path}", params=params, headers=HDRS, max_s=MAX_REQUEST_S)
     time.sleep(SLEEP)
-    return box["v"]
+    return out
 
 
 def _stat(entry: dict):
