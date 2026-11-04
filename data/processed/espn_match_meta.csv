@@ -1,0 +1,453 @@
+match_id,season,src_league,date,home,away,home_score,away_score,fetched
+espn:401874742,2026-27,ITA1,2026-08-30,Lazio,Genoa,1,0,1
+espn:401874743,2026-27,ITA1,2026-08-29,Sassuolo,Torino,2,1,1
+espn:401874744,2026-27,ITA1,2026-09-04,Genoa,Como,1,4,1
+espn:401874745,2026-27,ITA1,2026-08-22,Udinese,Como,1,1,1
+espn:401874746,2026-27,ITA1,2026-08-29,Juventus,Parma,2,0,1
+espn:401874747,2026-27,ITA1,2026-08-22,Parma,Cagliari,0,1,1
+espn:401874748,2026-27,ITA1,2026-08-23,Atalanta,Sassuolo,2,1,1
+espn:401874749,2026-27,ITA1,2026-08-29,Monza,Udinese,2,3,1
+espn:401874750,2026-27,ITA1,2026-09-13,Sassuolo,Juventus,3,2,1
+espn:401874751,2026-27,ITA1,2026-09-06,Bologna,Sassuolo,2,2,1
+espn:401874752,2026-27,ITA1,2026-09-20,Frosinone,Como,2,0,1
+espn:401874753,2026-27,ITA1,2026-09-19,AS Roma,Internazionale,2,2,1
+espn:401874754,2026-27,ITA1,2026-10-10,Napoli,Frosinone,3,0,1
+espn:401874755,2026-27,ITA1,2026-08-30,Napoli,Como,1,2,1
+espn:401874756,2026-27,ITA1,2026-09-18,Monza,Sassuolo,2,1,1
+espn:401874757,2026-27,ITA1,2026-09-20,Juventus,Atalanta,2,0,1
+espn:401874758,2026-27,ITA1,2026-08-28,AC Milan,Venezia,2,0,1
+espn:401874759,2026-27,ITA1,2026-09-11,Venezia,Fiorentina,2,4,1
+espn:401874760,2026-27,ITA1,2026-10-17,Venezia,Napoli,1,0,1
+espn:401874762,2026-27,ITA1,2026-10-19,Monza,Cagliari,4,0,1
+espn:401874763,2026-27,ITA1,2026-10-12,Torino,Udinese,2,1,1
+espn:401874764,2026-27,ITA1,2026-10-11,Cagliari,Juventus,1,1,1
+espn:401874765,2026-27,ITA1,2026-10-18,Juventus,Lazio,0,3,1
+espn:401874767,2026-27,ITA1,2026-09-19,Bologna,Torino,1,1,1
+espn:401874768,2026-27,ITA1,2026-09-06,Frosinone,Venezia,3,2,1
+espn:401874771,2026-27,ITA1,2026-10-18,Udinese,Lecce,0,3,1
+espn:401874772,2026-27,ITA1,2026-10-25,Lecce,Juventus,0,2,1
+espn:401874773,2026-27,ITA1,2026-10-28,Venezia,Internazionale,0,2,1
+espn:401874774,2026-27,ITA1,2026-10-18,Fiorentina,Como,1,3,1
+espn:401874776,2026-27,ITA1,2026-10-11,Lecce,Bologna,1,2,1
+espn:401874779,2026-27,ITA1,2026-10-25,Udinese,AC Milan,0,2,1
+espn:401874780,2026-27,ITA1,2026-10-27,AS Roma,Cagliari,4,2,1
+espn:401874781,2026-27,ITA1,2026-09-05,AS Roma,Atalanta,2,1,1
+espn:401874782,2026-27,ITA1,2026-11-01,Frosinone,Torino,2,0,1
+espn:401874784,2026-27,ITA1,2026-10-19,Parma,Torino,0,3,1
+espn:401874786,2026-27,ITA1,2026-10-27,Torino,Como,1,3,1
+espn:401874789,2026-27,ITA1,2026-10-11,Sassuolo,AC Milan,1,1,1
+espn:401874792,2026-27,ITA1,2026-09-13,Napoli,Bologna,1,0,1
+espn:401874795,2026-27,ITA1,2026-10-31,AC Milan,Internazionale,3,1,1
+espn:401874798,2026-27,ITA1,2026-10-31,Bologna,Monza,2,1,1
+espn:401874799,2026-27,ITA1,2026-10-28,Monza,Napoli,1,4,1
+espn:401874801,2026-27,ITA1,2026-09-20,Parma,Genoa,2,1,1
+espn:401874927,2026-27,ITA1,2026-08-24,Bologna,Lazio,0,1,1
+espn:401874928,2026-27,ITA1,2026-08-24,AS Roma,Fiorentina,4,0,1
+espn:401874929,2026-27,ITA1,2026-08-22,Genoa,Napoli,0,2,1
+espn:401874930,2026-27,ITA1,2026-08-23,Frosinone,Juventus,0,1,1
+espn:401874931,2026-27,ITA1,2026-08-22,Internazionale,Monza,4,1,1
+espn:401874932,2026-27,ITA1,2026-08-23,Torino,AC Milan,1,2,1
+espn:401874933,2026-27,ITA1,2026-09-14,Como,Parma,2,1,1
+espn:401874934,2026-27,ITA1,2026-09-20,Fiorentina,Napoli,1,1,1
+espn:401874935,2026-27,ITA1,2026-10-17,AS Roma,Genoa,2,0,1
+espn:401874936,2026-27,ITA1,2026-09-13,Lecce,Monza,3,2,1
+espn:401874937,2026-27,ITA1,2026-09-05,Internazionale,Napoli,3,2,1
+espn:401874938,2026-27,ITA1,2026-08-30,Cagliari,Internazionale,0,1,1
+espn:401874939,2026-27,ITA1,2026-09-05,Fiorentina,Torino,1,2,1
+espn:401874940,2026-27,ITA1,2026-10-11,Como,AS Roma,0,0,1
+espn:401874941,2026-27,ITA1,2026-09-12,Lazio,AC Milan,2,2,1
+espn:401874942,2026-27,ITA1,2026-08-29,Fiorentina,Frosinone,0,3,1
+espn:401874943,2026-27,ITA1,2026-09-07,Cagliari,Lecce,1,0,1
+espn:401874944,2026-27,ITA1,2026-09-20,AC Milan,Lecce,3,0,1
+espn:401874945,2026-27,ITA1,2026-08-31,Lecce,AS Roma,0,4,1
+espn:401874946,2026-27,ITA1,2026-08-23,Venezia,Lecce,0,2,1
+espn:401874947,2026-27,ITA1,2026-10-10,Genoa,Fiorentina,2,1,1
+espn:401874948,2026-27,ITA1,2026-10-24,Napoli,AS Roma,3,3,1
+espn:401874949,2026-27,ITA1,2026-11-01,Juventus,Napoli,2,0,1
+espn:401874950,2026-27,ITA1,2026-09-14,Torino,AS Roma,0,2,1
+espn:401874951,2026-27,ITA1,2026-10-11,Lazio,Monza,3,1,1
+espn:401874952,2026-27,ITA1,2026-10-25,Genoa,Venezia,1,0,1
+espn:401874953,2026-27,ITA1,2026-10-17,Bologna,Internazionale,1,3,1
+espn:401874954,2026-27,ITA1,2026-09-06,Juventus,AC Milan,1,1,1
+espn:401874955,2026-27,ITA1,2026-10-24,Lazio,Parma,2,1,1
+espn:401874956,2026-27,ITA1,2026-09-19,Venezia,Lazio,0,2,1
+espn:401874957,2026-27,ITA1,2026-10-23,Torino,Monza,3,2,1
+espn:401874958,2026-27,ITA1,2026-10-24,Cagliari,Bologna,0,2,1
+espn:401874959,2026-27,ITA1,2026-10-16,Frosinone,Sassuolo,4,2,1
+espn:401874961,2026-27,ITA1,2026-10-24,Como,Sassuolo,2,0,1
+espn:401874962,2026-27,ITA1,2026-09-07,Udinese,Lazio,1,2,1
+espn:401874963,2026-27,ITA1,2026-11-02,Sassuolo,Fiorentina,2,4,1
+espn:401874964,2026-27,ITA1,2026-09-19,Udinese,Cagliari,0,1,1
+espn:401874965,2026-27,ITA1,2026-10-28,Parma,Udinese,0,0,1
+espn:401874966,2026-27,ITA1,2026-09-14,Internazionale,Udinese,5,3,1
+espn:401874968,2026-27,ITA1,2026-11-01,Lecce,Genoa,1,2,1
+espn:401874969,2026-27,ITA1,2026-10-29,Fiorentina,Atalanta,2,2,1
+espn:401874970,2026-27,ITA1,2026-08-31,Atalanta,Bologna,1,0,1
+espn:401874971,2026-27,ITA1,2026-11-02,Atalanta,Parma,0,3,1
+espn:401874972,2026-27,ITA1,2026-10-25,Atalanta,Frosinone,4,4,1
+espn:401874976,2026-27,ITA1,2026-10-29,Frosinone,Lecce,5,1,1
+espn:401874978,2026-27,ITA1,2026-10-18,AC Milan,Atalanta,3,2,1
+espn:401874979,2026-27,ITA1,2026-09-12,Atalanta,Cagliari,1,2,1
+espn:401874980,2026-27,ITA1,2026-10-27,Sassuolo,Lazio,2,6,1
+espn:401874983,2026-27,ITA1,2026-11-01,Lazio,Cagliari,2,1,1
+espn:401874987,2026-27,ITA1,2026-09-06,Parma,Monza,1,1,1
+espn:401874988,2026-27,ITA1,2026-10-28,Genoa,Juventus,2,0,1
+espn:401874990,2026-27,ITA1,2026-10-31,Udinese,AS Roma,2,5,1
+espn:401874991,2026-27,ITA1,2026-09-12,Genoa,Frosinone,1,1,1
+espn:401874993,2026-27,ITA1,2026-10-28,AC Milan,Bologna,2,4,1
+espn:401875002,2026-27,ITA1,2026-11-01,Como,Venezia,1,0,1
+espn:401875005,2026-27,ITA1,2026-10-12,Atalanta,Venezia,3,1,1
+espn:401875021,2026-27,ITA1,2026-10-10,Internazionale,Parma,3,0,1
+espn:401875036,2026-27,ITA1,2026-10-25,Internazionale,Fiorentina,2,1,1
+espn:401876413,2026-27,FRA1,2026-10-31,Troyes,Le Mans,2,0,1
+espn:401876414,2026-27,FRA1,2026-11-01,Strasbourg,AJ Auxerre,5,1,1
+espn:401876415,2026-27,FRA1,2026-11-01,Paris FC,AS Monaco,3,1,1
+espn:401876416,2026-27,FRA1,2026-10-30,Nice,Stade Rennais,5,2,1
+espn:401876417,2026-27,FRA1,2026-11-01,Marseille,Toulouse,2,0,1
+espn:401876418,2026-27,FRA1,2026-11-01,Lyon,Angers,2,0,1
+espn:401876419,2026-27,FRA1,2026-11-02,Lorient,Brest,0,2,1
+espn:401876420,2026-27,FRA1,2026-10-30,Lille,Lens,1,0,1
+espn:401876421,2026-27,FRA1,2026-10-30,Le Havre AC,Paris Saint-Germain,1,5,1
+espn:401876422,2026-27,FRA1,2026-10-26,Paris Saint-Germain,Lyon,2,0,1
+espn:401876423,2026-27,FRA1,2026-10-25,Toulouse,Troyes,0,0,1
+espn:401876424,2026-27,FRA1,2026-10-25,Stade Rennais,Strasbourg,3,0,1
+espn:401876425,2026-27,FRA1,2026-10-25,AS Monaco,Lille,1,1,1
+espn:401876426,2026-27,FRA1,2026-10-25,Marseille,Le Havre AC,4,3,1
+espn:401876427,2026-27,FRA1,2026-10-24,Lens,Paris FC,2,1,1
+espn:401876428,2026-27,FRA1,2026-10-23,Brest,Nice,1,2,1
+espn:401876429,2026-27,FRA1,2026-10-25,AJ Auxerre,Le Mans,1,1,1
+espn:401876430,2026-27,FRA1,2026-10-25,Angers,Lorient,0,0,1
+espn:401876431,2026-27,FRA1,2026-10-17,Troyes,Lens,1,3,1
+espn:401876432,2026-27,FRA1,2026-10-17,Strasbourg,Paris Saint-Germain,1,3,1
+espn:401876433,2026-27,FRA1,2026-10-18,Paris FC,Stade Rennais,4,3,1
+espn:401876434,2026-27,FRA1,2026-10-18,Lyon,Nice,2,1,1
+espn:401876435,2026-27,FRA1,2026-10-18,Lorient,AS Monaco,1,0,1
+espn:401876436,2026-27,FRA1,2026-10-17,Lille,Brest,1,1,1
+espn:401876437,2026-27,FRA1,2026-10-16,Le Mans,Toulouse,0,3,1
+espn:401876438,2026-27,FRA1,2026-10-18,Le Havre AC,AJ Auxerre,1,3,1
+espn:401876439,2026-27,FRA1,2026-10-18,Angers,Marseille,2,5,1
+espn:401876440,2026-27,FRA1,2026-10-11,Troyes,Marseille,0,2,1
+espn:401876441,2026-27,FRA1,2026-10-11,Stade Rennais,AJ Auxerre,4,1,1
+espn:401876442,2026-27,FRA1,2026-10-10,Paris Saint-Germain,Le Mans,3,1,1
+espn:401876443,2026-27,FRA1,2026-10-11,Nice,Strasbourg,2,1,1
+espn:401876444,2026-27,FRA1,2026-10-10,AS Monaco,Toulouse,2,2,1
+espn:401876445,2026-27,FRA1,2026-10-10,Lorient,Paris FC,1,0,1
+espn:401876446,2026-27,FRA1,2026-10-10,Lille,Le Havre AC,1,0,1
+espn:401876447,2026-27,FRA1,2026-10-09,Lens,Lyon,2,1,1
+espn:401876448,2026-27,FRA1,2026-10-10,Brest,Angers,5,1,1
+espn:401876449,2026-27,FRA1,2026-09-20,Marseille,Paris Saint-Germain,1,2,1
+espn:401876450,2026-27,FRA1,2026-09-19,Toulouse,Le Havre AC,3,2,1
+espn:401876451,2026-27,FRA1,2026-09-19,Paris FC,Strasbourg,2,1,1
+espn:401876452,2026-27,FRA1,2026-09-20,Nice,Lille,2,1,1
+espn:401876453,2026-27,FRA1,2026-09-18,AS Monaco,Lens,2,1,1
+espn:401876454,2026-27,FRA1,2026-09-19,Lyon,Stade Rennais,4,0,1
+espn:401876455,2026-27,FRA1,2026-09-19,Le Mans,Lorient,2,1,1
+espn:401876456,2026-27,FRA1,2026-09-20,AJ Auxerre,Brest,2,1,1
+espn:401876457,2026-27,FRA1,2026-09-19,Angers,Troyes,2,0,1
+espn:401876458,2026-27,FRA1,2026-09-12,Strasbourg,AS Monaco,1,1,1
+espn:401876459,2026-27,FRA1,2026-09-11,Stade Rennais,Marseille,1,0,1
+espn:401876460,2026-27,FRA1,2026-09-12,Paris FC,Lyon,0,0,1
+espn:401876461,2026-27,FRA1,2026-09-12,Lorient,Toulouse,2,2,1
+espn:401876462,2026-27,FRA1,2026-09-13,Lille,Troyes,2,0,1
+espn:401876463,2026-27,FRA1,2026-09-13,Le Mans,Lens,2,2,1
+espn:401876464,2026-27,FRA1,2026-09-12,Le Havre AC,Angers,0,0,1
+espn:401876465,2026-27,FRA1,2026-09-13,Brest,Paris Saint-Germain,0,1,1
+espn:401876466,2026-27,FRA1,2026-09-12,AJ Auxerre,Nice,1,0,1
+espn:401876467,2026-27,FRA1,2026-09-06,Troyes,Strasbourg,2,6,1
+espn:401876468,2026-27,FRA1,2026-09-03,Toulouse,Lille,0,1,1
+espn:401876469,2026-27,FRA1,2026-09-04,Paris Saint-Germain,AS Monaco,1,2,1
+espn:401876470,2026-27,FRA1,2026-09-05,Nice,Le Mans,1,1,1
+espn:401876471,2026-27,FRA1,2026-09-06,Marseille,Paris FC,2,3,1
+espn:401876472,2026-27,FRA1,2026-09-04,Lyon,AJ Auxerre,3,1,1
+espn:401876473,2026-27,FRA1,2026-09-05,Lens,Lorient,0,1,1
+espn:401876474,2026-27,FRA1,2026-09-05,Le Havre AC,Brest,1,2,1
+espn:401876475,2026-27,FRA1,2026-09-06,Angers,Stade Rennais,1,2,1
+espn:401876476,2026-27,FRA1,2026-08-28,Lille,Paris Saint-Germain,2,2,1
+espn:401876477,2026-27,FRA1,2026-08-29,Strasbourg,Lens,2,1,1
+espn:401876478,2026-27,FRA1,2026-08-30,Stade Rennais,Le Mans,3,2,1
+espn:401876479,2026-27,FRA1,2026-08-30,Paris FC,Nice,3,0,1
+espn:401876480,2026-27,FRA1,2026-08-30,AS Monaco,Marseille,2,0,1
+espn:401876481,2026-27,FRA1,2026-08-29,Lyon,Le Havre AC,1,1,1
+espn:401876482,2026-27,FRA1,2026-08-29,Lorient,Troyes,1,2,1
+espn:401876483,2026-27,FRA1,2026-08-29,Brest,Toulouse,2,2,1
+espn:401876484,2026-27,FRA1,2026-08-29,AJ Auxerre,Angers,1,3,1
+espn:401876485,2026-27,FRA1,2026-08-22,Troyes,Paris FC,0,0,1
+espn:401876486,2026-27,FRA1,2026-08-22,Toulouse,Lyon,0,2,1
+espn:401876487,2026-27,FRA1,2026-08-23,Stade Rennais,Paris Saint-Germain,2,2,1
+espn:401876488,2026-27,FRA1,2026-08-22,Nice,Lorient,0,0,1
+espn:401876489,2026-27,FRA1,2026-08-21,Marseille,Strasbourg,4,0,1
+espn:401876490,2026-27,FRA1,2026-08-22,Lens,AJ Auxerre,5,2,1
+espn:401876491,2026-27,FRA1,2026-08-22,Le Mans,Brest,2,2,1
+espn:401876492,2026-27,FRA1,2026-08-23,Le Havre AC,AS Monaco,0,1,1
+espn:401876493,2026-27,FRA1,2026-08-23,Angers,Lille,0,2,1
+espn:401878761,2026-27,ENG1,2026-10-31,Tottenham Hotspur,Crystal Palace,2,0,1
+espn:401878762,2026-27,ENG1,2026-11-02,Newcastle United,Everton,0,1,1
+espn:401878763,2026-27,ENG1,2026-10-31,Hull City,Ipswich Town,2,2,1
+espn:401878764,2026-27,ENG1,2026-10-25,Sunderland,Leeds United,0,0,1
+espn:401878765,2026-27,ENG1,2026-10-25,Liverpool,Brighton & Hove Albion,2,0,1
+espn:401878766,2026-27,ENG1,2026-10-25,Hull City,Brentford,1,1,1
+espn:401878767,2026-27,ENG1,2026-10-24,Chelsea,Tottenham Hotspur,0,2,1
+espn:401878768,2026-27,ENG1,2026-10-24,Arsenal,Everton,2,0,1
+espn:401878769,2026-27,ENG1,2026-10-18,Nottingham Forest,Arsenal,0,1,1
+espn:401878770,2026-27,ENG1,2026-10-17,Fulham,Hull City,1,0,1
+espn:401878771,2026-27,ENG1,2026-10-17,Everton,Chelsea,0,2,1
+espn:401878772,2026-27,ENG1,2026-10-10,Sunderland,Brighton & Hove Albion,0,2,1
+espn:401878773,2026-27,ENG1,2026-10-10,Manchester United,Tottenham Hotspur,1,1,1
+espn:401878774,2026-27,ENG1,2026-10-11,Hull City,Everton,2,2,1
+espn:401878775,2026-27,ENG1,2026-10-10,Chelsea,AFC Bournemouth,5,1,1
+espn:401878776,2026-27,ENG1,2026-10-10,Aston Villa,Brentford,2,2,1
+espn:401878777,2026-27,ENG1,2026-09-20,Fulham,Manchester United,1,1,1
+espn:401878778,2026-27,ENG1,2026-09-19,Everton,Ipswich Town,1,0,1
+espn:401878779,2026-27,ENG1,2026-09-12,Sunderland,Arsenal,0,2,1
+espn:401878780,2026-27,ENG1,2026-09-05,Nottingham Forest,Tottenham Hotspur,0,0,1
+espn:401878781,2026-27,ENG1,2026-09-05,Hull City,Aston Villa,0,0,1
+espn:401879245,2026-27,ENG1,2026-10-31,Manchester City,Brighton & Hove Albion,0,1,1
+espn:401879246,2026-27,ENG1,2026-11-01,Liverpool,Arsenal,0,1,1
+espn:401879247,2026-27,ENG1,2026-10-31,Coventry City,Sunderland,3,1,1
+espn:401879248,2026-27,ENG1,2026-10-31,Chelsea,Manchester United,2,0,1
+espn:401879249,2026-27,ENG1,2026-10-31,Brentford,Nottingham Forest,2,0,1
+espn:401879250,2026-27,ENG1,2026-10-31,Aston Villa,Fulham,1,1,1
+espn:401879251,2026-27,ENG1,2026-10-31,AFC Bournemouth,Leeds United,2,0,1
+espn:401879252,2026-27,ENG1,2026-10-25,Manchester United,AFC Bournemouth,0,3,1
+espn:401879253,2026-27,ENG1,2026-10-23,Ipswich Town,Nottingham Forest,1,1,1
+espn:401879254,2026-27,ENG1,2026-10-25,Crystal Palace,Newcastle United,0,2,1
+espn:401879255,2026-27,ENG1,2026-10-24,Coventry City,Fulham,0,1,1
+espn:401879256,2026-27,ENG1,2026-10-24,Aston Villa,Manchester City,2,1,1
+espn:401879257,2026-27,ENG1,2026-10-19,Tottenham Hotspur,Coventry City,3,1,1
+espn:401879258,2026-27,ENG1,2026-10-17,Newcastle United,Aston Villa,0,1,1
+espn:401879259,2026-27,ENG1,2026-10-17,Manchester City,Ipswich Town,3,2,1
+espn:401879260,2026-27,ENG1,2026-10-18,Leeds United,Manchester United,1,1,1
+espn:401879261,2026-27,ENG1,2026-10-18,Brighton & Hove Albion,Crystal Palace,5,0,1
+espn:401879262,2026-27,ENG1,2026-10-17,Brentford,Liverpool,1,2,1
+espn:401879263,2026-27,ENG1,2026-10-18,AFC Bournemouth,Sunderland,2,0,1
+espn:401879264,2026-27,ENG1,2026-10-11,Liverpool,Manchester City,0,3,1
+espn:401879265,2026-27,ENG1,2026-10-10,Ipswich Town,Fulham,2,1,1
+espn:401879266,2026-27,ENG1,2026-10-11,Crystal Palace,Nottingham Forest,3,1,1
+espn:401879267,2026-27,ENG1,2026-10-12,Coventry City,Newcastle United,4,1,1
+espn:401879268,2026-27,ENG1,2026-10-10,Arsenal,Leeds United,2,1,1
+espn:401879269,2026-27,ENG1,2026-09-19,Tottenham Hotspur,Aston Villa,2,3,1
+espn:401879270,2026-27,ENG1,2026-09-19,Nottingham Forest,Coventry City,0,1,1
+espn:401879271,2026-27,ENG1,2026-09-19,Newcastle United,Hull City,2,1,1
+espn:401879272,2026-27,ENG1,2026-09-20,Manchester City,Sunderland,5,3,1
+espn:401879273,2026-27,ENG1,2026-09-20,Leeds United,Crystal Palace,0,0,1
+espn:401879274,2026-27,ENG1,2026-09-19,Brighton & Hove Albion,Arsenal,3,0,1
+espn:401879275,2026-27,ENG1,2026-09-18,Brentford,Chelsea,3,0,1
+espn:401879276,2026-27,ENG1,2026-09-20,AFC Bournemouth,Liverpool,0,1,1
+espn:401879277,2026-27,ENG1,2026-09-12,Tottenham Hotspur,Everton,0,0,1
+espn:401879278,2026-27,ENG1,2026-09-13,Manchester United,Manchester City,0,1,1
+espn:401879279,2026-27,ENG1,2026-09-12,Liverpool,Fulham,0,0,1
+espn:401879280,2026-27,ENG1,2026-09-14,Leeds United,Newcastle United,4,1,1
+espn:401879281,2026-27,ENG1,2026-09-12,Crystal Palace,Ipswich Town,2,3,1
+espn:401879282,2026-27,ENG1,2026-09-13,Coventry City,Brighton & Hove Albion,0,5,1
+espn:401879283,2026-27,ENG1,2026-09-12,Chelsea,Hull City,2,2,1
+espn:401879284,2026-27,ENG1,2026-09-12,Aston Villa,Nottingham Forest,1,2,1
+espn:401879285,2026-27,ENG1,2026-09-12,AFC Bournemouth,Brentford,2,2,1
+espn:401879286,2026-27,ENG1,2026-09-05,Newcastle United,AFC Bournemouth,2,2,1
+espn:401879287,2026-27,ENG1,2026-09-05,Manchester City,Coventry City,1,0,1
+espn:401879288,2026-27,ENG1,2026-09-04,Ipswich Town,Liverpool,0,2,1
+espn:401879289,2026-27,ENG1,2026-09-05,Fulham,Crystal Palace,2,3,1
+espn:401879290,2026-27,ENG1,2026-09-05,Brighton & Hove Albion,Leeds United,1,1,1
+espn:401879291,2026-27,ENG1,2026-09-06,Everton,Manchester United,2,2,1
+espn:401879292,2026-27,ENG1,2026-09-06,Arsenal,Chelsea,2,1,1
+espn:401879293,2026-27,ENG1,2026-08-30,Manchester United,Ipswich Town,5,2,1
+espn:401879294,2026-27,ENG1,2026-08-28,Crystal Palace,Manchester City,1,4,1
+espn:401879295,2026-27,ENG1,2026-08-31,Aston Villa,Arsenal,0,1,1
+espn:401879296,2026-27,ENG1,2026-08-29,AFC Bournemouth,Everton,1,1,1
+espn:401879297,2026-27,ENG1,2026-08-23,Brighton & Hove Albion,Aston Villa,4,0,1
+espn:401879298,2026-27,ENG1,2026-08-22,Nottingham Forest,Leeds United,0,1,1
+espn:401879299,2026-27,ENG1,2026-08-22,Ipswich Town,Sunderland,2,1,1
+espn:401879300,2026-27,ENG1,2026-08-22,Everton,Crystal Palace,2,0,1
+espn:401879301,2026-27,ENG1,2026-08-21,Arsenal,Coventry City,3,0,1
+espn:401879311,2026-27,ENG1,2026-09-05,Brentford,Sunderland,1,1,1
+espn:401879312,2026-27,ENG1,2026-08-29,Tottenham Hotspur,Newcastle United,0,2,1
+espn:401879313,2026-27,ENG1,2026-08-30,Sunderland,Fulham,1,0,1
+espn:401879314,2026-27,ENG1,2026-08-29,Liverpool,Nottingham Forest,2,2,1
+espn:401879315,2026-27,ENG1,2026-08-30,Leeds United,Brentford,1,1,1
+espn:401879316,2026-27,ENG1,2026-08-29,Coventry City,Hull City,0,1,1
+espn:401879317,2026-27,ENG1,2026-08-30,Chelsea,Brighton & Hove Albion,4,3,1
+espn:401879318,2026-27,ENG1,2026-08-24,Fulham,Chelsea,2,3,1
+espn:401879319,2026-27,ENG1,2026-08-23,Newcastle United,Liverpool,2,2,1
+espn:401879320,2026-27,ENG1,2026-08-23,Manchester City,AFC Bournemouth,2,1,1
+espn:401879321,2026-27,ENG1,2026-08-22,Brentford,Tottenham Hotspur,3,0,1
+espn:401879322,2026-27,ENG1,2026-08-22,Hull City,Manchester United,2,0,1
+espn:401882817,2026-27,ESP1,2026-10-30,Villarreal,Espanyol,0,1,1
+espn:401882818,2026-27,ESP1,2026-10-31,Rayo Vallecano,Celta Vigo,3,0,1
+espn:401882819,2026-27,ESP1,2026-11-01,Racing Santander,Real Madrid,0,3,1
+espn:401882820,2026-27,ESP1,2026-10-31,Levante,Atlético Madrid,0,2,1
+espn:401882821,2026-27,ESP1,2026-11-01,Getafe,Sevilla,3,1,1
+espn:401882822,2026-27,ESP1,2026-10-31,Barcelona,Alavés,6,1,1
+espn:401882823,2026-27,ESP1,2026-11-01,Elche,Valencia,0,1,1
+espn:401882824,2026-27,ESP1,2026-11-02,Deportivo,Osasuna,2,1,1
+espn:401882825,2026-27,ESP1,2026-10-31,Real Betis,Málaga,2,1,1
+espn:401882826,2026-27,ESP1,2026-11-01,Athletic Club,Real Sociedad,2,1,1
+espn:401882827,2026-27,ESP1,2026-10-24,Valencia,Villarreal,1,2,1
+espn:401882828,2026-27,ESP1,2026-10-26,Sevilla,Osasuna,2,0,1
+espn:401882829,2026-27,ESP1,2026-10-25,Real Sociedad,Levante,2,1,1
+espn:401882830,2026-27,ESP1,2026-10-24,Rayo Vallecano,Elche,0,3,1
+espn:401882831,2026-27,ESP1,2026-10-24,Racing Santander,Espanyol,2,1,1
+espn:401882832,2026-27,ESP1,2026-10-25,Barcelona,Real Madrid,1,2,1
+espn:401882833,2026-27,ESP1,2026-10-25,Celta Vigo,Real Betis,0,0,1
+espn:401882834,2026-27,ESP1,2026-10-24,Atlético Madrid,Deportivo,1,0,1
+espn:401882835,2026-27,ESP1,2026-10-25,Athletic Club,Getafe,4,0,1
+espn:401882836,2026-27,ESP1,2026-10-23,Alavés,Málaga,1,1,1
+espn:401882837,2026-27,ESP1,2026-10-17,Villarreal,Elche,0,0,1
+espn:401882838,2026-27,ESP1,2026-10-17,Valencia,Athletic Club,0,0,1
+espn:401882839,2026-27,ESP1,2026-10-18,Real Madrid,Sevilla,4,1,1
+espn:401882840,2026-27,ESP1,2026-10-18,Osasuna,Racing Santander,2,0,1
+espn:401882841,2026-27,ESP1,2026-10-18,Málaga,Real Sociedad,2,5,1
+espn:401882842,2026-27,ESP1,2026-10-19,Getafe,Rayo Vallecano,1,1,1
+espn:401882843,2026-27,ESP1,2026-10-17,Espanyol,Atlético Madrid,0,1,1
+espn:401882844,2026-27,ESP1,2026-10-16,Deportivo,Levante,1,1,1
+espn:401882845,2026-27,ESP1,2026-10-18,Celta Vigo,Alavés,2,1,1
+espn:401882846,2026-27,ESP1,2026-10-17,Real Betis,Barcelona,2,5,1
+espn:401882847,2026-27,ESP1,2026-10-11,Real Sociedad,Deportivo,3,2,1
+espn:401882848,2026-27,ESP1,2026-10-10,Real Madrid,Villarreal,1,0,1
+espn:401882850,2026-27,ESP1,2026-10-11,Racing Santander,Valencia,2,2,1
+espn:401882851,2026-27,ESP1,2026-10-09,Málaga,Espanyol,1,1,1
+espn:401882852,2026-27,ESP1,2026-10-12,Levante,Sevilla,3,3,1
+espn:401882853,2026-27,ESP1,2026-10-10,Barcelona,Getafe,3,0,1
+espn:401882854,2026-27,ESP1,2026-10-11,Elche,Celta Vigo,0,0,1
+espn:401882855,2026-27,ESP1,2026-10-11,Real Betis,Osasuna,5,2,1
+espn:401882856,2026-27,ESP1,2026-10-10,Alavés,Atlético Madrid,1,2,1
+espn:401882857,2026-27,ESP1,2026-09-20,Villarreal,Levante,3,1,1
+espn:401882858,2026-27,ESP1,2026-09-20,Valencia,Real Sociedad,2,3,1
+espn:401882859,2026-27,ESP1,2026-09-19,Sevilla,Barcelona,1,3,1
+espn:401882860,2026-27,ESP1,2026-09-19,Osasuna,Rayo Vallecano,1,1,1
+espn:401882861,2026-27,ESP1,2026-09-20,Getafe,Málaga,1,0,1
+espn:401882862,2026-27,ESP1,2026-09-18,Espanyol,Elche,1,3,1
+espn:401882863,2026-27,ESP1,2026-09-20,Deportivo,Real Betis,1,1,1
+espn:401882864,2026-27,ESP1,2026-09-19,Celta Vigo,Racing Santander,5,0,1
+espn:401882865,2026-27,ESP1,2026-09-20,Atlético Madrid,Real Madrid,2,1,1
+espn:401882866,2026-27,ESP1,2026-09-19,Athletic Club,Alavés,0,0,1
+espn:401882867,2026-27,ESP1,2026-09-03,Real Sociedad,Celta Vigo,0,0,1
+espn:401882868,2026-27,ESP1,2026-09-15,Rayo Vallecano,Espanyol,2,1,1
+espn:401882869,2026-27,ESP1,2026-09-17,Málaga,Villarreal,1,3,1
+espn:401882870,2026-27,ESP1,2026-10-21,Levante,Athletic Club,3,1,1
+espn:401882871,2026-27,ESP1,2026-09-16,Barcelona,Racing Santander,7,2,1
+espn:401882872,2026-27,ESP1,2026-09-15,Elche,Real Madrid,2,3,1
+espn:401882873,2026-27,ESP1,2026-09-16,Deportivo,Sevilla,0,1,1
+espn:401882874,2026-27,ESP1,2026-09-17,Real Betis,Getafe,1,0,1
+espn:401882875,2026-27,ESP1,2026-09-16,Atlético Madrid,Osasuna,4,0,1
+espn:401882876,2026-27,ESP1,2026-09-15,Alavés,Valencia,0,1,1
+espn:401882877,2026-27,ESP1,2026-09-14,Villarreal,Real Betis,1,2,1
+espn:401882878,2026-27,ESP1,2026-09-11,Sevilla,Valencia,1,0,1
+espn:401882879,2026-27,ESP1,2026-09-13,Real Sociedad,Atlético Madrid,0,3,1
+espn:401882880,2026-27,ESP1,2026-09-12,Real Madrid,Rayo Vallecano,4,1,1
+espn:401882881,2026-27,ESP1,2026-09-12,Racing Santander,Alavés,2,1,1
+espn:401882882,2026-27,ESP1,2026-09-12,Osasuna,Espanyol,0,2,1
+espn:401882883,2026-27,ESP1,2026-09-13,Levante,Barcelona,2,4,1
+espn:401882884,2026-27,ESP1,2026-09-13,Getafe,Deportivo,1,1,1
+espn:401882885,2026-27,ESP1,2026-09-13,Celta Vigo,Málaga,1,1,1
+espn:401882886,2026-27,ESP1,2026-09-12,Athletic Club,Elche,1,1,1
+espn:401882887,2026-27,ESP1,2026-09-05,Villarreal,Deportivo,2,3,1
+espn:401882888,2026-27,ESP1,2026-09-06,Valencia,Barcelona,0,5,1
+espn:401882889,2026-27,ESP1,2026-09-05,Rayo Vallecano,Racing Santander,3,2,1
+espn:401882890,2026-27,ESP1,2026-09-06,Málaga,Levante,0,0,1
+espn:401882891,2026-27,ESP1,2026-09-07,Getafe,Celta Vigo,1,1,1
+espn:401882892,2026-27,ESP1,2026-09-06,Espanyol,Sevilla,1,1,1
+espn:401882893,2026-27,ESP1,2026-09-07,Elche,Real Sociedad,2,3,1
+espn:401882894,2026-27,ESP1,2026-09-04,Real Betis,Real Madrid,1,0,1
+espn:401882895,2026-27,ESP1,2026-09-05,Athletic Club,Atlético Madrid,3,0,1
+espn:401882896,2026-27,ESP1,2026-09-06,Alavés,Osasuna,5,2,1
+espn:401882897,2026-27,ESP1,2026-08-29,Sevilla,Atlético Madrid,1,3,1
+espn:401882898,2026-27,ESP1,2026-08-29,Real Sociedad,Espanyol,2,1,1
+espn:401882899,2026-27,ESP1,2026-08-30,Real Madrid,Málaga,4,0,1
+espn:401882900,2026-27,ESP1,2026-08-28,Racing Santander,Elche,3,2,1
+espn:401882901,2026-27,ESP1,2026-08-31,Osasuna,Getafe,1,0,1
+espn:401882902,2026-27,ESP1,2026-08-29,Levante,Real Betis,5,2,1
+espn:401882903,2026-27,ESP1,2026-08-31,Barcelona,Rayo Vallecano,5,2,1
+espn:401882904,2026-27,ESP1,2026-08-30,Deportivo,Valencia,3,1,1
+espn:401882905,2026-27,ESP1,2026-08-30,Celta Vigo,Athletic Club,0,2,1
+espn:401882906,2026-27,ESP1,2026-08-28,Alavés,Villarreal,1,0,1
+espn:401882907,2026-27,ESP1,2026-08-22,Valencia,Celta Vigo,0,0,1
+espn:401882908,2026-27,ESP1,2026-08-20,Rayo Vallecano,Alavés,1,1,1
+espn:401882909,2026-27,ESP1,2026-08-24,Osasuna,Levante,0,0,1
+espn:401882910,2026-27,ESP1,2026-08-24,Málaga,Deportivo,1,1,1
+espn:401882911,2026-27,ESP1,2026-08-23,Getafe,Racing Santander,1,0,1
+espn:401882912,2026-27,ESP1,2026-08-22,Espanyol,Real Madrid,1,2,1
+espn:401882913,2026-27,ESP1,2026-08-23,Elche,Barcelona,0,5,1
+espn:401882914,2026-27,ESP1,2026-08-21,Real Betis,Real Sociedad,1,0,1
+espn:401882915,2026-27,ESP1,2026-08-23,Atlético Madrid,Villarreal,2,2,1
+espn:401882916,2026-27,ESP1,2026-08-22,Athletic Club,Sevilla,1,3,1
+espn:401882917,2026-27,ESP1,2026-08-25,Valencia,Real Betis,0,1,1
+espn:401882918,2026-27,ESP1,2026-08-15,Sevilla,Rayo Vallecano,2,1,1
+espn:401882919,2026-27,ESP1,2026-08-26,Real Madrid,Real Sociedad,4,1,1
+espn:401882920,2026-27,ESP1,2026-08-16,Racing Santander,Villarreal,2,2,1
+espn:401882921,2026-27,ESP1,2026-08-27,Barcelona,Athletic Club,2,0,1
+espn:401882922,2026-27,ESP1,2026-08-16,Espanyol,Levante,3,0,1
+espn:401882923,2026-27,ESP1,2026-08-17,Deportivo,Elche,1,1,1
+espn:401882924,2026-27,ESP1,2026-08-27,Celta Vigo,Osasuna,1,2,1
+espn:401882925,2026-27,ESP1,2026-08-19,Atlético Madrid,Málaga,2,0,1
+espn:401882926,2026-27,ESP1,2026-08-15,Alavés,Getafe,3,0,1
+espn:401884746,2026-27,GER1,2026-10-30,SV Elversberg,Mainz,4,1,1
+espn:401884747,2026-27,GER1,2026-10-31,Schalke 04,RB Leipzig,0,2,1
+espn:401884748,2026-27,GER1,2026-10-31,Werder Bremen,TSG Hoffenheim,2,0,1
+espn:401884749,2026-27,GER1,2026-10-31,Borussia Mönchengladbach,SC Paderborn 07,0,0,1
+espn:401884750,2026-27,GER1,2026-11-01,1. FC Union Berlin,FC Cologne,1,1,1
+espn:401884751,2026-27,GER1,2026-10-31,FC Augsburg,SC Freiburg,1,2,1
+espn:401884752,2026-27,GER1,2026-11-01,Eintracht Frankfurt,Hamburg SV,3,1,1
+espn:401884753,2026-27,GER1,2026-10-31,Bayer Leverkusen,VfB Stuttgart,2,4,1
+espn:401884754,2026-27,GER1,2026-10-31,Bayern Munich,Borussia Dortmund,2,2,1
+espn:401884755,2026-27,GER1,2026-10-24,SC Paderborn 07,Hamburg SV,1,0,1
+espn:401884756,2026-27,GER1,2026-10-24,FC Cologne,Schalke 04,0,0,1
+espn:401884757,2026-27,GER1,2026-10-24,Mainz,Werder Bremen,2,3,1
+espn:401884758,2026-27,GER1,2026-10-24,FC Augsburg,1. FC Union Berlin,1,1,1
+espn:401884759,2026-27,GER1,2026-10-25,SC Freiburg,Bayern Munich,1,3,1
+espn:401884760,2026-27,GER1,2026-10-25,TSG Hoffenheim,Bayer Leverkusen,3,0,1
+espn:401884761,2026-27,GER1,2026-10-23,VfB Stuttgart,Borussia Mönchengladbach,2,3,1
+espn:401884762,2026-27,GER1,2026-10-24,RB Leipzig,SV Elversberg,4,0,1
+espn:401884763,2026-27,GER1,2026-10-24,Borussia Dortmund,Eintracht Frankfurt,1,0,1
+espn:401884764,2026-27,GER1,2026-10-17,SV Elversberg,FC Augsburg,4,3,1
+espn:401884765,2026-27,GER1,2026-10-17,Schalke 04,Mainz,0,1,1
+espn:401884766,2026-27,GER1,2026-10-17,Werder Bremen,SC Paderborn 07,2,2,1
+espn:401884767,2026-27,GER1,2026-10-17,Hamburg SV,VfB Stuttgart,1,0,1
+espn:401884768,2026-27,GER1,2026-10-18,Borussia Mönchengladbach,TSG Hoffenheim,1,2,1
+espn:401884769,2026-27,GER1,2026-10-17,1. FC Union Berlin,Borussia Dortmund,0,0,1
+espn:401884770,2026-27,GER1,2026-10-16,Eintracht Frankfurt,FC Cologne,1,0,1
+espn:401884771,2026-27,GER1,2026-10-18,Bayer Leverkusen,SC Freiburg,2,1,1
+espn:401884772,2026-27,GER1,2026-10-17,Bayern Munich,RB Leipzig,6,1,1
+espn:401884773,2026-27,GER1,2026-10-10,SC Paderborn 07,VfB Stuttgart,0,2,1
+espn:401884774,2026-27,GER1,2026-10-11,FC Cologne,Borussia Mönchengladbach,2,1,1
+espn:401884775,2026-27,GER1,2026-10-10,1. FC Union Berlin,SV Elversberg,1,0,1
+espn:401884776,2026-27,GER1,2026-10-10,Mainz,Bayer Leverkusen,3,4,1
+espn:401884777,2026-27,GER1,2026-10-10,FC Augsburg,Bayern Munich,2,2,1
+espn:401884778,2026-27,GER1,2026-10-11,SC Freiburg,Schalke 04,2,1,1
+espn:401884779,2026-27,GER1,2026-10-10,TSG Hoffenheim,Hamburg SV,2,3,1
+espn:401884780,2026-27,GER1,2026-10-10,RB Leipzig,Eintracht Frankfurt,6,0,1
+espn:401884781,2026-27,GER1,2026-10-09,Borussia Dortmund,Werder Bremen,2,2,1
+espn:401884782,2026-27,GER1,2026-09-20,SC Paderborn 07,TSG Hoffenheim,3,1,1
+espn:401884783,2026-27,GER1,2026-09-20,Schalke 04,SV Elversberg,0,0,1
+espn:401884784,2026-27,GER1,2026-09-19,Werder Bremen,FC Augsburg,3,2,1
+espn:401884785,2026-27,GER1,2026-09-19,Hamburg SV,FC Cologne,2,1,1
+espn:401884786,2026-27,GER1,2026-09-19,Borussia Mönchengladbach,Mainz,3,4,1
+espn:401884787,2026-27,GER1,2026-09-19,Eintracht Frankfurt,SC Freiburg,2,2,1
+espn:401884788,2026-27,GER1,2026-09-20,Bayer Leverkusen,RB Leipzig,2,0,1
+espn:401884789,2026-27,GER1,2026-09-19,VfB Stuttgart,Borussia Dortmund,0,1,1
+espn:401884790,2026-27,GER1,2026-09-18,Bayern Munich,1. FC Union Berlin,7,0,1
+espn:401884791,2026-27,GER1,2026-09-13,SV Elversberg,Bayern Munich,1,2,1
+espn:401884792,2026-27,GER1,2026-09-12,FC Cologne,Werder Bremen,1,1,1
+espn:401884793,2026-27,GER1,2026-09-11,1. FC Union Berlin,Schalke 04,1,3,1
+espn:401884794,2026-27,GER1,2026-09-12,Mainz,Eintracht Frankfurt,1,3,1
+espn:401884795,2026-27,GER1,2026-09-12,FC Augsburg,Bayer Leverkusen,2,2,1
+espn:401884796,2026-27,GER1,2026-09-12,SC Freiburg,Borussia Mönchengladbach,5,0,1
+espn:401884797,2026-27,GER1,2026-09-12,TSG Hoffenheim,VfB Stuttgart,2,1,1
+espn:401884798,2026-27,GER1,2026-09-13,RB Leipzig,Hamburg SV,5,0,1
+espn:401884799,2026-27,GER1,2026-09-12,Borussia Dortmund,SC Paderborn 07,3,0,1
+espn:401884800,2026-27,GER1,2026-09-05,SC Paderborn 07,SC Freiburg,0,1,1
+espn:401884801,2026-27,GER1,2026-09-05,Schalke 04,Bayern Munich,0,0,1
+espn:401884802,2026-27,GER1,2026-09-05,Werder Bremen,RB Leipzig,3,1,1
+espn:401884803,2026-27,GER1,2026-09-06,Hamburg SV,Mainz,0,5,1
+espn:401884804,2026-27,GER1,2026-09-05,Borussia Mönchengladbach,SV Elversberg,3,4,1
+espn:401884805,2026-27,GER1,2026-09-06,Eintracht Frankfurt,FC Augsburg,1,4,1
+espn:401884806,2026-27,GER1,2026-09-05,Bayer Leverkusen,1. FC Union Berlin,4,0,1
+espn:401884807,2026-27,GER1,2026-09-05,TSG Hoffenheim,Borussia Dortmund,2,3,1
+espn:401884808,2026-27,GER1,2026-09-04,VfB Stuttgart,FC Cologne,4,1,1
+espn:401884809,2026-27,GER1,2026-08-29,SV Elversberg,Bayer Leverkusen,3,2,1
+espn:401884810,2026-27,GER1,2026-08-29,FC Cologne,TSG Hoffenheim,3,2,1
+espn:401884811,2026-27,GER1,2026-08-29,1. FC Union Berlin,Eintracht Frankfurt,3,3,1
+espn:401884812,2026-27,GER1,2026-08-29,Mainz,SC Paderborn 07,0,0,1
+espn:401884813,2026-27,GER1,2026-08-30,FC Augsburg,Schalke 04,3,0,1
+espn:401884814,2026-27,GER1,2026-08-30,SC Freiburg,Werder Bremen,4,1,1
+espn:401884815,2026-27,GER1,2026-08-29,RB Leipzig,Borussia Mönchengladbach,3,0,1
+espn:401884816,2026-27,GER1,2026-08-29,Borussia Dortmund,Hamburg SV,2,0,1
+espn:401884817,2026-27,GER1,2026-08-28,Bayern Munich,VfB Stuttgart,5,1,1

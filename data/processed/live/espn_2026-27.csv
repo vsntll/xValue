@@ -1,1 +1,381 @@
 source,season,league,tier,competition_type,comp_code,Date,Time,HomeTeam,AwayTeam,status,FTHG,FTAG,FTR,HTHG,HTAG,HTR,HS,AS,HST,AST,HC,AC,HF,AF,HY,AY,HR,AR,HPoss,APoss,HxG,AxG,match_id
+espn,2026-27,Premier League,1,league,ENG1,2026-08-21,19:00,Arsenal,Coventry City,FULL_TIME,3.0,0.0,H,,,,20.0,4.0,6.0,1.0,8.0,2.0,10.0,13.0,1.0,1.0,0.0,0.0,64.5,35.5,,,espn:401879301
+espn,2026-27,Premier League,1,league,ENG1,2026-08-22,11:30,Hull City,Manchester United,FULL_TIME,2.0,0.0,H,,,,8.0,21.0,4.0,5.0,1.0,6.0,10.0,9.0,2.0,1.0,0.0,0.0,28.5,71.5,,,espn:401879322
+espn,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Everton,Crystal Palace,FULL_TIME,2.0,0.0,H,,,,16.0,11.0,5.0,4.0,4.0,0.0,5.0,15.0,0.0,1.0,0.0,0.0,42.1,57.9,,,espn:401879300
+espn,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Ipswich Town,Sunderland,FULL_TIME,2.0,1.0,H,,,,10.0,11.0,3.0,4.0,3.0,5.0,12.0,14.0,0.0,3.0,0.0,0.0,37.5,62.5,,,espn:401879299
+espn,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Nottingham Forest,Leeds United,FULL_TIME,0.0,1.0,A,,,,12.0,11.0,2.0,3.0,3.0,2.0,15.0,14.0,2.0,1.0,0.0,0.0,55.2,44.8,,,espn:401879298
+espn,2026-27,Premier League,1,league,ENG1,2026-08-22,16:30,Brentford,Tottenham Hotspur,FULL_TIME,3.0,0.0,H,,,,26.0,9.0,8.0,4.0,7.0,3.0,17.0,14.0,1.0,1.0,0.0,0.0,41.1,58.9,,,espn:401879321
+espn,2026-27,Premier League,1,league,ENG1,2026-08-23,13:00,Brighton & Hove Albion,Aston Villa,FULL_TIME,4.0,0.0,H,,,,21.0,6.0,6.0,0.0,5.0,2.0,12.0,9.0,2.0,3.0,0.0,1.0,72.9,27.1,,,espn:401879297
+espn,2026-27,Premier League,1,league,ENG1,2026-08-23,13:00,Manchester City,AFC Bournemouth,FULL_TIME,2.0,1.0,H,,,,13.0,5.0,6.0,4.0,8.0,3.0,11.0,11.0,1.0,2.0,0.0,0.0,66.1,33.9,,,espn:401879320
+espn,2026-27,Premier League,1,league,ENG1,2026-08-23,15:30,Newcastle United,Liverpool,FULL_TIME,2.0,2.0,D,,,,13.0,27.0,4.0,7.0,2.0,6.0,16.0,15.0,5.0,3.0,0.0,0.0,39.2,60.8,,,espn:401879319
+espn,2026-27,Premier League,1,league,ENG1,2026-08-24,19:00,Fulham,Chelsea,FULL_TIME,2.0,3.0,A,,,,14.0,18.0,6.0,6.0,6.0,4.0,12.0,7.0,2.0,3.0,0.0,0.0,61.5,38.5,,,espn:401879318
+espn,2026-27,Premier League,1,league,ENG1,2026-08-28,19:00,Crystal Palace,Manchester City,FULL_TIME,1.0,4.0,A,,,,9.0,18.0,1.0,9.0,2.0,6.0,8.0,10.0,1.0,2.0,0.0,0.0,27.8,72.2,,,espn:401879294
+espn,2026-27,Premier League,1,league,ENG1,2026-08-29,11:30,Liverpool,Nottingham Forest,FULL_TIME,2.0,2.0,D,,,,13.0,12.0,4.0,3.0,3.0,5.0,13.0,10.0,4.0,2.0,0.0,0.0,69.6,30.4,,,espn:401879314
+espn,2026-27,Premier League,1,league,ENG1,2026-08-29,14:00,AFC Bournemouth,Everton,FULL_TIME,1.0,1.0,D,,,,17.0,13.0,5.0,7.0,10.0,7.0,11.0,14.0,3.0,2.0,0.0,0.0,58.5,41.5,,,espn:401879296
+espn,2026-27,Premier League,1,league,ENG1,2026-08-29,14:00,Coventry City,Hull City,FULL_TIME,0.0,1.0,A,,,,11.0,6.0,3.0,2.0,6.0,2.0,11.0,8.0,1.0,4.0,0.0,0.0,68.7,31.3,,,espn:401879316
+espn,2026-27,Premier League,1,league,ENG1,2026-08-29,16:30,Tottenham Hotspur,Newcastle United,FULL_TIME,0.0,2.0,A,,,,17.0,11.0,6.0,2.0,9.0,7.0,15.0,9.0,1.0,2.0,0.0,0.0,57.5,42.5,,,espn:401879312
+espn,2026-27,Premier League,1,league,ENG1,2026-08-30,13:00,Chelsea,Brighton & Hove Albion,FULL_TIME,4.0,3.0,H,,,,17.0,15.0,6.0,6.0,4.0,7.0,6.0,12.0,1.0,3.0,0.0,0.0,25.6,74.4,,,espn:401879317
+espn,2026-27,Premier League,1,league,ENG1,2026-08-30,13:00,Leeds United,Brentford,FULL_TIME,1.0,1.0,D,,,,12.0,22.0,2.0,5.0,5.0,6.0,5.0,13.0,0.0,4.0,0.0,0.0,46.6,53.4,,,espn:401879315
+espn,2026-27,Premier League,1,league,ENG1,2026-08-30,13:00,Sunderland,Fulham,FULL_TIME,1.0,0.0,H,,,,12.0,11.0,4.0,0.0,3.0,4.0,10.0,15.0,0.0,2.0,0.0,0.0,41.6,58.4,,,espn:401879313
+espn,2026-27,Premier League,1,league,ENG1,2026-08-30,15:30,Manchester United,Ipswich Town,FULL_TIME,5.0,2.0,H,,,,33.0,9.0,11.0,5.0,8.0,4.0,7.0,12.0,1.0,3.0,0.0,0.0,60.4,39.6,,,espn:401879293
+espn,2026-27,Premier League,1,league,ENG1,2026-08-31,19:00,Aston Villa,Arsenal,FULL_TIME,0.0,1.0,A,,,,7.0,7.0,0.0,2.0,2.0,4.0,17.0,6.0,3.0,1.0,0.0,0.0,39.2,60.8,,,espn:401879295
+espn,2026-27,Premier League,1,league,ENG1,2026-09-04,19:00,Ipswich Town,Liverpool,FULL_TIME,0.0,2.0,A,,,,14.0,10.0,5.0,7.0,4.0,3.0,6.0,13.0,1.0,3.0,0.0,0.0,45.1,54.9,,,espn:401879288
+espn,2026-27,Premier League,1,league,ENG1,2026-09-05,11:30,Newcastle United,AFC Bournemouth,FULL_TIME,2.0,2.0,D,,,,8.0,17.0,2.0,5.0,4.0,3.0,19.0,17.0,2.0,3.0,0.0,0.0,57.3,42.7,,,espn:401879286
+espn,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Brentford,Sunderland,FULL_TIME,1.0,1.0,D,,,,12.0,14.0,2.0,5.0,4.0,3.0,19.0,9.0,3.0,2.0,0.0,0.0,49.0,51.0,,,espn:401879311
+espn,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Brighton & Hove Albion,Leeds United,FULL_TIME,1.0,1.0,D,,,,20.0,10.0,5.0,5.0,7.0,6.0,13.0,16.0,3.0,3.0,0.0,0.0,66.8,33.2,,,espn:401879290
+espn,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Fulham,Crystal Palace,FULL_TIME,2.0,3.0,A,,,,25.0,10.0,6.0,5.0,7.0,1.0,6.0,7.0,0.0,0.0,0.0,0.0,64.7,35.3,,,espn:401879289
+espn,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Manchester City,Coventry City,FULL_TIME,1.0,0.0,H,,,,15.0,12.0,4.0,3.0,4.0,5.0,7.0,17.0,1.0,2.0,0.0,0.0,77.6,22.4,,,espn:401879287
+espn,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Nottingham Forest,Tottenham Hotspur,FULL_TIME,0.0,0.0,D,,,,12.0,12.0,2.0,0.0,2.0,10.0,22.0,13.0,2.0,2.0,0.0,0.0,41.4,58.6,,,espn:401878780
+espn,2026-27,Premier League,1,league,ENG1,2026-09-05,16:30,Hull City,Aston Villa,FULL_TIME,0.0,0.0,D,,,,11.0,13.0,4.0,1.0,3.0,4.0,10.0,5.0,2.0,0.0,0.0,0.0,26.5,73.5,,,espn:401878781
+espn,2026-27,Premier League,1,league,ENG1,2026-09-06,13:00,Everton,Manchester United,FULL_TIME,2.0,2.0,D,,,,18.0,14.0,6.0,3.0,4.0,3.0,7.0,11.0,3.0,3.0,0.0,0.0,45.4,54.6,,,espn:401879291
+espn,2026-27,Premier League,1,league,ENG1,2026-09-06,15:30,Arsenal,Chelsea,FULL_TIME,2.0,1.0,H,,,,16.0,13.0,9.0,5.0,5.0,3.0,13.0,16.0,2.0,4.0,0.0,0.0,54.6,45.4,,,espn:401879292
+espn,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,AFC Bournemouth,Brentford,FULL_TIME,2.0,2.0,D,,,,20.0,8.0,10.0,2.0,2.0,1.0,10.0,13.0,5.0,1.0,0.0,0.0,56.6,43.4,,,espn:401879285
+espn,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Aston Villa,Nottingham Forest,FULL_TIME,1.0,2.0,A,,,,7.0,22.0,5.0,7.0,6.0,1.0,11.0,16.0,2.0,5.0,0.0,0.0,53.3,46.7,,,espn:401879284
+espn,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Chelsea,Hull City,FULL_TIME,2.0,2.0,D,,,,12.0,13.0,7.0,5.0,11.0,4.0,7.0,12.0,1.0,5.0,0.0,0.0,67.8,32.2,,,espn:401879283
+espn,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Crystal Palace,Ipswich Town,FULL_TIME,2.0,3.0,A,,,,11.0,12.0,4.0,6.0,6.0,3.0,6.0,16.0,1.0,3.0,1.0,0.0,46.5,53.5,,,espn:401879281
+espn,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Liverpool,Fulham,FULL_TIME,0.0,0.0,D,,,,14.0,10.0,3.0,4.0,5.0,8.0,11.0,8.0,0.0,1.0,0.0,0.0,56.1,43.9,,,espn:401879279
+espn,2026-27,Premier League,1,league,ENG1,2026-09-12,16:30,Tottenham Hotspur,Everton,FULL_TIME,0.0,0.0,D,,,,14.0,12.0,2.0,3.0,5.0,6.0,14.0,8.0,0.0,2.0,0.0,0.0,62.3,37.7,,,espn:401879277
+espn,2026-27,Premier League,1,league,ENG1,2026-09-12,19:00,Sunderland,Arsenal,FULL_TIME,0.0,2.0,A,,,,12.0,11.0,3.0,5.0,4.0,3.0,18.0,11.0,4.0,2.0,1.0,0.0,42.5,57.5,,,espn:401878779
+espn,2026-27,Premier League,1,league,ENG1,2026-09-13,13:00,Coventry City,Brighton & Hove Albion,FULL_TIME,0.0,5.0,A,,,,14.0,22.0,6.0,7.0,5.0,3.0,9.0,15.0,0.0,0.0,1.0,0.0,30.6,69.4,,,espn:401879282
+espn,2026-27,Premier League,1,league,ENG1,2026-09-13,15:30,Manchester United,Manchester City,FULL_TIME,0.0,1.0,A,,,,16.0,6.0,3.0,2.0,6.0,7.0,17.0,10.0,1.0,2.0,0.0,1.0,54.7,45.3,,,espn:401879278
+espn,2026-27,Premier League,1,league,ENG1,2026-09-14,19:00,Leeds United,Newcastle United,FULL_TIME,4.0,1.0,H,,,,15.0,7.0,6.0,5.0,5.0,5.0,8.0,13.0,1.0,2.0,0.0,0.0,50.6,49.4,,,espn:401879280
+espn,2026-27,Premier League,1,league,ENG1,2026-09-18,19:00,Brentford,Chelsea,FULL_TIME,3.0,0.0,H,,,,13.0,12.0,6.0,2.0,4.0,12.0,10.0,7.0,2.0,0.0,0.0,0.0,40.6,59.4,,,espn:401879275
+espn,2026-27,Premier League,1,league,ENG1,2026-09-19,11:30,Tottenham Hotspur,Aston Villa,FULL_TIME,2.0,3.0,A,,,,20.0,15.0,7.0,6.0,11.0,1.0,9.0,13.0,1.0,2.0,0.0,0.0,63.8,36.2,,,espn:401879269
+espn,2026-27,Premier League,1,league,ENG1,2026-09-19,14:00,Brighton & Hove Albion,Arsenal,FULL_TIME,3.0,0.0,H,,,,17.0,11.0,5.0,2.0,5.0,6.0,13.0,11.0,4.0,1.0,0.0,0.0,40.2,59.8,,,espn:401879274
+espn,2026-27,Premier League,1,league,ENG1,2026-09-19,14:00,Everton,Ipswich Town,FULL_TIME,1.0,0.0,H,,,,21.0,13.0,2.0,4.0,4.0,4.0,6.0,12.0,2.0,1.0,0.0,1.0,51.7,48.3,,,espn:401878778
+espn,2026-27,Premier League,1,league,ENG1,2026-09-19,14:00,Newcastle United,Hull City,FULL_TIME,2.0,1.0,H,,,,12.0,21.0,5.0,4.0,4.0,7.0,4.0,10.0,1.0,4.0,0.0,0.0,56.2,43.8,,,espn:401879271
+espn,2026-27,Premier League,1,league,ENG1,2026-09-19,16:30,Nottingham Forest,Coventry City,FULL_TIME,0.0,1.0,A,,,,24.0,10.0,3.0,3.0,6.0,2.0,12.0,10.0,2.0,0.0,0.0,0.0,62.6,37.4,,,espn:401879270
+espn,2026-27,Premier League,1,league,ENG1,2026-09-20,13:00,AFC Bournemouth,Liverpool,FULL_TIME,0.0,1.0,A,,,,9.0,12.0,2.0,3.0,3.0,3.0,11.0,13.0,1.0,2.0,0.0,0.0,46.2,53.8,,,espn:401879276
+espn,2026-27,Premier League,1,league,ENG1,2026-09-20,13:00,Leeds United,Crystal Palace,FULL_TIME,0.0,0.0,D,,,,13.0,12.0,2.0,4.0,4.0,3.0,10.0,12.0,2.0,3.0,0.0,0.0,50.6,49.4,,,espn:401879273
+espn,2026-27,Premier League,1,league,ENG1,2026-09-20,13:00,Manchester City,Sunderland,FULL_TIME,5.0,3.0,H,,,,16.0,17.0,6.0,9.0,6.0,5.0,14.0,14.0,0.0,1.0,0.0,0.0,55.0,45.0,,,espn:401879272
+espn,2026-27,Premier League,1,league,ENG1,2026-09-20,15:30,Fulham,Manchester United,FULL_TIME,1.0,1.0,D,,,,12.0,29.0,6.0,6.0,3.0,13.0,9.0,5.0,3.0,0.0,0.0,0.0,42.7,57.3,,,espn:401878777
+espn,2026-27,Premier League,1,league,ENG1,2026-10-10,11:30,Arsenal,Leeds United,FULL_TIME,2.0,1.0,H,,,,13.0,11.0,6.0,5.0,3.0,4.0,12.0,20.0,1.0,4.0,0.0,0.0,58.2,41.8,,,espn:401879268
+espn,2026-27,Premier League,1,league,ENG1,2026-10-10,14:00,Aston Villa,Brentford,FULL_TIME,2.0,2.0,D,,,,20.0,14.0,7.0,4.0,2.0,2.0,7.0,24.0,2.0,5.0,0.0,0.0,52.1,47.9,,,espn:401878776
+espn,2026-27,Premier League,1,league,ENG1,2026-10-10,14:00,Chelsea,AFC Bournemouth,FULL_TIME,5.0,1.0,H,,,,10.0,9.0,6.0,4.0,1.0,7.0,7.0,15.0,0.0,4.0,0.0,0.0,49.9,50.1,,,espn:401878775
+espn,2026-27,Premier League,1,league,ENG1,2026-10-10,14:00,Ipswich Town,Fulham,FULL_TIME,2.0,1.0,H,,,,11.0,13.0,5.0,5.0,2.0,5.0,8.0,10.0,2.0,4.0,0.0,0.0,47.6,52.4,,,espn:401879265
+espn,2026-27,Premier League,1,league,ENG1,2026-10-10,14:00,Sunderland,Brighton & Hove Albion,FULL_TIME,0.0,2.0,A,,,,12.0,13.0,3.0,4.0,7.0,5.0,8.0,12.0,0.0,1.0,0.0,1.0,62.3,37.7,,,espn:401878772
+espn,2026-27,Premier League,1,league,ENG1,2026-10-10,16:30,Manchester United,Tottenham Hotspur,FULL_TIME,1.0,1.0,D,,,,12.0,12.0,4.0,3.0,4.0,4.0,13.0,16.0,4.0,3.0,0.0,1.0,49.6,50.4,,,espn:401878773
+espn,2026-27,Premier League,1,league,ENG1,2026-10-11,13:00,Crystal Palace,Nottingham Forest,FULL_TIME,3.0,1.0,H,,,,13.0,24.0,7.0,6.0,5.0,8.0,11.0,10.0,2.0,2.0,0.0,0.0,43.4,56.6,,,espn:401879266
+espn,2026-27,Premier League,1,league,ENG1,2026-10-11,13:00,Hull City,Everton,FULL_TIME,2.0,2.0,D,,,,9.0,15.0,5.0,7.0,7.0,6.0,15.0,4.0,2.0,0.0,0.0,0.0,35.1,64.9,,,espn:401878774
+espn,2026-27,Premier League,1,league,ENG1,2026-10-11,15:30,Liverpool,Manchester City,FULL_TIME,0.0,3.0,A,,,,13.0,15.0,6.0,4.0,5.0,6.0,19.0,14.0,2.0,2.0,1.0,0.0,35.4,64.6,,,espn:401879264
+espn,2026-27,Premier League,1,league,ENG1,2026-10-12,19:00,Coventry City,Newcastle United,FULL_TIME,4.0,1.0,H,,,,9.0,19.0,6.0,6.0,2.0,6.0,3.0,10.0,1.0,1.0,0.0,0.0,33.3,66.7,,,espn:401879267
+espn,2026-27,Premier League,1,league,ENG1,2026-10-17,11:30,Everton,Chelsea,FULL_TIME,0.0,2.0,A,,,,6.0,18.0,5.0,7.0,5.0,7.0,8.0,15.0,3.0,4.0,0.0,0.0,47.2,52.8,,,espn:401878771
+espn,2026-27,Premier League,1,league,ENG1,2026-10-17,14:00,Brentford,Liverpool,FULL_TIME,1.0,2.0,A,,,,10.0,21.0,2.0,5.0,3.0,9.0,7.0,13.0,2.0,3.0,2.0,0.0,40.1,59.9,,,espn:401879262
+espn,2026-27,Premier League,1,league,ENG1,2026-10-17,14:00,Fulham,Hull City,FULL_TIME,1.0,0.0,H,,,,18.0,5.0,6.0,0.0,10.0,2.0,13.0,11.0,2.0,2.0,1.0,0.0,76.2,23.8,,,espn:401878770
+espn,2026-27,Premier League,1,league,ENG1,2026-10-17,14:00,Manchester City,Ipswich Town,FULL_TIME,3.0,2.0,H,,,,19.0,8.0,6.0,3.0,2.0,3.0,8.0,16.0,1.0,2.0,0.0,0.0,69.8,30.2,,,espn:401879259
+espn,2026-27,Premier League,1,league,ENG1,2026-10-17,16:30,Newcastle United,Aston Villa,FULL_TIME,0.0,1.0,A,,,,16.0,15.0,1.0,3.0,4.0,5.0,14.0,11.0,6.0,2.0,0.0,0.0,49.3,50.7,,,espn:401879258
+espn,2026-27,Premier League,1,league,ENG1,2026-10-18,13:00,AFC Bournemouth,Sunderland,FULL_TIME,2.0,0.0,H,,,,29.0,3.0,6.0,0.0,5.0,3.0,16.0,7.0,3.0,2.0,0.0,1.0,65.0,35.0,,,espn:401879263
+espn,2026-27,Premier League,1,league,ENG1,2026-10-18,13:00,Brighton & Hove Albion,Crystal Palace,FULL_TIME,5.0,0.0,H,,,,17.0,5.0,9.0,1.0,8.0,5.0,13.0,11.0,2.0,1.0,0.0,0.0,57.2,42.8,,,espn:401879261
+espn,2026-27,Premier League,1,league,ENG1,2026-10-18,13:00,Leeds United,Manchester United,FULL_TIME,1.0,1.0,D,,,,12.0,13.0,5.0,3.0,2.0,3.0,16.0,5.0,2.0,2.0,0.0,0.0,61.3,38.7,,,espn:401879260
+espn,2026-27,Premier League,1,league,ENG1,2026-10-18,15:30,Nottingham Forest,Arsenal,FULL_TIME,0.0,1.0,A,,,,14.0,9.0,2.0,1.0,8.0,6.0,14.0,8.0,1.0,1.0,0.0,0.0,26.2,73.8,,,espn:401878769
+espn,2026-27,Premier League,1,league,ENG1,2026-10-19,19:00,Tottenham Hotspur,Coventry City,FULL_TIME,3.0,1.0,H,,,,16.0,12.0,5.0,1.0,4.0,4.0,15.0,14.0,1.0,3.0,0.0,0.0,65.4,34.6,,,espn:401879257
+espn,2026-27,Premier League,1,league,ENG1,2026-10-23,19:00,Ipswich Town,Nottingham Forest,FULL_TIME,1.0,1.0,D,,,,7.0,17.0,3.0,5.0,0.0,5.0,9.0,11.0,1.0,1.0,0.0,0.0,49.4,50.6,,,espn:401879253
+espn,2026-27,Premier League,1,league,ENG1,2026-10-24,11:30,Aston Villa,Manchester City,FULL_TIME,2.0,1.0,H,,,,8.0,15.0,2.0,7.0,4.0,7.0,21.0,17.0,4.0,4.0,0.0,0.0,36.8,63.2,,,espn:401879256
+espn,2026-27,Premier League,1,league,ENG1,2026-10-24,14:00,Arsenal,Everton,FULL_TIME,2.0,0.0,H,,,,20.0,8.0,4.0,3.0,12.0,3.0,11.0,13.0,1.0,3.0,0.0,0.0,58.0,42.0,,,espn:401878768
+espn,2026-27,Premier League,1,league,ENG1,2026-10-24,14:00,Coventry City,Fulham,FULL_TIME,0.0,1.0,A,,,,13.0,12.0,2.0,3.0,4.0,6.0,9.0,11.0,0.0,2.0,0.0,0.0,36.0,64.0,,,espn:401879255
+espn,2026-27,Premier League,1,league,ENG1,2026-10-24,16:30,Chelsea,Tottenham Hotspur,FULL_TIME,0.0,2.0,A,,,,7.0,15.0,4.0,4.0,4.0,6.0,14.0,14.0,2.0,3.0,1.0,0.0,31.5,68.5,,,espn:401878767
+espn,2026-27,Premier League,1,league,ENG1,2026-10-25,14:00,Crystal Palace,Newcastle United,FULL_TIME,0.0,2.0,A,,,,17.0,10.0,4.0,2.0,7.0,4.0,12.0,10.0,3.0,3.0,0.0,0.0,52.6,47.4,,,espn:401879254
+espn,2026-27,Premier League,1,league,ENG1,2026-10-25,14:00,Hull City,Brentford,FULL_TIME,1.0,1.0,D,,,,12.0,14.0,2.0,6.0,5.0,6.0,10.0,9.0,0.0,1.0,0.0,0.0,42.4,57.6,,,espn:401878766
+espn,2026-27,Premier League,1,league,ENG1,2026-10-25,14:00,Liverpool,Brighton & Hove Albion,FULL_TIME,2.0,0.0,H,,,,13.0,17.0,4.0,1.0,4.0,2.0,13.0,9.0,0.0,2.0,0.0,0.0,35.6,64.4,,,espn:401878765
+espn,2026-27,Premier League,1,league,ENG1,2026-10-25,14:00,Manchester United,AFC Bournemouth,FULL_TIME,0.0,3.0,A,,,,17.0,10.0,5.0,4.0,5.0,4.0,13.0,17.0,4.0,1.0,0.0,0.0,62.6,37.4,,,espn:401879252
+espn,2026-27,Premier League,1,league,ENG1,2026-10-25,16:30,Sunderland,Leeds United,FULL_TIME,0.0,0.0,D,,,,15.0,11.0,4.0,4.0,4.0,5.0,10.0,14.0,1.0,2.0,0.0,0.0,50.4,49.6,,,espn:401878764
+espn,2026-27,Premier League,1,league,ENG1,2026-10-31,12:30,Chelsea,Manchester United,FULL_TIME,2.0,0.0,H,,,,18.0,12.0,9.0,5.0,8.0,7.0,8.0,20.0,1.0,4.0,0.0,1.0,58.7,41.3,,,espn:401879248
+espn,2026-27,Premier League,1,league,ENG1,2026-10-31,15:00,AFC Bournemouth,Leeds United,FULL_TIME,2.0,0.0,H,,,,11.0,10.0,5.0,1.0,4.0,4.0,12.0,15.0,2.0,2.0,0.0,0.0,43.9,56.1,,,espn:401879251
+espn,2026-27,Premier League,1,league,ENG1,2026-10-31,15:00,Brentford,Nottingham Forest,FULL_TIME,2.0,0.0,H,,,,7.0,15.0,1.0,1.0,3.0,4.0,6.0,17.0,1.0,3.0,0.0,0.0,41.7,58.3,,,espn:401879249
+espn,2026-27,Premier League,1,league,ENG1,2026-10-31,15:00,Coventry City,Sunderland,FULL_TIME,3.0,1.0,H,,,,12.0,17.0,4.0,2.0,4.0,4.0,16.0,9.0,2.0,0.0,0.0,1.0,43.5,56.5,,,espn:401879247
+espn,2026-27,Premier League,1,league,ENG1,2026-10-31,15:00,Hull City,Ipswich Town,FULL_TIME,2.0,2.0,D,,,,9.0,15.0,3.0,3.0,6.0,3.0,13.0,12.0,3.0,3.0,0.0,0.0,38.5,61.5,,,espn:401878763
+espn,2026-27,Premier League,1,league,ENG1,2026-10-31,15:00,Manchester City,Brighton & Hove Albion,FULL_TIME,0.0,1.0,A,,,,21.0,7.0,6.0,3.0,8.0,2.0,9.0,13.0,0.0,3.0,0.0,0.0,62.4,37.6,,,espn:401879245
+espn,2026-27,Premier League,1,league,ENG1,2026-10-31,17:30,Tottenham Hotspur,Crystal Palace,FULL_TIME,2.0,0.0,H,,,,34.0,2.0,9.0,1.0,19.0,0.0,8.0,10.0,1.0,1.0,0.0,1.0,79.4,20.6,,,espn:401878761
+espn,2026-27,Premier League,1,league,ENG1,2026-10-31,20:00,Aston Villa,Fulham,FULL_TIME,1.0,1.0,D,,,,16.0,14.0,3.0,5.0,7.0,7.0,7.0,12.0,1.0,3.0,0.0,0.0,45.0,55.0,,,espn:401879250
+espn,2026-27,Premier League,1,league,ENG1,2026-11-01,16:30,Liverpool,Arsenal,FULL_TIME,0.0,1.0,A,,,,17.0,10.0,0.0,3.0,7.0,4.0,18.0,10.0,4.0,4.0,0.0,0.0,56.4,43.6,,,espn:401879246
+espn,2026-27,Premier League,1,league,ENG1,2026-11-02,20:00,Newcastle United,Everton,FULL_TIME,0.0,1.0,A,,,,17.0,16.0,2.0,5.0,4.0,5.0,13.0,9.0,2.0,2.0,1.0,0.0,51.6,48.4,,,espn:401878762
+espn,2026-27,Premier League,1,league,ENG1,2026-11-06,20:00,Everton,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879242
+espn,2026-27,Premier League,1,league,ENG1,2026-11-07,12:30,Leeds United,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878758
+espn,2026-27,Premier League,1,league,ENG1,2026-11-07,15:00,Arsenal,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878760
+espn,2026-27,Premier League,1,league,ENG1,2026-11-07,15:00,Fulham,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879241
+espn,2026-27,Premier League,1,league,ENG1,2026-11-07,17:30,Nottingham Forest,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878757
+espn,2026-27,Premier League,1,league,ENG1,2026-11-08,14:00,Brighton & Hove Albion,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879244
+espn,2026-27,Premier League,1,league,ENG1,2026-11-08,14:00,Crystal Palace,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879243
+espn,2026-27,Premier League,1,league,ENG1,2026-11-08,14:00,Ipswich Town,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878759
+espn,2026-27,Premier League,1,league,ENG1,2026-11-08,14:00,Sunderland,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879239
+espn,2026-27,Premier League,1,league,ENG1,2026-11-08,16:30,Manchester United,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879240
+espn,2026-27,Premier League,1,league,ENG1,2026-11-21,12:30,Manchester City,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879233
+espn,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,AFC Bournemouth,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879238
+espn,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Aston Villa,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878756
+espn,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Chelsea,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879236
+espn,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Coventry City,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879235
+espn,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Tottenham Hotspur,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878754
+espn,2026-27,Premier League,1,league,ENG1,2026-11-21,17:30,Newcastle United,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879232
+espn,2026-27,Premier League,1,league,ENG1,2026-11-22,14:00,Hull City,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879234
+espn,2026-27,Premier League,1,league,ENG1,2026-11-22,16:30,Liverpool,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878755
+espn,2026-27,Premier League,1,league,ENG1,2026-11-23,20:00,Brentford,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879237
+espn,2026-27,Premier League,1,league,ENG1,2026-11-27,20:00,Nottingham Forest,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879225
+espn,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Leeds United,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879227
+espn,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Manchester United,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879226
+espn,2026-27,Premier League,1,league,ENG1,2026-11-28,17:30,Ipswich Town,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878752
+espn,2026-27,Premier League,1,league,ENG1,2026-11-29,12:00,Everton,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879229
+espn,2026-27,Premier League,1,league,ENG1,2026-11-29,14:05,Brighton & Hove Albion,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879231
+espn,2026-27,Premier League,1,league,ENG1,2026-11-29,14:05,Crystal Palace,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879230
+espn,2026-27,Premier League,1,league,ENG1,2026-11-29,14:05,Fulham,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879228
+espn,2026-27,Premier League,1,league,ENG1,2026-11-29,14:05,Sunderland,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879224
+espn,2026-27,Premier League,1,league,ENG1,2026-11-29,16:30,Arsenal,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878753
+espn,2026-27,Premier League,1,league,ENG1,2026-12-01,20:00,Coventry City,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879221
+espn,2026-27,Premier League,1,league,ENG1,2026-12-02,19:30,Chelsea,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879222
+espn,2026-27,Premier League,1,league,ENG1,2026-12-02,19:30,Hull City,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879220
+espn,2026-27,Premier League,1,league,ENG1,2026-12-02,19:30,Liverpool,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879219
+espn,2026-27,Premier League,1,league,ENG1,2026-12-02,19:30,Manchester City,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879218
+espn,2026-27,Premier League,1,league,ENG1,2026-12-02,20:15,AFC Bournemouth,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879223
+espn,2026-27,Premier League,1,league,ENG1,2026-12-02,20:15,Aston Villa,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878751
+espn,2026-27,Premier League,1,league,ENG1,2026-12-02,20:15,Brentford,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878750
+espn,2026-27,Premier League,1,league,ENG1,2026-12-02,20:15,Newcastle United,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879217
+espn,2026-27,Premier League,1,league,ENG1,2026-12-03,20:00,Tottenham Hotspur,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878749
+espn,2026-27,Premier League,1,league,ENG1,2026-12-05,12:30,Chelsea,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879213
+espn,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,AFC Bournemouth,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879216
+espn,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Aston Villa,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879215
+espn,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Leeds United,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879211
+espn,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Manchester United,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879210
+espn,2026-27,Premier League,1,league,ENG1,2026-12-05,17:30,Nottingham Forest,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878747
+espn,2026-27,Premier League,1,league,ENG1,2026-12-05,20:00,Brentford,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879214
+espn,2026-27,Premier League,1,league,ENG1,2026-12-06,14:00,Everton,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879212
+espn,2026-27,Premier League,1,league,ENG1,2026-12-06,14:00,Newcastle United,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878748
+espn,2026-27,Premier League,1,league,ENG1,2026-12-06,16:30,Tottenham Hotspur,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879209
+espn,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Fulham,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879206
+espn,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Ipswich Town,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878744
+espn,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Liverpool,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878743
+espn,2026-27,Premier League,1,league,ENG1,2026-12-12,17:30,Manchester City,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878742
+espn,2026-27,Premier League,1,league,ENG1,2026-12-13,14:00,Arsenal,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878746
+espn,2026-27,Premier League,1,league,ENG1,2026-12-13,14:00,Brighton & Hove Albion,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878745
+espn,2026-27,Premier League,1,league,ENG1,2026-12-13,14:00,Sunderland,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878741
+espn,2026-27,Premier League,1,league,ENG1,2026-12-13,16:30,Coventry City,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879208
+espn,2026-27,Premier League,1,league,ENG1,2026-12-13,19:00,Crystal Palace,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879207
+espn,2026-27,Premier League,1,league,ENG1,2026-12-14,20:00,Hull City,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879205
+espn,2026-27,Premier League,1,league,ENG1,2026-12-19,12:30,Brentford,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879203
+espn,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,AFC Bournemouth,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878740
+espn,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Leeds United,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879201
+espn,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Manchester City,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879199
+espn,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Nottingham Forest,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879198
+espn,2026-27,Premier League,1,league,ENG1,2026-12-19,17:30,Liverpool,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879200
+espn,2026-27,Premier League,1,league,ENG1,2026-12-20,14:00,Brighton & Hove Albion,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878739
+espn,2026-27,Premier League,1,league,ENG1,2026-12-20,14:00,Sunderland,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878738
+espn,2026-27,Premier League,1,league,ENG1,2026-12-20,16:30,Arsenal,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879204
+espn,2026-27,Premier League,1,league,ENG1,2026-12-21,20:00,Chelsea,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879202
+espn,2026-27,Premier League,1,league,ENG1,2026-12-26,12:30,Aston Villa,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878737
+espn,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Everton,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879197
+espn,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Fulham,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878734
+espn,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Ipswich Town,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879196
+espn,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Tottenham Hotspur,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878731
+espn,2026-27,Premier League,1,league,ENG1,2026-12-26,17:30,Hull City,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878733
+espn,2026-27,Premier League,1,league,ENG1,2026-12-26,20:00,Newcastle United,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878732
+espn,2026-27,Premier League,1,league,ENG1,2026-12-27,14:00,Coventry City,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878736
+espn,2026-27,Premier League,1,league,ENG1,2026-12-27,16:30,Manchester United,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879195
+espn,2026-27,Premier League,1,league,ENG1,2026-12-27,19:00,Crystal Palace,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878735
+espn,2026-27,Premier League,1,league,ENG1,2026-12-29,19:30,Hull City,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879190
+espn,2026-27,Premier League,1,league,ENG1,2026-12-29,19:30,Tottenham Hotspur,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879186
+espn,2026-27,Premier League,1,league,ENG1,2026-12-29,20:15,Everton,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879192
+espn,2026-27,Premier League,1,league,ENG1,2026-12-30,19:30,Coventry City,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878730
+espn,2026-27,Premier League,1,league,ENG1,2026-12-30,19:30,Crystal Palace,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879193
+espn,2026-27,Premier League,1,league,ENG1,2026-12-30,19:30,Fulham,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879191
+espn,2026-27,Premier League,1,league,ENG1,2026-12-30,19:30,Manchester United,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879188
+espn,2026-27,Premier League,1,league,ENG1,2026-12-30,19:30,Newcastle United,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879187
+espn,2026-27,Premier League,1,league,ENG1,2026-12-30,20:15,Aston Villa,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879194
+espn,2026-27,Premier League,1,league,ENG1,2026-12-30,20:15,Ipswich Town,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879189
+espn,2026-27,Premier League,1,league,ENG1,2027-01-01,20:00,Leeds United,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879182
+espn,2026-27,Premier League,1,league,ENG1,2027-01-02,12:30,Brighton & Hove Albion,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878728
+espn,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Arsenal,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879185
+espn,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Brentford,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879184
+espn,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Liverpool,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879181
+espn,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Nottingham Forest,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879179
+espn,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Sunderland,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879178
+espn,2026-27,Premier League,1,league,ENG1,2027-01-02,17:30,AFC Bournemouth,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878729
+espn,2026-27,Premier League,1,league,ENG1,2027-01-03,14:00,Chelsea,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879183
+espn,2026-27,Premier League,1,league,ENG1,2027-01-03,16:30,Manchester City,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879180
+espn,2026-27,Premier League,1,league,ENG1,2027-01-05,19:30,Arsenal,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879177
+espn,2026-27,Premier League,1,league,ENG1,2027-01-05,19:30,Brighton & Hove Albion,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879176
+espn,2026-27,Premier League,1,league,ENG1,2027-01-05,19:30,Everton,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879174
+espn,2026-27,Premier League,1,league,ENG1,2027-01-05,19:30,Nottingham Forest,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879169
+espn,2026-27,Premier League,1,league,ENG1,2027-01-05,20:15,Sunderland,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878727
+espn,2026-27,Premier League,1,league,ENG1,2027-01-06,19:30,Crystal Palace,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879175
+espn,2026-27,Premier League,1,league,ENG1,2027-01-06,19:30,Fulham,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879173
+espn,2026-27,Premier League,1,league,ENG1,2027-01-06,19:30,Ipswich Town,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879172
+espn,2026-27,Premier League,1,league,ENG1,2027-01-06,20:15,Leeds United,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879171
+espn,2026-27,Premier League,1,league,ENG1,2027-01-07,20:00,Manchester United,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879170
+espn,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,AFC Bournemouth,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878726
+espn,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Aston Villa,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878725
+espn,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Brentford,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879168
+espn,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Chelsea,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879167
+espn,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Coventry City,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878724
+espn,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Hull City,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878723
+espn,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Liverpool,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879166
+espn,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Manchester City,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878722
+espn,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Newcastle United,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878721
+espn,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Tottenham Hotspur,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879165
+espn,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Arsenal,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878720
+espn,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Brighton & Hove Albion,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879164
+espn,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Crystal Palace,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879163
+espn,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Everton,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879162
+espn,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Fulham,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878719
+espn,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Ipswich Town,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879161
+espn,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Leeds United,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879160
+espn,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Manchester United,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878718
+espn,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Nottingham Forest,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878717
+espn,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Sunderland,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879159
+espn,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,AFC Bournemouth,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879158
+espn,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Aston Villa,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878716
+espn,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Brentford,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878715
+espn,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Chelsea,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878714
+espn,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Coventry City,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879157
+espn,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Hull City,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879156
+espn,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Liverpool,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879155
+espn,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Manchester City,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879154
+espn,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Newcastle United,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878713
+espn,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Tottenham Hotspur,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879153
+espn,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Arsenal,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878712
+espn,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Brighton & Hove Albion,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878711
+espn,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Crystal Palace,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879152
+espn,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Everton,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879151
+espn,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Fulham,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879150
+espn,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Ipswich Town,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879149
+espn,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Leeds United,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878710
+espn,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Manchester United,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879148
+espn,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Nottingham Forest,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879147
+espn,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Sunderland,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878709
+espn,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Aston Villa,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879146
+espn,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Coventry City,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879145
+espn,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Crystal Palace,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878708
+espn,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Everton,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878707
+espn,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Fulham,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879144
+espn,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Hull City,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879143
+espn,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Ipswich Town,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878706
+espn,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Manchester United,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879142
+espn,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Newcastle United,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879141
+espn,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Tottenham Hotspur,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879140
+espn,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,AFC Bournemouth,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879139
+espn,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Arsenal,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878705
+espn,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Brentford,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879138
+espn,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Brighton & Hove Albion,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879137
+espn,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Chelsea,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878704
+espn,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Leeds United,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879136
+espn,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Liverpool,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878703
+espn,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Manchester City,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879135
+espn,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Nottingham Forest,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879134
+espn,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Sunderland,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878702
+espn,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Aston Villa,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879133
+espn,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Coventry City,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879132
+espn,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Crystal Palace,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878701
+espn,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Everton,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878700
+espn,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Fulham,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878699
+espn,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Hull City,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878698
+espn,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Ipswich Town,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879131
+espn,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Manchester United,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878697
+espn,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Newcastle United,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879130
+espn,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Tottenham Hotspur,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879129
+espn,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,AFC Bournemouth,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879128
+espn,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Arsenal,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878696
+espn,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Brentford,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879127
+espn,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Brighton & Hove Albion,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878695
+espn,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Chelsea,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879126
+espn,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Leeds United,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878694
+espn,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Liverpool,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879125
+espn,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Manchester City,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879124
+espn,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Nottingham Forest,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879123
+espn,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Sunderland,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879122
+espn,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,AFC Bournemouth,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879121
+espn,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Aston Villa,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879120
+espn,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Chelsea,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878693
+espn,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Coventry City,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878692
+espn,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Crystal Palace,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878691
+espn,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Leeds United,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879119
+espn,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Liverpool,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878690
+espn,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Manchester United,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879118
+espn,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Sunderland,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879117
+espn,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Tottenham Hotspur,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879116
+espn,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Arsenal,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879115
+espn,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Brentford,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879114
+espn,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Brighton & Hove Albion,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879113
+espn,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Everton,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879112
+espn,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Fulham,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879111
+espn,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Hull City,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879110
+espn,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Ipswich Town,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879109
+espn,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Manchester City,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879108
+espn,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Newcastle United,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879107
+espn,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Nottingham Forest,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878689
+espn,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,AFC Bournemouth,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879106
+espn,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Aston Villa,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879105
+espn,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Chelsea,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879104
+espn,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Coventry City,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879103
+espn,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Crystal Palace,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879102
+espn,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Leeds United,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878688
+espn,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Liverpool,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879101
+espn,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Manchester United,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879100
+espn,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Sunderland,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878687
+espn,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Tottenham Hotspur,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879099
+espn,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Arsenal,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878686
+espn,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Brentford,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879098
+espn,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Brighton & Hove Albion,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878685
+espn,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Everton,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878684
+espn,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Fulham,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879097
+espn,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Hull City,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878683
+espn,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Ipswich Town,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879096
+espn,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Manchester City,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879095
+espn,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Newcastle United,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878682
+espn,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Nottingham Forest,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878681
+espn,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,AFC Bournemouth,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878680
+espn,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Aston Villa,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878679
+espn,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Brentford,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878678
+espn,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Chelsea,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879094
+espn,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Everton,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879093
+espn,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Leeds United,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879092
+espn,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Manchester United,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879091
+espn,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Newcastle United,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879090
+espn,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Nottingham Forest,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879089
+espn,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Tottenham Hotspur,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878677
+espn,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Arsenal,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878676
+espn,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Brighton & Hove Albion,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879088
+espn,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Coventry City,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878675
+espn,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Crystal Palace,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879087
+espn,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Fulham,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879086
+espn,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Hull City,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879085
+espn,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Ipswich Town,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879084
+espn,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Liverpool,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878674
+espn,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Manchester City,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879083
+espn,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Sunderland,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878673
+espn,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,AFC Bournemouth,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878672
+espn,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Brentford,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879082
+espn,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Brighton & Hove Albion,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878671
+espn,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Everton,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878670
+espn,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Fulham,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878669
+espn,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Leeds United,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879081
+espn,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Manchester City,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878668
+espn,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Newcastle United,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879080
+espn,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Nottingham Forest,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878667
+espn,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Tottenham Hotspur,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878666
+espn,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Arsenal,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879079
+espn,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Aston Villa,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878665
+espn,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Chelsea,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879078
+espn,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Coventry City,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879077
+espn,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Crystal Palace,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878664
+espn,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Hull City,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879076
+espn,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Ipswich Town,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879075
+espn,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Liverpool,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878663
+espn,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Manchester United,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879074
+espn,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Sunderland,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879073
+espn,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,AFC Bournemouth,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879072
+espn,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Brentford,Hull City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879071
+espn,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Brighton & Hove Albion,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878662
+espn,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Everton,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879070
+espn,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Fulham,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879069
+espn,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Leeds United,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879068
+espn,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Manchester City,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879067
+espn,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Newcastle United,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879066
+espn,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Nottingham Forest,Ipswich Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878661
+espn,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Tottenham Hotspur,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879065
+espn,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Arsenal,Brighton & Hove Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878660
+espn,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Aston Villa,Tottenham Hotspur,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879064
+espn,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Chelsea,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879063
+espn,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Coventry City,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878659
+espn,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Crystal Palace,Leeds United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879062
+espn,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Hull City,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879061
+espn,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Ipswich Town,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879060
+espn,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Liverpool,AFC Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879059
+espn,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Manchester United,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879058
+espn,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Sunderland,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401878658
