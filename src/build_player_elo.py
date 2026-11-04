@@ -56,8 +56,9 @@ reused, not recomputed, so the two Elo systems stay consistent with each
 other), fbref_player_season_stats.csv (position only, name-joined - a lookup,
 not a model input; Understat's own per-match position field just says "Sub"
 for anyone who came off the bench, which is useless for grouping), and
-FotMob's per-match player-stats cache (data/raw/live/fotmob_players/*.json,
-from src/pull_fotmob_players.py) for the def/pass components.
+FotMob's committed per-match player stats (data/processed/fotmob/
+player_matches_<season>.csv, from src/pull_fotmob_players.py) for the def/pass
+components.
 
 Run:  py -3.11 src/build_player_elo.py
 Output: data/processed/player_elo.csv  (one row per player-match: rating before/after)
@@ -65,7 +66,6 @@ Output: data/processed/player_elo.csv  (one row per player-match: rating before/
 
 from __future__ import annotations
 
-import json
 import re
 import sys
 from pathlib import Path
@@ -75,12 +75,11 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+import fotmob_store  # noqa: E402
 from live.schema import deaccent, normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 OUT = PROC / "player_elo.csv"
-FOTMOB_MATCH_CACHE = ROOT / "data" / "raw" / "live" / "fotmob_players"
-FOTMOB_MATCH_META = PROC / "fotmob_match_meta.csv"
 INTL_MATCHES = PROC / "fotmob_intl_player_matches.csv"   # src/pull_fotmob_internationals.py
 NATIONAL_ELO = PROC / "national_team_elo.csv"             # src/build_national_elo.py
 
@@ -168,26 +167,16 @@ def _pos_lookup() -> tuple[dict[tuple, str], dict[str, str]]:
 
 
 def _fotmob_match_stats(seasons: list[str]) -> pd.DataFrame:
-    """Per-player, per-match defensive/passing stats from FotMob's cache
-    (src/pull_fotmob_players.py) - tackles/interceptions/blocks/clearances and
+    """Per-player, per-match defensive/passing stats from FotMob's committed
+    per-match rows (src/pull_fotmob_players.py) - tackles/interceptions/blocks/clearances and
     passes_completed/passes_attempted, keyed by (name, team, date) since
     FotMob's own match/player ids live in a different id space than
     Understat's (no shared key to join on). passes_attempted needs the
     `--backfill-passes` re-fetch (see that script) - matches never backfilled
     just carry NaN there, handled as "missing" below, not zero."""
-    if not FOTMOB_MATCH_META.exists():
-        return pd.DataFrame()
-    meta = pd.read_csv(FOTMOB_MATCH_META, dtype={"match_id": str})
-    meta = meta[meta["season"].isin(seasons)]
-    rows = []
-    for mid in meta["match_id"]:
-        f = FOTMOB_MATCH_CACHE / f"{mid}.json"
-        if not f.exists():
-            continue
-        rows.extend(json.loads(f.read_text()))
-    if not rows:
-        return pd.DataFrame()
-    fm = pd.DataFrame(rows)
+    fm = fotmob_store.read("player_matches", seasons)
+    if fm.empty:
+        return fm
     fm["_pk"] = fm["player"].map(_pk)
     fm["team_key"] = fm["team"].map(normalize_team)
     fm["date"] = pd.to_datetime(fm["date"], errors="coerce")
