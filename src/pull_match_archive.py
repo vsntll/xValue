@@ -87,6 +87,11 @@ KEEP_COLS = IDENTITY_COLS + RESULT_COLS + MATCH_STAT_COLS + ODDS_COLS
 RAW_DIR = Path("data/raw/football_data")
 PROCESSED_DIR = Path("data/processed")
 OUT_PATH = PROCESSED_DIR / "match_features.csv"
+# 2014-20 league results, fed into Elo / form / Dixon-Coles so ratings have
+# converged before the modelling window (never emitted as feature rows). Static -
+# built once, committed, never re-downloaded.
+WARMUP_PATH = PROCESSED_DIR / "elo_warmup.csv"
+WARMUP_SEASONS = ["1415", "1516", "1617", "1718", "1819", "1920"]
 
 
 def fetch_csv(season_code: str, div_code: str) -> pd.DataFrame:
@@ -120,9 +125,28 @@ def trim_columns(df: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
     return df[present], missing
 
 
+def build_warmup() -> None:
+    """data/processed/elo_warmup.csv - Date kept as football-data.co.uk's raw
+    dd/mm/yy(yy) string, the way its readers parse it."""
+    frames = []
+    for season_code in WARMUP_SEASONS:
+        for div_code in DIVISIONS:
+            url = f"{BASE_URL}/{season_code}/{div_code}.csv"
+            resp = requests.get(url, timeout=30)
+            resp.raise_for_status()
+            df = pd.read_csv(io.BytesIO(resp.content), encoding="latin-1", on_bad_lines="skip")
+            df.columns = [c.lstrip("﻿").strip() for c in df.columns]
+            frames.append(df.dropna(how="all")[["Div", "Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG"]])
+    w = pd.concat(frames, ignore_index=True).dropna(subset=["Date", "FTHG", "FTAG"])
+    w.to_csv(WARMUP_PATH, index=False)
+    print(f"wrote {WARMUP_PATH}  ({len(w)} matches, seasons {WARMUP_SEASONS[0]}..{WARMUP_SEASONS[-1]})")
+
+
 def main() -> None:
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    if not WARMUP_PATH.exists():
+        build_warmup()
 
     # finished seasons never change - reuse the committed rows and only download
     # the ongoing season (the last SEASONS entry) or a season/league not on file
