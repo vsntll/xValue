@@ -27,24 +27,25 @@ INTL_META = PROC / "fotmob_intl_match_meta.csv"
 KINDS = ("player_matches", "lineups", "events")
 
 
-def path(kind: str, season: str) -> Path:
-    return DIR / f"{kind}_{season}.csv"
+def path(kind: str, season: str, base: Path = DIR) -> Path:
+    return base / f"{kind}_{season}.csv"
 
 
-def read(kind: str, seasons: list[str] | None = None) -> pd.DataFrame:
-    """All rows of `kind`, optionally limited to `seasons`."""
-    files = sorted(DIR.glob(f"{kind}_*.csv")) if seasons is None else \
-        [path(kind, s) for s in seasons if path(kind, s).exists()]
+def read(kind: str, seasons: list[str] | None = None, base: Path = DIR) -> pd.DataFrame:
+    """All rows of `kind`, optionally limited to `seasons`. `base` lets another
+    source's per-season tables (data/processed/espn/) share these helpers."""
+    files = sorted(base.glob(f"{kind}_*.csv")) if seasons is None else \
+        [path(kind, s, base) for s in seasons if path(kind, s, base).exists()]
     frames = [pd.read_csv(f, dtype={"match_id": str}, low_memory=False) for f in files]
     return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
 
 
-def upsert(kind: str, season: str, rows: pd.DataFrame) -> None:
+def upsert(kind: str, season: str, rows: pd.DataFrame, base: Path = DIR) -> None:
     """Replace `rows`' matches in the season file, keep every other match."""
     if rows.empty:
         return
-    DIR.mkdir(parents=True, exist_ok=True)
-    f = path(kind, season)
+    base.mkdir(parents=True, exist_ok=True)
+    f = path(kind, season, base)
     rows = rows.assign(match_id=rows["match_id"].astype(str))
     if f.exists():
         prior = pd.read_csv(f, dtype={"match_id": str}, low_memory=False)
