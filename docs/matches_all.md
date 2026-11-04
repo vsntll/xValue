@@ -31,7 +31,7 @@ drift - step 4).
   detail for cups and Understat has no cup coverage. FotMob has both -
   `py -3.11 src/pull_live.py --season <s> --comps UCL UEL UECL FA EFL DFB CDR CI CDF`
   per historical season, then re-run `build_matches_all.py` after teaching it to
-  read `data/raw/live/*_<season>.csv`. ~2,300 FotMob matchDetails calls - ToS-
+  read `data/processed/live/*_<season>.csv`. ~2,300 FotMob matchDetails calls - ToS-
   sensitive at that volume.
 - **Historical league possession** (every league row before the live 2026-27
   season): football-data.co.uk has no possession. ESPN box scores do -

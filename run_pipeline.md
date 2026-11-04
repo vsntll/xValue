@@ -19,8 +19,8 @@ py -3.11 src/pull_sofascore_values.py                   # current-season values 
 py -3.11 src/pull_live.py --season 2026-27              # live season, all comps   (ESPN+fdorg+Understat+FotMob)
 py -3.11 src/pull_live.py --seasons 2024-25 2025-26 --comps UCL UEL UECL FA EFL DFB CDR --sources espn fotmob
 py -3.11 src/pull_understat_player_matches.py           # per-player per-match xG/xA (Understat, ~1-1.5h, resumable)
-py -3.11 src/pull_fotmob_players.py --current           # per-player SoT/fouls/tackles/passes/... (FotMob, current season, cached)
-py -3.11 src/pull_fotmob_players.py --backfill-passes 2024-25 2025-26 2026-27   # one-off: re-fetch cached matches that predate passes_completed/attempted (resumable, skips done ones)
+py -3.11 src/pull_fotmob_players.py --current           # per-player SoT/fouls/tackles/passes/... (FotMob, current season; only uncommitted matches are fetched)
+py -3.11 src/pull_fotmob_players.py --backfill-passes 2024-25 2025-26 2026-27   # one-off: re-fetch committed matches that predate passes_completed/attempted (resumable, skips done ones)
 py -3.11 src/pull_international_results.py             # every men's international result since 1872 (martj42 dataset, one download)
 py -3.11 src/pull_fotmob_internationals.py             # per-player international box scores since 2024-07-01 (FotMob, cached; first run ~1h)
 ```
@@ -98,9 +98,14 @@ zonal touches, PSxG) are kept from the most recent FBref parse. Finished seasons
 are never touched. Names are consolidated across sources - see `player_name_map.csv`.
 
 `data/processed/` is committed (checkout brings it, `git pull` gets you the
-latest data locally). `data/raw/` + the soccerdata/Understat fetch caches stay
-gitignored - CI keeps them in a non-load-bearing `actions/cache` blob only to
-skip re-downloading. Setup: just add repo secret `FOOTBALL_DATA_ORG_KEY`.
+latest data locally) and is the only record of what has been pulled - CI keeps
+no fetch cache. Every pull skips what is already committed and only requests
+new matches: FotMob's per-match player rows / lineups / goal timelines live in
+`data/processed/fotmob/<kind>_<season>.csv`, the live-match source snapshots in
+`data/processed/live/`. `verify_player_matches.py` then cross-checks each FotMob
+row against Understat + football-data.co.uk (internationals: martj42) and writes
+`verified` = agree / conflict / fotmob_only into those CSVs. `data/raw/` stays
+gitignored scratch. Setup: just add repo secret `FOOTBALL_DATA_ORG_KEY`.
 
 **Manual (rarely — only the deep FBref columns nothing currently reads, and
 Transfermarkt values; needs a real Chrome window):** re-scrape the full FBref

@@ -196,8 +196,9 @@ Transfermarkt values; those need Chrome + a WAF captcha, so run them locally
 roughly monthly per `run_pipeline.md`.
 
 Setup: just the repo secret `FOOTBALL_DATA_ORG_KEY`. `data/processed/` is
-committed, so there's no seed release to maintain; `data/raw/` and the fetch
-caches stay gitignored (CI keeps them in a throwaway `actions/cache` blob).
+committed, so there's no seed release to maintain, and CI keeps no fetch cache:
+the committed CSVs are the record of what's been pulled, so each run only
+requests new matches. `data/raw/` stays gitignored scratch.
 
 ## Known data-scope note
 

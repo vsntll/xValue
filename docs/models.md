@@ -133,7 +133,7 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
   only; the model uses the continuous columns.
 - **`xi_value_ratio`** refines the squad-value ratio with the confirmed
   starting XI's value (`build_match_lineups.py`, off the lineup block
-  `pull_fotmob_players.py` already caches for free) in place of last season's
+  `pull_fotmob_players.py` already commits for free) in place of last season's
   whole-squad value, for any match where that lineup is known. Falls back to
   `value_log_ratio` otherwise (flag `xi_value_known`) - same pattern as
   `market_value_imputed`. Since confirmed lineups exist only for matches

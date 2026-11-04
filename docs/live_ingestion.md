@@ -41,7 +41,8 @@ Default = leagues + UCL/FA/EFL/DFB/CDR/CI/CDF.
     py -3.11 src/pull_live.py --no-stats               # fixtures/results only, fast
     py -3.11 src/pull_live.py --sources espn           # force a single source
 
-Output: `data/raw/live/<source>_<season>.csv` (per-source) and
+Output: `data/processed/live/<source>_<season>.csv` (per-source, committed - a
+finished match already in it isn't re-requested from FotMob / ESPN) and
 `data/processed/live_matches_<season>.csv` (merged).
 
 First full run (2026-09-03): **1,594 fixtures** across ENG1/GER1/ESP1 + UCL/UEL/
