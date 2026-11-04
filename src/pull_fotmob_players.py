@@ -30,7 +30,6 @@ Output: data/processed/fotmob/{player_matches,lineups,events}_<season>.csv
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 import time
 from pathlib import Path
@@ -45,10 +44,7 @@ from fbref_common import current_season  # noqa: E402
 from live.schema import deaccent, normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
-CACHE = ROOT / "data" / "raw" / "live" / "fotmob_players"
-EVENTS_CACHE = ROOT / "data" / "raw" / "live" / "fotmob_events"
 OUT = PROC / "fotmob_player_season.csv"
-MATCH_META = PROC / "fotmob_match_meta.csv"
 BASE = "https://www.fotmob.com/api/data"
 HDRS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)", "Accept": "application/json"}
 SLEEP = 0.5
@@ -227,66 +223,60 @@ def _aggregate(pm: pd.DataFrame) -> pd.DataFrame:
 
 
 def backfill_events(seasons: list[str]) -> None:
-    """Deliberate, bounded backfill of the goal/red-card timeline for matches
-    that already have player stats + a lineup cached (from an earlier pull)
-    but never got matchFacts.events saved - a match needs a fresh request for
-    this regardless of what's already cached, since events weren't captured
-    before this feature existed. Scoped to specific seasons, not the whole
-    history, per the ToS "keep volume low" note above."""
-    if not MATCH_META.exists():
-        raise SystemExit(f"{MATCH_META} not found - pull player stats for these seasons first")
-    EVENTS_CACHE.mkdir(parents=True, exist_ok=True)
-    meta = pd.read_csv(MATCH_META, dtype={"match_id": str})
-    meta = meta[meta["season"].isin(seasons)]
+    """Deliberate, bounded backfill of the goal/red-card timeline for committed
+    matches pulled before events were captured (events_fetched != 1) - each
+    needs a fresh request. Scoped to specific seasons, per the ToS "keep volume
+    low" note above."""
+    meta = store.read_meta()
+    meta = meta[meta["season"].isin(seasons) & (meta["events_fetched"] != 1)]
     print(f"backfilling match events for {len(meta)} matches ({seasons})")
     n_new = n_fail = 0
-    for i, mid in enumerate(meta["match_id"]):
-        ef = EVENTS_CACHE / f"{mid}.json"
-        if ef.exists():
-            continue
-        try:
-            d = _get("matchDetails", matchId=mid)
-        except requests.HTTPError:
-            n_fail += 1
-            continue
-        ef.write_text(json.dumps(_extract_events(d)))
-        n_new += 1
-        if n_new % 200 == 0:
-            print(f"  {i + 1}/{len(meta)}  ({n_new} newly fetched, {n_fail} failed)")
-    print(f"done: {n_new} newly fetched, {n_fail} failed, "
-          f"{len(list(EVENTS_CACHE.glob('*.json')))} total cached")
+    for season, g in meta.groupby("season"):
+        rows, ok = [], []
+        for mid in g["match_id"]:
+            try:
+                d = _get("matchDetails", matchId=mid)
+            except requests.HTTPError:
+                n_fail += 1
+                continue
+            rows += [{"match_id": mid, **e} for e in _extract_events(d)]
+            ok.append(mid)
+        store.upsert("events", season, pd.DataFrame(rows))
+        if ok:
+            store.upsert_meta(pd.DataFrame({"match_id": ok, "events_fetched": 1}))
+        n_new += len(ok)
+    print(f"done: {n_new} newly fetched, {n_fail} failed")
 
 
 def backfill_player_stats(seasons: list[str]) -> None:
-    """Deliberate, bounded re-fetch of matches whose player-stats cache predates
-    passes_completed/passes_attempted (added for build_player_elo.py's role-
-    weighted rating - see PASS_KEY above). A match's cache is only overwritten
-    if it's missing these fields; already-backfilled matches are skipped, so a
-    re-run after an interruption picks up where it left off. Scoped to
-    specific seasons, per the ToS "keep volume low" note above."""
-    if not MATCH_META.exists():
-        raise SystemExit(f"{MATCH_META} not found - pull player stats for these seasons first")
-    meta = pd.read_csv(MATCH_META, dtype={"match_id": str})
-    meta = meta[meta["season"].isin(seasons)]
-    print(f"backfilling pass stats for {len(meta)} matches ({seasons})")
-    n_new = n_skip = n_fail = 0
-    for i, mid in enumerate(meta["match_id"]):
-        cf = CACHE / f"{mid}.json"
-        if cf.exists():
-            cached = json.loads(cf.read_text())
-            if not cached or "passes_attempted" in cached[0]:
-                n_skip += 1
-                continue
-        try:
-            d = _get("matchDetails", matchId=mid)
-        except requests.HTTPError:
-            n_fail += 1
+    """Deliberate, bounded re-fetch of committed matches whose player rows
+    predate passes_completed/passes_attempted (added for build_player_elo.py's
+    role-weighted rating - see PASS_KEY above). Matches that already carry them
+    are skipped, so a re-run after an interruption picks up where it left off.
+    Scoped to specific seasons, per the ToS "keep volume low" note above."""
+    n_new = n_fail = 0
+    for season in seasons:
+        pm = store.read("player_matches", [season])
+        if pm.empty:
             continue
-        cf.write_text(json.dumps(_extract_player_rows(d, mid)))
-        n_new += 1
-        if n_new % 200 == 0:
-            print(f"  {i + 1}/{len(meta)}  ({n_new} newly fetched, {n_skip} already done, {n_fail} failed)")
-    print(f"done: {n_new} newly fetched, {n_skip} already done, {n_fail} failed")
+        if "passes_attempted" not in pm:
+            pm["passes_attempted"] = None
+        has = pm.groupby("match_id")["passes_attempted"].apply(lambda s: s.notna().any())
+        todo = has[~has].index.tolist()
+        print(f"backfilling pass stats for {len(todo)} matches ({season})")
+        code_of = pm.drop_duplicates("match_id").set_index("match_id")["src_league"]
+        rows = []
+        for mid in todo:
+            try:
+                d = _get("matchDetails", matchId=mid.removeprefix("fotmob:"))
+            except requests.HTTPError:
+                n_fail += 1
+                continue
+            rows += [{**r, "season": season, "src_league": code_of[mid]}
+                     for r in _extract_player_rows(d, mid.removeprefix("fotmob:"))]
+            n_new += 1
+        store.upsert("player_matches", season, pd.DataFrame(rows))
+    print(f"done: {n_new} newly fetched, {n_fail} failed")
 
 
 def main() -> None:
