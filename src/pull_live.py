@@ -16,7 +16,8 @@ Run (Python 3.11+):
     py -3.11 src/pull_live.py --no-stats            # fixtures/results only, fast
 
 Output:
-    data/raw/live/<source>_<season>.csv      per-source snapshot
+    data/processed/live/<source>_<season>.csv  per-source snapshot (committed; a
+                                               finished match in it isn't re-requested)
     data/processed/live_matches_<season>.csv merged, schema.MATCH_COLS
 """
 
@@ -33,7 +34,10 @@ from live import espn, fotmob, football_data_org, sofascore, understat
 from live.schema import DEFAULT_COMPS, MATCH_COLS, teams_match
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-RAW_DIR = PROJECT_ROOT / "data" / "raw" / "live"
+SNAP_DIR = PROJECT_ROOT / "data" / "processed" / "live"
+# sources whose per-match detail requests are skipped for finished matches
+# already in the committed snapshot
+KNOWN_FROM_SNAPSHOT = {"espn": espn, "fotmob": fotmob}
 OUT_DIR = PROJECT_ROOT / "data" / "processed"
 
 SOURCES = {
@@ -141,21 +145,27 @@ def _merge(frames: list[tuple[str, pd.DataFrame]]) -> pd.DataFrame:
 
 def _run_season(season: str, comps: list[str], order: list[str], stats: bool) -> None:
     print(f"\n=== season {season} | comps {comps} | sources {order} ===")
-    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    SNAP_DIR.mkdir(parents=True, exist_ok=True)
     frames = []
     for name in order:
         print(f"[{name}]")
+        snap = SNAP_DIR / f"{name}_{season}.csv"
+        prev = pd.read_csv(snap) if snap.exists() else pd.DataFrame(columns=MATCH_COLS)
+        if name in KNOWN_FROM_SNAPSHOT:
+            done = prev[prev["FTHG"].notna() & prev["FTAG"].notna()]
+            KNOWN_FROM_SNAPSHOT[name].KNOWN = {
+                r["match_id"]: {k: v for k, v in r.items() if pd.notna(v)}
+                for r in done.to_dict("records")}
         try:
             df = SOURCES[name](comps, season, with_stats=stats)
         except NotImplementedError as e:
             print(f"  skipped: {e}")
             continue
-        # keep any comps already snapshotted for this source/season from a prior
-        # (possibly narrower) run
-        snap = RAW_DIR / f"{name}_{season}.csv"
-        if snap.exists():
-            prev = pd.read_csv(snap)
-            prev = prev[~prev["comp_code"].isin(comps)]
+        # keep any comps already snapshotted for this source/season that this run
+        # didn't return - a narrower run, or a source that failed / is down
+        # (an outage must not wipe the rows it delivered before)
+        if len(prev):
+            prev = prev[~prev["comp_code"].isin(df["comp_code"].unique())]
             df = pd.concat([prev, df], ignore_index=True)
         df.to_csv(snap, index=False)
         frames.append((name, df))

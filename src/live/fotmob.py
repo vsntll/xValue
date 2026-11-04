@@ -9,16 +9,14 @@ Endpoints (no key today; may need an ``x-mas`` header later):
     /api/data/matchDetails?matchId=<id>                   xG + full box score
 
 FotMob's fixture-list home/away fields are team-relative and unreliable, so we
-read the correct teams + score + xG from matchDetails. Each match detail is
-cached (``data/raw/live/fotmob/<id>.json``, trimmed) so re-runs cost almost
-nothing. FotMob's ToS restricts programmatic use - keep volume low.
+read the correct teams + score + xG from matchDetails. A finished match already
+in the committed snapshot (pull_live.py sets ``KNOWN`` from it) is reused rather
+than re-requested, so re-runs cost almost nothing. FotMob's ToS restricts programmatic use - keep volume low.
 """
 
 from __future__ import annotations
 
-import json
 import time
-from pathlib import Path
 
 import requests
 
@@ -26,8 +24,8 @@ from .schema import ALL_COMPS, blank_frame, finalize
 
 BASE = "https://www.fotmob.com/api/data"
 HDRS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)", "Accept": "application/json"}
-CACHE = Path(__file__).resolve().parent.parent.parent / "data" / "raw" / "live" / "fotmob"
 SLEEP = 0.5
+KNOWN: dict[str, dict] = {}  # match_id -> committed snapshot row (set by pull_live.py)
 
 # our comp code -> FotMob league id
 _LID = {
@@ -67,10 +65,9 @@ def _num(v):
 
 def _detail(match_id: str) -> dict | None:
     """Trimmed match detail: correct teams, score, xG + box-score stats."""
-    CACHE.mkdir(parents=True, exist_ok=True)
-    dst = CACHE / f"{match_id}.json"
-    if dst.exists():
-        return json.loads(dst.read_text())
+    known = KNOWN.get(f"fotmob:{match_id}")
+    if known is not None:
+        return known
     try:
         d = _get(f"{BASE}/matchDetails", matchId=match_id)
     except requests.HTTPError:
@@ -95,7 +92,6 @@ def _detail(match_id: str) -> dict | None:
             vals = s.get("stats")
             if tgt and isinstance(vals, list) and len(vals) == 2:
                 out[tgt[0]], out[tgt[1]] = _num(vals[0]), _num(vals[1])
-    dst.write_text(json.dumps(out))
     return out
 
 

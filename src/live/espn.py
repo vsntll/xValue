@@ -7,9 +7,7 @@ unsanctioned - keep volume low, expect endpoints to shift.
 
 from __future__ import annotations
 
-import json
 import time
-from pathlib import Path
 
 import requests
 
@@ -17,7 +15,7 @@ from .schema import ALL_COMPS, blank_frame, finalize
 
 BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer"
 SLEEP = 0.3
-_CACHE = Path(__file__).resolve().parent.parent.parent / "data" / "raw" / "live" / "espn"
+KNOWN: dict[str, dict] = {}  # match_id -> committed snapshot row (set by pull_live.py)
 
 # ESPN box-score stat name -> our column, per home/away side
 _STAT_MAP = {
@@ -41,11 +39,13 @@ def _get(url: str, **params) -> dict:
 
 
 def _event_stats(league_code: str, event_id: str) -> dict:
-    """{'HS':.., 'AS':.., 'HPoss':.., ...} from the summary box score. Cached -
-    a finished match's box score never changes."""
-    cf = _CACHE / f"boxscore_{event_id}.json"
-    if cf.exists():
-        return json.loads(cf.read_text())
+    """{'HS':.., 'AS':.., 'HPoss':.., ...} from the summary box score. A finished
+    match's box score never changes, so one already in the committed snapshot
+    is reused rather than re-requested."""
+    known = KNOWN.get(f"espn:{event_id}")
+    if known is not None:
+        return {f"{side}{suffix}": known[f"{side}{suffix}"] for side in "HA"
+                for suffix in _STAT_MAP.values() if known.get(f"{side}{suffix}") is not None}
     try:
         s = _get(f"{BASE}/{league_code}/summary", event=event_id)
     except requests.HTTPError:
@@ -58,8 +58,6 @@ def _event_stats(league_code: str, event_id: str) -> dict:
             v = vals.get(espn_name)
             if v not in (None, ""):
                 out[f"{side}{suffix}"] = float(v) if "." in str(v) else int(v)
-    _CACHE.mkdir(parents=True, exist_ok=True)
-    cf.write_text(json.dumps(out))
     return out
 
 
