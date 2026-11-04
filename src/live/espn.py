@@ -25,9 +25,11 @@ _STAT_MAP = {
 }
 
 
-def _season_range(season: str) -> str:
+def _season_months(season: str) -> list[str]:
+    """July..June as YYYYMM - the scoreboard rejects date ranges (HTTP 400 since
+    autumn 2026) but still takes a whole month."""
     start = int(season.split("-")[0])
-    return f"{start}0701-{start + 1}0701"
+    return [f"{start + (m < 7)}{m:02d}" for m in (*range(7, 13), *range(1, 7))]
 
 
 def _get(url: str, **params) -> dict:
@@ -68,12 +70,17 @@ def fetch(comp_codes: list[str], season: str, with_stats: bool = True) -> "objec
         if not cfg or not cfg.get("espn"):
             continue
         lc = cfg["espn"]
-        try:
-            board = _get(f"{BASE}/{lc}/scoreboard", dates=_season_range(season), limit=1000)
-        except requests.HTTPError as e:
-            print(f"  espn {code}: scoreboard failed ({e})")
-            continue
-        events = board.get("events", [])
+        events, seen = [], set()
+        for month in _season_months(season):
+            try:
+                board = _get(f"{BASE}/{lc}/scoreboard", dates=month, limit=1000)
+            except requests.HTTPError as e:
+                print(f"  espn {code} {month}: scoreboard failed ({e})")
+                continue
+            for ev in board.get("events", []):
+                if ev["id"] not in seen:
+                    seen.add(ev["id"])
+                    events.append(ev)
         print(f"  espn {code}: {len(events)} events")
         for ev in events:
             comp = ev["competitions"][0]
