@@ -176,8 +176,15 @@ jobs:
             echo "nothing changed - nothing to commit"
           else
             git commit -m "Auto refresh: fixtures, odds, values, Understat current-season stats, models + site ($(date -u +%Y-%m-%d))"
-            git pull --rebase --autostash origin master
-            git push
-            # a GITHUB_TOKEN push doesn't trigger deploy-pages.yml's push event
-            gh workflow run deploy-pages.yml || echo "(no deploy-pages workflow / Pages not enabled yet)"
+            # rebase onto whatever landed on this run's branch meanwhile; the
+            # checkout is shallow, so fetch enough history to find the merge base
+            # (without it every commit replays as an add/add conflict)
+            git fetch --depth=50 origin "$GITHUB_REF_NAME"
+            git rebase --autostash FETCH_HEAD
+            git push origin "HEAD:$GITHUB_REF_NAME"
+            # a GITHUB_TOKEN push doesn't trigger deploy-pages.yml's push event;
+            # only a master run publishes the site (a test branch never does)
+            if [ "$GITHUB_REF_NAME" = master ]; then
+              gh workflow run deploy-pages.yml || echo "(no deploy-pages workflow / Pages not enabled yet)"
+            fi
           fi
