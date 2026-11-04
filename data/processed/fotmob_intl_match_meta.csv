@@ -1293,110 +1293,110 @@ match_id,verified,date,competition,home,away,home_score,away_score,fetched
 5159787,agree,2026-02-26,Friendlies,Mexico,Iceland,4,0,1
 5166907,agree,2026-03-27,Friendlies,Montenegro,Andorra,2,0,1
 5166908,agree,2026-03-31,Friendlies,Montenegro,Slovenia,2,3,1
-5181776,fotmob_only,2026-09-26,UEFA Nations League B,Slovenia,Scotland,0,0,1
-5181777,fotmob_only,2026-09-26,UEFA Nations League B,North Macedonia,Switzerland,0,3,1
-5181778,fotmob_only,2026-09-29,UEFA Nations League B,Scotland,Switzerland,0,3,1
-5181779,fotmob_only,2026-09-29,UEFA Nations League B,Slovenia,North Macedonia,2,0,1
-5181780,fotmob_only,2026-10-03,UEFA Nations League B,North Macedonia,Scotland,0,2,1
-5181781,fotmob_only,2026-10-03,UEFA Nations League B,Switzerland,Slovenia,2,1,1
-5181782,fotmob_only,2026-10-06,UEFA Nations League B,Scotland,Slovenia,1,2,1
-5181783,fotmob_only,2026-10-06,UEFA Nations League B,Switzerland,North Macedonia,3,0,1
-5181788,fotmob_only,2026-09-25,UEFA Nations League A,Italy,Belgium,0,2,1
-5181789,fotmob_only,2026-09-25,UEFA Nations League A,Turkey,France,0,1,1
-5181790,fotmob_only,2026-09-28,UEFA Nations League A,Belgium,France,0,1,1
-5181791,fotmob_only,2026-09-28,UEFA Nations League A,Turkey,Italy,1,4,1
-5181792,fotmob_only,2026-10-02,UEFA Nations League A,Belgium,Turkey,3,0,1
-5181793,fotmob_only,2026-10-02,UEFA Nations League A,France,Italy,1,1,1
-5181794,fotmob_only,2026-10-05,UEFA Nations League A,France,Belgium,4,1,1
-5181795,fotmob_only,2026-10-05,UEFA Nations League A,Italy,Turkey,3,1,1
-5181800,fotmob_only,2026-09-25,UEFA Nations League B,Georgia,Northern Ireland,0,1,1
-5181801,fotmob_only,2026-09-25,UEFA Nations League B,Hungary,Ukraine,0,1,1
-5181802,fotmob_only,2026-09-28,UEFA Nations League B,Georgia,Ukraine,0,0,1
-5181803,fotmob_only,2026-09-28,UEFA Nations League B,Northern Ireland,Hungary,0,0,1
-5181804,fotmob_only,2026-10-02,UEFA Nations League B,Hungary,Georgia,1,0,1
-5181805,fotmob_only,2026-10-02,UEFA Nations League B,Ukraine,Northern Ireland,0,3,1
-5181806,fotmob_only,2026-10-05,UEFA Nations League B,Northern Ireland,Georgia,0,0,1
-5181807,fotmob_only,2026-10-05,UEFA Nations League B,Ukraine,Hungary,1,2,1
-5181812,fotmob_only,2026-09-24,UEFA Nations League B,Austria,Israel,3,1,1
-5181813,fotmob_only,2026-09-24,UEFA Nations League B,Kosovo,Republic of Ireland,1,0,1
-5181814,fotmob_only,2026-09-27,UEFA Nations League B,Austria,Kosovo,3,1,1
-5181815,fotmob_only,2026-09-27,UEFA Nations League B,Israel,Republic of Ireland,0,3,1
-5181816,fotmob_only,2026-10-01,UEFA Nations League B,Israel,Kosovo,0,0,1
-5181817,fotmob_only,2026-10-01,UEFA Nations League B,Republic of Ireland,Austria,2,2,1
-5181818,fotmob_only,2026-10-04,UEFA Nations League B,Kosovo,Austria,1,1,1
-5181819,fotmob_only,2026-10-04,UEFA Nations League B,Republic of Ireland,Israel,1,1,1
-5181825,fotmob_only,2026-09-24,UEFA Nations League A,Netherlands,Germany,1,1,1
-5181826,fotmob_only,2026-09-24,UEFA Nations League A,Serbia,Greece,1,2,1
-5181827,fotmob_only,2026-09-27,UEFA Nations League A,Serbia,Netherlands,1,2,1
-5181828,fotmob_only,2026-09-27,UEFA Nations League A,Germany,Greece,0,1,1
-5181829,fotmob_only,2026-10-01,UEFA Nations League A,Germany,Serbia,2,0,1
-5181830,fotmob_only,2026-10-01,UEFA Nations League A,Greece,Netherlands,2,2,1
-5181831,fotmob_only,2026-10-04,UEFA Nations League A,Greece,Germany,0,0,1
-5181832,fotmob_only,2026-10-04,UEFA Nations League A,Netherlands,Serbia,2,1,1
-5181837,fotmob_only,2026-09-25,UEFA Nations League B,Poland,Bosnia and Herzegovina,0,0,1
-5181838,fotmob_only,2026-09-25,UEFA Nations League B,Sweden,Romania,2,1,1
-5181839,fotmob_only,2026-09-28,UEFA Nations League B,Romania,Bosnia and Herzegovina,2,4,1
-5181840,fotmob_only,2026-09-28,UEFA Nations League B,Sweden,Poland,3,1,1
-5181841,fotmob_only,2026-10-02,UEFA Nations League B,Bosnia and Herzegovina,Sweden,1,1,1
-5181842,fotmob_only,2026-10-02,UEFA Nations League B,Poland,Romania,6,0,1
-5181843,fotmob_only,2026-10-05,UEFA Nations League B,Bosnia and Herzegovina,Poland,1,0,1
-5181844,fotmob_only,2026-10-05,UEFA Nations League B,Romania,Sweden,0,1,1
-5181849,fotmob_only,2026-09-26,UEFA Nations League A,Czech Republic,Croatia,1,2,1
-5181850,fotmob_only,2026-09-26,UEFA Nations League A,England,Spain,2,3,1
-5181851,fotmob_only,2026-09-29,UEFA Nations League A,Czech Republic,England,0,2,1
-5181852,fotmob_only,2026-09-29,UEFA Nations League A,Spain,Croatia,4,1,1
-5181853,fotmob_only,2026-10-03,UEFA Nations League A,Croatia,England,0,7,1
-5181854,fotmob_only,2026-10-03,UEFA Nations League A,Spain,Czech Republic,3,1,1
-5181855,fotmob_only,2026-10-06,UEFA Nations League A,Croatia,Spain,1,2,1
-5181856,fotmob_only,2026-10-06,UEFA Nations League A,England,Czech Republic,3,0,1
-5181861,fotmob_only,2026-09-24,UEFA Nations League A,Norway,Denmark,3,2,1
-5181862,fotmob_only,2026-09-24,UEFA Nations League A,Portugal,Wales,1,0,1
-5181863,fotmob_only,2026-09-27,UEFA Nations League A,Denmark,Wales,2,0,1
-5181864,fotmob_only,2026-09-27,UEFA Nations League A,Norway,Portugal,1,2,1
-5181865,fotmob_only,2026-10-01,UEFA Nations League A,Denmark,Portugal,2,4,1
-5181866,fotmob_only,2026-10-01,UEFA Nations League A,Wales,Norway,2,1,1
-5181867,fotmob_only,2026-10-04,UEFA Nations League A,Portugal,Norway,2,1,1
-5181868,fotmob_only,2026-10-04,UEFA Nations League A,Wales,Denmark,0,1,1
-5181874,fotmob_only,2026-09-24,UEFA Nations League D,Andorra,Malta,1,2,1
-5181875,fotmob_only,2026-09-27,UEFA Nations League D,Gibraltar,Andorra,0,0,1
-5181876,fotmob_only,2026-10-01,UEFA Nations League D,Malta,Gibraltar,1,1,1
-5181877,fotmob_only,2026-10-04,UEFA Nations League D,Malta,Andorra,1,0,1
-5181880,fotmob_only,2026-09-24,UEFA Nations League D,Liechtenstein,Lithuania,0,2,1
-5181881,fotmob_only,2026-09-27,UEFA Nations League D,Lithuania,Azerbaijan,1,1,1
-5181882,fotmob_only,2026-10-01,UEFA Nations League D,Azerbaijan,Liechtenstein,0,0,1
-5181883,fotmob_only,2026-10-04,UEFA Nations League D,Azerbaijan,Lithuania,1,0,1
-5181894,fotmob_only,2026-09-26,UEFA Nations League C,San Marino,Finland,0,7,1
-5181895,fotmob_only,2026-09-26,UEFA Nations League C,Albania,Belarus,2,0,1
-5181896,fotmob_only,2026-09-29,UEFA Nations League C,Finland,Belarus,0,0,1
-5181897,fotmob_only,2026-09-29,UEFA Nations League C,San Marino,Albania,0,3,1
-5181898,fotmob_only,2026-10-03,UEFA Nations League C,Finland,Albania,2,1,1
-5181899,fotmob_only,2026-10-03,UEFA Nations League C,Belarus,San Marino,4,0,1
-5181900,fotmob_only,2026-10-06,UEFA Nations League C,Albania,San Marino,2,1,1
-5181901,fotmob_only,2026-10-06,UEFA Nations League C,Belarus,Finland,1,0,1
-5181921,fotmob_only,2026-09-25,UEFA Nations League C,Armenia,Latvia,2,0,1
-5181922,fotmob_only,2026-09-25,UEFA Nations League C,Montenegro,Cyprus,2,1,1
-5181923,fotmob_only,2026-09-28,UEFA Nations League C,Armenia,Montenegro,2,3,1
-5181924,fotmob_only,2026-09-28,UEFA Nations League C,Latvia,Cyprus,0,0,1
-5181925,fotmob_only,2026-10-02,UEFA Nations League C,Cyprus,Armenia,2,0,1
-5181926,fotmob_only,2026-10-02,UEFA Nations League C,Latvia,Montenegro,1,2,1
-5181927,fotmob_only,2026-10-05,UEFA Nations League C,Cyprus,Latvia,2,1,1
-5181928,fotmob_only,2026-10-05,UEFA Nations League C,Montenegro,Armenia,0,0,1
-5181933,fotmob_only,2026-09-26,UEFA Nations League C,Faroe Islands,Kazakhstan,1,1,1
-5181934,fotmob_only,2026-09-26,UEFA Nations League C,Slovakia,Moldova,2,0,1
-5181935,fotmob_only,2026-09-29,UEFA Nations League C,Moldova,Faroe Islands,1,1,1
-5181936,fotmob_only,2026-09-29,UEFA Nations League C,Slovakia,Kazakhstan,2,1,1
-5181937,fotmob_only,2026-10-02,UEFA Nations League C,Kazakhstan,Moldova,1,2,1
-5181938,fotmob_only,2026-10-02,UEFA Nations League C,Faroe Islands,Slovakia,1,1,1
-5181939,fotmob_only,2026-10-06,UEFA Nations League C,Kazakhstan,Faroe Islands,2,2,1
-5181940,fotmob_only,2026-10-06,UEFA Nations League C,Moldova,Slovakia,0,4,1
-5181949,fotmob_only,2026-09-26,UEFA Nations League C,Bulgaria,Luxembourg,1,2,1
-5181950,fotmob_only,2026-09-26,UEFA Nations League C,Iceland,Estonia,1,1,1
-5181951,fotmob_only,2026-09-29,UEFA Nations League C,Bulgaria,Estonia,0,0,1
-5181952,fotmob_only,2026-09-29,UEFA Nations League C,Luxembourg,Iceland,0,3,1
-5181953,fotmob_only,2026-10-03,UEFA Nations League C,Estonia,Luxembourg,1,0,1
-5181954,fotmob_only,2026-10-03,UEFA Nations League C,Iceland,Bulgaria,3,0,1
-5181955,fotmob_only,2026-10-06,UEFA Nations League C,Estonia,Iceland,0,0,1
-5181956,fotmob_only,2026-10-06,UEFA Nations League C,Luxembourg,Bulgaria,0,2,1
+5181776,agree,2026-09-26,UEFA Nations League B,Slovenia,Scotland,0,0,1
+5181777,agree,2026-09-26,UEFA Nations League B,North Macedonia,Switzerland,0,3,1
+5181778,agree,2026-09-29,UEFA Nations League B,Scotland,Switzerland,0,3,1
+5181779,agree,2026-09-29,UEFA Nations League B,Slovenia,North Macedonia,2,0,1
+5181780,agree,2026-10-03,UEFA Nations League B,North Macedonia,Scotland,0,2,1
+5181781,agree,2026-10-03,UEFA Nations League B,Switzerland,Slovenia,2,1,1
+5181782,agree,2026-10-06,UEFA Nations League B,Scotland,Slovenia,1,2,1
+5181783,agree,2026-10-06,UEFA Nations League B,Switzerland,North Macedonia,3,0,1
+5181788,agree,2026-09-25,UEFA Nations League A,Italy,Belgium,0,2,1
+5181789,agree,2026-09-25,UEFA Nations League A,Turkey,France,0,1,1
+5181790,agree,2026-09-28,UEFA Nations League A,Belgium,France,0,1,1
+5181791,agree,2026-09-28,UEFA Nations League A,Turkey,Italy,1,4,1
+5181792,agree,2026-10-02,UEFA Nations League A,Belgium,Turkey,3,0,1
+5181793,agree,2026-10-02,UEFA Nations League A,France,Italy,1,1,1
+5181794,agree,2026-10-05,UEFA Nations League A,France,Belgium,4,1,1
+5181795,agree,2026-10-05,UEFA Nations League A,Italy,Turkey,3,1,1
+5181800,agree,2026-09-25,UEFA Nations League B,Georgia,Northern Ireland,0,1,1
+5181801,agree,2026-09-25,UEFA Nations League B,Hungary,Ukraine,0,1,1
+5181802,agree,2026-09-28,UEFA Nations League B,Georgia,Ukraine,0,0,1
+5181803,agree,2026-09-28,UEFA Nations League B,Northern Ireland,Hungary,0,0,1
+5181804,agree,2026-10-02,UEFA Nations League B,Hungary,Georgia,1,0,1
+5181805,agree,2026-10-02,UEFA Nations League B,Ukraine,Northern Ireland,0,3,1
+5181806,agree,2026-10-05,UEFA Nations League B,Northern Ireland,Georgia,0,0,1
+5181807,agree,2026-10-05,UEFA Nations League B,Ukraine,Hungary,1,2,1
+5181812,agree,2026-09-24,UEFA Nations League B,Austria,Israel,3,1,1
+5181813,agree,2026-09-24,UEFA Nations League B,Kosovo,Republic of Ireland,1,0,1
+5181814,agree,2026-09-27,UEFA Nations League B,Austria,Kosovo,3,1,1
+5181815,agree,2026-09-27,UEFA Nations League B,Israel,Republic of Ireland,0,3,1
+5181816,agree,2026-10-01,UEFA Nations League B,Israel,Kosovo,0,0,1
+5181817,agree,2026-10-01,UEFA Nations League B,Republic of Ireland,Austria,2,2,1
+5181818,agree,2026-10-04,UEFA Nations League B,Kosovo,Austria,1,1,1
+5181819,agree,2026-10-04,UEFA Nations League B,Republic of Ireland,Israel,1,1,1
+5181825,agree,2026-09-24,UEFA Nations League A,Netherlands,Germany,1,1,1
+5181826,agree,2026-09-24,UEFA Nations League A,Serbia,Greece,1,2,1
+5181827,agree,2026-09-27,UEFA Nations League A,Serbia,Netherlands,1,2,1
+5181828,agree,2026-09-27,UEFA Nations League A,Germany,Greece,0,1,1
+5181829,agree,2026-10-01,UEFA Nations League A,Germany,Serbia,2,0,1
+5181830,agree,2026-10-01,UEFA Nations League A,Greece,Netherlands,2,2,1
+5181831,agree,2026-10-04,UEFA Nations League A,Greece,Germany,0,0,1
+5181832,agree,2026-10-04,UEFA Nations League A,Netherlands,Serbia,2,1,1
+5181837,agree,2026-09-25,UEFA Nations League B,Poland,Bosnia and Herzegovina,0,0,1
+5181838,agree,2026-09-25,UEFA Nations League B,Sweden,Romania,2,1,1
+5181839,agree,2026-09-28,UEFA Nations League B,Romania,Bosnia and Herzegovina,2,4,1
+5181840,agree,2026-09-28,UEFA Nations League B,Sweden,Poland,3,1,1
+5181841,agree,2026-10-02,UEFA Nations League B,Bosnia and Herzegovina,Sweden,1,1,1
+5181842,agree,2026-10-02,UEFA Nations League B,Poland,Romania,6,0,1
+5181843,agree,2026-10-05,UEFA Nations League B,Bosnia and Herzegovina,Poland,1,0,1
+5181844,agree,2026-10-05,UEFA Nations League B,Romania,Sweden,0,1,1
+5181849,agree,2026-09-26,UEFA Nations League A,Czech Republic,Croatia,1,2,1
+5181850,agree,2026-09-26,UEFA Nations League A,England,Spain,2,3,1
+5181851,agree,2026-09-29,UEFA Nations League A,Czech Republic,England,0,2,1
+5181852,agree,2026-09-29,UEFA Nations League A,Spain,Croatia,4,1,1
+5181853,agree,2026-10-03,UEFA Nations League A,Croatia,England,0,7,1
+5181854,agree,2026-10-03,UEFA Nations League A,Spain,Czech Republic,3,1,1
+5181855,agree,2026-10-06,UEFA Nations League A,Croatia,Spain,1,2,1
+5181856,agree,2026-10-06,UEFA Nations League A,England,Czech Republic,3,0,1
+5181861,agree,2026-09-24,UEFA Nations League A,Norway,Denmark,3,2,1
+5181862,agree,2026-09-24,UEFA Nations League A,Portugal,Wales,1,0,1
+5181863,agree,2026-09-27,UEFA Nations League A,Denmark,Wales,2,0,1
+5181864,agree,2026-09-27,UEFA Nations League A,Norway,Portugal,1,2,1
+5181865,agree,2026-10-01,UEFA Nations League A,Denmark,Portugal,2,4,1
+5181866,agree,2026-10-01,UEFA Nations League A,Wales,Norway,2,1,1
+5181867,agree,2026-10-04,UEFA Nations League A,Portugal,Norway,2,1,1
+5181868,agree,2026-10-04,UEFA Nations League A,Wales,Denmark,0,1,1
+5181874,agree,2026-09-24,UEFA Nations League D,Andorra,Malta,1,2,1
+5181875,agree,2026-09-27,UEFA Nations League D,Gibraltar,Andorra,0,0,1
+5181876,agree,2026-10-01,UEFA Nations League D,Malta,Gibraltar,1,1,1
+5181877,agree,2026-10-04,UEFA Nations League D,Malta,Andorra,1,0,1
+5181880,agree,2026-09-24,UEFA Nations League D,Liechtenstein,Lithuania,0,2,1
+5181881,agree,2026-09-27,UEFA Nations League D,Lithuania,Azerbaijan,1,1,1
+5181882,agree,2026-10-01,UEFA Nations League D,Azerbaijan,Liechtenstein,0,0,1
+5181883,agree,2026-10-04,UEFA Nations League D,Azerbaijan,Lithuania,1,0,1
+5181894,agree,2026-09-26,UEFA Nations League C,San Marino,Finland,0,7,1
+5181895,agree,2026-09-26,UEFA Nations League C,Albania,Belarus,2,0,1
+5181896,agree,2026-09-29,UEFA Nations League C,Finland,Belarus,0,0,1
+5181897,agree,2026-09-29,UEFA Nations League C,San Marino,Albania,0,3,1
+5181898,agree,2026-10-03,UEFA Nations League C,Finland,Albania,2,1,1
+5181899,agree,2026-10-03,UEFA Nations League C,Belarus,San Marino,4,0,1
+5181900,agree,2026-10-06,UEFA Nations League C,Albania,San Marino,2,1,1
+5181901,agree,2026-10-06,UEFA Nations League C,Belarus,Finland,1,0,1
+5181921,agree,2026-09-25,UEFA Nations League C,Armenia,Latvia,2,0,1
+5181922,agree,2026-09-25,UEFA Nations League C,Montenegro,Cyprus,2,1,1
+5181923,agree,2026-09-28,UEFA Nations League C,Armenia,Montenegro,2,3,1
+5181924,agree,2026-09-28,UEFA Nations League C,Latvia,Cyprus,0,0,1
+5181925,agree,2026-10-02,UEFA Nations League C,Cyprus,Armenia,2,0,1
+5181926,agree,2026-10-02,UEFA Nations League C,Latvia,Montenegro,1,2,1
+5181927,agree,2026-10-05,UEFA Nations League C,Cyprus,Latvia,2,1,1
+5181928,agree,2026-10-05,UEFA Nations League C,Montenegro,Armenia,0,0,1
+5181933,agree,2026-09-26,UEFA Nations League C,Faroe Islands,Kazakhstan,1,1,1
+5181934,agree,2026-09-26,UEFA Nations League C,Slovakia,Moldova,2,0,1
+5181935,agree,2026-09-29,UEFA Nations League C,Moldova,Faroe Islands,1,1,1
+5181936,agree,2026-09-29,UEFA Nations League C,Slovakia,Kazakhstan,2,1,1
+5181937,agree,2026-10-02,UEFA Nations League C,Kazakhstan,Moldova,1,2,1
+5181938,agree,2026-10-02,UEFA Nations League C,Faroe Islands,Slovakia,1,1,1
+5181939,agree,2026-10-06,UEFA Nations League C,Kazakhstan,Faroe Islands,2,2,1
+5181940,agree,2026-10-06,UEFA Nations League C,Moldova,Slovakia,0,4,1
+5181949,agree,2026-09-26,UEFA Nations League C,Bulgaria,Luxembourg,1,2,1
+5181950,agree,2026-09-26,UEFA Nations League C,Iceland,Estonia,1,1,1
+5181951,agree,2026-09-29,UEFA Nations League C,Bulgaria,Estonia,0,0,1
+5181952,agree,2026-09-29,UEFA Nations League C,Luxembourg,Iceland,0,3,1
+5181953,agree,2026-10-03,UEFA Nations League C,Estonia,Luxembourg,1,0,1
+5181954,agree,2026-10-03,UEFA Nations League C,Iceland,Bulgaria,3,0,1
+5181955,agree,2026-10-06,UEFA Nations League C,Estonia,Iceland,0,0,1
+5181956,agree,2026-10-06,UEFA Nations League C,Luxembourg,Bulgaria,0,2,1
 5187272,agree,2026-03-27,Friendlies,Solomon Islands,Bulgaria,2,10,1
 5187273,agree,2026-03-27,Friendlies,Indonesia,Saint Kitts and Nevis,4,0,1
 5187278,agree,2026-03-27,Friendlies,China,Curaçao,2,0,1
@@ -1430,18 +1430,18 @@ match_id,verified,date,competition,home,away,home_score,away_score,fetched
 5217284,agree,2026-05-23,Friendlies,Mexico,Ghana,2,0,1
 5217285,agree,2026-05-31,Friendlies,Mexico,Australia,1,0,1
 5217286,agree,2026-06-05,Friendlies,Mexico,Serbia,5,1,1
-5224973,fotmob_only,2026-03-26,AFCON Qualification,Djibouti,South Sudan,0,4,1
-5224974,fotmob_only,2026-03-25,AFCON Qualification,Eritrea,Eswatini,2,0,1
-5224975,fotmob_only,2026-03-27,AFCON Qualification,São Tomé and Príncipe,Ethiopia,0,3,1
-5224976,fotmob_only,2026-03-26,AFCON Qualification,Seychelles,Lesotho,0,0,1
-5224977,fotmob_only,2026-03-27,AFCON Qualification,Chad,Burundi,0,4,1
-5224978,fotmob_only,2026-03-27,AFCON Qualification,Somalia,Mauritius,0,0,1
-5224979,fotmob_only,2026-03-31,AFCON Qualification,Eswatini,Eritrea,1,2,1
-5224980,fotmob_only,2026-03-31,AFCON Qualification,Ethiopia,São Tomé and Príncipe,1,0,1
-5224981,fotmob_only,2026-03-29,AFCON Qualification,Lesotho,Seychelles,2,1,1
-5224982,fotmob_only,2026-03-29,AFCON Qualification,South Sudan,Djibouti,0,1,1
-5224983,fotmob_only,2026-03-31,AFCON Qualification,Burundi,Chad,4,0,1
-5224984,fotmob_only,2026-03-31,AFCON Qualification,Mauritius,Somalia,0,0,1
+5224973,agree,2026-03-26,AFCON Qualification,Djibouti,South Sudan,0,4,1
+5224974,agree,2026-03-25,AFCON Qualification,Eritrea,Eswatini,2,0,1
+5224975,agree,2026-03-27,AFCON Qualification,São Tomé and Príncipe,Ethiopia,0,3,1
+5224976,agree,2026-03-26,AFCON Qualification,Seychelles,Lesotho,0,0,1
+5224977,agree,2026-03-27,AFCON Qualification,Chad,Burundi,0,4,1
+5224978,agree,2026-03-27,AFCON Qualification,Somalia,Mauritius,0,0,1
+5224979,agree,2026-03-31,AFCON Qualification,Eswatini,Eritrea,1,2,1
+5224980,agree,2026-03-31,AFCON Qualification,Ethiopia,São Tomé and Príncipe,1,0,1
+5224981,agree,2026-03-29,AFCON Qualification,Lesotho,Seychelles,2,1,1
+5224982,agree,2026-03-29,AFCON Qualification,South Sudan,Djibouti,0,1,1
+5224983,agree,2026-03-31,AFCON Qualification,Burundi,Chad,4,0,1
+5224984,agree,2026-03-31,AFCON Qualification,Mauritius,Somalia,0,0,1
 5226683,agree,2026-06-02,Friendlies,Wales,Ghana,1,1,1
 5246472,agree,2026-03-15,Friendlies,Bolivia,Trinidad and Tobago,3,0,1
 5246832,agree,2026-06-04,Friendlies,France,Ivory Coast,1,2,1
@@ -1643,202 +1643,202 @@ match_id,verified,date,competition,home,away,home_score,away_score,fetched
 5754959,agree,2026-06-09,Friendlies,Togo,Benin,5,1,1
 5765484,agree,2026-06-10,Friendlies,Pakistan,Afghanistan,2,0,1
 5924775,agree,2026-07-18,Friendlies,Vietnam,Myanmar,4,0,1
-5924776,fotmob_only,2026-09-25,Friendlies,Australia,Brazil,1,1,1
-5924777,fotmob_only,2026-09-29,Friendlies,Australia,Brazil,2,4,1
-5985687,fotmob_only,2026-10-03,Friendlies,India,Brazil,0,4,1
-5991873,fotmob_only,2026-09-26,Friendlies,United States,Peru,4,1,1
-5991874,fotmob_only,2026-09-30,Friendlies,United States,Chile,4,2,1
-5991875,fotmob_only,2026-10-04,Friendlies,United States,Mexico,3,0,1
-5991876,fotmob_only,2026-10-07,Friendlies,United States,Canada,1,0,1
-5991877,fotmob_only,2026-09-25,CONCACAF Nations League,Costa Rica,Curaçao,3,4,1
-5991878,fotmob_only,2026-09-25,CONCACAF Nations League,Haiti,Trinidad and Tobago,3,2,1
-5991879,fotmob_only,2026-09-25,CONCACAF Nations League,Dominican Republic,Nicaragua,3,2,1
-5991880,fotmob_only,2026-09-27,CONCACAF Nations League,Haiti,Costa Rica,2,0,1
-5991881,fotmob_only,2026-09-28,CONCACAF Nations League,Trinidad and Tobago,Dominican Republic,1,2,1
-5991882,fotmob_only,2026-09-28,CONCACAF Nations League,Curaçao,Nicaragua,6,1,1
-5991883,fotmob_only,2026-10-01,CONCACAF Nations League,Curaçao,Trinidad and Tobago,1,0,1
-5991884,fotmob_only,2026-10-02,CONCACAF Nations League,Nicaragua,Costa Rica,0,3,1
-5991885,fotmob_only,2026-10-02,CONCACAF Nations League,Dominican Republic,Haiti,1,4,1
-5991886,fotmob_only,2026-10-05,CONCACAF Nations League,Costa Rica,Haiti,2,0,1
-5991887,fotmob_only,2026-10-04,CONCACAF Nations League,Trinidad and Tobago,Curaçao,1,1,1
-5991888,fotmob_only,2026-10-05,CONCACAF Nations League,Nicaragua,Dominican Republic,1,2,1
-5991889,fotmob_only,2026-09-26,CONCACAF Nations League,Honduras,Suriname,2,3,1
-5991890,fotmob_only,2026-09-26,CONCACAF Nations League,Jamaica,Guatemala,3,2,1
-5991891,fotmob_only,2026-09-26,CONCACAF Nations League,El Salvador,Martinique,3,1,1
-5991892,fotmob_only,2026-09-29,CONCACAF Nations League,Jamaica,Honduras,0,1,1
-5991893,fotmob_only,2026-09-29,CONCACAF Nations League,Guatemala,El Salvador,6,0,1
-5991894,fotmob_only,2026-09-28,CONCACAF Nations League,Suriname,Martinique,2,1,1
-5991895,fotmob_only,2026-10-02,CONCACAF Nations League,Suriname,Guatemala,0,0,1
-5991896,fotmob_only,2026-10-03,CONCACAF Nations League,Martinique,Honduras,2,1,1
-5991897,fotmob_only,2026-10-03,CONCACAF Nations League,El Salvador,Jamaica,0,2,1
-5991898,fotmob_only,2026-10-06,CONCACAF Nations League,Honduras,Jamaica,1,1,1
-5991899,fotmob_only,2026-10-06,CONCACAF Nations League,Guatemala,Suriname,1,0,1
-5991900,fotmob_only,2026-10-05,CONCACAF Nations League,Martinique,El Salvador,1,1,1
-5991903,fotmob_only,2026-09-24,CONCACAF Nations League,Puerto Rico,Guyana,0,1,1
-5991904,fotmob_only,2026-09-25,CONCACAF Nations League,Cayman Islands,Dominica,0,0,1
-5991905,fotmob_only,2026-09-27,CONCACAF Nations League,Guyana,Cayman Islands,2,0,1
-5991906,fotmob_only,2026-09-28,CONCACAF Nations League,Dominica,Puerto Rico,0,2,1
-5991907,fotmob_only,2026-10-01,CONCACAF Nations League,Dominica,Guyana,1,5,1
-5991908,fotmob_only,2026-10-02,CONCACAF Nations League,Cayman Islands,Puerto Rico,0,3,1
-5991909,fotmob_only,2026-10-04,CONCACAF Nations League,Guyana,Dominica,8,1,1
-5991910,fotmob_only,2026-10-04,CONCACAF Nations League,Puerto Rico,Cayman Islands,1,0,1
-5991913,fotmob_only,2026-09-25,CONCACAF Nations League,Bermuda,Guadeloupe,1,2,1
-5991914,fotmob_only,2026-09-26,CONCACAF Nations League,Barbados,Saint Lucia,2,0,1
-5991915,fotmob_only,2026-09-28,CONCACAF Nations League,Guadeloupe,Barbados,2,2,1
-5991916,fotmob_only,2026-09-29,CONCACAF Nations League,Saint Lucia,Bermuda,5,2,1
-5991917,fotmob_only,2026-10-02,CONCACAF Nations League,Saint Lucia,Guadeloupe,3,0,1
-5991918,fotmob_only,2026-10-03,CONCACAF Nations League,Barbados,Bermuda,4,1,1
-5991919,fotmob_only,2026-10-05,CONCACAF Nations League,Guadeloupe,Saint Lucia,0,1,1
-5991920,fotmob_only,2026-10-06,CONCACAF Nations League,Bermuda,Barbados,1,2,1
-5991922,fotmob_only,2026-09-25,CONCACAF Nations League,Grenada,Cuba,0,3,1
-5991923,fotmob_only,2026-09-26,CONCACAF Nations League,Bonaire,Saint Kitts and Nevis,1,2,1
-5991924,fotmob_only,2026-09-28,CONCACAF Nations League,Cuba,Bonaire,2,0,1
-5991925,fotmob_only,2026-09-29,CONCACAF Nations League,Saint Kitts and Nevis,Grenada,3,0,1
-5991926,fotmob_only,2026-10-02,CONCACAF Nations League,Saint Kitts and Nevis,Cuba,3,3,1
-5991927,fotmob_only,2026-10-03,CONCACAF Nations League,Bonaire,Grenada,2,3,1
-5991928,fotmob_only,2026-10-05,CONCACAF Nations League,Cuba,Saint Kitts and Nevis,2,2,1
-5991929,fotmob_only,2026-10-06,CONCACAF Nations League,Grenada,Bonaire,1,4,1
-5991930,fotmob_only,2026-09-26,CONCACAF Nations League,Saint Vincent and the Grenadines,French Guiana,2,1,1
-5991931,fotmob_only,2026-09-27,CONCACAF Nations League,Sint Maarten,Belize,0,1,1
-5991932,fotmob_only,2026-09-29,CONCACAF Nations League,French Guiana,Sint Maarten,1,0,1
-5991933,fotmob_only,2026-09-30,CONCACAF Nations League,Belize,Saint Vincent and the Grenadines,0,1,1
-5991934,fotmob_only,2026-10-04,CONCACAF Nations League,Belize,French Guiana,0,2,1
-5991935,fotmob_only,2026-10-03,CONCACAF Nations League,Sint Maarten,Saint Vincent and the Grenadines,2,4,1
-5991936,fotmob_only,2026-10-07,CONCACAF Nations League,French Guiana,Belize,1,0,1
-5991937,fotmob_only,2026-10-06,CONCACAF Nations League,Saint Vincent and the Grenadines,Sint Maarten,4,0,1
-5991938,fotmob_only,2026-09-23,CONCACAF Nations League,Turks and Caicos Islands,Montserrat,0,2,1
-5991939,fotmob_only,2026-09-26,CONCACAF Nations League,Montserrat,British Virgin Islands,3,0,1
-5991940,fotmob_only,2026-09-29,CONCACAF Nations League,British Virgin Islands,Turks and Caicos Islands,0,3,1
-5991941,fotmob_only,2026-10-01,CONCACAF Nations League,British Virgin Islands,Montserrat,0,2,1
-5991942,fotmob_only,2026-10-04,CONCACAF Nations League,Turks and Caicos Islands,British Virgin Islands,3,0,1
-5991943,fotmob_only,2026-10-06,CONCACAF Nations League,Montserrat,Turks and Caicos Islands,4,1,1
-5991944,fotmob_only,2026-09-23,CONCACAF Nations League,Aruba,Antigua and Barbuda,1,0,1
-5991945,fotmob_only,2026-09-26,CONCACAF Nations League,Antigua and Barbuda,Anguilla,5,0,1
-5991946,fotmob_only,2026-09-29,CONCACAF Nations League,Anguilla,Aruba,0,2,1
-5991947,fotmob_only,2026-10-01,CONCACAF Nations League,Anguilla,Antigua and Barbuda,0,3,1
-5991948,fotmob_only,2026-10-04,CONCACAF Nations League,Aruba,Anguilla,3,2,1
-5991949,fotmob_only,2026-10-06,CONCACAF Nations League,Antigua and Barbuda,Aruba,3,2,1
-5991950,fotmob_only,2026-09-23,CONCACAF Nations League,Bahamas,Saint Martin,0,8,1
-5991951,fotmob_only,2026-09-26,CONCACAF Nations League,Saint Martin,United States Virgin Islands,0,2,1
-5991952,fotmob_only,2026-09-29,CONCACAF Nations League,United States Virgin Islands,Bahamas,3,1,1
-5991953,fotmob_only,2026-10-01,CONCACAF Nations League,United States Virgin Islands,Saint Martin,0,5,1
+5924776,agree,2026-09-25,Friendlies,Australia,Brazil,1,1,1
+5924777,agree,2026-09-29,Friendlies,Australia,Brazil,2,4,1
+5985687,agree,2026-10-03,Friendlies,India,Brazil,0,4,1
+5991873,agree,2026-09-26,Friendlies,United States,Peru,4,1,1
+5991874,agree,2026-09-30,Friendlies,United States,Chile,4,2,1
+5991875,agree,2026-10-04,Friendlies,United States,Mexico,3,0,1
+5991876,agree,2026-10-07,Friendlies,United States,Canada,1,0,1
+5991877,agree,2026-09-25,CONCACAF Nations League,Costa Rica,Curaçao,3,4,1
+5991878,agree,2026-09-25,CONCACAF Nations League,Haiti,Trinidad and Tobago,3,2,1
+5991879,agree,2026-09-25,CONCACAF Nations League,Dominican Republic,Nicaragua,3,2,1
+5991880,agree,2026-09-27,CONCACAF Nations League,Haiti,Costa Rica,2,0,1
+5991881,agree,2026-09-28,CONCACAF Nations League,Trinidad and Tobago,Dominican Republic,1,2,1
+5991882,agree,2026-09-28,CONCACAF Nations League,Curaçao,Nicaragua,6,1,1
+5991883,agree,2026-10-01,CONCACAF Nations League,Curaçao,Trinidad and Tobago,1,0,1
+5991884,agree,2026-10-02,CONCACAF Nations League,Nicaragua,Costa Rica,0,3,1
+5991885,agree,2026-10-02,CONCACAF Nations League,Dominican Republic,Haiti,1,4,1
+5991886,agree,2026-10-05,CONCACAF Nations League,Costa Rica,Haiti,2,0,1
+5991887,agree,2026-10-04,CONCACAF Nations League,Trinidad and Tobago,Curaçao,1,1,1
+5991888,agree,2026-10-05,CONCACAF Nations League,Nicaragua,Dominican Republic,1,2,1
+5991889,agree,2026-09-26,CONCACAF Nations League,Honduras,Suriname,2,3,1
+5991890,agree,2026-09-26,CONCACAF Nations League,Jamaica,Guatemala,3,2,1
+5991891,agree,2026-09-26,CONCACAF Nations League,El Salvador,Martinique,3,1,1
+5991892,agree,2026-09-29,CONCACAF Nations League,Jamaica,Honduras,0,1,1
+5991893,agree,2026-09-29,CONCACAF Nations League,Guatemala,El Salvador,6,0,1
+5991894,agree,2026-09-28,CONCACAF Nations League,Suriname,Martinique,2,1,1
+5991895,agree,2026-10-02,CONCACAF Nations League,Suriname,Guatemala,0,0,1
+5991896,agree,2026-10-03,CONCACAF Nations League,Martinique,Honduras,2,1,1
+5991897,agree,2026-10-03,CONCACAF Nations League,El Salvador,Jamaica,0,2,1
+5991898,agree,2026-10-06,CONCACAF Nations League,Honduras,Jamaica,1,1,1
+5991899,agree,2026-10-06,CONCACAF Nations League,Guatemala,Suriname,1,0,1
+5991900,agree,2026-10-05,CONCACAF Nations League,Martinique,El Salvador,1,1,1
+5991903,agree,2026-09-24,CONCACAF Nations League,Puerto Rico,Guyana,0,1,1
+5991904,agree,2026-09-25,CONCACAF Nations League,Cayman Islands,Dominica,0,0,1
+5991905,agree,2026-09-27,CONCACAF Nations League,Guyana,Cayman Islands,2,0,1
+5991906,agree,2026-09-28,CONCACAF Nations League,Dominica,Puerto Rico,0,2,1
+5991907,agree,2026-10-01,CONCACAF Nations League,Dominica,Guyana,1,5,1
+5991908,agree,2026-10-02,CONCACAF Nations League,Cayman Islands,Puerto Rico,0,3,1
+5991909,agree,2026-10-04,CONCACAF Nations League,Guyana,Dominica,8,1,1
+5991910,agree,2026-10-04,CONCACAF Nations League,Puerto Rico,Cayman Islands,1,0,1
+5991913,agree,2026-09-25,CONCACAF Nations League,Bermuda,Guadeloupe,1,2,1
+5991914,agree,2026-09-26,CONCACAF Nations League,Barbados,Saint Lucia,2,0,1
+5991915,agree,2026-09-28,CONCACAF Nations League,Guadeloupe,Barbados,2,2,1
+5991916,agree,2026-09-29,CONCACAF Nations League,Saint Lucia,Bermuda,5,2,1
+5991917,agree,2026-10-02,CONCACAF Nations League,Saint Lucia,Guadeloupe,3,0,1
+5991918,agree,2026-10-03,CONCACAF Nations League,Barbados,Bermuda,4,1,1
+5991919,agree,2026-10-05,CONCACAF Nations League,Guadeloupe,Saint Lucia,0,1,1
+5991920,agree,2026-10-06,CONCACAF Nations League,Bermuda,Barbados,1,2,1
+5991922,agree,2026-09-25,CONCACAF Nations League,Grenada,Cuba,0,3,1
+5991923,agree,2026-09-26,CONCACAF Nations League,Bonaire,Saint Kitts and Nevis,1,2,1
+5991924,agree,2026-09-28,CONCACAF Nations League,Cuba,Bonaire,2,0,1
+5991925,agree,2026-09-29,CONCACAF Nations League,Saint Kitts and Nevis,Grenada,3,0,1
+5991926,agree,2026-10-02,CONCACAF Nations League,Saint Kitts and Nevis,Cuba,3,3,1
+5991927,agree,2026-10-03,CONCACAF Nations League,Bonaire,Grenada,2,3,1
+5991928,agree,2026-10-05,CONCACAF Nations League,Cuba,Saint Kitts and Nevis,2,2,1
+5991929,agree,2026-10-06,CONCACAF Nations League,Grenada,Bonaire,1,4,1
+5991930,agree,2026-09-26,CONCACAF Nations League,Saint Vincent and the Grenadines,French Guiana,2,1,1
+5991931,agree,2026-09-27,CONCACAF Nations League,Sint Maarten,Belize,0,1,1
+5991932,agree,2026-09-29,CONCACAF Nations League,French Guiana,Sint Maarten,1,0,1
+5991933,agree,2026-09-30,CONCACAF Nations League,Belize,Saint Vincent and the Grenadines,0,1,1
+5991934,agree,2026-10-04,CONCACAF Nations League,Belize,French Guiana,0,2,1
+5991935,agree,2026-10-03,CONCACAF Nations League,Sint Maarten,Saint Vincent and the Grenadines,2,4,1
+5991936,agree,2026-10-07,CONCACAF Nations League,French Guiana,Belize,1,0,1
+5991937,agree,2026-10-06,CONCACAF Nations League,Saint Vincent and the Grenadines,Sint Maarten,4,0,1
+5991938,agree,2026-09-23,CONCACAF Nations League,Turks and Caicos Islands,Montserrat,0,2,1
+5991939,agree,2026-09-26,CONCACAF Nations League,Montserrat,British Virgin Islands,3,0,1
+5991940,agree,2026-09-29,CONCACAF Nations League,British Virgin Islands,Turks and Caicos Islands,0,3,1
+5991941,agree,2026-10-01,CONCACAF Nations League,British Virgin Islands,Montserrat,0,2,1
+5991942,agree,2026-10-04,CONCACAF Nations League,Turks and Caicos Islands,British Virgin Islands,3,0,1
+5991943,agree,2026-10-06,CONCACAF Nations League,Montserrat,Turks and Caicos Islands,4,1,1
+5991944,agree,2026-09-23,CONCACAF Nations League,Aruba,Antigua and Barbuda,1,0,1
+5991945,agree,2026-09-26,CONCACAF Nations League,Antigua and Barbuda,Anguilla,5,0,1
+5991946,agree,2026-09-29,CONCACAF Nations League,Anguilla,Aruba,0,2,1
+5991947,agree,2026-10-01,CONCACAF Nations League,Anguilla,Antigua and Barbuda,0,3,1
+5991948,agree,2026-10-04,CONCACAF Nations League,Aruba,Anguilla,3,2,1
+5991949,agree,2026-10-06,CONCACAF Nations League,Antigua and Barbuda,Aruba,3,2,1
+5991950,agree,2026-09-23,CONCACAF Nations League,Bahamas,Saint Martin,0,8,1
+5991951,agree,2026-09-26,CONCACAF Nations League,Saint Martin,United States Virgin Islands,0,2,1
+5991952,agree,2026-09-29,CONCACAF Nations League,United States Virgin Islands,Bahamas,3,1,1
+5991953,agree,2026-10-01,CONCACAF Nations League,United States Virgin Islands,Saint Martin,0,5,1
 5991954,fotmob_only,2026-10-04,CONCACAF Nations League,Bahamas,United States Virgin Islands,2,3,1
-5991955,fotmob_only,2026-10-06,CONCACAF Nations League,Saint Martin,Bahamas,6,0,1
-6006643,fotmob_only,2026-09-26,Friendlies,Canada,Chile,1,0,1
-6006644,fotmob_only,2026-10-03,Friendlies,Canada,Peru,2,0,1
-6040199,fotmob_only,2026-09-25,AFCON Qualification,Morocco,Gabon,2,0,1
-6040200,fotmob_only,2026-09-25,AFCON Qualification,Niger,Lesotho,2,1,1
-6040201,fotmob_only,2026-09-29,AFCON Qualification,Gabon,Niger,2,0,1
-6040202,fotmob_only,2026-09-29,AFCON Qualification,Lesotho,Morocco,0,2,1
-6040212,fotmob_only,2026-09-25,AFCON Qualification,Egypt,Angola,0,0,1
-6040213,fotmob_only,2026-09-25,AFCON Qualification,Malawi,South Sudan,2,1,1
-6040214,fotmob_only,2026-10-06,AFCON Qualification,Angola,Malawi,3,1,1
-6040215,fotmob_only,2026-09-29,AFCON Qualification,South Sudan,Egypt,0,5,1
-6040235,fotmob_only,2026-09-25,AFCON Qualification,Gambia,Somalia,2,1,1
-6040236,fotmob_only,2026-09-24,AFCON Qualification,Ivory Coast,Ghana,2,0,1
-6040237,fotmob_only,2026-09-29,AFCON Qualification,Ghana,Gambia,2,4,1
-6040238,fotmob_only,2026-09-29,AFCON Qualification,Somalia,Ivory Coast,0,2,1
-6040247,fotmob_only,2026-09-26,AFCON Qualification,Kenya,Eritrea,1,1,1
-6040248,fotmob_only,2026-09-26,AFCON Qualification,South Africa,Guinea,2,1,1
-6040249,fotmob_only,2026-09-30,AFCON Qualification,Eritrea,South Africa,0,5,1
-6040250,fotmob_only,2026-10-01,AFCON Qualification,Guinea,Kenya,1,0,1
-6040259,fotmob_only,2026-09-24,AFCON Qualification,DR Congo,Equatorial Guinea,2,0,1
-6040260,fotmob_only,2026-09-24,AFCON Qualification,Sierra Leone,Zimbabwe,2,3,1
-6040261,fotmob_only,2026-09-28,AFCON Qualification,Equatorial Guinea,Sierra Leone,1,0,1
-6040262,fotmob_only,2026-09-28,AFCON Qualification,Zimbabwe,DR Congo,1,2,1
-6040273,fotmob_only,2026-09-25,AFCON Qualification,Burkina Faso,Benin,1,1,1
-6040274,fotmob_only,2026-09-24,AFCON Qualification,Mauritania,Central African Republic,3,1,1
-6040275,fotmob_only,2026-09-29,AFCON Qualification,Benin,Mauritania,2,1,1
-6040276,fotmob_only,2026-09-28,AFCON Qualification,Central African Republic,Burkina Faso,0,1,1
-6040332,fotmob_only,2026-09-24,AFCON Qualification,Cameroon,Comoros,3,1,1
-6040333,fotmob_only,2026-09-24,AFCON Qualification,Namibia,Congo,1,0,1
-6040334,fotmob_only,2026-09-29,AFCON Qualification,Comoros,Namibia,1,0,1
-6040335,fotmob_only,2026-09-29,AFCON Qualification,Congo,Cameroon,1,1,1
-6040344,fotmob_only,2026-09-24,AFCON Qualification,Libya,Botswana,2,2,1
-6040345,fotmob_only,2026-09-24,AFCON Qualification,Tunisia,Uganda,1,1,1
-6040346,fotmob_only,2026-09-28,AFCON Qualification,Tunisia,Botswana,2,2,1
-6040347,fotmob_only,2026-09-29,AFCON Qualification,Uganda,Libya,1,0,1
-6040356,fotmob_only,2026-09-25,AFCON Qualification,Algeria,Zambia,3,1,1
-6040357,fotmob_only,2026-09-25,AFCON Qualification,Togo,Burundi,1,0,1
-6040358,fotmob_only,2026-09-29,AFCON Qualification,Burundi,Algeria,2,2,1
-6040359,fotmob_only,2026-09-29,AFCON Qualification,Zambia,Togo,2,0,1
-6040372,fotmob_only,2026-09-25,AFCON Qualification,Mali,Cape Verde,3,1,1
-6040373,fotmob_only,2026-09-25,AFCON Qualification,Rwanda,Liberia,3,1,1
-6040374,fotmob_only,2026-09-29,AFCON Qualification,Cape Verde,Rwanda,1,2,1
-6040375,fotmob_only,2026-09-29,AFCON Qualification,Liberia,Mali,0,1,1
-6040384,fotmob_only,2026-09-25,AFCON Qualification,Nigeria,Madagascar,2,1,1
-6040385,fotmob_only,2026-09-25,AFCON Qualification,Tanzania,Guinea-Bissau,0,2,1
-6040386,fotmob_only,2026-09-29,AFCON Qualification,Guinea-Bissau,Nigeria,3,0,1
-6040387,fotmob_only,2026-09-29,AFCON Qualification,Madagascar,Tanzania,1,1,1
-6040397,fotmob_only,2026-09-25,AFCON Qualification,Sudan,Ethiopia,1,0,1
-6040398,fotmob_only,2026-09-29,AFCON Qualification,Ethiopia,Senegal,0,1,1
-6040399,fotmob_only,2026-09-29,AFCON Qualification,Mozambique,Sudan,4,1,1
-6040405,fotmob_only,2026-09-25,AFCON Qualification,Mozambique,Senegal,1,1,1
-6140728,fotmob_only,2026-09-23,Friendlies,Azerbaijan,Tajikistan,1,0,1
-6140729,fotmob_only,2026-09-27,Friendlies,Malta,Liechtenstein,2,0,1
-6140730,fotmob_only,2026-09-30,Friendlies,Lithuania,Andorra,3,0,1
-6140731,fotmob_only,2026-10-05,Friendlies,Liechtenstein,Gibraltar,0,2,1
-6144112,fotmob_only,2026-09-29,Friendlies,Russia,Iran,2,0,1
-6162939,fotmob_only,2026-10-04,Friendlies,Argentina,Burkina Faso,7,0,1
-6162940,fotmob_only,2026-10-06,Friendlies,India,Uruguay,1,6,1
-6210360,fotmob_only,2026-10-03,Friendlies,Russia,Namibia,6,0,1
-6210361,fotmob_only,2026-10-06,Friendlies,Russia,Nigeria,3,3,1
-6210557,fotmob_only,2026-09-28,Friendlies,South Korea,Uruguay,1,4,1
-6210558,fotmob_only,2026-09-27,Friendlies,Mexico,Colombia,1,1,1
-6266052,fotmob_only,2026-10-01,Friendlies,Argentina,Bolivia,4,0,1
-6266053,fotmob_only,2026-10-06,Friendlies,Argentina,Benin,3,0,1
-6278448,fotmob_only,2026-09-23,Friendlies,Gibraltar,São Tomé and Príncipe,0,0,1
-6280187,fotmob_only,2026-09-18,Friendlies,Papua New Guinea,Vanuatu,2,1,1
-6280188,fotmob_only,2026-09-18,Friendlies,Fiji,Solomon Islands,3,3,1
-6280189,fotmob_only,2026-09-21,Friendlies,New Caledonia,Solomon Islands,0,2,1
-6280190,fotmob_only,2026-09-21,Friendlies,Fiji,Vanuatu,0,1,1
-6280191,fotmob_only,2026-09-24,Friendlies,Solomon Islands,Vanuatu,3,3,1
-6280192,fotmob_only,2026-09-24,Friendlies,Papua New Guinea,New Caledonia,1,2,1
-6280193,fotmob_only,2026-09-24,Friendlies,Palestine,New Zealand,2,2,1
+5991955,agree,2026-10-06,CONCACAF Nations League,Saint Martin,Bahamas,6,0,1
+6006643,agree,2026-09-26,Friendlies,Canada,Chile,1,0,1
+6006644,agree,2026-10-03,Friendlies,Canada,Peru,2,0,1
+6040199,agree,2026-09-25,AFCON Qualification,Morocco,Gabon,2,0,1
+6040200,agree,2026-09-25,AFCON Qualification,Niger,Lesotho,2,1,1
+6040201,agree,2026-09-29,AFCON Qualification,Gabon,Niger,2,0,1
+6040202,agree,2026-09-29,AFCON Qualification,Lesotho,Morocco,0,2,1
+6040212,agree,2026-09-25,AFCON Qualification,Egypt,Angola,0,0,1
+6040213,agree,2026-09-25,AFCON Qualification,Malawi,South Sudan,2,1,1
+6040214,agree,2026-10-06,AFCON Qualification,Angola,Malawi,3,1,1
+6040215,agree,2026-09-29,AFCON Qualification,South Sudan,Egypt,0,5,1
+6040235,agree,2026-09-25,AFCON Qualification,Gambia,Somalia,2,1,1
+6040236,agree,2026-09-24,AFCON Qualification,Ivory Coast,Ghana,2,0,1
+6040237,agree,2026-09-29,AFCON Qualification,Ghana,Gambia,2,4,1
+6040238,agree,2026-09-29,AFCON Qualification,Somalia,Ivory Coast,0,2,1
+6040247,agree,2026-09-26,AFCON Qualification,Kenya,Eritrea,1,1,1
+6040248,agree,2026-09-26,AFCON Qualification,South Africa,Guinea,2,1,1
+6040249,agree,2026-09-30,AFCON Qualification,Eritrea,South Africa,0,5,1
+6040250,agree,2026-10-01,AFCON Qualification,Guinea,Kenya,1,0,1
+6040259,agree,2026-09-24,AFCON Qualification,DR Congo,Equatorial Guinea,2,0,1
+6040260,agree,2026-09-24,AFCON Qualification,Sierra Leone,Zimbabwe,2,3,1
+6040261,agree,2026-09-28,AFCON Qualification,Equatorial Guinea,Sierra Leone,1,0,1
+6040262,agree,2026-09-28,AFCON Qualification,Zimbabwe,DR Congo,1,2,1
+6040273,agree,2026-09-25,AFCON Qualification,Burkina Faso,Benin,1,1,1
+6040274,agree,2026-09-24,AFCON Qualification,Mauritania,Central African Republic,3,1,1
+6040275,agree,2026-09-29,AFCON Qualification,Benin,Mauritania,2,1,1
+6040276,agree,2026-09-28,AFCON Qualification,Central African Republic,Burkina Faso,0,1,1
+6040332,agree,2026-09-24,AFCON Qualification,Cameroon,Comoros,3,1,1
+6040333,agree,2026-09-24,AFCON Qualification,Namibia,Congo,1,0,1
+6040334,agree,2026-09-29,AFCON Qualification,Comoros,Namibia,1,0,1
+6040335,agree,2026-09-29,AFCON Qualification,Congo,Cameroon,1,1,1
+6040344,agree,2026-09-24,AFCON Qualification,Libya,Botswana,2,2,1
+6040345,agree,2026-09-24,AFCON Qualification,Tunisia,Uganda,1,1,1
+6040346,agree,2026-09-28,AFCON Qualification,Tunisia,Botswana,2,2,1
+6040347,agree,2026-09-29,AFCON Qualification,Uganda,Libya,1,0,1
+6040356,agree,2026-09-25,AFCON Qualification,Algeria,Zambia,3,1,1
+6040357,agree,2026-09-25,AFCON Qualification,Togo,Burundi,1,0,1
+6040358,agree,2026-09-29,AFCON Qualification,Burundi,Algeria,2,2,1
+6040359,agree,2026-09-29,AFCON Qualification,Zambia,Togo,2,0,1
+6040372,agree,2026-09-25,AFCON Qualification,Mali,Cape Verde,3,1,1
+6040373,agree,2026-09-25,AFCON Qualification,Rwanda,Liberia,3,1,1
+6040374,agree,2026-09-29,AFCON Qualification,Cape Verde,Rwanda,1,2,1
+6040375,agree,2026-09-29,AFCON Qualification,Liberia,Mali,0,1,1
+6040384,agree,2026-09-25,AFCON Qualification,Nigeria,Madagascar,2,1,1
+6040385,agree,2026-09-25,AFCON Qualification,Tanzania,Guinea-Bissau,0,2,1
+6040386,agree,2026-09-29,AFCON Qualification,Guinea-Bissau,Nigeria,3,0,1
+6040387,agree,2026-09-29,AFCON Qualification,Madagascar,Tanzania,1,1,1
+6040397,agree,2026-09-25,AFCON Qualification,Sudan,Ethiopia,1,0,1
+6040398,agree,2026-09-29,AFCON Qualification,Ethiopia,Senegal,0,1,1
+6040399,agree,2026-09-29,AFCON Qualification,Mozambique,Sudan,4,1,1
+6040405,agree,2026-09-25,AFCON Qualification,Mozambique,Senegal,1,1,1
+6140728,agree,2026-09-23,Friendlies,Azerbaijan,Tajikistan,1,0,1
+6140729,agree,2026-09-27,Friendlies,Malta,Liechtenstein,2,0,1
+6140730,agree,2026-09-30,Friendlies,Lithuania,Andorra,3,0,1
+6140731,agree,2026-10-05,Friendlies,Liechtenstein,Gibraltar,0,2,1
+6144112,agree,2026-09-29,Friendlies,Russia,Iran,2,0,1
+6162939,agree,2026-10-04,Friendlies,Argentina,Burkina Faso,7,0,1
+6162940,agree,2026-10-06,Friendlies,India,Uruguay,1,6,1
+6210360,agree,2026-10-03,Friendlies,Russia,Namibia,6,0,1
+6210361,agree,2026-10-06,Friendlies,Russia,Nigeria,3,3,1
+6210557,agree,2026-09-28,Friendlies,South Korea,Uruguay,1,4,1
+6210558,agree,2026-09-27,Friendlies,Mexico,Colombia,1,1,1
+6266052,agree,2026-10-01,Friendlies,Argentina,Bolivia,4,0,1
+6266053,agree,2026-10-06,Friendlies,Argentina,Benin,3,0,1
+6278448,agree,2026-09-23,Friendlies,Gibraltar,São Tomé and Príncipe,0,0,1
+6280187,agree,2026-09-18,Friendlies,Papua New Guinea,Vanuatu,2,1,1
+6280188,agree,2026-09-18,Friendlies,Fiji,Solomon Islands,3,3,1
+6280189,agree,2026-09-21,Friendlies,New Caledonia,Solomon Islands,0,2,1
+6280190,agree,2026-09-21,Friendlies,Fiji,Vanuatu,0,1,1
+6280191,agree,2026-09-24,Friendlies,Solomon Islands,Vanuatu,3,3,1
+6280192,agree,2026-09-24,Friendlies,Papua New Guinea,New Caledonia,1,2,1
+6280193,agree,2026-09-24,Friendlies,Palestine,New Zealand,2,2,1
 6280194,fotmob_only,2026-09-24,Friendlies,Japan,Uruguay,3,1,1
-6280195,fotmob_only,2026-09-24,Friendlies,South Korea,Ecuador,3,0,1
-6280196,fotmob_only,2026-09-24,Friendlies,China,Maldives,3,0,1
-6280204,fotmob_only,2026-09-24,Friendlies,Uzbekistan,Iran,3,1,1
-6280205,fotmob_only,2026-09-25,Friendlies,India,Panama,1,1,1
-6280206,fotmob_only,2026-09-27,Friendlies,Cook Islands,Tahiti,1,3,1
-6280207,fotmob_only,2026-09-27,Friendlies,Vanuatu,New Caledonia,4,1,1
-6280208,fotmob_only,2026-09-27,Friendlies,Fiji,Papua New Guinea,2,0,1
-6280209,fotmob_only,2026-09-27,Friendlies,Seychelles,Sri Lanka,0,3,1
-6280210,fotmob_only,2026-09-27,Friendlies,Jordan,Syria,1,1,1
-6280211,fotmob_only,2026-09-27,Friendlies,Bolivia,Paraguay,0,2,1
-6280212,fotmob_only,2026-09-27,Friendlies,China,New Zealand,0,3,1
-6280444,fotmob_only,2026-09-30,Friendlies,Mexico,Peru,1,1,1
-6280445,fotmob_only,2026-09-30,Friendlies,Papua New Guinea,Solomon Islands,1,1,1
-6280446,fotmob_only,2026-09-30,Friendlies,Fiji,New Caledonia,2,1,1
-6280448,fotmob_only,2026-09-30,Friendlies,Seychelles,Sri Lanka,0,2,1
-6280449,fotmob_only,2026-10-01,Friendlies,Cook Islands,Tahiti,3,2,1
-6280450,fotmob_only,2026-10-01,Friendlies,Maldives,Lebanon,0,6,1
-6280451,fotmob_only,2026-10-01,Friendlies,Uzbekistan,Syria,4,1,1
-6280452,fotmob_only,2026-10-02,Friendlies,South Korea,Venezuela,0,0,1
-6280453,fotmob_only,2026-10-02,Friendlies,China,Palestine,0,5,1
-6297064,fotmob_only,2026-09-21,Friendlies,Dominica,Anguilla,1,0,1
-6299692,fotmob_only,2026-10-02,Friendlies,DR Congo,Uganda,0,2,1
-6299693,fotmob_only,2026-10-03,Friendlies,Colombia,Paraguay,0,1,1
-6299694,fotmob_only,2026-10-06,Friendlies,Colombia,Peru,2,0,1
-6299697,fotmob_only,2026-10-03,Friendlies,Cameroon,Ivory Coast,1,0,1
-6299698,fotmob_only,2026-10-04,Friendlies,Senegal,Comoros,1,0,1
-6299699,fotmob_only,2026-09-28,Friendlies,Kyrgyzstan,Maldives,5,0,1
-6299700,fotmob_only,2026-10-04,Friendlies,Egypt,South Africa,0,1,1
-6299702,fotmob_only,2026-10-05,Friendlies,Uganda,DR Congo,1,1,1
-6299703,fotmob_only,2026-10-05,Friendlies,Sri Lanka,Mauritius,3,2,1
-6309723,fotmob_only,2026-09-28,Friendlies,Tajikistan,Palestine,2,4,1
-6315013,fotmob_only,2026-09-28,Friendlies,Japan,Venezuela,2,1,1
-6315046,fotmob_only,2026-10-01,Friendlies,Panama,New Zealand,1,1,1
-6315047,fotmob_only,2026-10-01,Friendlies,Japan,Ecuador,0,0,1
-6365754,fotmob_only,2026-10-02,Friendlies,Mauritius,Sri Lanka,3,0,1
-6366761,fotmob_only,2026-10-06,Friendlies,Algeria,Niger,2,1,1
-6367253,fotmob_only,2026-10-03,Friendlies,Fiji,Vanuatu,1,0,1
-6367352,fotmob_only,2026-10-04,Friendlies,Kyrgyzstan,Lebanon,3,1,1
-6367353,fotmob_only,2026-10-04,Friendlies,Morocco,Mali,1,1,1
-6368651,fotmob_only,2026-10-06,Friendlies,South Korea,Uzbekistan,2,0,1
-6368652,fotmob_only,2026-10-06,Friendlies,China,Tajikistan,0,1,1
-6368653,fotmob_only,2026-10-06,Friendlies,Jordan,Venezuela,0,0,1
-6368654,fotmob_only,2026-10-07,Friendlies,Mexico,Chile,0,2,1
-6369013,fotmob_only,2026-10-05,Friendlies,Ecuador,Panama,1,1,1
-6369014,fotmob_only,2026-10-05,Friendlies,Japan,New Zealand,2,1,1
-6380406,fotmob_only,2026-10-05,Friendlies,Rwanda,Kenya,0,0,1
+6280195,agree,2026-09-24,Friendlies,South Korea,Ecuador,3,0,1
+6280196,agree,2026-09-24,Friendlies,China,Maldives,3,0,1
+6280204,agree,2026-09-24,Friendlies,Uzbekistan,Iran,3,1,1
+6280205,agree,2026-09-25,Friendlies,India,Panama,1,1,1
+6280206,agree,2026-09-27,Friendlies,Cook Islands,Tahiti,1,3,1
+6280207,agree,2026-09-27,Friendlies,Vanuatu,New Caledonia,4,1,1
+6280208,agree,2026-09-27,Friendlies,Fiji,Papua New Guinea,2,0,1
+6280209,agree,2026-09-27,Friendlies,Seychelles,Sri Lanka,0,3,1
+6280210,agree,2026-09-27,Friendlies,Jordan,Syria,1,1,1
+6280211,agree,2026-09-27,Friendlies,Bolivia,Paraguay,0,2,1
+6280212,agree,2026-09-27,Friendlies,China,New Zealand,0,3,1
+6280444,agree,2026-09-30,Friendlies,Mexico,Peru,1,1,1
+6280445,agree,2026-09-30,Friendlies,Papua New Guinea,Solomon Islands,1,1,1
+6280446,agree,2026-09-30,Friendlies,Fiji,New Caledonia,2,1,1
+6280448,agree,2026-09-30,Friendlies,Seychelles,Sri Lanka,0,2,1
+6280449,agree,2026-10-01,Friendlies,Cook Islands,Tahiti,3,2,1
+6280450,agree,2026-10-01,Friendlies,Maldives,Lebanon,0,6,1
+6280451,agree,2026-10-01,Friendlies,Uzbekistan,Syria,4,1,1
+6280452,agree,2026-10-02,Friendlies,South Korea,Venezuela,0,0,1
+6280453,agree,2026-10-02,Friendlies,China,Palestine,0,5,1
+6297064,agree,2026-09-21,Friendlies,Dominica,Anguilla,1,0,1
+6299692,agree,2026-10-02,Friendlies,DR Congo,Uganda,0,2,1
+6299693,agree,2026-10-03,Friendlies,Colombia,Paraguay,0,1,1
+6299694,agree,2026-10-06,Friendlies,Colombia,Peru,2,0,1
+6299697,agree,2026-10-03,Friendlies,Cameroon,Ivory Coast,1,0,1
+6299698,agree,2026-10-04,Friendlies,Senegal,Comoros,1,0,1
+6299699,agree,2026-09-28,Friendlies,Kyrgyzstan,Maldives,5,0,1
+6299700,agree,2026-10-04,Friendlies,Egypt,South Africa,0,1,1
+6299702,agree,2026-10-05,Friendlies,Uganda,DR Congo,1,1,1
+6299703,conflict,2026-10-05,Friendlies,Sri Lanka,Mauritius,3,2,1
+6309723,agree,2026-09-28,Friendlies,Tajikistan,Palestine,2,4,1
+6315013,agree,2026-09-28,Friendlies,Japan,Venezuela,2,1,1
+6315046,agree,2026-10-01,Friendlies,Panama,New Zealand,1,1,1
+6315047,agree,2026-10-01,Friendlies,Japan,Ecuador,0,0,1
+6365754,agree,2026-10-02,Friendlies,Mauritius,Sri Lanka,3,0,1
+6366761,agree,2026-10-06,Friendlies,Algeria,Niger,2,1,1
+6367253,agree,2026-10-03,Friendlies,Fiji,Vanuatu,1,0,1
+6367352,agree,2026-10-04,Friendlies,Kyrgyzstan,Lebanon,3,1,1
+6367353,agree,2026-10-04,Friendlies,Morocco,Mali,1,1,1
+6368651,agree,2026-10-06,Friendlies,South Korea,Uzbekistan,2,0,1
+6368652,agree,2026-10-06,Friendlies,China,Tajikistan,0,1,1
+6368653,agree,2026-10-06,Friendlies,Jordan,Venezuela,0,0,1
+6368654,agree,2026-10-07,Friendlies,Mexico,Chile,0,2,1
+6369013,agree,2026-10-05,Friendlies,Ecuador,Panama,1,1,1
+6369014,agree,2026-10-05,Friendlies,Japan,New Zealand,2,1,1
+6380406,agree,2026-10-05,Friendlies,Rwanda,Kenya,0,0,1
