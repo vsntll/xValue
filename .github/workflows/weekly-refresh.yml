@@ -37,6 +37,8 @@ jobs:
       # falls back to the last good sofascore_values.csv when the IP is blocked.
       SOFASCORE_PROXY: ${{ secrets.SOFASCORE_PROXY }}
       PYTHONIOENCODING: utf-8
+      # stream print() output live - a buffered log is lost if a step is cancelled
+      PYTHONUNBUFFERED: "1"
 
     steps:
       - uses: actions/checkout@v5
