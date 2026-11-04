@@ -1,6 +1,6 @@
 """Backtest for live_win_prob.py: replays finished matches minute-by-minute
-against their actual goal/red-card timeline (data/raw/live/fotmob_events,
-populated by `py -3.11 src/pull_fotmob_players.py --events <season>`) and
+against their actual goal/red-card timeline (data/processed/fotmob/
+events_<season>.csv, backfilled for older matches by `py -3.11 src/pull_fotmob_players.py --events <season>`) and
 scores the live win probability against the REAL final outcome, Brier score
 by minute bucket - exactly what the docstring on live_win_prob.py asks for
 before wiring it into anything live.
@@ -26,7 +26,6 @@ Run:  py -3.11 src/backtest_live_win_prob.py --season 2025-26
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 from pathlib import Path
 
@@ -35,12 +34,12 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+import fotmob_store  # noqa: E402
 from live.schema import normalize_team  # noqa: E402
 from live_win_prob import live_win_prob  # noqa: E402
 from train_outcome_model import _A_FEATS, _H_FEATS, fit_lambdas  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
-EVENTS_CACHE = ROOT / "data" / "raw" / "live" / "fotmob_events"
 MATCH_META = PROC / "fotmob_match_meta.csv"
 LINEUP_FEATURES = PROC / "match_lineup_features.csv"
 
@@ -96,15 +95,11 @@ def _resolve_matches(season: str) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def _load_events(match_id: str) -> tuple[list[tuple[int, int, int]], list[tuple[int, str]]]:
+def _load_events(ev: list[dict]) -> tuple[list[tuple[int, int, int]], list[tuple[int, str]]]:
     """(goal timeline [(minute, home_score, away_score)], red timeline
-    [(minute, 'home'/'away')]) for one match, from the cached event list."""
-    f = EVENTS_CACHE / f"{match_id}.json"
-    if not f.exists():
-        return [], []
-    ev = json.loads(f.read_text())
+    [(minute, 'home'/'away')]) for one match, from its committed event rows."""
     goals = sorted((e["time"], e["home_score"], e["away_score"])
-                   for e in ev if e["type"] == "Goal" and e["home_score"] is not None)
+                   for e in ev if e["type"] == "Goal" and pd.notna(e["home_score"]))
     reds = sorted((e["time"], "home" if e["isHome"] else "away")
                   for e in ev if e["type"] == "Red")
     return goals, reds
@@ -136,15 +131,18 @@ def main() -> None:
     ap.add_argument("--season", default="2025-26")
     args = ap.parse_args()
 
-    if not EVENTS_CACHE.exists():
-        raise SystemExit(f"{EVENTS_CACHE} not found - run "
-                          f"pull_fotmob_players.py --events {args.season} first")
+    meta = pd.read_csv(MATCH_META, dtype={"match_id": str})
+    have = set(meta.loc[(meta["season"] == args.season) & (meta["events_fetched"] == 1), "match_id"])
+    if not have:
+        raise SystemExit(f"no event timelines for {args.season} - run "
+                         f"pull_fotmob_players.py --events {args.season} first")
+    ev = fotmob_store.read("events", [args.season])
+    ev_by_match = {m: g.to_dict("records") for m, g in ev.groupby("match_id")} if len(ev) else {}
 
     matches = _resolve_matches(args.season)
     matches = matches.dropna(subset=_H_FEATS + _A_FEATS + ["FTHG", "FTAG"], how="any")
-    have_events = matches["match_id"].map(lambda m: (EVENTS_CACHE / f"{m}.json").exists())
-    matches = matches[have_events].reset_index(drop=True)
-    print(f"{len(matches)} matches have a cached event timeline and complete features")
+    matches = matches[matches["match_id"].isin(have)].reset_index(drop=True)
+    print(f"{len(matches)} matches have an event timeline and complete features")
 
     df = pd.read_csv(PROC / "match_model_table.csv")
     tr = df[df["season"] <= TRAIN_SEASONS_MAX]
@@ -154,7 +152,7 @@ def main() -> None:
     outcome = np.select([matches["FTHG"] > matches["FTAG"], matches["FTHG"] == matches["FTAG"]],
                         ["H", "D"], default="A")
 
-    events = {mid: _load_events(mid) for mid in matches["match_id"]}
+    events = {mid: _load_events(ev_by_match.get(mid, [])) for mid in matches["match_id"]}
     n_red_matches = sum(1 for g, r in events.values() if r)
     print(f"{n_red_matches} matches had at least one red card")
 
