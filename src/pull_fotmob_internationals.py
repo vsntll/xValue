@@ -16,7 +16,11 @@ links a player to his Understat identity through the fotmob_id his club rows
 already carry.
 
 Each match caches under data/raw/live/fotmob_intl_players/<id>.json - re-runs
-only fetch new matches. FotMob's ToS restricts programmatic use; keep volume low.
+only fetch new matches. Matches already in the committed output CSV count as done
+too, so a cold cache (fresh CI runner) doesn't re-fetch ~1,600 matches; new rows
+are merged into it. --budget-min caps the time spent fetching so the step can
+never run the job into its timeout. FotMob's ToS restricts programmatic use;
+keep volume low.
 
 Run:  py -3.11 src/pull_fotmob_internationals.py                 # since SINCE
       py -3.11 src/pull_fotmob_internationals.py --since 2025-07-01
@@ -28,6 +32,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import time
 from pathlib import Path
 
 import pandas as pd
@@ -106,10 +111,15 @@ def _match(fx: dict, comp: str, comp_type: str) -> list[dict]:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--since", default=SINCE, help="earliest match date (YYYY-MM-DD)")
+    ap.add_argument("--budget-min", type=float, default=15,
+                    help="stop fetching new matches after this many minutes (rest next run)")
     args = ap.parse_args()
     CACHE.mkdir(parents=True, exist_ok=True)
+    deadline = time.monotonic() + args.budget_min * 60
 
-    rows = []
+    prev = pd.read_csv(OUT) if OUT.exists() else pd.DataFrame()
+    known = set(prev["match_id"].astype(str)) if len(prev) else set()
+    rows, n_skipped = [], 0
     for lid, (comp, comp_type) in INTL_LEAGUES.items():
         try:
             seasons = _seasons(lid, args.since)
@@ -125,14 +135,22 @@ def main() -> None:
             done = [f for f in (fixtures if isinstance(fixtures, list) else [])
                     if (f.get("status") or {}).get("finished")
                     and ((f.get("status") or {}).get("utcTime") or "")[:10] >= args.since]
-            n_new = sum(not (CACHE / f"{f['id']}.json").exists() for f in done)
-            print(f"  {comp} {season}: {len(done)} finished matches ({n_new} newly fetched)")
-            for fx in done:
+            todo = [f for f in done if (CACHE / f"{f['id']}.json").exists()
+                    or f"fotmob:{f['id']}" not in known]
+            n_new = sum(not (CACHE / f"{f['id']}.json").exists() for f in todo)
+            print(f"  {comp} {season}: {len(done)} finished matches ({n_new} to fetch)")
+            for fx in todo:
+                if not (CACHE / f"{fx['id']}.json").exists() and time.monotonic() > deadline:
+                    n_skipped += 1
+                    continue
                 rows.extend(_match(fx, comp, comp_type))
 
-    if not rows:
+    if n_skipped:
+        print(f"\n  fetch budget ({args.budget_min:g} min) spent - {n_skipped} matches left for next run")
+    if not rows and not len(prev):
         raise SystemExit("no FotMob international player data pulled")
-    out = pd.DataFrame(rows).drop_duplicates(subset=["match_id", "fotmob_id"])
+    out = (pd.concat([pd.DataFrame(rows), prev], ignore_index=True)
+           .drop_duplicates(subset=["match_id", "fotmob_id"]))
     PROC.mkdir(parents=True, exist_ok=True)
     out.to_csv(OUT, index=False)
     print(f"\nwrote {OUT}  ({len(out)} player-matches, {out['match_id'].nunique()} matches, "
