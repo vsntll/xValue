@@ -20,6 +20,9 @@ Run:
 Outputs:
     data/raw/football_data/<season>_<div>.csv   one file per download, untouched
     data/processed/match_features.csv           combined + column-trimmed
+
+Finished seasons already in match_features.csv are kept as committed and not
+re-downloaded; only the ongoing season is fetched each run.
 """
 
 from __future__ import annotations
@@ -121,9 +124,19 @@ def main() -> None:
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
+    # finished seasons never change - reuse the committed rows and only download
+    # the ongoing season (the last SEASONS entry) or a season/league not on file
+    prior = pd.read_csv(OUT_PATH) if OUT_PATH.exists() else pd.DataFrame(columns=["season", "league"])
+    prior["Date"] = pd.to_datetime(prior.get("Date"), errors="coerce")
+    live = list(SEASONS.values())[-1]
+
     frames: list[pd.DataFrame] = []
     for season_code, season_label in SEASONS.items():
         for div_code, (div_label, tier) in DIVISIONS.items():
+            have = prior[(prior["season"] == season_label) & (prior["league"] == div_label)]
+            if season_label != live and len(have):
+                frames.append(have)
+                continue
             try:
                 df = fetch_csv(season_code, div_code)
             except requests.HTTPError as exc:
