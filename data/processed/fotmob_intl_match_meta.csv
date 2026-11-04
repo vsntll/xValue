@@ -1,0 +1,1844 @@
+match_id,verified,date,competition,home,away,home_score,away_score,fetched
+4043974,agree,2024-07-01,EURO,Portugal,Slovenia,0,0,1
+4043975,agree,2024-07-01,EURO,France,Belgium,1,0,1
+4043976,agree,2024-07-02,EURO,Romania,Netherlands,0,3,1
+4043977,agree,2024-07-02,EURO,Austria,Turkey,1,2,1
+4043979,agree,2024-07-05,EURO,Spain,Germany,2,1,1
+4043980,agree,2024-07-05,EURO,Portugal,France,0,0,1
+4043981,agree,2024-07-06,EURO,Netherlands,Turkey,2,1,1
+4043982,agree,2024-07-06,EURO,England,Switzerland,1,1,1
+4043983,agree,2024-07-09,EURO,Spain,France,2,1,1
+4043984,agree,2024-07-10,EURO,Netherlands,England,1,2,1
+4043985,agree,2024-07-14,EURO,Spain,England,2,1,1
+4196507,agree,2024-09-06,WC Qualification CONMEBOL,Argentina,Chile,3,0,1
+4196508,agree,2024-09-10,WC Qualification CONMEBOL,Colombia,Argentina,2,1,1
+4196509,agree,2024-09-10,WC Qualification CONMEBOL,Venezuela,Uruguay,0,0,1
+4196510,agree,2024-09-11,WC Qualification CONMEBOL,Paraguay,Brazil,1,0,1
+4196511,agree,2024-09-10,WC Qualification CONMEBOL,Chile,Bolivia,1,2,1
+4196512,agree,2024-09-10,WC Qualification CONMEBOL,Ecuador,Peru,1,0,1
+4196513,agree,2024-10-12,WC Qualification CONMEBOL,Peru,Uruguay,1,0,1
+4196514,agree,2024-10-10,WC Qualification CONMEBOL,Venezuela,Argentina,1,1,1
+4196515,agree,2024-10-10,WC Qualification CONMEBOL,Bolivia,Colombia,1,0,1
+4196516,agree,2024-10-11,WC Qualification CONMEBOL,Chile,Brazil,1,2,1
+4196517,agree,2024-10-10,WC Qualification CONMEBOL,Ecuador,Paraguay,0,0,1
+4196518,agree,2024-10-15,WC Qualification CONMEBOL,Uruguay,Ecuador,0,0,1
+4196519,agree,2024-10-15,WC Qualification CONMEBOL,Colombia,Chile,4,0,1
+4196520,agree,2024-10-16,WC Qualification CONMEBOL,Brazil,Peru,4,0,1
+4196521,agree,2024-10-15,WC Qualification CONMEBOL,Paraguay,Venezuela,2,1,1
+4196522,agree,2024-10-16,WC Qualification CONMEBOL,Argentina,Bolivia,6,0,1
+4196523,agree,2024-09-05,WC Qualification CONMEBOL,Bolivia,Venezuela,4,0,1
+4196524,agree,2024-09-07,WC Qualification CONMEBOL,Brazil,Ecuador,1,0,1
+4196525,agree,2024-09-07,WC Qualification CONMEBOL,Peru,Colombia,1,1,1
+4196541,agree,2024-09-06,WC Qualification CONMEBOL,Uruguay,Paraguay,0,0,1
+4196542,agree,2024-11-16,WC Qualification CONMEBOL,Uruguay,Colombia,3,2,1
+4196543,agree,2024-11-16,WC Qualification CONMEBOL,Peru,Chile,0,0,1
+4196544,agree,2024-11-14,WC Qualification CONMEBOL,Venezuela,Brazil,1,1,1
+4196545,agree,2024-11-14,WC Qualification CONMEBOL,Paraguay,Argentina,2,1,1
+4196546,agree,2024-11-15,WC Qualification CONMEBOL,Ecuador,Bolivia,4,0,1
+4196547,agree,2024-11-19,WC Qualification CONMEBOL,Colombia,Ecuador,0,1,1
+4196548,agree,2025-06-11,WC Qualification CONMEBOL,Argentina,Colombia,1,1,1
+4196549,agree,2025-06-10,WC Qualification CONMEBOL,Bolivia,Chile,2,0,1
+4196550,agree,2025-06-11,WC Qualification CONMEBOL,Brazil,Paraguay,1,0,1
+4196551,agree,2025-06-11,WC Qualification CONMEBOL,Peru,Ecuador,0,0,1
+4196552,agree,2025-06-10,WC Qualification CONMEBOL,Uruguay,Venezuela,2,0,1
+4196553,agree,2025-06-05,WC Qualification CONMEBOL,Ecuador,Brazil,0,0,1
+4196554,agree,2025-09-04,WC Qualification CONMEBOL,Uruguay,Peru,3,0,1
+4196555,agree,2025-09-04,WC Qualification CONMEBOL,Colombia,Bolivia,3,0,1
+4196556,agree,2025-09-05,WC Qualification CONMEBOL,Brazil,Chile,3,0,1
+4196557,agree,2025-09-04,WC Qualification CONMEBOL,Paraguay,Ecuador,0,0,1
+4196558,agree,2025-09-04,WC Qualification CONMEBOL,Argentina,Venezuela,3,0,1
+4196559,agree,2025-09-09,WC Qualification CONMEBOL,Peru,Paraguay,0,1,1
+4196560,agree,2025-09-09,WC Qualification CONMEBOL,Venezuela,Colombia,3,6,1
+4196561,agree,2025-09-09,WC Qualification CONMEBOL,Bolivia,Brazil,1,0,1
+4196562,agree,2025-09-09,WC Qualification CONMEBOL,Chile,Uruguay,0,0,1
+4196563,agree,2025-06-06,WC Qualification CONMEBOL,Chile,Argentina,0,1,1
+4196564,agree,2025-06-05,WC Qualification CONMEBOL,Paraguay,Uruguay,2,0,1
+4196565,agree,2025-06-06,WC Qualification CONMEBOL,Venezuela,Bolivia,2,0,1
+4196566,agree,2024-11-20,WC Qualification CONMEBOL,Brazil,Uruguay,1,1,1
+4196567,agree,2024-11-19,WC Qualification CONMEBOL,Bolivia,Paraguay,2,2,1
+4196568,agree,2024-11-20,WC Qualification CONMEBOL,Argentina,Peru,1,0,1
+4196569,agree,2024-11-20,WC Qualification CONMEBOL,Chile,Venezuela,4,2,1
+4196570,agree,2025-03-21,WC Qualification CONMEBOL,Uruguay,Argentina,0,1,1
+4196571,agree,2025-03-21,WC Qualification CONMEBOL,Peru,Bolivia,3,1,1
+4196572,agree,2025-03-21,WC Qualification CONMEBOL,Brazil,Colombia,2,1,1
+4196573,agree,2025-03-20,WC Qualification CONMEBOL,Paraguay,Chile,1,0,1
+4196574,agree,2025-03-21,WC Qualification CONMEBOL,Ecuador,Venezuela,2,1,1
+4196575,agree,2025-03-26,WC Qualification CONMEBOL,Colombia,Paraguay,2,2,1
+4196576,agree,2025-03-26,WC Qualification CONMEBOL,Venezuela,Peru,1,0,1
+4196577,agree,2025-03-25,WC Qualification CONMEBOL,Bolivia,Uruguay,0,0,1
+4196578,agree,2025-03-26,WC Qualification CONMEBOL,Argentina,Brazil,4,1,1
+4196579,agree,2025-03-26,WC Qualification CONMEBOL,Chile,Ecuador,0,0,1
+4196580,agree,2025-06-06,WC Qualification CONMEBOL,Colombia,Peru,0,0,1
+4196581,agree,2025-09-09,WC Qualification CONMEBOL,Ecuador,Argentina,1,0,1
+4341088,agree,2025-03-21,WC Qualification CAF,Burkina Faso,Djibouti,4,1,1
+4341089,agree,2025-03-20,WC Qualification CAF,Sierra Leone,Guinea-Bissau,3,1,1
+4341090,agree,2025-03-21,WC Qualification CAF,Ethiopia,Egypt,0,2,1
+4341091,agree,2025-03-24,WC Qualification CAF,Guinea-Bissau,Burkina Faso,1,2,1
+4341092,agree,2025-03-25,WC Qualification CAF,Egypt,Sierra Leone,1,0,1
+4341093,agree,2025-03-24,WC Qualification CAF,Ethiopia,Djibouti,6,1,1
+4341094,agree,2025-09-04,WC Qualification CAF,Guinea-Bissau,Sierra Leone,1,1,1
+4341095,agree,2025-09-05,WC Qualification CAF,Djibouti,Burkina Faso,0,6,1
+4341096,agree,2025-09-05,WC Qualification CAF,Egypt,Ethiopia,2,0,1
+4341108,agree,2025-09-09,WC Qualification CAF,Burkina Faso,Egypt,0,0,1
+4341109,agree,2025-09-08,WC Qualification CAF,Guinea-Bissau,Djibouti,2,0,1
+4341110,agree,2025-09-09,WC Qualification CAF,Sierra Leone,Ethiopia,2,0,1
+4341111,agree,2025-10-08,WC Qualification CAF,Djibouti,Egypt,0,3,1
+4341112,agree,2025-10-08,WC Qualification CAF,Sierra Leone,Burkina Faso,0,1,1
+4341113,agree,2025-10-08,WC Qualification CAF,Ethiopia,Guinea-Bissau,1,0,1
+4341114,agree,2025-10-12,WC Qualification CAF,Burkina Faso,Ethiopia,3,1,1
+4341115,agree,2025-10-12,WC Qualification CAF,Djibouti,Sierra Leone,1,2,1
+4341116,agree,2025-10-12,WC Qualification CAF,Egypt,Guinea-Bissau,1,0,1
+4341117,agree,2025-09-05,WC Qualification CAF,Benin,Zimbabwe,1,0,1
+4341124,agree,2025-10-14,WC Qualification CAF,Senegal,Mauritania,4,0,1
+4341125,agree,2025-10-13,WC Qualification CAF,South Sudan,Togo,0,0,1
+4341126,agree,2025-10-14,WC Qualification CAF,DR Congo,Sudan,1,0,1
+4341127,agree,2025-10-10,WC Qualification CAF,Sudan,Mauritania,0,0,1
+4341130,agree,2025-03-25,WC Qualification CAF,Rwanda,Lesotho,1,1,1
+4341131,agree,2025-03-25,WC Qualification CAF,Nigeria,Zimbabwe,1,1,1
+4341132,agree,2025-03-25,WC Qualification CAF,Benin,South Africa,0,2,1
+4341133,agree,2025-03-21,WC Qualification CAF,Rwanda,Nigeria,0,2,1
+4341134,agree,2025-03-20,WC Qualification CAF,Zimbabwe,Benin,2,2,1
+4341135,conflict,2025-03-21,WC Qualification CAF,South Africa,Lesotho,0,3,1
+4341140,agree,2025-10-10,WC Qualification CAF,Togo,DR Congo,0,1,1
+4341141,agree,2025-10-10,WC Qualification CAF,South Sudan,Senegal,0,5,1
+4341142,agree,2025-09-09,WC Qualification CAF,Togo,Sudan,1,0,1
+4341154,agree,2025-03-21,WC Qualification CAF,DR Congo,South Sudan,1,0,1
+4341155,agree,2025-09-09,WC Qualification CAF,Mauritania,South Sudan,0,0,1
+4341156,agree,2025-09-09,WC Qualification CAF,DR Congo,Senegal,2,3,1
+4341157,agree,2025-09-05,WC Qualification CAF,Senegal,Sudan,2,0,1
+4341158,agree,2025-09-05,WC Qualification CAF,South Sudan,DR Congo,1,4,1
+4341159,agree,2025-09-05,WC Qualification CAF,Mauritania,Togo,2,0,1
+4341160,agree,2025-03-25,WC Qualification CAF,Sudan,South Sudan,1,1,1
+4341161,agree,2025-03-25,WC Qualification CAF,Senegal,Togo,2,0,1
+4341162,agree,2025-03-25,WC Qualification CAF,Mauritania,DR Congo,0,2,1
+4341163,agree,2025-03-22,WC Qualification CAF,Sudan,Senegal,0,0,1
+4341164,agree,2025-03-22,WC Qualification CAF,Togo,Mauritania,2,2,1
+4341167,agree,2025-10-08,WC Qualification CAF,Mauritius,Cameroon,0,2,1
+4341168,agree,2025-09-08,WC Qualification CAF,Libya,Eswatini,2,0,1
+4341169,agree,2025-09-09,WC Qualification CAF,Angola,Mauritius,3,1,1
+4341170,agree,2025-09-09,WC Qualification CAF,Cape Verde,Cameroon,1,0,1
+4341171,agree,2025-09-04,WC Qualification CAF,Cameroon,Eswatini,3,0,1
+4341172,agree,2025-09-04,WC Qualification CAF,Mauritius,Cape Verde,0,2,1
+4341173,agree,2025-09-04,WC Qualification CAF,Angola,Libya,0,1,1
+4341174,agree,2025-03-23,WC Qualification CAF,Eswatini,Mauritius,3,3,1
+4341175,agree,2025-03-25,WC Qualification CAF,Cameroon,Libya,3,1,1
+4341176,agree,2025-03-25,WC Qualification CAF,Angola,Cape Verde,1,2,1
+4341177,agree,2025-10-08,WC Qualification CAF,Libya,Cape Verde,3,3,1
+4341178,agree,2025-10-08,WC Qualification CAF,Eswatini,Angola,2,2,1
+4341186,agree,2025-10-13,WC Qualification CAF,Cameroon,Angola,0,0,1
+4341187,agree,2025-10-13,WC Qualification CAF,Mauritius,Libya,0,0,1
+4341188,agree,2025-10-13,WC Qualification CAF,Cape Verde,Eswatini,3,0,1
+4341189,agree,2025-03-19,WC Qualification CAF,Eswatini,Cameroon,0,0,1
+4341190,agree,2025-03-20,WC Qualification CAF,Libya,Angola,1,1,1
+4341191,agree,2025-03-20,WC Qualification CAF,Cape Verde,Mauritius,1,0,1
+4341192,agree,2025-10-14,WC Qualification CAF,Nigeria,Benin,4,0,1
+4341193,agree,2025-10-13,WC Qualification CAF,Lesotho,Zimbabwe,1,0,1
+4341194,agree,2025-10-14,WC Qualification CAF,South Africa,Rwanda,3,0,1
+4341195,agree,2025-10-10,WC Qualification CAF,Rwanda,Benin,0,1,1
+4341196,agree,2025-10-10,WC Qualification CAF,Zimbabwe,South Africa,0,0,1
+4341197,agree,2025-10-10,WC Qualification CAF,Lesotho,Nigeria,1,2,1
+4341198,agree,2025-09-09,WC Qualification CAF,Zimbabwe,Rwanda,0,1,1
+4341199,agree,2025-09-09,WC Qualification CAF,Benin,Lesotho,4,0,1
+4341200,agree,2025-09-09,WC Qualification CAF,South Africa,Nigeria,1,1,1
+4341201,agree,2025-09-06,WC Qualification CAF,Nigeria,Rwanda,1,0,1
+4341214,agree,2025-09-05,WC Qualification CAF,Lesotho,South Africa,0,3,1
+4341220,fotmob_only,2025-03-19,WC Qualification CAF,Tanzania,Congo,3,0,1
+4341221,agree,2025-03-21,WC Qualification CAF,Niger,Morocco,1,2,1
+4341222,agree,2025-03-21,WC Qualification CAF,Ghana,Chad,5,0,1
+4341223,agree,2025-03-19,WC Qualification CAF,Central African Republic,Madagascar,1,4,1
+4341224,agree,2025-03-20,WC Qualification CAF,Comoros,Mali,0,3,1
+4341225,agree,2025-03-24,WC Qualification CAF,Madagascar,Ghana,0,3,1
+4341226,agree,2025-03-24,WC Qualification CAF,Central African Republic,Mali,0,0,1
+4341227,agree,2025-03-25,WC Qualification CAF,Comoros,Chad,1,0,1
+4341228,agree,2025-09-04,WC Qualification CAF,Madagascar,Central African Republic,2,0,1
+4341229,agree,2025-09-04,WC Qualification CAF,Chad,Ghana,1,1,1
+4341230,agree,2025-09-04,WC Qualification CAF,Mali,Comoros,3,0,1
+4341231,agree,2025-09-08,WC Qualification CAF,Ghana,Mali,1,0,1
+4341232,agree,2025-09-08,WC Qualification CAF,Madagascar,Chad,3,1,1
+4341233,agree,2025-09-07,WC Qualification CAF,Central African Republic,Comoros,0,2,1
+4341234,agree,2025-10-08,WC Qualification CAF,Chad,Mali,0,2,1
+4341235,agree,2025-10-08,WC Qualification CAF,Central African Republic,Ghana,0,5,1
+4341236,agree,2025-10-08,WC Qualification CAF,Comoros,Madagascar,1,2,1
+4341237,agree,2025-10-12,WC Qualification CAF,Ghana,Comoros,1,0,1
+4341238,agree,2025-10-12,WC Qualification CAF,Chad,Central African Republic,2,3,1
+4341242,fotmob_only,2025-03-22,WC Qualification CAF,Congo,Zambia,0,3,1
+4341243,agree,2025-03-25,WC Qualification CAF,Morocco,Tanzania,2,0,1
+4341245,agree,2025-09-05,WC Qualification CAF,Congo,Tanzania,1,1,1
+4341247,agree,2025-09-05,WC Qualification CAF,Morocco,Niger,5,0,1
+4341248,agree,2025-09-08,WC Qualification CAF,Zambia,Morocco,0,2,1
+4341259,agree,2025-10-12,WC Qualification CAF,Mali,Madagascar,4,1,1
+4341276,agree,2025-09-09,WC Qualification CAF,Tanzania,Niger,0,1,1
+4341277,agree,2025-09-09,WC Qualification CAF,Gabon,Ivory Coast,0,0,1
+4341278,agree,2025-09-05,WC Qualification CAF,Ivory Coast,Burundi,1,0,1
+4341279,agree,2025-09-03,WC Qualification CAF,Seychelles,Gabon,0,4,1
+4341280,agree,2025-09-05,WC Qualification CAF,Kenya,Gambia,1,3,1
+4341281,agree,2025-03-25,WC Qualification CAF,Burundi,Seychelles,5,0,1
+4341282,agree,2025-03-24,WC Qualification CAF,Ivory Coast,Gambia,1,0,1
+4341283,agree,2025-03-23,WC Qualification CAF,Kenya,Gabon,1,2,1
+4341284,agree,2025-03-21,WC Qualification CAF,Burundi,Ivory Coast,0,1,1
+4341285,agree,2025-09-09,WC Qualification CAF,Kenya,Seychelles,5,0,1
+4341286,agree,2025-09-09,WC Qualification CAF,Gambia,Burundi,2,0,1
+4341289,agree,2025-10-14,WC Qualification CAF,Ivory Coast,Kenya,3,0,1
+4341290,agree,2025-10-14,WC Qualification CAF,Seychelles,Gambia,0,7,1
+4341291,agree,2025-10-14,WC Qualification CAF,Gabon,Burundi,2,0,1
+4341292,agree,2025-10-09,WC Qualification CAF,Burundi,Kenya,0,1,1
+4341293,agree,2025-10-10,WC Qualification CAF,Gambia,Gabon,3,4,1
+4341294,agree,2025-10-10,WC Qualification CAF,Seychelles,Ivory Coast,0,7,1
+4341295,agree,2025-03-20,WC Qualification CAF,Gambia,Kenya,3,3,1
+4341296,agree,2025-03-20,WC Qualification CAF,Gabon,Seychelles,3,0,1
+4341299,agree,2025-10-14,WC Qualification CAF,Morocco,Congo,1,0,1
+4341301,agree,2025-10-12,WC Qualification CAF,Zambia,Niger,0,1,1
+4341302,agree,2025-10-08,WC Qualification CAF,Niger,Congo,3,1,1
+4341303,agree,2025-10-08,WC Qualification CAF,Tanzania,Zambia,0,1,1
+4341325,agree,2025-10-13,WC Qualification CAF,Tunisia,Namibia,3,0,1
+4341326,agree,2025-03-24,WC Qualification CAF,Tunisia,Malawi,2,0,1
+4341327,agree,2025-03-24,WC Qualification CAF,Namibia,Equatorial Guinea,1,1,1
+4341328,agree,2025-03-19,WC Qualification CAF,Liberia,Tunisia,0,1,1
+4341329,agree,2025-03-20,WC Qualification CAF,Malawi,Namibia,0,1,1
+4341330,agree,2025-03-21,WC Qualification CAF,Equatorial Guinea,São Tomé and Príncipe,2,0,1
+4341336,agree,2025-03-24,WC Qualification CAF,Liberia,São Tomé and Príncipe,2,1,1
+4341337,agree,2025-09-05,WC Qualification CAF,Namibia,Malawi,1,2,1
+4341338,agree,2025-10-13,WC Qualification CAF,São Tomé and Príncipe,Malawi,1,0,1
+4341339,agree,2025-10-13,WC Qualification CAF,Equatorial Guinea,Liberia,1,1,1
+4341340,agree,2025-10-09,WC Qualification CAF,Liberia,Namibia,3,1,1
+4341341,agree,2025-10-09,WC Qualification CAF,Malawi,Equatorial Guinea,3,0,1
+4341342,agree,2025-10-10,WC Qualification CAF,São Tomé and Príncipe,Tunisia,0,6,1
+4341343,agree,2025-09-08,WC Qualification CAF,Malawi,Liberia,2,2,1
+4341344,agree,2025-09-09,WC Qualification CAF,Namibia,São Tomé and Príncipe,3,0,1
+4341345,agree,2025-09-08,WC Qualification CAF,Equatorial Guinea,Tunisia,0,1,1
+4341346,agree,2025-09-04,WC Qualification CAF,Tunisia,Liberia,3,0,1
+4341347,agree,2025-09-04,WC Qualification CAF,São Tomé and Príncipe,Equatorial Guinea,2,3,1
+4341350,agree,2025-09-08,WC Qualification CAF,Uganda,Somalia,2,0,1
+4341351,agree,2025-09-08,WC Qualification CAF,Guinea,Algeria,0,0,1
+4341352,agree,2025-09-04,WC Qualification CAF,Algeria,Botswana,3,1,1
+4341353,agree,2025-09-05,WC Qualification CAF,Somalia,Guinea,0,3,1
+4341354,agree,2025-09-05,WC Qualification CAF,Uganda,Mozambique,4,0,1
+4341355,agree,2025-03-25,WC Qualification CAF,Botswana,Somalia,2,0,1
+4341356,agree,2025-03-25,WC Qualification CAF,Algeria,Mozambique,5,1,1
+4341357,agree,2025-03-25,WC Qualification CAF,Uganda,Guinea,1,0,1
+4341358,agree,2025-03-21,WC Qualification CAF,Botswana,Algeria,1,3,1
+4341359,agree,2025-03-20,WC Qualification CAF,Mozambique,Uganda,3,1,1
+4341360,agree,2025-09-08,WC Qualification CAF,Mozambique,Botswana,2,0,1
+4341361,agree,2025-10-09,WC Qualification CAF,Somalia,Algeria,0,3,1
+4341367,agree,2025-10-14,WC Qualification CAF,Algeria,Uganda,2,1,1
+4341368,agree,2025-10-14,WC Qualification CAF,Somalia,Mozambique,0,1,1
+4341369,agree,2025-10-14,WC Qualification CAF,Guinea,Botswana,2,2,1
+4341370,agree,2025-10-09,WC Qualification CAF,Botswana,Uganda,0,1,1
+4341371,agree,2025-10-09,WC Qualification CAF,Mozambique,Guinea,1,2,1
+4341372,agree,2025-03-21,WC Qualification CAF,Guinea,Somalia,0,0,1
+4377179,agree,2024-07-01,Copa America,Jamaica,Venezuela,0,3,1
+4377180,agree,2024-07-01,Copa America,Mexico,Ecuador,0,0,1
+4377208,agree,2024-07-02,Copa America,Bolivia,Panama,1,3,1
+4377209,agree,2024-07-02,Copa America,United States,Uruguay,0,1,1
+4377212,agree,2024-07-03,Copa America,Brazil,Colombia,1,1,1
+4407868,agree,2024-07-05,Copa America,Argentina,Ecuador,1,1,1
+4407869,agree,2024-07-06,Copa America,Venezuela,Canada,1,1,1
+4407870,agree,2024-07-07,Copa America,Uruguay,Brazil,0,0,1
+4407871,agree,2024-07-06,Copa America,Colombia,Panama,5,0,1
+4407872,agree,2024-07-10,Copa America,Argentina,Canada,2,0,1
+4407873,agree,2024-07-11,Copa America,Uruguay,Colombia,0,1,1
+4407874,agree,2024-07-14,Copa America,Canada,Uruguay,2,2,1
+4407875,agree,2024-07-15,Copa America,Argentina,Colombia,1,0,1
+4407878,agree,2024-07-03,Copa America,Costa Rica,Paraguay,2,1,1
+4416433,agree,2025-06-11,WC Qualification CONCACAF,Costa Rica,Trinidad and Tobago,2,1,1
+4416434,agree,2025-06-10,WC Qualification CONCACAF,Saint Kitts and Nevis,Grenada,2,3,1
+4416435,agree,2025-06-07,WC Qualification CONCACAF,Bahamas,Costa Rica,0,8,1
+4416436,agree,2025-06-06,WC Qualification CONCACAF,Trinidad and Tobago,Saint Kitts and Nevis,6,2,1
+4416437,agree,2025-06-04,WC Qualification CONCACAF,Grenada,Bahamas,6,0,1
+4416443,agree,2025-06-11,WC Qualification CONCACAF,Honduras,Antigua and Barbuda,2,0,1
+4416444,agree,2025-06-10,WC Qualification CONCACAF,Cuba,Bermuda,1,2,1
+4416445,agree,2025-06-07,WC Qualification CONCACAF,Cayman Islands,Honduras,0,1,1
+4416446,agree,2025-06-06,WC Qualification CONCACAF,Antigua and Barbuda,Cuba,0,1,1
+4416447,agree,2025-06-04,WC Qualification CONCACAF,Bermuda,Cayman Islands,5,0,1
+4416457,agree,2025-06-04,WC Qualification CONCACAF,Barbados,Aruba,1,1,1
+4416458,agree,2025-06-06,WC Qualification CONCACAF,Curaçao,Saint Lucia,4,0,1
+4416459,agree,2025-06-07,WC Qualification CONCACAF,Aruba,Haiti,0,5,1
+4416460,agree,2025-06-10,WC Qualification CONCACAF,Saint Lucia,Barbados,2,1,1
+4416461,agree,2025-06-10,WC Qualification CONCACAF,Haiti,Curaçao,1,5,1
+4416467,agree,2025-06-04,WC Qualification CONCACAF,Montserrat,Belize,1,0,1
+4416468,agree,2025-06-07,WC Qualification CONCACAF,Nicaragua,Guyana,1,0,1
+4416469,agree,2025-06-08,WC Qualification CONCACAF,Belize,Panama,0,2,1
+4416470,agree,2025-06-11,WC Qualification CONCACAF,Guyana,Montserrat,3,0,1
+4416471,agree,2025-06-11,WC Qualification CONCACAF,Panama,Nicaragua,3,0,1
+4416475,agree,2025-06-07,WC Qualification CONCACAF,Guatemala,Dominican Republic,4,2,1
+4416476,agree,2025-06-10,WC Qualification CONCACAF,Dominican Republic,Dominica,5,0,1
+4416477,agree,2025-06-10,WC Qualification CONCACAF,Jamaica,Guatemala,3,0,1
+4416481,agree,2025-06-06,WC Qualification CONCACAF,Suriname,Puerto Rico,1,0,1
+4416482,agree,2025-06-11,WC Qualification CONCACAF,Puerto Rico,Saint Vincent and the Grenadines,2,1,1
+4416483,agree,2025-06-11,WC Qualification CONCACAF,El Salvador,Suriname,1,1,1
+4421952,agree,2024-09-07,UEFA Nations League B,Georgia,Czech Republic,4,1,1
+4421953,agree,2024-09-07,UEFA Nations League B,Ukraine,Albania,1,2,1
+4421954,agree,2024-09-10,UEFA Nations League B,Albania,Georgia,0,1,1
+4421955,agree,2024-09-10,UEFA Nations League B,Czech Republic,Ukraine,3,2,1
+4421956,agree,2024-10-11,UEFA Nations League B,Czech Republic,Albania,2,0,1
+4421957,agree,2024-10-11,UEFA Nations League B,Ukraine,Georgia,1,0,1
+4421958,agree,2024-10-14,UEFA Nations League B,Georgia,Albania,0,1,1
+4421959,agree,2024-10-14,UEFA Nations League B,Ukraine,Czech Republic,1,1,1
+4421960,agree,2024-11-16,UEFA Nations League B,Georgia,Ukraine,1,1,1
+4421961,agree,2024-11-16,UEFA Nations League B,Albania,Czech Republic,0,0,1
+4421962,agree,2024-11-19,UEFA Nations League B,Albania,Ukraine,1,2,1
+4421963,agree,2024-11-19,UEFA Nations League B,Czech Republic,Georgia,2,1,1
+4421964,agree,2024-09-05,UEFA Nations League A,Portugal,Croatia,2,1,1
+4421965,agree,2024-09-05,UEFA Nations League A,Scotland,Poland,2,3,1
+4421966,agree,2024-09-08,UEFA Nations League A,Croatia,Poland,1,0,1
+4421967,agree,2024-09-08,UEFA Nations League A,Portugal,Scotland,2,1,1
+4421968,agree,2024-10-12,UEFA Nations League A,Croatia,Scotland,2,1,1
+4421969,agree,2024-10-12,UEFA Nations League A,Poland,Portugal,1,3,1
+4421970,agree,2024-10-15,UEFA Nations League A,Poland,Croatia,3,3,1
+4421971,agree,2024-10-15,UEFA Nations League A,Scotland,Portugal,0,0,1
+4421972,agree,2024-11-15,UEFA Nations League A,Portugal,Poland,5,1,1
+4421973,agree,2024-11-15,UEFA Nations League A,Scotland,Croatia,1,0,1
+4421974,agree,2024-11-18,UEFA Nations League A,Croatia,Portugal,1,1,1
+4421975,agree,2024-11-18,UEFA Nations League A,Poland,Scotland,1,2,1
+4421977,agree,2024-09-06,UEFA Nations League A,Belgium,Israel,3,1,1
+4421978,agree,2024-09-06,UEFA Nations League A,France,Italy,1,3,1
+4421979,agree,2024-09-09,UEFA Nations League A,France,Belgium,2,0,1
+4421980,agree,2024-09-09,UEFA Nations League A,Israel,Italy,1,2,1
+4421981,agree,2024-10-10,UEFA Nations League A,Israel,France,1,4,1
+4421982,agree,2024-10-10,UEFA Nations League A,Italy,Belgium,2,2,1
+4421983,agree,2024-10-14,UEFA Nations League A,Belgium,France,1,2,1
+4421984,agree,2024-10-14,UEFA Nations League A,Italy,Israel,4,1,1
+4421985,agree,2024-11-14,UEFA Nations League A,Belgium,Italy,0,1,1
+4421986,agree,2024-11-14,UEFA Nations League A,France,Israel,0,0,1
+4421987,agree,2024-11-17,UEFA Nations League A,Israel,Belgium,1,0,1
+4421988,agree,2024-11-17,UEFA Nations League A,Italy,France,1,3,1
+4421989,agree,2024-09-07,UEFA Nations League B,Republic of Ireland,England,0,2,1
+4421990,agree,2024-09-07,UEFA Nations League B,Greece,Finland,3,0,1
+4421991,agree,2024-09-10,UEFA Nations League B,England,Finland,2,0,1
+4421992,agree,2024-09-10,UEFA Nations League B,Republic of Ireland,Greece,0,2,1
+4421993,agree,2024-10-10,UEFA Nations League B,England,Greece,1,2,1
+4421994,agree,2024-10-10,UEFA Nations League B,Finland,Republic of Ireland,1,2,1
+4421995,agree,2024-10-13,UEFA Nations League B,Finland,England,1,3,1
+4421996,agree,2024-10-13,UEFA Nations League B,Greece,Republic of Ireland,2,0,1
+4421997,agree,2024-11-14,UEFA Nations League B,Greece,England,0,3,1
+4421998,agree,2024-11-14,UEFA Nations League B,Republic of Ireland,Finland,1,0,1
+4421999,agree,2024-11-17,UEFA Nations League B,England,Republic of Ireland,5,0,1
+4422000,agree,2024-11-17,UEFA Nations League B,Finland,Greece,0,2,1
+4422001,agree,2024-09-05,UEFA Nations League C,Azerbaijan,Sweden,1,3,1
+4422002,agree,2024-09-05,UEFA Nations League C,Estonia,Slovakia,0,1,1
+4422003,agree,2024-09-08,UEFA Nations League C,Slovakia,Azerbaijan,2,0,1
+4422004,agree,2024-09-08,UEFA Nations League C,Sweden,Estonia,3,0,1
+4422005,agree,2024-10-11,UEFA Nations League C,Estonia,Azerbaijan,3,1,1
+4422006,agree,2024-10-11,UEFA Nations League C,Slovakia,Sweden,2,2,1
+4422007,agree,2024-10-14,UEFA Nations League C,Azerbaijan,Slovakia,1,3,1
+4422008,agree,2024-10-14,UEFA Nations League C,Estonia,Sweden,0,3,1
+4422009,agree,2024-11-16,UEFA Nations League C,Azerbaijan,Estonia,0,0,1
+4422010,agree,2024-11-16,UEFA Nations League C,Sweden,Slovakia,2,1,1
+4422011,agree,2024-11-19,UEFA Nations League C,Slovakia,Estonia,1,0,1
+4422012,agree,2024-11-19,UEFA Nations League C,Sweden,Azerbaijan,6,0,1
+4422013,agree,2024-09-07,UEFA Nations League A,Germany,Hungary,5,0,1
+4422014,agree,2024-09-07,UEFA Nations League A,Netherlands,Bosnia and Herzegovina,5,2,1
+4422015,agree,2024-09-10,UEFA Nations League A,Hungary,Bosnia and Herzegovina,0,0,1
+4422016,agree,2024-09-10,UEFA Nations League A,Netherlands,Germany,2,2,1
+4422017,agree,2024-10-11,UEFA Nations League A,Bosnia and Herzegovina,Germany,1,2,1
+4422018,agree,2024-10-11,UEFA Nations League A,Hungary,Netherlands,1,1,1
+4422019,agree,2024-10-14,UEFA Nations League A,Bosnia and Herzegovina,Hungary,0,2,1
+4422020,agree,2024-10-14,UEFA Nations League A,Germany,Netherlands,1,0,1
+4422021,agree,2024-11-16,UEFA Nations League A,Germany,Bosnia and Herzegovina,7,0,1
+4422022,agree,2024-11-16,UEFA Nations League A,Netherlands,Hungary,4,0,1
+4422023,agree,2024-11-19,UEFA Nations League A,Bosnia and Herzegovina,Netherlands,1,1,1
+4422024,agree,2024-11-19,UEFA Nations League A,Hungary,Germany,1,1,1
+4422025,agree,2024-09-05,UEFA Nations League A,Denmark,Switzerland,2,0,1
+4422026,agree,2024-09-05,UEFA Nations League A,Serbia,Spain,0,0,1
+4422027,agree,2024-09-08,UEFA Nations League A,Denmark,Serbia,2,0,1
+4422028,agree,2024-09-08,UEFA Nations League A,Switzerland,Spain,1,4,1
+4422029,agree,2024-10-12,UEFA Nations League A,Serbia,Switzerland,2,0,1
+4422030,agree,2024-10-12,UEFA Nations League A,Spain,Denmark,1,0,1
+4422031,agree,2024-10-15,UEFA Nations League A,Spain,Serbia,3,0,1
+4422032,agree,2024-10-15,UEFA Nations League A,Switzerland,Denmark,2,2,1
+4422033,agree,2024-11-15,UEFA Nations League A,Denmark,Spain,1,2,1
+4422034,agree,2024-11-15,UEFA Nations League A,Switzerland,Serbia,1,1,1
+4422035,agree,2024-11-18,UEFA Nations League A,Serbia,Denmark,0,0,1
+4422036,agree,2024-11-18,UEFA Nations League A,Spain,Switzerland,3,2,1
+4422037,agree,2024-09-05,UEFA Nations League D,San Marino,Liechtenstein,1,0,1
+4422038,agree,2024-09-08,UEFA Nations League D,Gibraltar,Liechtenstein,2,2,1
+4422039,agree,2024-10-10,UEFA Nations League D,Gibraltar,San Marino,1,0,1
+4422040,agree,2024-10-13,UEFA Nations League D,Liechtenstein,Gibraltar,0,0,1
+4422041,agree,2024-11-15,UEFA Nations League D,San Marino,Gibraltar,1,1,1
+4422042,agree,2024-11-18,UEFA Nations League D,Liechtenstein,San Marino,1,3,1
+4422043,agree,2024-09-06,UEFA Nations League B,Kazakhstan,Norway,0,0,1
+4422044,agree,2024-09-06,UEFA Nations League B,Slovenia,Austria,1,1,1
+4422045,agree,2024-09-09,UEFA Nations League B,Norway,Austria,2,1,1
+4422046,agree,2024-09-09,UEFA Nations League B,Slovenia,Kazakhstan,3,0,1
+4422047,agree,2024-10-10,UEFA Nations League B,Austria,Kazakhstan,4,0,1
+4422048,agree,2024-10-10,UEFA Nations League B,Norway,Slovenia,3,0,1
+4422049,agree,2024-10-13,UEFA Nations League B,Kazakhstan,Slovenia,0,1,1
+4422050,agree,2024-10-13,UEFA Nations League B,Austria,Norway,5,1,1
+4422051,agree,2024-11-14,UEFA Nations League B,Kazakhstan,Austria,0,2,1
+4422052,agree,2024-11-14,UEFA Nations League B,Slovenia,Norway,1,4,1
+4422053,agree,2024-11-17,UEFA Nations League B,Austria,Slovenia,1,1,1
+4422054,agree,2024-11-17,UEFA Nations League B,Norway,Kazakhstan,5,0,1
+4422056,agree,2024-09-06,UEFA Nations League C,Kosovo,Romania,0,3,1
+4422057,agree,2024-09-06,UEFA Nations League C,Lithuania,Cyprus,0,1,1
+4422058,agree,2024-09-09,UEFA Nations League C,Cyprus,Kosovo,0,4,1
+4422059,agree,2024-09-09,UEFA Nations League C,Romania,Lithuania,3,1,1
+4422060,agree,2024-10-12,UEFA Nations League C,Lithuania,Kosovo,1,2,1
+4422061,agree,2024-10-12,UEFA Nations League C,Cyprus,Romania,0,3,1
+4422062,agree,2024-10-15,UEFA Nations League C,Kosovo,Cyprus,3,0,1
+4422063,agree,2024-10-15,UEFA Nations League C,Lithuania,Romania,1,2,1
+4422064,agree,2024-11-15,UEFA Nations League C,Cyprus,Lithuania,2,1,1
+4422065,conflict,2024-11-15,UEFA Nations League C,Romania,Kosovo,3,0,1
+4422066,agree,2024-11-18,UEFA Nations League C,Kosovo,Lithuania,1,0,1
+4422067,agree,2024-11-18,UEFA Nations League C,Romania,Cyprus,4,1,1
+4422068,agree,2024-09-06,UEFA Nations League B,Iceland,Montenegro,2,0,1
+4422069,agree,2024-09-06,UEFA Nations League B,Wales,Turkey,0,0,1
+4422070,agree,2024-09-09,UEFA Nations League B,Montenegro,Wales,1,2,1
+4422071,agree,2024-09-09,UEFA Nations League B,Turkey,Iceland,3,1,1
+4422072,agree,2024-10-11,UEFA Nations League B,Iceland,Wales,2,2,1
+4422073,agree,2024-10-11,UEFA Nations League B,Turkey,Montenegro,1,0,1
+4422074,agree,2024-10-14,UEFA Nations League B,Iceland,Turkey,2,4,1
+4422075,agree,2024-10-14,UEFA Nations League B,Wales,Montenegro,1,0,1
+4422076,agree,2024-11-16,UEFA Nations League B,Montenegro,Iceland,0,2,1
+4422077,agree,2024-11-16,UEFA Nations League B,Turkey,Wales,0,0,1
+4422078,agree,2024-11-19,UEFA Nations League B,Montenegro,Turkey,3,1,1
+4422079,agree,2024-11-19,UEFA Nations League B,Wales,Iceland,4,1,1
+4422080,agree,2024-09-07,UEFA Nations League D,Moldova,Malta,2,0,1
+4422081,agree,2024-09-10,UEFA Nations League D,Andorra,Malta,0,1,1
+4422082,agree,2024-10-10,UEFA Nations League D,Moldova,Andorra,2,0,1
+4422083,agree,2024-10-13,UEFA Nations League D,Malta,Moldova,1,0,1
+4422084,agree,2024-11-16,UEFA Nations League D,Andorra,Moldova,0,1,1
+4422085,agree,2024-11-19,UEFA Nations League D,Malta,Andorra,0,0,1
+4422086,agree,2024-09-05,UEFA Nations League C,Belarus,Bulgaria,0,0,1
+4422087,agree,2024-09-05,UEFA Nations League C,Northern Ireland,Luxembourg,2,0,1
+4422088,agree,2024-09-08,UEFA Nations League C,Luxembourg,Belarus,0,1,1
+4422089,agree,2024-09-08,UEFA Nations League C,Bulgaria,Northern Ireland,1,0,1
+4422090,agree,2024-10-12,UEFA Nations League C,Bulgaria,Luxembourg,0,0,1
+4422091,agree,2024-10-12,UEFA Nations League C,Belarus,Northern Ireland,0,0,1
+4422092,agree,2024-10-15,UEFA Nations League C,Belarus,Luxembourg,1,1,1
+4422093,agree,2024-10-15,UEFA Nations League C,Northern Ireland,Bulgaria,5,0,1
+4422094,agree,2024-11-15,UEFA Nations League C,Luxembourg,Bulgaria,0,1,1
+4422095,agree,2024-11-15,UEFA Nations League C,Northern Ireland,Belarus,2,0,1
+4422096,agree,2024-11-18,UEFA Nations League C,Bulgaria,Belarus,1,1,1
+4422097,agree,2024-11-18,UEFA Nations League C,Luxembourg,Northern Ireland,2,2,1
+4422106,agree,2024-09-07,UEFA Nations League C,Faroe Islands,North Macedonia,1,1,1
+4422107,agree,2024-09-07,UEFA Nations League C,Armenia,Latvia,4,1,1
+4422108,agree,2024-09-10,UEFA Nations League C,Latvia,Faroe Islands,1,0,1
+4422109,agree,2024-09-10,UEFA Nations League C,North Macedonia,Armenia,2,0,1
+4422110,agree,2024-10-10,UEFA Nations League C,Faroe Islands,Armenia,2,2,1
+4422111,agree,2024-10-10,UEFA Nations League C,Latvia,North Macedonia,0,3,1
+4422112,agree,2024-10-13,UEFA Nations League C,Armenia,North Macedonia,0,2,1
+4422113,agree,2024-10-13,UEFA Nations League C,Faroe Islands,Latvia,1,1,1
+4422114,agree,2024-11-14,UEFA Nations League C,Armenia,Faroe Islands,0,1,1
+4422115,agree,2024-11-14,UEFA Nations League C,North Macedonia,Latvia,1,0,1
+4422116,agree,2024-11-17,UEFA Nations League C,Latvia,Armenia,1,2,1
+4422117,agree,2024-11-17,UEFA Nations League C,North Macedonia,Faroe Islands,1,0,1
+4454401,agree,2025-06-04,WC Qualification CONCACAF,Dominica,British Virgin Islands,3,0,1
+4454402,agree,2025-06-07,WC Qualification CONCACAF,British Virgin Islands,Jamaica,0,1,1
+4454404,agree,2025-06-04,WC Qualification CONCACAF,Saint Vincent and the Grenadines,Anguilla,6,0,1
+4454405,agree,2025-06-07,WC Qualification CONCACAF,Anguilla,El Salvador,0,3,1
+4485959,agree,2024-09-07,CONCACAF Nations League,Puerto Rico,Haiti,1,4,1
+4485960,agree,2024-10-12,CONCACAF Nations League,Guyana,Guatemala,1,3,1
+4485961,agree,2024-10-15,CONCACAF Nations League,Jamaica,Honduras,0,0,1
+4485962,agree,2024-10-15,CONCACAF Nations League,Trinidad and Tobago,Cuba,3,1,1
+4485963,agree,2024-10-15,CONCACAF Nations League,Nicaragua,French Guiana,3,2,1
+4485964,agree,2024-09-05,CONCACAF Nations League,Montserrat,El Salvador,1,4,1
+4485965,agree,2024-09-06,CONCACAF Nations League,Bonaire,Saint Vincent and the Grenadines,1,1,1
+4485966,agree,2024-09-06,CONCACAF Nations League,Saint Lucia,Curaçao,2,1,1
+4485967,agree,2024-09-07,CONCACAF Nations League,Saint Martin,Grenada,0,2,1
+4485968,agree,2024-09-05,CONCACAF Nations League,Guyana,Suriname,1,3,1
+4485969,agree,2024-09-06,CONCACAF Nations League,Sint Maarten,Aruba,2,0,1
+4485970,agree,2024-09-07,CONCACAF Nations League,Bermuda,Dominican Republic,2,3,1
+4485971,agree,2024-09-07,CONCACAF Nations League,Dominica,Antigua and Barbuda,2,1,1
+4485972,agree,2024-09-09,CONCACAF Nations League,El Salvador,Bonaire,2,1,1
+4485973,agree,2024-09-08,CONCACAF Nations League,Saint Vincent and the Grenadines,Montserrat,2,0,1
+4485974,agree,2024-09-09,CONCACAF Nations League,Curaçao,Saint Martin,4,0,1
+4485975,agree,2024-09-10,CONCACAF Nations League,Grenada,Saint Lucia,1,2,1
+4485976,agree,2024-10-11,CONCACAF Nations League,Suriname,Costa Rica,1,1,1
+4485977,agree,2024-09-06,CONCACAF Nations League,Costa Rica,Guadeloupe,3,0,1
+4485978,agree,2024-09-06,CONCACAF Nations League,Guatemala,Martinique,3,1,1
+4485979,agree,2024-09-07,CONCACAF Nations League,Jamaica,Cuba,0,0,1
+4485980,agree,2024-09-05,CONCACAF Nations League,French Guiana,Nicaragua,0,1,1
+4485981,agree,2024-09-07,CONCACAF Nations League,Honduras,Trinidad and Tobago,4,0,1
+4485982,agree,2024-09-10,CONCACAF Nations League,Guatemala,Costa Rica,0,0,1
+4485983,agree,2024-09-09,CONCACAF Nations League,Guadeloupe,Suriname,1,0,1
+4485984,agree,2024-09-09,CONCACAF Nations League,Martinique,Guyana,2,2,1
+4485985,agree,2024-09-11,CONCACAF Nations League,Honduras,Jamaica,1,2,1
+4485986,agree,2024-09-10,CONCACAF Nations League,Cuba,Nicaragua,1,1,1
+4485987,agree,2024-09-10,CONCACAF Nations League,Trinidad and Tobago,French Guiana,0,0,1
+4485988,agree,2024-10-11,CONCACAF Nations League,Nicaragua,Jamaica,0,2,1
+4485989,agree,2024-10-10,CONCACAF Nations League,Cuba,Trinidad and Tobago,2,2,1
+4485990,agree,2024-10-10,CONCACAF Nations League,French Guiana,Honduras,2,3,1
+4485991,agree,2024-10-11,CONCACAF Nations League,Guadeloupe,Martinique,0,1,1
+4485992,agree,2024-09-09,CONCACAF Nations League,Haiti,Sint Maarten,6,0,1
+4485993,agree,2024-09-10,CONCACAF Nations League,Aruba,Puerto Rico,0,1,1
+4485994,agree,2024-09-10,CONCACAF Nations League,Dominican Republic,Dominica,2,0,1
+4485995,agree,2024-09-10,CONCACAF Nations League,Antigua and Barbuda,Bermuda,0,1,1
+4485996,agree,2024-10-11,CONCACAF Nations League,Saint Vincent and the Grenadines,El Salvador,2,3,1
+4485997,agree,2024-10-14,CONCACAF Nations League,Puerto Rico,Sint Maarten,2,1,1
+4485998,agree,2024-10-09,CONCACAF Nations League,British Virgin Islands,Saint Kitts and Nevis,1,3,1
+4485999,agree,2024-10-10,CONCACAF Nations League,Anguilla,Belize,0,1,1
+4486000,agree,2024-10-10,CONCACAF Nations League,United States Virgin Islands,Barbados,0,5,1
+4486001,agree,2024-10-12,CONCACAF Nations League,Cayman Islands,British Virgin Islands,1,0,1
+4486002,agree,2024-10-13,CONCACAF Nations League,Turks and Caicos Islands,Anguilla,2,1,1
+4486003,agree,2024-10-13,CONCACAF Nations League,Bahamas,United States Virgin Islands,3,1,1
+4486004,agree,2024-09-10,CONCACAF Nations League,Saint Kitts and Nevis,British Virgin Islands,2,0,1
+4486005,agree,2024-09-10,CONCACAF Nations League,Belize,Anguilla,1,0,1
+4486006,agree,2024-09-10,CONCACAF Nations League,Barbados,United States Virgin Islands,3,0,1
+4486007,agree,2024-09-07,CONCACAF Nations League,Cayman Islands,Saint Kitts and Nevis,1,4,1
+4486008,agree,2024-09-07,CONCACAF Nations League,Turks and Caicos Islands,Belize,0,4,1
+4486009,agree,2024-09-07,CONCACAF Nations League,Bahamas,Barbados,2,3,1
+4486010,agree,2024-10-10,CONCACAF Nations League,Bonaire,Montserrat,0,1,1
+4486011,agree,2024-10-15,CONCACAF Nations League,Haiti,Aruba,5,3,1
+4486012,agree,2024-10-14,CONCACAF Nations League,Saint Lucia,Saint Martin,0,4,1
+4486013,agree,2024-10-14,CONCACAF Nations League,Curaçao,Grenada,1,0,1
+4486014,agree,2024-10-13,CONCACAF Nations League,Montserrat,Bonaire,0,1,1
+4486015,agree,2024-10-14,CONCACAF Nations League,El Salvador,Saint Vincent and the Grenadines,1,2,1
+4486016,agree,2024-10-12,CONCACAF Nations League,Dominica,Bermuda,1,6,1
+4486017,agree,2024-10-12,CONCACAF Nations League,Antigua and Barbuda,Dominican Republic,0,5,1
+4486018,agree,2024-10-11,CONCACAF Nations League,Sint Maarten,Puerto Rico,3,2,1
+4486019,agree,2024-10-12,CONCACAF Nations League,Aruba,Haiti,1,3,1
+4486020,agree,2024-10-12,CONCACAF Nations League,Saint Martin,Saint Lucia,1,2,1
+4486021,agree,2024-10-11,CONCACAF Nations League,Grenada,Curaçao,0,0,1
+4486022,agree,2024-10-16,CONCACAF Nations League,Costa Rica,Guatemala,3,0,1
+4486023,agree,2024-10-16,CONCACAF Nations League,Martinique,Guadeloupe,0,0,1
+4486024,agree,2024-10-16,CONCACAF Nations League,Suriname,Guyana,5,1,1
+4486025,agree,2024-10-15,CONCACAF Nations League,Dominican Republic,Antigua and Barbuda,5,0,1
+4486026,agree,2024-10-15,CONCACAF Nations League,Bermuda,Dominica,3,2,1
+4486027,agree,2024-10-16,CONCACAF Nations League,Barbados,Bahamas,6,2,1
+4486028,agree,2024-10-16,CONCACAF Nations League,Belize,Turks and Caicos Islands,3,0,1
+4486029,agree,2024-10-15,CONCACAF Nations League,Saint Kitts and Nevis,Cayman Islands,1,1,1
+4486030,agree,2024-11-14,CONCACAF Nations League,Montserrat,Saint Vincent and the Grenadines,1,2,1
+4486031,agree,2024-11-15,CONCACAF Nations League,Bonaire,El Salvador,0,1,1
+4486032,agree,2024-11-15,CONCACAF Nations League,Saint Lucia,Grenada,0,4,1
+4486033,agree,2024-11-15,CONCACAF Nations League,Saint Martin,Curaçao,0,5,1
+4486034,agree,2024-11-16,CONCACAF Nations League,Puerto Rico,Aruba,5,1,1
+4486035,agree,2024-11-15,CONCACAF Nations League,Sint Maarten,Haiti,0,8,1
+4486036,agree,2024-11-16,CONCACAF Nations League,Bermuda,Antigua and Barbuda,2,1,1
+4486037,agree,2024-11-16,CONCACAF Nations League,Dominica,Dominican Republic,1,6,1
+4486038,agree,2024-11-18,CONCACAF Nations League,El Salvador,Montserrat,1,0,1
+4486039,agree,2024-11-17,CONCACAF Nations League,Saint Vincent and the Grenadines,Bonaire,3,1,1
+4486040,agree,2024-11-18,CONCACAF Nations League,Curaçao,Saint Lucia,4,1,1
+4486041,agree,2024-11-18,CONCACAF Nations League,Grenada,Saint Martin,0,3,1
+4486042,agree,2024-11-19,CONCACAF Nations League,Haiti,Puerto Rico,3,0,1
+4486043,agree,2024-11-18,CONCACAF Nations League,Aruba,Sint Maarten,0,1,1
+4486044,agree,2024-11-19,CONCACAF Nations League,Dominican Republic,Bermuda,6,1,1
+4486045,agree,2024-11-19,CONCACAF Nations League,Antigua and Barbuda,Dominica,0,0,1
+4486046,agree,2024-09-04,CONCACAF Nations League,United States Virgin Islands,Bahamas,3,3,1
+4486047,agree,2024-09-04,CONCACAF Nations League,Anguilla,Turks and Caicos Islands,2,0,1
+4486048,agree,2024-09-04,CONCACAF Nations League,British Virgin Islands,Cayman Islands,0,1,1
+4523648,agree,2024-11-14,WC Qualification AFC,United Arab Emirates,Kyrgyzstan,3,0,1
+4523649,agree,2025-06-05,WC Qualification AFC,North Korea,Kyrgyzstan,2,2,1
+4523650,agree,2025-06-05,WC Qualification AFC,United Arab Emirates,Uzbekistan,0,0,1
+4523651,agree,2025-06-05,WC Qualification AFC,Qatar,Iran,1,0,1
+4523652,agree,2025-03-25,WC Qualification AFC,North Korea,United Arab Emirates,1,2,1
+4523653,agree,2025-03-25,WC Qualification AFC,Kyrgyzstan,Qatar,3,1,1
+4523654,agree,2025-03-25,WC Qualification AFC,Iran,Uzbekistan,2,2,1
+4523655,agree,2025-03-20,WC Qualification AFC,Uzbekistan,Kyrgyzstan,1,0,1
+4523656,agree,2025-03-20,WC Qualification AFC,Qatar,North Korea,5,1,1
+4523657,agree,2025-03-20,WC Qualification AFC,Iran,United Arab Emirates,2,0,1
+4523658,agree,2024-11-19,WC Qualification AFC,North Korea,Uzbekistan,0,1,1
+4523659,agree,2024-11-19,WC Qualification AFC,Kyrgyzstan,Iran,2,3,1
+4523660,agree,2024-11-19,WC Qualification AFC,United Arab Emirates,Qatar,5,0,1
+4523661,agree,2024-11-14,WC Qualification AFC,North Korea,Iran,2,3,1
+4523662,agree,2024-09-05,WC Qualification AFC,Iran,Kyrgyzstan,1,0,1
+4523663,agree,2024-11-14,WC Qualification AFC,Qatar,Uzbekistan,3,2,1
+4523664,agree,2024-10-15,WC Qualification AFC,Kyrgyzstan,North Korea,1,0,1
+4523665,agree,2024-10-15,WC Qualification AFC,Uzbekistan,United Arab Emirates,1,0,1
+4523666,agree,2024-10-15,WC Qualification AFC,Iran,Qatar,4,1,1
+4523667,agree,2024-10-10,WC Qualification AFC,United Arab Emirates,North Korea,1,1,1
+4523668,agree,2024-10-10,WC Qualification AFC,Uzbekistan,Iran,0,0,1
+4523669,agree,2024-10-10,WC Qualification AFC,Qatar,Kyrgyzstan,3,1,1
+4523670,agree,2024-09-10,WC Qualification AFC,North Korea,Qatar,2,2,1
+4523671,agree,2024-09-10,WC Qualification AFC,Kyrgyzstan,Uzbekistan,2,3,1
+4523672,agree,2024-09-10,WC Qualification AFC,United Arab Emirates,Iran,0,1,1
+4523673,agree,2024-09-05,WC Qualification AFC,Uzbekistan,North Korea,1,0,1
+4523674,agree,2024-09-05,WC Qualification AFC,Qatar,United Arab Emirates,1,3,1
+4523675,agree,2025-06-10,WC Qualification AFC,Iran,North Korea,3,0,1
+4523676,agree,2025-06-10,WC Qualification AFC,Uzbekistan,Qatar,3,0,1
+4523677,agree,2025-06-10,WC Qualification AFC,Kyrgyzstan,United Arab Emirates,1,1,1
+4523678,agree,2024-09-05,WC Qualification AFC,South Korea,Palestine,0,0,1
+4523679,agree,2024-09-05,WC Qualification AFC,Iraq,Oman,1,0,1
+4523680,agree,2024-09-05,WC Qualification AFC,Jordan,Kuwait,1,1,1
+4523681,agree,2024-09-10,WC Qualification AFC,Oman,South Korea,1,3,1
+4523682,agree,2024-09-10,WC Qualification AFC,Palestine,Jordan,1,3,1
+4523683,agree,2024-09-10,WC Qualification AFC,Kuwait,Iraq,0,0,1
+4523684,agree,2024-10-10,WC Qualification AFC,Iraq,Palestine,1,0,1
+4523685,agree,2024-10-10,WC Qualification AFC,Jordan,South Korea,0,2,1
+4523686,agree,2024-10-10,WC Qualification AFC,Oman,Kuwait,4,0,1
+4523687,agree,2024-10-15,WC Qualification AFC,South Korea,Iraq,3,2,1
+4523688,agree,2024-10-15,WC Qualification AFC,Saudi Arabia,Bahrain,0,0,1
+4523689,agree,2024-09-05,WC Qualification AFC,Australia,Bahrain,0,1,1
+4523690,agree,2024-09-05,WC Qualification AFC,Saudi Arabia,Indonesia,1,1,1
+4523691,agree,2024-09-10,WC Qualification AFC,Bahrain,Japan,0,5,1
+4523692,agree,2024-09-10,WC Qualification AFC,China,Saudi Arabia,1,2,1
+4523693,agree,2024-09-10,WC Qualification AFC,Indonesia,Australia,0,0,1
+4523694,agree,2024-10-10,WC Qualification AFC,Australia,China,3,1,1
+4523695,agree,2024-10-10,WC Qualification AFC,Saudi Arabia,Japan,0,2,1
+4523696,agree,2024-10-10,WC Qualification AFC,Bahrain,Indonesia,2,2,1
+4523697,agree,2024-10-15,WC Qualification AFC,Japan,Australia,1,1,1
+4523698,agree,2024-09-05,WC Qualification AFC,Japan,China,7,0,1
+4523699,agree,2024-10-15,WC Qualification AFC,China,Indonesia,2,1,1
+4523700,agree,2024-11-14,WC Qualification AFC,Australia,Saudi Arabia,0,0,1
+4523701,agree,2024-11-14,WC Qualification AFC,Bahrain,China,0,1,1
+4523702,agree,2024-11-15,WC Qualification AFC,Indonesia,Japan,0,4,1
+4523703,agree,2024-11-19,WC Qualification AFC,Bahrain,Australia,2,2,1
+4523704,agree,2024-11-19,WC Qualification AFC,China,Japan,1,3,1
+4523705,agree,2024-11-19,WC Qualification AFC,Indonesia,Saudi Arabia,2,0,1
+4523706,agree,2025-03-20,WC Qualification AFC,Japan,Bahrain,2,0,1
+4523707,agree,2025-03-20,WC Qualification AFC,Australia,Indonesia,5,1,1
+4523708,agree,2025-03-20,WC Qualification AFC,Jordan,Palestine,3,1,1
+4523709,agree,2024-10-15,WC Qualification AFC,Palestine,Kuwait,2,2,1
+4523710,agree,2024-11-14,WC Qualification AFC,Iraq,Jordan,0,0,1
+4523711,agree,2024-11-14,WC Qualification AFC,Oman,Palestine,1,0,1
+4523712,agree,2024-11-14,WC Qualification AFC,Kuwait,South Korea,1,3,1
+4523713,agree,2024-11-19,WC Qualification AFC,Oman,Iraq,0,1,1
+4523714,agree,2024-11-19,WC Qualification AFC,Palestine,South Korea,1,1,1
+4523715,agree,2024-11-19,WC Qualification AFC,Kuwait,Jordan,1,1,1
+4523716,agree,2025-03-20,WC Qualification AFC,South Korea,Oman,1,1,1
+4523717,agree,2025-03-20,WC Qualification AFC,Iraq,Kuwait,2,2,1
+4523718,agree,2024-10-15,WC Qualification AFC,Jordan,Oman,4,0,1
+4523719,agree,2025-03-25,WC Qualification AFC,South Korea,Jordan,1,1,1
+4523720,agree,2025-03-25,WC Qualification AFC,Palestine,Iraq,2,1,1
+4523721,agree,2025-03-25,WC Qualification AFC,Kuwait,Oman,0,1,1
+4523722,agree,2025-06-05,WC Qualification AFC,Iraq,South Korea,0,2,1
+4523723,agree,2025-06-05,WC Qualification AFC,Oman,Jordan,0,3,1
+4523724,agree,2025-06-05,WC Qualification AFC,Kuwait,Palestine,0,2,1
+4523725,agree,2025-06-10,WC Qualification AFC,South Korea,Kuwait,4,0,1
+4523726,agree,2025-06-10,WC Qualification AFC,Jordan,Iraq,0,1,1
+4523727,agree,2025-06-10,WC Qualification AFC,Palestine,Oman,1,1,1
+4523728,agree,2025-03-20,WC Qualification AFC,Saudi Arabia,China,1,0,1
+4523729,agree,2025-03-25,WC Qualification AFC,Japan,Saudi Arabia,0,0,1
+4523730,agree,2025-03-25,WC Qualification AFC,China,Australia,0,2,1
+4523731,agree,2025-03-25,WC Qualification AFC,Indonesia,Bahrain,1,0,1
+4523732,agree,2025-06-05,WC Qualification AFC,Australia,Japan,1,0,1
+4523733,agree,2025-06-05,WC Qualification AFC,Bahrain,Saudi Arabia,0,2,1
+4523734,agree,2025-06-05,WC Qualification AFC,Indonesia,China,1,0,1
+4523735,agree,2025-06-10,WC Qualification AFC,Japan,Indonesia,6,0,1
+4523736,agree,2025-06-10,WC Qualification AFC,Saudi Arabia,Australia,1,2,1
+4523737,agree,2025-06-10,WC Qualification AFC,China,Bahrain,1,0,1
+4538718,agree,2024-09-05,AFCON Qualification,Tunisia,Madagascar,1,0,1
+4538719,agree,2024-09-04,AFCON Qualification,Comoros,Gambia,1,1,1
+4538720,agree,2024-09-08,AFCON Qualification,Gambia,Tunisia,1,2,1
+4538721,agree,2024-09-09,AFCON Qualification,Madagascar,Comoros,1,1,1
+4538722,agree,2024-10-11,AFCON Qualification,Madagascar,Gambia,1,1,1
+4538723,agree,2024-10-11,AFCON Qualification,Tunisia,Comoros,0,1,1
+4538724,agree,2024-10-14,AFCON Qualification,Gambia,Madagascar,1,0,1
+4538725,agree,2024-10-15,AFCON Qualification,Comoros,Tunisia,1,1,1
+4538726,agree,2024-11-15,AFCON Qualification,Gambia,Comoros,1,2,1
+4538727,agree,2024-11-14,AFCON Qualification,Madagascar,Tunisia,2,3,1
+4538728,agree,2024-11-18,AFCON Qualification,Tunisia,Gambia,0,1,1
+4538729,agree,2024-11-18,AFCON Qualification,Comoros,Madagascar,1,0,1
+4538730,agree,2024-10-11,AFCON Qualification,Nigeria,Libya,1,0,1
+4538731,agree,2024-11-15,AFCON Qualification,Botswana,Mauritania,1,1,1
+4538732,agree,2024-11-15,AFCON Qualification,Cape Verde,Egypt,1,1,1
+4538733,agree,2024-11-19,AFCON Qualification,Egypt,Botswana,1,1,1
+4538734,agree,2024-11-19,AFCON Qualification,Mauritania,Cape Verde,1,0,1
+4538735,agree,2024-09-07,AFCON Qualification,Nigeria,Benin,3,0,1
+4538736,agree,2024-09-04,AFCON Qualification,Libya,Rwanda,1,1,1
+4538737,agree,2024-09-10,AFCON Qualification,Rwanda,Nigeria,0,0,1
+4538738,agree,2024-09-10,AFCON Qualification,Benin,Libya,2,1,1
+4538739,agree,2024-10-11,AFCON Qualification,Benin,Rwanda,3,0,1
+4538740,agree,2024-10-15,AFCON Qualification,Mauritania,Egypt,0,1,1
+4538741,agree,2024-10-15,AFCON Qualification,Rwanda,Benin,2,1,1
+4538742,fotmob_only,2024-10-15,AFCON Qualification,Libya,Nigeria,0,3,1
+4538743,agree,2024-11-14,AFCON Qualification,Rwanda,Libya,0,1,1
+4538744,agree,2024-11-14,AFCON Qualification,Benin,Nigeria,1,1,1
+4538745,agree,2024-11-18,AFCON Qualification,Nigeria,Rwanda,1,2,1
+4538746,agree,2024-11-18,AFCON Qualification,Libya,Benin,0,0,1
+4538747,agree,2024-09-05,AFCON Qualification,Algeria,Equatorial Guinea,2,0,1
+4538748,agree,2024-09-06,AFCON Qualification,Togo,Liberia,1,1,1
+4538749,agree,2024-11-18,AFCON Qualification,Morocco,Lesotho,7,0,1
+4538750,agree,2024-09-05,AFCON Qualification,Central African Republic,Lesotho,3,1,1
+4538751,agree,2024-09-09,AFCON Qualification,Lesotho,Morocco,0,1,1
+4538752,agree,2024-09-10,AFCON Qualification,Gabon,Central African Republic,2,0,1
+4538753,agree,2024-10-11,AFCON Qualification,Gabon,Lesotho,0,0,1
+4538754,agree,2024-10-12,AFCON Qualification,Morocco,Central African Republic,5,0,1
+4538755,agree,2024-10-15,AFCON Qualification,Lesotho,Gabon,0,2,1
+4538756,agree,2024-10-15,AFCON Qualification,Central African Republic,Morocco,0,4,1
+4538757,agree,2024-11-14,AFCON Qualification,Lesotho,Central African Republic,1,0,1
+4538758,agree,2024-11-15,AFCON Qualification,Gabon,Morocco,1,5,1
+4538759,agree,2024-09-06,AFCON Qualification,Morocco,Gabon,4,1,1
+4538760,agree,2024-11-18,AFCON Qualification,Central African Republic,Gabon,0,1,1
+4538761,agree,2024-09-06,AFCON Qualification,Egypt,Cape Verde,3,0,1
+4538762,agree,2024-09-07,AFCON Qualification,Mauritania,Botswana,1,0,1
+4538763,agree,2024-09-10,AFCON Qualification,Botswana,Egypt,0,4,1
+4538764,agree,2024-09-10,AFCON Qualification,Cape Verde,Mauritania,2,0,1
+4538765,agree,2024-10-10,AFCON Qualification,Cape Verde,Botswana,0,1,1
+4538766,agree,2024-10-11,AFCON Qualification,Egypt,Mauritania,2,0,1
+4538767,agree,2024-10-15,AFCON Qualification,Botswana,Cape Verde,1,0,1
+4538768,agree,2024-09-09,AFCON Qualification,Equatorial Guinea,Togo,2,2,1
+4538769,agree,2024-09-06,AFCON Qualification,Sierra Leone,Chad,0,0,1
+4538770,agree,2024-09-06,AFCON Qualification,Ivory Coast,Zambia,2,0,1
+4538771,agree,2024-11-18,AFCON Qualification,Sudan,Angola,0,0,1
+4538772,agree,2024-11-18,AFCON Qualification,Ghana,Niger,1,2,1
+4538773,agree,2024-11-15,AFCON Qualification,Angola,Ghana,1,1,1
+4538774,agree,2024-11-14,AFCON Qualification,Niger,Sudan,4,0,1
+4538775,agree,2024-10-15,AFCON Qualification,Sudan,Ghana,2,0,1
+4538776,agree,2024-10-15,AFCON Qualification,Niger,Angola,0,1,1
+4538777,agree,2024-10-10,AFCON Qualification,Ghana,Sudan,0,0,1
+4538778,agree,2024-10-11,AFCON Qualification,Angola,Niger,2,0,1
+4538779,agree,2024-09-09,AFCON Qualification,Angola,Sudan,2,1,1
+4538780,agree,2024-09-04,AFCON Qualification,Sudan,Niger,1,0,1
+4538781,agree,2024-09-09,AFCON Qualification,Niger,Ghana,1,1,1
+4538782,agree,2024-09-10,AFCON Qualification,Liberia,Algeria,0,3,1
+4538783,agree,2024-10-11,AFCON Qualification,Equatorial Guinea,Liberia,1,0,1
+4538784,agree,2024-10-10,AFCON Qualification,Algeria,Togo,5,1,1
+4538785,agree,2024-10-14,AFCON Qualification,Liberia,Equatorial Guinea,1,2,1
+4538786,agree,2024-10-14,AFCON Qualification,Togo,Algeria,0,1,1
+4538787,agree,2024-11-13,AFCON Qualification,Liberia,Togo,1,0,1
+4538788,agree,2024-11-14,AFCON Qualification,Equatorial Guinea,Algeria,0,0,1
+4538789,agree,2024-11-17,AFCON Qualification,Algeria,Liberia,5,1,1
+4538790,agree,2024-11-17,AFCON Qualification,Togo,Equatorial Guinea,3,0,1
+4538791,agree,2024-09-05,AFCON Qualification,Ghana,Angola,0,1,1
+4538792,agree,2024-09-10,AFCON Qualification,Guinea,Tanzania,1,2,1
+4538793,agree,2024-09-09,AFCON Qualification,Ethiopia,DR Congo,0,2,1
+4538794,agree,2024-09-04,AFCON Qualification,Tanzania,Ethiopia,0,0,1
+4538795,agree,2024-09-06,AFCON Qualification,DR Congo,Guinea,1,0,1
+4538796,agree,2024-11-19,AFCON Qualification,Sierra Leone,Zambia,0,2,1
+4538797,agree,2024-11-19,AFCON Qualification,Ivory Coast,Chad,4,0,1
+4538798,agree,2024-11-15,AFCON Qualification,Zambia,Ivory Coast,1,0,1
+4538799,agree,2024-11-13,AFCON Qualification,Chad,Sierra Leone,1,1,1
+4538800,agree,2024-10-15,AFCON Qualification,Sierra Leone,Ivory Coast,1,0,1
+4538801,agree,2024-10-15,AFCON Qualification,Chad,Zambia,0,1,1
+4538802,agree,2024-10-11,AFCON Qualification,Ivory Coast,Sierra Leone,4,1,1
+4538803,agree,2024-10-11,AFCON Qualification,Zambia,Chad,0,0,1
+4538804,agree,2024-09-10,AFCON Qualification,Zambia,Sierra Leone,3,2,1
+4538805,agree,2024-09-10,AFCON Qualification,Chad,Ivory Coast,0,2,1
+4538806,agree,2024-11-13,AFCON Qualification,Namibia,Cameroon,0,0,1
+4538807,agree,2024-09-07,AFCON Qualification,Cameroon,Namibia,1,0,1
+4538808,agree,2024-09-06,AFCON Qualification,Kenya,Zimbabwe,0,0,1
+4538809,agree,2024-09-10,AFCON Qualification,Zimbabwe,Cameroon,0,0,1
+4538810,agree,2024-09-10,AFCON Qualification,Namibia,Kenya,1,2,1
+4538811,agree,2024-10-10,AFCON Qualification,Namibia,Zimbabwe,0,1,1
+4538812,agree,2024-10-11,AFCON Qualification,Cameroon,Kenya,4,1,1
+4538813,agree,2024-10-14,AFCON Qualification,Zimbabwe,Namibia,3,1,1
+4538814,agree,2024-10-14,AFCON Qualification,Kenya,Cameroon,0,1,1
+4538815,agree,2024-11-15,AFCON Qualification,Zimbabwe,Kenya,1,1,1
+4538816,agree,2024-11-19,AFCON Qualification,Guinea-Bissau,Mozambique,1,2,1
+4538817,agree,2024-11-19,AFCON Qualification,Cameroon,Zimbabwe,2,1,1
+4538818,agree,2024-11-19,AFCON Qualification,Kenya,Namibia,0,0,1
+4538819,agree,2024-09-06,AFCON Qualification,South Africa,Uganda,2,2,1
+4538820,agree,2024-09-05,AFCON Qualification,Congo,South Sudan,1,0,1
+4538821,agree,2024-09-10,AFCON Qualification,South Sudan,South Africa,2,3,1
+4538822,agree,2024-09-09,AFCON Qualification,Uganda,Congo,2,0,1
+4538823,agree,2024-10-11,AFCON Qualification,Uganda,South Sudan,1,0,1
+4538824,agree,2024-10-11,AFCON Qualification,South Africa,Congo,5,0,1
+4538825,agree,2024-09-10,AFCON Qualification,Eswatini,Mali,0,1,1
+4538826,agree,2024-10-10,AFCON Qualification,DR Congo,Tanzania,1,0,1
+4538827,agree,2024-10-15,AFCON Qualification,Ethiopia,Guinea,0,3,1
+4538828,agree,2024-10-15,AFCON Qualification,Tanzania,DR Congo,0,2,1
+4538829,agree,2024-11-16,AFCON Qualification,Ethiopia,Tanzania,0,2,1
+4538830,agree,2024-11-16,AFCON Qualification,Guinea,DR Congo,1,0,1
+4538831,agree,2024-11-19,AFCON Qualification,DR Congo,Ethiopia,1,2,1
+4538832,agree,2024-11-19,AFCON Qualification,Tanzania,Guinea,1,0,1
+4538833,agree,2024-09-06,AFCON Qualification,Mali,Mozambique,1,1,1
+4538834,agree,2024-09-05,AFCON Qualification,Guinea-Bissau,Eswatini,1,0,1
+4538835,agree,2024-10-12,AFCON Qualification,Guinea,Ethiopia,4,1,1
+4538836,agree,2024-09-10,AFCON Qualification,Mozambique,Guinea-Bissau,2,1,1
+4538837,agree,2024-10-11,AFCON Qualification,Mozambique,Eswatini,1,1,1
+4538838,agree,2024-10-11,AFCON Qualification,Mali,Guinea-Bissau,1,0,1
+4538839,agree,2024-10-14,AFCON Qualification,Eswatini,Mozambique,0,3,1
+4538840,agree,2024-10-15,AFCON Qualification,Guinea-Bissau,Mali,0,0,1
+4538841,agree,2024-11-15,AFCON Qualification,Eswatini,Guinea-Bissau,1,1,1
+4538842,agree,2024-11-15,AFCON Qualification,Mozambique,Mali,0,1,1
+4538843,agree,2024-11-19,AFCON Qualification,Mali,Eswatini,6,0,1
+4538844,agree,2024-10-15,AFCON Qualification,Congo,South Africa,1,1,1
+4538845,agree,2024-10-15,AFCON Qualification,South Sudan,Uganda,1,2,1
+4538846,agree,2024-11-18,AFCON Qualification,Malawi,Burkina Faso,3,0,1
+4538847,agree,2024-11-19,AFCON Qualification,Senegal,Burundi,2,0,1
+4538848,agree,2024-11-14,AFCON Qualification,Burkina Faso,Senegal,0,1,1
+4538849,agree,2024-11-14,AFCON Qualification,Burundi,Malawi,0,0,1
+4538850,agree,2024-10-15,AFCON Qualification,Malawi,Senegal,0,1,1
+4538851,agree,2024-10-13,AFCON Qualification,Burundi,Burkina Faso,0,2,1
+4538852,agree,2024-10-11,AFCON Qualification,Senegal,Malawi,4,0,1
+4538853,agree,2024-10-10,AFCON Qualification,Burkina Faso,Burundi,4,1,1
+4538854,agree,2024-09-10,AFCON Qualification,Burkina Faso,Malawi,3,1,1
+4538855,agree,2024-09-09,AFCON Qualification,Burundi,Senegal,0,1,1
+4538856,agree,2024-09-05,AFCON Qualification,Malawi,Burundi,2,3,1
+4538857,agree,2024-09-06,AFCON Qualification,Senegal,Burkina Faso,1,1,1
+4538858,agree,2024-11-19,AFCON Qualification,Congo,Uganda,0,1,1
+4538859,agree,2024-11-19,AFCON Qualification,South Africa,South Sudan,3,0,1
+4538860,agree,2024-11-15,AFCON Qualification,Uganda,South Africa,0,2,1
+4538861,agree,2024-11-14,AFCON Qualification,South Sudan,Congo,3,2,1
+4564299,agree,2024-09-06,WC Qualification OFC,American Samoa,Samoa,0,2,1
+4564300,agree,2024-09-05,WC Qualification OFC,Cook Islands,Tonga,1,3,1
+4616527,agree,2024-10-10,WC Qualification OFC,New Caledonia,Papua New Guinea,3,1,1
+4616528,agree,2024-10-10,WC Qualification OFC,Solomon Islands,Fiji,0,1,1
+4616529,agree,2024-11-14,WC Qualification OFC,Solomon Islands,New Caledonia,2,3,1
+4616530,agree,2024-11-14,WC Qualification OFC,Papua New Guinea,Fiji,3,3,1
+4616531,agree,2024-11-17,WC Qualification OFC,Fiji,New Caledonia,1,1,1
+4616532,agree,2024-11-17,WC Qualification OFC,Papua New Guinea,Solomon Islands,1,2,1
+4616533,agree,2024-10-11,WC Qualification OFC,New Zealand,Tahiti,3,0,1
+4616575,agree,2024-11-15,WC Qualification OFC,New Zealand,Vanuatu,8,1,1
+4616890,agree,2024-11-18,WC Qualification OFC,Tahiti,Vanuatu,2,0,1
+4628261,agree,2024-09-09,WC Qualification OFC,Tonga,Samoa,1,2,1
+4630604,agree,2024-10-12,WC Qualification OFC,Vanuatu,Samoa,4,1,1
+4630605,agree,2024-11-15,WC Qualification OFC,Samoa,Tahiti,0,3,1
+4630606,agree,2024-11-18,WC Qualification OFC,Samoa,New Zealand,0,8,1
+4653703,agree,2026-06-29,World Cup,Germany,Paraguay,1,1,1
+4653704,agree,2026-06-30,World Cup,France,Sweden,3,0,1
+4653705,agree,2026-06-28,World Cup,South Africa,Canada,0,1,1
+4653706,agree,2026-06-30,World Cup,Netherlands,Morocco,1,1,1
+4653707,agree,2026-07-02,World Cup,Portugal,Croatia,2,1,1
+4653708,agree,2026-07-02,World Cup,Spain,Austria,3,0,1
+4653709,agree,2026-07-02,World Cup,United States,Bosnia and Herzegovina,2,0,1
+4653710,agree,2026-07-01,World Cup,Belgium,Senegal,3,2,1
+4653711,agree,2026-06-29,World Cup,Brazil,Japan,2,1,1
+4653712,agree,2026-06-30,World Cup,Ivory Coast,Norway,1,2,1
+4653713,agree,2026-07-01,World Cup,Mexico,Ecuador,2,0,1
+4653714,agree,2026-07-01,World Cup,England,DR Congo,2,1,1
+4653715,agree,2026-07-03,World Cup,Argentina,Cape Verde,3,2,1
+4653716,agree,2026-07-03,World Cup,Australia,Egypt,1,1,1
+4653717,agree,2026-07-03,World Cup,Switzerland,Algeria,2,0,1
+4653718,agree,2026-07-04,World Cup,Colombia,Ghana,1,0,1
+4653842,agree,2026-07-04,World Cup,Paraguay,France,0,1,1
+4653843,agree,2026-07-04,World Cup,Canada,Morocco,0,3,1
+4653844,agree,2026-07-06,World Cup,Portugal,Spain,0,1,1
+4653845,agree,2026-07-07,World Cup,United States,Belgium,1,4,1
+4653846,agree,2026-07-05,World Cup,Brazil,Norway,1,2,1
+4653847,agree,2026-07-06,World Cup,Mexico,England,2,3,1
+4653848,agree,2026-07-07,World Cup,Argentina,Egypt,3,2,1
+4653849,agree,2026-07-07,World Cup,Switzerland,Colombia,0,0,1
+4653851,agree,2026-07-09,World Cup,France,Morocco,2,0,1
+4653852,agree,2026-07-11,World Cup,Norway,England,1,2,1
+4653853,agree,2026-07-10,World Cup,Spain,Belgium,2,1,1
+4653854,agree,2026-07-12,World Cup,Argentina,Switzerland,3,1,1
+4653855,agree,2026-07-14,World Cup,France,Spain,0,2,1
+4653856,agree,2026-07-15,World Cup,England,Argentina,1,2,1
+4653857,agree,2026-07-18,World Cup,France,England,4,6,1
+4653858,agree,2026-07-19,World Cup,Spain,Argentina,1,0,1
+4660827,agree,2024-11-15,CONCACAF Nations League,Jamaica,United States,0,1,1
+4660828,agree,2024-11-19,CONCACAF Nations League,United States,Jamaica,4,2,1
+4660829,agree,2024-11-15,CONCACAF Nations League,Costa Rica,Panama,0,1,1
+4660830,agree,2024-11-19,CONCACAF Nations League,Panama,Costa Rica,2,2,1
+4660831,agree,2024-11-16,CONCACAF Nations League,Honduras,Mexico,2,0,1
+4660832,agree,2024-11-20,CONCACAF Nations League,Mexico,Honduras,4,0,1
+4660833,agree,2024-11-15,CONCACAF Nations League,Suriname,Canada,0,1,1
+4660834,agree,2024-11-20,CONCACAF Nations League,Canada,Suriname,3,0,1
+4660866,agree,2024-11-15,CONCACAF Nations League,Barbados,Guyana,1,4,1
+4660867,agree,2024-11-19,CONCACAF Nations League,Guyana,Barbados,5,3,1
+4660868,agree,2024-11-15,CONCACAF Nations League,Cayman Islands,Guadeloupe,0,6,1
+4660869,agree,2024-11-19,CONCACAF Nations League,Guadeloupe,Cayman Islands,1,0,1
+4660870,agree,2024-11-15,CONCACAF Nations League,Belize,French Guiana,2,1,1
+4660871,agree,2024-11-19,CONCACAF Nations League,French Guiana,Belize,2,2,1
+4660872,agree,2024-11-14,CONCACAF Nations League,Saint Kitts and Nevis,Cuba,2,1,1
+4660873,agree,2024-11-18,CONCACAF Nations League,Cuba,Saint Kitts and Nevis,4,0,1
+4667751,agree,2026-06-11,World Cup,Mexico,South Africa,2,0,1
+4667752,agree,2026-06-12,World Cup,South Korea,Czech Republic,2,1,1
+4667753,agree,2026-06-18,World Cup,Czech Republic,South Africa,1,1,1
+4667754,agree,2026-06-19,World Cup,Mexico,South Korea,1,0,1
+4667755,agree,2026-06-25,World Cup,Czech Republic,Mexico,0,3,1
+4667756,agree,2026-06-25,World Cup,South Africa,South Korea,1,0,1
+4667757,agree,2026-06-12,World Cup,Canada,Bosnia and Herzegovina,1,1,1
+4667758,agree,2026-06-13,World Cup,Qatar,Switzerland,1,1,1
+4667759,agree,2026-06-18,World Cup,Switzerland,Bosnia and Herzegovina,4,1,1
+4667760,agree,2026-06-18,World Cup,Canada,Qatar,6,0,1
+4667761,agree,2026-06-24,World Cup,Switzerland,Canada,2,1,1
+4667762,agree,2026-06-24,World Cup,Bosnia and Herzegovina,Qatar,3,1,1
+4667764,agree,2026-06-13,World Cup,Brazil,Morocco,1,1,1
+4667765,agree,2026-06-14,World Cup,Haiti,Scotland,0,1,1
+4667766,agree,2026-06-19,World Cup,Scotland,Morocco,0,1,1
+4667767,agree,2026-06-20,World Cup,Brazil,Haiti,3,0,1
+4667768,agree,2026-06-24,World Cup,Scotland,Brazil,0,3,1
+4667769,agree,2026-06-24,World Cup,Morocco,Haiti,4,2,1
+4667771,agree,2026-06-13,World Cup,United States,Paraguay,4,1,1
+4667772,agree,2026-06-14,World Cup,Australia,Turkey,2,0,1
+4667773,agree,2026-06-20,World Cup,Turkey,Paraguay,0,1,1
+4667774,agree,2026-06-19,World Cup,United States,Australia,2,0,1
+4667775,agree,2026-06-26,World Cup,Turkey,United States,3,2,1
+4667776,agree,2026-06-26,World Cup,Paraguay,Australia,0,0,1
+4667777,agree,2026-06-14,World Cup,Germany,Curaçao,7,1,1
+4667778,agree,2026-06-14,World Cup,Ivory Coast,Ecuador,1,0,1
+4667779,agree,2026-06-21,World Cup,Ecuador,Curaçao,0,0,1
+4667780,agree,2026-06-20,World Cup,Germany,Ivory Coast,2,1,1
+4667781,agree,2026-06-25,World Cup,Ecuador,Germany,2,1,1
+4667782,agree,2026-06-25,World Cup,Curaçao,Ivory Coast,0,2,1
+4667783,agree,2026-06-14,World Cup,Netherlands,Japan,2,2,1
+4667784,agree,2026-06-15,World Cup,Sweden,Tunisia,5,1,1
+4667785,agree,2026-06-21,World Cup,Tunisia,Japan,0,4,1
+4667786,agree,2026-06-20,World Cup,Netherlands,Sweden,5,1,1
+4667787,agree,2026-06-25,World Cup,Tunisia,Netherlands,1,3,1
+4667788,agree,2026-06-25,World Cup,Japan,Sweden,1,1,1
+4667790,agree,2026-06-15,World Cup,Belgium,Egypt,1,1,1
+4667791,agree,2026-06-16,World Cup,Iran,New Zealand,2,2,1
+4667792,agree,2026-06-22,World Cup,New Zealand,Egypt,1,3,1
+4667793,agree,2026-06-21,World Cup,Belgium,Iran,0,0,1
+4667794,agree,2026-06-27,World Cup,New Zealand,Belgium,1,5,1
+4667795,agree,2026-06-27,World Cup,Egypt,Iran,1,1,1
+4667798,agree,2026-06-15,World Cup,Spain,Cape Verde,0,0,1
+4667799,agree,2026-06-15,World Cup,Saudi Arabia,Uruguay,1,1,1
+4667800,agree,2026-06-21,World Cup,Uruguay,Cape Verde,2,2,1
+4667801,agree,2026-06-21,World Cup,Spain,Saudi Arabia,4,0,1
+4667802,agree,2026-06-27,World Cup,Uruguay,Spain,0,1,1
+4667803,agree,2026-06-27,World Cup,Cape Verde,Saudi Arabia,0,0,1
+4667804,agree,2026-06-16,World Cup,France,Senegal,3,1,1
+4667805,agree,2026-06-16,World Cup,Iraq,Norway,1,4,1
+4667806,agree,2026-06-23,World Cup,Norway,Senegal,3,2,1
+4667807,agree,2026-06-22,World Cup,France,Iraq,3,0,1
+4667808,agree,2026-06-26,World Cup,Norway,France,1,4,1
+4667809,agree,2026-06-26,World Cup,Senegal,Iraq,5,0,1
+4667812,agree,2026-06-17,World Cup,Argentina,Algeria,3,0,1
+4667813,agree,2026-06-17,World Cup,Austria,Jordan,3,1,1
+4667814,agree,2026-06-23,World Cup,Jordan,Algeria,1,2,1
+4667815,agree,2026-06-22,World Cup,Argentina,Austria,2,0,1
+4667816,agree,2026-06-28,World Cup,Jordan,Argentina,1,3,1
+4667817,agree,2026-06-28,World Cup,Algeria,Austria,3,3,1
+4667819,agree,2026-06-17,World Cup,Portugal,DR Congo,1,1,1
+4667820,agree,2026-06-18,World Cup,Uzbekistan,Colombia,1,3,1
+4667821,agree,2026-06-24,World Cup,Colombia,DR Congo,1,0,1
+4667822,agree,2026-06-23,World Cup,Portugal,Uzbekistan,5,0,1
+4667823,agree,2026-06-27,World Cup,Colombia,Portugal,0,0,1
+4667824,agree,2026-06-27,World Cup,DR Congo,Uzbekistan,3,1,1
+4667825,agree,2026-06-17,World Cup,England,Croatia,4,2,1
+4667826,agree,2026-06-17,World Cup,Ghana,Panama,1,0,1
+4667827,agree,2026-06-23,World Cup,Panama,Croatia,0,1,1
+4667828,agree,2026-06-23,World Cup,England,Ghana,0,0,1
+4667829,agree,2026-06-27,World Cup,Panama,England,0,2,1
+4667830,agree,2026-06-27,World Cup,Croatia,Ghana,2,1,1
+4677000,agree,2025-03-21,WC Qualification OFC,New Caledonia,Tahiti,3,0,1
+4677001,agree,2025-03-21,WC Qualification OFC,New Zealand,Fiji,7,0,1
+4677002,agree,2025-03-24,WC Qualification OFC,New Caledonia,New Zealand,0,3,1
+4677821,agree,2025-03-21,CONCACAF Nations League,Canada,Mexico,0,2,1
+4677822,agree,2025-03-20,CONCACAF Nations League,United States,Panama,0,1,1
+4679441,agree,2025-03-20,UEFA Nations League A,Netherlands,Spain,2,2,1
+4679442,agree,2025-03-23,UEFA Nations League A,Spain,Netherlands,3,3,1
+4679443,agree,2025-03-20,UEFA Nations League A,Croatia,France,2,0,1
+4679444,agree,2025-03-23,UEFA Nations League A,France,Croatia,2,0,1
+4679445,agree,2025-03-20,UEFA Nations League A,Denmark,Portugal,1,0,1
+4679446,agree,2025-03-23,UEFA Nations League A,Portugal,Denmark,5,2,1
+4679447,agree,2025-03-20,UEFA Nations League A,Italy,Germany,1,2,1
+4679448,agree,2025-03-23,UEFA Nations League A,Germany,Italy,3,3,1
+4679451,agree,2025-06-04,UEFA Nations League A,Germany,Portugal,1,2,1
+4679452,agree,2025-06-05,UEFA Nations League A,Spain,France,5,4,1
+4679453,agree,2025-06-08,UEFA Nations League A,Germany,France,0,2,1
+4679454,agree,2025-06-08,UEFA Nations League A,Portugal,Spain,2,2,1
+4689249,agree,2025-09-04,WC Qualification UEFA,Luxembourg,Northern Ireland,1,3,1
+4689250,agree,2025-09-04,WC Qualification UEFA,Slovakia,Germany,2,0,1
+4689251,agree,2025-09-07,WC Qualification UEFA,Luxembourg,Slovakia,0,1,1
+4689252,agree,2025-09-07,WC Qualification UEFA,Germany,Northern Ireland,3,1,1
+4689253,agree,2025-10-10,WC Qualification UEFA,Northern Ireland,Slovakia,2,0,1
+4689254,agree,2025-10-10,WC Qualification UEFA,Germany,Luxembourg,4,0,1
+4689255,agree,2025-10-13,WC Qualification UEFA,Northern Ireland,Germany,0,1,1
+4689256,agree,2025-10-13,WC Qualification UEFA,Slovakia,Luxembourg,2,0,1
+4689257,agree,2025-11-14,WC Qualification UEFA,Luxembourg,Germany,0,2,1
+4689258,agree,2025-11-14,WC Qualification UEFA,Slovakia,Northern Ireland,1,0,1
+4689259,agree,2025-11-17,WC Qualification UEFA,Northern Ireland,Luxembourg,1,0,1
+4689260,agree,2025-11-17,WC Qualification UEFA,Germany,Slovakia,6,0,1
+4689261,agree,2025-03-21,WC Qualification UEFA,Malta,Finland,0,1,1
+4689262,agree,2025-03-21,WC Qualification UEFA,Poland,Lithuania,1,0,1
+4689263,agree,2025-03-24,WC Qualification UEFA,Lithuania,Finland,2,2,1
+4689264,agree,2025-03-24,WC Qualification UEFA,Poland,Malta,2,0,1
+4689265,agree,2025-06-07,WC Qualification UEFA,Malta,Lithuania,0,0,1
+4689266,agree,2025-06-07,WC Qualification UEFA,Finland,Netherlands,0,2,1
+4689267,agree,2025-06-10,WC Qualification UEFA,Finland,Poland,2,1,1
+4689268,agree,2025-06-10,WC Qualification UEFA,Netherlands,Malta,8,0,1
+4689269,agree,2025-09-04,WC Qualification UEFA,Lithuania,Malta,1,1,1
+4689270,agree,2025-09-04,WC Qualification UEFA,Netherlands,Poland,1,1,1
+4689271,agree,2025-09-07,WC Qualification UEFA,Lithuania,Netherlands,2,3,1
+4689272,agree,2025-09-07,WC Qualification UEFA,Poland,Finland,3,1,1
+4689273,agree,2025-10-09,WC Qualification UEFA,Finland,Lithuania,2,1,1
+4689274,agree,2025-10-09,WC Qualification UEFA,Malta,Netherlands,0,4,1
+4689275,agree,2025-10-12,WC Qualification UEFA,Lithuania,Poland,0,2,1
+4689276,agree,2025-10-12,WC Qualification UEFA,Netherlands,Finland,4,0,1
+4689277,agree,2025-11-14,WC Qualification UEFA,Finland,Malta,0,1,1
+4689278,agree,2025-11-14,WC Qualification UEFA,Poland,Netherlands,1,1,1
+4689279,agree,2025-11-17,WC Qualification UEFA,Malta,Poland,2,3,1
+4689280,agree,2025-11-17,WC Qualification UEFA,Netherlands,Lithuania,4,0,1
+4689281,agree,2025-09-05,WC Qualification UEFA,Slovenia,Sweden,2,2,1
+4689282,agree,2025-09-05,WC Qualification UEFA,Switzerland,Kosovo,4,0,1
+4689283,agree,2025-09-08,WC Qualification UEFA,Kosovo,Sweden,2,0,1
+4689284,agree,2025-09-08,WC Qualification UEFA,Switzerland,Slovenia,3,0,1
+4689285,agree,2025-10-10,WC Qualification UEFA,Kosovo,Slovenia,0,0,1
+4689286,agree,2025-10-10,WC Qualification UEFA,Sweden,Switzerland,0,2,1
+4689287,agree,2025-10-13,WC Qualification UEFA,Slovenia,Switzerland,0,0,1
+4689288,agree,2025-10-13,WC Qualification UEFA,Sweden,Kosovo,0,1,1
+4689289,agree,2025-11-15,WC Qualification UEFA,Slovenia,Kosovo,0,2,1
+4689290,agree,2025-11-15,WC Qualification UEFA,Switzerland,Sweden,4,1,1
+4689291,agree,2025-11-18,WC Qualification UEFA,Kosovo,Switzerland,1,1,1
+4689292,agree,2025-11-18,WC Qualification UEFA,Sweden,Slovenia,1,1,1
+4689293,agree,2025-09-05,WC Qualification UEFA,Greece,Belarus,5,1,1
+4689294,agree,2025-09-05,WC Qualification UEFA,Denmark,Scotland,0,0,1
+4689295,agree,2025-09-08,WC Qualification UEFA,Belarus,Scotland,0,2,1
+4689296,agree,2025-09-08,WC Qualification UEFA,Greece,Denmark,0,3,1
+4689297,agree,2025-03-21,WC Qualification UEFA,Cyprus,San Marino,2,0,1
+4689298,agree,2025-03-21,WC Qualification UEFA,Romania,Bosnia and Herzegovina,0,1,1
+4689299,agree,2025-03-24,WC Qualification UEFA,Bosnia and Herzegovina,Cyprus,2,1,1
+4689300,agree,2025-03-24,WC Qualification UEFA,San Marino,Romania,1,5,1
+4689301,agree,2025-06-07,WC Qualification UEFA,Bosnia and Herzegovina,San Marino,1,0,1
+4689302,agree,2025-06-07,WC Qualification UEFA,Austria,Romania,2,1,1
+4689303,agree,2025-06-10,WC Qualification UEFA,Romania,Cyprus,2,0,1
+4689304,agree,2025-06-10,WC Qualification UEFA,San Marino,Austria,0,4,1
+4689305,agree,2025-09-06,WC Qualification UEFA,Austria,Cyprus,1,0,1
+4689306,agree,2025-09-06,WC Qualification UEFA,San Marino,Bosnia and Herzegovina,0,6,1
+4689307,agree,2025-09-09,WC Qualification UEFA,Bosnia and Herzegovina,Austria,1,2,1
+4689308,agree,2025-09-09,WC Qualification UEFA,Cyprus,Romania,2,2,1
+4689309,agree,2025-10-09,WC Qualification UEFA,Austria,San Marino,10,0,1
+4689310,agree,2025-10-09,WC Qualification UEFA,Cyprus,Bosnia and Herzegovina,2,2,1
+4689311,agree,2025-10-12,WC Qualification UEFA,San Marino,Cyprus,0,4,1
+4689312,agree,2025-10-12,WC Qualification UEFA,Romania,Austria,1,0,1
+4689313,agree,2025-11-15,WC Qualification UEFA,Cyprus,Austria,0,2,1
+4689314,agree,2025-11-15,WC Qualification UEFA,Bosnia and Herzegovina,Romania,3,1,1
+4689315,agree,2025-11-18,WC Qualification UEFA,Austria,Bosnia and Herzegovina,1,1,1
+4689316,agree,2025-11-18,WC Qualification UEFA,Romania,San Marino,7,1,1
+4689317,agree,2025-10-09,WC Qualification UEFA,Belarus,Denmark,0,6,1
+4689318,agree,2025-10-09,WC Qualification UEFA,Scotland,Greece,3,1,1
+4689319,agree,2025-10-12,WC Qualification UEFA,Scotland,Belarus,2,1,1
+4689320,agree,2025-10-12,WC Qualification UEFA,Denmark,Greece,3,1,1
+4689321,agree,2025-11-15,WC Qualification UEFA,Greece,Scotland,3,2,1
+4689322,agree,2025-11-15,WC Qualification UEFA,Denmark,Belarus,2,2,1
+4689323,agree,2025-11-18,WC Qualification UEFA,Belarus,Greece,0,0,1
+4689324,agree,2025-11-18,WC Qualification UEFA,Scotland,Denmark,4,2,1
+4689327,agree,2025-09-05,WC Qualification UEFA,Iceland,Azerbaijan,5,0,1
+4689328,agree,2025-09-05,WC Qualification UEFA,Ukraine,France,0,2,1
+4689329,agree,2025-09-09,WC Qualification UEFA,Azerbaijan,Ukraine,1,1,1
+4689330,agree,2025-09-09,WC Qualification UEFA,France,Iceland,2,1,1
+4689331,agree,2025-10-10,WC Qualification UEFA,Iceland,Ukraine,3,5,1
+4689332,agree,2025-10-10,WC Qualification UEFA,France,Azerbaijan,3,0,1
+4689333,agree,2025-10-13,WC Qualification UEFA,Iceland,France,2,2,1
+4689334,agree,2025-10-13,WC Qualification UEFA,Ukraine,Azerbaijan,2,1,1
+4689335,agree,2025-11-13,WC Qualification UEFA,Azerbaijan,Iceland,0,2,1
+4689336,agree,2025-11-13,WC Qualification UEFA,France,Ukraine,4,0,1
+4689337,agree,2025-11-16,WC Qualification UEFA,Azerbaijan,France,1,3,1
+4689338,agree,2025-11-16,WC Qualification UEFA,Ukraine,Iceland,2,0,1
+4689339,agree,2025-09-04,WC Qualification UEFA,Georgia,Turkey,2,3,1
+4689340,agree,2025-09-04,WC Qualification UEFA,Bulgaria,Spain,0,3,1
+4689341,agree,2025-09-07,WC Qualification UEFA,Georgia,Bulgaria,3,0,1
+4689342,agree,2025-09-07,WC Qualification UEFA,Turkey,Spain,0,6,1
+4689343,agree,2025-10-11,WC Qualification UEFA,Bulgaria,Turkey,1,6,1
+4689344,agree,2025-10-11,WC Qualification UEFA,Spain,Georgia,2,0,1
+4689345,agree,2025-10-14,WC Qualification UEFA,Turkey,Georgia,4,1,1
+4689346,agree,2025-10-14,WC Qualification UEFA,Spain,Bulgaria,4,0,1
+4689347,agree,2025-11-15,WC Qualification UEFA,Georgia,Spain,0,4,1
+4689348,agree,2025-11-15,WC Qualification UEFA,Turkey,Bulgaria,2,0,1
+4689349,agree,2025-11-18,WC Qualification UEFA,Bulgaria,Georgia,2,1,1
+4689350,agree,2025-11-18,WC Qualification UEFA,Spain,Turkey,2,2,1
+4689351,agree,2025-09-06,WC Qualification UEFA,Armenia,Portugal,0,5,1
+4689352,agree,2025-09-06,WC Qualification UEFA,Republic of Ireland,Hungary,2,2,1
+4689353,agree,2025-09-09,WC Qualification UEFA,Armenia,Republic of Ireland,2,1,1
+4689354,agree,2025-09-09,WC Qualification UEFA,Hungary,Portugal,2,3,1
+4689355,agree,2025-10-11,WC Qualification UEFA,Hungary,Armenia,2,0,1
+4689356,agree,2025-10-11,WC Qualification UEFA,Portugal,Republic of Ireland,1,0,1
+4689357,agree,2025-10-14,WC Qualification UEFA,Republic of Ireland,Armenia,1,0,1
+4689358,agree,2025-10-14,WC Qualification UEFA,Portugal,Hungary,2,2,1
+4689359,agree,2025-11-13,WC Qualification UEFA,Armenia,Hungary,0,1,1
+4689360,agree,2025-11-13,WC Qualification UEFA,Republic of Ireland,Portugal,2,0,1
+4689361,agree,2025-11-16,WC Qualification UEFA,Hungary,Republic of Ireland,2,3,1
+4689362,agree,2025-11-16,WC Qualification UEFA,Portugal,Armenia,9,1,1
+4689363,agree,2025-03-22,WC Qualification UEFA,Montenegro,Gibraltar,3,1,1
+4689364,agree,2025-03-22,WC Qualification UEFA,Czech Republic,Faroe Islands,2,1,1
+4689365,agree,2025-03-25,WC Qualification UEFA,Gibraltar,Czech Republic,0,4,1
+4689366,agree,2025-03-25,WC Qualification UEFA,Montenegro,Faroe Islands,1,0,1
+4689367,agree,2025-06-06,WC Qualification UEFA,Czech Republic,Montenegro,2,0,1
+4689368,agree,2025-06-06,WC Qualification UEFA,Gibraltar,Croatia,0,7,1
+4689369,agree,2025-06-09,WC Qualification UEFA,Faroe Islands,Gibraltar,2,1,1
+4689370,agree,2025-06-09,WC Qualification UEFA,Croatia,Czech Republic,5,1,1
+4689371,agree,2025-09-05,WC Qualification UEFA,Faroe Islands,Croatia,0,1,1
+4689372,agree,2025-09-05,WC Qualification UEFA,Montenegro,Czech Republic,0,2,1
+4689373,agree,2025-09-08,WC Qualification UEFA,Gibraltar,Faroe Islands,0,1,1
+4689374,agree,2025-09-08,WC Qualification UEFA,Croatia,Montenegro,4,0,1
+4689375,agree,2025-10-09,WC Qualification UEFA,Czech Republic,Croatia,0,0,1
+4689376,agree,2025-10-09,WC Qualification UEFA,Faroe Islands,Montenegro,4,0,1
+4689377,agree,2025-10-12,WC Qualification UEFA,Faroe Islands,Czech Republic,2,1,1
+4689378,agree,2025-10-12,WC Qualification UEFA,Croatia,Gibraltar,3,0,1
+4689379,agree,2025-11-14,WC Qualification UEFA,Gibraltar,Montenegro,1,2,1
+4689380,agree,2025-11-14,WC Qualification UEFA,Croatia,Faroe Islands,3,1,1
+4689381,agree,2025-11-17,WC Qualification UEFA,Czech Republic,Gibraltar,6,0,1
+4689382,agree,2025-11-17,WC Qualification UEFA,Montenegro,Croatia,2,3,1
+4689383,agree,2025-03-21,WC Qualification UEFA,Andorra,Latvia,0,1,1
+4689384,agree,2025-03-21,WC Qualification UEFA,England,Albania,2,0,1
+4689400,agree,2025-03-24,WC Qualification UEFA,Albania,Andorra,3,0,1
+4689401,agree,2025-03-24,WC Qualification UEFA,England,Latvia,3,0,1
+4689402,agree,2025-06-07,WC Qualification UEFA,Andorra,England,0,1,1
+4689403,agree,2025-06-07,WC Qualification UEFA,Albania,Serbia,0,0,1
+4689404,agree,2025-06-10,WC Qualification UEFA,Latvia,Albania,1,1,1
+4689405,agree,2025-06-10,WC Qualification UEFA,Serbia,Andorra,3,0,1
+4689406,agree,2025-09-06,WC Qualification UEFA,Latvia,Serbia,0,1,1
+4689407,agree,2025-09-06,WC Qualification UEFA,England,Andorra,2,0,1
+4689408,agree,2025-09-09,WC Qualification UEFA,Albania,Latvia,1,0,1
+4689409,agree,2025-09-09,WC Qualification UEFA,Serbia,England,0,5,1
+4689410,agree,2025-10-11,WC Qualification UEFA,Latvia,Andorra,2,2,1
+4689411,agree,2025-10-11,WC Qualification UEFA,Serbia,Albania,0,1,1
+4689412,agree,2025-10-14,WC Qualification UEFA,Andorra,Serbia,1,3,1
+4689413,agree,2025-10-14,WC Qualification UEFA,Latvia,England,0,5,1
+4689415,agree,2025-11-13,WC Qualification UEFA,Andorra,Albania,0,1,1
+4689416,agree,2025-11-13,WC Qualification UEFA,England,Serbia,2,0,1
+4689417,agree,2025-11-16,WC Qualification UEFA,Albania,England,0,2,1
+4689418,agree,2025-11-16,WC Qualification UEFA,Serbia,Latvia,2,1,1
+4689419,agree,2025-03-22,WC Qualification UEFA,Liechtenstein,North Macedonia,0,3,1
+4689420,agree,2025-03-22,WC Qualification UEFA,Wales,Kazakhstan,3,1,1
+4689421,agree,2025-03-25,WC Qualification UEFA,Liechtenstein,Kazakhstan,0,2,1
+4689422,agree,2025-03-25,WC Qualification UEFA,North Macedonia,Wales,1,1,1
+4689438,agree,2025-06-06,WC Qualification UEFA,North Macedonia,Belgium,1,1,1
+4689439,agree,2025-06-06,WC Qualification UEFA,Wales,Liechtenstein,3,0,1
+4689440,agree,2025-06-09,WC Qualification UEFA,Kazakhstan,North Macedonia,0,1,1
+4689441,agree,2025-06-09,WC Qualification UEFA,Belgium,Wales,4,3,1
+4689442,agree,2025-09-04,WC Qualification UEFA,Kazakhstan,Wales,0,1,1
+4689443,agree,2025-09-04,WC Qualification UEFA,Liechtenstein,Belgium,0,6,1
+4689444,agree,2025-09-07,WC Qualification UEFA,North Macedonia,Liechtenstein,5,0,1
+4689445,agree,2025-09-07,WC Qualification UEFA,Belgium,Kazakhstan,6,0,1
+4689446,agree,2025-10-10,WC Qualification UEFA,Kazakhstan,Liechtenstein,4,0,1
+4689447,agree,2025-10-10,WC Qualification UEFA,Belgium,North Macedonia,0,0,1
+4689448,agree,2025-10-13,WC Qualification UEFA,North Macedonia,Kazakhstan,1,1,1
+4689449,agree,2025-10-13,WC Qualification UEFA,Wales,Belgium,2,4,1
+4689450,agree,2025-11-15,WC Qualification UEFA,Kazakhstan,Belgium,1,1,1
+4689451,agree,2025-11-15,WC Qualification UEFA,Liechtenstein,Wales,0,1,1
+4689452,agree,2025-11-18,WC Qualification UEFA,Belgium,Liechtenstein,7,0,1
+4689453,agree,2025-11-18,WC Qualification UEFA,Wales,North Macedonia,7,1,1
+4689454,agree,2025-03-22,WC Qualification UEFA,Moldova,Norway,0,5,1
+4689455,agree,2025-03-22,WC Qualification UEFA,Israel,Estonia,2,1,1
+4689456,agree,2025-03-25,WC Qualification UEFA,Israel,Norway,2,4,1
+4689457,agree,2025-03-25,WC Qualification UEFA,Moldova,Estonia,2,3,1
+4689479,agree,2025-06-06,WC Qualification UEFA,Estonia,Israel,1,3,1
+4689480,agree,2025-06-06,WC Qualification UEFA,Norway,Italy,3,0,1
+4689481,agree,2025-06-09,WC Qualification UEFA,Estonia,Norway,0,1,1
+4689482,agree,2025-06-09,WC Qualification UEFA,Italy,Moldova,2,0,1
+4689483,agree,2025-09-05,WC Qualification UEFA,Moldova,Israel,0,4,1
+4689484,agree,2025-09-05,WC Qualification UEFA,Italy,Estonia,5,0,1
+4689485,agree,2025-09-08,WC Qualification UEFA,Israel,Italy,4,5,1
+4689486,agree,2025-09-09,WC Qualification UEFA,Norway,Moldova,11,1,1
+4689487,agree,2025-10-11,WC Qualification UEFA,Norway,Israel,5,0,1
+4689488,agree,2025-10-11,WC Qualification UEFA,Estonia,Italy,1,3,1
+4689489,agree,2025-10-14,WC Qualification UEFA,Estonia,Moldova,1,1,1
+4689490,agree,2025-10-14,WC Qualification UEFA,Italy,Israel,3,0,1
+4689491,agree,2025-11-13,WC Qualification UEFA,Norway,Estonia,4,1,1
+4689492,agree,2025-11-13,WC Qualification UEFA,Moldova,Italy,0,2,1
+4689493,agree,2025-11-16,WC Qualification UEFA,Israel,Moldova,4,1,1
+4689494,agree,2025-11-16,WC Qualification UEFA,Italy,Norway,1,4,1
+4721983,agree,2025-12-21,Africa Cup of Nations,Morocco,Comoros,2,0,1
+4721984,agree,2025-12-22,Africa Cup of Nations,Mali,Zambia,1,1,1
+4721985,agree,2025-12-26,Africa Cup of Nations,Morocco,Mali,1,1,1
+4721986,agree,2025-12-26,Africa Cup of Nations,Zambia,Comoros,0,0,1
+4721987,agree,2025-12-29,Africa Cup of Nations,Zambia,Morocco,0,3,1
+4721988,agree,2025-12-29,Africa Cup of Nations,Comoros,Mali,0,0,1
+4721989,agree,2025-12-22,Africa Cup of Nations,Egypt,Zimbabwe,2,1,1
+4721990,agree,2025-12-22,Africa Cup of Nations,South Africa,Angola,2,1,1
+4721991,agree,2025-12-26,Africa Cup of Nations,Egypt,South Africa,1,0,1
+4721992,agree,2025-12-26,Africa Cup of Nations,Angola,Zimbabwe,1,1,1
+4721993,agree,2025-12-29,Africa Cup of Nations,Angola,Egypt,0,0,1
+4721994,agree,2025-12-29,Africa Cup of Nations,Zimbabwe,South Africa,2,3,1
+4721995,agree,2025-12-23,Africa Cup of Nations,Nigeria,Tanzania,2,1,1
+4721996,agree,2025-12-23,Africa Cup of Nations,Tunisia,Uganda,3,1,1
+4721997,agree,2025-12-27,Africa Cup of Nations,Nigeria,Tunisia,3,2,1
+4721998,agree,2025-12-27,Africa Cup of Nations,Uganda,Tanzania,1,1,1
+4721999,agree,2025-12-30,Africa Cup of Nations,Uganda,Nigeria,1,3,1
+4722000,agree,2025-12-30,Africa Cup of Nations,Tanzania,Tunisia,1,1,1
+4722001,agree,2025-12-23,Africa Cup of Nations,Senegal,Botswana,3,0,1
+4722002,agree,2025-12-23,Africa Cup of Nations,DR Congo,Benin,1,0,1
+4722003,agree,2025-12-27,Africa Cup of Nations,Senegal,DR Congo,1,1,1
+4722004,agree,2025-12-27,Africa Cup of Nations,Benin,Botswana,1,0,1
+4722005,agree,2025-12-30,Africa Cup of Nations,Benin,Senegal,0,3,1
+4722006,agree,2025-12-30,Africa Cup of Nations,Botswana,DR Congo,0,3,1
+4722007,agree,2025-12-24,Africa Cup of Nations,Algeria,Sudan,3,0,1
+4722008,agree,2025-12-24,Africa Cup of Nations,Burkina Faso,Equatorial Guinea,2,1,1
+4722009,agree,2025-12-28,Africa Cup of Nations,Algeria,Burkina Faso,1,0,1
+4722010,agree,2025-12-28,Africa Cup of Nations,Equatorial Guinea,Sudan,0,1,1
+4722011,agree,2025-12-31,Africa Cup of Nations,Equatorial Guinea,Algeria,1,3,1
+4722012,agree,2025-12-31,Africa Cup of Nations,Sudan,Burkina Faso,0,2,1
+4722013,agree,2025-12-24,Africa Cup of Nations,Ivory Coast,Mozambique,1,0,1
+4722014,agree,2025-12-24,Africa Cup of Nations,Cameroon,Gabon,1,0,1
+4722015,agree,2025-12-28,Africa Cup of Nations,Ivory Coast,Cameroon,1,1,1
+4722016,agree,2025-12-28,Africa Cup of Nations,Gabon,Mozambique,2,3,1
+4722017,agree,2025-12-31,Africa Cup of Nations,Gabon,Ivory Coast,2,3,1
+4722018,agree,2025-12-31,Africa Cup of Nations,Mozambique,Cameroon,1,2,1
+4758789,agree,2025-03-24,CONCACAF Nations League,Mexico,Panama,2,1,1
+4758790,agree,2025-03-23,CONCACAF Nations League,Canada,United States,2,1,1
+4772410,agree,2025-06-15,CONCACAF Gold Cup,Mexico,Dominican Republic,3,2,1
+4772411,agree,2025-06-16,CONCACAF Gold Cup,Costa Rica,Suriname,4,3,1
+4772412,agree,2025-06-18,CONCACAF Gold Cup,Costa Rica,Dominican Republic,2,1,1
+4772413,agree,2025-06-19,CONCACAF Gold Cup,Suriname,Mexico,0,2,1
+4772414,agree,2025-06-23,CONCACAF Gold Cup,Dominican Republic,Suriname,0,0,1
+4772415,agree,2025-06-23,CONCACAF Gold Cup,Mexico,Costa Rica,0,0,1
+4772422,agree,2025-06-18,CONCACAF Gold Cup,Curaçao,El Salvador,0,0,1
+4772423,agree,2025-06-18,CONCACAF Gold Cup,Canada,Honduras,6,0,1
+4772424,agree,2025-06-21,CONCACAF Gold Cup,Curaçao,Canada,1,1,1
+4772425,agree,2025-06-22,CONCACAF Gold Cup,Honduras,El Salvador,2,0,1
+4772426,agree,2025-06-25,CONCACAF Gold Cup,Canada,El Salvador,2,0,1
+4772427,agree,2025-06-25,CONCACAF Gold Cup,Honduras,Curaçao,2,1,1
+4772431,agree,2025-06-16,CONCACAF Gold Cup,Panama,Guadeloupe,5,2,1
+4772432,agree,2025-06-17,CONCACAF Gold Cup,Jamaica,Guatemala,0,1,1
+4772433,agree,2025-06-20,CONCACAF Gold Cup,Jamaica,Guadeloupe,2,1,1
+4772434,agree,2025-06-21,CONCACAF Gold Cup,Guatemala,Panama,0,1,1
+4772435,agree,2025-06-24,CONCACAF Gold Cup,Guadeloupe,Guatemala,2,3,1
+4772436,agree,2025-06-24,CONCACAF Gold Cup,Panama,Jamaica,4,1,1
+4772437,agree,2025-06-15,CONCACAF Gold Cup,United States,Trinidad and Tobago,5,0,1
+4772438,agree,2025-06-16,CONCACAF Gold Cup,Haiti,Saudi Arabia,0,1,1
+4772439,agree,2025-06-19,CONCACAF Gold Cup,Trinidad and Tobago,Haiti,1,1,1
+4772440,agree,2025-06-20,CONCACAF Gold Cup,Saudi Arabia,United States,0,1,1
+4772441,agree,2025-06-22,CONCACAF Gold Cup,Saudi Arabia,Trinidad and Tobago,1,1,1
+4772442,agree,2025-06-22,CONCACAF Gold Cup,United States,Haiti,2,1,1
+4772520,agree,2025-06-29,CONCACAF Gold Cup,United States,Costa Rica,2,2,1
+4772521,agree,2025-06-29,CONCACAF Gold Cup,Mexico,Saudi Arabia,2,0,1
+4772522,agree,2025-06-28,CONCACAF Gold Cup,Panama,Honduras,1,1,1
+4772523,agree,2025-07-02,CONCACAF Gold Cup,United States,Guatemala,2,1,1
+4772524,agree,2025-07-03,CONCACAF Gold Cup,Mexico,Honduras,1,0,1
+4772525,agree,2025-07-06,CONCACAF Gold Cup,United States,Mexico,1,2,1
+4772526,agree,2025-06-29,CONCACAF Gold Cup,Canada,Guatemala,1,1,1
+4822522,agree,2025-09-05,WC Qualification CONCACAF,Guatemala,El Salvador,0,1,1
+4822523,agree,2025-09-04,WC Qualification CONCACAF,Suriname,Panama,0,0,1
+4822524,agree,2025-09-09,WC Qualification CONCACAF,Panama,Guatemala,1,1,1
+4822525,agree,2025-09-09,WC Qualification CONCACAF,El Salvador,Suriname,1,2,1
+4822526,agree,2025-10-11,WC Qualification CONCACAF,El Salvador,Panama,0,1,1
+4822527,agree,2025-10-10,WC Qualification CONCACAF,Suriname,Guatemala,1,1,1
+4822528,agree,2025-10-15,WC Qualification CONCACAF,Panama,Suriname,1,1,1
+4822529,agree,2025-10-15,WC Qualification CONCACAF,El Salvador,Guatemala,0,1,1
+4822530,agree,2025-11-14,WC Qualification CONCACAF,Guatemala,Panama,2,3,1
+4822531,agree,2025-11-13,WC Qualification CONCACAF,Suriname,El Salvador,4,0,1
+4822532,agree,2025-11-19,WC Qualification CONCACAF,Panama,El Salvador,3,0,1
+4822533,agree,2025-11-19,WC Qualification CONCACAF,Guatemala,Suriname,3,1,1
+4822534,agree,2025-09-05,WC Qualification CONCACAF,Bermuda,Jamaica,0,4,1
+4822535,agree,2025-09-06,WC Qualification CONCACAF,Trinidad and Tobago,Curaçao,0,0,1
+4822536,agree,2025-09-10,WC Qualification CONCACAF,Jamaica,Trinidad and Tobago,2,0,1
+4822537,agree,2025-09-10,WC Qualification CONCACAF,Curaçao,Bermuda,3,2,1
+4822538,agree,2025-10-10,WC Qualification CONCACAF,Curaçao,Jamaica,2,0,1
+4822539,agree,2025-10-10,WC Qualification CONCACAF,Bermuda,Trinidad and Tobago,0,3,1
+4822540,agree,2025-10-15,WC Qualification CONCACAF,Jamaica,Bermuda,4,0,1
+4822541,agree,2025-10-14,WC Qualification CONCACAF,Curaçao,Trinidad and Tobago,1,1,1
+4822542,agree,2025-11-14,WC Qualification CONCACAF,Trinidad and Tobago,Jamaica,1,1,1
+4822543,agree,2025-11-14,WC Qualification CONCACAF,Bermuda,Curaçao,0,7,1
+4822544,agree,2025-11-19,WC Qualification CONCACAF,Jamaica,Curaçao,0,0,1
+4822545,agree,2025-11-19,WC Qualification CONCACAF,Trinidad and Tobago,Bermuda,2,2,1
+4822547,agree,2025-09-06,WC Qualification CONCACAF,Nicaragua,Costa Rica,1,1,1
+4822548,agree,2025-09-06,WC Qualification CONCACAF,Haiti,Honduras,0,0,1
+4822549,agree,2025-09-10,WC Qualification CONCACAF,Costa Rica,Haiti,3,3,1
+4822550,agree,2025-09-10,WC Qualification CONCACAF,Honduras,Nicaragua,2,0,1
+4822551,agree,2025-10-10,WC Qualification CONCACAF,Honduras,Costa Rica,0,0,1
+4822552,agree,2025-10-10,WC Qualification CONCACAF,Nicaragua,Haiti,0,3,1
+4822553,agree,2025-10-14,WC Qualification CONCACAF,Costa Rica,Nicaragua,4,1,1
+4822554,agree,2025-10-14,WC Qualification CONCACAF,Honduras,Haiti,3,0,1
+4822555,agree,2025-11-14,WC Qualification CONCACAF,Haiti,Costa Rica,1,0,1
+4822556,agree,2025-11-14,WC Qualification CONCACAF,Nicaragua,Honduras,2,0,1
+4822557,agree,2025-11-19,WC Qualification CONCACAF,Costa Rica,Honduras,0,0,1
+4822558,agree,2025-11-19,WC Qualification CONCACAF,Haiti,Nicaragua,2,0,1
+4877424,agree,2025-10-08,WC Qualification AFC,Oman,Qatar,0,0,1
+4877425,agree,2025-10-11,WC Qualification AFC,United Arab Emirates,Oman,2,1,1
+4877426,agree,2025-10-14,WC Qualification AFC,Qatar,United Arab Emirates,2,1,1
+4877427,agree,2025-10-08,WC Qualification AFC,Indonesia,Saudi Arabia,2,3,1
+4877428,agree,2025-10-11,WC Qualification AFC,Iraq,Indonesia,1,0,1
+4877429,agree,2025-10-14,WC Qualification AFC,Saudi Arabia,Iraq,0,0,1
+5013623,agree,2025-11-13,WC Qualification AFC,United Arab Emirates,Iraq,1,1,1
+5013624,agree,2025-11-18,WC Qualification AFC,Iraq,United Arab Emirates,2,1,1
+5013626,agree,2025-11-13,WC Qualification CAF,Nigeria,Gabon,4,1,1
+5013627,agree,2025-11-13,WC Qualification CAF,Cameroon,DR Congo,0,1,1
+5013628,agree,2025-11-16,WC Qualification CAF,Nigeria,DR Congo,1,1,1
+5067208,agree,2026-03-27,WC Qualification Inter-confederation,New Caledonia,Jamaica,0,1,1
+5067209,agree,2026-03-26,WC Qualification Inter-confederation,Bolivia,Suriname,2,1,1
+5067218,agree,2026-03-31,WC Qualification Inter-confederation,DR Congo,Jamaica,1,0,1
+5067219,agree,2026-04-01,WC Qualification Inter-confederation,Iraq,Bolivia,2,1,1
+5067287,agree,2026-03-26,WC Qualification UEFA,Italy,Northern Ireland,2,0,1
+5067288,agree,2026-03-26,WC Qualification UEFA,Ukraine,Sweden,1,3,1
+5067289,agree,2026-03-26,WC Qualification UEFA,Turkey,Romania,1,0,1
+5067290,agree,2026-03-26,WC Qualification UEFA,Denmark,North Macedonia,4,0,1
+5067291,agree,2026-03-26,WC Qualification UEFA,Wales,Bosnia and Herzegovina,1,1,1
+5067292,agree,2026-03-26,WC Qualification UEFA,Poland,Albania,2,1,1
+5067293,agree,2026-03-26,WC Qualification UEFA,Slovakia,Kosovo,3,4,1
+5067294,agree,2026-03-26,WC Qualification UEFA,Czech Republic,Republic of Ireland,2,2,1
+5067299,agree,2026-03-31,WC Qualification UEFA,Bosnia and Herzegovina,Italy,1,1,1
+5067300,agree,2026-03-31,WC Qualification UEFA,Sweden,Poland,3,2,1
+5067301,agree,2026-03-31,WC Qualification UEFA,Kosovo,Turkey,0,1,1
+5067302,agree,2026-03-31,WC Qualification UEFA,Czech Republic,Denmark,2,2,1
+5073456,agree,2026-01-03,Africa Cup of Nations,Senegal,Sudan,3,1,1
+5073457,agree,2026-01-03,Africa Cup of Nations,Mali,Tunisia,1,1,1
+5073458,agree,2026-01-04,Africa Cup of Nations,Morocco,Tanzania,1,0,1
+5073459,agree,2026-01-04,Africa Cup of Nations,South Africa,Cameroon,1,2,1
+5073460,agree,2026-01-05,Africa Cup of Nations,Egypt,Benin,3,1,1
+5073461,agree,2026-01-05,Africa Cup of Nations,Nigeria,Mozambique,4,0,1
+5073462,agree,2026-01-06,Africa Cup of Nations,Algeria,DR Congo,1,0,1
+5073463,agree,2026-01-06,Africa Cup of Nations,Ivory Coast,Burkina Faso,3,0,1
+5073471,agree,2026-01-09,Africa Cup of Nations,Mali,Senegal,0,1,1
+5073472,agree,2026-01-09,Africa Cup of Nations,Cameroon,Morocco,0,2,1
+5073473,agree,2026-01-10,Africa Cup of Nations,Algeria,Nigeria,0,2,1
+5073474,agree,2026-01-10,Africa Cup of Nations,Egypt,Ivory Coast,3,2,1
+5073475,agree,2026-01-14,Africa Cup of Nations,Senegal,Egypt,1,0,1
+5073476,agree,2026-01-14,Africa Cup of Nations,Nigeria,Morocco,0,0,1
+5073477,agree,2026-01-17,Africa Cup of Nations,Egypt,Nigeria,0,0,1
+5073478,conflict,2026-01-18,Africa Cup of Nations,Senegal,Morocco,0,3,1
+5083233,agree,2026-03-29,Friendlies,Mexico,Portugal,0,0,1
+5083234,agree,2026-03-31,Friendlies,United States,Portugal,0,2,1
+5084645,agree,2026-06-06,Friendlies,United States,Germany,1,2,1
+5084826,agree,2026-05-31,Friendlies,Germany,Finland,4,0,1
+5089476,agree,2026-03-26,Friendlies,Brazil,France,1,2,1
+5089478,agree,2026-03-29,Friendlies,Colombia,France,1,3,1
+5098971,agree,2026-05-31,Friendlies,United States,Senegal,3,2,1
+5098972,agree,2026-03-27,Friendlies,Switzerland,Germany,3,4,1
+5099917,agree,2026-03-26,Friendlies,Georgia,Israel,2,2,1
+5099918,agree,2026-03-29,Friendlies,Lithuania,Georgia,0,2,1
+5100790,agree,2026-03-30,Friendlies,Germany,Ghana,2,1,1
+5102655,agree,2026-01-23,Friendlies,Mexico,Panama,1,0,1
+5102656,agree,2026-01-25,Friendlies,Mexico,Bolivia,1,0,1
+5110104,agree,2026-04-01,Friendlies,Brazil,Croatia,3,1,1
+5110541,agree,2026-03-27,Friendlies,Netherlands,Norway,2,1,1
+5110542,agree,2026-03-31,Friendlies,Netherlands,Ecuador,1,1,1
+5120889,fotmob_only,2026-01-18,Friendlies,Canada,Guatemala,1,0,1
+5120890,agree,2026-01-18,Friendlies,Bolivia,Panama,1,1,1
+5124808,agree,2026-03-26,Friendlies,Moldova,Lithuania,0,2,1
+5124809,agree,2026-03-27,Friendlies,England,Uruguay,1,1,1
+5124810,agree,2026-03-28,Friendlies,United States,Belgium,2,5,1
+5124811,agree,2026-03-31,Friendlies,Norway,Switzerland,0,0,1
+5124812,agree,2026-03-31,Friendlies,England,Japan,0,1,1
+5124813,agree,2026-04-01,Friendlies,Mexico,Belgium,1,1,1
+5137675,agree,2026-03-31,Friendlies,Spain,Egypt,0,0,1
+5142040,agree,2026-06-02,Friendlies,Canada,Uzbekistan,2,0,1
+5142515,agree,2026-01-18,Friendlies,Grenada,Jamaica,0,1,1
+5147837,agree,2026-03-28,Friendlies,Scotland,Japan,0,1,1
+5147838,agree,2026-05-30,Friendlies,Scotland,Curaçao,4,1,1
+5147839,agree,2026-06-02,Friendlies,Croatia,Belgium,0,2,1
+5147840,agree,2026-03-26,Friendlies,Colombia,Croatia,1,2,1
+5154117,agree,2026-03-27,Friendlies,Austria,Ghana,5,1,1
+5154118,agree,2026-03-31,Friendlies,Austria,South Korea,1,0,1
+5154119,agree,2026-06-01,Friendlies,Austria,Tunisia,1,0,1
+5154124,agree,2026-03-29,Friendlies,Haiti,Tunisia,0,1,1
+5154125,agree,2026-04-01,Friendlies,Canada,Tunisia,0,0,1
+5154126,agree,2026-06-06,Friendlies,Belgium,Tunisia,5,0,1
+5154229,agree,2026-01-26,Friendlies,Uzbekistan,China,2,2,1
+5156668,agree,2026-03-31,Friendlies,Ivory Coast,Scotland,1,0,1
+5159758,agree,2026-03-26,Friendlies,Cyprus,Belarus,0,1,1
+5159759,agree,2026-03-28,Friendlies,Hungary,Slovenia,1,0,1
+5159760,agree,2026-03-28,Friendlies,Canada,Iceland,2,2,1
+5159761,agree,2026-03-29,Friendlies,Armenia,Belarus,1,2,1
+5159765,agree,2026-03-31,Friendlies,Serbia,Saudi Arabia,2,1,1
+5159766,agree,2026-03-30,Friendlies,Cyprus,Moldova,3,2,1
+5159767,agree,2026-03-31,Friendlies,Hungary,Greece,0,0,1
+5159768,agree,2026-03-31,Friendlies,Haiti,Iceland,1,1,1
+5159769,agree,2026-06-07,Friendlies,Croatia,Slovenia,2,1,1
+5159787,agree,2026-02-26,Friendlies,Mexico,Iceland,4,0,1
+5166907,agree,2026-03-27,Friendlies,Montenegro,Andorra,2,0,1
+5166908,agree,2026-03-31,Friendlies,Montenegro,Slovenia,2,3,1
+5181776,fotmob_only,2026-09-26,UEFA Nations League B,Slovenia,Scotland,0,0,1
+5181777,fotmob_only,2026-09-26,UEFA Nations League B,North Macedonia,Switzerland,0,3,1
+5181778,fotmob_only,2026-09-29,UEFA Nations League B,Scotland,Switzerland,0,3,1
+5181779,fotmob_only,2026-09-29,UEFA Nations League B,Slovenia,North Macedonia,2,0,1
+5181780,fotmob_only,2026-10-03,UEFA Nations League B,North Macedonia,Scotland,0,2,1
+5181781,fotmob_only,2026-10-03,UEFA Nations League B,Switzerland,Slovenia,2,1,1
+5181782,fotmob_only,2026-10-06,UEFA Nations League B,Scotland,Slovenia,1,2,1
+5181783,fotmob_only,2026-10-06,UEFA Nations League B,Switzerland,North Macedonia,3,0,1
+5181788,fotmob_only,2026-09-25,UEFA Nations League A,Italy,Belgium,0,2,1
+5181789,fotmob_only,2026-09-25,UEFA Nations League A,Turkey,France,0,1,1
+5181790,fotmob_only,2026-09-28,UEFA Nations League A,Belgium,France,0,1,1
+5181791,fotmob_only,2026-09-28,UEFA Nations League A,Turkey,Italy,1,4,1
+5181792,fotmob_only,2026-10-02,UEFA Nations League A,Belgium,Turkey,3,0,1
+5181793,fotmob_only,2026-10-02,UEFA Nations League A,France,Italy,1,1,1
+5181794,fotmob_only,2026-10-05,UEFA Nations League A,France,Belgium,4,1,1
+5181795,fotmob_only,2026-10-05,UEFA Nations League A,Italy,Turkey,3,1,1
+5181800,fotmob_only,2026-09-25,UEFA Nations League B,Georgia,Northern Ireland,0,1,1
+5181801,fotmob_only,2026-09-25,UEFA Nations League B,Hungary,Ukraine,0,1,1
+5181802,fotmob_only,2026-09-28,UEFA Nations League B,Georgia,Ukraine,0,0,1
+5181803,fotmob_only,2026-09-28,UEFA Nations League B,Northern Ireland,Hungary,0,0,1
+5181804,fotmob_only,2026-10-02,UEFA Nations League B,Hungary,Georgia,1,0,1
+5181805,fotmob_only,2026-10-02,UEFA Nations League B,Ukraine,Northern Ireland,0,3,1
+5181806,fotmob_only,2026-10-05,UEFA Nations League B,Northern Ireland,Georgia,0,0,1
+5181807,fotmob_only,2026-10-05,UEFA Nations League B,Ukraine,Hungary,1,2,1
+5181812,fotmob_only,2026-09-24,UEFA Nations League B,Austria,Israel,3,1,1
+5181813,fotmob_only,2026-09-24,UEFA Nations League B,Kosovo,Republic of Ireland,1,0,1
+5181814,fotmob_only,2026-09-27,UEFA Nations League B,Austria,Kosovo,3,1,1
+5181815,fotmob_only,2026-09-27,UEFA Nations League B,Israel,Republic of Ireland,0,3,1
+5181816,fotmob_only,2026-10-01,UEFA Nations League B,Israel,Kosovo,0,0,1
+5181817,fotmob_only,2026-10-01,UEFA Nations League B,Republic of Ireland,Austria,2,2,1
+5181818,fotmob_only,2026-10-04,UEFA Nations League B,Kosovo,Austria,1,1,1
+5181819,fotmob_only,2026-10-04,UEFA Nations League B,Republic of Ireland,Israel,1,1,1
+5181825,fotmob_only,2026-09-24,UEFA Nations League A,Netherlands,Germany,1,1,1
+5181826,fotmob_only,2026-09-24,UEFA Nations League A,Serbia,Greece,1,2,1
+5181827,fotmob_only,2026-09-27,UEFA Nations League A,Serbia,Netherlands,1,2,1
+5181828,fotmob_only,2026-09-27,UEFA Nations League A,Germany,Greece,0,1,1
+5181829,fotmob_only,2026-10-01,UEFA Nations League A,Germany,Serbia,2,0,1
+5181830,fotmob_only,2026-10-01,UEFA Nations League A,Greece,Netherlands,2,2,1
+5181831,fotmob_only,2026-10-04,UEFA Nations League A,Greece,Germany,0,0,1
+5181832,fotmob_only,2026-10-04,UEFA Nations League A,Netherlands,Serbia,2,1,1
+5181837,fotmob_only,2026-09-25,UEFA Nations League B,Poland,Bosnia and Herzegovina,0,0,1
+5181838,fotmob_only,2026-09-25,UEFA Nations League B,Sweden,Romania,2,1,1
+5181839,fotmob_only,2026-09-28,UEFA Nations League B,Romania,Bosnia and Herzegovina,2,4,1
+5181840,fotmob_only,2026-09-28,UEFA Nations League B,Sweden,Poland,3,1,1
+5181841,fotmob_only,2026-10-02,UEFA Nations League B,Bosnia and Herzegovina,Sweden,1,1,1
+5181842,fotmob_only,2026-10-02,UEFA Nations League B,Poland,Romania,6,0,1
+5181843,fotmob_only,2026-10-05,UEFA Nations League B,Bosnia and Herzegovina,Poland,1,0,1
+5181844,fotmob_only,2026-10-05,UEFA Nations League B,Romania,Sweden,0,1,1
+5181849,fotmob_only,2026-09-26,UEFA Nations League A,Czech Republic,Croatia,1,2,1
+5181850,fotmob_only,2026-09-26,UEFA Nations League A,England,Spain,2,3,1
+5181851,fotmob_only,2026-09-29,UEFA Nations League A,Czech Republic,England,0,2,1
+5181852,fotmob_only,2026-09-29,UEFA Nations League A,Spain,Croatia,4,1,1
+5181853,fotmob_only,2026-10-03,UEFA Nations League A,Croatia,England,0,7,1
+5181854,fotmob_only,2026-10-03,UEFA Nations League A,Spain,Czech Republic,3,1,1
+5181855,fotmob_only,2026-10-06,UEFA Nations League A,Croatia,Spain,1,2,1
+5181856,fotmob_only,2026-10-06,UEFA Nations League A,England,Czech Republic,3,0,1
+5181861,fotmob_only,2026-09-24,UEFA Nations League A,Norway,Denmark,3,2,1
+5181862,fotmob_only,2026-09-24,UEFA Nations League A,Portugal,Wales,1,0,1
+5181863,fotmob_only,2026-09-27,UEFA Nations League A,Denmark,Wales,2,0,1
+5181864,fotmob_only,2026-09-27,UEFA Nations League A,Norway,Portugal,1,2,1
+5181865,fotmob_only,2026-10-01,UEFA Nations League A,Denmark,Portugal,2,4,1
+5181866,fotmob_only,2026-10-01,UEFA Nations League A,Wales,Norway,2,1,1
+5181867,fotmob_only,2026-10-04,UEFA Nations League A,Portugal,Norway,2,1,1
+5181868,fotmob_only,2026-10-04,UEFA Nations League A,Wales,Denmark,0,1,1
+5181874,fotmob_only,2026-09-24,UEFA Nations League D,Andorra,Malta,1,2,1
+5181875,fotmob_only,2026-09-27,UEFA Nations League D,Gibraltar,Andorra,0,0,1
+5181876,fotmob_only,2026-10-01,UEFA Nations League D,Malta,Gibraltar,1,1,1
+5181877,fotmob_only,2026-10-04,UEFA Nations League D,Malta,Andorra,1,0,1
+5181880,fotmob_only,2026-09-24,UEFA Nations League D,Liechtenstein,Lithuania,0,2,1
+5181881,fotmob_only,2026-09-27,UEFA Nations League D,Lithuania,Azerbaijan,1,1,1
+5181882,fotmob_only,2026-10-01,UEFA Nations League D,Azerbaijan,Liechtenstein,0,0,1
+5181883,fotmob_only,2026-10-04,UEFA Nations League D,Azerbaijan,Lithuania,1,0,1
+5181894,fotmob_only,2026-09-26,UEFA Nations League C,San Marino,Finland,0,7,1
+5181895,fotmob_only,2026-09-26,UEFA Nations League C,Albania,Belarus,2,0,1
+5181896,fotmob_only,2026-09-29,UEFA Nations League C,Finland,Belarus,0,0,1
+5181897,fotmob_only,2026-09-29,UEFA Nations League C,San Marino,Albania,0,3,1
+5181898,fotmob_only,2026-10-03,UEFA Nations League C,Finland,Albania,2,1,1
+5181899,fotmob_only,2026-10-03,UEFA Nations League C,Belarus,San Marino,4,0,1
+5181900,fotmob_only,2026-10-06,UEFA Nations League C,Albania,San Marino,2,1,1
+5181901,fotmob_only,2026-10-06,UEFA Nations League C,Belarus,Finland,1,0,1
+5181921,fotmob_only,2026-09-25,UEFA Nations League C,Armenia,Latvia,2,0,1
+5181922,fotmob_only,2026-09-25,UEFA Nations League C,Montenegro,Cyprus,2,1,1
+5181923,fotmob_only,2026-09-28,UEFA Nations League C,Armenia,Montenegro,2,3,1
+5181924,fotmob_only,2026-09-28,UEFA Nations League C,Latvia,Cyprus,0,0,1
+5181925,fotmob_only,2026-10-02,UEFA Nations League C,Cyprus,Armenia,2,0,1
+5181926,fotmob_only,2026-10-02,UEFA Nations League C,Latvia,Montenegro,1,2,1
+5181927,fotmob_only,2026-10-05,UEFA Nations League C,Cyprus,Latvia,2,1,1
+5181928,fotmob_only,2026-10-05,UEFA Nations League C,Montenegro,Armenia,0,0,1
+5181933,fotmob_only,2026-09-26,UEFA Nations League C,Faroe Islands,Kazakhstan,1,1,1
+5181934,fotmob_only,2026-09-26,UEFA Nations League C,Slovakia,Moldova,2,0,1
+5181935,fotmob_only,2026-09-29,UEFA Nations League C,Moldova,Faroe Islands,1,1,1
+5181936,fotmob_only,2026-09-29,UEFA Nations League C,Slovakia,Kazakhstan,2,1,1
+5181937,fotmob_only,2026-10-02,UEFA Nations League C,Kazakhstan,Moldova,1,2,1
+5181938,fotmob_only,2026-10-02,UEFA Nations League C,Faroe Islands,Slovakia,1,1,1
+5181939,fotmob_only,2026-10-06,UEFA Nations League C,Kazakhstan,Faroe Islands,2,2,1
+5181940,fotmob_only,2026-10-06,UEFA Nations League C,Moldova,Slovakia,0,4,1
+5181949,fotmob_only,2026-09-26,UEFA Nations League C,Bulgaria,Luxembourg,1,2,1
+5181950,fotmob_only,2026-09-26,UEFA Nations League C,Iceland,Estonia,1,1,1
+5181951,fotmob_only,2026-09-29,UEFA Nations League C,Bulgaria,Estonia,0,0,1
+5181952,fotmob_only,2026-09-29,UEFA Nations League C,Luxembourg,Iceland,0,3,1
+5181953,fotmob_only,2026-10-03,UEFA Nations League C,Estonia,Luxembourg,1,0,1
+5181954,fotmob_only,2026-10-03,UEFA Nations League C,Iceland,Bulgaria,3,0,1
+5181955,fotmob_only,2026-10-06,UEFA Nations League C,Estonia,Iceland,0,0,1
+5181956,fotmob_only,2026-10-06,UEFA Nations League C,Luxembourg,Bulgaria,0,2,1
+5187272,agree,2026-03-27,Friendlies,Solomon Islands,Bulgaria,2,10,1
+5187273,agree,2026-03-27,Friendlies,Indonesia,Saint Kitts and Nevis,4,0,1
+5187278,agree,2026-03-27,Friendlies,China,Curaçao,2,0,1
+5187279,agree,2026-03-27,Friendlies,Australia,Cameroon,1,0,1
+5187280,agree,2026-03-31,Friendlies,Cameroon,China,2,0,1
+5187281,agree,2026-03-31,Friendlies,Australia,Curaçao,5,1,1
+5187282,agree,2026-03-31,Friendlies,Kazakhstan,Comoros,1,0,1
+5187284,agree,2026-03-27,Friendlies,Chile,Cape Verde,4,2,1
+5187285,agree,2026-03-27,Friendlies,New Zealand,Finland,0,2,1
+5187286,agree,2026-03-30,Friendlies,Cape Verde,Finland,1,1,1
+5187287,agree,2026-03-30,Friendlies,New Zealand,Chile,4,1,1
+5187288,agree,2026-03-27,Friendlies,Venezuela,Trinidad and Tobago,4,1,1
+5187289,agree,2026-03-27,Friendlies,Uzbekistan,Gabon,3,1,1
+5187290,agree,2026-03-30,Friendlies,Gabon,Trinidad and Tobago,2,2,1
+5187291,agree,2026-03-30,Friendlies,Uzbekistan,Venezuela,0,0,1
+5210337,agree,2026-03-27,Friendlies,Azerbaijan,Saint Lucia,6,1,1
+5210338,agree,2026-03-25,Friendlies,United States Virgin Islands,American Samoa,5,2,1
+5210339,agree,2026-03-26,Friendlies,Puerto Rico,Guam,4,0,1
+5210340,agree,2026-03-27,Friendlies,Kenya,Estonia,1,1,1
+5210341,agree,2026-03-27,Friendlies,Rwanda,Grenada,4,0,1
+5210342,agree,2026-03-26,Friendlies,Aruba,Macau,4,1,1
+5210343,agree,2026-03-26,Friendlies,Tanzania,Liechtenstein,0,1,1
+5212021,agree,2026-06-03,Friendlies,Netherlands,Algeria,0,1,1
+5213030,agree,2026-03-27,Friendlies,Greece,Paraguay,0,1,1
+5213032,agree,2026-03-31,Friendlies,San Marino,Andorra,0,0,1
+5213041,agree,2026-05-28,Friendlies,Republic of Ireland,Qatar,1,0,1
+5213042,agree,2026-06-06,Friendlies,England,New Zealand,1,0,1
+5213043,agree,2026-06-10,Friendlies,England,Costa Rica,3,0,1
+5217275,agree,2026-03-27,Friendlies,Morocco,Ecuador,1,1,1
+5217276,agree,2026-03-31,Friendlies,Morocco,Paraguay,2,1,1
+5217284,agree,2026-05-23,Friendlies,Mexico,Ghana,2,0,1
+5217285,agree,2026-05-31,Friendlies,Mexico,Australia,1,0,1
+5217286,agree,2026-06-05,Friendlies,Mexico,Serbia,5,1,1
+5224973,fotmob_only,2026-03-26,AFCON Qualification,Djibouti,South Sudan,0,4,1
+5224974,fotmob_only,2026-03-25,AFCON Qualification,Eritrea,Eswatini,2,0,1
+5224975,fotmob_only,2026-03-27,AFCON Qualification,São Tomé and Príncipe,Ethiopia,0,3,1
+5224976,fotmob_only,2026-03-26,AFCON Qualification,Seychelles,Lesotho,0,0,1
+5224977,fotmob_only,2026-03-27,AFCON Qualification,Chad,Burundi,0,4,1
+5224978,fotmob_only,2026-03-27,AFCON Qualification,Somalia,Mauritius,0,0,1
+5224979,fotmob_only,2026-03-31,AFCON Qualification,Eswatini,Eritrea,1,2,1
+5224980,fotmob_only,2026-03-31,AFCON Qualification,Ethiopia,São Tomé and Príncipe,1,0,1
+5224981,fotmob_only,2026-03-29,AFCON Qualification,Lesotho,Seychelles,2,1,1
+5224982,fotmob_only,2026-03-29,AFCON Qualification,South Sudan,Djibouti,0,1,1
+5224983,fotmob_only,2026-03-31,AFCON Qualification,Burundi,Chad,4,0,1
+5224984,fotmob_only,2026-03-31,AFCON Qualification,Mauritius,Somalia,0,0,1
+5226683,agree,2026-06-02,Friendlies,Wales,Ghana,1,1,1
+5246472,agree,2026-03-15,Friendlies,Bolivia,Trinidad and Tobago,3,0,1
+5246832,agree,2026-06-04,Friendlies,France,Ivory Coast,1,2,1
+5249576,agree,2026-03-27,Friendlies,Spain,Serbia,3,0,1
+5250866,agree,2026-03-27,Friendlies,Algeria,Guatemala,7,0,1
+5264689,agree,2026-03-27,Friendlies,Argentina,Mauritania,2,1,1
+5266496,agree,2026-03-31,Friendlies,Argentina,Zambia,5,0,1
+5266832,agree,2026-03-28,Friendlies,Senegal,Peru,2,0,1
+5266833,agree,2026-03-31,Friendlies,Peru,Honduras,2,2,1
+5267182,agree,2026-03-25,Friendlies,Kazakhstan,Namibia,2,0,1
+5267183,agree,2026-03-28,Friendlies,Namibia,Comoros,0,0,1
+5267218,agree,2026-03-28,Friendlies,San Marino,Faroe Islands,1,2,1
+5267317,agree,2026-03-28,Friendlies,South Korea,Ivory Coast,0,4,1
+5267352,agree,2026-03-27,Friendlies,South Africa,Panama,1,1,1
+5267353,agree,2026-03-31,Friendlies,South Africa,Panama,1,2,1
+5267632,agree,2026-03-27,Friendlies,Saudi Arabia,Egypt,0,4,1
+5269692,agree,2026-06-01,Friendlies,Norway,Sweden,3,1,1
+5271629,agree,2026-03-31,Friendlies,Algeria,Uruguay,0,0,1
+5272290,agree,2026-03-25,Friendlies,Kyrgyzstan,Equatorial Guinea,0,1,1
+5272291,agree,2026-03-28,Friendlies,Kyrgyzstan,Madagascar,2,5,1
+5272311,agree,2026-03-25,Friendlies,DR Congo,Bermuda,2,0,1
+5272727,agree,2026-03-26,Friendlies,Vietnam,Bangladesh,3,0,1
+5276126,agree,2026-03-26,Friendlies,Saint Martin,Barbados,3,1,1
+5276127,agree,2026-03-26,Friendlies,Martinique,Cuba,2,2,1
+5276128,agree,2026-03-26,Friendlies,Bahamas,Anguilla,1,3,1
+5276129,agree,2026-03-27,Friendlies,Cayman Islands,British Virgin Islands,1,1,1
+5276130,agree,2026-03-27,Friendlies,Dominican Republic,El Salvador,2,2,1
+5276131,agree,2026-03-27,Friendlies,Bonaire,Saint Vincent and the Grenadines,3,1,1
+5276132,agree,2026-03-27,Friendlies,Guyana,Dominica,2,0,1
+5276133,agree,2026-03-27,Friendlies,Belize,Sint Maarten,2,3,1
+5276134,agree,2026-03-29,Friendlies,Martinique,El Salvador,0,1,1
+5276135,agree,2026-03-29,Friendlies,Barbados,Saint Vincent and the Grenadines,2,3,1
+5276136,agree,2026-03-29,Friendlies,British Virgin Islands,Anguilla,4,0,1
+5276137,agree,2026-03-29,Friendlies,Dominican Republic,Cuba,1,1,1
+5276138,agree,2026-03-30,Friendlies,Cayman Islands,Bahamas,1,0,1
+5276139,agree,2026-03-30,Friendlies,Bonaire,Saint Martin,0,3,1
+5276140,agree,2026-03-30,Friendlies,Guyana,Belize,3,1,1
+5276141,agree,2026-03-30,Friendlies,Dominica,Sint Maarten,0,0,1
+5276694,agree,2026-03-28,Friendlies,American Samoa,Guam,0,6,1
+5276695,agree,2026-03-29,Friendlies,United States Virgin Islands,Puerto Rico,0,2,1
+5276833,fotmob_only,2026-03-28,Friendlies,Zambia,Malawi,0,0,1
+5276834,agree,2026-03-28,Friendlies,Botswana,Zimbabwe,0,3,1
+5276835,agree,2026-03-28,Friendlies,Burkina Faso,Guinea-Bissau,5,0,1
+5277128,agree,2026-03-27,Friendlies,Russia,Nicaragua,3,1,1
+5277129,agree,2026-03-31,Friendlies,Russia,Mali,0,0,1
+5277213,agree,2026-03-27,Friendlies,Iran,Nigeria,1,2,1
+5277214,agree,2026-03-27,Friendlies,Liberia,Benin,0,1,1
+5277215,agree,2026-03-27,Friendlies,Togo,Guinea,2,2,1
+5277216,agree,2026-03-31,Friendlies,Benin,Guinea,1,0,1
+5277217,agree,2026-03-27,Friendlies,Jordan,Costa Rica,2,2,1
+5277240,agree,2026-03-29,Friendlies,Macau,Tanzania,0,6,1
+5277241,agree,2026-03-29,Friendlies,Aruba,Liechtenstein,4,1,1
+5278189,agree,2026-03-27,Friendlies,Libya,Niger,0,0,1
+5278190,agree,2026-03-31,Friendlies,Liberia,Libya,2,2,1
+5278490,agree,2026-03-30,Friendlies,Azerbaijan,Sierra Leone,1,1,1
+5279321,agree,2026-03-30,Friendlies,Saint Kitts and Nevis,Solomon Islands,4,2,1
+5279322,agree,2026-03-30,Friendlies,Indonesia,Bulgaria,0,1,1
+5279525,agree,2026-03-31,Friendlies,Wales,Northern Ireland,1,1,1
+5279687,agree,2026-03-30,Friendlies,Grenada,Kenya,0,3,1
+5279688,agree,2026-03-30,Friendlies,Rwanda,Estonia,2,0,1
+5279747,agree,2026-03-31,Friendlies,Ukraine,Albania,1,0,1
+5279748,agree,2026-03-31,Friendlies,Republic of Ireland,North Macedonia,0,0,1
+5279749,agree,2026-03-31,Friendlies,Slovakia,Romania,2,0,1
+5280710,agree,2026-06-06,Friendlies,Armenia,Kazakhstan,1,1,1
+5280711,agree,2026-06-09,Friendlies,Armenia,Moldova,1,1,1
+5284835,agree,2026-03-31,Friendlies,Jordan,Nigeria,2,2,1
+5284838,agree,2026-03-31,Friendlies,Equatorial Guinea,Madagascar,1,1,1
+5285781,agree,2026-03-31,Friendlies,Malawi,Botswana,0,1,1
+5285782,fotmob_only,2026-03-31,Friendlies,Zambia,Zimbabwe,0,1,1
+5285787,agree,2026-03-31,Friendlies,Senegal,Gambia,3,1,1
+5285788,agree,2026-03-31,Friendlies,Niger,Togo,0,1,1
+5285789,agree,2026-03-31,Friendlies,Guinea-Bissau,Burkina Faso,1,1,1
+5286256,agree,2026-03-31,Friendlies,Costa Rica,Iran,0,5,1
+5288934,agree,2026-06-02,Friendlies,Georgia,Romania,1,1,1
+5293168,agree,2026-05-27,Friendlies,Jamaica,India,2,0,1
+5293169,agree,2026-06-03,Friendlies,Poland,Nigeria,2,2,1
+5293170,agree,2026-06-10,Friendlies,Portugal,Nigeria,2,1,1
+5293453,agree,2026-06-09,Friendlies,Peru,Spain,1,3,1
+5296858,agree,2026-06-05,Friendlies,Moldova,Bulgaria,2,2,1
+5333656,agree,2026-06-07,Friendlies,Morocco,Norway,1,1,1
+5338000,agree,2026-06-06,Friendlies,Romania,Wales,2,1,1
+5343851,agree,2026-06-01,Friendlies,Bulgaria,Montenegro,0,1,1
+5344896,agree,2026-06-08,Friendlies,France,Northern Ireland,3,1,1
+5349852,agree,2026-06-07,Friendlies,Ecuador,Guatemala,3,0,1
+5406266,agree,2026-06-06,Friendlies,Qatar,El Salvador,0,0,1
+5406267,conflict,2026-06-05,Friendlies,Czech Republic,Guatemala,3,1,1
+5418293,agree,2026-05-31,Friendlies,Japan,Iceland,1,0,1
+5418294,agree,2026-05-31,Friendlies,Switzerland,Jordan,4,1,1
+5418295,agree,2026-06-04,Friendlies,Slovenia,Cyprus,1,1,1
+5418296,agree,2026-06-04,Friendlies,Sweden,Greece,2,2,1
+5418298,agree,2026-06-05,Friendlies,Georgia,Bahrain,2,0,1
+5418299,agree,2026-06-05,Friendlies,Hungary,Finland,2,1,1
+5418301,agree,2026-06-06,Friendlies,Lithuania,Latvia,1,1,1
+5418302,agree,2026-06-06,Friendlies,Estonia,Faroe Islands,1,0,1
+5418303,agree,2026-06-06,Friendlies,Bolivia,Scotland,0,4,1
+5418304,agree,2026-06-06,Friendlies,Portugal,Chile,2,1,1
+5418305,agree,2026-06-05,Friendlies,Canada,Republic of Ireland,1,1,1
+5418306,agree,2026-06-06,Friendlies,Switzerland,Australia,1,1,1
+5418307,agree,2026-06-10,Friendlies,Argentina,Iceland,3,0,1
+5418308,agree,2026-06-09,Friendlies,Hungary,Kazakhstan,3,1,1
+5425678,agree,2026-06-03,Friendlies,DR Congo,Denmark,0,0,1
+5425679,agree,2026-06-07,Friendlies,Denmark,Ukraine,2,1,1
+5449531,agree,2026-05-16,Friendlies,Republic of Ireland,Grenada,5,0,1
+5451161,agree,2026-06-04,Friendlies,Spain,Iraq,1,1,1
+5451162,agree,2026-06-04,Friendlies,Northern Ireland,Guinea,1,0,1
+5451191,agree,2026-06-05,Friendlies,Russia,Burkina Faso,3,0,1
+5451192,agree,2026-06-09,Friendlies,Russia,Trinidad and Tobago,3,0,1
+5451193,agree,2026-05-28,Friendlies,Egypt,Russia,1,0,1
+5477263,agree,2026-06-01,Friendlies,Slovakia,Malta,2,1,1
+5477264,agree,2026-06-03,Friendlies,Albania,Israel,0,1,1
+5477265,agree,2026-06-03,Friendlies,Luxembourg,Italy,0,1,1
+5477266,agree,2026-06-05,Friendlies,Slovakia,Montenegro,2,2,1
+5477267,agree,2026-06-05,Friendlies,San Marino,Bangladesh,1,2,1
+5477268,agree,2026-06-05,Friendlies,Azerbaijan,Malta,0,2,1
+5477269,agree,2026-06-06,Friendlies,Albania,Luxembourg,0,1,1
+5477270,agree,2026-06-07,Friendlies,Greece,Italy,0,1,1
+5477271,agree,2026-06-09,Friendlies,Azerbaijan,San Marino,2,1,1
+5483930,agree,2026-06-01,Friendlies,Turkey,North Macedonia,4,0,1
+5483931,agree,2026-06-06,Friendlies,Turkey,Venezuela,2,1,1
+5604659,agree,2026-05-26,Friendlies,Morocco,Burundi,5,0,1
+5604660,agree,2026-06-02,Friendlies,Morocco,Madagascar,4,0,1
+5628832,agree,2026-05-29,Friendlies,Iran,Gambia,3,1,1
+5628896,agree,2026-05-26,Friendlies,Nigeria,Zimbabwe,2,0,1
+5628897,agree,2026-05-29,Friendlies,South Africa,Nicaragua,0,0,1
+5628898,agree,2026-05-29,Friendlies,Iraq,Andorra,1,0,1
+5628899,agree,2026-05-31,Friendlies,Ecuador,Saudi Arabia,2,1,1
+5628900,agree,2026-05-31,Friendlies,South Korea,Trinidad and Tobago,5,0,1
+5628901,agree,2026-06-04,Friendlies,South Korea,El Salvador,1,0,1
+5629004,agree,2026-05-31,Friendlies,Singapore,Mongolia,4,0,1
+5629005,agree,2026-06-05,Friendlies,Singapore,China,1,2,1
+5629006,agree,2026-05-31,Friendlies,Czech Republic,Kosovo,2,1,1
+5629007,agree,2026-05-31,Friendlies,Brazil,Panama,6,2,1
+5629008,agree,2026-06-01,Friendlies,Colombia,Costa Rica,3,1,1
+5629009,agree,2026-06-07,Friendlies,Colombia,Jordan,2,0,1
+5629010,agree,2026-06-03,Friendlies,Haiti,New Zealand,4,0,1
+5648176,agree,2026-05-29,Friendlies,Bosnia and Herzegovina,North Macedonia,0,0,1
+5648177,agree,2026-05-31,Friendlies,Poland,Ukraine,0,2,1
+5648186,agree,2026-06-03,Friendlies,Gibraltar,British Virgin Islands,4,0,1
+5648187,agree,2026-06-04,Friendlies,Andorra,Liechtenstein,2,0,1
+5648188,agree,2026-06-05,Friendlies,Belarus,Syria,4,1,1
+5648189,agree,2026-06-06,Friendlies,Gibraltar,Cayman Islands,4,1,1
+5648190,agree,2026-06-07,Friendlies,Liechtenstein,Cyprus,0,2,1
+5648191,agree,2026-06-08,Friendlies,Netherlands,Uzbekistan,2,1,1
+5656195,agree,2026-06-07,Friendlies,Argentina,Honduras,2,0,1
+5662444,agree,2026-06-07,Friendlies,Kosovo,Andorra,3,0,1
+5662445,agree,2026-06-09,Friendlies,Belarus,Burkina Faso,2,2,1
+5667645,agree,2026-05-31,Friendlies,Cape Verde,Serbia,3,0,1
+5667813,agree,2026-06-06,Friendlies,Brazil,Egypt,2,1,1
+5702911,agree,2026-05-30,Friendlies,India,Zimbabwe,0,1,1
+5702912,agree,2026-05-30,Friendlies,Jamaica,Nigeria,0,3,1
+5729569,agree,2026-06-03,Friendlies,Philippines,Guam,5,1,1
+5729570,agree,2026-06-06,Friendlies,Myanmar,Guam,6,1,1
+5729571,agree,2026-06-09,Friendlies,Philippines,Myanmar,5,1,1
+5729572,agree,2026-06-06,Friendlies,Kyrgyzstan,Palestine,0,0,1
+5729573,agree,2026-06-09,Friendlies,Kyrgyzstan,Palestine,0,0,1
+5729574,agree,2026-06-01,Friendlies,Maldives,Afghanistan,0,1,1
+5729576,agree,2026-06-04,Friendlies,Maldives,Pakistan,0,3,1
+5729579,agree,2026-06-07,Friendlies,Afghanistan,Pakistan,0,2,1
+5729607,agree,2026-06-04,Friendlies,Panama,Dominican Republic,4,2,1
+5729608,agree,2026-06-04,Friendlies,Cambodia,Bhutan,4,0,1
+5729609,agree,2026-06-04,Friendlies,Kenya,Lesotho,1,1,1
+5729610,fotmob_only,2026-06-07,Friendlies,Kenya,Lesotho,4,0,1
+5729844,agree,2026-06-06,Friendlies,Haiti,Peru,1,2,1
+5729928,agree,2026-06-05,Friendlies,Paraguay,Nicaragua,4,0,1
+5736393,agree,2026-06-11,Friendlies,Bolivia,Algeria,0,4,1
+5737313,agree,2026-06-06,Friendlies,Panama,Bosnia and Herzegovina,1,1,1
+5737464,agree,2026-06-05,Friendlies,Central African Republic,Togo,1,1,1
+5737465,agree,2026-06-09,Friendlies,Central African Republic,Angola,0,3,1
+5737466,agree,2026-06-05,Friendlies,Hong Kong,Mongolia,2,0,1
+5737467,agree,2026-06-09,Friendlies,Cambodia,Hong Kong,2,0,1
+5737468,agree,2026-06-05,Friendlies,Thailand,Kuwait,2,2,1
+5737469,agree,2026-06-05,Friendlies,Indonesia,Oman,3,0,1
+5737470,agree,2026-06-05,Friendlies,Tajikistan,India,3,1,1
+5737471,agree,2026-06-09,Friendlies,Tajikistan,India,1,1,1
+5737472,agree,2026-06-05,Friendlies,Angola,Mauritania,1,1,1
+5737473,agree,2026-06-08,Friendlies,Mauritania,Niger,1,0,1
+5737559,agree,2026-06-05,Friendlies,Puerto Rico,Saudi Arabia,0,3,1
+5737560,agree,2026-06-06,Friendlies,Vanuatu,Fiji,2,1,1
+5737561,fotmob_only,2026-06-09,Friendlies,Vanuatu,Fiji,2,2,1
+5737562,agree,2026-06-06,Friendlies,Ethiopia,Malawi,1,0,1
+5737563,agree,2026-06-09,Friendlies,Ethiopia,Malawi,1,1,1
+5737566,agree,2026-06-06,Friendlies,Sierra Leone,Liberia,1,0,1
+5737567,agree,2026-06-09,Friendlies,Liberia,Sierra Leone,3,1,1
+5737568,conflict,2026-06-06,Friendlies,Cape Verde,Bermuda,3,0,1
+5737596,agree,2026-06-07,Friendlies,Curaçao,Aruba,4,0,1
+5737597,fotmob_only,2026-06-07,Friendlies,Oman,Mozambique,4,1,1
+5737634,agree,2026-06-09,Friendlies,China,Thailand,0,0,1
+5737637,agree,2026-06-09,Friendlies,DR Congo,Chile,1,2,1
+5737639,agree,2026-06-09,Friendlies,Saudi Arabia,Senegal,0,0,1
+5737640,agree,2026-06-10,Friendlies,Iraq,Venezuela,0,2,1
+5739432,agree,2026-06-04,Friendlies,Iran,Mali,2,0,1
+5744890,agree,2026-06-05,Friendlies,Benin,Niger,1,1,1
+5745231,agree,2026-06-06,Friendlies,Jamaica,South Africa,0,1,1
+5747553,agree,2026-06-09,Friendlies,Indonesia,Mozambique,1,0,1
+5748881,agree,2026-06-06,Friendlies,British Virgin Islands,Bonaire,2,0,1
+5751716,fotmob_only,2026-06-08,Friendlies,Sri Lanka,Bhutan,4,1,1
+5754083,agree,2026-06-09,Friendlies,Latvia,Faroe Islands,0,1,1
+5754084,agree,2026-06-09,Friendlies,Estonia,Lithuania,1,0,1
+5754959,agree,2026-06-09,Friendlies,Togo,Benin,5,1,1
+5765484,agree,2026-06-10,Friendlies,Pakistan,Afghanistan,2,0,1
+5924775,agree,2026-07-18,Friendlies,Vietnam,Myanmar,4,0,1
+5924776,fotmob_only,2026-09-25,Friendlies,Australia,Brazil,1,1,1
+5924777,fotmob_only,2026-09-29,Friendlies,Australia,Brazil,2,4,1
+5985687,fotmob_only,2026-10-03,Friendlies,India,Brazil,0,4,1
+5991873,fotmob_only,2026-09-26,Friendlies,United States,Peru,4,1,1
+5991874,fotmob_only,2026-09-30,Friendlies,United States,Chile,4,2,1
+5991875,fotmob_only,2026-10-04,Friendlies,United States,Mexico,3,0,1
+5991876,fotmob_only,2026-10-07,Friendlies,United States,Canada,1,0,1
+5991877,fotmob_only,2026-09-25,CONCACAF Nations League,Costa Rica,Curaçao,3,4,1
+5991878,fotmob_only,2026-09-25,CONCACAF Nations League,Haiti,Trinidad and Tobago,3,2,1
+5991879,fotmob_only,2026-09-25,CONCACAF Nations League,Dominican Republic,Nicaragua,3,2,1
+5991880,fotmob_only,2026-09-27,CONCACAF Nations League,Haiti,Costa Rica,2,0,1
+5991881,fotmob_only,2026-09-28,CONCACAF Nations League,Trinidad and Tobago,Dominican Republic,1,2,1
+5991882,fotmob_only,2026-09-28,CONCACAF Nations League,Curaçao,Nicaragua,6,1,1
+5991883,fotmob_only,2026-10-01,CONCACAF Nations League,Curaçao,Trinidad and Tobago,1,0,1
+5991884,fotmob_only,2026-10-02,CONCACAF Nations League,Nicaragua,Costa Rica,0,3,1
+5991885,fotmob_only,2026-10-02,CONCACAF Nations League,Dominican Republic,Haiti,1,4,1
+5991886,fotmob_only,2026-10-05,CONCACAF Nations League,Costa Rica,Haiti,2,0,1
+5991887,fotmob_only,2026-10-04,CONCACAF Nations League,Trinidad and Tobago,Curaçao,1,1,1
+5991888,fotmob_only,2026-10-05,CONCACAF Nations League,Nicaragua,Dominican Republic,1,2,1
+5991889,fotmob_only,2026-09-26,CONCACAF Nations League,Honduras,Suriname,2,3,1
+5991890,fotmob_only,2026-09-26,CONCACAF Nations League,Jamaica,Guatemala,3,2,1
+5991891,fotmob_only,2026-09-26,CONCACAF Nations League,El Salvador,Martinique,3,1,1
+5991892,fotmob_only,2026-09-29,CONCACAF Nations League,Jamaica,Honduras,0,1,1
+5991893,fotmob_only,2026-09-29,CONCACAF Nations League,Guatemala,El Salvador,6,0,1
+5991894,fotmob_only,2026-09-28,CONCACAF Nations League,Suriname,Martinique,2,1,1
+5991895,fotmob_only,2026-10-02,CONCACAF Nations League,Suriname,Guatemala,0,0,1
+5991896,fotmob_only,2026-10-03,CONCACAF Nations League,Martinique,Honduras,2,1,1
+5991897,fotmob_only,2026-10-03,CONCACAF Nations League,El Salvador,Jamaica,0,2,1
+5991898,fotmob_only,2026-10-06,CONCACAF Nations League,Honduras,Jamaica,1,1,1
+5991899,fotmob_only,2026-10-06,CONCACAF Nations League,Guatemala,Suriname,1,0,1
+5991900,fotmob_only,2026-10-05,CONCACAF Nations League,Martinique,El Salvador,1,1,1
+5991903,fotmob_only,2026-09-24,CONCACAF Nations League,Puerto Rico,Guyana,0,1,1
+5991904,fotmob_only,2026-09-25,CONCACAF Nations League,Cayman Islands,Dominica,0,0,1
+5991905,fotmob_only,2026-09-27,CONCACAF Nations League,Guyana,Cayman Islands,2,0,1
+5991906,fotmob_only,2026-09-28,CONCACAF Nations League,Dominica,Puerto Rico,0,2,1
+5991907,fotmob_only,2026-10-01,CONCACAF Nations League,Dominica,Guyana,1,5,1
+5991908,fotmob_only,2026-10-02,CONCACAF Nations League,Cayman Islands,Puerto Rico,0,3,1
+5991909,fotmob_only,2026-10-04,CONCACAF Nations League,Guyana,Dominica,8,1,1
+5991910,fotmob_only,2026-10-04,CONCACAF Nations League,Puerto Rico,Cayman Islands,1,0,1
+5991913,fotmob_only,2026-09-25,CONCACAF Nations League,Bermuda,Guadeloupe,1,2,1
+5991914,fotmob_only,2026-09-26,CONCACAF Nations League,Barbados,Saint Lucia,2,0,1
+5991915,fotmob_only,2026-09-28,CONCACAF Nations League,Guadeloupe,Barbados,2,2,1
+5991916,fotmob_only,2026-09-29,CONCACAF Nations League,Saint Lucia,Bermuda,5,2,1
+5991917,fotmob_only,2026-10-02,CONCACAF Nations League,Saint Lucia,Guadeloupe,3,0,1
+5991918,fotmob_only,2026-10-03,CONCACAF Nations League,Barbados,Bermuda,4,1,1
+5991919,fotmob_only,2026-10-05,CONCACAF Nations League,Guadeloupe,Saint Lucia,0,1,1
+5991920,fotmob_only,2026-10-06,CONCACAF Nations League,Bermuda,Barbados,1,2,1
+5991922,fotmob_only,2026-09-25,CONCACAF Nations League,Grenada,Cuba,0,3,1
+5991923,fotmob_only,2026-09-26,CONCACAF Nations League,Bonaire,Saint Kitts and Nevis,1,2,1
+5991924,fotmob_only,2026-09-28,CONCACAF Nations League,Cuba,Bonaire,2,0,1
+5991925,fotmob_only,2026-09-29,CONCACAF Nations League,Saint Kitts and Nevis,Grenada,3,0,1
+5991926,fotmob_only,2026-10-02,CONCACAF Nations League,Saint Kitts and Nevis,Cuba,3,3,1
+5991927,fotmob_only,2026-10-03,CONCACAF Nations League,Bonaire,Grenada,2,3,1
+5991928,fotmob_only,2026-10-05,CONCACAF Nations League,Cuba,Saint Kitts and Nevis,2,2,1
+5991929,fotmob_only,2026-10-06,CONCACAF Nations League,Grenada,Bonaire,1,4,1
+5991930,fotmob_only,2026-09-26,CONCACAF Nations League,Saint Vincent and the Grenadines,French Guiana,2,1,1
+5991931,fotmob_only,2026-09-27,CONCACAF Nations League,Sint Maarten,Belize,0,1,1
+5991932,fotmob_only,2026-09-29,CONCACAF Nations League,French Guiana,Sint Maarten,1,0,1
+5991933,fotmob_only,2026-09-30,CONCACAF Nations League,Belize,Saint Vincent and the Grenadines,0,1,1
+5991934,fotmob_only,2026-10-04,CONCACAF Nations League,Belize,French Guiana,0,2,1
+5991935,fotmob_only,2026-10-03,CONCACAF Nations League,Sint Maarten,Saint Vincent and the Grenadines,2,4,1
+5991936,fotmob_only,2026-10-07,CONCACAF Nations League,French Guiana,Belize,1,0,1
+5991937,fotmob_only,2026-10-06,CONCACAF Nations League,Saint Vincent and the Grenadines,Sint Maarten,4,0,1
+5991938,fotmob_only,2026-09-23,CONCACAF Nations League,Turks and Caicos Islands,Montserrat,0,2,1
+5991939,fotmob_only,2026-09-26,CONCACAF Nations League,Montserrat,British Virgin Islands,3,0,1
+5991940,fotmob_only,2026-09-29,CONCACAF Nations League,British Virgin Islands,Turks and Caicos Islands,0,3,1
+5991941,fotmob_only,2026-10-01,CONCACAF Nations League,British Virgin Islands,Montserrat,0,2,1
+5991942,fotmob_only,2026-10-04,CONCACAF Nations League,Turks and Caicos Islands,British Virgin Islands,3,0,1
+5991943,fotmob_only,2026-10-06,CONCACAF Nations League,Montserrat,Turks and Caicos Islands,4,1,1
+5991944,fotmob_only,2026-09-23,CONCACAF Nations League,Aruba,Antigua and Barbuda,1,0,1
+5991945,fotmob_only,2026-09-26,CONCACAF Nations League,Antigua and Barbuda,Anguilla,5,0,1
+5991946,fotmob_only,2026-09-29,CONCACAF Nations League,Anguilla,Aruba,0,2,1
+5991947,fotmob_only,2026-10-01,CONCACAF Nations League,Anguilla,Antigua and Barbuda,0,3,1
+5991948,fotmob_only,2026-10-04,CONCACAF Nations League,Aruba,Anguilla,3,2,1
+5991949,fotmob_only,2026-10-06,CONCACAF Nations League,Antigua and Barbuda,Aruba,3,2,1
+5991950,fotmob_only,2026-09-23,CONCACAF Nations League,Bahamas,Saint Martin,0,8,1
+5991951,fotmob_only,2026-09-26,CONCACAF Nations League,Saint Martin,United States Virgin Islands,0,2,1
+5991952,fotmob_only,2026-09-29,CONCACAF Nations League,United States Virgin Islands,Bahamas,3,1,1
+5991953,fotmob_only,2026-10-01,CONCACAF Nations League,United States Virgin Islands,Saint Martin,0,5,1
+5991954,fotmob_only,2026-10-04,CONCACAF Nations League,Bahamas,United States Virgin Islands,2,3,1
+5991955,fotmob_only,2026-10-06,CONCACAF Nations League,Saint Martin,Bahamas,6,0,1
+6006643,fotmob_only,2026-09-26,Friendlies,Canada,Chile,1,0,1
+6006644,fotmob_only,2026-10-03,Friendlies,Canada,Peru,2,0,1
+6040199,fotmob_only,2026-09-25,AFCON Qualification,Morocco,Gabon,2,0,1
+6040200,fotmob_only,2026-09-25,AFCON Qualification,Niger,Lesotho,2,1,1
+6040201,fotmob_only,2026-09-29,AFCON Qualification,Gabon,Niger,2,0,1
+6040202,fotmob_only,2026-09-29,AFCON Qualification,Lesotho,Morocco,0,2,1
+6040212,fotmob_only,2026-09-25,AFCON Qualification,Egypt,Angola,0,0,1
+6040213,fotmob_only,2026-09-25,AFCON Qualification,Malawi,South Sudan,2,1,1
+6040214,fotmob_only,2026-10-06,AFCON Qualification,Angola,Malawi,3,1,1
+6040215,fotmob_only,2026-09-29,AFCON Qualification,South Sudan,Egypt,0,5,1
+6040235,fotmob_only,2026-09-25,AFCON Qualification,Gambia,Somalia,2,1,1
+6040236,fotmob_only,2026-09-24,AFCON Qualification,Ivory Coast,Ghana,2,0,1
+6040237,fotmob_only,2026-09-29,AFCON Qualification,Ghana,Gambia,2,4,1
+6040238,fotmob_only,2026-09-29,AFCON Qualification,Somalia,Ivory Coast,0,2,1
+6040247,fotmob_only,2026-09-26,AFCON Qualification,Kenya,Eritrea,1,1,1
+6040248,fotmob_only,2026-09-26,AFCON Qualification,South Africa,Guinea,2,1,1
+6040249,fotmob_only,2026-09-30,AFCON Qualification,Eritrea,South Africa,0,5,1
+6040250,fotmob_only,2026-10-01,AFCON Qualification,Guinea,Kenya,1,0,1
+6040259,fotmob_only,2026-09-24,AFCON Qualification,DR Congo,Equatorial Guinea,2,0,1
+6040260,fotmob_only,2026-09-24,AFCON Qualification,Sierra Leone,Zimbabwe,2,3,1
+6040261,fotmob_only,2026-09-28,AFCON Qualification,Equatorial Guinea,Sierra Leone,1,0,1
+6040262,fotmob_only,2026-09-28,AFCON Qualification,Zimbabwe,DR Congo,1,2,1
+6040273,fotmob_only,2026-09-25,AFCON Qualification,Burkina Faso,Benin,1,1,1
+6040274,fotmob_only,2026-09-24,AFCON Qualification,Mauritania,Central African Republic,3,1,1
+6040275,fotmob_only,2026-09-29,AFCON Qualification,Benin,Mauritania,2,1,1
+6040276,fotmob_only,2026-09-28,AFCON Qualification,Central African Republic,Burkina Faso,0,1,1
+6040332,fotmob_only,2026-09-24,AFCON Qualification,Cameroon,Comoros,3,1,1
+6040333,fotmob_only,2026-09-24,AFCON Qualification,Namibia,Congo,1,0,1
+6040334,fotmob_only,2026-09-29,AFCON Qualification,Comoros,Namibia,1,0,1
+6040335,fotmob_only,2026-09-29,AFCON Qualification,Congo,Cameroon,1,1,1
+6040344,fotmob_only,2026-09-24,AFCON Qualification,Libya,Botswana,2,2,1
+6040345,fotmob_only,2026-09-24,AFCON Qualification,Tunisia,Uganda,1,1,1
+6040346,fotmob_only,2026-09-28,AFCON Qualification,Tunisia,Botswana,2,2,1
+6040347,fotmob_only,2026-09-29,AFCON Qualification,Uganda,Libya,1,0,1
+6040356,fotmob_only,2026-09-25,AFCON Qualification,Algeria,Zambia,3,1,1
+6040357,fotmob_only,2026-09-25,AFCON Qualification,Togo,Burundi,1,0,1
+6040358,fotmob_only,2026-09-29,AFCON Qualification,Burundi,Algeria,2,2,1
+6040359,fotmob_only,2026-09-29,AFCON Qualification,Zambia,Togo,2,0,1
+6040372,fotmob_only,2026-09-25,AFCON Qualification,Mali,Cape Verde,3,1,1
+6040373,fotmob_only,2026-09-25,AFCON Qualification,Rwanda,Liberia,3,1,1
+6040374,fotmob_only,2026-09-29,AFCON Qualification,Cape Verde,Rwanda,1,2,1
+6040375,fotmob_only,2026-09-29,AFCON Qualification,Liberia,Mali,0,1,1
+6040384,fotmob_only,2026-09-25,AFCON Qualification,Nigeria,Madagascar,2,1,1
+6040385,fotmob_only,2026-09-25,AFCON Qualification,Tanzania,Guinea-Bissau,0,2,1
+6040386,fotmob_only,2026-09-29,AFCON Qualification,Guinea-Bissau,Nigeria,3,0,1
+6040387,fotmob_only,2026-09-29,AFCON Qualification,Madagascar,Tanzania,1,1,1
+6040397,fotmob_only,2026-09-25,AFCON Qualification,Sudan,Ethiopia,1,0,1
+6040398,fotmob_only,2026-09-29,AFCON Qualification,Ethiopia,Senegal,0,1,1
+6040399,fotmob_only,2026-09-29,AFCON Qualification,Mozambique,Sudan,4,1,1
+6040405,fotmob_only,2026-09-25,AFCON Qualification,Mozambique,Senegal,1,1,1
+6140728,fotmob_only,2026-09-23,Friendlies,Azerbaijan,Tajikistan,1,0,1
+6140729,fotmob_only,2026-09-27,Friendlies,Malta,Liechtenstein,2,0,1
+6140730,fotmob_only,2026-09-30,Friendlies,Lithuania,Andorra,3,0,1
+6140731,fotmob_only,2026-10-05,Friendlies,Liechtenstein,Gibraltar,0,2,1
+6144112,fotmob_only,2026-09-29,Friendlies,Russia,Iran,2,0,1
+6162939,fotmob_only,2026-10-04,Friendlies,Argentina,Burkina Faso,7,0,1
+6162940,fotmob_only,2026-10-06,Friendlies,India,Uruguay,1,6,1
+6210360,fotmob_only,2026-10-03,Friendlies,Russia,Namibia,6,0,1
+6210361,fotmob_only,2026-10-06,Friendlies,Russia,Nigeria,3,3,1
+6210557,fotmob_only,2026-09-28,Friendlies,South Korea,Uruguay,1,4,1
+6210558,fotmob_only,2026-09-27,Friendlies,Mexico,Colombia,1,1,1
+6266052,fotmob_only,2026-10-01,Friendlies,Argentina,Bolivia,4,0,1
+6266053,fotmob_only,2026-10-06,Friendlies,Argentina,Benin,3,0,1
+6278448,fotmob_only,2026-09-23,Friendlies,Gibraltar,São Tomé and Príncipe,0,0,1
+6280187,fotmob_only,2026-09-18,Friendlies,Papua New Guinea,Vanuatu,2,1,1
+6280188,fotmob_only,2026-09-18,Friendlies,Fiji,Solomon Islands,3,3,1
+6280189,fotmob_only,2026-09-21,Friendlies,New Caledonia,Solomon Islands,0,2,1
+6280190,fotmob_only,2026-09-21,Friendlies,Fiji,Vanuatu,0,1,1
+6280191,fotmob_only,2026-09-24,Friendlies,Solomon Islands,Vanuatu,3,3,1
+6280192,fotmob_only,2026-09-24,Friendlies,Papua New Guinea,New Caledonia,1,2,1
+6280193,fotmob_only,2026-09-24,Friendlies,Palestine,New Zealand,2,2,1
+6280194,fotmob_only,2026-09-24,Friendlies,Japan,Uruguay,3,1,1
+6280195,fotmob_only,2026-09-24,Friendlies,South Korea,Ecuador,3,0,1
+6280196,fotmob_only,2026-09-24,Friendlies,China,Maldives,3,0,1
+6280204,fotmob_only,2026-09-24,Friendlies,Uzbekistan,Iran,3,1,1
+6280205,fotmob_only,2026-09-25,Friendlies,India,Panama,1,1,1
+6280206,fotmob_only,2026-09-27,Friendlies,Cook Islands,Tahiti,1,3,1
+6280207,fotmob_only,2026-09-27,Friendlies,Vanuatu,New Caledonia,4,1,1
+6280208,fotmob_only,2026-09-27,Friendlies,Fiji,Papua New Guinea,2,0,1
+6280209,fotmob_only,2026-09-27,Friendlies,Seychelles,Sri Lanka,0,3,1
+6280210,fotmob_only,2026-09-27,Friendlies,Jordan,Syria,1,1,1
+6280211,fotmob_only,2026-09-27,Friendlies,Bolivia,Paraguay,0,2,1
+6280212,fotmob_only,2026-09-27,Friendlies,China,New Zealand,0,3,1
+6280444,fotmob_only,2026-09-30,Friendlies,Mexico,Peru,1,1,1
+6280445,fotmob_only,2026-09-30,Friendlies,Papua New Guinea,Solomon Islands,1,1,1
+6280446,fotmob_only,2026-09-30,Friendlies,Fiji,New Caledonia,2,1,1
+6280448,fotmob_only,2026-09-30,Friendlies,Seychelles,Sri Lanka,0,2,1
+6280449,fotmob_only,2026-10-01,Friendlies,Cook Islands,Tahiti,3,2,1
+6280450,fotmob_only,2026-10-01,Friendlies,Maldives,Lebanon,0,6,1
+6280451,fotmob_only,2026-10-01,Friendlies,Uzbekistan,Syria,4,1,1
+6280452,fotmob_only,2026-10-02,Friendlies,South Korea,Venezuela,0,0,1
+6280453,fotmob_only,2026-10-02,Friendlies,China,Palestine,0,5,1
+6297064,fotmob_only,2026-09-21,Friendlies,Dominica,Anguilla,1,0,1
+6299692,fotmob_only,2026-10-02,Friendlies,DR Congo,Uganda,0,2,1
+6299693,fotmob_only,2026-10-03,Friendlies,Colombia,Paraguay,0,1,1
+6299694,fotmob_only,2026-10-06,Friendlies,Colombia,Peru,2,0,1
+6299697,fotmob_only,2026-10-03,Friendlies,Cameroon,Ivory Coast,1,0,1
+6299698,fotmob_only,2026-10-04,Friendlies,Senegal,Comoros,1,0,1
+6299699,fotmob_only,2026-09-28,Friendlies,Kyrgyzstan,Maldives,5,0,1
+6299700,fotmob_only,2026-10-04,Friendlies,Egypt,South Africa,0,1,1
+6299702,fotmob_only,2026-10-05,Friendlies,Uganda,DR Congo,1,1,1
+6299703,fotmob_only,2026-10-05,Friendlies,Sri Lanka,Mauritius,3,2,1
+6309723,fotmob_only,2026-09-28,Friendlies,Tajikistan,Palestine,2,4,1
+6315013,fotmob_only,2026-09-28,Friendlies,Japan,Venezuela,2,1,1
+6315046,fotmob_only,2026-10-01,Friendlies,Panama,New Zealand,1,1,1
+6315047,fotmob_only,2026-10-01,Friendlies,Japan,Ecuador,0,0,1
+6365754,fotmob_only,2026-10-02,Friendlies,Mauritius,Sri Lanka,3,0,1
+6366761,fotmob_only,2026-10-06,Friendlies,Algeria,Niger,2,1,1
+6367253,fotmob_only,2026-10-03,Friendlies,Fiji,Vanuatu,1,0,1
+6367352,fotmob_only,2026-10-04,Friendlies,Kyrgyzstan,Lebanon,3,1,1
+6367353,fotmob_only,2026-10-04,Friendlies,Morocco,Mali,1,1,1
+6368651,fotmob_only,2026-10-06,Friendlies,South Korea,Uzbekistan,2,0,1
+6368652,fotmob_only,2026-10-06,Friendlies,China,Tajikistan,0,1,1
+6368653,fotmob_only,2026-10-06,Friendlies,Jordan,Venezuela,0,0,1
+6368654,fotmob_only,2026-10-07,Friendlies,Mexico,Chile,0,2,1
+6369013,fotmob_only,2026-10-05,Friendlies,Ecuador,Panama,1,1,1
+6369014,fotmob_only,2026-10-05,Friendlies,Japan,New Zealand,2,1,1
+6380406,fotmob_only,2026-10-05,Friendlies,Rwanda,Kenya,0,0,1
