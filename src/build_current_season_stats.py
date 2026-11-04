@@ -35,6 +35,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+import understat_gapfill  # noqa: E402
 from fbref_common import current_season, top_flight_clubs  # noqa: E402
 from live.schema import deaccent, normalize_team  # noqa: E402
 from parse_fbref_player_stats import _norm_name  # noqa: E402
@@ -76,7 +77,7 @@ FOTMOB_TO_FBREF = {
 def _starts(cur: str) -> pd.Series:
     """(_pk, _tk) -> count of appearances that season where the player started
     (understat's per-match position is 'Sub' only when they came off the bench)."""
-    pm = pd.read_csv(PROC / "understat_player_matches.csv")
+    pm = understat_gapfill.read("player_matches")
     pm = pm[pm["season"] == cur]
     started = pm[pm["position"].astype(str) != "Sub"]
     return started.groupby(["_pk", "_tk"]).size()
@@ -84,7 +85,7 @@ def _starts(cur: str) -> pd.Series:
 
 def _club_matches(cur: str) -> dict:
     """normalize_team(club) -> played matches this season, for Min%."""
-    m = pd.read_csv(PROC / "understat_matches.csv")
+    m = understat_gapfill.read("matches")
     m = m[(m["season"] == cur) & (m["is_result"] == True)]  # noqa: E712
     played: dict[str, int] = {}
     for col in ("home_team", "away_team"):
@@ -100,7 +101,7 @@ def build() -> pd.DataFrame:
     hist = f[f["season"] != cur]
     fcur = f[f["season"] == cur].copy()
 
-    us = pd.read_csv(PROC / "understat_player_season.csv")
+    us = understat_gapfill.read("player_season")
     us = us[us["season"] == cur].copy()
     if us.empty:
         print(f"no Understat rows for {cur} - leaving fbref_player_season_stats.csv untouched")

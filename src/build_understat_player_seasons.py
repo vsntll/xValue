@@ -40,6 +40,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+import understat_gapfill  # noqa: E402
 from fbref_common import current_season  # noqa: E402
 from live.schema import deaccent, normalize_team  # noqa: E402
 from parse_fbref_player_stats import _norm_name  # noqa: E402
@@ -168,7 +169,7 @@ def _born_nation_lookup(f: pd.DataFrame) -> dict:
 
 def _starts_by_season() -> dict:
     """(season, _pk, _tk) -> count of appearances the player started."""
-    pm = pd.read_csv(PROC / "understat_player_matches.csv", low_memory=False)
+    pm = understat_gapfill.read("player_matches")
     pm = pm[pm["src_league"].isin(LEAGUES)]
     started = pm[pm["position"].astype(str) != "Sub"]
     g = started.groupby(["season", "_pk", "_tk"]).size()
@@ -177,7 +178,7 @@ def _starts_by_season() -> dict:
 
 def _club_matches_by_season() -> dict:
     """(season, normalize_team(club)) -> played matches, for Min%."""
-    m = pd.read_csv(PROC / "understat_matches.csv", low_memory=False)
+    m = understat_gapfill.read("matches")
     m = m[(m["src_league"].isin(LEAGUES)) & (m["is_result"] == True)]  # noqa: E712
     out: dict[tuple, int] = {}
     for col in ("home_team", "away_team"):
@@ -217,7 +218,7 @@ def build() -> pd.DataFrame:
     cols = list(f.columns)
     f = f[~f["src_league"].isin(LEAGUES)].copy()   # rebuild ITA1/FRA1 from scratch
 
-    us = pd.read_csv(PROC / "understat_player_season.csv", low_memory=False)
+    us = understat_gapfill.read("player_season")
     us = us[us["src_league"].isin(LEAGUES)].copy()
     if us.empty:
         print("no Understat Serie A / Ligue 1 rows - nothing to build")

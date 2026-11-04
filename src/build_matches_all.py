@@ -21,6 +21,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+import understat_gapfill  # noqa: E402
 from live.schema import normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
@@ -63,7 +64,7 @@ def _tracked_by_season() -> dict[str, set]:
         out[str(seas)] = clubs
     # current season from Understat (football-data 2026-27 is thin early on)
     try:
-        um = pd.read_csv(PROC / "understat_matches.csv")
+        um = understat_gapfill.read("matches")
         for seas, g in um.groupby("season"):
             out.setdefault(str(seas), set()).update(
                 set(g["home_team"].map(normalize_team)) | set(g["away_team"].map(normalize_team)))
@@ -93,7 +94,7 @@ def league_history() -> pd.DataFrame:
     mf["src_league"] = mf["Div"].map(DIV_CODE)
     mf["source"] = "football-data.co.uk"
 
-    us = pd.read_csv(PROC / "understat_matches.csv")
+    us = understat_gapfill.read("matches")
     us["_k"] = (us["src_league"] + "|" + us["season"].astype(str) + "|"
                 + pd.to_datetime(us["date"]).dt.strftime("%Y-%m-%d") + "|"
                 + us["home_team"].map(normalize_team) + "|" + us["away_team"].map(normalize_team))

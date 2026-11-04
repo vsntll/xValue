@@ -23,6 +23,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import understat_gapfill  # noqa: E402
 from live.schema import deaccent, normalize_team  # name folding + club resolver
 
 
@@ -194,7 +195,7 @@ def main() -> None:
     # three leagues. Joined on season+league+normalised player+team.
     us = OUT_PATH.parent / "understat_player_season.csv"
     if us.exists():
-        ux = pd.read_csv(us)
+        ux = understat_gapfill.read("player_season")
         keep = ["season", "src_league", "player", "team", "xg", "np_xg", "xa",
                 "np_goals", "shots", "key_passes", "xg_chain", "xg_buildup"]
         ux = ux[[c for c in keep if c in ux.columns]].rename(

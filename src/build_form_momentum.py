@@ -47,6 +47,7 @@ from sklearn.preprocessing import OneHotEncoder
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+import understat_gapfill  # noqa: E402
 from live.schema import deaccent, normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
@@ -103,7 +104,7 @@ def main() -> None:
 
     model = build_baseline()
 
-    pm = pd.read_csv(pm_path)
+    pm = understat_gapfill.read("player_matches")
     pm["date"] = pd.to_datetime(pm["date"], errors="coerce")
     pm = pm.dropna(subset=["date"])
     pm["minutes"] = pd.to_numeric(pm["minutes"], errors="coerce").fillna(0)

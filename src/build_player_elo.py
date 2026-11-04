@@ -75,6 +75,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+import understat_gapfill  # noqa: E402
 import fotmob_store  # noqa: E402
 from live.schema import deaccent, normalize_team  # noqa: E402
 
@@ -285,7 +286,7 @@ def main() -> None:
     if not mm_path.exists():
         raise SystemExit(f"{mm_path} not found - run src/build_match_model_table.py first")
 
-    pm = pd.read_csv(pm_path)
+    pm = understat_gapfill.read("player_matches")
     pm = pm[pm["season"].isin(WINDOW_SEASONS)].copy()
     if "player_id" not in pm.columns or pm["player_id"].isna().all():
         raise SystemExit(f"{pm_path} has no player_id for {WINDOW_SEASONS} - re-pull with "
@@ -311,7 +312,7 @@ def main() -> None:
     pm = pm.dropna(subset=["opp_key"])
 
     understat_pos = _understat_pos_lookup(
-        pd.read_csv(PROC / "understat_player_matches.csv")
+        understat_gapfill.read("player_matches")
           .pipe(lambda d: d[d["season"].isin(WINDOW_SEASONS)]))
     pos_by_team, pos_by_name = _pos_lookup()
     pos_us = pm["player_id"].map(understat_pos)
