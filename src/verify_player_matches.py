@@ -24,6 +24,8 @@ Columns written:
               fotmob_only  no second source to check against (yet)
   checked_by  ;-joined second sources the row was checked against
   conflicts   ;-joined stat names that disagree (score / team_goals = match level)
+  us_game_id / us_player_id  the Understat game + player the row paired with
+                              (src/understat_gapfill.py maps ids through these)
   us_goals / us_assists / us_shots / us_minutes  Understat's values (club rows)
 
 Rows are never dropped or overwritten with the other source's numbers -
@@ -60,7 +62,7 @@ EXACT = ["goals", "assists", "shots"]
 MINUTES_TOL = 10          # |FotMob - Understat| minutes beyond this is a conflict
 FUZZY_MIN_RATIO = 0.6     # name similarity for the fallback pairing
 FUZZY_MAX_MIN_GAP = 15    # ... and the paired rows' minutes must be this close
-VERIFY_COLS = ["verified", "checked_by", "conflicts",
+VERIFY_COLS = ["verified", "checked_by", "conflicts", "us_game_id", "us_player_id",
                "us_goals", "us_assists", "us_shots", "us_minutes"]
 
 
@@ -164,9 +166,11 @@ def verify_club_season(season: str, us_all: pd.DataFrame, meta_all: pd.DataFrame
 
     hit = fm["_us_row"].notna()
     src = us.loc[fm.loc[hit, "_us_row"].astype(int)]
-    for c in EXACT + ["minutes"]:
+    for c in EXACT + ["minutes", "game_id", "player_id"]:
         fm[f"us_{c}"] = np.nan
         fm.loc[hit, f"us_{c}"] = pd.to_numeric(src[c], errors="coerce").to_numpy()
+    for c in ("us_game_id", "us_player_id"):
+        fm[c] = fm[c].astype("Int64")
 
     bad = {c: hit & (fm[c] != fm[f"us_{c}"]) for c in EXACT}
     bad["minutes"] = hit & ((fm["minutes"] - fm["us_minutes"]).abs() > MINUTES_TOL)
