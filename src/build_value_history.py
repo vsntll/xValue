@@ -54,12 +54,19 @@ def _key(s) -> str:
     return " ".join(re.sub(r"[^a-z0-9 ]", " ", deaccent(s).lower().replace("'", "")).split())
 
 
-def _from_mirror() -> pd.DataFrame:
+def ensure_mirror() -> Path:
+    """The worldfootballR mirror dump, downloaded on first use (a fresh runner
+    has no data/raw/) - a pinned public file, not a cache to carry between runs."""
     if not RDS.exists() or RDS.stat().st_size < 10_000:
         RDS.parent.mkdir(parents=True, exist_ok=True)
         r = requests.get(RDS_URL, timeout=120)
         r.raise_for_status()
         RDS.write_bytes(r.content)
+    return RDS
+
+
+def _from_mirror() -> pd.DataFrame:
+    ensure_mirror()
     import pyreadr
     df = next(iter(pyreadr.read_r(str(RDS)).values()))
     df = df[df["season_start_year"] >= MIRROR_FROM].copy()

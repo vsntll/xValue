@@ -122,26 +122,26 @@ def _born_nation_lookup(f: pd.DataFrame) -> dict:
                 ["player_slug", "Born", "Nation"]])
 
     # full mirror dump: slug -> (Born, Nation) and tm_player_id -> (Born, Nation)
-    rds = ROOT / "data" / "raw" / "tm" / "big5_player_vals.rds"
     by_tmid: dict[str, tuple] = {}
-    if rds.exists():
-        try:
-            import pyreadr
-            m = next(iter(pyreadr.read_r(str(rds)).values()))
-            m["Born"] = pd.to_datetime(m["player_dob"], errors="coerce").dt.year
-            m["tmid"] = m["player_url"].astype(str).str.extract(r"/spieler/(\d+)")[0]
-            m["slug"] = (m["player_url"].astype(str)
-                         .str.extract(r"transfermarkt\.com/([a-z0-9-]+)/profil")[0]
-                         .str.replace("-", " "))
-            m = m.sort_values("season_start_year").drop_duplicates("player_url", keep="last")
-            src.append(m.rename(columns={"slug": "player_slug",
-                                         "player_nationality": "Nation"})[
-                ["player_slug", "Born", "Nation"]])
-            for r in m[["tmid", "Born", "player_nationality"]].itertuples(index=False):
-                if pd.notna(r.tmid):
-                    by_tmid[str(r.tmid)] = (r.Born, r.player_nationality)
-        except Exception as exc:  # noqa: BLE001 - birth year is a nice-to-have
-            print(f"  (full TM mirror unreadable for birth years: {exc})")
+    try:
+        from build_value_history import ensure_mirror
+        rds = ensure_mirror()
+        import pyreadr
+        m = next(iter(pyreadr.read_r(str(rds)).values()))
+        m["Born"] = pd.to_datetime(m["player_dob"], errors="coerce").dt.year
+        m["tmid"] = m["player_url"].astype(str).str.extract(r"/spieler/(\d+)")[0]
+        m["slug"] = (m["player_url"].astype(str)
+                     .str.extract(r"transfermarkt\.com/([a-z0-9-]+)/profil")[0]
+                     .str.replace("-", " "))
+        m = m.sort_values("season_start_year").drop_duplicates("player_url", keep="last")
+        src.append(m.rename(columns={"slug": "player_slug",
+                                     "player_nationality": "Nation"})[
+            ["player_slug", "Born", "Nation"]])
+        for r in m[["tmid", "Born", "player_nationality"]].itertuples(index=False):
+            if pd.notna(r.tmid):
+                by_tmid[str(r.tmid)] = (r.Born, r.player_nationality)
+    except Exception as exc:  # noqa: BLE001 - birth year is a nice-to-have
+        print(f"  (full TM mirror unreadable for birth years: {exc})")
 
     for part in src:
         for _, r in part.dropna(subset=["player_slug"]).iterrows():
