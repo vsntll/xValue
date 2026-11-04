@@ -15,22 +15,22 @@ Rows carry the player's FotMob id and national team - no club. build_player_elo.
 links a player to his Understat identity through the fotmob_id his club rows
 already carry.
 
-Each match caches under data/raw/live/fotmob_intl_players/<id>.json - re-runs
-only fetch new matches. Matches already in the committed output CSV count as done
-too, so a cold cache (fresh CI runner) doesn't re-fetch ~1,600 matches; new rows
-are merged into it. --budget-min caps the time spent fetching so the step can
-never run the job into its timeout. FotMob's ToS restricts programmatic use;
-keep volume low.
+No fetch cache: a match is done once it's in the committed output CSV or marked
+fetched in fotmob_intl_match_meta.csv (which also records matches FotMob has no
+player data for, plus every match's teams and score), so a fresh CI runner only
+requests new matches; new rows are merged into the CSV. --budget-min caps the
+time spent fetching so the step can never run the job into its timeout.
+FotMob's ToS restricts programmatic use; keep volume low.
 
 Run:  py -3.11 src/pull_fotmob_internationals.py                 # since SINCE
       py -3.11 src/pull_fotmob_internationals.py --since 2025-07-01
 Output: data/processed/fotmob_intl_player_matches.csv  (one row per player-match)
+        data/processed/fotmob_intl_match_meta.csv      (one row per match: teams, score, fetched)
 """
 
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 import time
 from pathlib import Path
@@ -40,10 +40,10 @@ import requests
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+import fotmob_store as store  # noqa: E402
 from pull_fotmob_players import _extract_player_rows, _get  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
-CACHE = ROOT / "data" / "raw" / "live" / "fotmob_intl_players"
 OUT = PROC / "fotmob_intl_player_matches.csv"
 SINCE = "2024-07-01"  # build_player_elo.py's window start (2024-25)
 
@@ -85,15 +85,14 @@ def _seasons(lid: int, since: str) -> list[str]:
     return [s for s in (d.get("allAvailableSeasons") or []) if int(s.split("/")[-1]) >= first_year]
 
 
-def _match(fx: dict, comp: str, comp_type: str) -> list[dict]:
+def _match_rows(fx: dict, comp: str, comp_type: str) -> list[dict] | None:
+    """Player rows for one finished international; None when FotMob refuses
+    the request (retried next run)."""
     mid = str(fx["id"])
-    cf = CACHE / f"{mid}.json"
-    if cf.exists():
-        return json.loads(cf.read_text())
     try:
         d = _get("matchDetails", matchId=mid)
     except requests.HTTPError:
-        return []
+        return None
     home, away = fx["home"], fx["away"]
     side = {str(home["id"]): (_team(home["name"]), _team(away["name"]), 1),
             str(away["id"]): (_team(away["name"]), _team(home["name"]), 0)}
@@ -104,8 +103,14 @@ def _match(fx: dict, comp: str, comp_type: str) -> list[dict]:
             continue
         rows.append({**r, "team": team, "opponent": opp, "is_home": is_home,
                      "competition": comp, "comp_type": comp_type})
-    cf.write_text(json.dumps(rows))
     return rows
+
+
+def _fixture_meta(fx: dict, comp: str) -> dict:
+    home, away = fx.get("home") or {}, fx.get("away") or {}
+    return {"match_id": str(fx["id"]), "date": ((fx.get("status") or {}).get("utcTime") or "")[:10],
+            "competition": comp, "home": _team(home.get("name")), "away": _team(away.get("name")),
+            "home_score": home.get("score"), "away_score": away.get("score")}
 
 
 def main() -> None:
@@ -114,12 +119,14 @@ def main() -> None:
     ap.add_argument("--budget-min", type=float, default=15,
                     help="stop fetching new matches after this many minutes (rest next run)")
     args = ap.parse_args()
-    CACHE.mkdir(parents=True, exist_ok=True)
     deadline = time.monotonic() + args.budget_min * 60
 
     prev = pd.read_csv(OUT) if OUT.exists() else pd.DataFrame()
-    known = set(prev["match_id"].astype(str)) if len(prev) else set()
-    rows, n_skipped = [], 0
+    meta = store.read_meta(store.INTL_META)
+    done = set(meta.loc[meta["fetched"] == 1, "match_id"])
+    if len(prev):
+        done |= set(prev["match_id"].astype(str).str.removeprefix("fotmob:"))
+    rows, metas, fetched, n_left = [], [], [], 0
     for lid, (comp, comp_type) in INTL_LEAGUES.items():
         try:
             seasons = _seasons(lid, args.since)
@@ -132,21 +139,27 @@ def main() -> None:
             except requests.HTTPError as e:
                 print(f"  {comp} {season}: fixtures failed ({e})")
                 continue
-            done = [f for f in (fixtures if isinstance(fixtures, list) else [])
-                    if (f.get("status") or {}).get("finished")
-                    and ((f.get("status") or {}).get("utcTime") or "")[:10] >= args.since]
-            todo = [f for f in done if (CACHE / f"{f['id']}.json").exists()
-                    or f"fotmob:{f['id']}" not in known]
-            n_new = sum(not (CACHE / f"{f['id']}.json").exists() for f in todo)
-            print(f"  {comp} {season}: {len(done)} finished matches ({n_new} to fetch)")
+            finished = [f for f in (fixtures if isinstance(fixtures, list) else [])
+                        if (f.get("status") or {}).get("finished")
+                        and ((f.get("status") or {}).get("utcTime") or "")[:10] >= args.since]
+            metas += [_fixture_meta(f, comp) for f in finished]
+            todo = [f for f in finished if str(f["id"]) not in done]
+            print(f"  {comp} {season}: {len(finished)} finished matches ({len(todo)} to fetch)")
             for fx in todo:
-                if not (CACHE / f"{fx['id']}.json").exists() and time.monotonic() > deadline:
-                    n_skipped += 1
+                if time.monotonic() > deadline:
+                    n_left += 1
                     continue
-                rows.extend(_match(fx, comp, comp_type))
+                got = _match_rows(fx, comp, comp_type)
+                if got is not None:
+                    rows += got
+                    fetched.append(str(fx["id"]))
 
-    if n_skipped:
-        print(f"\n  fetch budget ({args.budget_min:g} min) spent - {n_skipped} matches left for next run")
+    if n_left:
+        print(f"\n  fetch budget ({args.budget_min:g} min) spent - {n_left} matches left for next run")
+    if metas:
+        meta = pd.DataFrame(metas).drop_duplicates("match_id")
+        meta.loc[meta["match_id"].isin(done | set(fetched)), "fetched"] = 1
+        store.upsert_meta(meta, store.INTL_META)
     if not rows and not len(prev):
         raise SystemExit("no FotMob international player data pulled")
     out = (pd.concat([pd.DataFrame(rows), prev], ignore_index=True)
