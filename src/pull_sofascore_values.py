@@ -19,11 +19,15 @@ from __future__ import annotations
 import argparse
 import datetime
 import os
+import sys
 import time
 from pathlib import Path
 
 import pandas as pd
 import tls_requests
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from net import run_capped  # noqa: E402
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 OUT = PROJECT_ROOT / "data" / "processed" / "sofascore_values.csv"
@@ -66,8 +70,9 @@ def _get(path: str) -> dict:
     last = None
     for attempt in range(5):
         try:
-            r = tls_requests.get(f"{API}/{path}", headers=HEADERS, timeout=25, proxy=PROXY)
-        except Exception as exc:  # noqa: BLE001 - transport hiccup, retry
+            r = run_capped(lambda: tls_requests.get(f"{API}/{path}", headers=HEADERS,
+                                                    timeout=25, proxy=PROXY), 40, path)
+        except Exception as exc:  # noqa: BLE001 - transport hiccup / hang, retry
             last = exc
             time.sleep(3 * (attempt + 1))
             continue
@@ -110,9 +115,11 @@ def main() -> None:
             teams = [(r["team"]["name"], r["team"]["id"])
                      for r in st["standings"][0]["rows"]]
         except Blocked as exc:
-            print(f"{code} {year}: BLOCKED ({exc}) - skipping this league")
-            blocked.append(code)
-            continue
+            # a block is on the IP (datacenter ranges), not the league - every
+            # other league would burn the same retries for nothing
+            print(f"{code} {year}: BLOCKED ({exc}) - skipping the remaining leagues too")
+            blocked += [c for c in LEAGUES if c not in {r["src_league"] for r in rows}]
+            break
         print(f"{code} {year}: {len(teams)} clubs")
         for tname, tid in teams:
             try:
