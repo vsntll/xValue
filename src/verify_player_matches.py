@@ -1,17 +1,21 @@
 """Cross-check every committed FotMob player-match row against a second source
 and write the verdict into the committed CSVs.
 
-Club matches (data/processed/fotmob/player_matches_<season>.csv) get two checks:
-  * per player, against Understat's own box scores (understat_player_matches.csv):
-    each FotMob match is paired with its Understat game by team + date, each
-    player by name (exact, then a fuzzy fallback inside the same match, guarded
-    by minutes). Goals, assists and shots must match exactly, minutes within
-    MINUTES_TOL (the two count stoppage time differently, so a few minutes apart
-    is normal). xG / xA are never compared: each provider runs its own model.
+Club matches (data/processed/fotmob/player_matches_<season>.csv) get three checks:
+  * per player, against Understat's own box scores (understat_player_matches.csv -
+    the pure Understat file, never the FotMob gap-fill): each FotMob match is
+    paired with its Understat game by team + date, each player by name (exact,
+    then a fuzzy fallback inside the same match, guarded by minutes). Goals,
+    assists and shots must match exactly, minutes within MINUTES_TOL (the two
+    count stoppage time differently, so a few minutes apart is normal). xG / xA
+    are never compared: each provider runs its own model.
+  * per player, against ESPN's box scores (data/processed/espn/, from
+    src/pull_espn_players.py): goals, assists, shots, shots on target, fouls and
+    saves must match exactly. ESPN has no minutes or xG. This is the per-player
+    check that keeps working while Understat is down.
   * per match, against football-data.co.uk's result (match_features.csv):
     FotMob's score must equal it, and no team's players may be credited with
-    more goals than the team scored. This one still works while Understat is
-    unavailable.
+    more goals than the team scored.
 
 Internationals (fotmob_intl_player_matches.csv) have no second per-player
 source, so the check is per match: FotMob's score must equal the martj42
@@ -23,7 +27,8 @@ Columns written:
               conflict     a check failed - `conflicts` lists which stats
               fotmob_only  no second source to check against (yet)
   checked_by  ;-joined second sources the row was checked against
-  conflicts   ;-joined stat names that disagree (score / team_goals = match level)
+  conflicts   ;-joined source:stat pairs that disagree, e.g. "espn:fouls",
+              "understat:minutes"; score / team_goals are football-data match level
   us_game_id / us_player_id  the Understat game + player the row paired with
                               (src/understat_gapfill.py maps ids through these)
   us_goals / us_assists / us_shots / us_minutes  Understat's values (club rows)
@@ -57,8 +62,11 @@ UNDERSTAT = PROC / "understat_player_matches.csv"
 INTL_ROWS = PROC / "fotmob_intl_player_matches.csv"
 INTL_RESULTS = PROC / "international_results.csv"
 FD_RESULTS = PROC / "match_features.csv"
+ESPN_DIR = PROC / "espn"
+ESPN_META = PROC / "espn_match_meta.csv"
 
 EXACT = ["goals", "assists", "shots"]
+ESPN_EXACT = ["goals", "assists", "shots", "sot", "fouls", "saves"]
 MINUTES_TOL = 10          # |FotMob - Understat| minutes beyond this is a conflict
 FUZZY_MIN_RATIO = 0.6     # name similarity for the fallback pairing
 FUZZY_MAX_MIN_GAP = 15    # ... and the paired rows' minutes must be this close
@@ -137,6 +145,49 @@ def _match_checks(fm: pd.DataFrame, meta: pd.DataFrame, fd: pd.DataFrame) -> tup
     return fm["match_id"].map(found).fillna(False).astype(bool), fm["match_id"].map(bad).fillna("")
 
 
+def _espn_checks(fm: pd.DataFrame, season: str) -> tuple[pd.Series, dict[str, pd.Series]]:
+    """Per FotMob row: was the player found in ESPN's box score
+    (src/pull_espn_players.py), and which of ESPN_EXACT disagree. Matches pair
+    on either team + date, players on name (exact, then the fuzzy fallback -
+    ESPN has no minutes, so that guard is off)."""
+    es = store.read("player_matches", [season], base=ESPN_DIR)
+    em = store.read_meta(ESPN_META)
+    em = em[em["season"] == season] if "season" in em else em.iloc[0:0]
+    no = pd.Series(False, index=fm.index)
+    if es.empty or em.empty:
+        return no, {}
+    by_team_day = {(normalize_team(t), d): mid for mid, h, a, d in
+                   em[["match_id", "home", "away", "date"]].assign(date=pd.to_datetime(em["date"]))
+                   .itertuples(index=False) for t in (h, a)}
+    teams = fm.groupby("match_id")["team"].unique()
+    days = pd.to_datetime(fm.groupby("match_id")["date"].first(), errors="coerce")
+    eg = {}
+    for mid, d in days.items():
+        keys = [(normalize_team(t), d + pd.Timedelta(days=o)) for o in (0, -1, 1) for t in teams[mid]]
+        eg[mid] = next((by_team_day[k] for k in keys if k in by_team_day), None)
+    es["_pk"] = es["player"].map(_pk)
+    es["minutes"] = 0
+    idx = {(g, pk): i for i, g, pk in es[["match_id", "_pk"]].itertuples()}
+    g = fm["match_id"].map(eg)
+    row = pd.Series([idx.get((a, b)) for a, b in zip(g, fm["_pk"])], index=fm.index, dtype="float64")
+    left = es[~es.index.isin(set(row.dropna().astype(int)))]
+    left_by = {k: v for k, v in left.groupby("match_id")}
+    for game, grp in fm[row.isna() & g.notna()].groupby(g[row.isna() & g.notna()]):
+        cand = left_by.get(game)
+        if cand is not None:
+            for i, j in _fuzzy_pairs(grp.assign(minutes=0), cand):
+                row.at[i] = j
+    hit = row.notna()
+    src = es.loc[row[hit].astype(int)]
+    bad = {}
+    for c in ESPN_EXACT:
+        theirs = pd.Series(np.nan, index=fm.index)
+        theirs[hit] = pd.to_numeric(src[c], errors="coerce").fillna(0).to_numpy()
+        mine = pd.to_numeric(fm[c], errors="coerce").fillna(0)
+        bad[f"espn:{c}"] = hit & (mine != theirs)
+    return hit, bad
+
+
 def verify_club_season(season: str, us_all: pd.DataFrame, meta_all: pd.DataFrame,
                        fd_all: pd.DataFrame) -> pd.Series:
     fm = store.read("player_matches", [season])
@@ -172,11 +223,13 @@ def verify_club_season(season: str, us_all: pd.DataFrame, meta_all: pd.DataFrame
     for c in ("us_game_id", "us_player_id"):
         fm[c] = fm[c].astype("Int64")
 
-    bad = {c: hit & (fm[c] != fm[f"us_{c}"]) for c in EXACT}
-    bad["minutes"] = hit & ((fm["minutes"] - fm["us_minutes"]).abs() > MINUTES_TOL)
+    bad = {f"understat:{c}": hit & (fm[c] != fm[f"us_{c}"]) for c in EXACT}
+    bad["understat:minutes"] = hit & ((fm["minutes"] - fm["us_minutes"]).abs() > MINUTES_TOL)
+    es_hit, es_bad = _espn_checks(fm, season)
+    bad.update(es_bad)
     fd_hit, fd_bad = _match_checks(fm, meta, fd_all[fd_all["season"] == season])
-    fm["checked_by"] = [";".join(n for n, h in (("understat", a), ("football-data", b)) if h)
-                        for a, b in zip(hit, fd_hit)]
+    fm["checked_by"] = [";".join(n for n, h in (("understat", a), ("espn", e), ("football-data", b)) if h)
+                        for a, e, b in zip(hit, es_hit, fd_hit)]
     fm["conflicts"] = [";".join([c for c in bad if bad[c].iat[k]] + ([fd_bad.iat[k]] if fd_bad.iat[k] else []))
                        for k in range(len(fm))]
     fm["verified"] = np.where(fm["checked_by"] == "", "fotmob_only",
