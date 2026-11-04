@@ -1,0 +1,1067 @@
+source,season,league,tier,competition_type,comp_code,Date,Time,HomeTeam,AwayTeam,status,FTHG,FTAG,FTR,HTHG,HTAG,HTR,HS,AS,HST,AST,HC,AC,HF,AF,HY,AY,HR,AR,HPoss,APoss,HxG,AxG,match_id
+understat,2026-27,Premier League,1,league,ENG1,2026-08-21,19:00,Arsenal,Coventry,FT,3.0,0.0,H,,,,,,,,,,,,,,,,,,1.854,0.558,understat:31180
+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,16:30,Brentford,Tottenham,FT,3.0,0.0,H,,,,,,,,,,,,,,,,,,4.042,0.756,understat:31185
+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Everton,Crystal Palace,FT,2.0,0.0,H,,,,,,,,,,,,,,,,,,1.451,2.231,understat:31182
+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,11:30,Hull,Manchester United,FT,2.0,0.0,H,,,,,,,,,,,,,,,,,,1.496,1.779,understat:31181
+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Ipswich,Sunderland,FT,2.0,1.0,H,,,,,,,,,,,,,,,,,,1.585,1.177,understat:31183
+understat,2026-27,Premier League,1,league,ENG1,2026-08-22,14:00,Nottingham Forest,Leeds,FT,0.0,1.0,A,,,,,,,,,,,,,,,,,,0.657,0.466,understat:31184
+understat,2026-27,Premier League,1,league,ENG1,2026-08-23,13:00,Brighton,Aston Villa,FT,4.0,0.0,H,,,,,,,,,,,,,,,,,,4.003,0.275,understat:31186
+understat,2026-27,Premier League,1,league,ENG1,2026-08-23,13:00,Manchester City,Bournemouth,FT,2.0,1.0,H,,,,,,,,,,,,,,,,,,2.474,0.708,understat:31187
+understat,2026-27,Premier League,1,league,ENG1,2026-08-23,15:30,Newcastle United,Liverpool,FT,2.0,2.0,D,,,,,,,,,,,,,,,,,,1.595,3.131,understat:31188
+understat,2026-27,Premier League,1,league,ENG1,2026-08-24,19:00,Fulham,Chelsea,FT,2.0,3.0,A,,,,,,,,,,,,,,,,,,1.417,2.584,understat:31189
+understat,2026-27,Premier League,1,league,ENG1,2026-08-28,19:00,Crystal Palace,Manchester City,FT,1.0,4.0,A,,,,,,,,,,,,,,,,,,0.927,2.567,understat:31190
+understat,2026-27,Premier League,1,league,ENG1,2026-08-29,14:00,Bournemouth,Everton,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,2.258,1.664,understat:31193
+understat,2026-27,Premier League,1,league,ENG1,2026-08-29,14:00,Coventry,Hull,FT,0.0,1.0,A,,,,,,,,,,,,,,,,,,1.182,0.46,understat:31192
+understat,2026-27,Premier League,1,league,ENG1,2026-08-29,11:30,Liverpool,Nottingham Forest,FT,2.0,2.0,D,,,,,,,,,,,,,,,,,,1.279,2.879,understat:31191
+understat,2026-27,Premier League,1,league,ENG1,2026-08-29,16:30,Tottenham,Newcastle United,FT,0.0,2.0,A,,,,,,,,,,,,,,,,,,1.12,1.01,understat:31194
+understat,2026-27,Premier League,1,league,ENG1,2026-08-30,13:00,Chelsea,Brighton,FT,4.0,3.0,H,,,,,,,,,,,,,,,,,,3.829,1.792,understat:31196
+understat,2026-27,Premier League,1,league,ENG1,2026-08-30,13:00,Leeds,Brentford,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,1.15,1.613,understat:31197
+understat,2026-27,Premier League,1,league,ENG1,2026-08-30,15:30,Manchester United,Ipswich,FT,5.0,2.0,H,,,,,,,,,,,,,,,,,,4.866,1.805,understat:31198
+understat,2026-27,Premier League,1,league,ENG1,2026-08-30,13:00,Sunderland,Fulham,FT,1.0,0.0,H,,,,,,,,,,,,,,,,,,1.562,1.024,understat:31195
+understat,2026-27,Premier League,1,league,ENG1,2026-08-31,19:00,Aston Villa,Arsenal,FT,0.0,1.0,A,,,,,,,,,,,,,,,,,,0.282,1.524,understat:31199
+understat,2026-27,Premier League,1,league,ENG1,2026-09-04,19:00,Ipswich,Liverpool,FT,0.0,2.0,A,,,,,,,,,,,,,,,,,,0.598,0.744,understat:31200
+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Brentford,Sunderland,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,1.586,2.155,understat:31205
+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Brighton,Leeds,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,2.22,2.234,understat:31206
+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Fulham,Crystal Palace,FT,2.0,3.0,A,,,,,,,,,,,,,,,,,,2.883,2.36,understat:31204
+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,16:30,Hull,Aston Villa,FT,0.0,0.0,D,,,,,,,,,,,,,,,,,,0.812,1.635,understat:31207
+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Manchester City,Coventry,FT,1.0,0.0,H,,,,,,,,,,,,,,,,,,2.19,1.493,understat:31202
+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,11:30,Newcastle United,Bournemouth,FT,2.0,2.0,D,,,,,,,,,,,,,,,,,,0.772,1.639,understat:31201
+understat,2026-27,Premier League,1,league,ENG1,2026-09-05,14:00,Nottingham Forest,Tottenham,FT,0.0,0.0,D,,,,,,,,,,,,,,,,,,0.832,1.484,understat:31203
+understat,2026-27,Premier League,1,league,ENG1,2026-09-06,15:30,Arsenal,Chelsea,FT,2.0,1.0,H,,,,,,,,,,,,,,,,,,2.806,0.431,understat:31209
+understat,2026-27,Premier League,1,league,ENG1,2026-09-06,13:00,Everton,Manchester United,FT,2.0,2.0,D,,,,,,,,,,,,,,,,,,1.056,0.872,understat:31208
+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Aston Villa,Nottingham Forest,FT,1.0,2.0,A,,,,,,,,,,,,,,,,,,1.088,2.795,understat:31211
+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Bournemouth,Brentford,FT,2.0,2.0,D,,,,,,,,,,,,,,,,,,2.549,0.794,understat:31210
+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Chelsea,Hull,FT,2.0,2.0,D,,,,,,,,,,,,,,,,,,1.214,1.804,understat:31212
+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Crystal Palace,Ipswich,FT,2.0,3.0,A,,,,,,,,,,,,,,,,,,0.938,2.034,understat:31213
+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,14:00,Liverpool,Fulham,FT,0.0,0.0,D,,,,,,,,,,,,,,,,,,1.798,0.922,understat:31214
+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,19:00,Sunderland,Arsenal,FT,0.0,2.0,A,,,,,,,,,,,,,,,,,,2.07,1.989,understat:31216
+understat,2026-27,Premier League,1,league,ENG1,2026-09-12,16:30,Tottenham,Everton,FT,0.0,0.0,D,,,,,,,,,,,,,,,,,,0.737,1.601,understat:31215
+understat,2026-27,Premier League,1,league,ENG1,2026-09-13,13:00,Coventry,Brighton,FT,0.0,5.0,A,,,,,,,,,,,,,,,,,,1.048,2.765,understat:31217
+understat,2026-27,Premier League,1,league,ENG1,2026-09-13,15:30,Manchester United,Manchester City,FT,0.0,1.0,A,,,,,,,,,,,,,,,,,,0.943,1.141,understat:31218
+understat,2026-27,Premier League,1,league,ENG1,2026-09-14,19:00,Leeds,Newcastle United,FT,4.0,1.0,H,,,,,,,,,,,,,,,,,,2.29,0.793,understat:31219
+understat,2026-27,Premier League,1,league,ENG1,2026-09-18,19:00,Brentford,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31220
+understat,2026-27,Premier League,1,league,ENG1,2026-09-19,14:00,Brighton,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31224
+understat,2026-27,Premier League,1,league,ENG1,2026-09-19,14:00,Everton,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31226
+understat,2026-27,Premier League,1,league,ENG1,2026-09-19,14:00,Leeds,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31225
+understat,2026-27,Premier League,1,league,ENG1,2026-09-19,14:00,Manchester City,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31222
+understat,2026-27,Premier League,1,league,ENG1,2026-09-19,14:00,Newcastle United,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31223
+understat,2026-27,Premier League,1,league,ENG1,2026-09-19,16:30,Nottingham Forest,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31227
+understat,2026-27,Premier League,1,league,ENG1,2026-09-19,11:30,Tottenham,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31221
+understat,2026-27,Premier League,1,league,ENG1,2026-09-20,13:00,Bournemouth,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31228
+understat,2026-27,Premier League,1,league,ENG1,2026-09-20,15:30,Fulham,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31229
+understat,2026-27,Premier League,1,league,ENG1,2026-10-10,11:30,Arsenal,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31230
+understat,2026-27,Premier League,1,league,ENG1,2026-10-10,14:00,Aston Villa,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31231
+understat,2026-27,Premier League,1,league,ENG1,2026-10-10,14:00,Chelsea,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31232
+understat,2026-27,Premier League,1,league,ENG1,2026-10-10,14:00,Ipswich,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31233
+understat,2026-27,Premier League,1,league,ENG1,2026-10-10,16:30,Manchester United,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31235
+understat,2026-27,Premier League,1,league,ENG1,2026-10-10,14:00,Sunderland,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31234
+understat,2026-27,Premier League,1,league,ENG1,2026-10-11,13:00,Crystal Palace,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31236
+understat,2026-27,Premier League,1,league,ENG1,2026-10-11,13:00,Hull,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31237
+understat,2026-27,Premier League,1,league,ENG1,2026-10-11,15:30,Liverpool,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31238
+understat,2026-27,Premier League,1,league,ENG1,2026-10-12,19:00,Coventry,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31239
+understat,2026-27,Premier League,1,league,ENG1,2026-10-17,14:00,Brentford,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31242
+understat,2026-27,Premier League,1,league,ENG1,2026-10-17,11:30,Everton,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31240
+understat,2026-27,Premier League,1,league,ENG1,2026-10-17,14:00,Fulham,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31241
+understat,2026-27,Premier League,1,league,ENG1,2026-10-17,14:00,Manchester City,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31243
+understat,2026-27,Premier League,1,league,ENG1,2026-10-17,16:30,Newcastle United,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31244
+understat,2026-27,Premier League,1,league,ENG1,2026-10-18,13:00,Bournemouth,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31246
+understat,2026-27,Premier League,1,league,ENG1,2026-10-18,13:00,Brighton,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31245
+understat,2026-27,Premier League,1,league,ENG1,2026-10-18,13:00,Leeds,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31247
+understat,2026-27,Premier League,1,league,ENG1,2026-10-18,15:30,Nottingham Forest,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31248
+understat,2026-27,Premier League,1,league,ENG1,2026-10-19,19:00,Tottenham,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31249
+understat,2026-27,Premier League,1,league,ENG1,2026-10-23,19:00,Ipswich,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31250
+understat,2026-27,Premier League,1,league,ENG1,2026-10-24,14:00,Arsenal,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31254
+understat,2026-27,Premier League,1,league,ENG1,2026-10-24,11:30,Aston Villa,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31251
+understat,2026-27,Premier League,1,league,ENG1,2026-10-24,16:30,Chelsea,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31255
+understat,2026-27,Premier League,1,league,ENG1,2026-10-24,14:00,Coventry,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31253
+understat,2026-27,Premier League,1,league,ENG1,2026-10-24,14:00,Liverpool,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31252
+understat,2026-27,Premier League,1,league,ENG1,2026-10-25,14:00,Crystal Palace,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31257
+understat,2026-27,Premier League,1,league,ENG1,2026-10-25,14:00,Hull,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31258
+understat,2026-27,Premier League,1,league,ENG1,2026-10-25,14:00,Manchester United,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31256
+understat,2026-27,Premier League,1,league,ENG1,2026-10-25,16:30,Sunderland,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31259
+understat,2026-27,Premier League,1,league,ENG1,2026-10-31,15:00,Bournemouth,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31264
+understat,2026-27,Premier League,1,league,ENG1,2026-10-31,15:00,Brentford,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31265
+understat,2026-27,Premier League,1,league,ENG1,2026-10-31,12:30,Chelsea,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31260
+understat,2026-27,Premier League,1,league,ENG1,2026-10-31,15:00,Coventry,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31261
+understat,2026-27,Premier League,1,league,ENG1,2026-10-31,15:00,Hull,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31262
+understat,2026-27,Premier League,1,league,ENG1,2026-10-31,15:00,Manchester City,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31263
+understat,2026-27,Premier League,1,league,ENG1,2026-10-31,17:30,Tottenham,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31266
+understat,2026-27,Premier League,1,league,ENG1,2026-11-01,14:00,Aston Villa,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31267
+understat,2026-27,Premier League,1,league,ENG1,2026-11-01,16:30,Liverpool,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31268
+understat,2026-27,Premier League,1,league,ENG1,2026-11-02,20:00,Newcastle United,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31269
+understat,2026-27,Premier League,1,league,ENG1,2026-11-07,15:00,Arsenal,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31270
+understat,2026-27,Premier League,1,league,ENG1,2026-11-07,15:00,Brighton,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31271
+understat,2026-27,Premier League,1,league,ENG1,2026-11-07,15:00,Crystal Palace,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31272
+understat,2026-27,Premier League,1,league,ENG1,2026-11-07,15:00,Everton,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31273
+understat,2026-27,Premier League,1,league,ENG1,2026-11-07,15:00,Fulham,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31274
+understat,2026-27,Premier League,1,league,ENG1,2026-11-07,15:00,Ipswich,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31275
+understat,2026-27,Premier League,1,league,ENG1,2026-11-07,15:00,Leeds,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31276
+understat,2026-27,Premier League,1,league,ENG1,2026-11-07,15:00,Manchester United,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31277
+understat,2026-27,Premier League,1,league,ENG1,2026-11-07,15:00,Nottingham Forest,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31278
+understat,2026-27,Premier League,1,league,ENG1,2026-11-07,15:00,Sunderland,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31279
+understat,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Aston Villa,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31281
+understat,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Bournemouth,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31280
+understat,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Brentford,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31282
+understat,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Chelsea,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31283
+understat,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Coventry,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31284
+understat,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Hull,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31285
+understat,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Liverpool,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31286
+understat,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Manchester City,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31287
+understat,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Newcastle United,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31288
+understat,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Tottenham,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31289
+understat,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Arsenal,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31290
+understat,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Brighton,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31291
+understat,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Crystal Palace,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31292
+understat,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Everton,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31293
+understat,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Fulham,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31294
+understat,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Ipswich,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31295
+understat,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Leeds,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31296
+understat,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Manchester United,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31297
+understat,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Nottingham Forest,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31298
+understat,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Sunderland,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31299
+understat,2026-27,Premier League,1,league,ENG1,2026-12-02,20:00,Aston Villa,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31301
+understat,2026-27,Premier League,1,league,ENG1,2026-12-02,20:00,Bournemouth,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31300
+understat,2026-27,Premier League,1,league,ENG1,2026-12-02,20:00,Brentford,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31302
+understat,2026-27,Premier League,1,league,ENG1,2026-12-02,20:00,Chelsea,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31303
+understat,2026-27,Premier League,1,league,ENG1,2026-12-02,20:00,Coventry,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31304
+understat,2026-27,Premier League,1,league,ENG1,2026-12-02,20:00,Hull,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31305
+understat,2026-27,Premier League,1,league,ENG1,2026-12-02,20:00,Liverpool,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31306
+understat,2026-27,Premier League,1,league,ENG1,2026-12-02,20:00,Manchester City,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31307
+understat,2026-27,Premier League,1,league,ENG1,2026-12-02,20:00,Newcastle United,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31308
+understat,2026-27,Premier League,1,league,ENG1,2026-12-02,20:00,Tottenham,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31309
+understat,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Aston Villa,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31311
+understat,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Bournemouth,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31310
+understat,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Brentford,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31314
+understat,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Chelsea,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31315
+understat,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Everton,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31316
+understat,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Leeds,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31318
+understat,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Manchester United,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31317
+understat,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Newcastle United,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31319
+understat,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Nottingham Forest,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31312
+understat,2026-27,Premier League,1,league,ENG1,2026-12-05,15:00,Tottenham,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31313
+understat,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Arsenal,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31320
+understat,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Brighton,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31321
+understat,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Coventry,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31322
+understat,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Crystal Palace,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31323
+understat,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Fulham,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31325
+understat,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Hull,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31326
+understat,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Ipswich,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31327
+understat,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Liverpool,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31328
+understat,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Manchester City,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31329
+understat,2026-27,Premier League,1,league,ENG1,2026-12-12,15:00,Sunderland,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31324
+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Arsenal,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31331
+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Bournemouth,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31330
+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Brentford,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31332
+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Brighton,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31333
+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Chelsea,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31334
+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Leeds,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31335
+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Liverpool,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31336
+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Manchester City,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31337
+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Nottingham Forest,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31338
+understat,2026-27,Premier League,1,league,ENG1,2026-12-19,15:00,Sunderland,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31339
+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Aston Villa,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31340
+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Coventry,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31341
+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Crystal Palace,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31342
+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Everton,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31343
+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Fulham,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31344
+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Hull,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31349
+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Ipswich,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31345
+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Manchester United,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31346
+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Newcastle United,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31347
+understat,2026-27,Premier League,1,league,ENG1,2026-12-26,15:00,Tottenham,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31348
+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Aston Villa,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31350
+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Coventry,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31351
+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Crystal Palace,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31352
+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Everton,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31359
+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Fulham,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31353
+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Hull,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31358
+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Ipswich,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31357
+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Manchester United,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31356
+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Newcastle United,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31355
+understat,2026-27,Premier League,1,league,ENG1,2026-12-30,20:00,Tottenham,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31354
+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Arsenal,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31361
+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Bournemouth,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31360
+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Brentford,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31362
+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Brighton,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31363
+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Chelsea,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31364
+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Leeds,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31365
+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Liverpool,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31366
+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Manchester City,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31367
+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Nottingham Forest,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31369
+understat,2026-27,Premier League,1,league,ENG1,2027-01-02,15:00,Sunderland,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31368
+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Arsenal,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31370
+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Brighton,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31371
+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Crystal Palace,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31372
+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Everton,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31373
+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Fulham,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31374
+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Ipswich,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31375
+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Leeds,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31376
+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Manchester United,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31377
+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Nottingham Forest,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31378
+understat,2026-27,Premier League,1,league,ENG1,2027-01-06,20:00,Sunderland,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31379
+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Aston Villa,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31381
+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Bournemouth,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31380
+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Brentford,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31382
+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Chelsea,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31383
+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Coventry,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31384
+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Hull,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31385
+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Liverpool,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31386
+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Manchester City,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31387
+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Newcastle United,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31388
+understat,2026-27,Premier League,1,league,ENG1,2027-01-16,15:00,Tottenham,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31389
+understat,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Arsenal,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31390
+understat,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Brighton,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31391
+understat,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Crystal Palace,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31392
+understat,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Everton,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31393
+understat,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Fulham,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31394
+understat,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Ipswich,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31395
+understat,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Leeds,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31396
+understat,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Manchester United,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31397
+understat,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Nottingham Forest,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31398
+understat,2026-27,Premier League,1,league,ENG1,2027-01-23,15:00,Sunderland,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31399
+understat,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Aston Villa,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31408
+understat,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Bournemouth,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31400
+understat,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Brentford,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31407
+understat,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Chelsea,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31406
+understat,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Coventry,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31405
+understat,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Hull,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31404
+understat,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Liverpool,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31403
+understat,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Manchester City,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31402
+understat,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Newcastle United,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31401
+understat,2026-27,Premier League,1,league,ENG1,2027-01-30,15:00,Tottenham,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31409
+understat,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Arsenal,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31415
+understat,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Brighton,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31416
+understat,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Crystal Palace,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31417
+understat,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Everton,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31418
+understat,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Fulham,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31419
+understat,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Ipswich,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31410
+understat,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Leeds,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31411
+understat,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Manchester United,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31412
+understat,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Nottingham Forest,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31413
+understat,2026-27,Premier League,1,league,ENG1,2027-02-06,15:00,Sunderland,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31414
+understat,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Aston Villa,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31420
+understat,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Coventry,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31421
+understat,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Crystal Palace,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31422
+understat,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Everton,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31423
+understat,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Fulham,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31424
+understat,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Hull,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31425
+understat,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Ipswich,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31426
+understat,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Manchester United,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31427
+understat,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Newcastle United,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31428
+understat,2026-27,Premier League,1,league,ENG1,2027-02-10,20:00,Tottenham,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31429
+understat,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Arsenal,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31431
+understat,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Bournemouth,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31430
+understat,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Brentford,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31432
+understat,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Brighton,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31433
+understat,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Chelsea,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31434
+understat,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Leeds,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31435
+understat,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Liverpool,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31436
+understat,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Manchester City,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31437
+understat,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Nottingham Forest,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31438
+understat,2026-27,Premier League,1,league,ENG1,2027-02-20,15:00,Sunderland,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31439
+understat,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Aston Villa,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31440
+understat,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Coventry,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31441
+understat,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Crystal Palace,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31442
+understat,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Everton,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31443
+understat,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Fulham,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31444
+understat,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Hull,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31445
+understat,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Ipswich,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31446
+understat,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Manchester United,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31447
+understat,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Newcastle United,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31448
+understat,2026-27,Premier League,1,league,ENG1,2027-02-27,15:00,Tottenham,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31449
+understat,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Arsenal,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31451
+understat,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Bournemouth,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31450
+understat,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Brentford,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31452
+understat,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Brighton,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31453
+understat,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Chelsea,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31454
+understat,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Leeds,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31455
+understat,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Liverpool,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31456
+understat,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Manchester City,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31457
+understat,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Nottingham Forest,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31458
+understat,2026-27,Premier League,1,league,ENG1,2027-03-03,20:00,Sunderland,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31459
+understat,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Aston Villa,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31461
+understat,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Bournemouth,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31460
+understat,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Chelsea,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31462
+understat,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Coventry,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31463
+understat,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Crystal Palace,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31464
+understat,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Leeds,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31465
+understat,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Liverpool,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31466
+understat,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Manchester United,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31467
+understat,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Sunderland,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31468
+understat,2026-27,Premier League,1,league,ENG1,2027-03-13,15:00,Tottenham,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31469
+understat,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Arsenal,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31470
+understat,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Brentford,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31471
+understat,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Brighton,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31472
+understat,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Everton,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31473
+understat,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Fulham,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31474
+understat,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Hull,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31475
+understat,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Ipswich,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31476
+understat,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Manchester City,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31477
+understat,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Newcastle United,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31478
+understat,2026-27,Premier League,1,league,ENG1,2027-03-20,15:00,Nottingham Forest,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31479
+understat,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Aston Villa,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31481
+understat,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Bournemouth,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31480
+understat,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Chelsea,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31482
+understat,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Coventry,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31483
+understat,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Crystal Palace,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31484
+understat,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Leeds,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31485
+understat,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Liverpool,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31486
+understat,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Manchester United,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31487
+understat,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Sunderland,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31488
+understat,2026-27,Premier League,1,league,ENG1,2027-04-10,14:00,Tottenham,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31489
+understat,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Arsenal,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31490
+understat,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Brentford,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31491
+understat,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Brighton,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31492
+understat,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Everton,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31493
+understat,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Fulham,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31494
+understat,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Hull,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31495
+understat,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Ipswich,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31496
+understat,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Manchester City,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31497
+understat,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Newcastle United,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31498
+understat,2026-27,Premier League,1,league,ENG1,2027-04-17,14:00,Nottingham Forest,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31499
+understat,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Aston Villa,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31501
+understat,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Bournemouth,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31500
+understat,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Brentford,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31502
+understat,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Chelsea,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31503
+understat,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Everton,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31504
+understat,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Leeds,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31505
+understat,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Manchester United,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31506
+understat,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Newcastle United,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31507
+understat,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Nottingham Forest,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31508
+understat,2026-27,Premier League,1,league,ENG1,2027-04-24,14:00,Tottenham,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31509
+understat,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Arsenal,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31510
+understat,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Brighton,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31511
+understat,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Coventry,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31512
+understat,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Crystal Palace,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31513
+understat,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Fulham,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31514
+understat,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Hull,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31515
+understat,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Ipswich,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31516
+understat,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Liverpool,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31517
+understat,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Manchester City,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31518
+understat,2026-27,Premier League,1,league,ENG1,2027-05-01,14:00,Sunderland,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31519
+understat,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Bournemouth,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31520
+understat,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Brentford,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31521
+understat,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Brighton,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31522
+understat,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Everton,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31523
+understat,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Fulham,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31524
+understat,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Leeds,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31525
+understat,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Manchester City,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31529
+understat,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Newcastle United,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31526
+understat,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Nottingham Forest,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31527
+understat,2026-27,Premier League,1,league,ENG1,2027-05-08,14:00,Tottenham,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31528
+understat,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Arsenal,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31530
+understat,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Aston Villa,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31531
+understat,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Chelsea,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31532
+understat,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Coventry,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31533
+understat,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Crystal Palace,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31534
+understat,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Hull,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31535
+understat,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Ipswich,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31536
+understat,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Liverpool,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31537
+understat,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Manchester United,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31538
+understat,2026-27,Premier League,1,league,ENG1,2027-05-15,14:00,Sunderland,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31539
+understat,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Bournemouth,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31540
+understat,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Brentford,Hull,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31541
+understat,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Brighton,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31542
+understat,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Everton,Arsenal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31543
+understat,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Fulham,Coventry,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31544
+understat,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Leeds,Sunderland,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31545
+understat,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Manchester City,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31546
+understat,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Newcastle United,Crystal Palace,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31547
+understat,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Nottingham Forest,Ipswich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31548
+understat,2026-27,Premier League,1,league,ENG1,2027-05-23,14:00,Tottenham,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31549
+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Arsenal,Brighton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31554
+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Aston Villa,Tottenham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31553
+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Chelsea,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31550
+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Coventry,Nottingham Forest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31551
+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Crystal Palace,Leeds,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31552
+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Hull,Newcastle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31555
+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Ipswich,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31556
+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Liverpool,Bournemouth,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31557
+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Manchester United,Fulham,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31558
+understat,2026-27,Premier League,1,league,ENG1,2027-05-30,15:00,Sunderland,Manchester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31559
+understat,2026-27,Bundesliga,1,league,GER1,2026-08-28,18:30,Bayern Munich,VfB Stuttgart,FT,5.0,1.0,H,,,,,,,,,,,,,,,,,,4.079,1.25,understat:32247
+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,16:30,Borussia Dortmund,Hamburger SV,FT,2.0,0.0,H,,,,,,,,,,,,,,,,,,1.313,1.106,understat:32252
+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,Elversberg,Bayer Leverkusen,FT,3.0,2.0,H,,,,,,,,,,,,,,,,,,1.4,2.615,understat:32758
+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,FC Cologne,Hoffenheim,FT,3.0,2.0,H,,,,,,,,,,,,,,,,,,2.314,1.923,understat:32249
+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,Mainz 05,Paderborn,FT,0.0,0.0,D,,,,,,,,,,,,,,,,,,1.549,0.691,understat:32251
+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,RasenBallsport Leipzig,Borussia M.Gladbach,FT,3.0,0.0,H,,,,,,,,,,,,,,,,,,3.765,1.234,understat:32250
+understat,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,Union Berlin,Eintracht Frankfurt,FT,3.0,3.0,D,,,,,,,,,,,,,,,,,,2.283,2.119,understat:32248
+understat,2026-27,Bundesliga,1,league,GER1,2026-08-30,15:30,Augsburg,Schalke 04,FT,3.0,0.0,H,,,,,,,,,,,,,,,,,,5.536,1.837,understat:32254
+understat,2026-27,Bundesliga,1,league,GER1,2026-08-30,13:30,Freiburg,Werder Bremen,FT,4.0,1.0,H,,,,,,,,,,,,,,,,,,2.385,0.949,understat:32253
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-04,18:30,VfB Stuttgart,FC Cologne,FT,4.0,1.0,H,,,,,,,,,,,,,,,,,,3.522,2.858,understat:32255
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,Bayer Leverkusen,Union Berlin,FT,4.0,0.0,H,,,,,,,,,,,,,,,,,,3.392,0.25,understat:32257
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,Borussia M.Gladbach,Elversberg,FT,3.0,4.0,A,,,,,,,,,,,,,,,,,,2.888,3.032,understat:32759
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,Hoffenheim,Borussia Dortmund,FT,2.0,3.0,A,,,,,,,,,,,,,,,,,,2.166,2.025,understat:32258
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,Paderborn,Freiburg,FT,0.0,1.0,A,,,,,,,,,,,,,,,,,,0.733,1.172,understat:32259
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,16:30,Schalke 04,Bayern Munich,FT,0.0,0.0,D,,,,,,,,,,,,,,,,,,0.251,2.054,understat:32260
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-05,13:30,Werder Bremen,RasenBallsport Leipzig,FT,3.0,1.0,H,,,,,,,,,,,,,,,,,,0.854,1.582,understat:32256
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-06,15:30,Eintracht Frankfurt,Augsburg,FT,1.0,4.0,A,,,,,,,,,,,,,,,,,,2.51,1.445,understat:32262
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-06,13:30,Hamburger SV,Mainz 05,FT,0.0,5.0,A,,,,,,,,,,,,,,,,,,0.257,3.28,understat:32261
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-11,18:30,Union Berlin,Schalke 04,FT,1.0,3.0,A,,,,,,,,,,,,,,,,,,1.918,3.218,understat:32263
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,Augsburg,Bayer Leverkusen,FT,2.0,2.0,D,,,,,,,,,,,,,,,,,,0.843,1.886,understat:32267
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,Borussia Dortmund,Paderborn,FT,3.0,0.0,H,,,,,,,,,,,,,,,,,,3.145,0.311,understat:32268
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,16:30,FC Cologne,Werder Bremen,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,1.613,1.182,understat:32269
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,Freiburg,Borussia M.Gladbach,FT,5.0,0.0,H,,,,,,,,,,,,,,,,,,2.149,0.268,understat:32264
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,Hoffenheim,VfB Stuttgart,FT,2.0,1.0,H,,,,,,,,,,,,,,,,,,2.957,2.67,understat:32265
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-12,13:30,Mainz 05,Eintracht Frankfurt,FT,1.0,3.0,A,,,,,,,,,,,,,,,,,,2.242,2.159,understat:32266
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-13,15:30,Elversberg,Bayern Munich,FT,1.0,2.0,A,,,,,,,,,,,,,,,,,,1.03,3.06,understat:32760
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-13,13:30,RasenBallsport Leipzig,Hamburger SV,FT,5.0,0.0,H,,,,,,,,,,,,,,,,,,2.468,0.508,understat:32270
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-18,18:30,Bayern Munich,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32271
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-19,13:30,Borussia M.Gladbach,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32272
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-19,13:30,Eintracht Frankfurt,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32273
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-19,13:30,Hamburger SV,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32274
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-19,16:30,VfB Stuttgart,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32276
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-19,13:30,Werder Bremen,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32275
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-20,13:30,Bayer Leverkusen,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32277
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-20,17:30,Paderborn,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32278
+understat,2026-27,Bundesliga,1,league,GER1,2026-09-20,15:30,Schalke 04,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32761
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-10,13:30,Augsburg,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32282
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-10,13:30,Borussia Dortmund,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32283
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-10,13:30,FC Cologne,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32284
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-10,13:30,Freiburg,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32285
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-10,13:30,Hoffenheim,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32286
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-10,13:30,Mainz 05,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32279
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-10,13:30,Paderborn,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32280
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-10,13:30,RasenBallsport Leipzig,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32281
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-10,13:30,Union Berlin,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32762
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-17,13:30,Bayer Leverkusen,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32287
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-17,13:30,Bayern Munich,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32288
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-17,13:30,Borussia M.Gladbach,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32289
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-17,13:30,Eintracht Frankfurt,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32290
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-17,13:30,Elversberg,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32763
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-17,13:30,Hamburger SV,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32291
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-17,13:30,Schalke 04,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32292
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-17,13:30,Union Berlin,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32293
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-17,13:30,Werder Bremen,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32294
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,Augsburg,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32295
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,Borussia Dortmund,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32296
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,FC Cologne,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32297
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,Freiburg,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32298
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,Hoffenheim,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32299
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,Mainz 05,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32300
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,Paderborn,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32301
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,RasenBallsport Leipzig,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32764
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,VfB Stuttgart,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32302
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-31,14:30,Augsburg,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32303
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-31,14:30,Bayer Leverkusen,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32310
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-31,14:30,Bayern Munich,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32309
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-31,14:30,Borussia M.Gladbach,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32307
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-31,14:30,Eintracht Frankfurt,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32308
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-31,14:30,Elversberg,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32765
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-31,14:30,Schalke 04,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32304
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-31,14:30,Union Berlin,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32305
+understat,2026-27,Bundesliga,1,league,GER1,2026-10-31,14:30,Werder Bremen,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32306
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-07,14:30,Borussia Dortmund,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32766
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-07,14:30,FC Cologne,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32311
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-07,14:30,Freiburg,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32312
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-07,14:30,Hamburger SV,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32313
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-07,14:30,Hoffenheim,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32314
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-07,14:30,Mainz 05,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32315
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-07,14:30,Paderborn,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32316
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-07,14:30,RasenBallsport Leipzig,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32317
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-07,14:30,VfB Stuttgart,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32318
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-21,14:30,Augsburg,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32319
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-21,14:30,Bayer Leverkusen,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32320
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-21,14:30,Bayern Munich,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32321
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-21,14:30,Borussia M.Gladbach,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32322
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-21,14:30,Eintracht Frankfurt,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32323
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-21,14:30,Elversberg,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32767
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-21,14:30,Schalke 04,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32324
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-21,14:30,Union Berlin,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32325
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-21,14:30,Werder Bremen,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32326
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-28,14:30,Borussia Dortmund,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32327
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-28,14:30,FC Cologne,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32768
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-28,14:30,Freiburg,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32328
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-28,14:30,Hamburger SV,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32329
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-28,14:30,Hoffenheim,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32330
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-28,14:30,Mainz 05,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32331
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-28,14:30,Paderborn,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32332
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-28,14:30,VfB Stuttgart,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32333
+understat,2026-27,Bundesliga,1,league,GER1,2026-11-28,14:30,Werder Bremen,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32334
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-05,14:30,Augsburg,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32342
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-05,14:30,Bayer Leverkusen,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32335
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-05,14:30,Bayern Munich,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32336
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-05,14:30,Eintracht Frankfurt,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32337
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-05,14:30,Elversberg,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32769
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-05,14:30,Freiburg,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32338
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-05,14:30,RasenBallsport Leipzig,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32339
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-05,14:30,Schalke 04,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32340
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-05,14:30,Union Berlin,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32341
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-12,14:30,Borussia Dortmund,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32344
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-12,14:30,Borussia M.Gladbach,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32343
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-12,14:30,FC Cologne,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32345
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-12,14:30,Hamburger SV,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32346
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-12,14:30,Hoffenheim,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32347
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-12,14:30,Mainz 05,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32348
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-12,14:30,Paderborn,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32770
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-12,14:30,VfB Stuttgart,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32349
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-12,14:30,Werder Bremen,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32350
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-19,14:30,Augsburg,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32351
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-19,14:30,Bayer Leverkusen,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32352
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-19,14:30,Bayern Munich,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32353
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-19,14:30,Elversberg,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32771
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-19,14:30,Freiburg,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32354
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-19,14:30,Mainz 05,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32355
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-19,14:30,RasenBallsport Leipzig,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32356
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-19,14:30,Schalke 04,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32357
+understat,2026-27,Bundesliga,1,league,GER1,2026-12-19,14:30,Union Berlin,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32358
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-09,14:30,Borussia Dortmund,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32365
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-09,14:30,Borussia M.Gladbach,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32364
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-09,14:30,Eintracht Frankfurt,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32366
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-09,14:30,FC Cologne,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32359
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-09,14:30,Hamburger SV,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32360
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-09,14:30,Hoffenheim,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32772
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-09,14:30,Paderborn,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32361
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-09,14:30,VfB Stuttgart,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32362
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-09,14:30,Werder Bremen,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32363
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-13,14:30,Augsburg,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32367
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-13,14:30,Bayern Munich,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32368
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-13,14:30,Elversberg,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32773
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-13,14:30,FC Cologne,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32369
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-13,14:30,Freiburg,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32370
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-13,14:30,Mainz 05,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32371
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-13,14:30,RasenBallsport Leipzig,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32372
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-13,14:30,Schalke 04,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32373
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-13,14:30,Union Berlin,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32374
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-16,14:30,Bayer Leverkusen,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32375
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-16,14:30,Borussia Dortmund,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32377
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-16,14:30,Borussia M.Gladbach,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32376
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-16,14:30,Eintracht Frankfurt,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32378
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-16,14:30,Hamburger SV,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32379
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-16,14:30,Hoffenheim,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32380
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-16,14:30,Paderborn,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32381
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-16,14:30,VfB Stuttgart,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32382
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-16,14:30,Werder Bremen,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32774
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-23,14:30,Bayer Leverkusen,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32775
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-23,14:30,Borussia M.Gladbach,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32390
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-23,14:30,Eintracht Frankfurt,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32389
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-23,14:30,Hamburger SV,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32385
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-23,14:30,Hoffenheim,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32386
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-23,14:30,Paderborn,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32387
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-23,14:30,Schalke 04,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32388
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-23,14:30,VfB Stuttgart,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32384
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-23,14:30,Werder Bremen,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32383
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-30,14:30,Augsburg,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32397
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-30,14:30,Bayern Munich,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32398
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-30,14:30,Borussia Dortmund,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32391
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-30,14:30,Elversberg,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32776
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-30,14:30,FC Cologne,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32392
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-30,14:30,Freiburg,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32396
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-30,14:30,Mainz 05,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32394
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-30,14:30,RasenBallsport Leipzig,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32395
+understat,2026-27,Bundesliga,1,league,GER1,2027-01-30,14:30,Union Berlin,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32393
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-06,14:30,Bayer Leverkusen,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32399
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-06,14:30,Bayern Munich,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32777
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-06,14:30,Borussia M.Gladbach,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32400
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-06,14:30,Eintracht Frankfurt,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32401
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-06,14:30,Hamburger SV,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32405
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-06,14:30,Paderborn,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32406
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-06,14:30,Schalke 04,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32402
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-06,14:30,VfB Stuttgart,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32403
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-06,14:30,Werder Bremen,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32404
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-13,14:30,Augsburg,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32407
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-13,14:30,Borussia Dortmund,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32408
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-13,14:30,Elversberg,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32778
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-13,14:30,FC Cologne,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32409
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-13,14:30,Freiburg,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32410
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-13,14:30,Hoffenheim,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32411
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-13,14:30,Mainz 05,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32412
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-13,14:30,RasenBallsport Leipzig,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32413
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-13,14:30,Union Berlin,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32414
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-20,14:30,Bayer Leverkusen,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32415
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-20,14:30,Bayern Munich,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32416
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-20,14:30,Borussia M.Gladbach,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32417
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-20,14:30,Eintracht Frankfurt,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32418
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-20,14:30,Elversberg,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32779
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-20,14:30,Hamburger SV,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32419
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-20,14:30,Schalke 04,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32420
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-20,14:30,VfB Stuttgart,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32421
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-20,14:30,Werder Bremen,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32422
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-27,14:30,Augsburg,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32780
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-27,14:30,Borussia Dortmund,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32427
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-27,14:30,FC Cologne,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32428
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-27,14:30,Freiburg,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32425
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-27,14:30,Hoffenheim,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32426
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-27,14:30,Mainz 05,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32424
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-27,14:30,Paderborn,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32423
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-27,14:30,RasenBallsport Leipzig,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32430
+understat,2026-27,Bundesliga,1,league,GER1,2027-02-27,14:30,VfB Stuttgart,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32429
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-03,14:30,Bayer Leverkusen,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32431
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-03,14:30,Bayern Munich,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32432
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-03,14:30,Borussia M.Gladbach,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32433
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-03,14:30,Eintracht Frankfurt,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32434
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-03,14:30,Elversberg,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32781
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-03,14:30,Hamburger SV,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32435
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-03,14:30,Schalke 04,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32436
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-03,14:30,Union Berlin,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32437
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-03,14:30,Werder Bremen,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32438
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-06,14:30,Borussia Dortmund,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32439
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-06,14:30,FC Cologne,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32440
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-06,14:30,Freiburg,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32441
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-06,14:30,Hamburger SV,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32442
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-06,14:30,Hoffenheim,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32443
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-06,14:30,Mainz 05,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32782
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-06,14:30,Paderborn,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32444
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-06,14:30,RasenBallsport Leipzig,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32445
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-06,14:30,VfB Stuttgart,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32446
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-13,14:30,Augsburg,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32447
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-13,14:30,Bayer Leverkusen,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32448
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-13,14:30,Bayern Munich,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32449
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-13,14:30,Borussia M.Gladbach,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32450
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-13,14:30,Eintracht Frankfurt,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32451
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-13,14:30,Elversberg,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32783
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-13,14:30,Schalke 04,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32452
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-13,14:30,Union Berlin,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32453
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-13,14:30,Werder Bremen,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32454
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-20,14:30,Borussia Dortmund,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32455
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-20,14:30,FC Cologne,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32456
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-20,14:30,Freiburg,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32784
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-20,14:30,Hamburger SV,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32457
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-20,14:30,Hoffenheim,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32458
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-20,14:30,Mainz 05,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32459
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-20,14:30,Paderborn,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32460
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-20,14:30,RasenBallsport Leipzig,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32461
+understat,2026-27,Bundesliga,1,league,GER1,2027-03-20,14:30,VfB Stuttgart,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32462
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-03,13:30,Augsburg,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32463
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-03,13:30,Bayer Leverkusen,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32464
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-03,13:30,Bayern Munich,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32465
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-03,13:30,Borussia M.Gladbach,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32466
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-03,13:30,Eintracht Frankfurt,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32467
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-03,13:30,Elversberg,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32785
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-03,13:30,RasenBallsport Leipzig,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32468
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-03,13:30,Schalke 04,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32469
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-03,13:30,Union Berlin,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32470
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-10,13:30,Borussia Dortmund,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32472
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-10,13:30,Borussia M.Gladbach,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32471
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-10,13:30,FC Cologne,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32473
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-10,13:30,Hamburger SV,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32474
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-10,13:30,Hoffenheim,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32475
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-10,13:30,Mainz 05,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32476
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-10,13:30,Paderborn,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32477
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-10,13:30,VfB Stuttgart,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32786
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-10,13:30,Werder Bremen,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32478
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-17,13:30,Augsburg,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32479
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-17,13:30,Bayer Leverkusen,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32480
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-17,13:30,Bayern Munich,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32481
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-17,13:30,Eintracht Frankfurt,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32482
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-17,13:30,Elversberg,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32787
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-17,13:30,Freiburg,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32483
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-17,13:30,RasenBallsport Leipzig,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32484
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-17,13:30,Schalke 04,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32485
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-17,13:30,Union Berlin,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32486
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-24,13:30,Borussia Dortmund,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32488
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-24,13:30,Borussia M.Gladbach,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32487
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-24,13:30,Eintracht Frankfurt,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32489
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-24,13:30,FC Cologne,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32490
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-24,13:30,Hamburger SV,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32788
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-24,13:30,Hoffenheim,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32491
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-24,13:30,Paderborn,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32492
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-24,13:30,VfB Stuttgart,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32493
+understat,2026-27,Bundesliga,1,league,GER1,2027-04-24,13:30,Werder Bremen,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32494
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-08,13:30,Augsburg,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32495
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-08,13:30,Bayer Leverkusen,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32496
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-08,13:30,Bayern Munich,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32497
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-08,13:30,Elversberg,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32789
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-08,13:30,Freiburg,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32498
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-08,13:30,Mainz 05,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32499
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-08,13:30,RasenBallsport Leipzig,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32500
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-08,13:30,Schalke 04,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32501
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-08,13:30,Union Berlin,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32502
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-15,13:30,Bayer Leverkusen,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32503
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-15,13:30,Borussia Dortmund,FC Cologne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32505
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-15,13:30,Borussia M.Gladbach,Augsburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32504
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-15,13:30,Eintracht Frankfurt,Elversberg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32790
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-15,13:30,Hamburger SV,Freiburg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32506
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-15,13:30,Hoffenheim,Mainz 05,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32507
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-15,13:30,Paderborn,Union Berlin,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32508
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-15,13:30,VfB Stuttgart,RasenBallsport Leipzig,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32509
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-15,13:30,Werder Bremen,Schalke 04,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32510
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-22,13:30,Augsburg,Hamburger SV,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32511
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-22,13:30,Bayern Munich,Eintracht Frankfurt,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32512
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-22,13:30,Elversberg,Werder Bremen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32791
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-22,13:30,FC Cologne,Paderborn,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32513
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-22,13:30,Freiburg,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32514
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-22,13:30,Mainz 05,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32515
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-22,13:30,RasenBallsport Leipzig,Hoffenheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32516
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-22,13:30,Schalke 04,Bayer Leverkusen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32517
+understat,2026-27,Bundesliga,1,league,GER1,2027-05-22,13:30,Union Berlin,Borussia M.Gladbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:32518
+understat,2026-27,La Liga,1,league,ESP1,2026-08-15,17:30,Alaves,Getafe,FT,3.0,0.0,H,,,,,,,,,,,,,,,,,,2.286,0.26,understat:30770
+understat,2026-27,La Liga,1,league,ESP1,2026-08-15,19:30,Sevilla,Rayo Vallecano,FT,2.0,1.0,H,,,,,,,,,,,,,,,,,,2.018,1.912,understat:30771
+understat,2026-27,La Liga,1,league,ESP1,2026-08-16,17:00,Espanyol,Levante,FT,3.0,0.0,H,,,,,,,,,,,,,,,,,,2.01,0.196,understat:30773
+understat,2026-27,La Liga,1,league,ESP1,2026-08-16,15:00,Racing Santander,Villarreal,FT,2.0,2.0,D,,,,,,,,,,,,,,,,,,1.965,0.769,understat:30772
+understat,2026-27,La Liga,1,league,ESP1,2026-08-17,19:00,Deportivo La Coruna,Elche,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,0.34,1.587,understat:30774
+understat,2026-27,La Liga,1,league,ESP1,2026-08-19,19:00,Atletico Madrid,Malaga,FT,2.0,0.0,H,,,,,,,,,,,,,,,,,,1.344,0.23,understat:30775
+understat,2026-27,La Liga,1,league,ESP1,2026-08-20,19:00,Rayo Vallecano,Alaves,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,0.566,2.221,understat:30776
+understat,2026-27,La Liga,1,league,ESP1,2026-08-21,19:00,Real Betis,Real Sociedad,FT,1.0,0.0,H,,,,,,,,,,,,,,,,,,1.696,1.14,understat:30777
+understat,2026-27,La Liga,1,league,ESP1,2026-08-22,15:00,Athletic Club,Sevilla,FT,1.0,3.0,A,,,,,,,,,,,,,,,,,,1.465,0.967,understat:30778
+understat,2026-27,La Liga,1,league,ESP1,2026-08-22,19:30,Espanyol,Real Madrid,FT,1.0,2.0,A,,,,,,,,,,,,,,,,,,1.019,2.561,understat:30780
+understat,2026-27,La Liga,1,league,ESP1,2026-08-22,17:30,Valencia,Celta Vigo,FT,0.0,0.0,D,,,,,,,,,,,,,,,,,,0.421,0.537,understat:30779
+understat,2026-27,La Liga,1,league,ESP1,2026-08-23,15:00,Atletico Madrid,Villarreal,FT,2.0,2.0,D,,,,,,,,,,,,,,,,,,0.739,3.542,understat:30781
+understat,2026-27,La Liga,1,league,ESP1,2026-08-23,19:30,Elche,Barcelona,FT,0.0,5.0,A,,,,,,,,,,,,,,,,,,1.176,4.252,understat:30783
+understat,2026-27,La Liga,1,league,ESP1,2026-08-23,17:30,Getafe,Racing Santander,FT,1.0,0.0,H,,,,,,,,,,,,,,,,,,0.983,1.168,understat:30782
+understat,2026-27,La Liga,1,league,ESP1,2026-08-24,19:30,Malaga,Deportivo La Coruna,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,1.356,1.13,understat:30785
+understat,2026-27,La Liga,1,league,ESP1,2026-08-24,17:30,Osasuna,Levante,FT,0.0,0.0,D,,,,,,,,,,,,,,,,,,0.893,1.27,understat:30784
+understat,2026-27,La Liga,1,league,ESP1,2026-08-25,19:00,Valencia,Real Betis,FT,0.0,1.0,A,,,,,,,,,,,,,,,,,,1.29,0.964,understat:30786
+understat,2026-27,La Liga,1,league,ESP1,2026-08-26,19:00,Real Madrid,Real Sociedad,FT,4.0,1.0,H,,,,,,,,,,,,,,,,,,3.305,0.463,understat:30787
+understat,2026-27,La Liga,1,league,ESP1,2026-08-27,19:00,Barcelona,Athletic Club,FT,2.0,0.0,H,,,,,,,,,,,,,,,,,,3.917,0.222,understat:30789
+understat,2026-27,La Liga,1,league,ESP1,2026-08-27,18:30,Celta Vigo,Osasuna,FT,1.0,2.0,A,,,,,,,,,,,,,,,,,,0.107,1.897,understat:30788
+understat,2026-27,La Liga,1,league,ESP1,2026-08-28,19:30,Alaves,Villarreal,FT,1.0,0.0,H,,,,,,,,,,,,,,,,,,0.915,1.451,understat:30791
+understat,2026-27,La Liga,1,league,ESP1,2026-08-28,17:00,Racing Santander,Elche,FT,3.0,2.0,H,,,,,,,,,,,,,,,,,,2.562,1.076,understat:30790
+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,15:00,Levante,Real Betis,FT,5.0,2.0,H,,,,,,,,,,,,,,,,,,3.038,1.923,understat:30792
+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,17:00,Real Sociedad,Espanyol,FT,2.0,1.0,H,,,,,,,,,,,,,,,,,,2.917,0.93,understat:30793
+understat,2026-27,La Liga,1,league,ESP1,2026-08-29,19:30,Sevilla,Atletico Madrid,FT,1.0,3.0,A,,,,,,,,,,,,,,,,,,1.081,1.477,understat:30794
+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,19:30,Celta Vigo,Athletic Club,FT,0.0,2.0,A,,,,,,,,,,,,,,,,,,1.201,3.133,understat:30797
+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,17:30,Deportivo La Coruna,Valencia,FT,3.0,1.0,H,,,,,,,,,,,,,,,,,,1.408,1.017,understat:30796
+understat,2026-27,La Liga,1,league,ESP1,2026-08-30,15:00,Real Madrid,Malaga,FT,4.0,0.0,H,,,,,,,,,,,,,,,,,,3.408,0.76,understat:30795
+understat,2026-27,La Liga,1,league,ESP1,2026-08-31,19:30,Barcelona,Rayo Vallecano,FT,5.0,2.0,H,,,,,,,,,,,,,,,,,,2.958,1.066,understat:30799
+understat,2026-27,La Liga,1,league,ESP1,2026-08-31,17:30,Osasuna,Getafe,FT,1.0,0.0,H,,,,,,,,,,,,,,,,,,1.705,1.09,understat:30798
+understat,2026-27,La Liga,1,league,ESP1,2026-09-03,19:00,Real Sociedad,Celta Vigo,FT,0.0,0.0,D,,,,,,,,,,,,,,,,,,1.02,0.633,understat:30800
+understat,2026-27,La Liga,1,league,ESP1,2026-09-04,19:00,Real Betis,Real Madrid,FT,1.0,0.0,H,,,,,,,,,,,,,,,,,,0.885,3.383,understat:30801
+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,14:15,Athletic Club,Atletico Madrid,FT,3.0,0.0,H,,,,,,,,,,,,,,,,,,1.872,0.752,understat:30802
+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,16:30,Rayo Vallecano,Racing Santander,FT,3.0,2.0,H,,,,,,,,,,,,,,,,,,1.19,0.633,understat:30803
+understat,2026-27,La Liga,1,league,ESP1,2026-09-05,19:00,Villarreal,Deportivo La Coruna,FT,2.0,3.0,A,,,,,,,,,,,,,,,,,,3.642,2.442,understat:30804
+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,16:30,Alaves,Osasuna,FT,5.0,2.0,H,,,,,,,,,,,,,,,,,,1.602,1.644,understat:30807
+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,19:00,Espanyol,Sevilla,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,1.817,0.373,understat:30808
+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,16:30,Malaga,Levante,FT,0.0,0.0,D,,,,,,,,,,,,,,,,,,1.727,1.192,understat:30806
+understat,2026-27,La Liga,1,league,ESP1,2026-09-06,14:15,Valencia,Barcelona,FT,0.0,5.0,A,,,,,,,,,,,,,,,,,,0.519,4.769,understat:30805
+understat,2026-27,La Liga,1,league,ESP1,2026-09-07,19:30,Elche,Real Sociedad,FT,2.0,3.0,A,,,,,,,,,,,,,,,,,,2.87,0.876,understat:30810
+understat,2026-27,La Liga,1,league,ESP1,2026-09-07,17:00,Getafe,Celta Vigo,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,1.458,1.421,understat:30809
+understat,2026-27,La Liga,1,league,ESP1,2026-09-11,19:00,Sevilla,Valencia,FT,1.0,0.0,H,,,,,,,,,,,,,,,,,,1.355,0.08,understat:30818
+understat,2026-27,La Liga,1,league,ESP1,2026-09-12,16:30,Athletic Club,Elche,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,3.13,0.816,understat:30812
+understat,2026-27,La Liga,1,league,ESP1,2026-09-12,14:15,Osasuna,Espanyol,FT,0.0,2.0,A,,,,,,,,,,,,,,,,,,1.104,1.41,understat:30820
+understat,2026-27,La Liga,1,league,ESP1,2026-09-12,12:00,Racing Santander,Alaves,FT,2.0,1.0,H,,,,,,,,,,,,,,,,,,1.384,2.271,understat:30815
+understat,2026-27,La Liga,1,league,ESP1,2026-09-12,19:00,Real Madrid,Rayo Vallecano,FT,4.0,1.0,H,,,,,,,,,,,,,,,,,,3.122,1.193,understat:30816
+understat,2026-27,La Liga,1,league,ESP1,2026-09-13,12:00,Celta Vigo,Malaga,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,1.481,0.548,understat:30811
+understat,2026-27,La Liga,1,league,ESP1,2026-09-13,16:30,Getafe,Deportivo La Coruna,FT,1.0,1.0,D,,,,,,,,,,,,,,,,,,0.995,0.945,understat:30813
+understat,2026-27,La Liga,1,league,ESP1,2026-09-13,14:15,Levante,Barcelona,FT,2.0,4.0,A,,,,,,,,,,,,,,,,,,2.674,2.469,understat:30814
+understat,2026-27,La Liga,1,league,ESP1,2026-09-13,19:00,Real Sociedad,Atletico Madrid,FT,0.0,3.0,A,,,,,,,,,,,,,,,,,,0.608,1.834,understat:30817
+understat,2026-27,La Liga,1,league,ESP1,2026-09-14,19:00,Villarreal,Real Betis,FT,1.0,2.0,A,,,,,,,,,,,,,,,,,,1.673,4.073,understat:30819
+understat,2026-27,La Liga,1,league,ESP1,2026-09-15,18:00,Alaves,Valencia,FT,0.0,1.0,A,,,,,,,,,,,,,,,,,,1.31,0.839,understat:30821
+understat,2026-27,La Liga,1,league,ESP1,2026-09-15,19:30,Elche,Real Madrid,FT,2.0,3.0,A,,,,,,,,,,,,,,,,,,1.052,3.461,understat:30825
+understat,2026-27,La Liga,1,league,ESP1,2026-09-15,17:00,Rayo Vallecano,Espanyol,FT,2.0,1.0,H,,,,,,,,,,,,,,,,,,1.833,1.157,understat:30829
+understat,2026-27,La Liga,1,league,ESP1,2026-09-16,17:00,Atletico Madrid,Osasuna,FT,4.0,0.0,H,,,,,,,,,,,,,,,,,,5.143,0.718,understat:30822
+understat,2026-27,La Liga,1,league,ESP1,2026-09-16,19:30,Barcelona,Racing Santander,FT,7.0,2.0,H,,,,,,,,,,,,,,,,,,7.475,1.384,understat:30826
+understat,2026-27,La Liga,1,league,ESP1,2026-09-16,17:00,Deportivo La Coruna,Sevilla,FT,0.0,1.0,A,,,,,,,,,,,,,,,,,,0.192,0.853,understat:30824
+understat,2026-27,La Liga,1,league,ESP1,2026-09-17,19:30,Malaga,Villarreal,FT,1.0,3.0,A,,,,,,,,,,,,,,,,,,0.361,4.247,understat:30828
+understat,2026-27,La Liga,1,league,ESP1,2026-09-17,17:00,Real Betis,Getafe,FT,1.0,0.0,H,,,,,,,,,,,,,,,,,,2.609,0.327,understat:30823
+understat,2026-27,La Liga,1,league,ESP1,2026-09-18,19:00,Espanyol,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30834
+understat,2026-27,La Liga,1,league,ESP1,2026-09-19,14:15,Athletic Club,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30830
+understat,2026-27,La Liga,1,league,ESP1,2026-09-19,16:30,Celta Vigo,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30832
+understat,2026-27,La Liga,1,league,ESP1,2026-09-19,12:00,Osasuna,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30836
+understat,2026-27,La Liga,1,league,ESP1,2026-09-19,19:00,Sevilla,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30837
+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,14:15,Atletico Madrid,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30831
+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,16:30,Deportivo La Coruna,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30833
+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,12:00,Getafe,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30835
+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,19:00,Valencia,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30838
+understat,2026-27,La Liga,1,league,ESP1,2026-09-20,16:30,Villarreal,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30839
+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,15:00,Alaves,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30840
+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,15:00,Barcelona,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30843
+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,15:00,Elche,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30842
+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,15:00,Levante,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30844
+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,15:00,Malaga,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30845
+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,15:00,Racing Santander,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30846
+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,15:00,Rayo Vallecano,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30847
+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,15:00,Real Betis,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30841
+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,15:00,Real Madrid,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30848
+understat,2026-27,La Liga,1,league,ESP1,2026-10-11,15:00,Real Sociedad,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30849
+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,15:00,Celta Vigo,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30851
+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,15:00,Deportivo La Coruna,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30852
+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,15:00,Espanyol,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30853
+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,15:00,Getafe,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30854
+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,15:00,Malaga,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30855
+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,15:00,Osasuna,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30856
+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,15:00,Real Betis,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30850
+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,15:00,Real Madrid,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30857
+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,15:00,Valencia,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30858
+understat,2026-27,La Liga,1,league,ESP1,2026-10-18,15:00,Villarreal,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30859
+understat,2026-27,La Liga,1,league,ESP1,2026-10-21,19:30,Levante,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30827
+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,16:00,Alaves,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30860
+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,16:00,Athletic Club,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30861
+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,16:00,Atletico Madrid,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30862
+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,16:00,Barcelona,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30864
+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,16:00,Celta Vigo,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30863
+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,16:00,Racing Santander,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30865
+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,16:00,Rayo Vallecano,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30866
+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,16:00,Real Sociedad,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30867
+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,16:00,Sevilla,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30868
+understat,2026-27,La Liga,1,league,ESP1,2026-10-25,16:00,Valencia,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30869
+understat,2026-27,La Liga,1,league,ESP1,2026-11-01,16:00,Athletic Club,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30870
+understat,2026-27,La Liga,1,league,ESP1,2026-11-01,16:00,Barcelona,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30874
+understat,2026-27,La Liga,1,league,ESP1,2026-11-01,16:00,Deportivo La Coruna,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30872
+understat,2026-27,La Liga,1,league,ESP1,2026-11-01,16:00,Elche,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30873
+understat,2026-27,La Liga,1,league,ESP1,2026-11-01,16:00,Getafe,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30875
+understat,2026-27,La Liga,1,league,ESP1,2026-11-01,16:00,Levante,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30876
+understat,2026-27,La Liga,1,league,ESP1,2026-11-01,16:00,Racing Santander,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30877
+understat,2026-27,La Liga,1,league,ESP1,2026-11-01,16:00,Rayo Vallecano,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30878
+understat,2026-27,La Liga,1,league,ESP1,2026-11-01,16:00,Real Betis,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30871
+understat,2026-27,La Liga,1,league,ESP1,2026-11-01,16:00,Villarreal,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30879
+understat,2026-27,La Liga,1,league,ESP1,2026-11-08,16:00,Atletico Madrid,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30880
+understat,2026-27,La Liga,1,league,ESP1,2026-11-08,16:00,Celta Vigo,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30889
+understat,2026-27,La Liga,1,league,ESP1,2026-11-08,16:00,Elche,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30881
+understat,2026-27,La Liga,1,league,ESP1,2026-11-08,16:00,Espanyol,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30882
+understat,2026-27,La Liga,1,league,ESP1,2026-11-08,16:00,Malaga,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30883
+understat,2026-27,La Liga,1,league,ESP1,2026-11-08,16:00,Osasuna,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30884
+understat,2026-27,La Liga,1,league,ESP1,2026-11-08,16:00,Real Sociedad,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30885
+understat,2026-27,La Liga,1,league,ESP1,2026-11-08,16:00,Sevilla,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30886
+understat,2026-27,La Liga,1,league,ESP1,2026-11-08,16:00,Valencia,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30887
+understat,2026-27,La Liga,1,league,ESP1,2026-11-08,16:00,Villarreal,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30888
+understat,2026-27,La Liga,1,league,ESP1,2026-11-22,16:00,Alaves,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30890
+understat,2026-27,La Liga,1,league,ESP1,2026-11-22,16:00,Athletic Club,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30891
+understat,2026-27,La Liga,1,league,ESP1,2026-11-22,16:00,Barcelona,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30892
+understat,2026-27,La Liga,1,league,ESP1,2026-11-22,16:00,Getafe,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30893
+understat,2026-27,La Liga,1,league,ESP1,2026-11-22,16:00,Levante,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30894
+understat,2026-27,La Liga,1,league,ESP1,2026-11-22,16:00,Osasuna,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30895
+understat,2026-27,La Liga,1,league,ESP1,2026-11-22,16:00,Racing Santander,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30898
+understat,2026-27,La Liga,1,league,ESP1,2026-11-22,16:00,Rayo Vallecano,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30899
+understat,2026-27,La Liga,1,league,ESP1,2026-11-22,16:00,Real Madrid,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30897
+understat,2026-27,La Liga,1,league,ESP1,2026-11-22,16:00,Sevilla,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30896
+understat,2026-27,La Liga,1,league,ESP1,2026-11-29,16:00,Celta Vigo,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30904
+understat,2026-27,La Liga,1,league,ESP1,2026-11-29,16:00,Deportivo La Coruna,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30903
+understat,2026-27,La Liga,1,league,ESP1,2026-11-29,16:00,Elche,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30902
+understat,2026-27,La Liga,1,league,ESP1,2026-11-29,16:00,Espanyol,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30901
+understat,2026-27,La Liga,1,league,ESP1,2026-11-29,16:00,Levante,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30908
+understat,2026-27,La Liga,1,league,ESP1,2026-11-29,16:00,Malaga,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30907
+understat,2026-27,La Liga,1,league,ESP1,2026-11-29,16:00,Real Betis,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30900
+understat,2026-27,La Liga,1,league,ESP1,2026-11-29,16:00,Real Madrid,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30906
+understat,2026-27,La Liga,1,league,ESP1,2026-11-29,16:00,Real Sociedad,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30905
+understat,2026-27,La Liga,1,league,ESP1,2026-11-29,16:00,Valencia,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30909
+understat,2026-27,La Liga,1,league,ESP1,2026-12-06,16:00,Alaves,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30910
+understat,2026-27,La Liga,1,league,ESP1,2026-12-06,16:00,Athletic Club,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30911
+understat,2026-27,La Liga,1,league,ESP1,2026-12-06,16:00,Atletico Madrid,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30912
+understat,2026-27,La Liga,1,league,ESP1,2026-12-06,16:00,Barcelona,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30913
+understat,2026-27,La Liga,1,league,ESP1,2026-12-06,16:00,Getafe,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30914
+understat,2026-27,La Liga,1,league,ESP1,2026-12-06,16:00,Osasuna,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30915
+understat,2026-27,La Liga,1,league,ESP1,2026-12-06,16:00,Racing Santander,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30916
+understat,2026-27,La Liga,1,league,ESP1,2026-12-06,16:00,Rayo Vallecano,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30917
+understat,2026-27,La Liga,1,league,ESP1,2026-12-06,16:00,Sevilla,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30918
+understat,2026-27,La Liga,1,league,ESP1,2026-12-06,16:00,Villarreal,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30919
+understat,2026-27,La Liga,1,league,ESP1,2026-12-13,16:00,Atletico Madrid,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30920
+understat,2026-27,La Liga,1,league,ESP1,2026-12-13,16:00,Deportivo La Coruna,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30922
+understat,2026-27,La Liga,1,league,ESP1,2026-12-13,16:00,Elche,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30923
+understat,2026-27,La Liga,1,league,ESP1,2026-12-13,16:00,Espanyol,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30924
+understat,2026-27,La Liga,1,league,ESP1,2026-12-13,16:00,Levante,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30925
+understat,2026-27,La Liga,1,league,ESP1,2026-12-13,16:00,Malaga,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30926
+understat,2026-27,La Liga,1,league,ESP1,2026-12-13,16:00,Real Betis,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30921
+understat,2026-27,La Liga,1,league,ESP1,2026-12-13,16:00,Real Madrid,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30927
+understat,2026-27,La Liga,1,league,ESP1,2026-12-13,16:00,Real Sociedad,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30928
+understat,2026-27,La Liga,1,league,ESP1,2026-12-13,16:00,Villarreal,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30929
+understat,2026-27,La Liga,1,league,ESP1,2026-12-20,16:00,Alaves,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30930
+understat,2026-27,La Liga,1,league,ESP1,2026-12-20,16:00,Athletic Club,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30931
+understat,2026-27,La Liga,1,league,ESP1,2026-12-20,16:00,Barcelona,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30934
+understat,2026-27,La Liga,1,league,ESP1,2026-12-20,16:00,Celta Vigo,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30932
+understat,2026-27,La Liga,1,league,ESP1,2026-12-20,16:00,Deportivo La Coruna,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30933
+understat,2026-27,La Liga,1,league,ESP1,2026-12-20,16:00,Getafe,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30935
+understat,2026-27,La Liga,1,league,ESP1,2026-12-20,16:00,Osasuna,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30936
+understat,2026-27,La Liga,1,league,ESP1,2026-12-20,16:00,Rayo Vallecano,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30937
+understat,2026-27,La Liga,1,league,ESP1,2026-12-20,16:00,Sevilla,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30938
+understat,2026-27,La Liga,1,league,ESP1,2026-12-20,16:00,Valencia,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30939
+understat,2026-27,La Liga,1,league,ESP1,2027-01-03,16:00,Celta Vigo,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30941
+understat,2026-27,La Liga,1,league,ESP1,2027-01-03,16:00,Espanyol,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30942
+understat,2026-27,La Liga,1,league,ESP1,2027-01-03,16:00,Levante,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30943
+understat,2026-27,La Liga,1,league,ESP1,2027-01-03,16:00,Malaga,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30944
+understat,2026-27,La Liga,1,league,ESP1,2027-01-03,16:00,Racing Santander,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30945
+understat,2026-27,La Liga,1,league,ESP1,2027-01-03,16:00,Rayo Vallecano,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30946
+understat,2026-27,La Liga,1,league,ESP1,2027-01-03,16:00,Real Betis,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30940
+understat,2026-27,La Liga,1,league,ESP1,2027-01-03,16:00,Real Madrid,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30947
+understat,2026-27,La Liga,1,league,ESP1,2027-01-03,16:00,Real Sociedad,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30948
+understat,2026-27,La Liga,1,league,ESP1,2027-01-03,16:00,Villarreal,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30949
+understat,2026-27,La Liga,1,league,ESP1,2027-01-10,16:00,Alaves,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30950
+understat,2026-27,La Liga,1,league,ESP1,2027-01-10,16:00,Athletic Club,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30951
+understat,2026-27,La Liga,1,league,ESP1,2027-01-10,16:00,Atletico Madrid,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30952
+understat,2026-27,La Liga,1,league,ESP1,2027-01-10,16:00,Deportivo La Coruna,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30953
+understat,2026-27,La Liga,1,league,ESP1,2027-01-10,16:00,Elche,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30954
+understat,2026-27,La Liga,1,league,ESP1,2027-01-10,16:00,Espanyol,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30955
+understat,2026-27,La Liga,1,league,ESP1,2027-01-10,16:00,Osasuna,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30956
+understat,2026-27,La Liga,1,league,ESP1,2027-01-10,16:00,Real Madrid,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30957
+understat,2026-27,La Liga,1,league,ESP1,2027-01-10,16:00,Sevilla,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30958
+understat,2026-27,La Liga,1,league,ESP1,2027-01-10,16:00,Valencia,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30959
+understat,2026-27,La Liga,1,league,ESP1,2027-01-17,16:00,Atletico Madrid,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30960
+understat,2026-27,La Liga,1,league,ESP1,2027-01-17,16:00,Barcelona,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30963
+understat,2026-27,La Liga,1,league,ESP1,2027-01-17,16:00,Celta Vigo,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30962
+understat,2026-27,La Liga,1,league,ESP1,2027-01-17,16:00,Getafe,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30964
+understat,2026-27,La Liga,1,league,ESP1,2027-01-17,16:00,Levante,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30965
+understat,2026-27,La Liga,1,league,ESP1,2027-01-17,16:00,Malaga,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30966
+understat,2026-27,La Liga,1,league,ESP1,2027-01-17,16:00,Racing Santander,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30967
+understat,2026-27,La Liga,1,league,ESP1,2027-01-17,16:00,Rayo Vallecano,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30968
+understat,2026-27,La Liga,1,league,ESP1,2027-01-17,16:00,Real Betis,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30961
+understat,2026-27,La Liga,1,league,ESP1,2027-01-17,16:00,Villarreal,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30969
+understat,2026-27,La Liga,1,league,ESP1,2027-01-24,16:00,Alaves,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30970
+understat,2026-27,La Liga,1,league,ESP1,2027-01-24,16:00,Athletic Club,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30971
+understat,2026-27,La Liga,1,league,ESP1,2027-01-24,16:00,Deportivo La Coruna,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30972
+understat,2026-27,La Liga,1,league,ESP1,2027-01-24,16:00,Elche,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30973
+understat,2026-27,La Liga,1,league,ESP1,2027-01-24,16:00,Espanyol,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30977
+understat,2026-27,La Liga,1,league,ESP1,2027-01-24,16:00,Getafe,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30976
+understat,2026-27,La Liga,1,league,ESP1,2027-01-24,16:00,Racing Santander,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30975
+understat,2026-27,La Liga,1,league,ESP1,2027-01-24,16:00,Real Madrid,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30974
+understat,2026-27,La Liga,1,league,ESP1,2027-01-24,16:00,Real Sociedad,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30979
+understat,2026-27,La Liga,1,league,ESP1,2027-01-24,16:00,Valencia,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30978
+understat,2026-27,La Liga,1,league,ESP1,2027-01-31,16:00,Atletico Madrid,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30981
+understat,2026-27,La Liga,1,league,ESP1,2027-01-31,16:00,Barcelona,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30984
+understat,2026-27,La Liga,1,league,ESP1,2027-01-31,16:00,Celta Vigo,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30985
+understat,2026-27,La Liga,1,league,ESP1,2027-01-31,16:00,Levante,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30983
+understat,2026-27,La Liga,1,league,ESP1,2027-01-31,16:00,Malaga,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30982
+understat,2026-27,La Liga,1,league,ESP1,2027-01-31,16:00,Osasuna,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30989
+understat,2026-27,La Liga,1,league,ESP1,2027-01-31,16:00,Rayo Vallecano,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30988
+understat,2026-27,La Liga,1,league,ESP1,2027-01-31,16:00,Real Betis,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30980
+understat,2026-27,La Liga,1,league,ESP1,2027-01-31,16:00,Sevilla,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30987
+understat,2026-27,La Liga,1,league,ESP1,2027-01-31,16:00,Villarreal,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30986
+understat,2026-27,La Liga,1,league,ESP1,2027-02-07,16:00,Alaves,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30990
+understat,2026-27,La Liga,1,league,ESP1,2027-02-07,16:00,Athletic Club,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30991
+understat,2026-27,La Liga,1,league,ESP1,2027-02-07,16:00,Barcelona,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30996
+understat,2026-27,La Liga,1,league,ESP1,2027-02-07,16:00,Deportivo La Coruna,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30993
+understat,2026-27,La Liga,1,league,ESP1,2027-02-07,16:00,Elche,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30994
+understat,2026-27,La Liga,1,league,ESP1,2027-02-07,16:00,Espanyol,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30995
+understat,2026-27,La Liga,1,league,ESP1,2027-02-07,16:00,Getafe,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30997
+understat,2026-27,La Liga,1,league,ESP1,2027-02-07,16:00,Real Betis,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30992
+understat,2026-27,La Liga,1,league,ESP1,2027-02-07,16:00,Real Sociedad,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30998
+understat,2026-27,La Liga,1,league,ESP1,2027-02-07,16:00,Valencia,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:30999
+understat,2026-27,La Liga,1,league,ESP1,2027-02-14,16:00,Celta Vigo,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31000
+understat,2026-27,La Liga,1,league,ESP1,2027-02-14,16:00,Elche,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31001
+understat,2026-27,La Liga,1,league,ESP1,2027-02-14,16:00,Levante,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31002
+understat,2026-27,La Liga,1,league,ESP1,2027-02-14,16:00,Osasuna,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31003
+understat,2026-27,La Liga,1,league,ESP1,2027-02-14,16:00,Racing Santander,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31004
+understat,2026-27,La Liga,1,league,ESP1,2027-02-14,16:00,Real Madrid,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31005
+understat,2026-27,La Liga,1,league,ESP1,2027-02-14,16:00,Real Sociedad,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31006
+understat,2026-27,La Liga,1,league,ESP1,2027-02-14,16:00,Sevilla,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31007
+understat,2026-27,La Liga,1,league,ESP1,2027-02-14,16:00,Valencia,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31008
+understat,2026-27,La Liga,1,league,ESP1,2027-02-14,16:00,Villarreal,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31009
+understat,2026-27,La Liga,1,league,ESP1,2027-02-21,16:00,Alaves,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31010
+understat,2026-27,La Liga,1,league,ESP1,2027-02-21,16:00,Athletic Club,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31011
+understat,2026-27,La Liga,1,league,ESP1,2027-02-21,16:00,Atletico Madrid,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31012
+understat,2026-27,La Liga,1,league,ESP1,2027-02-21,16:00,Barcelona,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31015
+understat,2026-27,La Liga,1,league,ESP1,2027-02-21,16:00,Deportivo La Coruna,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31013
+understat,2026-27,La Liga,1,league,ESP1,2027-02-21,16:00,Espanyol,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31014
+understat,2026-27,La Liga,1,league,ESP1,2027-02-21,16:00,Malaga,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31016
+understat,2026-27,La Liga,1,league,ESP1,2027-02-21,16:00,Rayo Vallecano,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31017
+understat,2026-27,La Liga,1,league,ESP1,2027-02-21,16:00,Sevilla,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31018
+understat,2026-27,La Liga,1,league,ESP1,2027-02-21,16:00,Villarreal,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31019
+understat,2026-27,La Liga,1,league,ESP1,2027-02-28,16:00,Athletic Club,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31020
+understat,2026-27,La Liga,1,league,ESP1,2027-02-28,16:00,Celta Vigo,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31022
+understat,2026-27,La Liga,1,league,ESP1,2027-02-28,16:00,Getafe,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31023
+understat,2026-27,La Liga,1,league,ESP1,2027-02-28,16:00,Levante,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31024
+understat,2026-27,La Liga,1,league,ESP1,2027-02-28,16:00,Malaga,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31025
+understat,2026-27,La Liga,1,league,ESP1,2027-02-28,16:00,Osasuna,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31026
+understat,2026-27,La Liga,1,league,ESP1,2027-02-28,16:00,Racing Santander,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31027
+understat,2026-27,La Liga,1,league,ESP1,2027-02-28,16:00,Real Betis,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31021
+understat,2026-27,La Liga,1,league,ESP1,2027-02-28,16:00,Real Madrid,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31028
+understat,2026-27,La Liga,1,league,ESP1,2027-02-28,16:00,Real Sociedad,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31029
+understat,2026-27,La Liga,1,league,ESP1,2027-03-07,16:00,Alaves,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31030
+understat,2026-27,La Liga,1,league,ESP1,2027-03-07,16:00,Atletico Madrid,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31031
+understat,2026-27,La Liga,1,league,ESP1,2027-03-07,16:00,Barcelona,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31035
+understat,2026-27,La Liga,1,league,ESP1,2027-03-07,16:00,Deportivo La Coruna,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31032
+understat,2026-27,La Liga,1,league,ESP1,2027-03-07,16:00,Elche,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31033
+understat,2026-27,La Liga,1,league,ESP1,2027-03-07,16:00,Espanyol,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31034
+understat,2026-27,La Liga,1,league,ESP1,2027-03-07,16:00,Rayo Vallecano,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31036
+understat,2026-27,La Liga,1,league,ESP1,2027-03-07,16:00,Sevilla,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31037
+understat,2026-27,La Liga,1,league,ESP1,2027-03-07,16:00,Valencia,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31038
+understat,2026-27,La Liga,1,league,ESP1,2027-03-07,16:00,Villarreal,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31039
+understat,2026-27,La Liga,1,league,ESP1,2027-03-14,16:00,Alaves,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31040
+understat,2026-27,La Liga,1,league,ESP1,2027-03-14,16:00,Athletic Club,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31041
+understat,2026-27,La Liga,1,league,ESP1,2027-03-14,16:00,Barcelona,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31044
+understat,2026-27,La Liga,1,league,ESP1,2027-03-14,16:00,Elche,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31043
+understat,2026-27,La Liga,1,league,ESP1,2027-03-14,16:00,Getafe,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31045
+understat,2026-27,La Liga,1,league,ESP1,2027-03-14,16:00,Malaga,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31046
+understat,2026-27,La Liga,1,league,ESP1,2027-03-14,16:00,Osasuna,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31047
+understat,2026-27,La Liga,1,league,ESP1,2027-03-14,16:00,Racing Santander,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31048
+understat,2026-27,La Liga,1,league,ESP1,2027-03-14,16:00,Real Betis,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31042
+understat,2026-27,La Liga,1,league,ESP1,2027-03-14,16:00,Real Madrid,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31049
+understat,2026-27,La Liga,1,league,ESP1,2027-03-21,16:00,Atletico Madrid,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31050
+understat,2026-27,La Liga,1,league,ESP1,2027-03-21,16:00,Celta Vigo,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31051
+understat,2026-27,La Liga,1,league,ESP1,2027-03-21,16:00,Espanyol,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31052
+understat,2026-27,La Liga,1,league,ESP1,2027-03-21,16:00,Levante,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31053
+understat,2026-27,La Liga,1,league,ESP1,2027-03-21,16:00,Racing Santander,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31054
+understat,2026-27,La Liga,1,league,ESP1,2027-03-21,16:00,Rayo Vallecano,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31055
+understat,2026-27,La Liga,1,league,ESP1,2027-03-21,16:00,Real Sociedad,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31056
+understat,2026-27,La Liga,1,league,ESP1,2027-03-21,16:00,Sevilla,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31057
+understat,2026-27,La Liga,1,league,ESP1,2027-03-21,16:00,Valencia,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31058
+understat,2026-27,La Liga,1,league,ESP1,2027-03-21,16:00,Villarreal,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31059
+understat,2026-27,La Liga,1,league,ESP1,2027-04-04,15:00,Athletic Club,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31060
+understat,2026-27,La Liga,1,league,ESP1,2027-04-04,15:00,Barcelona,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31064
+understat,2026-27,La Liga,1,league,ESP1,2027-04-04,15:00,Deportivo La Coruna,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31062
+understat,2026-27,La Liga,1,league,ESP1,2027-04-04,15:00,Elche,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31063
+understat,2026-27,La Liga,1,league,ESP1,2027-04-04,15:00,Getafe,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31065
+understat,2026-27,La Liga,1,league,ESP1,2027-04-04,15:00,Levante,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31066
+understat,2026-27,La Liga,1,league,ESP1,2027-04-04,15:00,Malaga,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31067
+understat,2026-27,La Liga,1,league,ESP1,2027-04-04,15:00,Real Betis,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31061
+understat,2026-27,La Liga,1,league,ESP1,2027-04-04,15:00,Real Madrid,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31068
+understat,2026-27,La Liga,1,league,ESP1,2027-04-04,15:00,Real Sociedad,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31069
+understat,2026-27,La Liga,1,league,ESP1,2027-04-11,15:00,Alaves,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31070
+understat,2026-27,La Liga,1,league,ESP1,2027-04-11,15:00,Atletico Madrid,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31071
+understat,2026-27,La Liga,1,league,ESP1,2027-04-11,15:00,Celta Vigo,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31072
+understat,2026-27,La Liga,1,league,ESP1,2027-04-11,15:00,Espanyol,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31073
+understat,2026-27,La Liga,1,league,ESP1,2027-04-11,15:00,Osasuna,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31074
+understat,2026-27,La Liga,1,league,ESP1,2027-04-11,15:00,Racing Santander,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31075
+understat,2026-27,La Liga,1,league,ESP1,2027-04-11,15:00,Rayo Vallecano,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31076
+understat,2026-27,La Liga,1,league,ESP1,2027-04-11,15:00,Sevilla,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31077
+understat,2026-27,La Liga,1,league,ESP1,2027-04-11,15:00,Valencia,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31078
+understat,2026-27,La Liga,1,league,ESP1,2027-04-11,15:00,Villarreal,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31079
+understat,2026-27,La Liga,1,league,ESP1,2027-04-18,15:00,Alaves,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31080
+understat,2026-27,La Liga,1,league,ESP1,2027-04-18,15:00,Atletico Madrid,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31081
+understat,2026-27,La Liga,1,league,ESP1,2027-04-18,15:00,Barcelona,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31085
+understat,2026-27,La Liga,1,league,ESP1,2027-04-18,15:00,Deportivo La Coruna,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31083
+understat,2026-27,La Liga,1,league,ESP1,2027-04-18,15:00,Elche,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31084
+understat,2026-27,La Liga,1,league,ESP1,2027-04-18,15:00,Getafe,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31086
+understat,2026-27,La Liga,1,league,ESP1,2027-04-18,15:00,Levante,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31087
+understat,2026-27,La Liga,1,league,ESP1,2027-04-18,15:00,Malaga,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31088
+understat,2026-27,La Liga,1,league,ESP1,2027-04-18,15:00,Real Betis,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31082
+understat,2026-27,La Liga,1,league,ESP1,2027-04-18,15:00,Real Sociedad,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31089
+understat,2026-27,La Liga,1,league,ESP1,2027-04-21,15:00,Athletic Club,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31090
+understat,2026-27,La Liga,1,league,ESP1,2027-04-21,15:00,Celta Vigo,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31091
+understat,2026-27,La Liga,1,league,ESP1,2027-04-21,15:00,Espanyol,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31092
+understat,2026-27,La Liga,1,league,ESP1,2027-04-21,15:00,Getafe,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31093
+understat,2026-27,La Liga,1,league,ESP1,2027-04-21,15:00,Osasuna,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31094
+understat,2026-27,La Liga,1,league,ESP1,2027-04-21,15:00,Racing Santander,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31095
+understat,2026-27,La Liga,1,league,ESP1,2027-04-21,15:00,Real Madrid,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31096
+understat,2026-27,La Liga,1,league,ESP1,2027-04-21,15:00,Sevilla,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31097
+understat,2026-27,La Liga,1,league,ESP1,2027-04-21,15:00,Valencia,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31098
+understat,2026-27,La Liga,1,league,ESP1,2027-04-21,15:00,Villarreal,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31099
+understat,2026-27,La Liga,1,league,ESP1,2027-05-02,15:00,Atletico Madrid,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31100
+understat,2026-27,La Liga,1,league,ESP1,2027-05-02,15:00,Barcelona,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31105
+understat,2026-27,La Liga,1,league,ESP1,2027-05-02,15:00,Celta Vigo,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31102
+understat,2026-27,La Liga,1,league,ESP1,2027-05-02,15:00,Deportivo La Coruna,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31103
+understat,2026-27,La Liga,1,league,ESP1,2027-05-02,15:00,Elche,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31104
+understat,2026-27,La Liga,1,league,ESP1,2027-05-02,15:00,Levante,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31106
+understat,2026-27,La Liga,1,league,ESP1,2027-05-02,15:00,Malaga,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31107
+understat,2026-27,La Liga,1,league,ESP1,2027-05-02,15:00,Rayo Vallecano,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31108
+understat,2026-27,La Liga,1,league,ESP1,2027-05-02,15:00,Real Betis,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31101
+understat,2026-27,La Liga,1,league,ESP1,2027-05-02,15:00,Real Sociedad,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31109
+understat,2026-27,La Liga,1,league,ESP1,2027-05-09,15:00,Alaves,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31110
+understat,2026-27,La Liga,1,league,ESP1,2027-05-09,15:00,Athletic Club,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31111
+understat,2026-27,La Liga,1,league,ESP1,2027-05-09,15:00,Getafe,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31113
+understat,2026-27,La Liga,1,league,ESP1,2027-05-09,15:00,Osasuna,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31114
+understat,2026-27,La Liga,1,league,ESP1,2027-05-09,15:00,Racing Santander,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31115
+understat,2026-27,La Liga,1,league,ESP1,2027-05-09,15:00,Rayo Vallecano,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31116
+understat,2026-27,La Liga,1,league,ESP1,2027-05-09,15:00,Real Betis,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31112
+understat,2026-27,La Liga,1,league,ESP1,2027-05-09,15:00,Real Madrid,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31117
+understat,2026-27,La Liga,1,league,ESP1,2027-05-09,15:00,Valencia,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31118
+understat,2026-27,La Liga,1,league,ESP1,2027-05-09,15:00,Villarreal,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31119
+understat,2026-27,La Liga,1,league,ESP1,2027-05-16,15:00,Atletico Madrid,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31120
+understat,2026-27,La Liga,1,league,ESP1,2027-05-16,15:00,Deportivo La Coruna,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31121
+understat,2026-27,La Liga,1,league,ESP1,2027-05-16,15:00,Elche,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31122
+understat,2026-27,La Liga,1,league,ESP1,2027-05-16,15:00,Espanyol,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31123
+understat,2026-27,La Liga,1,league,ESP1,2027-05-16,15:00,Levante,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31124
+understat,2026-27,La Liga,1,league,ESP1,2027-05-16,15:00,Malaga,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31125
+understat,2026-27,La Liga,1,league,ESP1,2027-05-16,15:00,Osasuna,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31126
+understat,2026-27,La Liga,1,league,ESP1,2027-05-16,15:00,Real Madrid,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31127
+understat,2026-27,La Liga,1,league,ESP1,2027-05-16,15:00,Real Sociedad,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31128
+understat,2026-27,La Liga,1,league,ESP1,2027-05-16,15:00,Sevilla,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31129
+understat,2026-27,La Liga,1,league,ESP1,2027-05-23,15:00,Alaves,Real Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31130
+understat,2026-27,La Liga,1,league,ESP1,2027-05-23,15:00,Atletico Madrid,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31131
+understat,2026-27,La Liga,1,league,ESP1,2027-05-23,15:00,Barcelona,Malaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31134
+understat,2026-27,La Liga,1,league,ESP1,2027-05-23,15:00,Celta Vigo,Real Sociedad,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31132
+understat,2026-27,La Liga,1,league,ESP1,2027-05-23,15:00,Deportivo La Coruna,Espanyol,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31133
+understat,2026-27,La Liga,1,league,ESP1,2027-05-23,15:00,Racing Santander,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31135
+understat,2026-27,La Liga,1,league,ESP1,2027-05-23,15:00,Rayo Vallecano,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31136
+understat,2026-27,La Liga,1,league,ESP1,2027-05-23,15:00,Sevilla,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31137
+understat,2026-27,La Liga,1,league,ESP1,2027-05-23,15:00,Valencia,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31138
+understat,2026-27,La Liga,1,league,ESP1,2027-05-23,15:00,Villarreal,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31139
+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,15:00,Athletic Club,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31140
+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,15:00,Elche,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31142
+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,15:00,Espanyol,Alaves,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31143
+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,15:00,Getafe,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31144
+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,15:00,Levante,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31145
+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,15:00,Malaga,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31146
+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,15:00,Osasuna,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31147
+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,15:00,Real Betis,Atletico Madrid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31141
+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,15:00,Real Madrid,Deportivo La Coruna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31148
+understat,2026-27,La Liga,1,league,ESP1,2027-05-30,15:00,Real Sociedad,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,understat:31149
