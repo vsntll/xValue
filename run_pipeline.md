@@ -103,9 +103,18 @@ no fetch cache. Every pull skips what is already committed and only requests
 new matches: FotMob's per-match player rows / lineups / goal timelines live in
 `data/processed/fotmob/<kind>_<season>.csv`, the live-match source snapshots in
 `data/processed/live/`. `verify_player_matches.py` then cross-checks each FotMob
-row against Understat + football-data.co.uk (internationals: martj42) and writes
-`verified` = agree / conflict / fotmob_only into those CSVs. `data/raw/` stays
-gitignored scratch. Setup: just add repo secret `FOOTBALL_DATA_ORG_KEY`.
+row against Understat, ESPN's box scores (`pull_espn_players.py`, committed under
+`data/processed/espn/`) and football-data.co.uk (internationals: martj42) and
+writes `verified` = agree / conflict / fotmob_only into those CSVs. `data/raw/`
+stays gitignored scratch.
+
+Understat has been down since late September 2026. Until it's back,
+`understat_gapfill.py` rebuilds every league match it has no result for from
+FotMob, in Understat's own shape and ids (`understat_gapfill_*.csv`, tagged
+`source=fotmob`); everything that used to read `understat_*.csv` now reads it
+through `understat_gapfill.read()`. The Understat files themselves are left
+untouched, and gap rows drop out on their own once Understat publishes those
+games. Setup: just add repo secret `FOOTBALL_DATA_ORG_KEY`.
 
 **Manual (rarely — only the deep FBref columns nothing currently reads, and
 Transfermarkt values; needs a real Chrome window):** re-scrape the full FBref
