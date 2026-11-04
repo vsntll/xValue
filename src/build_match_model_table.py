@@ -70,7 +70,7 @@ DIV_COMP = {"E0": "Premier League", "D1": "Bundesliga", "SP1": "La Liga",
 def _warmup() -> pd.DataFrame:
     """2014-20 league results (football-data.co.uk) - fed into Elo/form so ratings
     have converged before the modelling window; never emitted as feature rows."""
-    f = ROOT / "data" / "raw" / "football_data" / "_elo_warmup.csv"
+    f = ROOT / "data" / "processed" / "elo_warmup.csv"
     if not f.exists():
         return pd.DataFrame()
     w = pd.read_csv(f)

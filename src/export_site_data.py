@@ -307,7 +307,7 @@ def prep_dc_matches() -> pd.DataFrame:
     m = m.dropna(subset=["Date", "FTHG", "FTAG"])
     m["h"] = m["HomeTeam"].map(normalize_team)
     m["a"] = m["AwayTeam"].map(normalize_team)
-    warm = ROOT / "data" / "raw" / "football_data" / "_elo_warmup.csv"
+    warm = ROOT / "data" / "processed" / "elo_warmup.csv"
     if warm.exists():
         w = pd.read_csv(warm)
         # football-data.co.uk mixes dd/mm/yy and dd/mm/yyyy within the same file

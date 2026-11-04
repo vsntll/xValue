@@ -120,7 +120,7 @@ def _prep(path) -> pd.DataFrame:
 def main() -> None:
     """Emit dc_pA/pD/pH and dcx_* (xG variant) for every league match."""
     allm = _prep(PROC / "matches_all.csv")
-    warm = ROOT / "data" / "raw" / "football_data" / "_elo_warmup.csv"
+    warm = ROOT / "data" / "processed" / "elo_warmup.csv"
     if warm.exists():
         w = pd.read_csv(warm)
         w["Date"] = pd.to_datetime(w["Date"], dayfirst=True, errors="coerce")
