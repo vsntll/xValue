@@ -48,23 +48,10 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      # data/processed/ is committed (checkout brings it). data/raw/ is gitignored
-      # - this cache only carries the fetch caches + raw scraper dumps so the pulls
-      # below don't re-download from scratch. It is a speed-up, not load-bearing:
-      # an eviction just makes one run slower, it never loses data.
-      - name: Restore fetch cache
-        id: datacache
-        uses: actions/cache@v4
-        with:
-          path: |
-            data/understat_cache
-            data/soccerdata
-            data/raw/live
-            data/raw/tm
-            data/raw/football_data/_elo_warmup.csv
-          key: pipeline-fetchcache-${{ github.run_id }}
-          restore-keys: |
-            pipeline-fetchcache-
+      # No fetch cache: data/processed/ (committed, checkout brings it) is the only
+      # record of what has been pulled. Every pull below skips what's already in
+      # those CSVs and only requests new matches, so a fresh runner does the same
+      # small amount of work as any other run - and the result is committed back.
 
       - name: Pull league results + odds (football-data.co.uk)
         continue-on-error: true
@@ -95,16 +82,19 @@ jobs:
 
       # the stats Understat doesn't carry: shots on target, fouls, tackles /
       # interceptions / blocks / clearances, touches, saves - from FotMob's
-      # per-match player box scores (cached, so only new matches cost a request)
+      # per-match player box scores, committed per season under
+      # data/processed/fotmob/ (only matches not committed yet cost a request)
       - name: Pull current-season per-player stats (FotMob)
         continue-on-error: true
-        run: python src/pull_fotmob_players.py --current
+        timeout-minutes: 25
+        run: python src/pull_fotmob_players.py --current --budget-min 15
 
       # international appearances for the player Elo: every senior men's
       # international result (national-team Elo) + FotMob's per-player box
-      # scores for them (cached like the club pull - only new matches cost a request).
-      # The FotMob pull caps its own fetching (--budget-min); the step timeout is a
-      # backstop so it can never run the whole job into timeout-minutes again.
+      # scores for them (like the club pull - only new matches cost a request).
+      # The FotMob pulls cap their own fetching (--budget-min); the step timeouts
+      # are a backstop so a slow source can never run the whole job into
+      # timeout-minutes and cancel everything after it.
       - name: Pull international results + per-player stats (martj42 / FotMob)
         continue-on-error: true
         timeout-minutes: 25
@@ -112,6 +102,15 @@ jobs:
           python src/pull_international_results.py
           python src/build_national_elo.py
           python src/pull_fotmob_internationals.py --budget-min 15
+
+      # cross-check FotMob's per-player rows against a second source and write
+      # the verdict into the committed CSVs (verified = agree / conflict /
+      # fotmob_only): club rows vs Understat's box scores + football-data.co.uk's
+      # result, internationals vs martj42's result. Flags only - no stat is
+      # dropped or overwritten.
+      - name: Cross-check match stats (FotMob vs Understat / football-data / martj42)
+        continue-on-error: true
+        run: python src/verify_player_matches.py --current
 
       # Serie A / Ligue 1 have no FBref player scrape - synthesise their
       # player-season rows (all seasons) from Understat + the wfr mirror + FotMob
