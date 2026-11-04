@@ -56,7 +56,7 @@ going dark is swapped without touching anything downstream.
 | 11 | Outcome model | `build_match_model_table.py` → `train_outcome_model.py [--hybrid]` | `outcome_model_predictions*.csv` |
 | 12 | Player Elo | `build_national_elo.py` → `build_player_elo.py` (opponent-adjusted, no market value; role-weighted attack / defence / passing from Understat + FotMob, club + international) | `national_team_elo.csv`, `player_elo.csv` |
 | 13 | Site | `export_site_data.py` | `site/index.html` |
-| 14 | SQLite mirror | `build_sqlite_db.py` (one table per CSV, fully replaced each run) | `data/processed/xvalue.db` |
+| 14 | SQLite mirror (local only) | `build_sqlite_db.py` (one table per CSV, fully replaced each run; gitignored and not built in CI - ~150 MB is over GitHub's 100 MB file limit) | `data/processed/xvalue.db` |
 
 ## Setup
 

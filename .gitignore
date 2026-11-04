@@ -10,6 +10,9 @@ venv/
 # clone don't depend on the 7-day actions/cache eviction window.
 data/raw/
 # soccerdata caches (SOCCERDATA_DIR points into these) - just a fetch cache
+# SQLite mirror of data/processed/*.csv (src/build_sqlite_db.py) - local-only:
+# ~150 MB, over GitHub's 100 MB file limit, and nothing in the pipeline reads it
+data/processed/xvalue.db
 data/soccerdata/
 data/understat_cache/
 
