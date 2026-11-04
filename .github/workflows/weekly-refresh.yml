@@ -102,13 +102,16 @@ jobs:
 
       # international appearances for the player Elo: every senior men's
       # international result (national-team Elo) + FotMob's per-player box
-      # scores for them (cached like the club pull - only new matches cost a request)
+      # scores for them (cached like the club pull - only new matches cost a request).
+      # The FotMob pull caps its own fetching (--budget-min); the step timeout is a
+      # backstop so it can never run the whole job into timeout-minutes again.
       - name: Pull international results + per-player stats (martj42 / FotMob)
         continue-on-error: true
+        timeout-minutes: 25
         run: |
           python src/pull_international_results.py
           python src/build_national_elo.py
-          python src/pull_fotmob_internationals.py
+          python src/pull_fotmob_internationals.py --budget-min 15
 
       # Serie A / Ligue 1 have no FBref player scrape - synthesise their
       # player-season rows (all seasons) from Understat + the wfr mirror + FotMob
