@@ -91,7 +91,7 @@ def _match_rows(fx: dict, comp: str, comp_type: str) -> list[dict] | None:
     mid = str(fx["id"])
     try:
         d = _get("matchDetails", matchId=mid)
-    except requests.HTTPError:
+    except requests.RequestException:
         return None
     home, away = fx["home"], fx["away"]
     side = {str(home["id"]): (_team(home["name"]), _team(away["name"]), 1),
@@ -130,13 +130,13 @@ def main() -> None:
     for lid, (comp, comp_type) in INTL_LEAGUES.items():
         try:
             seasons = _seasons(lid, args.since)
-        except requests.HTTPError as e:
+        except requests.RequestException as e:
             print(f"  {comp}: league lookup failed ({e})")
             continue
         for season in seasons:
             try:
                 fixtures = _get("fixtures", id=lid, season=season)
-            except requests.HTTPError as e:
+            except requests.RequestException as e:
                 print(f"  {comp} {season}: fixtures failed ({e})")
                 continue
             finished = [f for f in (fixtures if isinstance(fixtures, list) else [])
