@@ -5,25 +5,26 @@ so the every-other-day refresh no longer needs a manual FBref scrape for the
 current season.
 
 FotMob's `playerStats` block is keyed with stable slugs (`ShotsOnTarget`,
-`fouls`, `interceptions` ...), so parsing is just a key lookup. Each match is
-cached under data/raw/live/fotmob_players/<id>.json - re-runs only fetch new
-matches. FotMob's ToS restricts programmatic use; keep volume low.
+`fouls`, `interceptions` ...), so parsing is just a key lookup. Every match's
+rows are committed to the per-season CSVs in data/processed/fotmob/ (see
+src/fotmob_store.py) - a re-run, even on a fresh CI runner, only fetches
+matches not committed yet. --budget-min caps the fetching time per run.
+FotMob's ToS restricts programmatic use; keep volume low.
 
-The same matchDetails payload also carries the starting-XI lineup
-(content.lineup), so it's saved alongside the player stats at zero extra
-request cost, under data/raw/live/fotmob_lineups/<id>.json - see
-build_match_lineups.py. Same for the goal/red-card event timeline
-(content.matchFacts.events), under data/raw/live/fotmob_events/<id>.json -
-see live_win_prob.py's backtest. The events cache is opportunistic for new
-matches only; backfilling it for already-pulled seasons needs the separate
---events flag (a deliberate, bounded re-fetch, not automatic).
+The same matchDetails payload also carries the matchday squads
+(content.lineup -> lineups_<season>.csv, see build_match_lineups.py) and the
+goal/red-card timeline (content.matchFacts.events -> events_<season>.csv, see
+live_win_prob.py's backtest), saved at zero extra request cost. Matches pulled
+before events were captured need the separate --events flag (a deliberate,
+bounded re-fetch, not automatic).
 
 Run:  py -3.11 src/pull_fotmob_players.py --current      # season in progress
       py -3.11 src/pull_fotmob_players.py --seasons 2025-26 2026-27
       py -3.11 src/pull_fotmob_players.py --events 2025-26   # backfill event timelines
       py -3.11 src/pull_fotmob_players.py --backfill-passes 2024-25 2025-26 2026-27
-Output: data/processed/fotmob_player_season.csv  (one row per player-team-season)
-        data/processed/fotmob_match_meta.csv     (match id -> season/league/date)
+Output: data/processed/fotmob/{player_matches,lineups,events}_<season>.csv
+        data/processed/fotmob_player_season.csv  (one row per player-team-season)
+        data/processed/fotmob_match_meta.csv     (match id -> season/league/date/score)
 """
 
 from __future__ import annotations
@@ -39,12 +40,12 @@ import requests
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+import fotmob_store as store  # noqa: E402
 from fbref_common import current_season  # noqa: E402
 from live.schema import deaccent, normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 CACHE = ROOT / "data" / "raw" / "live" / "fotmob_players"
-LINEUP_CACHE = ROOT / "data" / "raw" / "live" / "fotmob_lineups"
 EVENTS_CACHE = ROOT / "data" / "raw" / "live" / "fotmob_events"
 OUT = PROC / "fotmob_player_season.csv"
 MATCH_META = PROC / "fotmob_match_meta.csv"
@@ -151,71 +152,66 @@ def _extract_lineup_rows(lineup: dict, mid: str) -> list[dict]:
     return rows
 
 
-def _parse_match(mid: str) -> list[dict] | None:
-    """Per-player rows for one match, plus its starting-XI lineup - both come
-    off the same matchDetails payload, so caching the lineup costs zero extra
-    requests. Each cached independently (a finished match never changes); a
-    match cached before the lineup cache existed gets exactly one re-fetch to
-    backfill it (bounded to that known set, not open-ended re-scraping)."""
-    CACHE.mkdir(parents=True, exist_ok=True)
-    LINEUP_CACHE.mkdir(parents=True, exist_ok=True)
-    EVENTS_CACHE.mkdir(parents=True, exist_ok=True)
-    cf = CACHE / f"{mid}.json"
-    lf = LINEUP_CACHE / f"{mid}.json"
-    ef = EVENTS_CACHE / f"{mid}.json"
-    if cf.exists() and lf.exists():
-        return json.loads(cf.read_text())
+def _fetch_match(mid: str, season: str, code: str) -> dict | None:
+    """Player, lineup and event rows for one finished match off a single
+    matchDetails request; None when FotMob refuses it (retried next run)."""
     try:
         d = _get("matchDetails", matchId=mid)
     except requests.HTTPError:
-        return json.loads(cf.read_text()) if cf.exists() else None
-
+        return None
     lineup = (d.get("content") or {}).get("lineup") or {}
-    lf.write_text(json.dumps({k: lineup.get(k) for k in ("homeTeam", "awayTeam")}))
-    # opportunistic, best-effort - written whenever we already fetched `d` for
-    # a NEW match, but its absence never forces its own re-fetch (unlike cf/lf
-    # above) so this doesn't re-trigger a full historical re-scrape; a
-    # deliberate, bounded backfill for existing matches is --events below.
-    if not ef.exists():
-        ef.write_text(json.dumps(_extract_events(d)))
-    if cf.exists():
-        return json.loads(cf.read_text())
-
-    rows = _extract_player_rows(d, mid)
-    cf.write_text(json.dumps(rows))
-    return rows
+    return {
+        "player_matches": [{**r, "season": season, "src_league": code}
+                           for r in _extract_player_rows(d, mid)],
+        "lineups": _extract_lineup_rows(lineup, mid),
+        "events": [{"match_id": mid, **e} for e in _extract_events(d)],
+    }
 
 
-def pull_season(code: str, season: str) -> tuple[pd.DataFrame | None, pd.DataFrame]:
+def _fixture_meta(fx: dict, season: str, code: str) -> dict:
+    home, away = fx.get("home") or {}, fx.get("away") or {}
+    return {"match_id": str(fx["id"]), "season": season, "src_league": code,
+            "date": (fx.get("status") or {}).get("utcTime", "")[:10],
+            "home": home.get("name"), "away": away.get("name"),
+            "home_score": home.get("score"), "away_score": away.get("score")}
+
+
+def pull_season(code: str, season: str, done: set[str], deadline: float) -> int:
+    """Fetch this league-season's finished matches that aren't committed yet
+    and upsert them into the per-season CSVs. Returns how many were left over
+    because the time budget ran out."""
     start = int(season.split("-")[0])
     try:
         fixtures = _get("fixtures", id=LEAGUE_ID[code], season=f"{start}/{start + 1}")
     except requests.HTTPError as e:
         print(f"  {code} {season}: fixtures failed ({e})")
-        return None, pd.DataFrame()
+        return 0
     if not isinstance(fixtures, list):
-        return None, pd.DataFrame()
-    done = [f for f in fixtures if f.get("status", {}).get("finished")]
-    print(f"  {code} {season}: {len(done)} finished matches", end="", flush=True)
-    frames, meta_rows, n_new = [], [], 0
-    for fx in done:
-        mid = str(fx["id"])
-        if not (CACHE / f"{mid}.json").exists():
-            n_new += 1
-        rows = _parse_match(mid)
-        if rows:
-            frames.append(pd.DataFrame(rows))
-        # match metadata (id -> season/league/date) so build_match_lineups.py can
-        # resolve the lineup cache offline, without re-hitting the fixtures endpoint
-        meta_rows.append({"match_id": mid, "season": season, "src_league": code,
-                          "date": (fx.get("status") or {}).get("utcTime", "")[:10]})
-    print(f"  ({n_new} newly fetched)")
-    meta = pd.DataFrame(meta_rows)
-    if not frames:
-        return None, meta
-    pm = pd.concat(frames, ignore_index=True)
-    pm["season"], pm["src_league"] = season, code
-    return pm, meta
+        return 0
+    finished = [f for f in fixtures if (f.get("status") or {}).get("finished")]
+    if not finished:
+        return 0
+    meta = pd.DataFrame([_fixture_meta(f, season, code) for f in finished])
+    todo = [m for m in meta["match_id"] if m not in done]
+    print(f"  {code} {season}: {len(finished)} finished matches ({len(todo)} to fetch)", flush=True)
+
+    got = {k: [] for k in store.KINDS}
+    fetched, n_left = [], 0
+    for mid in todo:
+        if time.monotonic() > deadline:
+            n_left += 1
+            continue
+        res = _fetch_match(mid, season, code)
+        if res is None:
+            continue
+        for k in store.KINDS:
+            got[k] += res[k]
+        fetched.append(mid)
+    for k in store.KINDS:
+        store.upsert(k, season, pd.DataFrame(got[k]))
+    meta.loc[meta["match_id"].isin(fetched), ["fetched", "events_fetched"]] = 1
+    store.upsert_meta(meta)
+    return n_left
 
 
 def _aggregate(pm: pd.DataFrame) -> pd.DataFrame:
@@ -297,13 +293,14 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--seasons", nargs="+", default=[current_season()])
     ap.add_argument("--current", action="store_true", help="just the season in progress")
+    ap.add_argument("--budget-min", type=float, default=20,
+                    help="stop fetching new matches after this many minutes (rest next run)")
     ap.add_argument("--events", nargs="+", metavar="SEASON",
-                    help="backfill the goal/red-card event timeline for these seasons "
-                         "(needs fotmob_match_meta.csv already built) instead of the "
-                         "normal player-stats pull")
+                    help="backfill the goal/red-card event timeline for these seasons' "
+                         "committed matches instead of the normal player-stats pull")
     ap.add_argument("--backfill-passes", nargs="+", metavar="SEASON",
                     help="backfill passes_completed/passes_attempted for these seasons' "
-                         "already-cached matches instead of the normal player-stats pull")
+                         "committed matches instead of the normal player-stats pull")
     args = ap.parse_args()
     if args.events:
         backfill_events(args.events)
@@ -313,37 +310,27 @@ def main() -> None:
         return
     seasons = [current_season()] if args.current else args.seasons
 
-    frames, metas, refreshed, meta_refreshed = [], [], set(), set()
-    for season in seasons:
-        for code in LEAGUE_ID:
-            pm, meta = pull_season(code, season)
-            if not meta.empty:
-                metas.append(meta)
-                meta_refreshed.add((code, season))
-            if pm is not None and not pm.empty:
-                frames.append(_aggregate(pm))
-                refreshed.add((code, season))
-    if not frames:
-        raise SystemExit("no FotMob player data pulled")
-    new = pd.concat(frames, ignore_index=True)
+    meta = store.read_meta()
+    done = set(meta.loc[meta["fetched"] == 1, "match_id"])
+    deadline = time.monotonic() + args.budget_min * 60
+    n_left = sum(pull_season(code, season, done, deadline)
+                 for season in seasons for code in LEAGUE_ID)
+    if n_left:
+        print(f"\n  fetch budget ({args.budget_min:g} min) spent - {n_left} matches left for next run")
 
+    # season totals are rebuilt from the committed per-match rows, so they always
+    # agree with them (and with whatever an earlier run already committed)
+    pm = store.read("player_matches", seasons)
+    if pm.empty:
+        raise SystemExit("no FotMob player data for " + ", ".join(seasons))
+    new = _aggregate(pm)
     if OUT.exists():
         prior = pd.read_csv(OUT)
-        keep = ~prior.set_index(["src_league", "season"]).index.isin(refreshed)
-        new = pd.concat([prior[keep], new], ignore_index=True)
+        new = pd.concat([prior[~prior["season"].isin(seasons)], new], ignore_index=True)
     PROC.mkdir(parents=True, exist_ok=True)
     new.to_csv(OUT, index=False)
     print(f"\nwrote {OUT}  ({len(new)} player-team-seasons, "
           f"{new['fotmob_id'].nunique()} players, seasons {sorted(new['season'].unique())})")
-
-    if metas:
-        new_meta = pd.concat(metas, ignore_index=True)
-        if MATCH_META.exists():
-            prior_meta = pd.read_csv(MATCH_META, dtype={"match_id": str})
-            keep = ~prior_meta.set_index(["src_league", "season"]).index.isin(meta_refreshed)
-            new_meta = pd.concat([prior_meta[keep], new_meta], ignore_index=True)
-        new_meta.to_csv(MATCH_META, index=False)
-        print(f"wrote {MATCH_META}  ({len(new_meta)} matches)")
 
 
 if __name__ == "__main__":
