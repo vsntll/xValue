@@ -125,6 +125,15 @@ def main() -> None:
     live_season = current_season()
     prior = pd.read_csv(OUT) if OUT.exists() else None
     have = set(zip(prior["src_league"], prior["season"])) if prior is not None else set()
+    # a season still listing unplayed fixtures isn't finished on our side - e.g.
+    # Understat went down mid-season and the calendar rolled over before it came
+    # back - so it keeps being pulled (incrementally) until every game is in
+    um_path = PROCESSED / "understat_matches.csv"
+    unfinished = set()
+    if um_path.exists():
+        um = pd.read_csv(um_path)
+        um = um[um["is_result"].astype(str) != "True"]
+        unfinished = set(zip(um["src_league"], um["season"]))
 
     fresh_frames = []
     refreshed: set[tuple[str, str]] = set()  # (code, season) pairs actually (re)pulled this run
@@ -136,7 +145,8 @@ def main() -> None:
             # --force re-pulls whatever's in --seasons, without touching any
             # OTHER season already on disk (fixed - this used to drop the
             # entire file down to just --seasons when --force was passed)
-            if (code, season) in have and season != live_season and not args.force:
+            if ((code, season) in have and season != live_season
+                    and (code, season) not in unfinished and not args.force):
                 print(f"  {code} {season}: already have it, skipping (--force to redo)")
                 continue
             # the live season is incremental: games already committed are skipped
