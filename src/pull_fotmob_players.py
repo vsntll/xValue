@@ -137,6 +137,20 @@ def _extract_player_rows(d: dict, mid: str) -> list[dict]:
     return rows
 
 
+def _extract_lineup_rows(lineup: dict, mid: str) -> list[dict]:
+    """One row per player in each side's matchday squad (content.lineup)."""
+    rows = []
+    for side_key, is_home in (("homeTeam", 1), ("awayTeam", 0)):
+        side = lineup.get(side_key) or {}
+        for is_starter, grp in ((1, "starters"), (0, "subs")):
+            for p in side.get(grp) or []:
+                rows.append({"match_id": str(mid), "is_home": is_home, "team": side.get("name"),
+                             "team_id": side.get("id"), "fotmob_id": p.get("id"),
+                             "player": p.get("name"), "age": p.get("age"),
+                             "position_id": p.get("positionId"), "is_starter": is_starter})
+    return rows
+
+
 def _parse_match(mid: str) -> list[dict] | None:
     """Per-player rows for one match, plus its starting-XI lineup - both come
     off the same matchDetails payload, so caching the lineup costs zero extra
