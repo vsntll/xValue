@@ -4,9 +4,10 @@ the match-level half of the value<->outcome coupling in build_form_momentum.py.
 Understat's match endpoint returns one row per player who featured, per match
 (one HTTP fetch per match - slower than the season-total pulls elsewhere in
 this pipeline: ~0.5s/match, so a full season is a few minutes and all three
-leagues x all seasons is over an hour). Results are cached by soccerdata
-(SOCCERDATA_DIR) and this script itself skips seasons already written, so a
-second run only fills in what's missing (e.g. new matches this week).
+leagues x all seasons is over an hour). The committed output is the record of
+what's been pulled: finished seasons are skipped, and the live season only
+fetches games not already in the CSV - so a fresh CI runner with no
+soccerdata cache still only requests this week's new matches.
 
 Run (Python 3.11):
     py -3.11 src/pull_understat_player_matches.py                     # all seasons
@@ -94,14 +95,17 @@ def _match_stats_resilient(u, ids: list[int]) -> pd.DataFrame:
     return pd.concat(frames) if frames else pd.DataFrame()
 
 
-def pull_one(code: str, key: str, season: str) -> pd.DataFrame | None:
+def pull_one(code: str, key: str, season: str, skip: set[int] = frozenset()) -> pd.DataFrame | None:
+    """This league-season's per-player match rows, leaving out games in `skip`
+    (already committed) - so the live season only costs requests for new games."""
     import soccerdata as sd
 
     u = sd.Understat(leagues=key, seasons=_sd_season(season))
     sch = u.read_schedule(include_matches_without_data=False).reset_index()
-    if sch.empty:
+    ids = [g for g in sch["game_id"].astype(int) if g not in skip] if len(sch) else []
+    if not ids:
         return None
-    df = _match_stats_resilient(u, sch["game_id"].astype(int).tolist())
+    df = _match_stats_resilient(u, ids)
     if df.empty:
         return None
     df = df.reset_index()
@@ -135,18 +139,22 @@ def main() -> None:
             if (code, season) in have and season != live_season and not args.force:
                 print(f"  {code} {season}: already have it, skipping (--force to redo)")
                 continue
+            # the live season is incremental: games already committed are skipped
+            skip = set() if args.force or prior is None else set(
+                prior.loc[(prior["src_league"] == code) & (prior["season"] == season), "game_id"].astype(int))
             try:
-                df = pull_one(code, key, season)
+                df = pull_one(code, key, season, skip)
             except Exception as e:  # noqa: BLE001 - one bad season shouldn't kill the run
                 print(f"  {code} {season}: {type(e).__name__}: {str(e)[:100]}")
                 continue
             if df is None or df.empty:
-                print(f"  {code} {season}: no data yet")
+                print(f"  {code} {season}: no new matches" if skip else f"  {code} {season}: no data yet")
                 continue
             df["_pk"] = df["player"].map(_norm)
             df["_tk"] = df["team"].map(_norm)
             fresh_frames.append(df[KEEP + ["_pk", "_tk"]])
-            refreshed.add((code, season))
+            if not skip:
+                refreshed.add((code, season))   # a full re-pull replaces that season's rows
             elapsed = time.time() - t0
             print(f"  {code} {season}: {len(df)} player-match rows "
                   f"({df['game_id'].nunique()} matches)  [{elapsed / 60:.1f} min elapsed]")
