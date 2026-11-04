@@ -105,14 +105,30 @@ jobs:
           python src/build_national_elo.py
           python src/pull_fotmob_internationals.py --budget-min 15
 
-      # cross-check FotMob's per-player rows against a second source and write
+      # ESPN's per-player box scores - the independent second source for the
+      # cross-check below while Understat is down (committed per season under
+      # data/processed/espn/, so only new matches cost a request)
+      - name: Pull current-season per-player box scores (ESPN)
+        continue-on-error: true
+        timeout-minutes: 15
+        run: python src/pull_espn_players.py --current --budget-min 10
+
+      # cross-check FotMob's per-player rows against second sources and write
       # the verdict into the committed CSVs (verified = agree / conflict /
-      # fotmob_only): club rows vs Understat's box scores + football-data.co.uk's
-      # result, internationals vs martj42's result. Flags only - no stat is
-      # dropped or overwritten.
-      - name: Cross-check match stats (FotMob vs Understat / football-data / martj42)
+      # fotmob_only): club rows vs Understat + ESPN box scores and
+      # football-data.co.uk's result, internationals vs martj42's result.
+      # Flags only - no stat is dropped or overwritten.
+      - name: Cross-check match stats (FotMob vs Understat / ESPN / football-data / martj42)
         continue-on-error: true
         run: python src/verify_player_matches.py --current
+
+      # Understat has been down since late Sept 2026 - rebuild every league match
+      # it has no result for from FotMob, in Understat's shape and ids, so the
+      # Understat-fed steps below stay current. Drops out by itself once
+      # Understat publishes those games again.
+      - name: Fill Understat's missing matches from FotMob
+        continue-on-error: true
+        run: python src/understat_gapfill.py
 
       # Serie A / Ligue 1 have no FBref player scrape - synthesise their
       # player-season rows (all seasons) from Understat + the wfr mirror + FotMob
