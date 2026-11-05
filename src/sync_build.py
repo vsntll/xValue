@@ -38,6 +38,7 @@ URL = f"https://github.com/{REPO}/releases/download/{TAG}/{ASSET}"
 BUILD_FILES = [
     "data/processed/player_elo.csv",
     "data/processed/match_model_table.csv",
+    "data/processed/match_model_upcoming.csv",
     "data/processed/matches_all.csv",
     "data/processed/outcome_model_predictions.csv",
     "data/processed/outcome_model_predictions_hybrid.csv",
