@@ -1068,19 +1068,31 @@ def main() -> None:
         all_blended.append(blended_df)
     blended_df = pd.concat(all_blended, ignore_index=True)
 
+    # the headline outcome model's pre-match odds for upcoming fixtures
+    # (train_outcome_model.py, split "upcoming") - published where it has the
+    # fixture; Dixon-Coles fills in otherwise and still supplies the expected
+    # goals behind the player props and the match sim
+    preds_all = PROC / "outcome_model_predictions_all.csv"
+    clf_preds = pd.read_csv(preds_all) if preds_all.exists() else pd.DataFrame(columns=["split"])
+    clf_up = clf_preds[clf_preds["split"] == "upcoming"]
+    clf_odds = {(pd.Timestamp(r.Date).strftime("%Y-%m-%d"), normalize_team(r.HomeTeam), normalize_team(r.AwayTeam)):
+                (r.p_away, r.p_draw, r.p_home) for r in clf_up.itertuples(index=False)}
+
     fixtures = []
     for src_league, league_name in LEAGUES.items():
         live = load_upcoming_fixtures(asof, league_name)
         nxt = next_fixture_per_team(live)
         for _, r in nxt.iterrows():
             lh, la = expected_goals(model, r["h"], r["a"])
-            pA, pD, pH = match_probs(model, r["h"], r["a"])
+            clf = clf_odds.get((r["Date"].strftime("%Y-%m-%d"), r["h"], r["a"]))
+            pA, pD, pH = clf if clf is not None else match_probs(model, r["h"], r["a"])
             fx = {
                 "date": r["Date"].strftime("%Y-%m-%d %H:%M"),
                 "league": league_name,
                 "home": r["HomeTeam"], "away": r["AwayTeam"],
                 "home_key": r["h"], "away_key": r["a"],
                 "p_home_win": _num(pH), "p_draw": _num(pD), "p_away_win": _num(pA),
+                "odds_model": "classifier" if clf is not None else "dixon_coles",
                 "exp_goals_home": _num(lh), "exp_goals_away": _num(la),
                 "home_props": player_props_for_fixture(blended_df, r["h"], lh),
                 "away_props": player_props_for_fixture(blended_df, r["a"], la),
@@ -1092,10 +1104,12 @@ def main() -> None:
     upcoming = pd.concat([load_upcoming_fixtures(asof, lg) for lg in LEAGUES.values()], ignore_index=True)
     n_led = prediction_ledger.snapshot(
         upcoming, lambda h, a: (*match_probs(model, h, a), *expected_goals(model, h, a)), asof)
+    n_led += prediction_ledger.snapshot_classifier(clf_preds, asof)
     ledger = prediction_ledger.scoreboard()
     calibration = build_calibration()
-    print(f"ledger: +{n_led} pre-match snapshots; scored {ledger['n'] if ledger else 0} finished matches"
-          + (f" - model {ledger['model_ll']:.3f} vs market {ledger['market_ll']:.3f} log-loss"
+    print(f"ledger: +{n_led} pre-match snapshots (classifier + Dixon-Coles); "
+          f"scored {ledger['n'] if ledger else 0} finished matches head to head"
+          + (" - log-loss " + ", ".join(f"{k} {v:.3f}" for k, v in ledger["ll"].items())
              if ledger and ledger.get("n") else ""))
 
     all_matches = load_all_matches()
@@ -1139,7 +1153,7 @@ def main() -> None:
             "last_season": "2025-26 full-season stats for the same player, where available.",
             "projected_38": "Simple pace projection: current per-90 rate x projected minutes over a 38-game season. Not a trained model.",
             "value": "Predicted market value from the trained value-regression model (current season preferred, else last season; " + _value_score_note() + ") vs listed market value.",
-            "match_odds": "Win/draw/loss odds from a Dixon-Coles attack/defence model fit on all competitions through the date above.",
+            "match_odds": "Win/draw/loss odds from the outcome model (Poisson-Skellam + Elo / form / xG blend, the site's headline model) where it has the fixture, else from a Dixon-Coles attack/defence model fit on all competitions through the date above. Expected goals and player props are Dixon-Coles.",
             "player_props": "Anytime goal/assist odds: team's Dixon-Coles expected goals split across the matchday squad by each player's (non-penalty xG90 or xA90, shrunk toward last season's rate early in the current season) x season minutes-share, then Poisson P(>=1).",
             "cup_finals": "Each competition's final is inferred as the last-dated match of that season/competition in the results data - not read from an official bracket. When it ended level, the winner is taken from FBref's recorded penalty-shootout score where available; otherwise no winner is shown. The in-progress 2026-27 season is excluded.",
             "standings": "Full league tables computed directly from match results (3 pts/win). The 2026-27 table is the live in-progress standing.",
