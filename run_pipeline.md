@@ -70,7 +70,30 @@ py -3.11 src/build_sqlite_db.py   -> data/processed/xvalue.db  (read-only SQL mi
 The SQLite mirror is local-only: it's gitignored and not built in CI (~150 MB,
 over GitHub's 100 MB file limit, and nothing in the pipeline reads it).
 
-## 5. Dashboard + source health (optional, local)
+## 5. Tests, model scores + regression gate
+
+```
+py -3.11 -m pytest -q tests                  # data invariants on the processed CSVs + unit tests
+py -3.11 src/check_model_metrics.py          # new model scores vs the committed model_metrics.json
+py -3.11 src/update_doc_metrics.py           # write the scores into README.md + docs/models.md
+```
+
+`train_value_model.py` and `train_outcome_model.py` write their test-set scores to
+`data/processed/model_metrics.json`. It's the only source of the model numbers
+in README.md and docs/models.md (between `<!-- metrics:... -->` markers - edit the
+text around them, not inside), and the baseline for the regression gate: the
+refresh fails, before committing, if value R²(log) drops more than 0.02 or 1X2
+log-loss rises more than 0.01 against the committed scores. `tests/` checks the
+rebuilt CSVs (unique match keys, 1X2 rows summing to 1, predicted values under
+the €220M cap, no row-count collapse vs the committed files, FotMob rows unique)
+plus unit tests for `dixon_coles.py`, `live_win_prob.py` (at minute 90 the
+current score is final), the team-name alias map and the gate itself.
+
+If a deliberate model change trips the gate, check the numbers, then commit the
+new `model_metrics.json` (and docs) from a local run - the next refresh
+compares against that.
+
+## 6. Dashboard + source health (optional, local)
 
 ```
 py -3.11 -m streamlit run src/dashboard.py   # predictions vs results, value leaderboard, source health
@@ -85,14 +108,16 @@ schema drift (`DEGRADED` / `ERROR`) does.
 
 ## Refresh the current season
 
-**Automatic (every 2 days):** `.github/workflows/weekly-refresh.yml` runs on a
+**Automatic (every 2 days):** `.github/workflows/refresh.yml` runs on a
 `*/2` cron (and on manual dispatch). It pulls everything that doesn't need a
 browser - football-data.co.uk results, live fixtures + match stats (ESPN /
 football-data.org / FotMob / Understat), Sofascore market values, FotMob + ESPN
 per-player box scores, internationals - cross-checks the per-player rows,
 fills Understat's gaps from FotMob, **refreshes the current season's player
 stats** (`build_current_season_stats.py`), rebuilds the match table, retrains
-both models, regenerates `site/index.html`, and commits the refreshed
+both models, **stops if either model got worse** (regression gate), regenerates
+`site/index.html`, writes the new model scores into the docs, **runs `tests/`**,
+and commits the refreshed
 `data/processed/` **and** `site/index.html` back to the branch it ran on. Only a
 `master` run triggers the Pages deploy, so a manual dispatch on a test branch
 never publishes the site. A run takes ~15 min against the 45-min job limit.
