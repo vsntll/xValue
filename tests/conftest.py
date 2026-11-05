@@ -3,6 +3,7 @@ version of a processed CSV (git HEAD) to compare a freshly rebuilt one against."
 
 from __future__ import annotations
 
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -15,13 +16,19 @@ sys.path.insert(0, str(ROOT / "src"))
 
 
 def committed_lines(rel: str) -> int | None:
-    """Line count of `rel` as committed at git HEAD, or None if it isn't tracked
-    there (a new file, or no git) - the no-collapse baseline."""
+    """Line count of the previous version of `rel` - the no-collapse baseline:
+    git HEAD's copy for committed files, else the last published build's copy
+    (release asset, extracted into $PREV_BUILD_DIR by the refresh) for the
+    gitignored build outputs. None if neither exists."""
     try:
         out = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=ROOT, capture_output=True, check=True)
+        return out.stdout.count(b"\n")
     except (OSError, subprocess.CalledProcessError):
-        return None
-    return out.stdout.count(b"\n")
+        pass
+    prev = os.environ.get("PREV_BUILD_DIR")
+    if prev and (Path(prev) / rel).exists():
+        return (Path(prev) / rel).read_bytes().count(b"\n")
+    return None
 
 
 @pytest.fixture
