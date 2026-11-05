@@ -186,20 +186,26 @@ saw "site unchanged."
 `src/prediction_ledger.py`, called from `export_site_data.py` on every build:
 
 - **Ledger** (`data/processed/predictions_ledger.csv`, append-only): one row
-  per upcoming league fixture kicking off on a later UTC day than the build and
-  within 10 days - snapshot time, data date, a model-version hash (of
-  `dixon_coles.py` + `export_site_data.py`), and the published home/draw/away
-  odds + expected goals. A fixture whose latest snapshot has the same version
-  and odds isn't re-logged. Rows are never rewritten - `tests/` fails if the
-  committed file isn't a prefix of the new one, or a snapshot isn't pre-kickoff.
-- **Scoreboard**: each finished match's last pre-kickoff snapshot, scored
-  against the result and against the de-vigged average closing odds
-  (football-data.co.uk `AvgC*`, Bet365 closing as fallback) - running season
-  log-loss, accuracy, and the latest scored matches. Started 2026-11-05; there
-  is no backfill, so every scored number was published before its match.
-  (The ledger records the site's Dixon-Coles match odds - what the site
-  actually publishes. Putting the outcome classifier on it needs pre-match
-  feature rows for unplayed fixtures in `build_match_model_table.py`.)
+  per upcoming league fixture (kicking off on a later UTC day than the build,
+  within 10 days) **per model** - the headline outcome classifier (versions
+  `clf-<hash>` of `train_outcome_model.py` + `build_match_model_table.py`; its
+  pre-match odds come from `match_model_upcoming.csv`, feature rows built from
+  the same Elo / form state as played matches) and Dixon-Coles (versions
+  `<hash>` of `dixon_coles.py` + `export_site_data.py`) - with snapshot time,
+  data date and home/draw/away odds. A fixture whose latest snapshot for that
+  model has the same version and odds isn't re-logged. Rows are never rewritten
+  - `tests/` fails if the committed file isn't a prefix of the new one, or a
+  snapshot isn't pre-kickoff.
+- **Scoreboard**: each finished match's last pre-kickoff snapshot per model,
+  head to head on the fixtures both models priced, scored against the result,
+  the de-vigged average **closing** odds (football-data.co.uk `AvgC*`, Bet365
+  closing as fallback - the market's best-informed price) and the de-vigged
+  average **opening** odds (`AvgH/D/A` - roughly the price when the odds were
+  frozen, so beating it is an edge at publication; the betting backtester's
+  benchmark). Started 2026-11-05 (classifier from the same day's second
+  build); no backfill, so every scored number was published before its match.
+  The Fixtures tab publishes the classifier's odds (Dixon-Coles where it has no
+  row; Dixon-Coles still supplies expected goals for props and the sim).
 - **With the confirmed XI**: `predictions_ledger_xi.csv`, appended by the
   matchday workflow ~1h before kickoff (`src/matchday_rescore.py`), scored the
   same way - plain odds vs XI-adjusted odds vs the closing market on the same

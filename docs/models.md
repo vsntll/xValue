@@ -175,6 +175,15 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
     partly correlated with the other two, same reasoning train_value_model.py's
     multi-learner stacks already use
 - **Split**: train <= 2022-23, val 2023-24, test 2024-26 (~3,470).
+- **Two runs**: the plain run is the market-free model - its scores are the
+  "pure" numbers, and it scores `match_model_upcoming.csv` (pre-match feature
+  rows for fixtures in the next 10 days, built from the same Elo / form / rest
+  state as played matches) into `outcome_model_predictions_all.csv` as
+  `split = "upcoming"` - the odds the site publishes and the forward-test
+  ledger freezes. `--hybrid` also feeds the market's opening odds to logreg /
+  HGB, so only its final hybrid score is recorded from that run (scoring the
+  hybrid run's own blend as "pure", as the refresh briefly did, read ~0.005
+  too good).
 <!-- metrics:models-outcome-table -->
 - **Result** (log-loss / accuracy, test 2024-25 + 2025-26, n=3,476):
 

@@ -48,8 +48,10 @@ py -3.11 src/build_match_model_table.py     -> match_model_table.csv           (
 ```
 py -3.11 src/train_value_model.py           -> models/value_model.pkl, value_model_predictions.csv  (R2(log) 0.89; predicts every player/season incl. current)
 py -3.11 src/build_form_momentum.py         -> squad_momentum.csv    (peer-baseline value vs. actual recent output - needs value_model_predictions.csv above, so run this after it; re-run build_match_model_table.py once more to fold it in)
-py -3.11 src/train_outcome_model.py         -> outcome_model_predictions.csv          (pure, log-loss 0.981; + O/U, BTTS, correct-score)
-py -3.11 src/train_outcome_model.py --hybrid -> outcome_model_predictions_hybrid.csv  (+ market odds, 0.972 ~ Bet365 0.971)
+py -3.11 src/train_outcome_model.py         -> outcome_model_predictions.csv + _all.csv (market-free; _all also holds the upcoming fixtures' pre-match odds)
+py -3.11 src/train_outcome_model.py --hybrid -> outcome_model_predictions_hybrid.csv  (+ market opening odds as features)
+py -3.11 src/dixon_coles.py                  -> dixon_coles_probs.csv  (walk-forward, incremental; --full rebuilds, ~20 min)
+# current scores: README / docs/models.md (generated from model_metrics.json)
 ```
 
 ## 4. Build the site
