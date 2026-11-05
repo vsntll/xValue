@@ -6,12 +6,17 @@ committing a worse model and a site built on it.
 
 Both test sets are fixed seasons (2024-25 + 2025-26), so a retrain on a few
 more days of data should move the scores by thousandths; the tolerances are
-several times that. A run that legitimately changes a model (new features, a
-bigger holdout) and trips the gate: check the numbers, then commit the new
-model_metrics.json from a local run - the next refresh compares against that.
+several times that.
+
+It also checks the same tolerances against accepted_metrics.json - scores
+pinned by hand - so a model can't be walked down a little per run (each step
+inside tolerance of the last, the total far outside it). A deliberate model
+change (new features, a bigger holdout) that trips either check: verify the
+numbers, run `--accept`, and commit model_metrics.json + accepted_metrics.json.
 
 Run:  py -3.11 src/check_model_metrics.py
       py -3.11 src/check_model_metrics.py --baseline path/to/old_metrics.json
+      py -3.11 src/check_model_metrics.py --accept      # pin the current scores
 """
 
 from __future__ import annotations
@@ -28,6 +33,9 @@ import model_metrics  # noqa: E402
 
 VALUE_R2_DROP = 0.02      # R²(log) may fall at most this much
 LOG_LOSS_RISE = 0.01      # 1X2 test log-loss may rise at most this much
+# hand-pinned scores of the model as last deliberately accepted - only
+# `--accept` (run by you, committed with the model change) ever rewrites it
+ACCEPTED = ROOT / "accepted_metrics.json"
 
 
 def _committed() -> dict | None:
@@ -64,16 +72,30 @@ def compare(old: dict, new: dict) -> list[str]:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--baseline", type=Path, help="compare against this file instead of git HEAD's")
+    ap.add_argument("--accept", action="store_true",
+                    help="pin the current model_metrics.json as accepted_metrics.json (a deliberate model change)")
     args = ap.parse_args()
     new = model_metrics.load()
     if not new:
         raise SystemExit(f"{model_metrics.PATH} missing - the training steps didn't write scores")
-    old = json.loads(args.baseline.read_text(encoding="utf-8")) if args.baseline else _committed()
-    if not old:
-        print("no committed model_metrics.json to compare against - first run, gate passes")
+    if args.accept:
+        ACCEPTED.write_text(json.dumps(new, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        print(f"pinned the current scores as {ACCEPTED.name} - commit it with the model change")
         return
-    print("model scores vs the last committed run:")
-    fails = compare(old, new)
+    fails = []
+    old = json.loads(args.baseline.read_text(encoding="utf-8")) if args.baseline else _committed()
+    if old:
+        print("model scores vs the last committed run:")
+        fails += compare(old, new)
+    else:
+        print("no committed model_metrics.json to compare against - skipping the run-to-run check")
+    # the run-to-run check alone can be walked down (0.009 worse every run
+    # passes forever); the pinned baseline caps the total drift
+    if ACCEPTED.exists():
+        print(f"model scores vs the accepted baseline ({ACCEPTED.name}):")
+        fails += [f + " (vs accepted)" for f in compare(json.loads(ACCEPTED.read_text(encoding="utf-8")), new)]
+    else:
+        print(f"no {ACCEPTED.name} - run with --accept to pin one")
     if fails:
         raise SystemExit("models got worse past tolerance - not committing:\n  " + "\n  ".join(fails))
     print("gate passed")
