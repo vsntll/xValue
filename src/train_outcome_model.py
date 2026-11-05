@@ -37,6 +37,7 @@ from sklearn.preprocessing import StandardScaler
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+import model_metrics  # noqa: E402
 from live.schema import normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
@@ -214,8 +215,15 @@ def main() -> None:
     Xte, yte = te[FEATURES], te["FTR"]
 
     base = ytr.value_counts(normalize=True).reindex(LABELS).to_numpy()
+    scores = {}  # -> model_metrics.json "outcome" section (docs + regression gate)
+
+    def _score(name, y, p, acc=None):
+        scores[name] = {"acc": model_metrics.r(accuracy_score(y, LABELS_pred(p)) if acc is None else acc),
+                        "log_loss": model_metrics.r(_ll(y, p)), "n": int(len(y))}
+
     print(f"\n{'model':14}{'acc':>7}{'logloss':>10}")
     print(f"{'base-rate':14}{(yte == 'H').mean():7.3f}{_ll(yte, np.tile(base, (len(yte), 1))):10.3f}")
+    _score("base_rate", yte, np.tile(base, (len(yte), 1)), acc=(yte == "H").mean())
 
     # hyperparameter search for both classifiers, selected on the VALIDATION
     # season only (2023-24) - same principle as the poisson rho/alpha tuning
@@ -254,6 +262,7 @@ def main() -> None:
         preds[name] = _order(clf, clf.predict_proba(Xte))
         preds_va[name] = _order(clf, clf.predict_proba(Xva))
         print(f"{name:14}{accuracy_score(yte, LABELS_pred(preds[name])):7.3f}{_ll(yte, preds[name]):10.3f}")
+        _score(name, yte, preds[name])
 
     # recency weight: half-life ~2 seasons
     age_days = (tr["Date"].max() - tr["Date"]).dt.days.to_numpy()
@@ -277,6 +286,7 @@ def main() -> None:
                                         rho=rho, alpha=alpha, w=wt)
     print(f"{'poisson':14}{accuracy_score(yte, LABELS_pred(preds['poisson'])):7.3f}"
           f"{_ll(yte, preds['poisson']):10.3f}")
+    _score("poisson", yte, preds["poisson"])
 
     # a second Poisson fitted to xG (a smoother scoring-rate estimate), blended in
     if "HxG" in tr.columns:
@@ -289,6 +299,7 @@ def main() -> None:
             trx, va, yhx, yax, rho=rho, alpha=alpha, w=wtx)
         print(f"{'poisson+xg':14}{accuracy_score(yte, LABELS_pred(preds['poisson'])):7.3f}"
               f"{_ll(yte, preds['poisson']):10.3f}")
+        _score("poisson_xg", yte, preds["poisson"])
 
     # ------------------------------------------------------------------
     # every other market is a different sum over the SAME scoreline grid -
@@ -348,6 +359,7 @@ def main() -> None:
     pf = _gblend([preds["poisson"], preds["logreg"], preds["hgb"]], best_w)
     print(f"{'blend(poi=%.2f,lr=%.2f,hgb=%.2f)' % best_w:28}"
           f"{accuracy_score(yte, LABELS_pred(pf)):7.3f}{_ll(yte, pf):10.3f}  (val logloss {best_bll:.3f})")
+    _score("pure", yte, pf)
 
     if args.hybrid and {"mkt_pA", "mkt_pD", "mkt_pH"}.issubset(df.columns):
         mk_va = np.where(np.isnan(va[["mkt_pA", "mkt_pD", "mkt_pH"]].to_numpy()),
@@ -358,6 +370,7 @@ def main() -> None:
                             bounds=(0.3, 1.0), method="bounded").x
         pf = _gblend([mk_te, pf], [b, 1 - b])
         print(f"{'hybrid(b=%.2f)' % b:14}{accuracy_score(yte, LABELS_pred(pf)):7.3f}{_ll(yte, pf):10.3f}")
+        _score("hybrid", yte, pf)
 
     bp = _book(df)
     if bp is not None:
@@ -368,6 +381,9 @@ def main() -> None:
         pb = j[["pA", "pD", "pH"]].to_numpy()
         print(f"{'bookmaker':14}{accuracy_score(j['FTR'], LABELS_pred(pb)):7.3f}"
               f"{_ll(j['FTR'], pb):10.3f}   ({len(j)}/{len(te)})")
+        _score("bookmaker", j["FTR"], pb)
+    model_metrics.update("outcome", {"test_seasons": sorted(te["season"].unique()),
+                                     "n_test": int(len(te)), **scores})
 
     # a second pass, scoring EVERY row (not just the temporal test split) with
     # the same trained-on-`tr`-only models, so the dashboard has a prediction
