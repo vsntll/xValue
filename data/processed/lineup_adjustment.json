@@ -1,0 +1,25 @@
+{
+  "own": -0.126,
+  "opp": 0.0875,
+  "fit_seasons": [
+    "2021-22",
+    "2022-23",
+    "2023-24"
+  ],
+  "n_fit": 5033,
+  "eval": {
+    "seasons": [
+      "2024-25",
+      "2025-26"
+    ],
+    "n": 3327,
+    "log_loss_without": 0.9983,
+    "log_loss_with_xi": 0.9949,
+    "gain": 0.0034,
+    "gain_ci95": [
+      0.0016,
+      0.0053
+    ]
+  },
+  "note": "xg' = xg * exp(own * own_top3_missing_share + opp * opponent_top3_missing_share)"
+}
