@@ -38,7 +38,7 @@ predictions are clipped there in log space and the elite gravitate toward it.
 <!-- metrics:models-elite -->
 `medAPE` for the **€100M+ band is 18%** (was ~30-40% before the cap - the trees squashed
 the tail toward the mean), though the ~38-row band sits slightly *under* the
-listed values (median pred/listed 0.83). Mid-range (€3-40M) predictions carry a
+listed values (median pred/listed 0.84). Mid-range (€3-40M) predictions carry a
 **median pred/listed of 0.99** but individual scatter stays ~21% —
 <!-- /metrics:models-elite -->
 that's roughly how much a crowd-sourced value moves between updates, and the
@@ -109,7 +109,11 @@ Predicts a player's market value from his season + his value history.
 <!-- metrics:models-value-result -->
 - **Result**: R2(log) **0.89**, MAE **€4.2M**, medAPE **22%**, within-2x
   **91%** (0.90 with a prior value, 0.64 cold-start on its own stack -
-  medAPE 42% - 0.87 keepers). €100M+ band medAPE **18%**, median pred/listed **0.83**.
+  medAPE 42% - 0.87 keepers). €100M+ band medAPE **18%**, median pred/listed **0.84**.
+- **Thin-minutes players** (< 8 full 90s - priced by carrying last season's
+  value forward one year along the age curve, not by the trees; 40% of all
+  published predictions, never in the test set): R2(log) **0.69**, medAPE **28%**, within-2x 77%
+  against their real listed values.
 <!-- /metrics:models-value-result -->
 - Output: `value_model_predictions.csv` (**every player, every season incl. the
   current one**, with `value_imputed` flag), `models/value_model.pkl`
@@ -301,6 +305,40 @@ Output: `value_forecast.csv` (`player_key, player, squad, pos, season, age,
 n_real_seasons, forecast_1y_eur, forecast_2y_eur`), folded into the player
 detail panel on the site (not a separate tab).
 
+**Delta method** (`src/build_aging_curves_delta.py` -> `aging_curve_delta.csv`).
+The cross-sectional curve compares *different* players' value levels at each
+age, so it is biased by who is in the sample. The delta method pairs each
+player with himself a season later (3.3k players, 9.6k consecutive-season
+pairs), de-means the log-value change per season pair (market inflation), fits
+`d log(value)/d age = a + b·age` per position and integrates it:
+
+| pos | peak (delta) | peak (cross-sectional) | peak → 33 (delta) | peak → 33 (cross) |
+| --- | --- | --- | --- | --- |
+| DF | 26.4 | 23.4 | −72% | −78% |
+| FW | 25.5 | 24.4 | −76% | −70% |
+| GK | 28.5 | 25.3 | −35% | −64% |
+| MF | 25.7 | 23.5 | −78% | −77% |
+
+The delta curves peak **1-3 years later** and keepers decline far more gently.
+The bias runs the opposite way to the usual survivorship story: young players
+in a big-5 league are a pre-selected elite (only the best prospects make it),
+which inflates the young end of the cross-sectional curve and pulls its peak
+early. Out of sample (both fit up to 2023-24, predicting each player's
+2024-25 → 2025-26 inflation-adjusted log-value change, n=1,580) the delta
+method wins in every position: MSE **0.310** vs 0.336 cross-sectional vs 0.385
+with no age effect.
+
+**Carried path fix.** The value model prices thin-minutes players (< 8 full
+90s - ~40% of published predictions, none in the test set) by carrying last
+season's value forward along the age curve. It used to add the curve's
+*level* (0 at the peak, ≈ −0.7 at 33) to last season's value - carrying a
+33-year-old forward at about half his value and a teenager below his - instead
+of one year's *change*. Fixed to `curve(age) − curve(age − 1)`; scored against
+the real listed values of those 5.2k rows: R²(log) **0.53 → 0.69**, medAPE
+**37% → 28%**, within-2x 69% → 77% (cross-sectional increments; the delta
+curve's increments run high here - 1.21 median pred/listed - because a player
+not getting minutes loses value faster than the inflation-adjusted average).
+
 ## In-play win probability  (`src/live_win_prob.py`)
 
 Not a new model - `live_win_prob(lh, la, minute, cur_h, cur_a, home_reds=,
@@ -473,11 +511,10 @@ and the closing market. Opening matchdays are skipped (no squad history in the
 - A live poller / in-play scoring service on top of `live_win_prob.py`,
   backed by the FotMob `matchDetails` clock (`d["general"]`) - the backtest
   validates the math; nothing polls a live match yet.
-- Aging-curve population shape likely has some survivorship bias baked in
-  (the cross-sectional fit only sees players still good enough to be in a
-  top-5 league at 35+, who are mostly backups by then) - a true delta method
-  (pairing each player's own year-over-year change, not levels) would net
-  that out; not attempted here.
+- Aging curves: the delta method (below, under Aging curves) predicts
+  year-over-year value changes better than the cross-sectional curve but runs
+  high for thin-minutes players - an age curve conditioned on minutes played
+  (playing vs. not) would likely beat both for the carried path.
 - Betting backtester: the favourite-side edge (the 1.0-1.5 odds bucket in the
   table above - small-n and it has swung between +2% and +12% across reruns)
   is worth re-checking as more test-set seasons accumulate before trusting it
