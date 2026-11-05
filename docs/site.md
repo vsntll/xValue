@@ -199,6 +199,10 @@ saw "site unchanged."
   (The ledger records the site's Dixon-Coles match odds - what the site
   actually publishes. Putting the outcome classifier on it needs pre-match
   feature rows for unplayed fixtures in `build_match_model_table.py`.)
+- **With the confirmed XI**: `predictions_ledger_xi.csv`, appended by the
+  matchday workflow ~1h before kickoff (`src/matchday_rescore.py`), scored the
+  same way - plain odds vs XI-adjusted odds vs the closing market on the same
+  matches (`scoreboard_xi()`).
 - **Calibration**: a reliability diagram of the outcome classifier's
   out-of-sample test-set (2024-26) probabilities in 10 bins per outcome, plus
   the largest draw probability it ever gives (~0.38 - it never favours a draw).

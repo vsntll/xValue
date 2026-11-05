@@ -70,6 +70,16 @@ py -3.11 src/build_sqlite_db.py   -> data/processed/xvalue.db  (read-only SQL mi
 The SQLite mirror is local-only: it's gitignored and not built in CI (~150 MB,
 over GitHub's 100 MB file limit, and nothing in the pipeline reads it).
 
+## Matchday re-score (automatic)
+
+`.github/workflows/matchday.yml` (every 30 min): `src/matchday_due.py` (stdlib
+only - exits in seconds unless a big-5 league match kicks off within ~2 h), then
+`src/matchday_rescore.py` re-scores matches whose FotMob XI is confirmed and
+appends to `data/processed/predictions_ledger_xi.csv`. The adjustment it applies
+comes from `src/fit_lineup_adjustment.py` (re-fit occasionally:
+`py -3.11 src/fit_lineup_adjustment.py --refit`, ~12 min; without `--refit` it
+reuses `dc_walk_lambdas.csv`). See `docs/models.md`.
+
 ## 5. Tests, model scores + regression gate
 
 ```

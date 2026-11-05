@@ -425,6 +425,33 @@ arrived).
   either. That makes a matchday re-score on the confirmed XI worth having -
   keyed on the share of top-3 value missing, not on the star alone.
 
+## Matchday re-score on the confirmed XI  (`src/fit_lineup_adjustment.py`, `src/matchday_rescore.py`)
+
+The site's Dixon-Coles odds never see a lineup. The adjustment:
+
+    xg_side' = xg_side × exp(OWN × own_top3_missing_share + OPP × opponent_top3_missing_share)
+
+fitted by Poisson likelihood on walk-forward (leak-free, refit every 28 days)
+Dixon-Coles expected goals for 2021-24 league matches, and evaluated untouched on
+2024-26 (`data/processed/lineup_adjustment.json`):
+
+- **OWN = −0.126**: a side missing all of its top-3 by value scores ~12% fewer
+  goals than expected; **OPP = +0.088**: a side scores ~9% more when the
+  *opponent* is missing all of its top-3.
+- Out of sample (2024-26, 3,327 matches): 1X2 log-loss **0.9983 → 0.9949**,
+  a gain of **0.0034 (paired-bootstrap 95% CI 0.0016 .. 0.0053)** - small, but
+  clearly not noise. (Independent-Poisson grids here, so the plain number is
+  above the site's Dixon-Coles; the comparison is like for like.)
+
+Live: `.github/workflows/matchday.yml` runs every 30 minutes; a stdlib-only
+check (`matchday_due.py`) exits unless a big-5 league match kicks off within
+~2 hours. For those whose FotMob lineup is confirmed (`lineupType` "standard" -
+before that FotMob serves a "predicted" XI, which is ignored),
+`matchday_rescore.py` appends the plain and XI-adjusted odds to the append-only
+`predictions_ledger_xi.csv`; the Track Record tab scores both against results
+and the closing market. Opening matchdays are skipped (no squad history in the
+45-day window yet).
+
 ## Obvious next improvements
 
 - **Value model → 0.95**: the has-prev segment is already at 0.90 (Transfermarkt's
@@ -439,9 +466,10 @@ arrived).
 - Outcome model: `xi_value_ratio` (Step 11) only closes the gap for matches
   already played or scored near kickoff, not the model's normal day(s)-ahead
   predictions - confirmed lineups / injuries are still the sliver Bet365's
-  closing line has that this model doesn't. The lineup-absence backtest
-  above says the confirmed XI is worth using - via the share of the top-3's
-  value missing, not the single star.
+  closing line has that this model doesn't. The lineup-absence backtest and
+  the matchday re-score above now use the confirmed XI for the site's odds;
+  folding the same top-3-missing share into the classifier's features is the
+  next step.
 - A live poller / in-play scoring service on top of `live_win_prob.py`,
   backed by the FotMob `matchDetails` clock (`d["general"]`) - the backtest
   validates the math; nothing polls a live match yet.
