@@ -28,6 +28,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import model_metrics  # noqa: E402
 from live.schema import deaccent, normalize_team  # noqa: E402
 from sklearn.base import clone
 from sklearn.compose import ColumnTransformer
@@ -463,18 +464,31 @@ def main() -> None:
           f"{np.mean(np.maximum(best_pred, act) / np.minimum(best_pred, act) <= 2):.0%}")
 
     # segment diagnostics - error by value band and by group
-    for lbl, m in [("outfield", (te["pos"] != "GK").to_numpy()),
-                   ("goalkeepers", (te["pos"] == "GK").to_numpy()),
-                   ("with prev value", (te["has_any_prev"] == 1).to_numpy()),
-                   ("cold start", (te["has_any_prev"] == 0).to_numpy()),
-                   ("mid  EUR3-40M", ((act >= 3e6) & (act < 40e6))),
-                   ("high EUR40-100M", ((act >= 40e6) & (act < 100e6))),
-                   ("elite EUR100M+", (act >= 100e6))]:
+    segments = {}
+    for key, lbl, m in [("outfield", "outfield", (te["pos"] != "GK").to_numpy()),
+                        ("goalkeepers", "goalkeepers", (te["pos"] == "GK").to_numpy()),
+                        ("with_prev", "with prev value", (te["has_any_prev"] == 1).to_numpy()),
+                        ("cold_start", "cold start", (te["has_any_prev"] == 0).to_numpy()),
+                        ("mid", "mid  EUR3-40M", ((act >= 3e6) & (act < 40e6))),
+                        ("high", "high EUR40-100M", ((act >= 40e6) & (act < 100e6))),
+                        ("elite", "elite EUR100M+", (act >= 100e6))]:
         if m.sum():
             bias = np.median(best_pred[m] / act[m])
-            print(f"  [{lbl:16}] n={m.sum():4d}  R2(log)="
-                  f"{r2_score(te['y'][m], np.log1p(best_pred[m])):.3f}  "
+            seg_r2 = r2_score(te["y"][m], np.log1p(best_pred[m]))
+            print(f"  [{lbl:16}] n={m.sum():4d}  R2(log)={seg_r2:.3f}  "
                   f"medAPE={np.median(ape[m]):.0%}  pred/listed(med)={bias:.2f}")
+            segments[key] = {"n": int(m.sum()), "r2_log": model_metrics.r(seg_r2),
+                             "medape": model_metrics.r(np.median(ape[m])),
+                             "pred_over_listed": model_metrics.r(bias, 3),
+                             "share": model_metrics.r(m.mean(), 3)}
+    model_metrics.update("value", {
+        "test_seasons": list(TEST_SEASONS), "n_test": int(len(te)),
+        "r2_log": model_metrics.r(r2),
+        "mae_eur": round(float(mean_absolute_error(act, best_pred))),
+        "medape": model_metrics.r(np.median(ape)),
+        "within_2x": model_metrics.r(np.mean(np.maximum(best_pred, act) / np.minimum(best_pred, act) <= 2)),
+        "segments": segments,
+    })
 
     # predictions for EVERY eligible row (all seasons incl. 2026-27, GK included,
     # peer-imputed rows flagged) so the site has a value for every current player.
