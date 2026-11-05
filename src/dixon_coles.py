@@ -7,9 +7,13 @@ are fitted by weighted maximum likelihood over recent matches
 (weight = exp(-xi * days_ago)).
 
 Used two ways downstream:
-  * `fit_predict_walk` - refit periodically, predict each future match's W/D/L
-    from only prior matches (leak-free) -> a column for the outcome model.
-  * on xG instead of goals -> an "xG Dixon-Coles" variant.
+  * `fit` / `match_probs` - the site's published match odds (export_site_data.py)
+    and the forward-test ledger.
+  * `fit_predict_walk` - refit every 28 days, predict each match's W/D/L from
+    only prior matches (leak-free) -> dixon_coles_probs.csv (main() below), the
+    streak game's per-match reveal. (An xG-fitted variant was dropped: on the
+    2024-26 test set it scored 1.079 log-loss, worse than the base rate - xG
+    coverage is too patchy across competitions to fit team strengths on.)
 """
 
 from __future__ import annotations
@@ -117,40 +121,48 @@ def _prep(path) -> pd.DataFrame:
     return m.sort_values("Date")
 
 
+OUT = PROC / "dixon_coles_probs.csv"
+KEY = ["season", "Date", "HomeTeam", "AwayTeam"]
+
+
 def main() -> None:
-    """Emit dc_pA/pD/pH and dcx_* (xG variant) for every league match."""
+    """Leak-free walk-forward dc_pA/pD/pH for every big-5 league match since
+    2020-08 -> dixon_coles_probs.csv (the streak game's reveal). Incremental: a
+    finished match's walk-forward probability never changes, so rows already in
+    the file are kept and only new matches are fitted (seconds on a refresh);
+    --full recomputes everything (~20 min)."""
     allm = _prep(PROC / "matches_all.csv")
     warm = ROOT / "data" / "processed" / "elo_warmup.csv"
     if warm.exists():
         w = pd.read_csv(warm)
-        w["Date"] = pd.to_datetime(w["Date"], dayfirst=True, errors="coerce")
+        w["Date"] = pd.to_datetime(w["Date"], dayfirst=True, format="mixed", errors="coerce")
         w["h"] = w["HomeTeam"].map(normalize_team)
         w["a"] = w["AwayTeam"].map(normalize_team)
-        w["HxG"] = np.nan
-        w["AxG"] = np.nan
         allm = pd.concat([w.dropna(subset=["Date"]), allm], ignore_index=True).sort_values("Date")
 
     lg = allm[allm.get("competition_type", "league").fillna("league") == "league"].copy()
     lg = lg[lg["season"].notna()] if "season" in lg else lg
     tgt = lg[lg["Date"] >= "2020-08-01"].reset_index(drop=True)
 
-    P = fit_predict_walk(allm, tgt)
-    tgt[["dc_pA", "dc_pD", "dc_pH"]] = P.round(4)
-    hasx = allm.dropna(subset=["HxG", "AxG"])
-    Px = fit_predict_walk(hasx, tgt, gcols=("HxG", "AxG"))
-    tgt[["dcx_pA", "dcx_pD", "dcx_pH"]] = Px.round(4)
-
-    keep = ["season", "Date", "HomeTeam", "AwayTeam", "FTR",
-            "dc_pA", "dc_pD", "dc_pH", "dcx_pA", "dcx_pD", "dcx_pH"]
-    tgt[keep].to_csv(PROC / "dixon_coles_probs.csv", index=False)
-    print(f"wrote {PROC / 'dixon_coles_probs.csv'}  ({len(tgt)} matches)")
+    prior = pd.DataFrame()
+    if OUT.exists() and "--full" not in sys.argv:
+        prior = pd.read_csv(OUT, parse_dates=["Date"])
+        prior = prior[[c for c in prior.columns if not c.startswith("dcx_")]]   # dropped xG variant
+        have = set(map(tuple, prior[KEY].astype(str).to_numpy()))
+        tgt = tgt[[k not in have for k in map(tuple, tgt[KEY].astype(str).to_numpy())]].reset_index(drop=True)
+    print(f"walk-forward Dixon-Coles for {len(tgt):,} new league matches ({len(prior):,} kept)", flush=True)
+    if len(tgt):
+        tgt[["dc_pA", "dc_pD", "dc_pH"]] = fit_predict_walk(allm, tgt).round(4)
+    out = pd.concat([prior, tgt[KEY + ["FTR", "dc_pA", "dc_pD", "dc_pH"]]], ignore_index=True)
+    out = out.drop_duplicates(KEY, keep="last").sort_values(["Date", "HomeTeam"])
+    out.to_csv(OUT, index=False, date_format="%Y-%m-%d")
+    print(f"wrote {OUT}  ({len(out):,} matches, seasons {sorted(out['season'].unique())})")
 
     from sklearn.metrics import log_loss
-    te = tgt[tgt["season"].isin(["2024-25", "2025-26"])]
-    for name, cols in [("dc", ["dc_pA", "dc_pD", "dc_pH"]),
-                       ("dc-xg", ["dcx_pA", "dcx_pD", "dcx_pH"])]:
-        print(f"  {name:6} test log-loss "
-              f"{log_loss(te['FTR'], te[cols].to_numpy(), labels=['A', 'D', 'H']):.3f}")
+    te = out[out["season"].isin(["2024-25", "2025-26"])].dropna(subset=["FTR"])
+    if len(te):
+        print(f"  dc test log-loss {log_loss(te['FTR'], te[['dc_pA', 'dc_pD', 'dc_pH']].to_numpy(), labels=['A', 'D', 'H']):.3f}"
+              f"  (n={len(te):,})")
 
 
 if __name__ == "__main__":
