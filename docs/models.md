@@ -5,7 +5,7 @@
 
 | | value model | outcome (pure) | outcome (hybrid) |
 | --- | --- | --- | --- |
-| metric | R²(log) **0.89**, MAE **€4.2M**, within-2x **91%**, medAPE 22% | log-loss **0.976**, acc **0.534** | log-loss **0.973**, acc **0.534** |
+| metric | R²(log) **0.89**, MAE **€4.2M**, within-2x **91%**, medAPE 22% | log-loss **0.982**, acc **0.529** | log-loss **0.974**, acc **0.533** |
 | v1 was | 0.70 / €9.1M / 68% | 1.014 / 0.511 | — |
 | reference | — | Bet365 closing 0.971 / 0.539 | (uses market opening odds as a feature) |
 <!-- /metrics:models-summary -->
@@ -37,9 +37,16 @@ or salaries.
 predictions are clipped there in log space and the elite gravitate toward it.
 <!-- metrics:models-elite -->
 `medAPE` for the **€100M+ band is 18%** (was ~30-40% before the cap - the trees squashed
-the tail toward the mean), though the ~38-row band sits slightly *under* the
-listed values (median pred/listed 0.83). Mid-range (€3-40M) predictions carry a
-**median pred/listed of 0.99** but individual scatter stays ~21% —
+the tail toward the mean). Grouped by **listed** value the bands look underpriced -
+median pred/listed 0.87 at €40-100M, 0.82 at €100M+ - but that is mostly selection:
+picking players by a high listing picks the ones listed above what their output
+supports, so any noisy model lands below 1 there. Grouped by **predicted** value
+(the calibration check) it's 1.00 listed/predicted at €3-40M, 1.00 at
+€40-100M and 1.14 at €100M+ (only 22 players) - calibrated except a modest
+shortfall at the very top, where training data is thinnest (1-13 €100M+ players a
+season before 2024). A recalibration on out-of-fold predictions was tried and not
+adopted: it couldn't fix the top without biasing the mid-range. Mid-range
+individual scatter stays ~21% —
 <!-- /metrics:models-elite -->
 that's roughly how much a crowd-sourced value moves between updates, and the
 season stats don't explain the revisions, so "every mid-range player within 10%"
@@ -109,7 +116,7 @@ Predicts a player's market value from his season + his value history.
 <!-- metrics:models-value-result -->
 - **Result**: R2(log) **0.89**, MAE **€4.2M**, medAPE **22%**, within-2x
   **91%** (0.90 with a prior value, 0.64 cold-start on its own stack -
-  medAPE 42% - 0.87 keepers). €100M+ band medAPE **18%**, median pred/listed **0.83**.
+  medAPE 42% - 0.87 keepers). €100M+ band medAPE **18%**, median pred/listed **0.82**.
 - **Thin-minutes players** (< 8 full 90s - priced by carrying last season's
   value forward one year along the age curve, not by the trees; 40% of all
   published predictions, never in the test set): R2(log) **0.69**, medAPE **28%**, within-2x 77%
@@ -174,16 +181,16 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
   | model | acc | log-loss |
   | --- | --- | --- |
   | base rate | 0.429 | 1.075 |
-  | logreg | 0.527 | 0.983 |
-  | hgb | 0.526 | 0.984 |
+  | logreg | 0.523 | 0.996 |
+  | hgb | 0.522 | 0.993 |
   | poisson-Skellam | 0.528 | 0.982 |
-  | poisson + xG | 0.528 | 0.981 |
-  | blend {poisson, logreg, hgb} (**pure**) | 0.534 | 0.976 |
-  | **hybrid (+ market opening odds)** | 0.534 | 0.973 |
+  | poisson + xG | 0.529 | 0.981 |
+  | blend {poisson, logreg, hgb} (**pure**) | 0.529 | 0.982 |
+  | **hybrid (+ market opening odds)** | 0.533 | 0.974 |
   | Bet365 closing | 0.539 | 0.971 |
 
-  The pure model closes ~94% of the base-rate → bookmaker gap on log-loss; the
-  hybrid, which adds the market's *opening* line as a feature, closes ~98% of
+  The pure model closes ~89% of the base-rate → bookmaker gap on log-loss; the
+  hybrid, which adds the market's *opening* line as a feature, closes ~97% of
   it - the last sliver is information the market has and we don't
   (confirmed lineups, injuries, sharp money).
 <!-- /metrics:models-outcome-table -->
