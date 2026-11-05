@@ -139,3 +139,20 @@ def test_xi_ledger_snapshots_precede_kickoff():
     assert (snap < pd.to_datetime(led["kickoff_utc"])).all(), "an XI snapshot taken at/after kickoff"
     for cols in (["p_home", "p_draw", "p_away"], ["p_home_base", "p_draw_base", "p_away_base"]):
         assert np.allclose(led[cols].sum(axis=1), 1.0, atol=5e-4)
+
+
+def test_dixon_coles_probs_cover_league_matches():
+    """The streak game reads dixon_coles_probs.csv for every league match; a
+    match missing from it silently falls back to a flat 45/26/29 prior. It was
+    once three leagues and two months stale - keep it complete."""
+    from live.schema import normalize_team
+    dc, ma = PROC / "dixon_coles_probs.csv", PROC / "matches_all.csv"
+    if not (dc.exists() and ma.exists()):
+        pytest.skip("needs dixon_coles_probs.csv + matches_all.csv")
+    d = pd.read_csv(dc)
+    m = pd.read_csv(ma, low_memory=False)
+    m = m[(m["competition_type"] == "league") & m["FTR"].notna() & (m["Date"] >= "2020-08-01")]
+    key = lambda f: set(zip(f["season"], f["HomeTeam"].map(normalize_team), f["AwayTeam"].map(normalize_team)))  # noqa: E731
+    covered = len(key(m) & key(d)) / len(key(m))
+    assert covered >= 0.95, f"only {covered:.1%} of league matches have Dixon-Coles probabilities"
+    assert np.allclose(d[["dc_pA", "dc_pD", "dc_pH"]].sum(axis=1), 1.0, atol=5e-4)
