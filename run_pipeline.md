@@ -1,8 +1,10 @@
 # Running the pipeline
 
-All scripts run under **Python 3.11** (`py -3.11 ...`). Raw data caches under
-`data/raw/` and `data/*_cache/`; built tables land in `data/processed/`.
-Everything is resumable - scripts skip work already cached.
+All scripts run under **Python 3.11** (`py -3.11 ...`). Pulled and built
+tables land in `data/processed/` (committed); `data/raw/` and
+`data/understat_cache/` are gitignored scratch. Everything is resumable - the
+match-level pulls skip every match already in their committed CSVs, and the
+FotMob / ESPN pulls take `--budget-min` to cap fetching time per run.
 
 ## 1. Ingest (slow; browser scrapes need a visible Chrome window)
 
@@ -15,14 +17,17 @@ py -3.11 src/pull_wfr_advanced.py                       # advanced player stats 
 py -3.11 src/pull_understat.py                          # per-match + per-player xG, all big-5 (Understat)
 py -3.11 src/pull_transfermarkt.py                      # market values 2020-23    (mirror)
 py -3.11 src/pull_transfermarkt_scrape.py               # market values 2023-26    (TM, click the WAF captcha once)
-py -3.11 src/pull_sofascore_values.py                   # current-season values    (Sofascore)
+py -3.11 src/pull_sofascore_values.py                   # current-season values    (Sofascore; stops at the first IP block and keeps the last good CSV)
 py -3.11 src/pull_live.py --season 2026-27              # live season, all comps   (ESPN+fdorg+Understat+FotMob)
 py -3.11 src/pull_live.py --seasons 2024-25 2025-26 --comps UCL UEL UECL FA EFL DFB CDR --sources espn fotmob
-py -3.11 src/pull_understat_player_matches.py           # per-player per-match xG/xA (Understat, ~1-1.5h, resumable)
+py -3.11 src/pull_understat_player_matches.py           # per-player per-match xG/xA (Understat, ~1-1.5h first time; then only games not yet in the CSV)
 py -3.11 src/pull_fotmob_players.py --current           # per-player SoT/fouls/tackles/passes/... (FotMob, current season; only uncommitted matches are fetched)
 py -3.11 src/pull_fotmob_players.py --backfill-passes 2024-25 2025-26 2026-27   # one-off: re-fetch committed matches that predate passes_completed/attempted (resumable, skips done ones)
 py -3.11 src/pull_international_results.py             # every men's international result since 1872 (martj42 dataset, one download)
-py -3.11 src/pull_fotmob_internationals.py             # per-player international box scores since 2024-07-01 (FotMob, cached; first run ~1h)
+py -3.11 src/pull_fotmob_internationals.py             # per-player international box scores since 2024-07-01 (FotMob; only matches not yet committed)
+py -3.11 src/pull_espn_players.py --current             # per-player box scores, five leagues (ESPN) - second source for the cross-check
+py -3.11 src/verify_player_matches.py --current         # cross-check FotMob rows vs Understat / ESPN / football-data (internationals: martj42) -> `verified` column
+py -3.11 src/understat_gapfill.py                       # while Understat is down: rebuild its missing matches from FotMob -> understat_gapfill_*.csv
 ```
 
 ## 2. Build the modelling tables
@@ -51,7 +56,7 @@ py -3.11 src/train_outcome_model.py --hybrid -> outcome_model_predictions_hybrid
 
 ```
 py -3.11 src/build_national_elo.py -> national_team_elo.csv  (World Football Elo over all international history - opponent strength for international appearances)
-py -3.11 src/build_player_elo.py   -> player_elo.csv  (genuine, no-value-model player Elo, last 3 seasons, role-weighted attack/defence/passing - needs match_model_table.csv + understat_player_matches.csv from steps 1-2, and FotMob's per-match cache for the def/pass components, plus fotmob_intl_player_matches.csv + national_team_elo.csv for international appearances; prints the FotMob join, pass-data and international coverage)
+py -3.11 src/build_player_elo.py   -> player_elo.csv  (genuine, no-value-model player Elo, last 3 seasons, role-weighted attack/defence/passing - needs match_model_table.csv + understat_player_matches.csv (+ the FotMob gap-fill) from steps 1-2, and FotMob's committed per-match rows (data/processed/fotmob/) for the def/pass components, plus fotmob_intl_player_matches.csv + national_team_elo.csv for international appearances; prints the FotMob join, pass-data and international coverage)
 py -3.11 src/export_site_data.py   -> site/data.json + site/index.html
 ```
 
@@ -61,6 +66,9 @@ py -3.11 src/export_site_data.py   -> site/data.json + site/index.html
 ```
 py -3.11 src/build_sqlite_db.py   -> data/processed/xvalue.db  (read-only SQL mirror of every processed CSV, one table per file)
 ```
+
+The SQLite mirror is local-only: it's gitignored and not built in CI (~150 MB,
+over GitHub's 100 MB file limit, and nothing in the pipeline reads it).
 
 ## 5. Dashboard + source health (optional, local)
 
@@ -80,12 +88,24 @@ schema drift (`DEGRADED` / `ERROR`) does.
 **Automatic (every 2 days):** `.github/workflows/weekly-refresh.yml` runs on a
 `*/2` cron (and on manual dispatch). It pulls everything that doesn't need a
 browser - football-data.co.uk results, live fixtures + match stats (ESPN /
-football-data.org / FotMob / Understat), Sofascore market values - **refreshes
-the current season's player stats from Understat + FotMob** (`pull_understat.py
---current`, `pull_fotmob_players.py --current`, then `build_current_season_stats.py`),
-rebuilds the match table, retrains both models, regenerates `site/index.html`,
-and commits the refreshed `data/processed/` **and** `site/index.html` back to
-`master`.
+football-data.org / FotMob / Understat), Sofascore market values, FotMob + ESPN
+per-player box scores, internationals - cross-checks the per-player rows,
+fills Understat's gaps from FotMob, **refreshes the current season's player
+stats** (`build_current_season_stats.py`), rebuilds the match table, retrains
+both models, regenerates `site/index.html`, and commits the refreshed
+`data/processed/` **and** `site/index.html` back to the branch it ran on. Only a
+`master` run triggers the Pages deploy, so a manual dispatch on a test branch
+never publishes the site. A run takes ~15 min against the 45-min job limit.
+
+Every pull step is `continue-on-error`, so a source being down never stops the
+refresh - it keeps its committed data and catches up on the next run that gets
+through (the match-level pulls fetch everything they're missing). The FotMob /
+ESPN pulls cap their fetching (`--budget-min`) and each request is hard-capped at
+45 s (`src/net.py`), with step timeouts as a backstop. Python output is
+unbuffered, so a cancelled step still shows how far it got. Sofascore is the
+exception: it only exposes current values, so a blocked run's values are stale,
+not recoverable - set the `SOFASCORE_PROXY` secret (a residential proxy) to
+get fresh values from CI.
 
 `build_current_season_stats.py` rewrites only the current season's rows in
 `fbref_player_season_stats.csv`: goals / assists / minutes / MP / cards / shots /
@@ -114,7 +134,10 @@ FotMob, in Understat's own shape and ids (`understat_gapfill_*.csv`, tagged
 `source=fotmob`); everything that used to read `understat_*.csv` now reads it
 through `understat_gapfill.read()`. The Understat files themselves are left
 untouched, and gap rows drop out on their own once Understat publishes those
-games. Setup: just add repo secret `FOOTBALL_DATA_ORG_KEY`.
+games. A season keeps being pulled until Understat's fixture list has no
+unplayed games, so an outage that outlasts the season still backfills.
+
+Setup: add repo secret `FOOTBALL_DATA_ORG_KEY`; optionally `SOFASCORE_PROXY`.
 
 **Manual (rarely — only the deep FBref columns nothing currently reads, and
 Transfermarkt values; needs a real Chrome window):** re-scrape the full FBref
