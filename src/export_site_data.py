@@ -1132,6 +1132,7 @@ def main() -> None:
         "methodology_example": methodology_example,
         "games": games,
         "ledger": ledger,
+        "ledger_xi": prediction_ledger.scoreboard_xi(),
         "calibration": calibration,
         "notes": {
             "current_stats": "2026-27 FBref season-to-date stats (min 45 minutes played).",

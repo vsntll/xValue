@@ -1559,6 +1559,14 @@
                       '<td class="num num-col">'+f(r.p)+'</td><td class="num num-col">'+f(r.m)+'</td><td>'+esc(r.result)+'</td></tr>';
              }).join('') + '</tbody></table></div>';
     }
+    var X = DATA.ledger_xi;
+    if(X && X.n){
+      out += '<div class="tr-note"><b>With the confirmed XI</b> (matchday re-score ~1h before kickoff, ' + X.n +
+             ' matches): plain odds ' + X.base_ll.toFixed(3) + ' &rarr; XI-adjusted ' + X.xi_ll.toFixed(3) +
+             ' log-loss, vs the closing market ' + X.market_ll.toFixed(3) + '.</div>';
+    } else if(X && X.pending){
+      out += '<div class="tr-note">' + X.pending + ' matches re-scored on their confirmed XI, waiting for results.</div>';
+    }
     out += '</div>';
 
     // --- calibration ---
