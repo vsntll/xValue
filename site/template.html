@@ -304,6 +304,18 @@
 
   /* ---------- methodology tab ---------- */
   .method-intro{ max-width:70ch; color:var(--text-dim); font-size:14.5px; margin-bottom:22px; }
+  /* ---------- track record ---------- */
+  .tr-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(380px,1fr)); gap:16px; margin-bottom:22px; align-items:start; }
+  .tr-card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+            box-shadow:var(--shadow); padding:16px 18px; }
+  .tr-card h3{ font-size:19px; margin-bottom:4px; }
+  .tr-card .rk-sub{ display:block; font-family:var(--font-body); font-size:12px; color:var(--text-faint);
+                    font-weight:500; margin-bottom:10px; }
+  .tr-chart{ width:100%; height:auto; display:block; }
+  .tr-chart text{ font-family:var(--font-mono); font-size:10px; fill:var(--text-faint); }
+  .tr-legend{ display:flex; gap:14px; font-size:12px; color:var(--text-dim); margin-top:6px; flex-wrap:wrap; }
+  .tr-legend i{ display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; vertical-align:-1px; }
+  .tr-note{ font-size:12.5px; color:var(--text-dim); margin-top:10px; max-width:75ch; }
   .method-card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
                 box-shadow:var(--shadow); padding:20px 22px; margin-bottom:16px; }
   .method-card .num-tag{ display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px;
@@ -446,6 +458,7 @@
       <button class="tab-btn" data-tab="rankings">Rankings</button>
       <button class="tab-btn" data-tab="sim">Match Sim</button>
       <button class="tab-btn" data-tab="streak">Streak</button>
+      <button class="tab-btn" data-tab="track">Track Record</button>
       <button class="tab-btn" data-tab="method">How It Works</button>
     </div>
     <span class="asof" id="asofLabel"></span>
@@ -626,6 +639,15 @@
     <div id="streakBody"></div>
   </section>
 
+  <section id="tab-track" hidden>
+    <p class="method-intro">Two honesty checks. <b>Forward test</b>: on every refresh the site freezes its
+      pre-match odds for each upcoming league fixture in an append-only ledger (timestamp + model-version hash),
+      and once the match is played those frozen odds are scored against the result and against the bookmakers'
+      de-vigged average <i>closing</i> line - the market's final, best-informed price. Lower log-loss is better.
+      <b>Calibration</b>: when the outcome model says 60%, does it happen 60% of the time?</p>
+    <div id="trackBody"></div>
+  </section>
+
   <section id="tab-method" hidden>
     <p class="method-intro">Every number on this page traces back to real matches, real stats and one
       fitted model per task — no black box, and no market value anywhere in the Elo ratings. Below is
@@ -712,13 +734,14 @@
       tabBtns.forEach(function(x){x.classList.remove('active');});
       b.classList.add('active');
       var t = b.getAttribute('data-tab');
-      ['players','fixtures','teams','screen','rankings','sim','streak','method'].forEach(function(name){
+      ['players','fixtures','teams','screen','rankings','sim','streak','track','method'].forEach(function(name){
         document.getElementById('tab-'+name).hidden = t!==name;
       });
       if(t==='sim' && !simInited){ simInited = true; initSim(); }
       if(t==='streak' && !streakInited){ streakInited = true; initStreak(); }
       if(t==='rankings' && !rankingsInited){ rankingsInited = true; initRankings(); }
       if(t==='screen' && !screenInited){ screenInited = true; initScreen(); }
+      if(t==='track' && !trackInited){ trackInited = true; renderTrack(); }
     });
   });
 
@@ -1464,6 +1487,98 @@
         '<td class="num num-col">'+eur(p.listed_value_eur)+'</td>' +
         '<td class="num num-col"><span class="trophy-outcome '+cls+'">'+num(p.ratio,2)+'x</span></td></tr>';
     }).join('');
+  }
+
+
+  // ---------- track record: forward-test ledger + calibration ----------
+  var trackInited = false;
+  function svgLines(series, opts){
+    // series: [{name, color, pts:[[x,y],...]}] with x,y already in data units
+    var W = 520, H = 240, L = 44, R = 12, T = 12, B = 30;
+    var xs = [], ys = [];
+    series.forEach(function(s){ s.pts.forEach(function(p){ xs.push(p[0]); ys.push(p[1]); }); });
+    var x0 = opts.x0!=null ? opts.x0 : Math.min.apply(null, xs), x1 = opts.x1!=null ? opts.x1 : Math.max.apply(null, xs);
+    var y0 = opts.y0!=null ? opts.y0 : Math.min.apply(null, ys), y1 = opts.y1!=null ? opts.y1 : Math.max.apply(null, ys);
+    if(x1===x0) x1 = x0 + 1; if(y1===y0){ y0 -= .05; y1 += .05; }
+    function sx(v){ return L + (v-x0)/(x1-x0)*(W-L-R); }
+    function sy(v){ return T + (1-(v-y0)/(y1-y0))*(H-T-B); }
+    var g = '';
+    (opts.yticks||[]).forEach(function(v){
+      g += '<line x1="'+L+'" x2="'+(W-R)+'" y1="'+sy(v)+'" y2="'+sy(v)+'" stroke="var(--border)" stroke-width="1"/>' +
+           '<text x="'+(L-6)+'" y="'+(sy(v)+3)+'" text-anchor="end">'+v.toFixed(opts.yd==null?2:opts.yd)+'</text>';
+    });
+    (opts.xticks||[]).forEach(function(t){
+      g += '<text x="'+sx(t[0])+'" y="'+(H-10)+'" text-anchor="'+(t[2]||'middle')+'">'+esc(t[1])+'</text>';
+    });
+    if(opts.diag) g += '<line x1="'+sx(x0)+'" y1="'+sy(y0)+'" x2="'+sx(x1)+'" y2="'+sy(y1)+'" stroke="var(--text-faint)" stroke-dasharray="4 4"/>';
+    series.forEach(function(s){
+      var d = s.pts.map(function(p,i){ return (i?'L':'M')+sx(p[0]).toFixed(1)+','+sy(p[1]).toFixed(1); }).join(' ');
+      g += '<path d="'+d+'" fill="none" stroke="'+s.color+'" stroke-width="2.2" stroke-linejoin="round"/>';
+      if(opts.dots) s.pts.forEach(function(p){ g += '<circle cx="'+sx(p[0])+'" cy="'+sy(p[1])+'" r="3.2" fill="'+s.color+'"/>'; });
+    });
+    var leg = '<div class="tr-legend">' + series.map(function(s){
+      return '<span><i style="background:'+s.color+'"></i>'+esc(s.name)+'</span>'; }).join('') + '</div>';
+    return '<svg class="tr-chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(opts.label||'chart')+'">'+g+'</svg>' + leg;
+  }
+
+  function renderTrack(){
+    var L = DATA.ledger, C = DATA.calibration, out = '';
+    // --- forward-test ledger ---
+    out += '<div class="tr-grid"><div class="tr-card"><h3>Forward test: frozen pre-match odds vs the closing market' +
+           '<span class="rk-sub">' + (L ? 'Ledger running since ' + esc(String(L.since).slice(0,10)) : 'No ledger yet') + '</span></h3>';
+    if(!L || !L.n){
+      out += '<div class="tr-note">' + (L ? '<b>' + (L.pending||0) + '</b> fixtures have frozen pre-match odds and are waiting for kickoff. ' +
+             'The scoreboard fills in as they are played - every number here will be one the site published before the game.' :
+             'The first snapshot is taken on the next refresh.') + '</div>';
+    } else {
+      var gap = L.model_ll - L.market_ll;
+      out += '<div class="tiles" style="margin:6px 0 12px; grid-template-columns:repeat(3,minmax(0,1fr));">' +
+        '<div class="tile"><div class="k">Matches scored</div><div class="v num">'+L.n+'</div><div class="d">'+(L.pending||0)+' awaiting kickoff</div></div>' +
+        '<div class="tile"><div class="k">Model log-loss</div><div class="v num">'+L.model_ll.toFixed(3)+'</div><div class="d">accuracy '+pct(L.model_acc)+'</div></div>' +
+        '<div class="tile"><div class="k">Closing market</div><div class="v num">'+L.market_ll.toFixed(3)+'</div><div class="d">'+(gap>0?'+':'')+gap.toFixed(3)+' model vs market</div></div>' +
+        '</div>';
+      var ser = L.series || [];
+      if(ser.length > 1){
+        var pts = function(k){ return ser.map(function(r,i){ return [i, r[k]]; }); };
+        var lo = Math.min.apply(null, ser.map(function(r){ return Math.min(r.model, r.market); }));
+        var hi = Math.max.apply(null, ser.map(function(r){ return Math.max(r.model, r.market); }));
+        var step = (hi-lo) > .2 ? .1 : .05, ticks = [];
+        for(var v = Math.floor(lo/step)*step; v <= hi + 1e-9; v += step) ticks.push(v);
+        var xt = [[0, ser[0].date.slice(5), 'start'], [ser.length-1, ser[ser.length-1].date.slice(5), 'end']];
+        out += svgLines([{name:'xValue (frozen pre-match odds)', color:'var(--accent)', pts:pts('model')},
+                         {name:'Closing market, de-vigged', color:'var(--accent-2)', pts:pts('market')}],
+                        {yticks:ticks, xticks:xt, label:'running log-loss', y0:ticks[0], y1:ticks[ticks.length-1]});
+        out += '<div class="tr-note">Running season log-loss after each matchday (lower is better).</div>';
+      }
+      out += '</div><div class="tr-card"><h3>Latest scored matches<span class="rk-sub">frozen odds (home / draw / away) vs closing market</span></h3>' +
+             '<div class="table-wrap" style="box-shadow:none;"><table style="min-width:0"><thead><tr><th>Date</th><th>Match</th>' +
+             '<th class="num-col">xValue</th><th class="num-col">Market</th><th>Result</th></tr></thead><tbody>' +
+             (L.recent||[]).map(function(r){
+               var f = function(a){ return a.map(function(x){ return Math.round(x*100); }).join(' / '); };
+               return '<tr><td class="num">'+esc(r.date.slice(5))+'</td><td>'+esc(r.home)+' v '+esc(r.away)+'</td>' +
+                      '<td class="num num-col">'+f(r.p)+'</td><td class="num num-col">'+f(r.m)+'</td><td>'+esc(r.result)+'</td></tr>';
+             }).join('') + '</tbody></table></div>';
+    }
+    out += '</div>';
+
+    // --- calibration ---
+    if(C && C.bins){
+      var cols = {home:'var(--win)', draw:'var(--draw)', away:'var(--loss)'};
+      var ser2 = ['home','draw','away'].map(function(k){
+        return {name: {home:'Home win', draw:'Draw', away:'Away win'}[k], color: cols[k],
+                pts: C.bins[k].map(function(b){ return [b.pred, b.actual]; })};
+      });
+      out += '<div class="tr-card"><h3>Calibration: predicted vs actual<span class="rk-sub">outcome model, ' +
+             esc((C.seasons||[]).join(' + ')) + ' test set (out of sample), n=' + C.n.toLocaleString() + '</span></h3>' +
+             svgLines(ser2, {x0:0, x1:.9, y0:0, y1:.9, diag:true, dots:true, yd:1,
+                             yticks:[0,.2,.4,.6,.8], xticks:[[0,'0%'],[.2,'20%'],[.4,'40%'],[.6,'60%'],[.8,'80%']],
+                             label:'reliability diagram'}) +
+             '<div class="tr-note">Each dot is one probability bin: x = the average predicted chance, y = how often it happened. ' +
+             'On the dashed diagonal is perfectly calibrated. The draw line stops early because the model never gives a draw more than ' +
+             pct(C.max_draw) + ' - it effectively never favours a draw, which is normal for football models (draws are rarely the single most likely result).</div></div>';
+    }
+    out += '</div>';
+    document.getElementById('trackBody').innerHTML = out;
   }
 
   function renderValidation(){
