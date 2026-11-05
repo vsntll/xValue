@@ -158,6 +158,13 @@ jobs:
           python src/build_match_model_table.py
           python src/train_outcome_model.py --hybrid
 
+      # NOT continue-on-error: both training scripts write their test-set scores to
+      # data/processed/model_metrics.json; if value R²(log) or 1X2 log-loss got
+      # worse past tolerance vs the last committed scores, the run stops here and
+      # nothing is committed (src/check_model_metrics.py)
+      - name: Regression gate - fail on a worse model
+        run: python src/check_model_metrics.py
+
       - name: Build player Elo (no market-value inputs - last 3 seasons of real output)
         continue-on-error: true
         run: python src/build_player_elo.py
@@ -165,13 +172,23 @@ jobs:
       - name: Regenerate the site
         run: python src/export_site_data.py
 
+      # headline model numbers in README.md + docs/models.md, from model_metrics.json
+      - name: Write the new model scores into the docs
+        run: python src/update_doc_metrics.py
+
+      # NOT continue-on-error: invariants on the rebuilt CSVs (unique match keys,
+      # 1X2 rows summing to 1, values under the €220M cap, no row-count collapse
+      # vs the committed files) + unit tests - a failure blocks the commit
+      - name: Test the rebuilt data and models
+        run: python -m pytest -q tests
+
       - name: Commit refreshed data + site and deploy
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/processed site/index.html
+          git add data/processed site/index.html README.md docs/models.md
           if git diff --cached --quiet; then
             echo "nothing changed - nothing to commit"
           else
