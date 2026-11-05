@@ -13517,6 +13517,14 @@ season,competition_type,comp,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,
 2026-27,european,Champions League,2026-11-03,Villarreal CF,Paris Saint-Germain FC,0.0,6.0,A,0.0,4.0,,14.0,22.0,2.0,12.0,4.0,8.0,19.0,4.0,4.0,1.0,0.0,0.0,29.4,70.6,0.66,2.69,,,espn+football-data.org+fotmob
 2026-27,european,Champions League,2026-11-03,Manchester United FC,AS Roma,3.0,2.0,H,0.0,2.0,,15.0,7.0,6.0,4.0,3.0,1.0,11.0,14.0,3.0,3.0,1.0,0.0,52.4,47.6,2.7,1.6,,,espn+football-data.org+fotmob
 2026-27,european,Champions League,2026-11-03,FK Bodø/Glimt,Lille OSC,0.0,0.0,D,0.0,0.0,,4.0,9.0,4.0,2.0,3.0,4.0,12.0,8.0,0.0,1.0,0.0,0.0,50.8,49.2,0.65,0.59,,,espn+football-data.org+fotmob
+2026-27,european,Champions League,2026-11-04,PAE AEK,Real Madrid CF,2.0,3.0,A,1.0,1.0,,9.0,24.0,5.0,8.0,0.0,7.0,9.0,16.0,1.0,1.0,1.0,0.0,30.4,69.6,0.87,3.35,,,espn+football-data.org+fotmob
+2026-27,european,Champions League,2026-11-04,Fenerbahçe SK,Liverpool FC,3.0,2.0,H,1.0,1.0,,17.0,22.0,6.0,6.0,4.0,12.0,13.0,12.0,1.0,1.0,0.0,0.0,32.4,67.6,1.75,1.57,,,espn+football-data.org+fotmob
+2026-27,european,Champions League,2026-11-04,RB Leipzig,Manchester City FC,2.0,3.0,A,0.0,1.0,,14.0,12.0,6.0,5.0,5.0,3.0,20.0,7.0,4.0,2.0,0.0,0.0,35.4,64.6,0.87,2.23,,,espn+football-data.org+fotmob
+2026-27,european,Champions League,2026-11-04,SK Slavia Praha,Arsenal FC,1.0,2.0,A,0.0,2.0,,18.0,12.0,6.0,5.0,4.0,2.0,15.0,10.0,1.0,2.0,0.0,0.0,43.5,56.5,2.11,1.49,,,espn+football-data.org+fotmob
+2026-27,european,Champions League,2026-11-04,Borussia Dortmund,Real Betis Balompié,2.0,1.0,H,0.0,0.0,,15.0,11.0,6.0,4.0,2.0,5.0,15.0,13.0,4.0,4.0,0.0,0.0,52.6,47.4,2.58,0.82,,,espn+football-data.org+fotmob
+2026-27,european,Champions League,2026-11-04,FC Porto,SSC Napoli,4.0,1.0,H,1.0,1.0,,19.0,11.0,8.0,6.0,6.0,5.0,8.0,11.0,1.0,4.0,0.0,1.0,51.6,48.4,3.13,1.42,,,espn+football-data.org+fotmob
+2026-27,european,Champions League,2026-11-04,Racing Club de Lens,Como 1907,1.0,9.0,A,0.0,3.0,,11.0,18.0,3.0,12.0,5.0,5.0,12.0,11.0,2.0,0.0,0.0,0.0,42.7,57.3,0.77,4.27,,,espn+football-data.org+fotmob
+2026-27,european,Europa League,2026-11-04,Stade Rennais,Olympiacos,0.0,0.0,D,,,,9.0,12.0,4.0,3.0,3.0,3.0,15.0,11.0,1.0,0.0,0.0,0.0,42.0,58.0,0.53,0.97,,,espn+fotmob
 2026-27,league,La Liga,2026-08-15,Alaves,Getafe,3.0,0.0,H,0.0,0.0,D,18.0,6.0,8.0,2.0,5.0,3.0,16.0,13.0,4.0,3.0,0.0,1.0,51.8,48.2,2.28581,0.259705,,,football-data.co.uk
 2026-27,league,La Liga,2026-08-15,Sevilla,Vallecano,2.0,1.0,H,0.0,1.0,A,13.0,6.0,4.0,3.0,1.0,2.0,18.0,18.0,4.0,4.0,1.0,0.0,49.0,51.0,2.01841,1.91219,,,football-data.co.uk
 2026-27,league,La Liga,2026-08-16,Santander,Villarreal,2.0,2.0,D,2.0,2.0,D,17.0,12.0,3.0,7.0,6.0,10.0,14.0,14.0,2.0,4.0,0.0,0.0,,,,,,,football-data.co.uk
