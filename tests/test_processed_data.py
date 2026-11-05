@@ -103,3 +103,27 @@ def test_model_metrics_present():
     assert 0 < m["value"]["r2_log"] <= 1
     for k in ("pure", "bookmaker", "base_rate"):
         assert 0.5 < m["outcome"][k]["log_loss"] < 1.2
+
+
+def test_prediction_ledger_is_append_only():
+    """The forward-test ledger is only ever appended to: every row committed at
+    HEAD must still be there, unchanged and in order, at the top of the file."""
+    import subprocess
+    from conftest import ROOT
+    rel = "data/processed/predictions_ledger.csv"
+    try:
+        old = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=ROOT, capture_output=True, check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        pytest.skip("ledger not committed yet")
+    new = (ROOT / rel).read_bytes()
+    assert new.replace(b"\r\n", b"\n").startswith(old.replace(b"\r\n", b"\n")), \
+        "predictions_ledger.csv was rewritten - committed rows changed or were removed"
+
+
+def test_prediction_ledger_snapshots_precede_kickoff():
+    path = PROC / "predictions_ledger.csv"
+    if not path.exists():
+        pytest.skip("no ledger yet")
+    led = pd.read_csv(path)
+    assert (led["snapshot_at"].str[:10] < led["kickoff_date"]).all(), "a snapshot taken on/after kickoff day"
+    assert np.allclose(led[["p_home", "p_draw", "p_away"]].sum(axis=1), 1.0, atol=5e-4)
