@@ -155,6 +155,9 @@ jobs:
         run: |
           python src/build_value_history.py
           python src/build_matches_all.py
+          # leak-free walk-forward Dixon-Coles per league match (the streak game's
+          # reveal) - incremental, only new matches are fitted
+          python src/dixon_coles.py
           python src/build_squad_features.py
           python src/build_match_model_table.py
 
@@ -164,6 +167,10 @@ jobs:
           python src/build_match_lineups.py || echo "(no lineup cache yet - skipping)"
           python src/build_form_momentum.py
           python src/build_match_model_table.py
+          # twice: the plain run is the market-free model (its scores, and the
+          # pre-match odds for upcoming fixtures the site publishes and the ledger
+          # freezes); --hybrid adds market opening odds as features (its own score)
+          python src/train_outcome_model.py
           python src/train_outcome_model.py --hybrid
 
       # NOT continue-on-error: both training scripts write their test-set scores to
