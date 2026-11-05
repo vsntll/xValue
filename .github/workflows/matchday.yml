@@ -44,6 +44,10 @@ jobs:
         if: steps.due.outputs.due == 'true'
         run: pip install -r requirements.lock
 
+      - name: Restore the last build (match table, lineups, values)
+        if: steps.due.outputs.due == 'true'
+        run: python src/sync_build.py fetch
+
       - name: Re-score matches with a confirmed XI
         if: steps.due.outputs.due == 'true'
         run: python src/matchday_rescore.py

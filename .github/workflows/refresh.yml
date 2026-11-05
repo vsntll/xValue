@@ -51,6 +51,13 @@ jobs:
 
       - run: pip install -r requirements.lock
 
+      # the rebuilt-every-run outputs (player Elo, match model table, predictions,
+      # site/index.html, ...) live in the `latest-build` release, not in git
+      # history - restore last run's copies (some steps read them before
+      # rebuilding) plus a pristine baseline the tests compare the rebuild against
+      - name: Restore the last build (release asset)
+        run: python src/sync_build.py fetch --baseline "$RUNNER_TEMP/prev_build"
+
       # No fetch cache: data/processed/ (committed, checkout brings it) is the only
       # record of what has been pulled. Every pull below skips what's already in
       # those CSVs and only requests new matches, so a fresh runner does the same
@@ -181,6 +188,8 @@ jobs:
       # 1X2 rows summing to 1, values under the €220M cap, no row-count collapse
       # vs the committed files) + unit tests - a failure blocks the commit
       - name: Test the rebuilt data and models
+        env:
+          PREV_BUILD_DIR: ${{ runner.temp }}/prev_build
         run: python -m pytest -q tests
 
       - name: Commit refreshed data + site and deploy
@@ -189,7 +198,9 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/processed site/index.html README.md docs/models.md
+          # build outputs are gitignored (they go to the release below); this
+          # commits the sources, ledgers, model scores and regenerated docs
+          git add data/processed README.md docs/models.md
           if git diff --cached --quiet; then
             echo "nothing changed - nothing to commit"
           else
@@ -200,9 +211,18 @@ jobs:
             git fetch --depth=50 origin "$GITHUB_REF_NAME"
             git rebase --autostash FETCH_HEAD
             git push origin "HEAD:$GITHUB_REF_NAME"
-            # a GITHUB_TOKEN push doesn't trigger deploy-pages.yml's push event;
-            # only a master run publishes the site (a test branch never does)
-            if [ "$GITHUB_REF_NAME" = master ]; then
-              gh workflow run deploy-pages.yml || echo "(no deploy-pages workflow / Pages not enabled yet)"
-            fi
           fi
+
+      # only a master run replaces the published build and the site - a manual
+      # run on a test branch never touches either
+      - name: Publish the build (release asset) and deploy the site
+        if: github.ref_name == 'master'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python src/sync_build.py pack
+          gh release view latest-build >/dev/null 2>&1 || gh release create latest-build \
+            --title "Latest build" --latest=false \
+            --notes "Rebuilt-every-run outputs of the last master refresh (src/sync_build.py fetch). Replaced every run."
+          gh release upload latest-build build/processed-build.zip --clobber
+          gh workflow run deploy-pages.yml || echo "(no deploy-pages workflow / Pages not enabled yet)"

@@ -1,13 +1,13 @@
 name: Deploy site to GitHub Pages
 
-# Publishes site/index.html whenever it changes (the every-2-days refresh commits it,
-# or you commit a local FBref re-scrape). One-time setup: repo Settings -> Pages
-# -> Source: "GitHub Actions".
+# Publishes the site/index.html built by the last master refresh. The page is
+# no longer committed - refresh.yml uploads it inside the `latest-build`
+# release asset (src/sync_build.py) and then runs this workflow. A template
+# change (site/template.html) goes live with the next refresh, or run
+# refresh.yml by hand. One-time setup: repo Settings -> Pages -> Source:
+# "GitHub Actions".
 
 on:
-  push:
-    branches: [master]
-    paths: ["site/index.html"]
   workflow_dispatch: {}
 
 permissions:
@@ -28,8 +28,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: actions/configure-pages@v5
-      - name: Stage the single page as the site root
+      - name: Fetch the built page from the latest-build release
         run: |
+          python3 src/sync_build.py fetch
           mkdir -p _site
           cp site/index.html _site/index.html
       - uses: actions/upload-pages-artifact@v3
