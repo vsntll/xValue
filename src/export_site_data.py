@@ -38,6 +38,8 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 from build_match_model_table import _elo_update, _res  # noqa: E402
+import model_metrics  # noqa: E402
+import prediction_ledger  # noqa: E402
 from dixon_coles import fit, match_probs  # noqa: E402
 from live.schema import deaccent, normalize_team  # noqa: E402
 from parse_fbref_player_stats import _norm_name  # noqa: E402
@@ -901,6 +903,33 @@ STREAK_SEASONS = ["2020-21", "2021-22", "2022-23", "2023-24", "2024-25",
 SIM_SQUAD_N = 16   # players kept per team for the goalscorer draw
 
 
+def _value_score_note() -> str:
+    """The value model's holdout scores, from model_metrics.json (never hardcoded)."""
+    v = model_metrics.load().get("value")
+    if not v:
+        return "holdout scores in docs/models.md"
+    return (f"R2(log) {v['r2_log']:.2f}, MAE EUR{v['mae_eur'] / 1e6:.1f}M, "
+            f"within-2x {v['within_2x']:.0%} on the {v['test_seasons'][0]}..{v['test_seasons'][-1]} holdout")
+
+
+def build_calibration(n_bins: int = 10) -> dict | None:
+    """Reliability of the outcome classifier's test-set (2024-26, out of sample)
+    1X2 probabilities: per outcome, the mean predicted probability vs how often
+    that outcome actually happened, in equal-width probability bins."""
+    f = PROC / "outcome_model_predictions.csv"
+    if not f.exists():
+        return None
+    d = pd.read_csv(f).dropna(subset=["FTR"])
+    out = {"n": int(len(d)), "seasons": sorted(d["season"].unique()), "bins": {}}
+    for label, col, res in (("home", "p_home", "H"), ("draw", "p_draw", "D"), ("away", "p_away", "A")):
+        p, y = d[col].to_numpy(), (d["FTR"] == res).to_numpy()
+        b = np.minimum((p * n_bins).astype(int), n_bins - 1)
+        out["bins"][label] = [{"pred": round(float(p[b == k].mean()), 3), "actual": round(float(y[b == k].mean()), 3),
+                               "n": int((b == k).sum())} for k in range(n_bins) if (b == k).sum() >= 15]
+        out[f"max_{label}"] = round(float(p.max()), 3)
+    return out
+
+
 def build_games_data(model, blended_df: pd.DataFrame, all_matches: pd.DataFrame,
                      teams_list: list[dict], all_players: list[dict]) -> dict:
     key2league = {t["team_key"]: t["league"] for t in teams_list}
@@ -1024,7 +1053,10 @@ def main() -> None:
     # European) - that's what lets Bundesliga/La Liga/Premier League teams share
     # a single attack/defence scale via their Champions/Europa League meetings.
     dc_matches = prep_dc_matches()
-    asof = dc_matches["Date"].max() + pd.Timedelta(days=1)
+    # never later than today: one future-dated "result" would otherwise push the
+    # fixture list (and the ledger's snapshot window) past every real upcoming match
+    today = pd.Timestamp.now(tz="UTC").tz_localize(None).normalize()
+    asof = min(dc_matches["Date"].max() + pd.Timedelta(days=1), today)
     model = fit(dc_matches, asof)
 
     all_players: list[dict] = []
@@ -1054,6 +1086,17 @@ def main() -> None:
                 "away_props": player_props_for_fixture(blended_df, r["a"], la),
             }
             fixtures.append(fx)
+
+    # freeze today's pre-match odds for every upcoming league fixture in the
+    # forward-test ledger, then score the finished ones against the market
+    upcoming = pd.concat([load_upcoming_fixtures(asof, lg) for lg in LEAGUES.values()], ignore_index=True)
+    n_led = prediction_ledger.snapshot(
+        upcoming, lambda h, a: (*match_probs(model, h, a), *expected_goals(model, h, a)), asof)
+    ledger = prediction_ledger.scoreboard()
+    calibration = build_calibration()
+    print(f"ledger: +{n_led} pre-match snapshots; scored {ledger['n'] if ledger else 0} finished matches"
+          + (f" - model {ledger['model_ll']:.3f} vs market {ledger['market_ll']:.3f} log-loss"
+             if ledger and ledger.get("n") else ""))
 
     all_matches = load_all_matches()
     teams = build_teams_list()
@@ -1088,11 +1131,13 @@ def main() -> None:
         "player_elo_index": player_elo_index,
         "methodology_example": methodology_example,
         "games": games,
+        "ledger": ledger,
+        "calibration": calibration,
         "notes": {
             "current_stats": "2026-27 FBref season-to-date stats (min 45 minutes played).",
             "last_season": "2025-26 full-season stats for the same player, where available.",
             "projected_38": "Simple pace projection: current per-90 rate x projected minutes over a 38-game season. Not a trained model.",
-            "value": "Predicted market value from the trained value-regression model (current season preferred, else last season; R2(log) 0.89, MAE EUR4.1M, within-2x 91%) vs listed market value.",
+            "value": "Predicted market value from the trained value-regression model (current season preferred, else last season; " + _value_score_note() + ") vs listed market value.",
             "match_odds": "Win/draw/loss odds from a Dixon-Coles attack/defence model fit on all competitions through the date above.",
             "player_props": "Anytime goal/assist odds: team's Dixon-Coles expected goals split across the matchday squad by each player's (non-penalty xG90 or xA90, shrunk toward last season's rate early in the current season) x season minutes-share, then Poisson P(>=1).",
             "cup_finals": "Each competition's final is inferred as the last-dated match of that season/competition in the results data - not read from an official bracket. When it ended level, the winner is taken from FBref's recorded penalty-shootout score where available; otherwise no winner is shown. The in-progress 2026-27 season is excluded.",
