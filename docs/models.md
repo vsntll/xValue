@@ -397,6 +397,34 @@ high-liquidity top-flight competitions; there's no genuinely thin market
 
 Output: `data/processed/betting_backtest.csv` (bet-level detail, pure model).
 
+## Lineup-absence backtest  (`src/backtest_lineup_absence.py`)
+
+Does a team missing its best players from the confirmed XI underperform the
+outcome model (which never sees lineups)? Residual = actual points minus the
+model's expected points (3 × P(win) + P(draw)), on the out-of-sample 2024-26
+test set, ~6,700 team-matches joined to a FotMob confirmed XI. A team's "top
+players" for a match are its highest-valued players who were in its matchday
+squad in the previous 45 days (so a January signing isn't "absent" before he
+arrived).
+
+| | n | pts − expected |
+| --- | --- | --- |
+| top player starts | 5,085 | +0.002 |
+| top player **not** in the XI | 1,611 | −0.019 |
+| none of the top-3 (by value) missing | 2,578 | +0.045 |
+| < half of the top-3's value missing | 2,859 | −0.019 |
+| **≥ half of the top-3's value missing** | 1,259 | **−0.063** |
+
+- The single best player missing is **not** a signal: −0.02 pts/match, 95%
+  bootstrap CI −0.09 .. +0.05. For €50M+ stars it even leans positive -
+  clubs rest stars in games they expect to win anyway, so "star benched" partly
+  marks an easy fixture.
+- How much of the core is missing **is**: ≥ half of the top-3's value out vs
+  none out is **−0.107 pts/match (95% CI −0.19 .. −0.03)**, and the same for
+  the hybrid model (−0.108) - the market's *opening* odds don't price it in
+  either. That makes a matchday re-score on the confirmed XI worth having -
+  keyed on the share of top-3 value missing, not on the star alone.
+
 ## Obvious next improvements
 
 - **Value model → 0.95**: the has-prev segment is already at 0.90 (Transfermarkt's
@@ -411,11 +439,9 @@ Output: `data/processed/betting_backtest.csv` (bet-level detail, pure model).
 - Outcome model: `xi_value_ratio` (Step 11) only closes the gap for matches
   already played or scored near kickoff, not the model's normal day(s)-ahead
   predictions - confirmed lineups / injuries are still the sliver Bet365's
-  closing line has that this model doesn't. Still worth backtesting before
-  building anything live: whether a squad's highest-value player is NOT in
-  the confirmed XI (`match_lineup_players.csv`) as a cheap injury/rotation
-  proxy - `live_win_prob.py`'s backtest above answers the adjacent "does
-  re-conditioning on game state help" question, not this one.
+  closing line has that this model doesn't. The lineup-absence backtest
+  above says the confirmed XI is worth using - via the share of the top-3's
+  value missing, not the single star.
 - A live poller / in-play scoring service on top of `live_win_prob.py`,
   backed by the FotMob `matchDetails` clock (`d["general"]`) - the backtest
   validates the math; nothing polls a live match yet.
