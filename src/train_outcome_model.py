@@ -218,6 +218,11 @@ def main() -> None:
     scores = {}  # -> model_metrics.json "outcome" section (docs + regression gate)
 
     def _score(name, y, p, acc=None):
+        # --hybrid trains logreg / HGB with the market-odds features too, so in
+        # that mode only the hybrid score (and the bookmaker reference) is its
+        # own; the market-free scores come from the plain run
+        if args.hybrid and name not in ("hybrid", "bookmaker"):
+            return
         scores[name] = {"acc": model_metrics.r(accuracy_score(y, LABELS_pred(p)) if acc is None else acc),
                         "log_loss": model_metrics.r(_ll(y, p)), "n": int(len(y))}
 
@@ -386,31 +391,45 @@ def main() -> None:
                                      "n_test": int(len(te)), **scores})
 
     # a second pass, scoring EVERY row (not just the temporal test split) with
-    # the same trained-on-`tr`-only models, so the dashboard has a prediction
-    # for every match including this week's - genuinely out-of-sample for
-    # 2023-26 (val/test/live), in-sample (optimistic) for <=2022-23 (train).
-    # This is what lets "predictions next to results as they land" exist at all.
-    split = np.select(
-        [df["season"] <= "2022-23", df["season"] == "2023-24", df["season"].isin(["2024-25", "2025-26"])],
-        ["train", "val", "test"], default="live")
-    grid_all = _fit_grid(tr, df, tr["FTHG"].astype(float), tr["FTAG"].astype(float),
-                         rho=rho, alpha=alpha, w=wt)
-    if "HxG" in tr.columns:
-        grid_all = 0.6 * grid_all + 0.4 * _fit_grid(trx, df, yhx, yax, rho=rho, alpha=alpha, w=wtx)
-    p1x2_all = grid_1x2(grid_all)
-    all_out = df[["season", "comp", "Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR"]].copy()
-    all_out["split"] = split
-    all_out[["p_away", "p_draw", "p_home"]] = np.round(p1x2_all, 4)
-    ou_all, btts_all, cs_all = grid_over_under(grid_all), grid_btts(grid_all), grid_correct_score(grid_all)
-    all_out["p_over25"] = np.round(ou_all[:, 0], 4)
-    all_out["p_under25"] = np.round(ou_all[:, 1], 4)
-    all_out["p_btts_yes"] = np.round(btts_all[:, 0], 4)
-    all_out["p_btts_no"] = np.round(btts_all[:, 1], 4)
-    for score, p in cs_all.items():
-        all_out[f"p_cs_{score.replace('-', '_')}"] = np.round(p, 4)
-    all_out.to_csv(PROC / "outcome_model_predictions_all.csv", index=False)
-    print(f"wrote {PROC / 'outcome_model_predictions_all.csv'}  ({len(all_out)} rows, "
-          f"{(split == 'live').sum()} live/2026-27)")
+    # the same trained-on-`tr`-only models - genuinely out-of-sample for 2023-26
+    # (val/test/live), in-sample (optimistic) for <=2022-23 (train) - plus the
+    # upcoming fixtures (match_model_upcoming.csv, pre-match features from
+    # build_match_model_table.py), split "upcoming": the headline model's
+    # pre-match odds, which the site publishes and the forward-test ledger
+    # freezes. 1X2 is the full pure blend {poisson, logreg, hgb} at the
+    # validation-tuned weights; O/U, BTTS and correct score come from the grid.
+    # Written by the plain run only - in --hybrid mode logreg / HGB carry market
+    # features that upcoming fixtures don't have yet.
+    if not args.hybrid:
+        up_path = PROC / "match_model_upcoming.csv"
+        up = pd.read_csv(up_path) if up_path.exists() else pd.DataFrame(columns=df.columns)
+        if len(up):
+            up["Date"] = pd.to_datetime(up["Date"])
+            up[["promoted_h", "promoted_a"]] = up[["promoted_h", "promoted_a"]].fillna(0)
+        dfa = pd.concat([df, up], ignore_index=True) if len(up) else df.reset_index(drop=True)
+        split = np.select(
+            [dfa["FTR"].isna(), dfa["season"] <= "2022-23", dfa["season"] == "2023-24",
+             dfa["season"].isin(["2024-25", "2025-26"])],
+            ["upcoming", "train", "val", "test"], default="live")
+        grid_all = _fit_grid(tr, dfa, tr["FTHG"].astype(float), tr["FTAG"].astype(float),
+                             rho=rho, alpha=alpha, w=wt)
+        if "HxG" in tr.columns:
+            grid_all = 0.6 * grid_all + 0.4 * _fit_grid(trx, dfa, yhx, yax, rho=rho, alpha=alpha, w=wtx)
+        p1x2_all = _gblend([grid_1x2(grid_all), _order(logreg, logreg.predict_proba(dfa[FEATURES])),
+                            _order(hgb, hgb.predict_proba(dfa[FEATURES]))], best_w)
+        all_out = dfa[["season", "comp", "Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG", "FTR"]].copy()
+        all_out["split"] = split
+        all_out[["p_away", "p_draw", "p_home"]] = np.round(p1x2_all, 4)
+        ou_all, btts_all, cs_all = grid_over_under(grid_all), grid_btts(grid_all), grid_correct_score(grid_all)
+        all_out["p_over25"] = np.round(ou_all[:, 0], 4)
+        all_out["p_under25"] = np.round(ou_all[:, 1], 4)
+        all_out["p_btts_yes"] = np.round(btts_all[:, 0], 4)
+        all_out["p_btts_no"] = np.round(btts_all[:, 1], 4)
+        for score, p in cs_all.items():
+            all_out[f"p_cs_{score.replace('-', '_')}"] = np.round(p, 4)
+        all_out.to_csv(PROC / "outcome_model_predictions_all.csv", index=False)
+        print(f"wrote {PROC / 'outcome_model_predictions_all.csv'}  ({len(all_out)} rows, "
+              f"{(split == 'live').sum()} live 2026-27, {(split == 'upcoming').sum()} upcoming)")
 
     # pure output = the {poisson, logreg, hgb} blend (now genuinely better
     # than poisson+xg alone on its own - see the printed table above);
