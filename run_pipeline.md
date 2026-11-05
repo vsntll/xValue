@@ -85,7 +85,7 @@ reuses `dc_walk_lambdas.csv`). See `docs/models.md`.
 
 ```
 py -3.11 -m pytest -q tests                  # data invariants on the processed CSVs + unit tests
-py -3.11 src/check_model_metrics.py          # new model scores vs the committed model_metrics.json
+py -3.11 src/check_model_metrics.py          # new model scores vs last commit + accepted_metrics.json
 py -3.11 src/update_doc_metrics.py           # write the scores into README.md + docs/models.md
 ```
 
@@ -100,9 +100,13 @@ the €220M cap, no row-count collapse vs the committed files, FotMob rows uniqu
 plus unit tests for `dixon_coles.py`, `live_win_prob.py` (at minute 90 the
 current score is final), the team-name alias map and the gate itself.
 
-If a deliberate model change trips the gate, check the numbers, then commit the
-new `model_metrics.json` (and docs) from a local run - the next refresh
-compares against that.
+The gate checks the same tolerances against two baselines: the last committed
+`model_metrics.json` (run to run) and the hand-pinned `accepted_metrics.json` at
+the repo root - so a model can't be walked down a little each run (every step
+inside tolerance of the last, the total well outside it). Only you change the
+pinned one: after a deliberate model change, check the numbers, run
+`py -3.11 src/check_model_metrics.py --accept`, and commit `model_metrics.json`,
+`accepted_metrics.json` and the regenerated docs together.
 
 ## 6. Dashboard + source health (optional, local)
 
