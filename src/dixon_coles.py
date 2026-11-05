@@ -33,6 +33,7 @@ from live.schema import normalize_team  # noqa: E402
 PROC = ROOT / "data" / "processed"
 MAXG = 10
 XI = 0.0018          # time-decay per day (~half-life 385 days)
+WALK_EPOCH = pd.Timestamp("2020-08-01")   # walk-forward refit calendar origin
 
 
 def _tau(i, j, lh, la, rho):
@@ -100,14 +101,16 @@ def match_probs(model, home: str, away: str) -> np.ndarray:
 def fit_predict_walk(matches: pd.DataFrame, targets: pd.DataFrame,
                      gcols=("FTHG", "FTAG"), refit_days=28) -> np.ndarray:
     """For each row of `targets`, W/D/L probs from a model fitted on matches
-    strictly before it, refitted every `refit_days`."""
+    strictly before it. Fits happen on a fixed calendar - every `refit_days`
+    from WALK_EPOCH - so a match's probability doesn't depend on which other
+    matches were in the same call (an incremental run reproduces a full one)."""
     out = np.zeros((len(targets), 3))
-    model, last_fit = None, None
-    for k, (_, r) in enumerate(targets.sort_values("Date").iterrows()):
-        d = r["Date"]
-        if last_fit is None or (d - last_fit).days >= refit_days:
-            model = fit(matches, d, gcols) or model
-            last_fit = d
+    model, fitted_at = None, None
+    for _, r in targets.sort_values("Date").iterrows():
+        anchor = WALK_EPOCH + pd.Timedelta(days=refit_days * ((r["Date"] - WALK_EPOCH).days // refit_days))
+        if anchor != fitted_at:
+            model = fit(matches, anchor, gcols)
+            fitted_at = anchor
         out[targets.index.get_loc(r.name)] = match_probs(model, r["h"], r["a"])
     return out
 
@@ -151,9 +154,11 @@ def main() -> None:
         have = set(map(tuple, prior[KEY].astype(str).to_numpy()))
         tgt = tgt[[k not in have for k in map(tuple, tgt[KEY].astype(str).to_numpy())]].reset_index(drop=True)
     print(f"walk-forward Dixon-Coles for {len(tgt):,} new league matches ({len(prior):,} kept)", flush=True)
+    frames = [prior]
     if len(tgt):
         tgt[["dc_pA", "dc_pD", "dc_pH"]] = fit_predict_walk(allm, tgt).round(4)
-    out = pd.concat([prior, tgt[KEY + ["FTR", "dc_pA", "dc_pD", "dc_pH"]]], ignore_index=True)
+        frames.append(tgt[KEY + ["FTR", "dc_pA", "dc_pD", "dc_pH"]])
+    out = pd.concat(frames, ignore_index=True)
     out = out.drop_duplicates(KEY, keep="last").sort_values(["Date", "HomeTeam"])
     out.to_csv(OUT, index=False, date_format="%Y-%m-%d")
     print(f"wrote {OUT}  ({len(out):,} matches, seasons {sorted(out['season'].unique())})")
