@@ -105,12 +105,13 @@ def test_model_metrics_present():
         assert 0.5 < m["outcome"][k]["log_loss"] < 1.2
 
 
-def test_prediction_ledger_is_append_only():
-    """The forward-test ledger is only ever appended to: every row committed at
-    HEAD must still be there, unchanged and in order, at the top of the file."""
+@pytest.mark.parametrize("rel", ["data/processed/predictions_ledger.csv",
+                                 "data/processed/predictions_ledger_xi.csv"])
+def test_prediction_ledger_is_append_only(rel):
+    """The forward-test ledgers are only ever appended to: every row committed
+    at HEAD must still be there, unchanged and in order, at the top of the file."""
     import subprocess
     from conftest import ROOT
-    rel = "data/processed/predictions_ledger.csv"
     try:
         old = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=ROOT, capture_output=True, check=True).stdout
     except (OSError, subprocess.CalledProcessError):
@@ -127,3 +128,14 @@ def test_prediction_ledger_snapshots_precede_kickoff():
     led = pd.read_csv(path)
     assert (led["snapshot_at"].str[:10] < led["kickoff_date"]).all(), "a snapshot taken on/after kickoff day"
     assert np.allclose(led[["p_home", "p_draw", "p_away"]].sum(axis=1), 1.0, atol=5e-4)
+
+
+def test_xi_ledger_snapshots_precede_kickoff():
+    path = PROC / "predictions_ledger_xi.csv"
+    if not path.exists():
+        pytest.skip("no XI ledger yet")
+    led = pd.read_csv(path)
+    snap = pd.to_datetime(led["snapshot_at"].str[:16])
+    assert (snap < pd.to_datetime(led["kickoff_utc"])).all(), "an XI snapshot taken at/after kickoff"
+    for cols in (["p_home", "p_draw", "p_away"], ["p_home_base", "p_draw_base", "p_away_base"]):
+        assert np.allclose(led[cols].sum(axis=1), 1.0, atol=5e-4)
