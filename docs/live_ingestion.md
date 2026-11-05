@@ -21,9 +21,9 @@ field from the first source that has it (key: comp_code + normalised home + away
 | module | source | key? | gives | status |
 | --- | --- | --- | --- | --- |
 | `live/football_data_org.py` | football-data.org v4 | `FOOTBALL_DATA_ORG_KEY` in `.env` | fixtures, results, HT score — **sanctioned, stable**. No shot/possession. 10 req/min, PL/BL1/PD/SA/FL1/CL. | working |
-| `live/espn.py` | site.api.espn.com | none | fixtures, results, **+ box-score stats** (shots, SoT, corners, fouls, cards, possession) for the 5 leagues + UCL/UEL/UECL + FA/EFL/DFB/Copa/Coppa/Coupe. Unofficial. Summaries cached. | working |
-| `live/understat.py` | understat.com (via soccerdata, TLS client) | none | **+ xG** (per-match team xG). The 5 leagues only — no cups. | working |
-| `live/fotmob.py` | fotmob.com/api/data | none (may need `x-mas` later) | **+ xG** for cups/Europe (and leagues). Reads teams+xG from `matchDetails` (fixture-list home/away is unreliable). Details cached. ToS restricts — low volume. | working |
+| `live/espn.py` | site.api.espn.com | none | fixtures, results, **+ box-score stats** (shots, SoT, corners, fouls, cards, possession) for the 5 leagues + UCL/UEL/UECL + FA/EFL/DFB/Copa/Coppa/Coupe. Unofficial. The scoreboard is queried one month at a time (it has rejected date ranges with HTTP 400 since autumn 2026); a finished match's box score is reused from the committed snapshot. | working |
+| `live/understat.py` | understat.com (via soccerdata, TLS client) | none | **+ xG** (per-match team xG). The 5 leagues only — no cups. | **down** since late Sept 2026 (site shows a holding page); FotMob carries league xG meanwhile |
+| `live/fotmob.py` | fotmob.com/api/data | none (may need `x-mas` later) | **+ xG** for cups/Europe (and leagues). Reads teams+xG from `matchDetails` (fixture-list home/away is unreliable). A finished match's detail is reused from the committed snapshot. ToS restricts — low volume. | working |
 | `live/sofascore.py` | api.sofascore.com | none | + xG | stub — fallback |
 
 Merge is **spine + fuzzy-match** (`_same_match`): first source to carry a comp
@@ -54,6 +54,8 @@ DFB matches missed xG). FA Cup / Copa del Rey not started yet.
 - ESPN returns some lower-league German cup team names already mojibake'd
   (`Preu�en M�nster`) — their bug, not recoverable. `normalize_team()` strips
   non-ASCII so joins still work; only display is affected.
+- A source that fails (or returns nothing for a competition) keeps the rows
+  its snapshot already had - an outage never wipes earlier data.
 - No half-time score or xG from ESPN. HT would need parsing `keyEvents`; xG needs
   FotMob/Sofascore or a paid API.
 - To add football-data.org: register free at football-data.org, put the token in

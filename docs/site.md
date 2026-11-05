@@ -184,18 +184,24 @@ saw "site unchanged."
 
 `.github/workflows/weekly-refresh.yml` — "Site refresh (every 2 days)", cron
 `0 7 */2 * *` + manual dispatch — re-pulls every browser-free source,
-**refreshes the current season's player stats from Understat + FotMob**
+cross-checks FotMob's per-player rows against Understat / ESPN /
+football-data.co.uk, fills Understat's missing matches from FotMob while it's
+down, **refreshes the current season's player stats**
 (`build_current_season_stats.py`: goals / assists / minutes / xG / SoT / fouls /
 tackles, no browser), rebuilds `matches_all`, retrains both models, rebuilds the
 player Elo, regenerates `site/index.html`, and commits the refreshed
-`data/processed/` **and** `site/index.html` back to `master`.
+`data/processed/` **and** `site/index.html` back to the branch it ran on. Only a
+`master` run triggers the Pages deploy. A run takes ~15 min; a source that's
+down is skipped (`continue-on-error`) and keeps its committed data.
 
 It does **not** re-scrape the deep FBref columns (progressive passing, SCA/GCA,
 zonal touches, PSxG — nothing the models or site currently read) or the
 Transfermarkt values; those need Chrome + a WAF captcha, so run them locally
 roughly monthly per `run_pipeline.md`.
 
-Setup: just the repo secret `FOOTBALL_DATA_ORG_KEY`. `data/processed/` is
+Setup: the repo secret `FOOTBALL_DATA_ORG_KEY`, plus optionally
+`SOFASCORE_PROXY` (Sofascore blocks GitHub's runners, so without it the site's
+current-season market values stay at the last pull that got through). `data/processed/` is
 committed, so there's no seed release to maintain, and CI keeps no fetch cache:
 the committed CSVs are the record of what's been pulled, so each run only
 requests new matches. `data/raw/` stays gitignored scratch.
