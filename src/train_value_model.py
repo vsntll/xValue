@@ -428,15 +428,23 @@ def main() -> None:
     else:
         _age_curve = None
 
-    def _age_adj(frame):
-        a = pd.to_numeric(frame["age"], errors="coerce").fillna(26).to_numpy()
+    def _age_level(pos, a_int):
         if _age_curve is None:
-            return np.where(a >= 30, -0.06 * (a - 30),
-                            np.where(a <= 21, 0.04 * (21 - a), 0.0))
-        a_int = np.clip(np.round(a), 16, 42).astype(int)
-        pos = frame["pos"].to_numpy()
+            return np.where(a_int >= 30, -0.06 * (a_int - 30), np.where(a_int <= 21, 0.04 * (21 - a_int), 0.0))
         fallback = _age_curve.get("MF", {})
         return np.array([_age_curve.get(p, fallback).get(ai, 0.0) for p, ai in zip(pos, a_int)])
+
+    def _age_adj(frame):
+        """ONE year of aging - curve(age) - curve(age - 1) - to add to last
+        season's value. (The curve itself is a level, 0 at the peak; adding the
+        level instead, as this used to, carried a 33-year-old forward at about
+        half his value and a teenager below his. On the 5k+ thin-minutes
+        players this path prices, against their real listed values: R2(log)
+        0.53 -> 0.69, medAPE 37% -> 28%.)"""
+        a = pd.to_numeric(frame["age"], errors="coerce").fillna(26).to_numpy()
+        a_int = np.clip(np.round(a), 17, 42).astype(int)
+        pos = frame["pos"].to_numpy()
+        return _age_level(pos, a_int) - _age_level(pos, a_int - 1)
 
     def _predict_eur(frame):
         Xf_warm, Xf_cold = _prep(frame, feat_num), _prep(frame, feat_num_cold)
@@ -494,6 +502,24 @@ def main() -> None:
     # peer-imputed rows flagged) so the site has a value for every current player.
     allp = df.copy()
     allp["predicted_eur"] = _predict_eur(allp).round(0)
+    # the thin-minutes "carried" path (last value + a year of aging) never
+    # appears in the test set (every test row has minutes) but prices ~40% of
+    # published predictions - score it against real listed values, all seasons
+    # (rule-based, nothing trained on these rows, so no leakage)
+    thin = ((pd.to_numeric(allp["n90"], errors="coerce").fillna(0) < 8) & (allp["has_any_prev"] == 1)
+            & (allp["imputed"] == 0) & allp["market_value_eur"].notna()).to_numpy()
+    if thin.any():
+        ta, tp = allp["market_value_eur"].to_numpy()[thin], allp["predicted_eur"].to_numpy()[thin]
+        t_ape = np.abs(tp - ta) / ta
+        print(f"  [carried (thin min.)] n={thin.sum():4d}  R2(log)={r2_score(np.log1p(ta), np.log1p(tp)):.3f}  "
+              f"medAPE={np.median(t_ape):.0%}  pred/listed(med)={np.median(tp / ta):.2f}")
+        segments["carried"] = {"n": int(thin.sum()), "r2_log": model_metrics.r(r2_score(np.log1p(ta), np.log1p(tp))),
+                               "medape": model_metrics.r(np.median(t_ape)),
+                               "pred_over_listed": model_metrics.r(np.median(tp / ta), 3),
+                               "share": model_metrics.r(np.mean(pd.to_numeric(allp["n90"], errors="coerce")
+                                                                .fillna(0).to_numpy() < 8), 3),
+                               "within_2x": model_metrics.r(np.mean(np.maximum(tp, ta) / np.minimum(tp, ta) <= 2))}
+        model_metrics.update("value", {"segments": segments})
     out = allp[["season", "src_league", "Player", "Squad", "pos", "age",
                 "market_value_eur", "predicted_eur", "imputed"]].rename(
         columns={"imputed": "value_imputed"})
