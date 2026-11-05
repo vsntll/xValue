@@ -473,22 +473,42 @@ def main() -> None:
 
     # segment diagnostics - error by value band and by group
     segments = {}
+    # groups: R2(log) is meaningful (each spans the full value range)
     for key, lbl, m in [("outfield", "outfield", (te["pos"] != "GK").to_numpy()),
                         ("goalkeepers", "goalkeepers", (te["pos"] == "GK").to_numpy()),
                         ("with_prev", "with prev value", (te["has_any_prev"] == 1).to_numpy()),
-                        ("cold_start", "cold start", (te["has_any_prev"] == 0).to_numpy()),
-                        ("mid", "mid  EUR3-40M", ((act >= 3e6) & (act < 40e6))),
-                        ("high", "high EUR40-100M", ((act >= 40e6) & (act < 100e6))),
-                        ("elite", "elite EUR100M+", (act >= 100e6))]:
+                        ("cold_start", "cold start", (te["has_any_prev"] == 0).to_numpy())]:
         if m.sum():
-            bias = np.median(best_pred[m] / act[m])
             seg_r2 = r2_score(te["y"][m], np.log1p(best_pred[m]))
-            print(f"  [{lbl:16}] n={m.sum():4d}  R2(log)={seg_r2:.3f}  "
-                  f"medAPE={np.median(ape[m]):.0%}  pred/listed(med)={bias:.2f}")
+            print(f"  [{lbl:16}] n={m.sum():4d}  R2(log)={seg_r2:.3f}  medAPE={np.median(ape[m]):.0%}  "
+                  f"pred/listed(med)={np.median(best_pred[m] / act[m]):.2f}")
             segments[key] = {"n": int(m.sum()), "r2_log": model_metrics.r(seg_r2),
                              "medape": model_metrics.r(np.median(ape[m])),
-                             "pred_over_listed": model_metrics.r(bias, 3),
+                             "pred_over_listed": model_metrics.r(np.median(best_pred[m] / act[m]), 3),
                              "share": model_metrics.r(m.mean(), 3)}
+    # value bands: no R2 (a restricted range makes it meaningless - it goes
+    # negative), just bias + median error. Two views, because they answer
+    # different questions:
+    #   by LISTED value - "how far off are we for players listed at EUR100M+?"
+    #     Always below 1 for any noisy model: selecting on a high listing picks
+    #     the players listed above what their output supports (regression to the
+    #     mean), so this alone doesn't show the model "underprices stars".
+    #   by PREDICTED value - "when we say EUR100M, what's the listing?" The
+    #     calibration check: 1.00 = calibrated.
+    for key, lbl, lo, hi in (("mid", "EUR3-40M", 3e6, 40e6), ("high", "EUR40-100M", 40e6, 100e6),
+                             ("elite", "EUR100M+", 100e6, np.inf)):
+        m = (act >= lo) & (act < hi)
+        mp = (best_pred >= lo) & (best_pred < hi)
+        if m.sum():
+            print(f"  [{key:5} {lbl:10}] by listed n={m.sum():4d} medAPE={np.median(ape[m]):.0%} "
+                  f"pred/listed(med)={np.median(best_pred[m] / act[m]):.2f}   |   by predicted n={mp.sum():4d} "
+                  f"listed/pred(med)={np.median(act[mp] / best_pred[mp]) if mp.any() else float('nan'):.2f}")
+            segments[key] = {"n": int(m.sum()), "medape": model_metrics.r(np.median(ape[m])),
+                             "pred_over_listed": model_metrics.r(np.median(best_pred[m] / act[m]), 3),
+                             "share": model_metrics.r(m.mean(), 3),
+                             "n_by_pred": int(mp.sum()),
+                             "listed_over_pred_by_pred": (model_metrics.r(np.median(act[mp] / best_pred[mp]), 3)
+                                                          if mp.any() else None)}
     model_metrics.update("value", {
         "test_seasons": list(TEST_SEASONS), "n_test": int(len(te)),
         "r2_log": model_metrics.r(r2),
