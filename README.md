@@ -68,7 +68,8 @@ going dark is swapped without touching anything downstream.
 ## Setup
 
 ```
-py -3.11 -m pip install -r requirements.txt   # Python 3.11 required
+py -3.11 -m pip install -r requirements.lock   # Python 3.11 required; exact pins (requirements.txt = the spec)
+py -3.11 src/sync_build.py fetch               # the latest built tables + site (see below)
 ```
 
 Then follow `run_pipeline.md`.
@@ -82,11 +83,16 @@ Then follow `run_pipeline.md`.
   the deep columns nothing else carries — run it roughly monthly. The
   Transfermarkt scrape (visible Chrome + a one-off WAF-captcha click) is also
   monthly-manual.
-- `data/processed/` is committed (built tables + pulled sources) and is the
-  only record of what has been pulled: every pull skips matches already in it,
-  so CI keeps no fetch cache. Per-match source rows live in
-  `data/processed/fotmob/`, `espn/` and `live/`, split per season. `data/raw/`
-  and the soccerdata cache are gitignored scratch.
+- `data/processed/` holds the pulled sources, ledgers and model scores -
+  committed, and the only record of what has been pulled: every pull skips
+  matches already in it, so CI keeps no fetch cache. Per-match source rows live
+  in `data/processed/fotmob/`, `espn/` and `live/`, split per season. The
+  tables the refresh rebuilds from scratch every run (player Elo, match model
+  table, predictions, squad / lineup tables, `site/index.html`) are **not**
+  committed - they'd grow the history ~5 MB a run - but published as the
+  `latest-build` release asset: `py -3.11 src/sync_build.py fetch` (list in
+  `sync_build.BUILD_FILES`). `data/raw/` and the soccerdata cache are gitignored
+  scratch.
 - **Forward-test ledger**: every refresh freezes the site's pre-match odds for
   upcoming fixtures in an append-only `predictions_ledger.csv` (timestamp +
   model-version hash); the site's Track Record tab scores them against results

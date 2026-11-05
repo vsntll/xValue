@@ -61,7 +61,8 @@ py -3.11 src/export_site_data.py   -> site/data.json + site/index.html
 ```
 
 `export_site_data.py` now splices the payload into `site/template.html` itself;
-`site/index.html` is the committed, self-contained deliverable.
+`site/index.html` is the self-contained deliverable - published by the refresh
+(release asset + Pages), not committed.
 
 ```
 py -3.11 src/build_sqlite_db.py   -> data/processed/xvalue.db  (read-only SQL mirror of every processed CSV, one table per file)
@@ -127,10 +128,13 @@ fills Understat's gaps from FotMob, **refreshes the current season's player
 stats** (`build_current_season_stats.py`), rebuilds the match table, retrains
 both models, **stops if either model got worse** (regression gate), regenerates
 `site/index.html`, writes the new model scores into the docs, **runs `tests/`**,
-and commits the refreshed
-`data/processed/` **and** `site/index.html` back to the branch it ran on. Only a
-`master` run triggers the Pages deploy, so a manual dispatch on a test branch
-never publishes the site. A run takes ~15 min against the 45-min job limit.
+and commits the refreshed sources, ledgers, model scores and docs back to the
+branch it ran on. On `master` it then packs the rebuilt tables + `site/index.html`
+into the `latest-build` release (`src/sync_build.py pack`, replaced each run) and
+triggers the Pages deploy, which publishes that page - a manual dispatch on a
+test branch never touches either. Each run starts by restoring the last build
+(`sync_build.py fetch`), since a few steps read last run's tables before
+rebuilding them. A run takes ~15 min against the 45-min job limit.
 
 Every pull step is `continue-on-error`, so a source being down never stops the
 refresh - it keeps its committed data and catches up on the next run that gets
@@ -152,9 +156,10 @@ nationality, and the ~200 unused deep FBref columns (progressive passing, SCA/GC
 zonal touches, PSxG) are kept from the most recent FBref parse. Finished seasons
 are never touched. Names are consolidated across sources - see `player_name_map.csv`.
 
-`data/processed/` is committed (checkout brings it, `git pull` gets you the
-latest data locally) and is the only record of what has been pulled - CI keeps
-no fetch cache. Every pull skips what is already committed and only requests
+`data/processed/`'s sources, ledgers and model scores are committed (`git pull`
+gets you the latest locally; `py -3.11 src/sync_build.py fetch` adds the rebuilt
+tables and site from the `latest-build` release) and are the only record of what
+has been pulled - CI keeps no fetch cache. Every pull skips what is already committed and only requests
 new matches: FotMob's per-match player rows / lineups / goal timelines live in
 `data/processed/fotmob/<kind>_<season>.csv`, the live-match source snapshots in
 `data/processed/live/`. `verify_player_matches.py` then cross-checks each FotMob

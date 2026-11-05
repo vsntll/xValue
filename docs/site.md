@@ -172,8 +172,9 @@ current-season (2026-27) `Age` is unpopulated upstream for every row -
 2025-26 record (new signings, debutants) still show no age.
 
 Run: `python src/export_site_data.py` — regenerates `site/data.json` **and**
-splices it into `site/template.html` to produce `site/index.html` (the committed,
-self-contained page; `__SITE_DATA_JSON__` placeholder), in one run
+splices it into `site/template.html` to produce `site/index.html` (the
+self-contained page - no longer committed: the refresh publishes it in the
+`latest-build` release asset and `deploy-pages.yml` deploys it from there; `__SITE_DATA_JSON__` placeholder), in one run
 (`splice_index_html()`, called at the end of `main()`). This is what
 `refresh.yml`'s "Regenerate the site" step relies on - before
 2026-09-04 the script only wrote `data.json`, so that CI step silently did
@@ -216,9 +217,9 @@ football-data.co.uk, fills Understat's missing matches from FotMob while it's
 down, **refreshes the current season's player stats**
 (`build_current_season_stats.py`: goals / assists / minutes / xG / SoT / fouls /
 tackles, no browser), rebuilds `matches_all`, retrains both models, rebuilds the
-player Elo, regenerates `site/index.html`, and commits the refreshed
-`data/processed/` **and** `site/index.html` back to the branch it ran on. Only a
-`master` run triggers the Pages deploy. A run takes ~15 min; a source that's
+player Elo, regenerates `site/index.html`, commits the refreshed sources and
+ledgers back to the branch it ran on, and - on `master` only - publishes the
+rebuilt tables + page as the `latest-build` release asset and deploys the page. A run takes ~15 min; a source that's
 down is skipped (`continue-on-error`) and keeps its committed data.
 
 It does **not** re-scrape the deep FBref columns (progressive passing, SCA/GCA,
