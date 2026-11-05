@@ -1,0 +1,42 @@
+name: CI
+
+# Lint + tests on every push and pull request, so a broken dixon_coles.py or
+# ledger change fails here instead of at the next scheduled refresh. The tests
+# that need the rebuilt tables (release asset, src/sync_build.py) skip cleanly
+# without them; everything checking committed data and the unit tests runs.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements.lock
+
+      - run: pip install -r requirements.lock
+
+      # correctness-only rules: syntax errors, undefined names, unused imports /
+      # variables - not style
+      - name: Lint (ruff)
+        run: ruff check src tests --select E9,F63,F7,F82,F401,F841
+
+      - name: Tests
+        run: python -m pytest -q tests
