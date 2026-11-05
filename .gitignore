@@ -51,3 +51,20 @@ models/
 
 # Claude Code worktrees / local
 .claude/
+
+# Rebuilt-every-run outputs - published as the `latest-build` release asset
+# (src/sync_build.py fetch / pack), not committed: they grew history ~5 MB a run
+data/processed/player_elo.csv
+data/processed/match_model_table.csv
+data/processed/matches_all.csv
+data/processed/outcome_model_predictions.csv
+data/processed/outcome_model_predictions_hybrid.csv
+data/processed/outcome_model_predictions_all.csv
+data/processed/value_model_predictions.csv
+data/processed/squad_season_features.csv
+data/processed/squad_momentum.csv
+data/processed/match_lineup_features.csv
+data/processed/match_lineup_players.csv
+site/index.html
+# src/sync_build.py pack output
+build/
