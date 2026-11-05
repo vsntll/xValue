@@ -1,12 +1,14 @@
-# Models (steps 6-8)
+# Models (pipeline steps 8-12)
 
-**Current results** (temporal holdout 2024-25 + 2025-26, all **big-5** leagues):
+<!-- metrics:models-summary -->
+**Current results** (temporal holdout 2024-25 + 2025-26, all **big-5** leagues; generated from `data/processed/model_metrics.json`):
 
 | | value model | outcome (pure) | outcome (hybrid) |
 | --- | --- | --- | --- |
-| metric | R²(log) **0.89**, MAE **€4.2M**, within-2x **91%**, medAPE 22% | log-loss **0.980**, acc **0.532** | log-loss **0.973**, acc **0.537** |
+| metric | R²(log) **0.89**, MAE **€4.2M**, within-2x **91%**, medAPE 22% | log-loss **0.977**, acc **0.535** | log-loss **0.974**, acc **0.534** |
 | v1 was | 0.70 / €9.1M / 68% | 1.014 / 0.511 | — |
-| reference | — | Bet365 closing 0.970 / 0.539 | (uses market opening odds as a feature) |
+| reference | — | Bet365 closing 0.971 / 0.539 | (uses market opening odds as a feature) |
+<!-- /metrics:models-summary -->
 
 Trajectory: value R²(log) 0.70 → 0.82 (prev-value) → 0.835 (contract/minutes) →
 0.87 (prev-season club value + xG-share) → 0.88 (name-resolution, coverage
@@ -15,24 +17,30 @@ Trajectory: value R²(log) 0.70 → 0.82 (prev-value) → 0.835 (contract/minute
 → **0.89** (Serie A + Ligue 1 folded in as full leagues 2026-09-06: +7.7k
 player-seasons, most without the team-success columns and cold-start-heavy, so
 the holdout got bigger and harder even as MAE fell to €4.2M). Outcome
-1.014 → 0.997 → 0.990 → 0.988 → 0.981 → **0.980** (pure - HGB's blend weight
-was 0 until this was tuned; now genuinely contributes). Hybrid **0.973**,
-closing ~97% of the base-rate → Bet365-closing gap (was ~90%).
+1.014 → 0.997 → 0.990 → 0.988 → 0.981 → 0.980 (pure - HGB's blend weight
+was 0 until this was tuned; now genuinely contributes); hybrid went from closing
+~90% of the base-rate → Bet365-closing gap to ~97%. Current scores: the table
+above, regenerated after every retrain.
 
+<!-- metrics:models-value-split -->
 The value model splits cleanly by whether a prior-season value exists:
-**R²(log) 0.92** for the ~82% that have one, **0.72** for cold-start arrivals with
+**R²(log) 0.90** for the ~93% that have one, **0.64** for cold-start arrivals with
 none (promoted-club squads, Eredivisie/Primeira/Championship signings, academy
 graduates, and Serie A / Ligue 1 players whose only prior value predates the
-2015 mirror). Keepers score **0.87**. Closing the cold-start gap - and pushing
+2015 mirror). Keepers score **0.87**.
+<!-- /metrics:models-value-split -->
+Closing the cold-start gap - and pushing
 past 0.90 - needs data we don't have: lower-league value history, transfer fees,
 or salaries.
 
 **The ceiling and the high end**: Transfermarkt caps listings near **€220M**, so
 predictions are clipped there in log space and the elite gravitate toward it.
-`medAPE` for the **€100M+ band is 15%** (was ~30-40% before — the trees squashed
-the tail toward the mean), though the ~40-row band now sits slightly *under* the
-listed values (median pred/listed 0.85). Mid-range predictions carry only a
-**~2% median bias** (pred/listed 1.02) but individual scatter stays ~22% —
+<!-- metrics:models-elite -->
+`medAPE` for the **€100M+ band is 18%** (was ~30-40% before the cap - the trees squashed
+the tail toward the mean), though the ~38-row band sits slightly *under* the
+listed values (median pred/listed 0.83). Mid-range (€3-40M) predictions carry a
+**median pred/listed of 0.99** but individual scatter stays ~21% —
+<!-- /metrics:models-elite -->
 that's roughly how much a crowd-sourced value moves between updates, and the
 season stats don't explain the revisions, so "every mid-range player within 10%"
 is not reachable from this data.
@@ -57,7 +65,7 @@ odds into the stack - it beats the opening line and lands ~level with the
 bookmaker's own **closing**-odds performance. The pure model uses only data.
 
 
-## Step 7 - value regression  (`src/train_value_model.py`)
+## Step 9 - value regression  (`src/train_value_model.py`)
 
 Predicts a player's market value from his season + his value history.
 
@@ -98,15 +106,16 @@ Predicts a player's market value from his season + his value history.
   scraped, `last_transfer_fee_log` / `fee_is_loan` / `fee_is_free` from a
   targeted Transfermarkt profile backfill (`pull_transfermarkt_scrape.py`) -
   a fee negotiated for the move is a strong value proxy even at zero minutes.
-- **Result**: R2(log) **0.88**, MAE **EUR4.2M**, medAPE **22%**, within-2x
-  **91%** (0.90 with a prior value, 0.62 cold-start on its own stack -
-  medAPE 40%, up from 0.72 R2(log) gap-to-warm before the split - 0.87
-  keepers). €100M+ band medAPE **16%**, median pred/listed **0.85**.
+<!-- metrics:models-value-result -->
+- **Result**: R2(log) **0.89**, MAE **€4.2M**, medAPE **22%**, within-2x
+  **91%** (0.90 with a prior value, 0.64 cold-start on its own stack -
+  medAPE 42% - 0.87 keepers). €100M+ band medAPE **18%**, median pred/listed **0.83**.
+<!-- /metrics:models-value-result -->
 - Output: `value_model_predictions.csv` (**every player, every season incl. the
   current one**, with `value_imputed` flag), `models/value_model.pkl`
   (`{direct, resid, cold, cal, cold_cal, features, features_cold}`).
 
-## Step 6 - squad rollup  (`src/build_squad_features.py`)
+## Step 8 - squad rollup  (`src/build_squad_features.py`)
 
 `data/processed/squad_season_features.csv` - one row per (team, season):
 `squad_value_eur`, `core18_value_eur`, `xi_proxy_value_eur` (top-11 by
@@ -114,9 +123,9 @@ minutes - a season-level proxy, not any specific match's real lineup),
 `value_known_frac`, minutes-weighted `mean_age_wtd`, `squad_xg`, `squad_xa`.
 The real per-match XI rollup (confirmed starters, from FotMob's committed
 lineup rows in `data/processed/fotmob/lineups_<season>.csv` - `src/build_match_lineups.py` -> `match_lineup_features.csv`)
-feeds `build_match_model_table.py`'s `xi_value_ratio` directly; see Step 8.
+feeds `build_match_model_table.py`'s `xi_value_ratio` directly; see Step 11.
 
-## Step 8 - outcome classifier  (`src/train_outcome_model.py` + `build_match_model_table.py`)
+## Step 11 - outcome classifier  (`src/train_outcome_model.py` + `build_match_model_table.py`)
 
 Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
 
@@ -155,29 +164,30 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
     partly correlated with the other two, same reasoning train_value_model.py's
     multi-learner stacks already use
 - **Split**: train <= 2022-23, val 2023-24, test 2024-26 (~3,470).
-- **Result** (log-loss / accuracy):
+<!-- metrics:models-outcome-table -->
+- **Result** (log-loss / accuracy, test 2024-25 + 2025-26, n=3,476):
 
   | model | acc | log-loss |
   | --- | --- | --- |
-  | base rate | .429 | 1.075 |
-  | logreg | .524 | 0.998 |
-  | hgb | .527 | 0.991 |
-  | poisson-Skellam | .529 | 0.982 |
-  | poisson + xG | .529 | 0.980 |
-  | blend {poisson, logreg, hgb} | .532 | 0.980 |
-  | **hybrid (+ market opening odds)** | **.537** | **0.973** |
-  | Bet365 closing | .539 | 0.970 |
+  | base rate | 0.429 | 1.075 |
+  | logreg | 0.527 | 0.983 |
+  | hgb | 0.526 | 0.987 |
+  | poisson-Skellam | 0.528 | 0.981 |
+  | poisson + xG | 0.528 | 0.980 |
+  | blend {poisson, logreg, hgb} (**pure**) | 0.535 | 0.977 |
+  | **hybrid (+ market opening odds)** | 0.534 | 0.974 |
+  | Bet365 closing | 0.539 | 0.971 |
 
-  The pure model closes ~90% of the base-rate → bookmaker gap on log-loss; the
+  The pure model closes ~94% of the base-rate → bookmaker gap on log-loss; the
   hybrid, which adds the market's *opening* line as a feature, closes ~97% of
-  it - very close to (not quite level with) Bet365's *closing*-odds
-  performance. The last sliver is information the market has and we don't
+  it - the last sliver is information the market has and we don't
   (confirmed lineups, injuries, sharp money).
+<!-- /metrics:models-outcome-table -->
 - Output: `data/processed/outcome_model_predictions.csv` (pure),
   `outcome_model_predictions_hybrid.csv` (+ opening odds),
   `outcome_model_predictions_all.csv` (every split, incl. the live 2026-27 rows).
 
-## Player Elo  (`src/build_player_elo.py`)
+## Step 12 - player Elo  (`src/build_player_elo.py`)
 
 A self-contained, match-by-match performance rating for individual players -
 no value-model inputs anywhere in it, and not a feature of the outcome model
@@ -398,7 +408,7 @@ Output: `data/processed/betting_backtest.csv` (bet-level detail, pure model).
   targeted profile backfill - plus a real 2022-23 TM scrape to fill the
   mirror hole.
 - Advanced player stats for 2023-26 (blocked - FBref gates, mirror stale).
-- Outcome model: `xi_value_ratio` (Step 8) only closes the gap for matches
+- Outcome model: `xi_value_ratio` (Step 11) only closes the gap for matches
   already played or scored near kickoff, not the model's normal day(s)-ahead
   predictions - confirmed lineups / injuries are still the sliver Bet365's
   closing line has that this model doesn't. Still worth backtesting before
@@ -414,7 +424,8 @@ Output: `data/processed/betting_backtest.csv` (bet-level detail, pure model).
   top-5 league at 35+, who are mostly backups by then) - a true delta method
   (pairing each player's own year-over-year change, not levels) would net
   that out; not attempted here.
-- Betting backtester: the favourite-side edge (+12% ROI on 1.0-1.5 odds, n=89)
+- Betting backtester: the favourite-side edge (the 1.0-1.5 odds bucket in the
+  table above - small-n and it has swung between +2% and +12% across reruns)
   is worth re-checking as more test-set seasons accumulate before trusting it
   - and testing the actual "low-liquidity leagues" hypothesis needs a market
   outside the big-5 (Eredivisie, Championship, ...) this dataset doesn't have.

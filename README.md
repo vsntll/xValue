@@ -3,15 +3,20 @@
 Two models over a shared data layer for the **big-5 top flights — England,
 Spain, Germany, Italy, France, 2020-21 → 2026-27** (+ the cups those clubs play in):
 
+<!-- metrics:readme-headline -->
 - **Value regression** — predicts a player's market value from his season + value
   history. Stacked trees (direct + change-from-last-value blend, capped at
-  Transfermarkt's €220M ceiling), R²(log) **0.89**, MAE **€4.1M**, within-2×
-  **91%** on a 2024-26 big-5 holdout — **0.92** with a prior-season value, **15 %**
+  Transfermarkt's €220M ceiling), R²(log) **0.89**, MAE **€4.2M**, within-2×
+  **91%** on a 2024-26 big-5 holdout — **0.90** with a prior-season value, **18%**
   median error in the €100M+ band. Outfield + keepers; scores every season
   including the current one.
 - **Outcome classifier** — pre-match home-win / draw / away-win. Poisson-Skellam
-  on Elo + form + xG, log-loss **0.981** (pure) / **0.972** (with market odds),
-  vs Bet365 closing 0.971 — at the market ceiling.
+  on Elo + form + xG, log-loss **0.977** (pure) / **0.974** (with market odds),
+  vs Bet365 closing 0.971.
+<!-- /metrics:readme-headline -->
+
+(Headline numbers are generated from `data/processed/model_metrics.json` by
+`src/update_doc_metrics.py` after every retrain.)
 
 Alongside them, a **player Elo** (no market value anywhere in it) rates every
 player match by match on a role-weighted blend of attacking output, defensive
@@ -57,6 +62,7 @@ going dark is swapped without touching anything downstream.
 | 11 | Outcome model | `build_match_model_table.py` → `train_outcome_model.py [--hybrid]` | `outcome_model_predictions*.csv` |
 | 12 | Player Elo | `build_national_elo.py` → `build_player_elo.py` (opponent-adjusted, no market value; role-weighted attack / defence / passing from Understat + FotMob, club + international) | `national_team_elo.csv`, `player_elo.csv` |
 | 13 | Site | `export_site_data.py` | `site/index.html` |
+| — | Checks | `check_model_metrics.py` (regression gate), `pytest tests`, `update_doc_metrics.py` | `model_metrics.json`, the numbers in this README |
 | 14 | SQLite mirror (local only) | `build_sqlite_db.py` (one table per CSV, fully replaced each run; gitignored and not built in CI - ~150 MB is over GitHub's 100 MB file limit) | `data/processed/xvalue.db` |
 
 ## Setup
@@ -81,6 +87,10 @@ Then follow `run_pipeline.md`.
   so CI keeps no fetch cache. Per-match source rows live in
   `data/processed/fotmob/`, `espn/` and `live/`, split per season. `data/raw/`
   and the soccerdata cache are gitignored scratch.
+- **Tests + regression gate**: the refresh runs `tests/` (data invariants +
+  unit tests) and `check_model_metrics.py` (fails if value R²(log) or 1X2
+  log-loss got worse past tolerance vs the committed `model_metrics.json`)
+  before it commits - see `run_pipeline.md` §5.
 - Every FotMob player-match row carries `verified` = agree / conflict /
   fotmob_only and `conflicts` (e.g. `espn:fouls`), from
   `verify_player_matches.py`'s cross-check against Understat, ESPN and
