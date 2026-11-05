@@ -40,7 +40,6 @@ sys.path.insert(0, str(ROOT / "src"))
 import requests  # noqa: E402
 
 from fbref_common import CHALLENGE_MARKERS, COMPS, current_season  # noqa: E402
-from live.schema import LEAGUES  # noqa: E402
 
 OUT = ROOT / "data" / "processed" / "health_check.json"
 TIMEOUT = 25

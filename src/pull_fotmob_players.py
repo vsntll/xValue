@@ -41,7 +41,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 import fotmob_store as store  # noqa: E402
 from fbref_common import current_season  # noqa: E402
-from live.schema import deaccent, normalize_team  # noqa: E402
+from live.schema import normalize_team  # noqa: E402
 from net import get_json  # noqa: E402
 
 PROC = ROOT / "data" / "processed"

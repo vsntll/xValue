@@ -20,7 +20,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pandas as pd
 import requests
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent

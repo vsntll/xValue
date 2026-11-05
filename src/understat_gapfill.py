@@ -38,7 +38,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 import fotmob_store  # noqa: E402
-from live.schema import deaccent, normalize_team  # noqa: E402
+from live.schema import deaccent  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 PURE = {k: PROC / f"understat_{k}.csv" for k in ("player_matches", "matches", "player_season")}

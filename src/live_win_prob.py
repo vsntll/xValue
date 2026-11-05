@@ -89,8 +89,6 @@ def _self_test() -> None:
     # 1. minute=0, 0-0, no reds: must reduce exactly to the pre-match grid
     lh, la = 1.6, 1.1
     live = live_win_prob(lh, la, minute=0, cur_h=0, cur_a=0)
-    i = np.arange(MAXG_REM)[:, None, None]
-    j = np.arange(MAXG_REM)[None, :, None]
     lh_a, la_a = np.array([lh]), np.array([la])
     ph = poisson.pmf(np.arange(MAXG_REM)[:, None], lh_a)
     pa = poisson.pmf(np.arange(MAXG_REM)[:, None], la_a)

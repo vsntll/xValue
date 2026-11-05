@@ -109,12 +109,10 @@ def build() -> pd.DataFrame:
     roll: dict[tuple, deque] = defaultdict(lambda: deque(maxlen=8))
     last_date: dict[str, pd.Timestamp] = {}
     h2h: dict[tuple, deque] = defaultdict(lambda: deque(maxlen=5))
-    league_teams: dict[str, set] = defaultdict(set)
 
     feats = []
     for _, r in m.iterrows():
         h, a, seas = r["h"], r["a"], r["season"]
-        league = r["comp"] if r["competition_type"] == "league" else None
 
         # season reversion + promoted detection (only for league rows we output)
         for t in (h, a):
@@ -132,10 +130,6 @@ def build() -> pd.DataFrame:
                 else:
                     selo[t] = sxelo[t] = 1500.0 if seas == first_season else PROMOTED_ELO
                 last_season[t] = seas
-
-        promoted_h = promoted_a = np.nan
-        if league is not None:
-            prev = league_teams.get(f"{league}|prev|{seas}", None)
 
         def _roll_mean(key, idx):
             d = roll[key]

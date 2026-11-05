@@ -188,7 +188,6 @@ def build() -> pd.DataFrame:
     # 1. every FBref current-season row is kept; refreshed if Understat has it
     prior = (hist.assign(pk=hist["player_slug"].map(_norm_name))
                  .sort_values("season").drop_duplicates("pk", keep="last").set_index("pk"))
-    fcur_names = set(fcur["player_slug"].map(_norm_name))
     rows, used, xref = [], set(), []   # xref: (understat_name, fbref_name) for a non-exact match
     for row in fcur[f.columns].to_dict("records"):
         pk, tk = _norm_name(row["player_slug"]), normalize_team(row["Squad"])

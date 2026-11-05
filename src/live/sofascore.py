@@ -17,4 +17,4 @@ def fetch(comp_codes: list[str], season: str, with_stats: bool = True) -> "objec
     raise NotImplementedError(
         "sofascore source not implemented - enable only as a fallback. See module docstring."
     )
-    return blank_frame()  # noqa: unreachable
+    return blank_frame()  # unreachable - kept for the signature

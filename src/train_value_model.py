@@ -366,7 +366,7 @@ def main() -> None:
     Xtr_warm, Xtr_cold = _prep(tr_warm, feat_num), _prep(tr_cold, feat_num_cold)
     cv = KFold(n_splits=5, shuffle=True, random_state=0)
 
-    ytr, ytr_warm, ytr_cold = tr["y"].to_numpy(), tr_warm["y"].to_numpy(), tr_cold["y"].to_numpy()
+    ytr_warm, ytr_cold = tr_warm["y"].to_numpy(), tr_cold["y"].to_numpy()
     print(f"cold-start split: {len(tr_warm)} warm / {len(tr_cold)} cold "
           f"({len(tr_cold) / len(tr):.0%}) of fit rows")
     # Transfermarkt caps its listings near this; the best players sit just under
