@@ -109,6 +109,51 @@ def _ll(p: np.ndarray, y: np.ndarray) -> np.ndarray:
     return -np.log(np.clip(p[np.arange(len(y)), y], 1e-12, 1))
 
 
+def _outcome_lookup():
+    """(home_key, away_key, day) -> (result 0/1/2 = H/D/A, de-vigged closing
+    market [home, draw, away]) for finished league matches, or None."""
+    res = pd.read_csv(PROC / "matches_all.csv", low_memory=False)
+    res = res[(res["competition_type"] == "league") & res["FTR"].notna()]
+    odds = pd.read_csv(PROC / "match_features.csv", low_memory=False)
+    r_idx = _by_team_day(res, "HomeTeam", "AwayTeam", "Date")
+    o_idx = _by_team_day(odds, "HomeTeam", "AwayTeam", "Date")
+
+    def look(h, a, day):
+        ri, oi = _find(r_idx, h, a, day), _find(o_idx, h, a, day)
+        if ri is None or oi is None:
+            return None
+        o = odds.loc[oi]
+        for cols in (("AvgCH", "AvgCD", "AvgCA"), ("B365CH", "B365CD", "B365CA")):
+            vals = pd.to_numeric(o[list(cols)], errors="coerce").to_numpy(dtype=float)
+            if np.isfinite(vals).all() and (vals > 1).all():
+                inv = 1 / vals
+                return {"H": 0, "D": 1, "A": 2}[res.loc[ri, "FTR"]], inv / inv.sum()   # proportional de-vig
+        return None
+    return look
+
+
+def scoreboard_xi() -> dict | None:
+    """The matchday XI ledger (matchday_rescore.py): plain vs XI-adjusted odds
+    vs the closing market, on the same finished matches."""
+    f = PROC / "predictions_ledger_xi.csv"
+    if not f.exists():
+        return None
+    led = pd.read_csv(f, dtype={"fotmob_id": str})
+    look = _outcome_lookup()
+    rows = []
+    for r in led.itertuples(index=False):
+        hit = look(r.home_key, r.away_key, pd.Timestamp(r.kickoff_utc[:10]))
+        if hit is not None:
+            rows.append((hit[0], [r.p_home_base, r.p_draw_base, r.p_away_base], [r.p_home, r.p_draw, r.p_away],
+                         hit[1].tolist()))
+    if not rows:
+        return {"n": 0, "pending": int(len(led))}
+    y = np.array([r[0] for r in rows])
+    ll = {k: round(float(_ll(np.array([r[i] for r in rows]), y).mean()), 4)
+          for k, i in (("base_ll", 1), ("xi_ll", 2), ("market_ll", 3))}
+    return {"n": len(rows), "pending": int(len(led) - len(rows)), **ll}
+
+
 def scoreboard() -> dict | None:
     """Running log-loss of the frozen pre-match odds vs the closing market."""
     led = read()
@@ -118,34 +163,16 @@ def scoreboard() -> dict | None:
     led = led[pd.to_datetime(led["snapshot_at"].str[:10]) < led["kick"]]
     last = led.sort_values("snapshot_at").drop_duplicates(["kickoff_date", "home_key", "away_key"], keep="last")
 
-    res = pd.read_csv(PROC / "matches_all.csv", low_memory=False)
-    res = res[(res["competition_type"] == "league") & res["FTR"].notna()]
-    odds = pd.read_csv(PROC / "match_features.csv", low_memory=False)
-    r_idx = _by_team_day(res, "HomeTeam", "AwayTeam", "Date")
-    o_idx = _by_team_day(odds, "HomeTeam", "AwayTeam", "Date")
-
+    look = _outcome_lookup()
     rows = []
     for r in last.itertuples(index=False):
-        ri = _find(r_idx, r.home_key, r.away_key, r.kick)
-        if ri is None:
+        hit = look(r.home_key, r.away_key, r.kick)
+        if hit is None:
             continue
-        oi = _find(o_idx, r.home_key, r.away_key, r.kick)
-        mk = None
-        if oi is not None:
-            o = odds.loc[oi]
-            for cols in (("AvgCH", "AvgCD", "AvgCA"), ("B365CH", "B365CD", "B365CA")):
-                vals = pd.to_numeric(o[list(cols)], errors="coerce").to_numpy(dtype=float)
-                if np.isfinite(vals).all() and (vals > 1).all():
-                    inv = 1 / vals
-                    mk = inv / inv.sum()     # proportional de-vig -> [home, draw, away]
-                    break
-        if mk is None:
-            continue
-        ftr = res.loc[ri, "FTR"]
+        y, mk = hit
         rows.append({"date": r.kickoff_date, "league": r.league, "home": r.home, "away": r.away,
                      "p": [r.p_home, r.p_draw, r.p_away], "m": mk.tolist(),
-                     "y": {"H": 0, "D": 1, "A": 2}[ftr], "snapshot_at": r.snapshot_at,
-                     "model_version": r.model_version})
+                     "y": y, "snapshot_at": r.snapshot_at, "model_version": r.model_version})
     if not rows:
         return {"since": led["snapshot_at"].min(), "n": 0, "pending": int(len(last))}
     df = pd.DataFrame(rows).sort_values("date").reset_index(drop=True)
