@@ -28,9 +28,10 @@ and international appearances alike.
 | --- | --- | --- |
 | football-data.co.uk | league results + bookmaker odds, 2014-26 (all big-5) | `pull_match_archive.py` |
 | FBref (nodriver) | finished-season player stats (PL/BL/La Liga) + the deep columns nothing live carries, all-comps team match logs | `pull_fbref_*.py` |
-| Understat (soccerdata) | per-match + per-player xG, 2020-now; the current-season goals/assists/minutes/xG and the Serie A / Ligue 1 player spine | `pull_understat*.py` |
-| FotMob | per-match box scores: SoT / fouls / tackles / interceptions / blocks / clearances / touches / saves / passes completed + attempted; confirmed XIs + goal/red-card timelines | `pull_fotmob_players.py` |
-| Transfermarkt (mirror + nodriver) + Sofascore | market values, 2020-27 | `pull_transfermarkt*.py`, `pull_sofascore_values.py` |
+| Understat (soccerdata) | per-match + per-player xG, 2020-now; the current-season goals/assists/minutes/xG and the Serie A / Ligue 1 player spine. **Down since late Sept 2026** - FotMob fills its missing matches (`understat_gapfill.py`) until it's back | `pull_understat*.py` |
+| FotMob | per-match box scores: SoT / fouls / tackles / interceptions / blocks / clearances / touches / saves / passes completed + attempted; confirmed XIs + goal/red-card timelines; also xG / xA / minutes, which stand in for Understat while it's down | `pull_fotmob_players.py` |
+| ESPN (player box scores) | per-player goals / assists / shots / SoT / fouls / saves, five leagues - the independent second source the FotMob rows are cross-checked against | `pull_espn_players.py` |
+| Transfermarkt (mirror + nodriver) + Sofascore | market values, 2020-27. Sofascore IP-blocks GitHub's runners (and some residential IPs); without a `SOFASCORE_PROXY` secret the refresh keeps the last good `sofascore_values.csv` | `pull_transfermarkt*.py`, `pull_sofascore_values.py` |
 | worldfootballR mirror | advanced player stats (xAG, progressive, tackles…), 2020-22 | `pull_wfr_advanced.py` |
 | ESPN / FotMob / football-data.org | current-season fixtures/results + cup stats & xG | `pull_live.py`, `src/live/` |
 | FotMob (internationals) | senior men's international box scores (World Cup, continental finals, qualifiers, Nations Leagues, friendlies), 2024-25 on | `pull_fotmob_internationals.py` |
@@ -47,7 +48,7 @@ going dark is swapped without touching anything downstream.
 | 2 | Finished-season player stats | `pull_fbref_player_stats.py` → `parse_fbref_player_stats.py` | `fbref_player_season_stats.csv` (~18.9k rows, 291 cols) |
 | 3 | Market values | `pull_transfermarkt*.py`, `pull_sofascore_values.py` → `build_value_history.py` | `value_history.csv`; folded into step 2 (~90% labelled) |
 | 4 | Serie A / Ligue 1 player spine | `build_understat_player_seasons.py` (Understat + wfr mirror + FotMob + value history) | adds ~7.7k player-seasons to step 2 |
-| 5 | Current-season stats | `pull_understat.py --current`, `pull_fotmob_players.py --current` → `build_current_season_stats.py` | rewrites the 2026-27 rows of step 2 — no browser |
+| 5 | Current-season stats | `pull_understat.py --current`, `pull_fotmob_players.py --current`, `pull_espn_players.py --current` → `verify_player_matches.py` → `understat_gapfill.py` → `build_current_season_stats.py` | per-match rows cross-checked (`verified` column), Understat's gaps filled from FotMob, then the 2026-27 rows of step 2 rewritten — no browser |
 | 6 | Cross-source name resolution | alias map + transliteration in `src/live/schema.py`, fuzzy value fill in the parser, `player_name_map.csv` (~95%) | — |
 | 7 | Unified match table | `build_matches_all.py` | `matches_all.csv` (~13.5k matches, all comps) |
 | 8 | Squad rollup | `build_squad_features.py` | `squad_season_features.csv` |
@@ -75,5 +76,13 @@ Then follow `run_pipeline.md`.
   the deep columns nothing else carries — run it roughly monthly. The
   Transfermarkt scrape (visible Chrome + a one-off WAF-captcha click) is also
   monthly-manual.
-- `data/processed/` is committed (built tables + pulled sources); `data/raw/`
-  and the fetch caches are gitignored (large and reproducible).
+- `data/processed/` is committed (built tables + pulled sources) and is the
+  only record of what has been pulled: every pull skips matches already in it,
+  so CI keeps no fetch cache. Per-match source rows live in
+  `data/processed/fotmob/`, `espn/` and `live/`, split per season. `data/raw/`
+  and the soccerdata cache are gitignored scratch.
+- Every FotMob player-match row carries `verified` = agree / conflict /
+  fotmob_only and `conflicts` (e.g. `espn:fouls`), from
+  `verify_player_matches.py`'s cross-check against Understat, ESPN and
+  football-data.co.uk (internationals: martj42). Rows are flagged, never
+  dropped or overwritten.
