@@ -175,14 +175,14 @@ Run: `python src/export_site_data.py` — regenerates `site/data.json` **and**
 splices it into `site/template.html` to produce `site/index.html` (the committed,
 self-contained page; `__SITE_DATA_JSON__` placeholder), in one run
 (`splice_index_html()`, called at the end of `main()`). This is what
-`weekly-refresh.yml`'s "Regenerate the site" step relies on - before
+`refresh.yml`'s "Regenerate the site" step relies on - before
 2026-09-04 the script only wrote `data.json`, so that CI step silently did
 nothing to `site/index.html` and the commit-and-deploy step downstream always
 saw "site unchanged."
 
 ## Auto-refresh (every 2 days)
 
-`.github/workflows/weekly-refresh.yml` — "Site refresh (every 2 days)", cron
+`.github/workflows/refresh.yml` — "Site refresh (every 2 days)", cron
 `0 7 */2 * *` + manual dispatch — re-pulls every browser-free source,
 cross-checks FotMob's per-player rows against Understat / ESPN /
 football-data.co.uk, fills Understat's missing matches from FotMob while it's

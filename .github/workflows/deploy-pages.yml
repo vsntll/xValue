@@ -1,6 +1,6 @@
 name: Deploy site to GitHub Pages
 
-# Publishes site/index.html whenever it changes (the weekly refresh commits it,
+# Publishes site/index.html whenever it changes (the every-2-days refresh commits it,
 # or you commit a local FBref re-scrape). One-time setup: repo Settings -> Pages
 # -> Source: "GitHub Actions".
 

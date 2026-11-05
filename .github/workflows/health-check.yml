@@ -11,7 +11,7 @@ name: Data source health check
 
 on:
   schedule:
-    - cron: "30 6 */3 * *"      # every 3 days, 06:30 UTC (ahead of the Monday full refresh)
+    - cron: "30 6 */3 * *"      # every 3 days, 06:30 UTC (the full refresh, refresh.yml, runs every 2 days at 07:00)
   workflow_dispatch: {}
 
 permissions:

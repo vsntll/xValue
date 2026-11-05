@@ -67,7 +67,7 @@ def tab_predictions() -> None:
     live = df[df["split"] == "live"].copy()
     if live.empty:
         st.info("No 2026-27 matches scored yet - they show up here once played and the "
-                "pipeline's rebuilt (weekly, or after a manual refresh).")
+                "pipeline's rebuilt (every 2 days, or after a manual refresh).")
         return
     live["Date"] = pd.to_datetime(live["Date"])
     live = live.sort_values("Date", ascending=False)
