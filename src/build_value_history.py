@@ -9,7 +9,7 @@ had ~54% coverage because:
 
 This script unions every value we can get into one lookup keyed by
 (player_key, season) - and crucially pulls the mirror for **all big-5 leagues,
-season_start_year 2015..2022**, not just our three leagues / three seasons:
+season_start_year 2015..2022**, not just the leagues and seasons the FBref scrape covers:
 
     data/raw/tm/big5_player_vals.rds     worldfootballR mirror (2015-22, big-5)
     data/processed/tm_values_scraped.csv nodriver scrape        (2023-26, our 3)

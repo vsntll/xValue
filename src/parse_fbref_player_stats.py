@@ -192,7 +192,7 @@ def main() -> None:
 
     # xG for every season/league from Understat (src/pull_understat.py). The
     # mirror above only covers 2020-22; Understat covers 2020-21..now for all
-    # three leagues. Joined on season+league+normalised player+team.
+    # big-5 leagues. Joined on season+league+normalised player+team.
     us = OUT_PATH.parent / "understat_player_season.csv"
     if us.exists():
         ux = understat_gapfill.read("player_season")

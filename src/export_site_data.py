@@ -1,12 +1,20 @@
 """Export a self-contained JSON payload for the player/odds website.
 
-Covers the Premier League, La Liga and Bundesliga. Combines:
-  - current-season (2026-27) + last-season (2025-26) FBref stats per player
+Covers the big-5 leagues (Premier League, La Liga, Bundesliga, Serie A, Ligue 1).
+Combines:
+  - current-season (2026-27) + last-season (2025-26) stats per player from
+    fbref_player_season_stats.csv - finished seasons from the FBref scrape, the
+    current season refreshed from Understat + FotMob (build_current_season_stats.py)
   - the value model's predicted market value (`value_model_predictions.csv`,
     current season preferred, falls back to last season)
   - a simple full-season pace projection from current per-90 rates
-  - next-fixture win/draw/loss odds per team, from a Dixon-Coles model
-    (`src/dixon_coles.py`) fit on all competitions through today
+  - next-fixture win/draw/loss odds per team from the headline outcome model
+    (train_outcome_model.py's pre-match rows for upcoming fixtures), falling back
+    to a Dixon-Coles model (`src/dixon_coles.py`) fit on all competitions through
+    today, which also supplies the expected goals behind the props and the sim
+  - the forward-test ledger (prediction_ledger.py): both models' pre-match odds
+    frozen each run, scored head to head against the market (Track Record tab),
+    plus a calibration diagram
   - per-player anytime goal / assist odds for that next fixture, from a
     share-of-team-expected-goals split (player npxG90 * minutes-share, normalised
     within the matchday squad) fed through a Poisson
@@ -20,7 +28,9 @@ Covers the Premier League, La Liga and Bundesliga. Combines:
 
 Run: py -3.11 src/export_site_data.py   (or plain python3 - no nodriver needed)
 Output: site/data.json, then spliced into site/template.html to produce the
-committed, self-contained site/index.html - both written by this one run.
+self-contained site/index.html - both written by this one run. Neither is
+committed: the refresh publishes index.html in the `latest-build` release
+(src/sync_build.py) and deploy-pages.yml serves it from there.
 """
 
 from __future__ import annotations
@@ -1180,7 +1190,7 @@ def main() -> None:
 
 
 def splice_index_html(payload_json: str) -> None:
-    """site/template.html + this run's data -> the committed, self-contained
+    """site/template.html + this run's data -> the self-contained
     site/index.html. Escaping </script so a name/comp string can't break out of
     the embedded JSON <script> block (e.g. a club literally named "</script>")."""
     template = TEMPLATE.read_text(encoding="utf-8")
