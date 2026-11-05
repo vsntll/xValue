@@ -182,6 +182,13 @@ def main() -> None:
     tracked = _tracked_by_season()
     live = live_matches(tracked)
     allm = pd.concat([league_history(), cup_history(), live], ignore_index=True)
+    # a result dated after today can't be real - the live feeds have marked a
+    # postponed fixture "finished 0-0" at its new date (Rayo v Athletic, Dec 2026),
+    # which pushed every downstream "as of" date past the actual present
+    future = pd.to_datetime(allm["Date"], errors="coerce") > pd.Timestamp.now(tz="UTC").tz_localize(None)
+    if future.any():
+        print(f"dropping {int(future.sum())} 'played' matches dated in the future")
+        allm = allm[~future]
     allm["_k"] = _key(allm)
     allm = allm.drop_duplicates(subset="_k").drop(columns="_k")
     allm = _enrich(allm, live)
