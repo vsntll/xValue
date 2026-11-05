@@ -5,22 +5,24 @@ __pycache__/
 venv/
 .ipynb_checkpoints/
 
-# Data — raw downloads are reproducible and stay untracked; data/processed/ IS
-# committed now (sources + built tables) so the weekly workflow and a fresh
-# clone don't depend on the 7-day actions/cache eviction window.
+# Data - data/raw/ is scratch (raw downloads, reproducible). data/processed/ is
+# committed - pulled sources, ledgers, model scores - and is the only record of
+# what's been pulled (no fetch cache in CI). The tables the every-2-days refresh
+# rebuilds from scratch are listed at the bottom: they ship in the latest-build
+# release instead of git history.
 data/raw/
 # soccerdata caches (SOCCERDATA_DIR points into these) - just a fetch cache
+data/soccerdata/
+data/understat_cache/
 # SQLite mirror of data/processed/*.csv (src/build_sqlite_db.py) - local-only:
 # ~150 MB, over GitHub's 100 MB file limit, and nothing in the pipeline reads it
 data/processed/xvalue.db
-data/soccerdata/
-data/understat_cache/
 
 # Local scratch — diagnostic scripts, sample dumps; never committed
 scratch/
 
 # site/data.json is a regenerated build artifact (src/export_site_data.py);
-# site/index.html embeds a frozen snapshot of it and is the committed deliverable
+# site/index.html embeds it and ships in the latest-build release (bottom)
 site/data.json
 
 # One-off tarball for the old pipeline-seed release (data/processed/ is committed
