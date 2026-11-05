@@ -39,6 +39,8 @@ downloaded_files/
 latest_logs/
 assets/
 *.lock
+# ...except the pinned dependency lockfile, which is committed
+!requirements.lock
 
 # Unrelated files that OneDrive syncs into this folder — not part of this project
 xValue/

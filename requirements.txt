@@ -1,4 +1,9 @@
 # Python 3.11 (nodriver + soccerdata's TLS client need it; run everything as `py -3.11 ...`)
+#
+# This is the human-edited spec (lower bounds). CI installs the exact pins in
+# requirements.lock so a retrain is reproducible when pandas / scikit-learn bump;
+# after editing this file, regenerate the lock with:
+#   py -3.11 -m uv pip compile requirements.txt --universal --python-version 3.11 -o requirements.lock
 
 pandas>=2.0
 numpy>=1.26
