@@ -112,8 +112,8 @@ Predicts a player's market value from his season + his value history.
 `squad_value_eur`, `core18_value_eur`, `xi_proxy_value_eur` (top-11 by
 minutes - a season-level proxy, not any specific match's real lineup),
 `value_known_frac`, minutes-weighted `mean_age_wtd`, `squad_xg`, `squad_xa`.
-The real per-match XI rollup (confirmed starters, from FotMob's cached
-lineup data - `src/build_match_lineups.py` -> `match_lineup_features.csv`)
+The real per-match XI rollup (confirmed starters, from FotMob's committed
+lineup rows in `data/processed/fotmob/lineups_<season>.csv` - `src/build_match_lineups.py` -> `match_lineup_features.csv`)
 feeds `build_match_model_table.py`'s `xi_value_ratio` directly; see Step 8.
 
 ## Step 8 - outcome classifier  (`src/train_outcome_model.py` + `build_match_model_table.py`)
@@ -190,9 +190,12 @@ two-match grace.
 
 - **Actual** is a role-weighted blend of three per-match components, not
   attacking output alone:
-  - `atk` - xG + 0.7 × xA (Understat, `understat_player_matches.csv`; xG includes penalties)
+  - `atk` - xG + 0.7 × xA (Understat, `understat_player_matches.csv` read
+    through `understat_gapfill.read()`, so matches Understat hasn't published
+    while it's down come from FotMob's xG / xA instead; xG includes penalties)
   - `def` - tackles + interceptions + blocks + clearances for outfield
-    players; saves − goals conceded for keepers (FotMob per-match cache)
+    players; saves − goals conceded for keepers (FotMob's committed per-match
+    rows, `data/processed/fotmob/player_matches_<season>.csv`)
   - `pass` - passes completed minus what a position-average passer would
     complete on the same attempts (FotMob; matches with < 5 attempts are
     treated as missing)
@@ -207,7 +210,7 @@ two-match grace.
   | DF | 0.20 | 0.50 | 0.30 |
   | GK | 0.05 | 0.55 | 0.40 |
 
-  A component missing for a match (no FotMob cache, or pre-backfill pass data)
+  A component missing for a match (no FotMob row, or pre-backfill pass data)
   drops out and the remaining weights renormalize - never counted as zero.
 - **Expected**, in the same z units, per 90 minutes played:
   `baseline + (rating − 1500) / SPREAD + OPP_BETA × (opponent Elo − average opponent)`.
@@ -225,7 +228,7 @@ two-match grace.
   Position comes from `fbref_player_season_stats.csv` (Understat says "Sub"
   for anyone off the bench).
 - **Pass data** needs `pull_fotmob_players.py --backfill-passes <seasons>` for
-  matches cached before `passes_completed`/`passes_attempted` were captured;
+  matches committed before `passes_completed`/`passes_attempted` were captured;
   the script prints its FotMob join + pass coverage each run.
 - **International appearances** move the same rating. Box scores come from
   FotMob (`pull_fotmob_internationals.py` → `fotmob_intl_player_matches.csv`:
@@ -302,12 +305,13 @@ team down to 10 men), applied per card.
 
 Data: the goal/red-card timeline comes from the same FotMob `matchDetails`
 payload `pull_fotmob_players.py` already polls (`content.matchFacts.events`)
-- cached opportunistically for new matches at zero extra request cost, same
-pattern as the lineup cache; backfilling it for already-pulled seasons needs
+- committed for every new match at zero extra request cost
+(`data/processed/fotmob/events_<season>.csv`, alongside the lineups); backfilling
+it for matches pulled before events were captured needs
 `pull_fotmob_players.py --events <season>` (a deliberate, bounded re-fetch).
 
 **Backtest** (`src/backtest_live_win_prob.py`): replays every 2025-26 match
-with a cached event timeline minute-by-minute against the REAL final
+with an event timeline minute-by-minute against the REAL final
 outcome (1,620 matches, 1,718/1,752 resolved to a match_model_table.csv row
 - a full-season backfill via `pull_fotmob_players.py --events 2025-26`),
 Brier score by minute checkpoint, against a static (never-updated, minute-0)
