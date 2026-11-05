@@ -95,7 +95,13 @@ def blocks(m: dict) -> dict[str, str]:
             f"  medAPE {_pct(seg['cold_start']['medape'])} - "
             f"{seg['goalkeepers']['r2_log']:.2f} keepers). €100M+ band medAPE "
             f"**{_pct(seg['elite']['medape'])}**, median pred/listed "
-            f"**{seg['elite']['pred_over_listed']:.2f}**."),
+            f"**{seg['elite']['pred_over_listed']:.2f}**."
+            + (f"\n- **Thin-minutes players** (< 8 full 90s - priced by carrying last season's\n"
+               f"  value forward one year along the age curve, not by the trees; "
+               f"{_pct(seg['carried']['share'])} of all\n  published predictions, never in the test set): "
+               f"R2(log) **{seg['carried']['r2_log']:.2f}**, medAPE **{_pct(seg['carried']['medape'])}**, "
+               f"within-2x {_pct(seg['carried']['within_2x'])}\n  against their real listed values."
+               if "carried" in seg else "")),
         "models-outcome-table": (
             f"- **Result** (log-loss / accuracy, test {' + '.join(o['test_seasons'])}, "
             f"n={o['n_test']:,}):\n\n"
