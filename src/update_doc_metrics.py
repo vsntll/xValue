@@ -82,11 +82,18 @@ def blocks(m: dict) -> dict[str, str]:
         "models-elite": (
             "`medAPE` for the **€100M+ band is "
             f"{_pct(seg['elite']['medape'])}** (was ~30-40% before the cap - the trees squashed\n"
-            f"the tail toward the mean), though the ~{seg['elite']['n']}-row band sits slightly "
-            f"*under* the\nlisted values (median pred/listed {seg['elite']['pred_over_listed']:.2f}). "
-            f"Mid-range (€3-40M) predictions carry a\n**median pred/listed of "
-            f"{seg['mid']['pred_over_listed']:.2f}** but individual scatter stays "
-            f"~{_pct(seg['mid']['medape'])} —"),
+            f"the tail toward the mean). Grouped by **listed** value the bands look underpriced -\n"
+            f"median pred/listed {seg['high']['pred_over_listed']:.2f} at €40-100M, "
+            f"{seg['elite']['pred_over_listed']:.2f} at €100M+ - but that is mostly selection:\n"
+            "picking players by a high listing picks the ones listed above what their output\n"
+            "supports, so any noisy model lands below 1 there. Grouped by **predicted** value\n"
+            f"(the calibration check) it's {seg['mid']['listed_over_pred_by_pred']:.2f} listed/predicted at €3-40M, "
+            f"{seg['high']['listed_over_pred_by_pred']:.2f} at\n€40-100M and "
+            f"{seg['elite']['listed_over_pred_by_pred']:.2f} at €100M+ (only {seg['elite']['n_by_pred']} players) - "
+            "calibrated except a modest\nshortfall at the very top, where training data is thinnest (1-13 €100M+ "
+            "players a\nseason before 2024). A recalibration on out-of-fold predictions was tried and not\n"
+            "adopted: it couldn't fix the top without biasing the mid-range. Mid-range\n"
+            f"individual scatter stays ~{_pct(seg['mid']['medape'])} —"),
         "models-value-result": (
             f"- **Result**: R2(log) **{v['r2_log']:.2f}**, MAE **{_eur_m(v['mae_eur'])}**, "
             f"medAPE **{_pct(v['medape'])}**, within-2x\n"
