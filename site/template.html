@@ -315,6 +315,8 @@
   .tr-chart text{ font-family:var(--font-mono); font-size:10px; fill:var(--text-faint); }
   .tr-legend{ display:flex; gap:14px; font-size:12px; color:var(--text-dim); margin-top:6px; flex-wrap:wrap; }
   .tr-legend i{ display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; vertical-align:-1px; }
+  .tr-table th, .tr-table td{ padding:7px 7px; font-size:12px; }
+  .tr-table td.m{ white-space:normal; min-width:120px; }
   .tr-note{ font-size:12.5px; color:var(--text-dim); margin-top:10px; max-width:75ch; }
   .method-card{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
                 box-shadow:var(--shadow); padding:20px 22px; margin-bottom:16px; }
@@ -640,10 +642,11 @@
   </section>
 
   <section id="tab-track" hidden>
-    <p class="method-intro">Two honesty checks. <b>Forward test</b>: on every refresh the site freezes its
-      pre-match odds for each upcoming league fixture in an append-only ledger (timestamp + model-version hash),
-      and once the match is played those frozen odds are scored against the result and against the bookmakers'
-      de-vigged average <i>closing</i> line - the market's final, best-informed price. Lower log-loss is better.
+    <p class="method-intro">Two honesty checks. <b>Forward test</b>: on every refresh the site freezes pre-match
+      odds for each upcoming league fixture from two models - the headline <b>outcome model</b> (what the Fixtures
+      tab publishes) and the simpler <b>Dixon-Coles</b> model - in an append-only ledger (timestamp + model-version
+      hash). Once a match is played, the frozen odds are scored against the result and against the bookmakers'
+      de-vigged average <i>closing</i> and <i>opening</i> lines. Lower log-loss is better.
       <b>Calibration</b>: when the outcome model says 60%, does it happen 60% of the time?</p>
     <div id="trackBody"></div>
   </section>
@@ -1523,40 +1526,46 @@
 
   function renderTrack(){
     var L = DATA.ledger, C = DATA.calibration, out = '';
-    // --- forward-test ledger ---
-    out += '<div class="tr-grid"><div class="tr-card"><h3>Forward test: frozen pre-match odds vs the closing market' +
-           '<span class="rk-sub">' + (L ? 'Ledger running since ' + esc(String(L.since).slice(0,10)) : 'No ledger yet') + '</span></h3>';
+    // --- forward-test ledger: two models, frozen pre-kickoff, vs the market ---
+    var LBL = {classifier:'Outcome model', dixon_coles:'Dixon-Coles', close:'Closing market', open:'Opening market'};
+    var COL = {classifier:'var(--accent)', dixon_coles:'var(--draw)', close:'var(--text-faint)', open:'var(--loss)'};
+    out += '<div class="tr-grid"><div class="tr-card"><h3>Forward test: two models, frozen pre-match, vs the market' +
+           '<span class="rk-sub">' + (L ? 'Ledger running since ' + esc(String(L.since).slice(0,10)) +
+           ' &middot; head to head on the fixtures both models priced' : 'No ledger yet') + '</span></h3>';
     if(!L || !L.n){
-      out += '<div class="tr-note">' + (L ? '<b>' + (L.pending||0) + '</b> fixtures have frozen pre-match odds and are waiting for kickoff. ' +
-             'The scoreboard fills in as they are played - every number here will be one the site published before the game.' :
+      out += '<div class="tr-note">' + (L ? '<b>' + (L.pending||0) + '</b> fixtures have frozen pre-match odds from both models and are waiting for kickoff. ' +
+             'The scoreboard fills in as they are played - every number here will be one published before the game.' :
              'The first snapshot is taken on the next refresh.') + '</div>';
     } else {
-      var gap = L.model_ll - L.market_ll;
-      out += '<div class="tiles" style="margin:6px 0 12px; grid-template-columns:repeat(3,minmax(0,1fr));">' +
-        '<div class="tile"><div class="k">Matches scored</div><div class="v num">'+L.n+'</div><div class="d">'+(L.pending||0)+' awaiting kickoff</div></div>' +
-        '<div class="tile"><div class="k">Model log-loss</div><div class="v num">'+L.model_ll.toFixed(3)+'</div><div class="d">accuracy '+pct(L.model_acc)+'</div></div>' +
-        '<div class="tile"><div class="k">Closing market</div><div class="v num">'+L.market_ll.toFixed(3)+'</div><div class="d">'+(gap>0?'+':'')+gap.toFixed(3)+' model vs market</div></div>' +
-        '</div>';
+      var keys = ['classifier','dixon_coles','close','open'].filter(function(k){ return L.ll[k]!=null; });
+      out += '<div class="tiles" style="margin:6px 0 12px; grid-template-columns:repeat(' + keys.length + ',minmax(0,1fr));">' +
+        keys.map(function(k){
+          var d = k==='open' ? (L.n_open + ' with an opening price') : (L.acc && L.acc[k]!=null ? 'accuracy ' + pct(L.acc[k]) : '');
+          return '<div class="tile"><div class="k">'+LBL[k]+'</div><div class="v num">'+L.ll[k].toFixed(3)+'</div><div class="d">'+d+'</div></div>';
+        }).join('') + '</div>' +
+        '<div class="tr-note"><b>' + L.n + '</b> matches scored, ' + (L.pending||0) + ' awaiting kickoff. Log-loss, lower is better. ' +
+        'Closing = the market\'s final price (it saw all the news the frozen odds didn\'t); opening = roughly the price when the odds were frozen, so beating it is an edge at publication.</div>';
       var ser = L.series || [];
       if(ser.length > 1){
-        var pts = function(k){ return ser.map(function(r,i){ return [i, r[k]]; }); };
-        var lo = Math.min.apply(null, ser.map(function(r){ return Math.min(r.model, r.market); }));
-        var hi = Math.max.apply(null, ser.map(function(r){ return Math.max(r.model, r.market); }));
+        var lines = keys.filter(function(k){ return ser.some(function(r){ return r[k]!=null; }); });
+        var vals = []; ser.forEach(function(r){ lines.forEach(function(k){ if(r[k]!=null) vals.push(r[k]); }); });
+        var lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
         var step = (hi-lo) > .2 ? .1 : .05, ticks = [];
         for(var v = Math.floor(lo/step)*step; v <= hi + 1e-9; v += step) ticks.push(v);
         var xt = [[0, ser[0].date.slice(5), 'start'], [ser.length-1, ser[ser.length-1].date.slice(5), 'end']];
-        out += svgLines([{name:'xValue (frozen pre-match odds)', color:'var(--accent)', pts:pts('model')},
-                         {name:'Closing market, de-vigged', color:'var(--accent-2)', pts:pts('market')}],
-                        {yticks:ticks, xticks:xt, label:'running log-loss', y0:ticks[0], y1:ticks[ticks.length-1]});
-        out += '<div class="tr-note">Running season log-loss after each matchday (lower is better).</div>';
+        out += svgLines(lines.map(function(k){
+                 return {name:LBL[k], color:COL[k], pts:ser.map(function(r,i){ return [i, r[k]]; }).filter(function(p){ return p[1]!=null; })};
+               }), {yticks:ticks, xticks:xt, label:'running log-loss', y0:ticks[0], y1:ticks[ticks.length-1]});
+        out += '<div class="tr-note">Running season log-loss after each matchday.</div>';
       }
-      out += '</div><div class="tr-card"><h3>Latest scored matches<span class="rk-sub">frozen odds (home / draw / away) vs closing market</span></h3>' +
-             '<div class="table-wrap" style="box-shadow:none;"><table style="min-width:0"><thead><tr><th>Date</th><th>Match</th>' +
-             '<th class="num-col">xValue</th><th class="num-col">Market</th><th>Result</th></tr></thead><tbody>' +
+      var f = function(a){ return a ? a.map(function(x){ return Math.round(x*100); }).join(' / ') : '—'; };
+      out += '</div><div class="tr-card"><h3>Latest scored matches<span class="rk-sub">frozen odds, home / draw / away %</span></h3>' +
+             '<div class="table-wrap" style="box-shadow:none;"><table class="tr-table" style="min-width:0"><thead><tr><th>Date</th><th>Match</th>' +
+             '<th class="num-col">Outcome</th><th class="num-col">D-C</th><th class="num-col">Close</th><th>Res</th></tr></thead><tbody>' +
              (L.recent||[]).map(function(r){
-               var f = function(a){ return a.map(function(x){ return Math.round(x*100); }).join(' / '); };
-               return '<tr><td class="num">'+esc(r.date.slice(5))+'</td><td>'+esc(r.home)+' v '+esc(r.away)+'</td>' +
-                      '<td class="num num-col">'+f(r.p)+'</td><td class="num num-col">'+f(r.m)+'</td><td>'+esc(r.result)+'</td></tr>';
+               return '<tr><td class="num">'+esc(r.date.slice(5))+'</td><td class="m">'+esc(r.home)+' v '+esc(r.away)+'</td>' +
+                      '<td class="num num-col">'+f(r.classifier)+'</td><td class="num num-col">'+f(r.dixon_coles)+'</td>' +
+                      '<td class="num num-col">'+f(r.close)+'</td><td>'+esc(r.result)+'</td></tr>';
              }).join('') + '</tbody></table></div>';
     }
     var X = DATA.ledger_xi;
