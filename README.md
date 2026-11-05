@@ -87,6 +87,10 @@ Then follow `run_pipeline.md`.
   so CI keeps no fetch cache. Per-match source rows live in
   `data/processed/fotmob/`, `espn/` and `live/`, split per season. `data/raw/`
   and the soccerdata cache are gitignored scratch.
+- **Forward-test ledger**: every refresh freezes the site's pre-match odds for
+  upcoming fixtures in an append-only `predictions_ledger.csv` (timestamp +
+  model-version hash); the site's Track Record tab scores them against results
+  and the closing market as the season goes, next to a calibration diagram.
 - **Tests + regression gate**: the refresh runs `tests/` (data invariants +
   unit tests) and `check_model_metrics.py` (fails if value R²(log) or 1X2
   log-loss got worse past tolerance vs the committed `model_metrics.json`)

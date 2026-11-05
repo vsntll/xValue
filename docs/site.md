@@ -180,6 +180,29 @@ self-contained page; `__SITE_DATA_JSON__` placeholder), in one run
 nothing to `site/index.html` and the commit-and-deploy step downstream always
 saw "site unchanged."
 
+## Track Record tab - forward-test ledger + calibration
+
+`src/prediction_ledger.py`, called from `export_site_data.py` on every build:
+
+- **Ledger** (`data/processed/predictions_ledger.csv`, append-only): one row
+  per upcoming league fixture kicking off on a later UTC day than the build and
+  within 10 days - snapshot time, data date, a model-version hash (of
+  `dixon_coles.py` + `export_site_data.py`), and the published home/draw/away
+  odds + expected goals. A fixture whose latest snapshot has the same version
+  and odds isn't re-logged. Rows are never rewritten - `tests/` fails if the
+  committed file isn't a prefix of the new one, or a snapshot isn't pre-kickoff.
+- **Scoreboard**: each finished match's last pre-kickoff snapshot, scored
+  against the result and against the de-vigged average closing odds
+  (football-data.co.uk `AvgC*`, Bet365 closing as fallback) - running season
+  log-loss, accuracy, and the latest scored matches. Started 2026-11-05; there
+  is no backfill, so every scored number was published before its match.
+  (The ledger records the site's Dixon-Coles match odds - what the site
+  actually publishes. Putting the outcome classifier on it needs pre-match
+  feature rows for unplayed fixtures in `build_match_model_table.py`.)
+- **Calibration**: a reliability diagram of the outcome classifier's
+  out-of-sample test-set (2024-26) probabilities in 10 bins per outcome, plus
+  the largest draw probability it ever gives (~0.38 - it never favours a draw).
+
 ## Auto-refresh (every 2 days)
 
 `.github/workflows/refresh.yml` — "Site refresh (every 2 days)", cron
