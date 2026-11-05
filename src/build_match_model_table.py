@@ -40,6 +40,8 @@ from live.schema import normalize_team  # noqa: E402
 
 PROC = ROOT / "data" / "processed"
 OUT = PROC / "match_model_table.csv"
+OUT_UPCOMING = PROC / "match_model_upcoming.csv"
+UPCOMING_DAYS = 10    # pre-match rows for fixtures this far ahead (the ledger's horizon)
 
 HFA = 65.0            # home-field advantage in Elo points
 K = 24.0
@@ -84,130 +86,11 @@ def _warmup() -> pd.DataFrame:
     return w.dropna(subset=["Date"])
 
 
-def build() -> pd.DataFrame:
-    m = pd.read_csv(PROC / "matches_all.csv")
-    m["_warm"] = False
-    m = pd.concat([_warmup(), m], ignore_index=True)
-    m["Date"] = pd.to_datetime(m["Date"], errors="coerce")
-    m = m.dropna(subset=["Date", "FTHG", "FTAG"]).sort_values("Date").reset_index(drop=True)
-    m["h"] = m["HomeTeam"].map(normalize_team)
-    m["a"] = m["AwayTeam"].map(normalize_team)
-    for c in ("FTHG", "FTAG", "HxG", "AxG"):
-        m[c] = pd.to_numeric(m[c], errors="coerce")
-
-    elo: dict[str, float] = defaultdict(lambda: 1500.0)
-    xelo: dict[str, float] = defaultdict(lambda: 1500.0)
-    # season-scoped twins: plain dicts (no default) - a team's entry is (re)seeded
-    # explicitly at each season boundary from its previous season's final.
-    selo: dict[str, float] = {}
-    sxelo: dict[str, float] = {}
-    s_prev_final: dict[str, float] = {}   # team -> its goals-Elo at the end of its last season
-    sx_prev_final: dict[str, float] = {}  # team -> its xElo at the end of its last season
-    first_season = m["season"].min()
-    last_season: dict[str, str] = {}
-    # rolling deques keyed by (team, 'home'|'away'|'all')
-    roll: dict[tuple, deque] = defaultdict(lambda: deque(maxlen=8))
-    last_date: dict[str, pd.Timestamp] = {}
-    h2h: dict[tuple, deque] = defaultdict(lambda: deque(maxlen=5))
-
-    feats = []
-    for _, r in m.iterrows():
-        h, a, seas = r["h"], r["a"], r["season"]
-
-        # season reversion + promoted detection (only for league rows we output)
-        for t in (h, a):
-            if last_season.get(t) != seas:
-                elo[t] = 1500 + (1 - REVERT) * (elo[t] - 1500)
-                xelo[t] = 1500 + (1 - REVERT) * (xelo[t] - 1500)
-                # season-scoped: whatever selo[t] holds right now is last season's
-                # final for t - stash it, then reseed from it at SEASON_CARRY.
-                if t in selo:
-                    s_prev_final[t], sx_prev_final[t] = selo[t], sxelo[t]
-                pf, pfx = s_prev_final.get(t), sx_prev_final.get(t)
-                if pf is not None:
-                    selo[t] = 1500 + SEASON_CARRY * (pf - 1500)
-                    sxelo[t] = 1500 + SEASON_CARRY * (pfx - 1500)
-                else:
-                    selo[t] = sxelo[t] = 1500.0 if seas == first_season else PROMOTED_ELO
-                last_season[t] = seas
-
-        def _roll_mean(key, idx):
-            d = roll[key]
-            return np.mean([x[idx] for x in d]) if len(d) >= 3 else np.nan
-
-        emit = not r["_warm"]
-        row = {
-            "season": seas, "comp": r["comp"], "competition_type": r["competition_type"],
-            "Date": r["Date"], "HomeTeam": r["HomeTeam"], "AwayTeam": r["AwayTeam"],
-            "FTR": r["FTR"], "FTHG": r["FTHG"], "FTAG": r["FTAG"],
-            "HxG": r["HxG"], "AxG": r["AxG"],
-            "elo_h": elo[h], "elo_a": elo[a], "elo_diff": elo[h] - elo[a] + HFA,
-            "xelo_h": xelo[h], "xelo_a": xelo[a], "xelo_diff": xelo[h] - xelo[a] + HFA,
-            "elo_h_s": selo[h], "elo_a_s": selo[a], "elo_diff_s": selo[h] - selo[a] + HFA,
-            "xelo_h_s": sxelo[h], "xelo_a_s": sxelo[a], "xelo_diff_s": sxelo[h] - sxelo[a] + HFA,
-            "fh_pts": _roll_mean((h, "home"), 0), "fh_gf": _roll_mean((h, "home"), 1),
-            "fh_ga": _roll_mean((h, "home"), 2), "fh_xgf": _roll_mean((h, "home"), 3),
-            "fh_xga": _roll_mean((h, "home"), 4),
-            "fa_pts": _roll_mean((a, "away"), 0), "fa_gf": _roll_mean((a, "away"), 1),
-            "fa_ga": _roll_mean((a, "away"), 2), "fa_xgf": _roll_mean((a, "away"), 3),
-            "fa_xga": _roll_mean((a, "away"), 4),
-            "all_h_pts": _roll_mean((h, "all"), 0), "all_a_pts": _roll_mean((a, "all"), 0),
-            "all_h_xgd": (_roll_mean((h, "all"), 3) or np.nan) - (_roll_mean((h, "all"), 4) or np.nan),
-            "all_a_xgd": (_roll_mean((a, "all"), 3) or np.nan) - (_roll_mean((a, "all"), 4) or np.nan),
-            "days_rest_h": (r["Date"] - last_date[h]).days if h in last_date else np.nan,
-            "days_rest_a": (r["Date"] - last_date[a]).days if a in last_date else np.nan,
-            "h2h_h_pts": np.mean(list(h2h[(h, a)])) if h2h[(h, a)] else np.nan,
-        }
-        if emit:
-            feats.append(row)
-
-        # --- post-match updates ---
-        gh, ga_, xh, xa_ = r["FTHG"], r["FTAG"], r["HxG"], r["AxG"]
-        elo[h], elo[a] = _elo_update(elo[h], elo[a], _res(gh, ga_), gh - ga_)
-        selo[h], selo[a] = _elo_update(selo[h], selo[a], _res(gh, ga_), gh - ga_)
-        if pd.notna(xh) and pd.notna(xa_):
-            xelo[h], xelo[a] = _elo_update(xelo[h], xelo[a], _res(xh, xa_), xh - xa_)
-            sxelo[h], sxelo[a] = _elo_update(sxelo[h], sxelo[a], _res(xh, xa_), xh - xa_)
-        else:
-            xelo[h], xelo[a] = _elo_update(xelo[h], xelo[a], _res(gh, ga_), gh - ga_)
-            sxelo[h], sxelo[a] = _elo_update(sxelo[h], sxelo[a], _res(gh, ga_), gh - ga_)
-        ph, pa = _res(gh, ga_) * 3 - (gh == ga_), _res(ga_, gh) * 3 - (gh == ga_)
-        ph = 3 if gh > ga_ else 1 if gh == ga_ else 0
-        pa = 3 if ga_ > gh else 1 if gh == ga_ else 0
-        xh2 = xh if pd.notna(xh) else gh
-        xa2 = xa_ if pd.notna(xa_) else ga_
-        roll[(h, "home")].append((ph, gh, ga_, xh2, xa2))
-        roll[(a, "away")].append((pa, ga_, gh, xa2, xh2))
-        roll[(h, "all")].append((ph, gh, ga_, xh2, xa2))
-        roll[(a, "all")].append((pa, ga_, gh, xa2, xh2))
-        last_date[h] = last_date[a] = r["Date"]
-        h2h[(h, a)].append(ph)
-        h2h[(a, h)].append(pa)
-
-    df = pd.DataFrame(feats)
-
-    # promoted flag: a league team not seen in that league the previous season
-    df["_lk"] = df["season"] + "|" + df["comp"]
-    seen: dict[str, set] = {}
-    prom_h, prom_a = [], []
-    order = sorted(df.loc[df.competition_type == "league", "_lk"].unique())
-    league_seasons = defaultdict(list)
-    for lk in order:
-        comp, season = lk.split("|")[1], lk.split("|")[0]
-        league_seasons[comp].append(season)
-    for _, r in df.iterrows():
-        if r["competition_type"] != "league":
-            prom_h.append(np.nan); prom_a.append(np.nan); continue
-        comp = r["comp"]
-        seasons = league_seasons[comp]
-        i = seasons.index(r["season"])
-        prevset = seen.get(f"{comp}|{seasons[i-1]}") if i > 0 else None
-        prom_h.append(np.nan if prevset is None else int(normalize_team(r["HomeTeam"]) not in prevset))
-        prom_a.append(np.nan if prevset is None else int(normalize_team(r["AwayTeam"]) not in prevset))
-        seen.setdefault(f"{comp}|{r['season']}", set()).update(
-            [normalize_team(r["HomeTeam"]), normalize_team(r["AwayTeam"])])
-    df["promoted_h"], df["promoted_a"] = prom_h, prom_a
-
+def _enrich(df: pd.DataFrame) -> pd.DataFrame:
+    """Season-level squad value / age, the confirmed-XI value, momentum, the
+    derived Elo / form columns and market opening odds - joined onto played and
+    upcoming rows alike (upcoming rows simply find no XI / momentum / odds yet
+    and fall back, like any other missing feature)."""
     # squad value / age
     sq = pd.read_csv(PROC / "squad_season_features.csv")
     sq["k"] = sq["season"] + "|" + sq["team_key"]
@@ -286,11 +169,178 @@ def build() -> pd.DataFrame:
           + df["HomeTeam"].map(normalize_team) + "|" + df["AwayTeam"].map(normalize_team))
     om = np.array([omap.get(k, [np.nan] * 3) for k in dk])
     df["mkt_pH"], df["mkt_pD"], df["mkt_pA"] = om[:, 0], om[:, 1], om[:, 2]
+    return df
+
+
+def _upcoming_fixtures(last_played: pd.Timestamp) -> pd.DataFrame:
+    """Big-5 league fixtures still to be played, kicking off after today and
+    within UPCOMING_DAYS (the live feeds' schedule, data/processed/live_matches_*)."""
+    today = pd.Timestamp.now(tz="UTC").tz_localize(None).normalize()
+    frames = [pd.read_csv(f) for f in sorted(PROC.glob("live_matches_*.csv"))]
+    if not frames:
+        return pd.DataFrame()
+    lv = pd.concat(frames, ignore_index=True)
+    lv["Date"] = pd.to_datetime(lv["Date"], errors="coerce")
+    lv = lv[(lv["competition_type"] == "league") & lv["status"].isin(["SCHEDULED", "TIMED"])
+            & (lv["Date"] > max(today, last_played))
+            & (lv["Date"] <= today + pd.Timedelta(days=UPCOMING_DAYS))]
+    lv = lv.rename(columns={"league": "comp"}).drop_duplicates(["Date", "HomeTeam", "AwayTeam"])
+    for c in ("FTR", "FTHG", "FTAG", "HxG", "AxG"):
+        lv[c] = np.nan
+    return lv[["season", "comp", "competition_type", "Date", "HomeTeam", "AwayTeam",
+               "FTR", "FTHG", "FTAG", "HxG", "AxG"]].sort_values("Date")
+
+
+def build() -> pd.DataFrame:
+    m = pd.read_csv(PROC / "matches_all.csv")
+    m["_warm"] = False
+    m = pd.concat([_warmup(), m], ignore_index=True)
+    m["Date"] = pd.to_datetime(m["Date"], errors="coerce")
+    m = m.dropna(subset=["Date", "FTHG", "FTAG"]).sort_values("Date").reset_index(drop=True)
+    m["h"] = m["HomeTeam"].map(normalize_team)
+    m["a"] = m["AwayTeam"].map(normalize_team)
+    for c in ("FTHG", "FTAG", "HxG", "AxG"):
+        m[c] = pd.to_numeric(m[c], errors="coerce")
+
+    elo: dict[str, float] = defaultdict(lambda: 1500.0)
+    xelo: dict[str, float] = defaultdict(lambda: 1500.0)
+    # season-scoped twins: plain dicts (no default) - a team's entry is (re)seeded
+    # explicitly at each season boundary from its previous season's final.
+    selo: dict[str, float] = {}
+    sxelo: dict[str, float] = {}
+    s_prev_final: dict[str, float] = {}   # team -> its goals-Elo at the end of its last season
+    sx_prev_final: dict[str, float] = {}  # team -> its xElo at the end of its last season
+    first_season = m["season"].min()
+    last_season: dict[str, str] = {}
+    # rolling deques keyed by (team, 'home'|'away'|'all')
+    roll: dict[tuple, deque] = defaultdict(lambda: deque(maxlen=8))
+    last_date: dict[str, pd.Timestamp] = {}
+    h2h: dict[tuple, deque] = defaultdict(lambda: deque(maxlen=5))
+
+    def _roll_mean(key, idx):
+        d = roll[key]
+        return np.mean([x[idx] for x in d]) if len(d) >= 3 else np.nan
+
+    def _pre_match(r, h, a):
+        """Every feature knowable before kickoff, from the ratings / form state as
+        it stands right now - for a played match inside the loop below, and for
+        an upcoming fixture after it (same code, so the two can't drift)."""
+        return {
+            "season": r["season"], "comp": r["comp"], "competition_type": r["competition_type"],
+            "Date": r["Date"], "HomeTeam": r["HomeTeam"], "AwayTeam": r["AwayTeam"],
+            "FTR": r["FTR"], "FTHG": r["FTHG"], "FTAG": r["FTAG"],
+            "HxG": r["HxG"], "AxG": r["AxG"],
+            "elo_h": elo[h], "elo_a": elo[a], "elo_diff": elo[h] - elo[a] + HFA,
+            "xelo_h": xelo[h], "xelo_a": xelo[a], "xelo_diff": xelo[h] - xelo[a] + HFA,
+            "elo_h_s": selo[h], "elo_a_s": selo[a], "elo_diff_s": selo[h] - selo[a] + HFA,
+            "xelo_h_s": sxelo[h], "xelo_a_s": sxelo[a], "xelo_diff_s": sxelo[h] - sxelo[a] + HFA,
+            "fh_pts": _roll_mean((h, "home"), 0), "fh_gf": _roll_mean((h, "home"), 1),
+            "fh_ga": _roll_mean((h, "home"), 2), "fh_xgf": _roll_mean((h, "home"), 3),
+            "fh_xga": _roll_mean((h, "home"), 4),
+            "fa_pts": _roll_mean((a, "away"), 0), "fa_gf": _roll_mean((a, "away"), 1),
+            "fa_ga": _roll_mean((a, "away"), 2), "fa_xgf": _roll_mean((a, "away"), 3),
+            "fa_xga": _roll_mean((a, "away"), 4),
+            "all_h_pts": _roll_mean((h, "all"), 0), "all_a_pts": _roll_mean((a, "all"), 0),
+            "all_h_xgd": (_roll_mean((h, "all"), 3) or np.nan) - (_roll_mean((h, "all"), 4) or np.nan),
+            "all_a_xgd": (_roll_mean((a, "all"), 3) or np.nan) - (_roll_mean((a, "all"), 4) or np.nan),
+            "days_rest_h": (r["Date"] - last_date[h]).days if h in last_date else np.nan,
+            "days_rest_a": (r["Date"] - last_date[a]).days if a in last_date else np.nan,
+            "h2h_h_pts": np.mean(list(h2h[(h, a)])) if h2h[(h, a)] else np.nan,
+        }
+
+    feats = []
+    for _, r in m.iterrows():
+        h, a, seas = r["h"], r["a"], r["season"]
+
+        # season reversion + promoted detection (only for league rows we output)
+        for t in (h, a):
+            if last_season.get(t) != seas:
+                elo[t] = 1500 + (1 - REVERT) * (elo[t] - 1500)
+                xelo[t] = 1500 + (1 - REVERT) * (xelo[t] - 1500)
+                # season-scoped: whatever selo[t] holds right now is last season's
+                # final for t - stash it, then reseed from it at SEASON_CARRY.
+                if t in selo:
+                    s_prev_final[t], sx_prev_final[t] = selo[t], sxelo[t]
+                pf, pfx = s_prev_final.get(t), sx_prev_final.get(t)
+                if pf is not None:
+                    selo[t] = 1500 + SEASON_CARRY * (pf - 1500)
+                    sxelo[t] = 1500 + SEASON_CARRY * (pfx - 1500)
+                else:
+                    selo[t] = sxelo[t] = 1500.0 if seas == first_season else PROMOTED_ELO
+                last_season[t] = seas
+
+        if not r["_warm"]:
+            feats.append(_pre_match(r, h, a))
+
+        # --- post-match updates ---
+        gh, ga_, xh, xa_ = r["FTHG"], r["FTAG"], r["HxG"], r["AxG"]
+        elo[h], elo[a] = _elo_update(elo[h], elo[a], _res(gh, ga_), gh - ga_)
+        selo[h], selo[a] = _elo_update(selo[h], selo[a], _res(gh, ga_), gh - ga_)
+        if pd.notna(xh) and pd.notna(xa_):
+            xelo[h], xelo[a] = _elo_update(xelo[h], xelo[a], _res(xh, xa_), xh - xa_)
+            sxelo[h], sxelo[a] = _elo_update(sxelo[h], sxelo[a], _res(xh, xa_), xh - xa_)
+        else:
+            xelo[h], xelo[a] = _elo_update(xelo[h], xelo[a], _res(gh, ga_), gh - ga_)
+            sxelo[h], sxelo[a] = _elo_update(sxelo[h], sxelo[a], _res(gh, ga_), gh - ga_)
+        ph, pa = _res(gh, ga_) * 3 - (gh == ga_), _res(ga_, gh) * 3 - (gh == ga_)
+        ph = 3 if gh > ga_ else 1 if gh == ga_ else 0
+        pa = 3 if ga_ > gh else 1 if gh == ga_ else 0
+        xh2 = xh if pd.notna(xh) else gh
+        xa2 = xa_ if pd.notna(xa_) else ga_
+        roll[(h, "home")].append((ph, gh, ga_, xh2, xa2))
+        roll[(a, "away")].append((pa, ga_, gh, xa2, xh2))
+        roll[(h, "all")].append((ph, gh, ga_, xh2, xa2))
+        roll[(a, "all")].append((pa, ga_, gh, xa2, xh2))
+        last_date[h] = last_date[a] = r["Date"]
+        h2h[(h, a)].append(ph)
+        h2h[(a, h)].append(pa)
+
+    df = pd.DataFrame(feats)
+    up = pd.DataFrame([_pre_match(r, normalize_team(r["HomeTeam"]), normalize_team(r["AwayTeam"]))
+                       for r in _upcoming_fixtures(m["Date"].max()).to_dict("records")])
+
+    # promoted flag: a league team not seen in that league the previous season
+    df["_lk"] = df["season"] + "|" + df["comp"]
+    seen: dict[str, set] = {}
+    prom_h, prom_a = [], []
+    order = sorted(df.loc[df.competition_type == "league", "_lk"].unique())
+    league_seasons = defaultdict(list)
+    for lk in order:
+        comp, season = lk.split("|")[1], lk.split("|")[0]
+        league_seasons[comp].append(season)
+    for _, r in df.iterrows():
+        if r["competition_type"] != "league":
+            prom_h.append(np.nan); prom_a.append(np.nan); continue
+        comp = r["comp"]
+        seasons = league_seasons[comp]
+        i = seasons.index(r["season"])
+        prevset = seen.get(f"{comp}|{seasons[i-1]}") if i > 0 else None
+        prom_h.append(np.nan if prevset is None else int(normalize_team(r["HomeTeam"]) not in prevset))
+        prom_a.append(np.nan if prevset is None else int(normalize_team(r["AwayTeam"]) not in prevset))
+        seen.setdefault(f"{comp}|{r['season']}", set()).update(
+            [normalize_team(r["HomeTeam"]), normalize_team(r["AwayTeam"])])
+    df["promoted_h"], df["promoted_a"] = prom_h, prom_a
+
+    df = _enrich(df)
+    if len(up):
+        # a team's promoted flag is fixed for the season - take it from its played rows
+        cur = df[(df["season"] == up["season"].iloc[0]) & (df["competition_type"] == "league")]
+        prom = {**dict(zip(cur["HomeTeam"].map(normalize_team), cur["promoted_h"])),
+                **dict(zip(cur["AwayTeam"].map(normalize_team), cur["promoted_a"]))}
+        up["promoted_h"] = up["HomeTeam"].map(normalize_team).map(prom)
+        up["promoted_a"] = up["AwayTeam"].map(normalize_team).map(prom)
+        up = _enrich(up)
 
     out = df[df["competition_type"] == "league"].drop(columns=["_lk"]).reset_index(drop=True)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     out.to_csv(OUT, index=False)
     print(f"wrote {OUT}  ({len(out)} league matches, {out.shape[1]} cols)")
+    # upcoming fixtures in their own file, so nothing reading the played table
+    # (player Elo, the site's team ladders, the backtests) ever sees a row
+    # without a result; train_outcome_model.py scores them
+    up = up.reindex(columns=out.columns) if len(up) else pd.DataFrame(columns=out.columns)
+    up.to_csv(OUT_UPCOMING, index=False)
+    print(f"wrote {OUT_UPCOMING}  ({len(up)} upcoming league fixtures)")
     print(out[["elo_diff", "xelo_diff", "value_log_ratio"]].describe().round(1).to_string())
     return out
 
