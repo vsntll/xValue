@@ -11,7 +11,7 @@ Spain, Germany, Italy, France, 2020-21 → 2026-27** (+ the cups those clubs pla
   median error in the €100M+ band. Outfield + keepers; scores every season
   including the current one.
 - **Outcome classifier** — pre-match home-win / draw / away-win. Poisson-Skellam
-  on Elo + form + xG, log-loss **0.981** (pure) / **0.973** (with market odds),
+  on Elo + form + xG, log-loss **0.982** (pure) / **0.973** (with market odds),
   vs Bet365 closing 0.971.
 <!-- /metrics:readme-headline -->
 
