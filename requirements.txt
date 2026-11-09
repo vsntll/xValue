@@ -33,8 +33,8 @@ curl_cffi>=0.7          # browser-impersonation fallback used while probing sour
 # scraper run reintroduces a mis-decoded row).
 ftfy>=6.1
 
-# tests/ - data invariants + unit tests (refresh.yml before it commits, ci.yml on
-# every push) and lint (ci.yml)
+# tests/ - data invariants + unit tests (pipeline.yml before it commits, ci.yml on
+# pushes that touch code) and lint (ci.yml)
 pytest>=8
 ruff>=0.6
 

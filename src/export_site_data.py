@@ -30,7 +30,7 @@ Run: py -3.11 src/export_site_data.py   (or plain python3 - no nodriver needed)
 Output: site/data.json, then spliced into site/template.html to produce the
 self-contained site/index.html - both written by this one run. Neither is
 committed: the refresh publishes index.html in the `latest-build` release
-(src/sync_build.py) and deploy-pages.yml serves it from there.
+(src/sync_build.py) and pipeline.yml's deploy job serves it from there.
 """
 
 from __future__ import annotations

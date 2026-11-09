@@ -22,7 +22,7 @@ Exit code is non-zero iff anything is DEGRADED or ERROR, so a scheduled CI run
 shows red for a genuine schema drift without anyone reading the log, but a
 transient upstream outage (503, IP block on CI's datacenter range) does not.
 
-Run:  py -3.11 src/health_check.py    (CI runs it every 3 days)
+Run:  py -3.11 src/health_check.py    (CI runs it at the start of each Mon + Thu refresh)
 Output: data/processed/health_check.json (latest run, for the dashboard)
 """
 

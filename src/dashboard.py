@@ -67,7 +67,7 @@ def tab_predictions() -> None:
     live = df[df["split"] == "live"].copy()
     if live.empty:
         st.info("No 2026-27 matches scored yet - they show up here once played and the "
-                "pipeline's rebuilt (every 2 days, or after a manual refresh).")
+                "pipeline's rebuilt (Mon + Thu, or after a manual refresh).")
         return
     live["Date"] = pd.to_datetime(live["Date"])
     live = live.sort_values("Date", ascending=False)
@@ -224,7 +224,7 @@ def tab_health() -> None:
     if h is None:
         _missing("health_check.json", "src/health_check.py")
         return
-    st.caption(f"Last checked: {h['checked_at']}  (`.github/workflows/health-check.yml` runs this every 3 days)")
+    st.caption(f"Last checked: {h['checked_at']}  (`.github/workflows/pipeline.yml` runs this every Mon + Thu)")
     rows = []
     for name, r in h["results"].items():
         icon = {"ok": "✅", "blocked (known)": "\U0001f7e1", "unreachable": "\U0001f7e1",
