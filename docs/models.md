@@ -497,7 +497,8 @@ Dixon-Coles expected goals for 2021-24 league matches, and evaluated untouched o
   clearly not noise. (Independent-Poisson grids here, so the plain number is
   above the site's Dixon-Coles; the comparison is like for like.)
 
-Live: `.github/workflows/matchday.yml` runs every 30 minutes; a stdlib-only
+Live: `.github/workflows/pipeline.yml`'s matchday job runs hourly through the weekend's kickoff hours
+(plus Fri/Mon evenings); a stdlib-only
 check (`matchday_due.py`) exits unless a big-5 league match kicks off within
 ~2 hours. For those whose FotMob lineup is confirmed (`lineupType` "standard" -
 before that FotMob serves a "predicted" XI, which is ignored),

@@ -75,7 +75,8 @@ over GitHub's 100 MB file limit, and nothing in the pipeline reads it).
 
 ## Matchday re-score (automatic)
 
-`.github/workflows/matchday.yml` (every 30 min): `src/matchday_due.py` (stdlib
+`.github/workflows/pipeline.yml`'s matchday job (hourly through the weekend's kickoff hours, plus Fri/Mon
+evenings): `src/matchday_due.py` (stdlib
 only - exits in seconds unless a big-5 league match kicks off within ~2 h), then
 `src/matchday_rescore.py` re-scores matches whose FotMob XI is confirmed and
 appends to `data/processed/predictions_ledger_xi.csv`. The adjustment it applies
@@ -117,7 +118,7 @@ py -3.11 -m streamlit run src/dashboard.py   # predictions vs results, value lea
 py -3.11 src/health_check.py                 # probes every scrape source, writes health_check.json
 ```
 
-`.github/workflows/health-check.yml` runs the health check every 3 days and
+The refresh job in `.github/workflows/pipeline.yml` runs the health check first (Mon + Thu) and
 commits the report, so the dashboard's "Source health" tab stays current
 without a local run. A transient upstream outage (5xx, an IP block on CI's
 range) is reported as `unreachable` but does not fail the run - only a real
@@ -125,8 +126,8 @@ schema drift (`DEGRADED` / `ERROR`) does.
 
 ## Refresh the current season
 
-**Automatic (every 2 days):** `.github/workflows/refresh.yml` runs on a
-`*/2` cron (and on manual dispatch). It pulls everything that doesn't need a
+**Automatic (Mon + Thu):** `.github/workflows/pipeline.yml`'s refresh job runs at 07:00 UTC
+Mondays and Thursdays (and on manual dispatch, task `refresh`). It pulls everything that doesn't need a
 browser - football-data.co.uk results, live fixtures + match stats (ESPN /
 football-data.org / FotMob / Understat), Sofascore market values, FotMob + ESPN
 per-player box scores, internationals - cross-checks the per-player rows,
