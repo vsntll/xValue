@@ -57,6 +57,14 @@ jobs:
       - name: Restore the last build (release asset)
         run: python src/sync_build.py fetch --baseline "$RUNNER_TEMP/prev_build"
 
+      # probes every upstream source (src/health_check.py); its report is
+      # committed with the refresh. A schema drift fails the run at the end
+      # (after the commit) instead of blocking the refresh.
+      - name: Source health check
+        id: hc
+        continue-on-error: true
+        run: python src/health_check.py
+
       # No fetch cache: data/processed/ (committed, checkout brings it) is the only
       # record of what has been pulled. Every pull below skips what's already in
       # those CSVs and only requests new matches, so a fresh runner does the same
@@ -198,7 +206,7 @@ jobs:
           PREV_BUILD_DIR: ${{ runner.temp }}/prev_build
         run: python -m pytest -q tests
 
-      - name: Commit refreshed data + site
+      - name: Commit refreshed data + health report
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -231,6 +239,12 @@ jobs:
             --title "Latest build" --latest=false \
             --notes "Rebuilt-every-run outputs of the last master refresh (src/sync_build.py fetch). Replaced every run."
           gh release upload latest-build build/processed-build.zip --clobber
+
+      - name: Fail the run if the health check found a schema drift
+        if: steps.hc.outcome == 'failure'
+        run: |
+          echo "::error::health check reported DEGRADED / ERROR - see data/processed/health_check.json"
+          exit 1
 
   # publishes the page the refresh just packed into the latest-build release.
   # Runs after every master refresh (a failed one redeploys the last page).
