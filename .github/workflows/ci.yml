@@ -1,13 +1,25 @@
 name: CI
 
-# Lint + tests on every push and pull request, so a broken dixon_coles.py or
-# ledger change fails here instead of at the next scheduled refresh. The tests
+# Lint + tests on pushes / pull requests that touch code, so a broken
+# dixon_coles.py or ledger change fails here instead of at the next scheduled refresh. The tests
 # that need the rebuilt tables (release asset, src/sync_build.py) skip cleanly
 # without them; everything checking committed data and the unit tests runs.
-
+# Data-only commits skip it - the scheduled refresh runs the same tests before
+# it commits.
 on:
   push:
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "requirements.lock"
+      - ".github/workflows/ci.yml"
   pull_request:
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "requirements.lock"
+      - ".github/workflows/ci.yml"
+  workflow_dispatch: {}
 
 permissions:
   contents: read
