@@ -174,9 +174,9 @@ current-season (2026-27) `Age` is unpopulated upstream for every row -
 Run: `python src/export_site_data.py` — regenerates `site/data.json` **and**
 splices it into `site/template.html` to produce `site/index.html` (the
 self-contained page - no longer committed: the refresh publishes it in the
-`latest-build` release asset and `deploy-pages.yml` deploys it from there; `__SITE_DATA_JSON__` placeholder), in one run
+`latest-build` release asset and `pipeline.yml`'s deploy job publishes it from there; `__SITE_DATA_JSON__` placeholder), in one run
 (`splice_index_html()`, called at the end of `main()`). This is what
-`refresh.yml`'s "Regenerate the site" step relies on - before
+`pipeline.yml`'s "Regenerate the site" step relies on - before
 2026-09-04 the script only wrote `data.json`, so that CI step silently did
 nothing to `site/index.html` and the commit-and-deploy step downstream always
 saw "site unchanged."
@@ -214,10 +214,10 @@ saw "site unchanged."
   out-of-sample test-set (2024-26) probabilities in 10 bins per outcome, plus
   the largest draw probability it ever gives (~0.38 - it never favours a draw).
 
-## Auto-refresh (every 2 days)
+## Auto-refresh (Mon + Thu)
 
-`.github/workflows/refresh.yml` — "Site refresh (every 2 days)", cron
-`0 7 */2 * *` + manual dispatch — re-pulls every browser-free source,
+`.github/workflows/pipeline.yml`'s refresh job, cron
+`0 7 * * 1,4` + manual dispatch — re-pulls every browser-free source,
 cross-checks FotMob's per-player rows against Understat / ESPN /
 football-data.co.uk, fills Understat's missing matches from FotMob while it's
 down, **refreshes the current season's player stats**

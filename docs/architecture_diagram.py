@@ -82,7 +82,7 @@ NODES = {
              ["value_model_predictions.csv + value_forecast.csv", "every player, every season"]),
     "site": ("output", 386, 1843, 891, 100, "Site",
              ["site/index.html (Players · Fixtures · Teams · Rankings · Sim)",
-              "rebuilt + committed with data/processed/ every 2 days"]),
+              "rebuilt + committed with data/processed/ every Mon + Thu"]),
 }
 
 # (from, to, x leaving the source's bottom, x entering the target's top, channel y)
