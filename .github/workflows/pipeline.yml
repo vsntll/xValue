@@ -1,21 +1,24 @@
-name: Site refresh (every 2 days)
+name: Pipeline (refresh, health check, deploy, matchday XI)
 
-# Pulls the data that does NOT need a browser (live fixtures + match stats via
-# ESPN / football-data.org / FotMob / Understat, and market values via Sofascore),
-# refreshes the current season's player stats from Understat, rebuilds the match
-# table, retrains both models, regenerates site/index.html, then commits the
-# refreshed data/processed/ AND site/index.html back to master.
+# One workflow for everything scheduled, sized for a 1000 min/month Actions
+# budget (every job is billed rounded up to the whole minute, so frequent tiny
+# runs were what burned it):
 #
-# Current-season goals / assists / minutes / xG now come from Understat
-# (build_current_season_stats.py) so this no longer waits on a manual FBref
-# scrape. FBref is still the source for finished seasons and for the deep stats
-# (shots on target, fouls, passing / defense / GCA / keeper) - re-scrape those
-# roughly monthly with `run_pipeline.md` step 1 (needs Chrome + a one-off
-# WAF-captcha click). Transfermarkt scrape values are also monthly-manual.
+#   refresh  - Mon + Thu 07:00 UTC (after the weekend / midweek rounds). Health
+#              check, pulls, rebuild, retrain, regression gate, tests, commit,
+#              and on master the latest-build release. ~20 min a run.
+#   deploy   - after a master refresh: publishes site/index.html to Pages.
+#   matchday - hourly through the weekend's kickoff hours plus Fri/Mon
+#              evenings: re-scores matches with a confirmed FotMob XI
+#              (src/matchday_rescore.py). A run with no kickoff in the next
+#              ~2 h ends in seconds without installing anything.
+#
+# Manual: Actions -> Pipeline -> Run workflow, pick a task. One-time Pages
+# setup: repo Settings -> Pages -> Source: "GitHub Actions".
 
 on:
   schedule:
-    - cron: "0 7 */2 * *"         # refresh: every 2 days, 07:00 UTC
+    - cron: "0 7 * * 1,4"         # refresh: Mon + Thu 07:00 UTC
     - cron: "50 10-19 * * 0,6"    # matchday: Sat + Sun, hourly 10:50-19:50 UTC
     - cron: "50 17-18 * * 1,5"    # matchday: Fri + Mon evening games
   workflow_dispatch:
@@ -23,7 +26,7 @@ on:
       task:
         description: What to run
         type: choice
-        options: [refresh, matchday]
+        options: [refresh, deploy, matchday]
         default: refresh
 
 permissions:
@@ -36,7 +39,7 @@ concurrency:
 jobs:
   refresh:
     if: >-
-      (github.event_name == 'schedule' && github.event.schedule == '0 7 */2 * *') ||
+      (github.event_name == 'schedule' && github.event.schedule == '0 7 * * 1,4') ||
       (github.event_name == 'workflow_dispatch' && inputs.task == 'refresh')
     runs-on: ubuntu-latest
     timeout-minutes: 45
@@ -258,12 +261,14 @@ jobs:
           exit 1
 
   # publishes the page the refresh just packed into the latest-build release.
-  # Runs after every master refresh (a failed one redeploys the last page).
+  # Runs after a master refresh whose commit went through (a health-check
+  # failure at the very end still deploys), or on its own via task=deploy.
   deploy:
     needs: refresh
     if: >-
-      always() && github.ref_name == 'master' &&
-      needs.refresh.result != 'skipped' && needs.refresh.result != 'cancelled'
+      always() && github.ref_name == 'master' && (
+        (needs.refresh.result != 'skipped' && needs.refresh.result != 'cancelled') ||
+        (github.event_name == 'workflow_dispatch' && inputs.task == 'deploy'))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -289,7 +294,7 @@ jobs:
 
   matchday:
     if: >-
-      (github.event_name == 'schedule' && github.event.schedule != '0 7 */2 * *') ||
+      (github.event_name == 'schedule' && github.event.schedule != '0 7 * * 1,4') ||
       (github.event_name == 'workflow_dispatch' && inputs.task == 'matchday')
     runs-on: ubuntu-latest
     timeout-minutes: 15
