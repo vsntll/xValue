@@ -20,7 +20,6 @@ on:
 
 permissions:
   contents: write
-  actions: write        # to kick deploy-pages.yml after committing
 
 concurrency:
   group: site-refresh
@@ -199,7 +198,7 @@ jobs:
           PREV_BUILD_DIR: ${{ runner.temp }}/prev_build
         run: python -m pytest -q tests
 
-      - name: Commit refreshed data + site and deploy
+      - name: Commit refreshed data + site
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -222,7 +221,7 @@ jobs:
 
       # only a master run replaces the published build and the site - a manual
       # run on a test branch never touches either
-      - name: Publish the build (release asset) and deploy the site
+      - name: Publish the build (release asset)
         if: github.ref_name == 'master'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -232,4 +231,33 @@ jobs:
             --title "Latest build" --latest=false \
             --notes "Rebuilt-every-run outputs of the last master refresh (src/sync_build.py fetch). Replaced every run."
           gh release upload latest-build build/processed-build.zip --clobber
-          gh workflow run deploy-pages.yml || echo "(no deploy-pages workflow / Pages not enabled yet)"
+
+  # publishes the page the refresh just packed into the latest-build release.
+  # Runs after every master refresh (a failed one redeploys the last page).
+  deploy:
+    needs: refresh
+    if: >-
+      always() && github.ref_name == 'master' &&
+      needs.refresh.result != 'skipped' && needs.refresh.result != 'cancelled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/configure-pages@v5
+      - name: Fetch the built page from the latest-build release
+        run: |
+          python3 src/sync_build.py fetch
+          mkdir -p _site
+          cp site/index.html _site/index.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4
