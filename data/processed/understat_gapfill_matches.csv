@@ -49,6 +49,16 @@ ITA1,2026-27,31656,2026-11-01 14:00:00,Lazio,Cagliari,2.0,1.0,1.03,0.98,True,htt
 ITA1,2026-27,31657,2026-11-01 14:00:00,Lecce,Genoa,1.0,2.0,1.21,1.3299999999999998,True,https://understat.com/match/31657,fotmob
 ITA1,2026-27,31658,2026-11-01 14:00:00,Sassuolo,Fiorentina,2.0,4.0,0.99,2.3899999999999997,True,https://understat.com/match/31658,fotmob
 ITA1,2026-27,31659,2026-11-01 14:00:00,Udinese,Roma,2.0,5.0,1.77,2.75,True,https://understat.com/match/31659,fotmob
+ITA1,2026-27,31660,2026-11-08 14:00:00,Roma,Sassuolo,3.0,0.0,3.73,0.28,True,https://understat.com/match/31660,fotmob
+ITA1,2026-27,31667,2026-11-08 14:00:00,Cagliari,Frosinone,1.0,0.0,0.98,2.15,True,https://understat.com/match/31667,fotmob
+ITA1,2026-27,31668,2026-11-08 14:00:00,Fiorentina,Juventus,2.0,2.0,2.09,2.4499999999999997,True,https://understat.com/match/31668,fotmob
+ITA1,2026-27,31669,2026-11-08 14:00:00,Genoa,AC Milan,1.0,2.0,1.15,0.64,True,https://understat.com/match/31669,fotmob
+ITA1,2026-27,31661,2026-11-08 14:00:00,Inter,Como,2.0,0.0,1.82,0.21000000000000002,True,https://understat.com/match/31661,fotmob
+ITA1,2026-27,31662,2026-11-08 14:00:00,Monza,Atalanta,0.0,1.0,1.3399999999999999,1.3599999999999999,True,https://understat.com/match/31662,fotmob
+ITA1,2026-27,31663,2026-11-08 14:00:00,Napoli,Lazio,1.0,1.0,2.31,0.86,True,https://understat.com/match/31663,fotmob
+ITA1,2026-27,31664,2026-11-08 14:00:00,Parma Calcio 1913,Bologna,1.0,2.0,1.44,3.5,True,https://understat.com/match/31664,fotmob
+ITA1,2026-27,31665,2026-11-08 14:00:00,Torino,Lecce,1.0,1.0,0.91,0.26,True,https://understat.com/match/31665,fotmob
+ITA1,2026-27,31666,2026-11-08 14:00:00,Venezia,Udinese,2.0,1.0,1.52,1.05,True,https://understat.com/match/31666,fotmob
 ENG1,2026-27,31230,2026-10-10 11:30:00,Arsenal,Leeds,2.0,1.0,2.32,0.63,True,https://understat.com/match/31230,fotmob
 ENG1,2026-27,31231,2026-10-10 14:00:00,Aston Villa,Brentford,2.0,2.0,2.33,1.07,True,https://understat.com/match/31231,fotmob
 ENG1,2026-27,31232,2026-10-10 14:00:00,Chelsea,Bournemouth,5.0,1.0,1.0899999999999999,1.3800000000000001,True,https://understat.com/match/31232,fotmob
@@ -89,6 +99,16 @@ ENG1,2026-27,31268,2026-11-01 16:30:00,Liverpool,Arsenal,0.0,1.0,1.04,0.97,True,
 ENG1,2026-27,31263,2026-10-31 15:00:00,Manchester City,Brighton,0.0,1.0,1.66,1.0,True,https://understat.com/match/31263,fotmob
 ENG1,2026-27,31269,2026-11-02 20:00:00,Newcastle United,Everton,0.0,1.0,1.3,2.4400000000000004,True,https://understat.com/match/31269,fotmob
 ENG1,2026-27,31266,2026-10-31 17:30:00,Tottenham,Crystal Palace,2.0,0.0,3.46,0.15,True,https://understat.com/match/31266,fotmob
+ENG1,2026-27,31270,2026-11-07 15:00:00,Arsenal,Hull,1.0,0.0,1.27,0.36,True,https://understat.com/match/31270,fotmob
+ENG1,2026-27,31271,2026-11-07 15:00:00,Brighton,Brentford,2.0,0.0,2.11,0.5800000000000001,True,https://understat.com/match/31271,fotmob
+ENG1,2026-27,31272,2026-11-07 15:00:00,Crystal Palace,Liverpool,1.0,3.0,2.62,2.64,True,https://understat.com/match/31272,fotmob
+ENG1,2026-27,31273,2026-11-07 15:00:00,Everton,Coventry,3.0,1.0,1.4400000000000002,1.21,True,https://understat.com/match/31273,fotmob
+ENG1,2026-27,31274,2026-11-07 15:00:00,Fulham,Newcastle United,1.0,1.0,0.69,1.1400000000000001,True,https://understat.com/match/31274,fotmob
+ENG1,2026-27,31275,2026-11-07 15:00:00,Ipswich,Bournemouth,1.0,2.0,1.25,2.23,True,https://understat.com/match/31275,fotmob
+ENG1,2026-27,31276,2026-11-07 15:00:00,Leeds,Tottenham,1.0,0.0,1.9600000000000002,0.73,True,https://understat.com/match/31276,fotmob
+ENG1,2026-27,31277,2026-11-07 15:00:00,Manchester United,Aston Villa,4.0,4.0,3.55,2.92,True,https://understat.com/match/31277,fotmob
+ENG1,2026-27,31278,2026-11-07 15:00:00,Nottingham Forest,Manchester City,3.0,1.0,1.06,1.76,True,https://understat.com/match/31278,fotmob
+ENG1,2026-27,31279,2026-11-07 15:00:00,Sunderland,Chelsea,1.0,0.0,2.38,0.65,True,https://understat.com/match/31279,fotmob
 FRA1,2026-27,31985,2026-10-10 13:00:00,Brest,Angers,5.0,1.0,3.86,1.39,True,https://understat.com/match/31985,fotmob
 FRA1,2026-27,31986,2026-10-10 13:00:00,Lens,Lyon,2.0,1.0,1.33,1.03,True,https://understat.com/match/31986,fotmob
 FRA1,2026-27,31987,2026-10-10 13:00:00,Lille,Le Havre,1.0,0.0,1.26,1.29,True,https://understat.com/match/31987,fotmob
@@ -125,6 +145,15 @@ FRA1,2026-27,32017,2026-10-31 14:00:00,Nice,Rennes,5.0,2.0,3.4299999999999997,2.
 FRA1,2026-27,32018,2026-10-31 14:00:00,Paris FC,Monaco,3.0,1.0,2.15,0.67,True,https://understat.com/match/32018,fotmob
 FRA1,2026-27,32019,2026-10-31 14:00:00,Strasbourg,Auxerre,5.0,1.0,2.81,0.47,True,https://understat.com/match/32019,fotmob
 FRA1,2026-27,32020,2026-10-31 14:00:00,Troyes,Le Mans,2.0,0.0,2.02,0.2,True,https://understat.com/match/32020,fotmob
+FRA1,2026-27,32021,2026-11-07 14:00:00,Angers,Nice,0.0,2.0,0.89,2.09,True,https://understat.com/match/32021,fotmob
+FRA1,2026-27,32022,2026-11-07 14:00:00,Auxerre,Paris FC,0.0,1.0,0.8200000000000001,0.7599999999999999,True,https://understat.com/match/32022,fotmob
+FRA1,2026-27,32023,2026-11-07 14:00:00,Brest,Lyon,2.0,0.0,1.84,0.64,True,https://understat.com/match/32023,fotmob
+FRA1,2026-27,32024,2026-11-07 14:00:00,Le Havre,Lorient,0.0,2.0,0.91,1.46,True,https://understat.com/match/32024,fotmob
+FRA1,2026-27,32025,2026-11-07 14:00:00,Le Mans,Monaco,1.0,1.0,1.4600000000000002,0.96,True,https://understat.com/match/32025,fotmob
+FRA1,2026-27,32026,2026-11-07 14:00:00,Paris Saint Germain,Troyes,1.0,0.0,2.05,0.65,True,https://understat.com/match/32026,fotmob
+FRA1,2026-27,32027,2026-11-07 14:00:00,Rennes,Lille,1.0,2.0,1.52,0.36,True,https://understat.com/match/32027,fotmob
+FRA1,2026-27,32028,2026-11-07 14:00:00,Toulouse,Strasbourg,3.0,1.0,1.17,0.75,True,https://understat.com/match/32028,fotmob
+FRA1,2026-27,32029,2026-11-07 19:45:00,Lens,Marseille,1.0,2.0,1.94,2.4299999999999997,True,https://understat.com/match/32029,fotmob
 ESP1,2026-27,30827,2026-10-21 19:30:00,Levante,Athletic Club,3.0,1.0,2.07,2.0300000000000002,True,https://understat.com/match/30827,fotmob
 ESP1,2026-27,30840,2026-10-11 15:00:00,Alaves,Atletico Madrid,1.0,2.0,1.31,2.06,True,https://understat.com/match/30840,fotmob
 ESP1,2026-27,30841,2026-10-11 15:00:00,Real Betis,Osasuna,5.0,2.0,2.89,1.9400000000000002,True,https://understat.com/match/30841,fotmob
@@ -166,6 +195,16 @@ ESP1,2026-27,30876,2026-11-01 16:00:00,Levante,Atletico Madrid,0.0,2.0,1.4,0.7,T
 ESP1,2026-27,30877,2026-11-01 16:00:00,Racing Santander,Real Madrid,0.0,3.0,0.97,3.37,True,https://understat.com/match/30877,fotmob
 ESP1,2026-27,30878,2026-11-01 16:00:00,Rayo Vallecano,Celta Vigo,3.0,0.0,1.1099999999999999,1.4,True,https://understat.com/match/30878,fotmob
 ESP1,2026-27,30879,2026-11-01 16:00:00,Villarreal,Espanyol,0.0,1.0,0.89,0.23,True,https://understat.com/match/30879,fotmob
+ESP1,2026-27,30880,2026-11-08 16:00:00,Atletico Madrid,Barcelona,1.0,2.0,1.6700000000000002,1.61,True,https://understat.com/match/30880,fotmob
+ESP1,2026-27,30889,2026-11-08 16:00:00,Celta Vigo,Levante,0.0,0.0,3.16,0.28,True,https://understat.com/match/30889,fotmob
+ESP1,2026-27,30881,2026-11-08 16:00:00,Elche,Real Betis,0.0,2.0,0.83,1.91,True,https://understat.com/match/30881,fotmob
+ESP1,2026-27,30882,2026-11-08 16:00:00,Espanyol,Deportivo La Coruna,0.0,0.0,0.7,0.22999999999999998,True,https://understat.com/match/30882,fotmob
+ESP1,2026-27,30883,2026-11-08 16:00:00,Malaga,Racing Santander,1.0,2.0,2.09,2.46,True,https://understat.com/match/30883,fotmob
+ESP1,2026-27,30884,2026-11-08 16:00:00,Osasuna,Athletic Club,1.0,1.0,0.65,2.29,True,https://understat.com/match/30884,fotmob
+ESP1,2026-27,30885,2026-11-08 16:00:00,Real Sociedad,Rayo Vallecano,1.0,0.0,1.6300000000000001,1.4300000000000002,True,https://understat.com/match/30885,fotmob
+ESP1,2026-27,30886,2026-11-08 16:00:00,Sevilla,Alaves,0.0,0.0,1.6,0.54,True,https://understat.com/match/30886,fotmob
+ESP1,2026-27,30887,2026-11-08 16:00:00,Valencia,Real Madrid,0.0,3.0,0.18,2.35,True,https://understat.com/match/30887,fotmob
+ESP1,2026-27,30888,2026-11-08 16:00:00,Villarreal,Getafe,2.0,0.0,2.31,0.8200000000000001,True,https://understat.com/match/30888,fotmob
 GER1,2026-27,32282,2026-10-10 13:30:00,Augsburg,Bayern Munich,2.0,2.0,2.39,4.97,True,https://understat.com/match/32282,fotmob
 GER1,2026-27,32283,2026-10-10 13:30:00,Borussia Dortmund,Werder Bremen,2.0,2.0,2.32,1.31,True,https://understat.com/match/32283,fotmob
 GER1,2026-27,32284,2026-10-10 13:30:00,FC Cologne,Borussia M.Gladbach,2.0,1.0,1.33,1.18,True,https://understat.com/match/32284,fotmob
@@ -202,3 +241,12 @@ GER1,2026-27,32765,2026-10-31 14:30:00,Elversberg,Mainz 05,4.0,1.0,0.95,1.329999
 GER1,2026-27,32304,2026-10-31 14:30:00,Schalke 04,RasenBallsport Leipzig,0.0,2.0,0.49,3.67,True,https://understat.com/match/32304,fotmob
 GER1,2026-27,32305,2026-10-31 14:30:00,Union Berlin,FC Cologne,1.0,1.0,0.6799999999999999,1.17,True,https://understat.com/match/32305,fotmob
 GER1,2026-27,32306,2026-10-31 14:30:00,Werder Bremen,Hoffenheim,2.0,0.0,1.28,1.06,True,https://understat.com/match/32306,fotmob
+GER1,2026-27,32766,2026-11-07 14:30:00,Borussia Dortmund,Elversberg,2.0,1.0,1.6300000000000001,1.23,True,https://understat.com/match/32766,fotmob
+GER1,2026-27,32311,2026-11-07 14:30:00,FC Cologne,Bayer Leverkusen,1.0,2.0,1.6600000000000001,1.8800000000000001,True,https://understat.com/match/32311,fotmob
+GER1,2026-27,32312,2026-11-07 14:30:00,Freiburg,Union Berlin,2.0,0.0,2.58,0.33999999999999997,True,https://understat.com/match/32312,fotmob
+GER1,2026-27,32313,2026-11-07 14:30:00,Hamburger SV,Borussia M.Gladbach,3.0,1.0,2.2800000000000002,2.23,True,https://understat.com/match/32313,fotmob
+GER1,2026-27,32314,2026-11-07 14:30:00,Hoffenheim,Schalke 04,2.0,1.0,2.25,2.66,True,https://understat.com/match/32314,fotmob
+GER1,2026-27,32315,2026-11-07 14:30:00,Mainz 05,Bayern Munich,1.0,2.0,0.55,2.78,True,https://understat.com/match/32315,fotmob
+GER1,2026-27,32316,2026-11-07 14:30:00,Paderborn,Eintracht Frankfurt,2.0,2.0,2.24,1.7500000000000002,True,https://understat.com/match/32316,fotmob
+GER1,2026-27,32317,2026-11-07 14:30:00,RasenBallsport Leipzig,Augsburg,5.0,2.0,2.2399999999999998,2.21,True,https://understat.com/match/32317,fotmob
+GER1,2026-27,32318,2026-11-07 14:30:00,VfB Stuttgart,Werder Bremen,1.0,0.0,0.7,1.3900000000000001,True,https://understat.com/match/32318,fotmob

@@ -11,34 +11,34 @@
       "n": 3476
     },
     "hgb": {
-      "acc": 0.523,
-      "log_loss": 0.9923,
+      "acc": 0.5262,
+      "log_loss": 0.9935,
       "n": 3476
     },
     "hybrid": {
-      "acc": 0.5342,
-      "log_loss": 0.973,
+      "acc": 0.5331,
+      "log_loss": 0.9734,
       "n": 3476
     },
     "logreg": {
-      "acc": 0.5236,
-      "log_loss": 0.996,
+      "acc": 0.5227,
+      "log_loss": 0.9959,
       "n": 3476
     },
     "n_test": 3476,
     "poisson": {
-      "acc": 0.5285,
+      "acc": 0.5276,
       "log_loss": 0.9815,
       "n": 3476
     },
     "poisson_xg": {
-      "acc": 0.5288,
-      "log_loss": 0.9806,
+      "acc": 0.5282,
+      "log_loss": 0.9805,
       "n": 3476
     },
     "pure": {
-      "acc": 0.5302,
-      "log_loss": 0.9808,
+      "acc": 0.5291,
+      "log_loss": 0.982,
       "n": 3476
     },
     "test_seasons": [
@@ -47,69 +47,69 @@
     ]
   },
   "value": {
-    "mae_eur": 4233677,
-    "medape": 0.2178,
+    "mae_eur": 4218509,
+    "medape": 0.218,
     "n_test": 3042,
-    "r2_log": 0.8866,
+    "r2_log": 0.8865,
     "segments": {
       "carried": {
-        "medape": 0.2795,
-        "n": 5204,
-        "pred_over_listed": 1.076,
-        "r2_log": 0.6923,
-        "share": 0.405,
-        "within_2x": 0.7669
+        "medape": 0.2844,
+        "n": 5102,
+        "pred_over_listed": 1.078,
+        "r2_log": 0.682,
+        "share": 0.399,
+        "within_2x": 0.7626
       },
       "cold_start": {
-        "medape": 0.4203,
+        "medape": 0.4286,
         "n": 225,
-        "pred_over_listed": 0.937,
-        "r2_log": 0.6371,
+        "pred_over_listed": 0.948,
+        "r2_log": 0.6362,
         "share": 0.074
       },
       "elite": {
-        "listed_over_pred_by_pred": 1.155,
-        "medape": 0.1779,
+        "listed_over_pred_by_pred": 1.12,
+        "medape": 0.1797,
         "n": 38,
         "n_by_pred": 24,
-        "pred_over_listed": 0.835,
+        "pred_over_listed": 0.832,
         "share": 0.012
       },
       "goalkeepers": {
-        "medape": 0.2216,
+        "medape": 0.2211,
         "n": 236,
-        "pred_over_listed": 1.048,
-        "r2_log": 0.8672,
+        "pred_over_listed": 1.049,
+        "r2_log": 0.8656,
         "share": 0.078
       },
       "high": {
-        "listed_over_pred_by_pred": 1.007,
-        "medape": 0.1889,
+        "listed_over_pred_by_pred": 0.995,
+        "medape": 0.1851,
         "n": 316,
-        "n_by_pred": 243,
-        "pred_over_listed": 0.865,
+        "n_by_pred": 245,
+        "pred_over_listed": 0.882,
         "share": 0.104
       },
       "mid": {
-        "listed_over_pred_by_pred": 0.999,
-        "medape": 0.2105,
+        "listed_over_pred_by_pred": 1.0,
+        "medape": 0.2099,
         "n": 2058,
-        "n_by_pred": 2173,
-        "pred_over_listed": 0.991,
+        "n_by_pred": 2170,
+        "pred_over_listed": 0.989,
         "share": 0.677
       },
       "outfield": {
-        "medape": 0.2176,
+        "medape": 0.2178,
         "n": 2806,
-        "pred_over_listed": 1.013,
+        "pred_over_listed": 1.014,
         "r2_log": 0.8865,
         "share": 0.922
       },
       "with_prev": {
-        "medape": 0.2086,
+        "medape": 0.2085,
         "n": 2817,
-        "pred_over_listed": 1.016,
-        "r2_log": 0.902,
+        "pred_over_listed": 1.018,
+        "r2_log": 0.9019,
         "share": 0.926
       }
     },
@@ -117,6 +117,6 @@
       "2024-25",
       "2025-26"
     ],
-    "within_2x": 0.9139
+    "within_2x": 0.9122
   }
 }

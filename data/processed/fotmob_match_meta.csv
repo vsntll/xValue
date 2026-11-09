@@ -10838,6 +10838,16 @@ match_id,season,src_league,date,home,away,home_score,away_score,fetched,events_f
 5749737,2026-27,ITA1,2026-11-01,Lecce,Genoa,1,2,1,1
 5749738,2026-27,ITA1,2026-11-02,Sassuolo,Fiorentina,2,4,1,1
 5749739,2026-27,ITA1,2026-10-31,Udinese,Roma,2,5,1,1
+5749740,2026-27,ITA1,2026-11-07,Roma,Sassuolo,3,0,1,1
+5749741,2026-27,ITA1,2026-11-07,Cagliari,Frosinone,1,0,1,1
+5749742,2026-27,ITA1,2026-11-08,Fiorentina,Juventus,2,2,1,1
+5749743,2026-27,ITA1,2026-11-08,Genoa,Milan,1,2,1,1
+5749744,2026-27,ITA1,2026-11-08,Inter,Como,2,0,1,1
+5749745,2026-27,ITA1,2026-11-08,Monza,Atalanta,0,1,1,1
+5749746,2026-27,ITA1,2026-11-08,Napoli,Lazio,1,1,1,1
+5749747,2026-27,ITA1,2026-11-07,Parma,Bologna,1,2,1,1
+5749748,2026-27,ITA1,2026-11-07,Torino,Lecce,1,1,1,1
+5749749,2026-27,ITA1,2026-11-06,Venezia,Udinese,2,1,1,1
 5795363,2026-27,ENG1,2026-08-21,Arsenal,Coventry,3,0,1,0
 5795364,2026-27,ENG1,2026-08-22,Hull,Man United,2,0,1,0
 5795365,2026-27,ENG1,2026-08-22,Everton,Crystal Palace,2,0,1,0
@@ -10928,6 +10938,16 @@ match_id,season,src_league,date,home,away,home_score,away_score,fetched,events_f
 5795502,2026-27,ENG1,2026-10-31,Man City,Brighton,0,1,1,1
 5795503,2026-27,ENG1,2026-11-02,Newcastle,Everton,0,1,1,1
 5795504,2026-27,ENG1,2026-10-31,Tottenham,Crystal Palace,2,0,1,1
+5795505,2026-27,ENG1,2026-11-07,Arsenal,Hull,1,0,1,1
+5795506,2026-27,ENG1,2026-11-08,Brighton,Brentford,2,0,1,1
+5795507,2026-27,ENG1,2026-11-08,Crystal Palace,Liverpool,1,3,1,1
+5795508,2026-27,ENG1,2026-11-06,Everton,Coventry,3,1,1,1
+5795509,2026-27,ENG1,2026-11-07,Fulham,Newcastle,1,1,1,1
+5795510,2026-27,ENG1,2026-11-08,Ipswich,Bournemouth,1,2,1,1
+5795511,2026-27,ENG1,2026-11-07,Leeds,Tottenham,1,0,1,1
+5795512,2026-27,ENG1,2026-11-08,Man United,Aston Villa,4,4,1,1
+5795513,2026-27,ENG1,2026-11-07,Nottm Forest,Man City,3,1,1,1
+5795514,2026-27,ENG1,2026-11-08,Sunderland,Chelsea,1,0,1,1
 5802901,2026-27,FRA1,2026-08-23,Angers,Lille,0,2,1,0
 5802902,2026-27,FRA1,2026-08-23,Le Havre,Monaco,0,1,1,0
 5802903,2026-27,FRA1,2026-08-22,Le Mans,Brest,2,2,1,0
@@ -11008,6 +11028,15 @@ match_id,season,src_league,date,home,away,home_score,away_score,fetched,events_f
 5802979,2026-27,FRA1,2026-11-01,Paris FC,Monaco,3,1,1,1
 5802980,2026-27,FRA1,2026-11-01,Strasbourg,Auxerre,5,1,1,1
 5802981,2026-27,FRA1,2026-10-31,Troyes,Le Mans,2,0,1,1
+5802982,2026-27,FRA1,2026-11-08,Angers,Nice,0,2,1,1
+5802983,2026-27,FRA1,2026-11-07,Auxerre,Paris FC,0,1,1,1
+5802984,2026-27,FRA1,2026-11-08,Brest,Lyon,2,0,1,1
+5802985,2026-27,FRA1,2026-11-08,Le Havre,Lorient,0,2,1,1
+5802986,2026-27,FRA1,2026-11-08,Le Mans,Monaco,1,1,1,1
+5802987,2026-27,FRA1,2026-11-07,PSG,Troyes,1,0,1,1
+5802988,2026-27,FRA1,2026-11-08,Rennes,Lille,1,2,1,1
+5802989,2026-27,FRA1,2026-11-06,Toulouse,Strasbourg,3,1,1,1
+5802990,2026-27,FRA1,2026-11-08,Lens,Marseille,1,2,1,1
 5803105,2026-27,FRA1,2026-08-23,Rennes,PSG,2,2,1,0
 5868011,2026-27,ESP1,2026-08-15,Deportivo Alavés,Getafe,3,0,1,0
 5868012,2026-27,ESP1,2026-08-19,Atlético Madrid,Málaga,2,0,1,0
@@ -11119,6 +11148,16 @@ match_id,season,src_league,date,home,away,home_score,away_score,fetched,events_f
 5868118,2026-27,ESP1,2026-11-01,Racing Santander,Real Madrid,0,3,1,1
 5868119,2026-27,ESP1,2026-10-31,Rayo Vallecano,Celta Vigo,3,0,1,1
 5868120,2026-27,ESP1,2026-10-30,Villarreal,Espanyol,0,1,1,1
+5868121,2026-27,ESP1,2026-11-08,Atlético Madrid,Barcelona,1,2,1,1
+5868122,2026-27,ESP1,2026-11-08,Celta Vigo,Levante,0,0,1,1
+5868123,2026-27,ESP1,2026-11-08,Elche,Real Betis,0,2,1,1
+5868124,2026-27,ESP1,2026-11-07,Espanyol,Deportivo A Coruña,0,0,1,1
+5868125,2026-27,ESP1,2026-11-07,Málaga,Racing Santander,1,2,1,1
+5868126,2026-27,ESP1,2026-11-07,Osasuna,Athletic Club,1,1,1,1
+5868127,2026-27,ESP1,2026-11-08,Real Sociedad,Rayo Vallecano,1,0,1,1
+5868128,2026-27,ESP1,2026-11-06,Sevilla,Deportivo Alavés,0,0,1,1
+5868129,2026-27,ESP1,2026-11-07,Valencia,Real Madrid,0,3,1,1
+5868130,2026-27,ESP1,2026-11-08,Villarreal,Getafe,2,0,1,1
 5881143,2026-27,GER1,2026-08-28,Bayern München,VfB Stuttgart,5,1,1,0
 5881144,2026-27,GER1,2026-08-30,Augsburg,Schalke 04,3,0,1,0
 5881145,2026-27,GER1,2026-08-29,Dortmund,Hamburger SV,2,0,1,0
@@ -11191,3 +11230,12 @@ match_id,season,src_league,date,home,away,home_score,away_score,fetched,events_f
 5881212,2026-27,GER1,2026-10-31,Schalke 04,RB Leipzig,0,2,1,1
 5881213,2026-27,GER1,2026-11-01,Union Berlin,Köln,1,1,1,1
 5881214,2026-27,GER1,2026-10-31,Werder Bremen,Hoffenheim,2,0,1,1
+5881215,2026-27,GER1,2026-11-07,Dortmund,Elversberg,2,1,1,1
+5881216,2026-27,GER1,2026-11-08,Köln,Leverkusen,1,2,1,1
+5881217,2026-27,GER1,2026-11-08,Freiburg,Union Berlin,2,0,1,1
+5881218,2026-27,GER1,2026-11-06,Hamburger SV,M'gladbach,3,1,1,1
+5881219,2026-27,GER1,2026-11-08,Hoffenheim,Schalke 04,2,1,1,1
+5881220,2026-27,GER1,2026-11-07,Mainz,Bayern München,1,2,1,1
+5881221,2026-27,GER1,2026-11-07,Paderborn,Frankfurt,2,2,1,1
+5881222,2026-27,GER1,2026-11-07,RB Leipzig,Augsburg,5,2,1,1
+5881223,2026-27,GER1,2026-11-07,VfB Stuttgart,Werder Bremen,1,0,1,1
