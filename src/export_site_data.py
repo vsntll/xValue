@@ -58,6 +58,7 @@ PROC = ROOT / "data" / "processed"
 OUT = ROOT / "site" / "data.json"
 TEMPLATE = ROOT / "site" / "template.html"
 INDEX = ROOT / "site" / "index.html"
+DOCS_INDEX = ROOT / "docs" / "index.html"
 PLACEHOLDER = "__SITE_DATA_JSON__"
 FERMIN_IMG = ROOT / "site" / "fermin.png"       # easter egg portrait (webp bytes, .png name)
 FERMIN_PLACEHOLDER = "__FERMIN_IMG__"
@@ -1209,6 +1210,9 @@ def splice_index_html(payload_json: str) -> None:
 
     INDEX.write_text(template, encoding="utf-8")
     print(f"wrote {INDEX}  size={INDEX.stat().st_size/1024:.0f} KB")
+    # shortcut: GitHub Pages serves docs/ from master while Actions is unavailable; drop once deploy runs again
+    DOCS_INDEX.write_text(template, encoding="utf-8")
+    print(f"wrote {DOCS_INDEX}")
 
 
 if __name__ == "__main__":
