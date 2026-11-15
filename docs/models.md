@@ -5,7 +5,7 @@
 
 | | value model | outcome (pure) | outcome (hybrid) |
 | --- | --- | --- | --- |
-| metric | R²(log) **0.89**, MAE **€4.2M**, within-2x **91%**, medAPE 22% | log-loss **0.982**, acc **0.529** | log-loss **0.973**, acc **0.533** |
+| metric | R²(log) **0.89**, MAE **€4.2M**, within-2x **91%**, medAPE 22% | log-loss **0.981**, acc **0.531** | log-loss **0.973**, acc **0.534** |
 | v1 was | 0.70 / €9.1M / 68% | 1.014 / 0.511 | — |
 | reference | — | Bet365 closing 0.971 / 0.539 | (uses market opening odds as a feature) |
 <!-- /metrics:models-summary -->
@@ -191,14 +191,14 @@ Pre-match home-win / draw / away-win on `matches_all.csv` league rows.
   | --- | --- | --- |
   | base rate | 0.429 | 1.075 |
   | logreg | 0.523 | 0.996 |
-  | hgb | 0.526 | 0.994 |
-  | poisson-Skellam | 0.528 | 0.982 |
+  | hgb | 0.524 | 0.992 |
+  | poisson-Skellam | 0.527 | 0.981 |
   | poisson + xG | 0.528 | 0.981 |
-  | blend {poisson, logreg, hgb} (**pure**) | 0.529 | 0.982 |
-  | **hybrid (+ market opening odds)** | 0.533 | 0.973 |
+  | blend {poisson, logreg, hgb} (**pure**) | 0.531 | 0.981 |
+  | **hybrid (+ market opening odds)** | 0.534 | 0.973 |
   | Bet365 closing | 0.539 | 0.971 |
 
-  The pure model closes ~89% of the base-rate → bookmaker gap on log-loss; the
+  The pure model closes ~90% of the base-rate → bookmaker gap on log-loss; the
   hybrid, which adds the market's *opening* line as a feature, closes ~97% of
   it - the last sliver is information the market has and we don't
   (confirmed lineups, injuries, sharp money).

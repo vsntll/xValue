@@ -11,34 +11,34 @@
       "n": 3476
     },
     "hgb": {
-      "acc": 0.5262,
-      "log_loss": 0.9935,
+      "acc": 0.5239,
+      "log_loss": 0.9922,
       "n": 3476
     },
     "hybrid": {
-      "acc": 0.5331,
-      "log_loss": 0.9734,
+      "acc": 0.5342,
+      "log_loss": 0.9732,
       "n": 3476
     },
     "logreg": {
-      "acc": 0.5227,
-      "log_loss": 0.9959,
+      "acc": 0.5233,
+      "log_loss": 0.9958,
       "n": 3476
     },
     "n_test": 3476,
     "poisson": {
-      "acc": 0.5276,
-      "log_loss": 0.9815,
+      "acc": 0.5273,
+      "log_loss": 0.9814,
       "n": 3476
     },
     "poisson_xg": {
-      "acc": 0.5282,
+      "acc": 0.5285,
       "log_loss": 0.9805,
       "n": 3476
     },
     "pure": {
-      "acc": 0.5291,
-      "log_loss": 0.982,
+      "acc": 0.5311,
+      "log_loss": 0.9811,
       "n": 3476
     },
     "test_seasons": [

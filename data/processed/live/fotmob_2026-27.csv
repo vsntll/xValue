@@ -100,8 +100,8 @@ fotmob,2026-27,Premier League,1,league,ENG1,2026-11-08,14:00,Ipswich Town,AFC Bo
 fotmob,2026-27,Premier League,1,league,ENG1,2026-11-08,14:00,Sunderland,Chelsea,FT,1,0,H,,,,9.0,10.0,2.0,4.0,2.0,2.0,,,5.0,4.0,,,31.0,69.0,2.38,0.66,fotmob:5795514
 fotmob,2026-27,Premier League,1,league,ENG1,2026-11-08,16:30,Manchester United,Aston Villa,FT,4,4,D,,,,26.0,12.0,9.0,6.0,8.0,1.0,,,1.0,1.0,,,56.0,44.0,3.55,2.88,fotmob:5795512
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-08-28,18:30,Bayern München,VfB Stuttgart,FT,5,1,H,,,,21.0,11.0,9.0,4.0,9.0,3.0,,,1.0,3.0,,,59.0,41.0,4.06,0.79,fotmob:5881143
-fotmob,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,Elversberg,Bayer Leverkusen,FT,3,2,H,,,,11.0,21.0,6.0,4.0,4.0,3.0,,,3.0,2.0,,,33.0,67.0,1.27,1.88,fotmob:5881146
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,1. FC Köln,Hoffenheim,FT,3,2,H,,,,18.0,15.0,6.0,4.0,6.0,7.0,,,0.0,2.0,,,41.0,59.0,1.95,1.88,fotmob:5881147
+fotmob,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,Elversberg,Bayer Leverkusen,FT,3,2,H,,,,11.0,21.0,6.0,4.0,4.0,3.0,,,3.0,2.0,,,33.0,67.0,1.27,1.88,fotmob:5881146
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,Mainz 05,Paderborn,FT,0,0,D,,,,21.0,10.0,4.0,0.0,11.0,2.0,,,1.0,2.0,,,51.0,49.0,1.23,0.73,fotmob:5881149
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,RB Leipzig,Borussia Mönchengladbach,FT,3,0,H,,,,25.0,15.0,11.0,4.0,7.0,6.0,,,1.0,0.0,,,47.0,53.0,3.96,1.09,fotmob:5881150
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,Union Berlin,Eintracht Frankfurt,FT,3,3,D,,,,19.0,12.0,10.0,3.0,5.0,2.0,,,2.0,4.0,,,49.0,51.0,1.84,1.47,fotmob:5881151
@@ -154,8 +154,8 @@ fotmob,2026-27,Bundesliga,1,league,GER1,2026-10-17,16:30,Bayern München,RB Leip
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-10-18,13:30,Bayer Leverkusen,Freiburg,FT,2,1,H,,,,12.0,11.0,5.0,2.0,4.0,3.0,,,0.0,1.0,,,49.0,51.0,1.64,1.21,fotmob:5881188
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-10-18,15:30,Borussia Mönchengladbach,Hoffenheim,FT,1,2,A,,,,9.0,14.0,3.0,8.0,3.0,6.0,,,3.0,2.0,,,48.0,52.0,0.47,1.8,fotmob:5881190
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-10-23,18:30,VfB Stuttgart,Borussia Mönchengladbach,FT,2,3,A,,,,15.0,16.0,5.0,6.0,6.0,5.0,,,2.0,4.0,,,70.0,30.0,1.53,3.08,fotmob:5881205
-fotmob,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,Augsburg,Union Berlin,FT,1,1,D,,,,27.0,6.0,5.0,1.0,5.0,1.0,,,0.0,3.0,,,66.0,34.0,1.92,1.16,fotmob:5881197
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,1. FC Köln,Schalke 04,FT,0,0,D,,,,14.0,9.0,5.0,1.0,6.0,5.0,,,2.0,3.0,,,62.0,38.0,1.24,0.61,fotmob:5881199
+fotmob,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,Augsburg,Union Berlin,FT,1,1,D,,,,27.0,6.0,5.0,1.0,5.0,1.0,,,0.0,3.0,,,66.0,34.0,1.92,1.16,fotmob:5881197
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,Mainz 05,Werder Bremen,FT,2,3,A,,,,18.0,17.0,8.0,8.0,6.0,6.0,,,2.0,1.0,,,54.0,46.0,1.7,2.69,fotmob:5881202
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,Paderborn,Hamburger SV,FT,1,0,H,,,,16.0,8.0,6.0,1.0,6.0,3.0,,,1.0,2.0,,,62.0,38.0,1.37,0.46,fotmob:5881203
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-10-24,13:30,RB Leipzig,Elversberg,FT,4,0,H,,,,13.0,5.0,6.0,1.0,4.0,6.0,,,1.0,1.0,,,55.0,45.0,2.87,0.8,fotmob:5881204
@@ -737,6 +737,7 @@ fotmob,2026-27,FA Cup,1,domestic_cup,FA,2026-11-08,12:00,Stafford Rangers,Grimsb
 fotmob,2026-27,FA Cup,1,domestic_cup,FA,2026-11-08,14:15,Cray Wanderers,Stockport County,FT,2,3,A,,,,15.0,16.0,3.0,6.0,4.0,7.0,,,1.0,2.0,,,34.0,66.0,1.09,2.71,fotmob:6469299
 fotmob,2026-27,FA Cup,1,domestic_cup,FA,2026-11-08,15:00,Wimborne Town,Crawley Town,FT,2,0,H,,,,8.0,12.0,5.0,2.0,4.0,4.0,,,5.0,2.0,,,38.0,62.0,0.93,0.9,fotmob:6469305
 fotmob,2026-27,FA Cup,1,domestic_cup,FA,2026-11-08,17:15,Oldham Athletic,Sheffield Wednesday,FT,2,1,H,,,,13.0,14.0,5.0,6.0,2.0,8.0,,,2.0,4.0,,,29.0,71.0,1.51,0.72,fotmob:6469282
+fotmob,2026-27,FA Cup,1,domestic_cup,FA,2026-11-09,19:30,Plymouth Parkway,Berkhamsted,FT,2,1,H,,,,18.0,14.0,2.0,1.0,4.0,5.0,,,2.0,1.0,,,58.0,42.0,2.93,0.83,fotmob:6469292
 fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-06,18:45,Bristol City,Walsall,FT,0,1,A,,,,32.0,8.0,9.0,5.0,13.0,4.0,,,0.0,3.0,,,72.0,28.0,2.76,1.51,fotmob:5840307
 fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-07,18:45,Wolverhampton Wanderers,Port Vale,FT,3,0,H,,,,16.0,11.0,7.0,3.0,8.0,5.0,,,1.0,1.0,,,69.0,31.0,1.44,2.34,fotmob:5840295
 fotmob,2026-27,EFL Cup,1,league_cup,EFL,2026-08-07,18:45,Wycombe Wanderers,Stevenage,FT,1,2,A,,,,13.0,13.0,3.0,5.0,4.0,3.0,,,2.0,4.0,,,59.0,41.0,1.85,1.0,fotmob:5840315
@@ -867,6 +868,26 @@ fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-10-28,19:45,Bayer Leverkusen,1.
 fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-10-28,19:45,Bayern München,Magdeburg,FT,6,1,H,,,,19.0,9.0,8.0,2.0,6.0,0.0,,,2.0,3.0,,,63.0,37.0,3.98,0.86,fotmob:6162738
 fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-10-28,19:45,Hannover 96,Kaiserslautern,FT,0,2,A,,,,24.0,5.0,8.0,3.0,15.0,3.0,,,3.0,4.0,,,52.0,48.0,1.46,0.48,fotmob:6162746
 fotmob,2026-27,DFB-Pokal,1,domestic_cup,DFB,2026-10-28,19:45,Holstein Kiel,Hoffenheim,FT,1,1,D,,,,16.0,13.0,5.0,4.0,6.0,10.0,,,3.0,5.0,,,44.0,56.0,0.99,0.77,fotmob:6162747
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-09-26,16:00,Anaitasuna FT,CD Tedeon,FT,5,0,H,,,,,,,,,,,,,,,,,,,,fotmob:1000023515
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-09-26,16:00,Atletico Calatayud,CD Baztán,FT,2,0,H,,,,,,,,,,,,,,,,,,,,fotmob:1000023528
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-09-26,16:00,UB Lebrijana,CD Ceuta 6 de Junio,FT,5,0,H,,,,,,,,,,,,,,,,,,,,fotmob:1000023513
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-09-26,17:00,Ribadesella CF,Noja,FT,1,0,H,,,,,,,,,,,,,,,,,,,,fotmob:1000023525
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-09-26,18:00,UD Pinatar,Atletico Melilla CF,FT,8,0,H,,,,,,,,,,,,,,,,,,,,fotmob:1000023516
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-09-27,10:00,Auriense,CD San Jose Soria,FT,2,0,H,,,,,,,,,,,,,,,,,,,,fotmob:1000023521
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-09-27,10:00,Sporting Hortaleza,Atletico Guimar,FT,1,0,H,,,,,,,,,,,,,,,,,,,,fotmob:1000023519
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-09-27,14:00,San Rafael,AE Prat,FT,1,5,A,,,,,,,,,,,,,,,,,,,,fotmob:1000023530
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-09-27,15:30,CP Talayuela,Sporting de Alcazar,FT,1,2,A,,,,,,,,,,,,,,,,,,,,fotmob:1000023523
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-09-27,16:00,UD Maracena,Tavernes de la Valldigna,FT,1,1,D,,,,,,,,,,,,,,,,,,,,fotmob:1000023511
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-03,15:30,CD Baztán,Atletico Calatayud,FT,1,2,A,,,,,,,,,,,,,,,,,,,,fotmob:1000023529
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-03,16:00,CD Ceuta 6 de Junio,UB Lebrijana,FT,1,2,A,,,,,,,,,,,,,,,,,,,,fotmob:1000023514
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-03,16:00,CD Tedeon,Anaitasuna FT,FT,2,5,A,,,,,,,,,,,,,,,,,,,,fotmob:1000023517
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-04,14:00,CD San Jose Soria,Auriense,FT,1,0,H,,,,,,,,,,,,,,,,,,,,fotmob:1000023522
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-04,14:00,Noja,Ribadesella CF,FT,1,1,D,,,,,,,,,,,,,,,,,,,,fotmob:1000023526
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-04,15:30,Sporting de Alcazar,CP Talayuela,FT,1,0,H,,,,,,,,,,,,,,,,,,,,fotmob:1000023524
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-04,16:00,Atletico Melilla CF,UD Pinatar,FT,0,3,A,,,,,,,,,,,,,,,,,,,,fotmob:1000023518
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-04,16:00,Tavernes de la Valldigna,UD Maracena,FT,0,0,D,,,,,,,,,,,,,,,,,,,,fotmob:1000023512
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-11,11:00,Atletico Guimar,Sporting Hortaleza,FT,3,3,D,,,,,,,,,,,,,,,,,,,,fotmob:1000023520
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-11,14:00,AE Prat,San Rafael,FT,5,0,H,,,,,,,,,,,,,,,,,,,,fotmob:1000023527
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-27,17:30,CD Cuarte,Girona,FT,0,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6386056
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-27,18:00,CF Calamocha,CE Europa,FT,0,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6386048
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-27,18:00,Sestao,Espanyol,FT,4,3,H,,,,17.0,16.0,9.0,6.0,7.0,12.0,,,2.0,4.0,,,39.0,61.0,1.85,3.38,fotmob:6386082
@@ -887,8 +908,8 @@ fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-27,20:00,Sporting de Alca
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-27,20:00,Tudelano,Real Zaragoza,FT,0,4,A,,,,,,,,,,,,,,,,,,,,fotmob:6386087
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,17:00,Numancia,Real Oviedo,FT,3,3,D,,,,14.0,31.0,7.0,8.0,3.0,13.0,,,5.0,1.0,,,31.0,69.0,2.51,2.61,fotmob:6386068
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,17:00,Peña Sport,SD Huesca,FT,1,5,A,,,,,,,,,,,,,,,,,,,,fotmob:6386070
-fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,18:00,Atlético Baleares,Eldense,FT,0,1,A,,,,,,,,,,,,,,,,,,,,fotmob:6386047
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,18:00,Atletico Calatayud,Osasuna,FT,0,6,A,,,,4.0,26.0,0.0,12.0,1.0,7.0,,,0.0,1.0,,,37.0,63.0,0.44,4.21,fotmob:6386043
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,18:00,Atlético Baleares,Eldense,FT,0,1,A,,,,,,,,,,,,,,,,,,,,fotmob:6386047
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,18:00,Coruxo FC,Zamora,FT,0,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6386054
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,18:00,Poblense,AD Ceuta FC,FT,1,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6386072
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,18:00,San Sebastian de los Reyes,CD Coria,FT,1,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6386081
@@ -907,6 +928,16 @@ fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,20:00,Auriense,Deporti
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,20:00,Ribadesella CF,Racing Santander,FT,0,2,A,,,,3.0,29.0,0.0,7.0,0.0,9.0,,,2.0,1.0,,,21.0,79.0,0.05,2.59,fotmob:6386078
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,20:00,Sporting Hortaleza,Sevilla,FT,0,3,A,,,,6.0,30.0,2.0,8.0,3.0,9.0,,,3.0,1.0,,,35.0,65.0,0.24,3.12,fotmob:6428918
 fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,20:00,Xerez,Cádiz,FT,1,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6386090
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,18:00,Anaitasuna FT,Deportivo Alavés,FT,1,6,A,,,,8.0,23.0,3.0,11.0,2.0,5.0,,,1.0,0.0,,,36.0,64.0,0.81,2.11,fotmob:6386040
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,18:00,Pamplona,Eibar,FT,0,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6386069
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,19:00,Mijas-Las Lagunas,Real Jaén,FT,1,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6386066
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,19:00,SD Amorebieta,Logroñés,FT,1,0,H,,,,,,,,,,,,,,,,,,,,fotmob:6386039
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,19:00,Trival Valderas,Leganés,FT,0,1,A,,,,9.0,23.0,2.0,5.0,2.0,8.0,,,3.0,2.0,,,36.0,64.0,0.54,1.72,fotmob:6386086
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,20:00,Tavernes de la Valldigna,Valencia,FT,0,6,A,,,,4.0,22.0,1.0,11.0,3.0,7.0,,,1.0,2.0,,,31.0,69.0,0.08,4.64,fotmob:6386084
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-12,17:30,CS Puertollano,Albacete,FT,0,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6386074
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-12,18:00,CD Tarancon,Levante,FT,1,2,A,,,,10.0,27.0,2.0,6.0,3.0,14.0,,,3.0,1.0,,,28.0,72.0,0.61,2.83,fotmob:6386083
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-12,18:00,Navalcarnero,Real Betis,FT,2,3,A,,,,12.0,29.0,4.0,11.0,3.0,13.0,,,5.0,2.0,,,27.0,73.0,2.2,4.82,fotmob:6386067
+fotmob,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-13,20:00,Salamanca CF UDS,Celta Vigo,FT,0,5,A,,,,3.0,18.0,1.0,8.0,2.0,4.0,,,2.0,1.0,,,45.0,55.0,0.15,4.19,fotmob:6386080
 fotmob,2026-27,Coppa Italia,1,domestic_cup,CI,2026-08-08,18:00,LR Vicenza,Catania,FT,1,1,D,,,,,,,,,,,,,,,,,,,,fotmob:5852743
 fotmob,2026-27,Coppa Italia,1,domestic_cup,CI,2026-08-08,18:30,Ascoli,Potenza,FT,3,1,H,,,,,,,,,,,,,,,,,,,,fotmob:5852741
 fotmob,2026-27,Coppa Italia,1,domestic_cup,CI,2026-08-09,17:45,Arezzo,Union Brescia,FT,2,0,H,,,,,,,,,,,,,,,,,,,,fotmob:5852740
@@ -1100,3 +1131,58 @@ fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-10-31,22:00,Club Francisc
 fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-01,13:30,ES Trappes,Racing Club de France,FT,0,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6463248
 fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-04,11:00,US Baie-Mahault,Siroco,FT,0,1,A,,,,,,,,,,,,,,,,,,,,fotmob:6563646
 fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-06,23:00,Olympique De Cayenne,AS ET Matoury,FT,1,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6551476
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-12,18:00,Chambéry,Grenoble,FT,0,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6533839
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-13,19:00,Dijon,Orléans,FT,1,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6533829
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-13,19:00,Neuvillette Jamin,Valenciennes,FT,2,2,D,,,,,,,,,,,,,,,,,,,,fotmob:6533318
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-13,19:00,US Saint Philbert,La Roche VF,FT,1,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6538663
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Balagne FC,Montpellier,FT,0,5,A,,,,,,,,,,,,,,,,,,,,fotmob:6533843
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Le Puy,Diables Noirs de Combani,FT,4,0,H,,,,,,,,,,,,,,,,,,,,fotmob:6533846
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Tourcoing US,Reims,FT,0,1,A,,,,,,,,,,,,,,,,,,,,fotmob:6533319
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Versailles,Rodez,FT,3,2,H,,,,,,,,,,,,,,,,,,,,fotmob:6538590
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:30,CA Boulay,Sochaux,FT,2,2,D,,,,,,,,,,,,,,,,,,,,fotmob:6531198
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,14:00,Rhone Crussol Foot 07,Étoile Frejus Saint-Raphael,FT,0,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6533848
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,15:00,FC Chalon,Hauts Lyonnais,FT,0,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6538676
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,15:00,US Choisy au Bac,Caen,FT,0,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6533487
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,15:00,Vendée Fontenay Foot,Clermont Foot,FT,0,5,A,,,,,,,,,,,,,,,,,,,,fotmob:6538661
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Croix,Thaon,FT,1,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6533315
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,FCO Firminy,Annecy FC,FT,1,1,D,,,,,,,,,,,,,,,,,,,,fotmob:6538678
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Le Poire Sur Vie,Vertou,FT,2,1,H,,,,,,,,,,,,,,,,,,,,fotmob:6538664
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Pont de Cheruy,Bourg en Bresse Péronnas,FT,1,5,A,,,,,,,,,,,,,,,,,,,,fotmob:6538681
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Saint Sebastien,La Baule Le Pouliguen,FT,0,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6538660
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Tinteniac FC,Concarneau,FT,1,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6531180
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:30,ASL Koetzingue,ASC Biesheim,FT,1,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6531193
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Amnéville,AS Sundhoffen,FT,0,1,A,,,,,,,,,,,,,,,,,,,,fotmob:6531192
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,AS Contres,Linas Montlhery,FT,0,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6533832
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Bethune,Nancy,FT,3,3,D,,,,,,,,,,,,,,,,,,,,fotmob:6533321
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Caen PTT,Chambly,FT,2,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6533483
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Cestas,Aviron Bayonnais FC,FT,0,1,A,,,,,,,,,,,,,,,,,,,,fotmob:6538596
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,COBSP St Brieuc,Rouen,FT,0,0,D,,,,,,,,,,,,,,,,,,,,fotmob:6531175
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Cournon d'Auvergne,Chassieu Décines,FT,2,2,D,,,,,,,,,,,,,,,,,,,,fotmob:6538680
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Dijon ASPTT,Is-Selongey Football,FT,0,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6533834
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Dunkerque,Quevilly,FT,0,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6533482
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,FCO Strasbourg Koenigshoffen,US Oberlauterbach/Eberbach,FT,1,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6531196
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Garde Saint-Ivy Pontivy,Rennes TA,FT,2,2,D,,,,,,,,,,,,,,,,,,,,fotmob:6531174
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Le Grau du Roi,Riviera,FT,2,4,A,,,,,,,,,,,,,,,,,,,,fotmob:6533842
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Le Touquet,Avranches,FT,2,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6533484
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Lyon La Duchere,Feurs,FT,1,4,A,,,,,,,,,,,,,,,,,,,,fotmob:6538677
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Paray,Villefranche Beaujolais,FT,0,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6538674
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Racing Besançon,APM Metz,FT,4,1,H,,,,,,,,,,,,,,,,,,,,fotmob:6531194
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Saint Ouen I Aumone,Boulogne,FT,1,0,H,,,,,,,,,,,,,,,,,,,,fotmob:6533479
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,St Omer,AF Virois,FT,2,2,D,,,,,,,,,,,,,,,,,,,,fotmob:6533486
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Vesoul,FC Fleury 91,FT,2,2,D,,,,,,,,,,,,,,,,,,,,fotmob:6531200
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Vitré,Saint Pierre Milizac,FT,1,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6531178
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Voltigeurs de Châteaubriant,Horizon Patho,FT,5,0,H,,,,,,,,,,,,,,,,,,,,fotmob:6538666
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:30,Balma,Castanet US,FT,1,1,D,,,,,,,,,,,,,,,,,,,,fotmob:6538594
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Avenir Foot Lozère,Crest Aouste,FT,1,0,H,,,,,,,,,,,,,,,,,,,,fotmob:6533844
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Boulazac,Genets Anglet,FT,3,3,D,,,,,,,,,,,,,,,,,,,,fotmob:6538593
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Bressuire,Challans,FT,3,1,H,,,,,,,,,,,,,,,,,,,,fotmob:6538659
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Brive,Angoulême,FT,0,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6538597
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Chauny,US Le Pays du Valois,FT,0,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6533317
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,ES Buxerolles,Sablé FC,FT,0,7,A,,,,,,,,,,,,,,,,,,,,fotmob:6538665
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,FC Claira St Laurent,Puissalicon Magalas,FT,2,2,D,,,,,,,,,,,,,,,,,,,,fotmob:6533841
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Lannion,Guingamp,FT,0,0,D,,,,,,,,,,,,,,,,,,,,fotmob:6531177
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Lourdes FC,Pau,FT,0,4,A,,,,,,,,,,,,,,,,,,,,fotmob:6538595
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Rennes CPB Brequigny,Montlucon Football,FT,0,1,A,,,,,,,,,,,,,,,,,,,,fotmob:6538662
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Saint-Andre Saint-Macaire,Nueillaubiers,FT,0,2,A,,,,,,,,,,,,,,,,,,,,fotmob:6538658
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Stade Bordelais,Asmur,FT,1,1,D,,,,,,,,,,,,,,,,,,,,fotmob:6538599
+fotmob,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,19:00,Cambrai Amerique,Amiens,FT,0,3,A,,,,,,,,,,,,,,,,,,,,fotmob:6533314

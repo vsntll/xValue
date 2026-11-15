@@ -331170,7 +331170,7 @@ season,src_league,date,game_id,team,player,player_id,team_id,position,minutes,go
 2026-27,ESP1,2026-08-23 15:00:00,30781,Villarreal,Ayoze Pérez,770,154,FW,66,0,0,0.2952675819396972,0.0498787946999073,1,1,ayoze perez,villarreal
 2026-27,ESP1,2026-08-23 15:00:00,30781,Villarreal,Carlos Macià,14221,154,Sub,6,0,0,0.0,0.0,0,0,carlos macia,villarreal
 2026-27,ESP1,2026-08-23 15:00:00,30781,Villarreal,Carlos Romero,11402,154,DL,90,0,0,0.0,0.0562400296330452,1,0,carlos romero,villarreal
-2026-27,ESP1,2026-08-23 15:00:00,30781,Villarreal,Georges Mikautadze,8187,154,FW,84,1,0,1.9373658895492556,0.2952675819396972,1,5,georges mikautadze,villarreal
+2026-27,ESP1,2026-08-23 15:00:00,30781,Villarreal,Georges Mikautadze,8187,154,FW,84,1,0,1.937365889549256,0.2952675819396972,1,5,georges mikautadze,villarreal
 2026-27,ESP1,2026-08-23 15:00:00,30781,Villarreal,Gerard Moreno,2120,154,Sub,24,1,0,0.7432776093482971,0.0270221568644046,1,1,gerard moreno,villarreal
 2026-27,ESP1,2026-08-23 15:00:00,30781,Villarreal,Ilias Akhomach,10121,154,Sub,6,0,0,0.0,0.0,0,0,ilias akhomach,villarreal
 2026-27,ESP1,2026-08-23 15:00:00,30781,Villarreal,Juan Foyth,6306,154,DC,90,0,0,0.0,0.4167003631591797,1,0,juan foyth,villarreal
@@ -335389,7 +335389,7 @@ season,src_league,date,game_id,team,player,player_id,team_id,position,minutes,go
 2026-27,FRA1,2026-09-06 18:45:00,31966,Paris FC,Hamari Traore,3239,290,DC,90,0,0,0.0,0.0,0,0,hamari traore,paris fc
 2026-27,FRA1,2026-09-06 18:45:00,31966,Paris FC,Ilan Kebbal,9656,290,AMC,79,0,0,0.7266077399253845,0.2389537841081619,3,3,ilan kebbal,paris fc
 2026-27,FRA1,2026-09-06 18:45:00,31966,Paris FC,Kevin Trapp,3286,290,GK,90,0,0,0.0,0.0,0,0,kevin trapp,paris fc
-2026-27,FRA1,2026-09-06 18:45:00,31966,Paris FC,Lassine Sinayoko,10815,290,FW,90,3,0,1.8250718116760252,0.0519395396113395,1,4,lassine sinayoko,paris fc
+2026-27,FRA1,2026-09-06 18:45:00,31966,Paris FC,Lassine Sinayoko,10815,290,FW,90,3,0,1.8250718116760247,0.0519395396113395,1,4,lassine sinayoko,paris fc
 2026-27,FRA1,2026-09-06 18:45:00,31966,Paris FC,Luca Koleosho,10620,290,DML,79,0,1,0.2963576316833496,0.632643461227417,2,4,luca koleosho,paris fc
 2026-27,FRA1,2026-09-06 18:45:00,31966,Paris FC,Mamadou Mbow,9563,290,Sub,1,0,0,0.0,0.0,0,0,mamadou mbow,paris fc
 2026-27,FRA1,2026-09-06 18:45:00,31966,Paris FC,Maxime Lopez,3772,290,MC,90,0,0,0.0,0.0182722117751836,1,0,maxime lopez,paris fc

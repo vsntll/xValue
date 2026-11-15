@@ -2186,7 +2186,27 @@ espn,2026-27,FA Cup,1,domestic_cup,FA,2026-11-08,12:00,Stafford Rangers,Grimsby 
 espn,2026-27,FA Cup,1,domestic_cup,FA,2026-11-08,14:15,Cray Wanderers,Stockport County,FINAL_AET,2.0,3.0,A,,,,15.0,16.0,3.0,6.0,4.0,7.0,11.0,18.0,1.0,2.0,0.0,1.0,33.6,66.4,,,espn:401931080
 espn,2026-27,FA Cup,1,domestic_cup,FA,2026-11-08,15:00,Wimborne Town,Crawley Town,FULL_TIME,2.0,0.0,H,,,,8.0,12.0,5.0,2.0,4.0,4.0,9.0,12.0,5.0,2.0,0.0,0.0,37.8,62.2,,,espn:401931093
 espn,2026-27,FA Cup,1,domestic_cup,FA,2026-11-08,17:15,Oldham Athletic,Sheffield Wednesday,FINAL_AET,2.0,1.0,H,,,,13.0,14.0,5.0,6.0,2.0,8.0,20.0,15.0,2.0,4.0,0.0,0.0,29.3,70.7,,,espn:401931108
-espn,2026-27,FA Cup,1,domestic_cup,FA,2026-11-09,19:30,Plymouth Parkway,Berkhamsted,END_OF_REGULATION,,,,,,,,,,,,,,,,,,,,,,,espn:401931098
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-11-09,19:30,Plymouth Parkway,Berkhamsted,FINAL_AET,2.0,1.0,H,,,,18.0,14.0,2.0,1.0,4.0,5.0,15.0,15.0,2.0,1.0,0.0,0.0,57.7,42.3,,,espn:401931098
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-04,19:30,Wimborne Town,Bradford City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933793
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,15:00,Chesterfield,Cheltenham Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933817
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,15:00,Colchester United,Mansfield Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933790
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,15:00,Exeter City,Stevenage,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933816
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,15:00,Grimsby Town,Oldham Athletic,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933797
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,15:00,Port Vale,Leyton Orient,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933788
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,15:00,Reading,Stockport County,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933819
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,15:00,Rochdale,Newport County,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933798
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,15:00,Rotherham United,Bristol Rovers,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933802
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,15:00,Shrewsbury Town,Burton Albion,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933796
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,15:00,Wigan Athletic,Barnsley,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933800
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,15:00,Wycombe Wanderers,Milton Keynes Dons,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933818
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,15:00,York City,Carlisle United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933799
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,17:15,Dover Athletic,Leicester City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933789
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-05,20:00,Barrow,Kidderminster Harriers,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933791
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-06,12:15,Salisbury FC,Blackpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933795
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-06,14:30,AFC Fylde,Luton Town,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933792
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-06,15:15,Crewe Alexandra,Plymouth Argyle,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933794
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-06,17:30,Plymouth Parkway,Barnet,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933815
+espn,2026-27,FA Cup,1,domestic_cup,FA,2026-12-07,19:30,Guiseley,Notts County,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933801
 espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-01,14:00,Tranmere Rovers,Rochdale,FINAL_PEN,2.0,2.0,D,,,,15.0,10.0,6.0,2.0,4.0,3.0,18.0,11.0,3.0,0.0,0.0,0.0,28.4,71.6,,,espn:401877066
 espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-03,18:30,York City,Crawley Town,FULL_TIME,0.0,2.0,A,,,,11.0,8.0,2.0,5.0,6.0,3.0,10.0,10.0,4.0,3.0,0.0,0.0,61.2,38.8,,,espn:401877065
 espn,2026-27,EFL Cup,1,league_cup,EFL,2026-08-06,18:45,Bristol City,Walsall,FULL_TIME,0.0,1.0,A,,,,33.0,9.0,9.0,5.0,13.0,4.0,3.0,13.0,0.0,3.0,0.0,0.0,71.9,28.1,,,espn:401880618
@@ -2391,16 +2411,16 @@ espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,20:00,Auriense Cented Ac
 espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,20:00,Ribadesella,Racing Santander,FULL_TIME,0.0,2.0,A,,,,3.0,29.0,0.0,7.0,0.0,9.0,9.0,10.0,2.0,1.0,0.0,0.0,21.1,78.9,,,espn:401928489
 espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,20:00,Sporting Hortaleza,Sevilla,FULL_TIME,0.0,3.0,A,,,,6.0,30.0,2.0,8.0,3.0,9.0,15.0,16.0,3.0,1.0,0.0,0.0,34.9,65.1,,,espn:401928552
 espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-10-29,20:00,Xerez,Cádiz,FULL_TIME,1.0,3.0,A,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,4.0,0.0,0.0,0.0,0.0,,,espn:401928548
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,18:00,Anaitasuna,Alavés,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928514
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,18:00,CD Pamplona,Eibar,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928516
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,19:00,Amorebieta,UD Logroñés,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928519
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,19:00,Mijas Las Lagunas,Real Jaen CF,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928528
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,19:00,Trival Valderas,Leganés,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928550
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,20:00,Tavernes de la Valldigna,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928504
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-12,17:30,Calvo Sotelo,Albacete,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928506
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-12,18:00,CD Artistico Navalcarnero,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928551
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-12,18:00,CD Tarancon,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928527
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-13,20:00,Salamanca UDS,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928487
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,18:00,Anaitasuna,Alavés,FULL_TIME,1.0,6.0,A,,,,8.0,23.0,3.0,11.0,2.0,5.0,12.0,9.0,1.0,0.0,0.0,0.0,36.4,63.6,,,espn:401928514
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,18:00,CD Pamplona,Eibar,FULL_TIME,0.0,3.0,A,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,,,espn:401928516
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,19:00,Amorebieta,UD Logroñés,FULL_TIME,1.0,0.0,H,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,3.0,0.0,0.0,0.0,0.0,,,espn:401928519
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,19:00,Mijas Las Lagunas,Real Jaen CF,FULL_TIME,1.0,2.0,A,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,5.0,0.0,0.0,0.0,0.0,,,espn:401928528
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,19:00,Trival Valderas,Leganés,FULL_TIME,0.0,1.0,A,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3.0,2.0,0.0,0.0,0.0,0.0,,,espn:401928550
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-10,20:00,Tavernes de la Valldigna,Valencia,FULL_TIME,0.0,6.0,A,,,,4.0,22.0,1.0,11.0,3.0,7.0,8.0,16.0,1.0,2.0,0.0,0.0,31.4,68.6,,,espn:401928504
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-12,17:30,CS Puertollano,Albacete,FULL_TIME,0.0,3.0,A,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,2.0,0.0,0.0,0.0,0.0,,,espn:401928506
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-12,18:00,CD Artistico Navalcarnero,Real Betis,FINAL_AET,2.0,3.0,A,,,,12.0,29.0,4.0,11.0,3.0,13.0,25.0,16.0,4.0,2.0,0.0,1.0,26.6,73.4,,,espn:401928551
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-12,18:00,CD Tarancon,Levante,FINAL_AET,1.0,2.0,A,,,,10.0,27.0,2.0,6.0,3.0,14.0,16.0,14.0,4.0,1.0,0.0,0.0,28.1,71.9,,,espn:401928527
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-13,20:00,Salamanca UDS,Celta Vigo,FULL_TIME,0.0,5.0,A,,,,3.0,18.0,1.0,8.0,2.0,4.0,17.0,20.0,2.0,1.0,1.0,0.0,45.3,54.7,,,espn:401928487
 espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-18,18:00,Portugalete,Real Unión Irun,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928518
 espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-18,18:00,Utebo,CD Sabadell,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928497
 espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-18,19:00,Alcoyano,Mallorca,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401928505
@@ -2454,62 +2474,62 @@ espn,2026-27,Coppa Italia,1,domestic_cup,CI,2027-04-21,18:00,TBD Home,TBD Away,S
 espn,2026-27,Coppa Italia,1,domestic_cup,CI,2027-05-19,18:00,TBD Home,TBD Away,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401912497
 espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-04,22:00,Sporting Club Baie-Mahault,Siroco Les Abymes,FULL_TIME,0.0,1.0,A,,,,,,,,,,,,,,,,,,,,espn:401933098
 espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-06,19:00,Olympique De Cayenne,AS Etoile Matoury,FULL_TIME,1.0,3.0,A,,,,,,,,,,,,,,,,,,,,espn:401933097
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-12,18:00,Chambéry Savoie,Grenoble,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932846
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-13,19:00,Dijon FCO,Orléans,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932838
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-13,19:00,Neuvillette-Jamin,Valenciennes,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932841
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-13,19:00,US Saint-Philbert-de-Grand-Lieu,La Roche-sur-Yon,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932845
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Balagne,Montpellier,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932858
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Le Puy,Diables Noirs,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932857
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Saint-Pauloise FC,La Tamponnaise,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933096
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Tourcoing,Stade de Reims,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932840
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Versailles 78,Rodez Aveyron,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932856
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:30,CA Boulay,Sochaux,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932843
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,14:00,Rhone Crussol Foot,Frejus,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932776
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,15:00,Chalon-sur-Saone,Hauts Lyonnais,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932836
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,15:00,Choisy Au Bac,Caen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932777
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,15:00,Fontenay Foot,Clermont Foot,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932833
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Firminy,Annecy,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932778
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,IC Croix,ES Thaon,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932832
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Le Poire SV,Vertou,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932803
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Pont-de-Cheruy,Bourg-Peronnas,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932834
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Saint Sebastien,La Baule-Le Pouliguen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932758
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Tinteniac St Domineuc,Concarneau,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932844
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:30,Koetzingue,Biesheim,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932757
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Amneville,Sundhoffen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932802
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Asptt Dijon,Selongey,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932822
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Caen,FC Chambly,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932768
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Contres,ESA Linas-Montlhery,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932808
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Cournon,Chassieu Declines FC,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932738
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Dunkerque,US Quevilly,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932839
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Grau-Du-Roi,Riviera,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932737
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,GSI Pontivy,Rennes TA,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932835
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Le Touquet,Avranches,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932829
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Lyon-la-Duchere,US Feurs,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932740
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Pays de Saint-Omer,AF Virois,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932812
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Racing Besancon,Am. du Personnel Municipal Metz,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932814
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Saint-Brieuc,Rouen,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932831
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,St-Ouen L'Aumone,Boulogne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932830
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Stade Béthunois,AS Nancy Lorraine,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932813
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Strasbourg Koenigshoffen,Oberlauterbach,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932801
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,US Cheminots Paray-Foot,Villefranche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932811
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Vesoul,FC Fleury 91,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932842
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Vitre,Saint-Pierre Milizac,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932765
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:30,Balma,Castanet,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932806
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Avenir Foot Lozere,Entente Crest-Aouste,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932760
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Boulazac,Anglet Genets,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932809
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Bressuire,FC Challans,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932804
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Brive,Angouleme,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932817
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Cercle Paul Bert Brequigny Football,Montlucon Football,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932825
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Chauny,Le Pays Du Valois,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932827
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Claira / St Laurent,Puissalicon Magalas,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932810
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,ES Buxerolles,Sablé FC,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932815
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,FC Lourdes,Pau,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932837
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Lannion,Guingamp,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932828
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,St Andre St Macaire,Nueillaubiers,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932826
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Stade Bordelais,Mazeres Uzos Rontignon,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932816
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,19:00,Olympique des Membres de Cambrai Amerique,SC Amiens,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932824
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,20:00,AS Tefana,Thionville,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933039
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,20:00,Chateaubriant,Horizon Patho,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933060
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-12,18:00,Chambéry Savoie,Grenoble,FULL_TIME,0.0,2.0,A,,,,,,,,,,,,,,,,,,,,espn:401932846
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-13,19:00,Dijon FCO,Orléans,FULL_TIME,1.0,2.0,A,,,,,,,,,,,,,,,,,,,,espn:401932838
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-13,19:00,Neuvillette-Jamin,Valenciennes,FINAL_PEN,2.0,2.0,D,,,,,,,,,,,,,,,,,,,,espn:401932841
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-13,19:00,US Saint-Philbert-de-Grand-Lieu,La Roche-sur-Yon,FULL_TIME,1.0,3.0,A,,,,,,,,,,,,,,,,,,,,espn:401932845
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Balagne,Montpellier,FULL_TIME,0.0,5.0,A,,,,,,,,,,,,,,,,,,,,espn:401932858
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Le Puy,Diables Noirs,FULL_TIME,4.0,0.0,H,,,,,,,,,,,,,,,,,,,,espn:401932857
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Tourcoing,Stade de Reims,FULL_TIME,0.0,1.0,A,,,,,,,,,,,,,,,,,,,,espn:401932840
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:00,Versailles 78,Rodez Aveyron,FULL_TIME,3.0,2.0,H,,,,,,,,,,,,,,,,,,,,espn:401932856
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,13:30,CA Boulay,Sochaux,FINAL_PEN,2.0,2.0,D,,,,,,,,,,,,,,,,,,,,espn:401932843
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,14:00,Rhone Crussol Foot,Frejus,FULL_TIME,0.0,3.0,A,,,,,,,,,,,,,,,,,,,,espn:401932776
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,15:00,Chalon-sur-Saone,Hauts Lyonnais,FULL_TIME,0.0,3.0,A,,,,,,,,,,,,,,,,,,,,espn:401932836
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,15:00,Choisy Au Bac,Caen,FULL_TIME,0.0,2.0,A,,,,,,,,,,,,,,,,,,,,espn:401932777
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,15:00,Fontenay Foot,Clermont Foot,FULL_TIME,0.0,5.0,A,,,,,,,,,,,,,,,,,,,,espn:401932833
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Firminy,Annecy,FINAL_PEN,1.0,1.0,D,,,,,,,,,,,,,,,,,,,,espn:401932778
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,IC Croix,ES Thaon,FULL_TIME,1.0,2.0,A,,,,,,,,,,,,,,,,,,,,espn:401932832
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Le Poire SV,Vertou,FULL_TIME,2.0,1.0,H,,,,,,,,,,,,,,,,,,,,espn:401932803
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Pont-de-Cheruy,Bourg-Peronnas,FULL_TIME,1.0,5.0,A,,,,,,,,,,,,,,,,,,,,espn:401932834
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Saint Sebastien,La Baule-Le Pouliguen,FULL_TIME,0.0,2.0,A,,,,,,,,,,,,,,,,,,,,espn:401932758
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:00,Tinteniac St Domineuc,Concarneau,FULL_TIME,1.0,4.0,A,,,,,,,,,,,,,,,,,,,,espn:401932844
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,16:30,Koetzingue,Biesheim,FULL_TIME,1.0,3.0,A,,,,,,,,,,,,,,,,,,,,espn:401932757
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Amneville,Sundhoffen,FULL_TIME,0.0,1.0,A,,,,,,,,,,,,,,,,,,,,espn:401932802
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Asptt Dijon,Selongey,FULL_TIME,0.0,2.0,A,,,,,,,,,,,,,,,,,,,,espn:401932822
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Caen,FC Chambly,FULL_TIME,2.0,3.0,A,,,,,,,,,,,,,,,,,,,,espn:401932768
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Chateaubriant,Horizon Patho,FULL_TIME,5.0,0.0,H,,,,,,,,,,,,,,,,,,,,espn:401933060
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Contres,ESA Linas-Montlhery,FULL_TIME,0.0,4.0,A,,,,,,,,,,,,,,,,,,,,espn:401932808
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Cournon,Chassieu Declines FC,FINAL_PEN,2.0,2.0,D,,,,,,,,,,,,,,,,,,,,espn:401932738
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Dunkerque,US Quevilly,FULL_TIME,0.0,3.0,A,,,,,,,,,,,,,,,,,,,,espn:401932839
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Grau-Du-Roi,Riviera,FULL_TIME,2.0,4.0,A,,,,,,,,,,,,,,,,,,,,espn:401932737
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,GSI Pontivy,Rennes TA,FINAL_PEN,2.0,2.0,D,,,,,,,,,,,,,,,,,,,,espn:401932835
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Le Touquet,Avranches,FULL_TIME,2.0,3.0,A,,,,,,,,,,,,,,,,,,,,espn:401932829
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Lyon-la-Duchere,US Feurs,FULL_TIME,1.0,4.0,A,,,,,,,,,,,,,,,,,,,,espn:401932740
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Pays de Saint-Omer,AF Virois,FINAL_PEN,2.0,2.0,D,,,,,,,,,,,,,,,,,,,,espn:401932812
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Racing Besancon,Am. du Personnel Municipal Metz,FULL_TIME,4.0,1.0,H,,,,,,,,,,,,,,,,,,,,espn:401932814
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Sag Cestas,Bayonne,FULL_TIME,0.0,1.0,A,,,,,,,,,,,,,,,,,,,,espn:401932818
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Saint-Brieuc,Rouen,FINAL_PEN,0.0,0.0,D,,,,,,,,,,,,,,,,,,,,espn:401932831
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,St-Ouen L'Aumone,Boulogne,FULL_TIME,1.0,0.0,H,,,,,,,,,,,,,,,,,,,,espn:401932830
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Stade Béthunois,AS Nancy Lorraine,FINAL_PEN,3.0,3.0,D,,,,,,,,,,,,,,,,,,,,espn:401932813
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Strasbourg Koenigshoffen,Oberlauterbach,FULL_TIME,1.0,2.0,A,,,,,,,,,,,,,,,,,,,,espn:401932801
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,US Cheminots Paray-Foot,Villefranche,FULL_TIME,0.0,3.0,A,,,,,,,,,,,,,,,,,,,,espn:401932811
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Vesoul,FC Fleury 91,FINAL_PEN,2.0,2.0,D,,,,,,,,,,,,,,,,,,,,espn:401932842
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:00,Vitre,Saint-Pierre Milizac,FULL_TIME,1.0,2.0,A,,,,,,,,,,,,,,,,,,,,espn:401932765
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,17:30,Balma,Castanet,FINAL_PEN,1.0,1.0,D,,,,,,,,,,,,,,,,,,,,espn:401932806
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Avenir Foot Lozere,Entente Crest-Aouste,FULL_TIME,1.0,0.0,H,,,,,,,,,,,,,,,,,,,,espn:401932760
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Boulazac,Anglet Genets,FINAL_PEN,3.0,3.0,D,,,,,,,,,,,,,,,,,,,,espn:401932809
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Bressuire,FC Challans,FULL_TIME,3.0,1.0,H,,,,,,,,,,,,,,,,,,,,espn:401932804
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Brive,Angouleme,FULL_TIME,0.0,3.0,A,,,,,,,,,,,,,,,,,,,,espn:401932817
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Cercle Paul Bert Brequigny Football,Montlucon Football,FULL_TIME,0.0,1.0,A,,,,,,,,,,,,,,,,,,,,espn:401932825
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Chauny,Le Pays Du Valois,FULL_TIME,0.0,2.0,A,,,,,,,,,,,,,,,,,,,,espn:401932827
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Claira / St Laurent,Puissalicon Magalas,FINAL_PEN,2.0,2.0,D,,,,,,,,,,,,,,,,,,,,espn:401932810
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,ES Buxerolles,Sablé FC,FULL_TIME,0.0,7.0,A,,,,,,,,,,,,,,,,,,,,espn:401932815
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,FC Lourdes,Pau,FULL_TIME,0.0,4.0,A,,,,,,,,,,,,,,,,,,,,espn:401932837
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Lannion,Guingamp,FINAL_PEN,0.0,0.0,D,,,,,,,,,,,,,,,,,,,,espn:401932828
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,St Andre St Macaire,Nueillaubiers,FULL_TIME,0.0,2.0,A,,,,,,,,,,,,,,,,,,,,espn:401932826
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,18:00,Stade Bordelais,Mazeres Uzos Rontignon,FINAL_PEN,1.0,1.0,D,,,,,,,,,,,,,,,,,,,,espn:401932816
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-14,19:00,Olympique des Membres de Cambrai Amerique,SC Amiens,FULL_TIME,0.0,3.0,A,,,,,,,,,,,,,,,,,,,,espn:401932824
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,04:00,AS Tefana,Thionville,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933039
 espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,Chatou,Les Ulis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932823
 espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,ESAP Metz,Reipertswiller,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932773
 espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,Massay,Montlouis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932755
@@ -2522,8 +2542,8 @@ espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,Racing Chambery
 espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,RIOM,FC Limonest,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932741
 espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,Rives 82,Trelissac FC,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932819
 espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,Rochefort FC,Juventus Papus,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932805
-espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,Sag Cestas,Bayonne,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932818
 espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,Saint-Die Kellermann,Metz,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932859
+espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,Saint-Pauloise FC,La Tamponnaise,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401933096
 espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,Saint-Renan,Stade Laval,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932860
 espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,Sedan,Bourges Foot,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932798
 espn,2026-27,Coupe de France,1,domestic_cup,CDF,2026-11-15,13:00,Senlis,Saint-Pryvé Saint Hilaire,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401932807
