@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="booting">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>xValue</title>
 <meta name="description" content="Big-five-league player stats, value model, match odds, Elo ratings and games.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 5l10 9 10-9' stroke='%231ee68c' stroke-width='3.5'/%3E%3Crect x='4' y='14' width='56' height='46' rx='12' fill='%23010a06' stroke='%231ee68c' stroke-width='4'/%3E%3Cpath d='M19 27l22 22M19 49L44 24M33 24h11v11' stroke='%23f0c24a' stroke-width='6'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Doto:wght@700;900&family=Inter:wght@400;500;600;700&display=swap">
@@ -47,10 +48,48 @@
   .nav{ position:fixed; top:14px; left:0; right:0; z-index:50; display:flex; align-items:center;
         gap:12px; padding:0 26px; pointer-events:none; }
   .nav > *{ pointer-events:auto; }
-  .logo{ width:46px; height:46px; border-radius:14px; background:var(--led); color:#000; flex:none;
-         display:grid; place-items:center; font-family:var(--font-display); font-weight:900;
-         font-stretch:125%; font-size:17px; letter-spacing:-.04em; text-decoration:none;
-         box-shadow:0 0 0 3px #000; }
+  .logo{ width:46px; height:46px; flex:none; display:block; filter:drop-shadow(0 0 8px var(--glow)); }
+  .logo svg, .boot-mark svg{ width:100%; height:100%; display:block; overflow:visible; }
+
+  /* ---------- startup screen: logo tunes in, then the set "switches off" to reveal the page ---------- */
+  html.booting body{ overflow:hidden; }
+  html.booting .hero, html.booting .word span, html.booting .hero::before{ animation-play-state:paused; }
+  .boot{ position:fixed; inset:0; z-index:2000; background:var(--screen); display:grid; place-items:center;
+         animation:bootFailsafe 0s 6s forwards; }
+  @keyframes bootFailsafe{ to{ visibility:hidden; } }   /* never trap the page if the script dies */
+  .boot::after{ content:""; position:absolute; inset:0; pointer-events:none;
+    background:repeating-linear-gradient(0deg, rgba(0,0,0,.35) 0 1px, transparent 1px 3px),
+               radial-gradient(ellipse at center, rgba(30,230,140,.10), transparent 60%); }
+  .boot-inner{ display:flex; flex-direction:column; align-items:center; gap:22px; }
+  .boot-mark{ width:132px; height:132px; filter:drop-shadow(0 0 22px rgba(30,230,140,.45));
+              animation:tuneIn 1.1s steps(1) both, floaty 2.4s 1.1s ease-in-out infinite; }
+  @keyframes tuneIn{ 0%{ opacity:0; } 10%{ opacity:1; } 18%{ opacity:.1; } 26%{ opacity:1; transform:skewX(-10deg); }
+                     32%{ transform:none; opacity:.4; } 40%,100%{ opacity:1; } }
+  @keyframes floaty{ 50%{ transform:translateY(-6px); } }
+  .boot-mark .xs{ stroke-dasharray:60; stroke-dashoffset:60; animation:draw .7s .5s cubic-bezier(.3,.8,.3,1) forwards; }
+  .boot-mark .xs:nth-of-type(3){ animation-delay:.75s; } .boot-mark .xs:nth-of-type(4){ animation-delay:1.05s; }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  .boot-word{ font-family:var(--font-display); font-weight:900; font-stretch:125%; letter-spacing:-.05em;
+              font-size:clamp(44px, 9vw, 76px); line-height:1; color:var(--text);
+              text-shadow:-3px 0 rgba(255,40,90,.35), 3px 0 rgba(30,230,200,.4), 0 0 30px var(--glow); }
+  .boot-word span{ display:inline-block; opacity:0; animation:typeIn .01s forwards; }
+  .boot-word span:first-child{ color:var(--led); }
+  .boot-word span:nth-child(1){ animation-delay:.9s } .boot-word span:nth-child(2){ animation-delay:1.0s }
+  .boot-word span:nth-child(3){ animation-delay:1.1s } .boot-word span:nth-child(4){ animation-delay:1.2s }
+  .boot-word span:nth-child(5){ animation-delay:1.3s } .boot-word span:nth-child(6){ animation-delay:1.4s }
+  @keyframes typeIn{ to{ opacity:1; } }
+  .boot-bar{ width:min(260px, 64vw); height:8px; border-radius:99px; background:var(--surface-2);
+             border:1px solid var(--border-strong); overflow:hidden; }
+  .boot-bar b{ display:block; height:100%; background:var(--led); box-shadow:0 0 14px var(--led-glow);
+               transform-origin:left; animation:fill 2.3s cubic-bezier(.5,.1,.3,1) both; }
+  @keyframes fill{ from{ transform:scaleX(0); } }
+  .boot-cap{ font-family:var(--font-led); font-weight:900; font-size:18px; color:var(--emerald);
+             text-transform:uppercase; letter-spacing:.08em; text-shadow:0 0 10px var(--emerald);
+             animation:blink 1s steps(2) infinite; }
+  .boot.out{ animation:switchOff .55s cubic-bezier(.6,0,.4,1) forwards; }
+  @keyframes switchOff{ 0%{ transform:none; filter:none; }
+                        55%{ transform:scale(1,.004); filter:brightness(5); }
+                        100%{ transform:scale(0,.004); filter:brightness(5); opacity:0; visibility:hidden; } }
   .tabs{ position:relative; display:flex; gap:2px; margin:0 auto; padding:5px; border-radius:999px;
          background:color-mix(in srgb, var(--surface) 94%, transparent); backdrop-filter:blur(14px);
          -webkit-backdrop-filter:blur(14px); border:1px solid var(--border); overflow-x:auto;
@@ -374,7 +413,7 @@
   .rk-col h3{ font-size:24px; font-weight:900; font-stretch:120%; margin-bottom:12px; letter-spacing:-.03em; }
   .rk-col .chipset{ margin-bottom:12px; }
   .rk-col .table-wrap{ border-radius:0; }
-  .rk-sub{ display:block; font-family:var(--font-body); font-size:12.5px; font-weight:500; color:var(--text-faint);
+  .rk-sub{ display:block; text-shadow:none; font-family:var(--font-body); font-size:12.5px; font-weight:500; color:var(--text-faint);
            letter-spacing:0; margin-top:2px; }
   .rk-toolbar{ display:flex; align-items:center; gap:12px; margin-bottom:12px; flex-wrap:wrap; }
   .rk-tb-label{ font-size:13px; color:var(--text-dim); font-weight:600; }
@@ -386,7 +425,8 @@
   .spark{ display:block; } .spark-empty{ color:var(--text-faint); }
 
   /* ---------- track record ---------- */
-  .tr-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(380px,1fr)); gap:8px; margin-bottom:8px; align-items:start; }
+  .tr-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr)); gap:8px; margin-bottom:8px; align-items:start; }
+  .tr-grid > *, .rk-layout > *, .lb-grid > *, .team-grid > *, .fx-grid > *{ min-width:0; }
   .tr-card{ background:var(--surface); border-radius:var(--radius-lg); padding:22px 24px; }
   .tr-card h3{ font-size:22px; font-weight:900; font-stretch:115%; margin-bottom:4px; letter-spacing:-.02em; }
   .tr-card .rk-sub{ margin-bottom:12px; }
@@ -580,7 +620,7 @@
   }
   @media (max-width:640px){
     .nav{ padding:0 12px; gap:8px; top:10px; }
-    .logo{ width:42px; height:42px; }
+    .logo{ width:40px; height:40px; }
     .hero{ margin:6px; padding:86px 18px 26px; border-radius:24px; }
     .board{ align-self:stretch; }
     .shell{ padding:0 16px 32px; }
@@ -602,12 +642,40 @@
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="xv-mark" viewBox="0 0 64 64">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 5l10 9 10-9" stroke="#1ee68c" stroke-width="3"/>
+      <rect x="4" y="14" width="56" height="46" rx="12" fill="#010a06" stroke="#1ee68c" stroke-width="3.5"/>
+      <path class="xs" d="M19 27l22 22" stroke="#f0c24a" stroke-width="6"/>
+      <path class="xs" d="M19 49L44 24" stroke="#f0c24a" stroke-width="6"/>
+      <path class="xs" d="M33 24h11v11" stroke="#f0c24a" stroke-width="6"/>
+    </g>
+    <circle cx="22" cy="5" r="2.6" fill="#1ee68c"/><circle cx="42" cy="5" r="2.6" fill="#1ee68c"/>
+  </symbol>
+</svg>
+<div class="boot" id="boot" role="status" aria-label="Loading xValue">
+  <div class="boot-inner">
+    <div class="boot-mark" aria-hidden="true"><svg viewBox="0 0 64 64">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 5l10 9 10-9" stroke="#1ee68c" stroke-width="3"/>
+        <rect x="4" y="14" width="56" height="46" rx="12" fill="#010a06" stroke="#1ee68c" stroke-width="3.5"/>
+        <path class="xs" d="M19 27l22 22" stroke="#f0c24a" stroke-width="6"/>
+        <path class="xs" d="M19 49L44 24" stroke="#f0c24a" stroke-width="6"/>
+        <path class="xs" d="M33 24h11v11" stroke="#f0c24a" stroke-width="6"/>
+      </g>
+      <circle cx="22" cy="5" r="2.6" fill="#1ee68c"/><circle cx="42" cy="5" r="2.6" fill="#1ee68c"/></svg></div>
+    <div class="boot-word" aria-hidden="true"><span>x</span><span>V</span><span>a</span><span>l</span><span>u</span><span>e</span></div>
+    <div class="boot-bar" aria-hidden="true"><b></b></div>
+    <div class="boot-cap" aria-hidden="true">Tuning in</div>
+  </div>
+</div>
 <div class="crt-roll" aria-hidden="true"></div>
 <div class="crt-static" id="crtStatic" aria-hidden="true"></div>
 <div class="osd" id="osd" aria-hidden="true"></div>
 
 <nav class="nav" aria-label="Sections">
-  <a class="logo" href="#top" aria-label="xValue, back to top">xV</a>
+  <a class="logo" href="#top" aria-label="xValue, back to top"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#xv-mark"/></svg></a>
   <div class="tabs" role="tablist">
     <span class="tab-ind" aria-hidden="true"></span>
     <button class="tab-btn active" data-tab="players">Players</button>
@@ -1748,7 +1816,7 @@
              'The first snapshot is taken on the next refresh.') + '</div>';
     } else {
       var keys = ['classifier','dixon_coles','close','open'].filter(function(k){ return L.ll[k]!=null; });
-      out += '<div class="tiles" style="margin:6px 0 12px; grid-template-columns:repeat(' + keys.length + ',minmax(0,1fr));">' +
+      out += '<div class="tiles" style="margin:6px 0 12px; grid-template-columns:repeat(2,minmax(0,1fr));">' +
         keys.map(function(k){
           var d = k==='open' ? (L.n_open + ' with an opening price') : (L.acc && L.acc[k]!=null ? 'accuracy ' + pct(L.acc[k]) : '');
           return '<div class="tile"><div class="k">'+LBL[k]+'</div><div class="v num">'+L.ll[k].toFixed(3)+'</div><div class="d">'+d+'</div></div>';
@@ -2216,6 +2284,14 @@
 
   // ================= HERO: stats, scoreboard, marquees, reveals =================
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // startup screen: hold ~2.5s from first paint, then "switch the set off" and let the hero power on
+  var BOOT_LEFT = Math.max(0, 2500 - performance.now());
+  setTimeout(function(){
+    var boot = document.getElementById('boot');
+    if(boot) boot.classList.add('out');
+    document.documentElement.classList.remove('booting');
+    setTimeout(function(){ if(boot) boot.remove(); moveInd(); }, 600);
+  }, BOOT_LEFT);
   var upcoming = fixtures.slice().sort(function(a,b){ return a.date<b.date?-1:1; });
 
   (function heroStats(){
@@ -2231,7 +2307,7 @@
       nums.forEach(function(b){ b.textContent = Math.round(+b.dataset.n * e).toLocaleString(); });
       if(k<1) requestAnimationFrame(step);
     }
-    setTimeout(function(){ requestAnimationFrame(step); }, 400);
+    setTimeout(function(){ requestAnimationFrame(step); }, BOOT_LEFT + 900);
   })();
 
   (function scoreboard(){
