@@ -11233,6 +11233,7 @@ season,Date,HomeTeam,AwayTeam,FTR,dc_pA,dc_pD,dc_pH
 2026-27,2026-11-06,Everton,Coventry,H,0.0936,0.1823,0.7241
 2026-27,2026-11-06,Hamburg,M'gladbach,H,0.366,0.2684,0.3656
 2026-27,2026-11-06,Hamburg SV,Borussia Mönchengladbach,H,0.2384,0.1914,0.5703
+2026-27,2026-11-06,Hamburger SV,Borussia Mönchengladbach,H,0.2513,0.1856,0.563
 2026-27,2026-11-06,Sevilla,Alaves,D,0.3326,0.2704,0.397
 2026-27,2026-11-06,Toulouse,Strasbourg,H,0.3602,0.2528,0.387
 2026-27,2026-11-06,Venezia,Udinese,H,0.5672,0.2323,0.2006
@@ -11247,6 +11248,7 @@ season,Date,HomeTeam,AwayTeam,FTR,dc_pA,dc_pD,dc_pH
 2026-27,2026-11-07,Mainz,Bayern Munich,A,0.7082,0.1627,0.1292
 2026-27,2026-11-07,Malaga,Santander,A,0.3342,0.2558,0.41
 2026-27,2026-11-07,Málaga,Racing Santander,A,0.3539,0.2634,0.3826
+2026-27,2026-11-07,Málaga CF,Real Racing Club de Santander,A,0.3594,0.2451,0.3954
 2026-27,2026-11-07,Nott'm Forest,Man City,H,0.5017,0.2683,0.23
 2026-27,2026-11-07,Osasuna,Ath Bilbao,D,0.3312,0.2654,0.4035
 2026-27,2026-11-07,Paderborn,Ein Frankfurt,D,0.5059,0.2511,0.243

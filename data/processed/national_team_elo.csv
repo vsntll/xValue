@@ -13045,3 +13045,361 @@ date,team,opponent,elo,opp_elo
 2026-10-06,Bahamas,Saint Martin,916.5,1294.7
 2026-10-06,Saudi Arabia,United Arab Emirates,1723.9,1693.0
 2026-10-06,United Arab Emirates,Saudi Arabia,1693.0,1723.9
+2026-11-05,Bangladesh,Bhutan,1111.6,857.6
+2026-11-05,Bhutan,Bangladesh,857.6,1111.6
+2026-11-05,Pakistan,India,1117.3,1250.6
+2026-11-05,India,Pakistan,1250.6,1117.3
+2026-11-08,Sri Lanka,Bhutan,1053.7,854.2
+2026-11-08,Bhutan,Sri Lanka,854.2,1053.7
+2026-11-08,Maldives,Pakistan,987.7,1107.8
+2026-11-08,Pakistan,Maldives,1107.8,987.7
+2026-11-11,Bangladesh,Sri Lanka,1115.1,1046.0
+2026-11-11,Sri Lanka,Bangladesh,1046.0,1115.1
+2026-11-11,India,Maldives,1260.1,970.2
+2026-11-11,Maldives,India,970.2,1260.1
+2026-11-11,Vietnam,Taiwan,1529.9,1059.9
+2026-11-11,Taiwan,Vietnam,1059.9,1529.9
+2026-11-12,Guyana,Cayman Islands,1522.4,1034.9
+2026-11-12,Cayman Islands,Guyana,1034.9,1522.4
+2026-11-12,Guadeloupe,Barbados,1422.9,1232.3
+2026-11-12,Barbados,Guadeloupe,1232.3,1422.9
+2026-11-12,Cuba,Bonaire,1427.5,1136.5
+2026-11-12,Bonaire,Cuba,1136.5,1427.5
+2026-11-12,Curaçao,Panama,1650.1,1769.9
+2026-11-12,Panama,Curaçao,1769.9,1650.1
+2026-11-12,Malta,Eswatini,1355.8,1247.3
+2026-11-12,Eswatini,Malta,1247.3,1355.8
+2026-11-12,New Zealand,India,1689.8,1264.8
+2026-11-12,India,New Zealand,1264.8,1689.8
+2026-11-12,Lithuania,Suriname,1334.8,1611.3
+2026-11-12,Suriname,Lithuania,1611.3,1334.8
+2026-11-12,Uzbekistan,Russia,1749.2,1852.5
+2026-11-12,Russia,Uzbekistan,1852.5,1749.2
+2026-11-12,Turkey,Belgium,1837.2,2032.4
+2026-11-12,Belgium,Turkey,2032.4,1837.2
+2026-11-12,Italy,France,1972.6,2175.2
+2026-11-12,France,Italy,2175.2,1972.6
+2026-11-12,England,Croatia,2218.4,1922.9
+2026-11-12,Croatia,England,1922.9,2218.4
+2026-11-12,Czech Republic,Spain,1729.2,2355.3
+2026-11-12,Spain,Czech Republic,2355.3,1729.2
+2026-11-12,Albania,Finland,1670.2,1592.1
+2026-11-12,Finland,Albania,1592.1,1670.2
+2026-11-12,San Marino,Belarus,902.0,1600.1
+2026-11-12,Belarus,San Marino,1600.1,902.0
+2026-11-12,Montenegro,Latvia,1546.2,1290.9
+2026-11-12,Latvia,Montenegro,1290.9,1546.2
+2026-11-12,Armenia,Cyprus,1408.6,1402.2
+2026-11-12,Cyprus,Armenia,1402.2,1408.6
+2026-11-12,Ghana,Somalia,1623.3,1077.0
+2026-11-12,Somalia,Ghana,1077.0,1623.3
+2026-11-12,Ivory Coast,Gambia,1838.1,1588.0
+2026-11-12,Gambia,Ivory Coast,1588.0,1838.1
+2026-11-12,Guinea,Eritrea,1577.0,1271.6
+2026-11-12,Eritrea,Guinea,1271.6,1577.0
+2026-11-12,DR Congo,Sierra Leone,1791.5,1429.6
+2026-11-12,Sierra Leone,DR Congo,1429.6,1791.5
+2026-11-12,Equatorial Guinea,Zimbabwe,1460.6,1486.0
+2026-11-12,Zimbabwe,Equatorial Guinea,1486.0,1460.6
+2026-11-12,Benin,Central African Republic,1564.6,1332.4
+2026-11-12,Central African Republic,Benin,1332.4,1564.6
+2026-11-12,Cameroon,Namibia,1732.4,1423.4
+2026-11-12,Namibia,Cameroon,1423.4,1732.4
+2026-11-12,Senegal,Sudan,1872.4,1467.3
+2026-11-12,Sudan,Senegal,1467.3,1872.4
+2026-11-12,Madagascar,Guinea-Bissau,1495.5,1469.0
+2026-11-12,Guinea-Bissau,Madagascar,1469.0,1495.5
+2026-11-13,Puerto Rico,Dominica,1370.7,1113.4
+2026-11-13,Dominica,Puerto Rico,1113.4,1370.7
+2026-11-13,Bermuda,Saint Lucia,1232.4,1298.4
+2026-11-13,Saint Lucia,Bermuda,1298.4,1232.4
+2026-11-13,Grenada,Saint Kitts and Nevis,1199.9,1310.4
+2026-11-13,Saint Kitts and Nevis,Grenada,1310.4,1199.9
+2026-11-13,Guatemala,Canada,1668.9,1849.6
+2026-11-13,Canada,Guatemala,1849.6,1668.9
+2026-11-13,Argentina,Uruguay,2252.4,1945.1
+2026-11-13,Uruguay,Argentina,1945.1,2252.4
+2026-11-13,Colombia,Chile,2073.8,1810.8
+2026-11-13,Chile,Colombia,1810.8,2073.8
+2026-11-13,Singapore,Paraguay,1309.6,1922.7
+2026-11-13,Paraguay,Singapore,1922.7,1309.6
+2026-11-13,Ecuador,Costa Rica,1942.8,1723.4
+2026-11-13,Costa Rica,Ecuador,1723.4,1942.8
+2026-11-13,Kuwait,Syria,1447.9,1598.0
+2026-11-13,Syria,Kuwait,1598.0,1447.9
+2026-11-13,Peru,Bolivia,1756.2,1707.4
+2026-11-13,Bolivia,Peru,1707.4,1756.2
+2026-11-13,Tahiti,Cook Islands,1495.7,1157.3
+2026-11-13,Cook Islands,Tahiti,1157.3,1495.7
+2026-11-13,Qatar,Australia,1584.5,1895.8
+2026-11-13,Australia,Qatar,1895.8,1584.5
+2026-11-13,Saudi Arabia,South Korea,1738.3,1844.2
+2026-11-13,South Korea,Saudi Arabia,1844.2,1738.3
+2026-11-13,United Arab Emirates,Honduras,1678.6,1670.2
+2026-11-13,Honduras,United Arab Emirates,1670.2,1678.6
+2026-11-13,Netherlands,Greece,2046.9,1866.5
+2026-11-13,Greece,Netherlands,1866.5,2046.9
+2026-11-13,Serbia,Germany,1751.5,1972.9
+2026-11-13,Germany,Serbia,1972.9,1751.5
+2026-11-13,Scotland,North Macedonia,1790.8,1595.0
+2026-11-13,North Macedonia,Scotland,1595.0,1790.8
+2026-11-13,Slovenia,Switzerland,1776.7,2048.5
+2026-11-13,Switzerland,Slovenia,2048.5,1776.7
+2026-11-13,Slovakia,Faroe Islands,1736.3,1455.5
+2026-11-13,Faroe Islands,Slovakia,1455.5,1736.3
+2026-11-13,Moldova,Kazakhstan,1341.4,1462.9
+2026-11-13,Kazakhstan,Moldova,1462.9,1341.4
+2026-11-13,Luxembourg,Estonia,1406.6,1467.4
+2026-11-13,Estonia,Luxembourg,1467.4,1406.6
+2026-11-13,Bulgaria,Iceland,1519.9,1655.3
+2026-11-13,Iceland,Bulgaria,1655.3,1519.9
+2026-11-13,Andorra,Gibraltar,1124.0,1148.1
+2026-11-13,Gibraltar,Andorra,1148.1,1124.0
+2026-11-13,Liechtenstein,Azerbaijan,967.5,1396.2
+2026-11-13,Azerbaijan,Liechtenstein,1396.2,967.5
+2026-11-13,Gabon,Lesotho,1540.7,1389.1
+2026-11-13,Lesotho,Gabon,1389.1,1540.7
+2026-11-13,Morocco,Niger,2024.1,1490.3
+2026-11-13,Niger,Morocco,1490.3,2024.1
+2026-11-13,Egypt,Malawi,1829.4,1433.7
+2026-11-13,Malawi,Egypt,1433.7,1829.4
+2026-11-13,South Africa,Kenya,1725.2,1451.3
+2026-11-13,Kenya,South Africa,1451.3,1725.2
+2026-11-13,Burkina Faso,Mauritania,1645.9,1451.9
+2026-11-13,Mauritania,Burkina Faso,1451.9,1645.9
+2026-11-13,Comoros,Congo,1488.2,1328.6
+2026-11-13,Congo,Comoros,1328.6,1488.2
+2026-11-13,Tunisia,Libya,1633.0,1503.9
+2026-11-13,Libya,Tunisia,1503.9,1633.0
+2026-11-13,Zambia,Burundi,1563.0,1436.6
+2026-11-13,Burundi,Zambia,1436.6,1563.0
+2026-11-13,Mozambique,Ethiopia,1531.0,1391.1
+2026-11-13,Ethiopia,Mozambique,1391.1,1531.0
+2026-11-13,Cape Verde,Liberia,1643.2,1406.8
+2026-11-13,Liberia,Cape Verde,1406.8,1643.2
+2026-11-13,Mali,Rwanda,1746.0,1498.0
+2026-11-13,Rwanda,Mali,1498.0,1746.0
+2026-11-13,Nigeria,Tanzania,1825.7,1385.9
+2026-11-13,Tanzania,Nigeria,1385.9,1825.7
+2026-11-13,Iraq,Lebanon,1663.2,1434.0
+2026-11-13,Lebanon,Iraq,1434.0,1663.2
+2026-11-14,Japan,Brazil,1973.8,2087.3
+2026-11-14,Brazil,Japan,2087.3,1973.8
+2026-11-14,Sint Maarten,French Guiana,1227.2,1451.6
+2026-11-14,French Guiana,Sint Maarten,1451.6,1227.2
+2026-11-14,Saint Vincent and the Grenadines,Belize,1436.3,1236.1
+2026-11-14,Belize,Saint Vincent and the Grenadines,1236.1,1436.3
+2026-11-14,United States,Haiti,1884.3,1711.5
+2026-11-14,Haiti,United States,1711.5,1884.3
+2026-11-14,Jamaica,Mexico,1678.2,1965.9
+2026-11-14,Mexico,Jamaica,1965.9,1678.2
+2026-11-14,Bahrain,Yemen,1461.6,1334.1
+2026-11-14,Yemen,Bahrain,1334.1,1461.6
+2026-11-14,China,Malaysia,1495.5,1491.5
+2026-11-14,Malaysia,China,1491.5,1495.5
+2026-11-14,Norway,Wales,1968.9,1741.4
+2026-11-14,Wales,Norway,1741.4,1968.9
+2026-11-14,Portugal,Denmark,2120.3,1920.8
+2026-11-14,Denmark,Portugal,1920.8,2120.3
+2026-11-14,Northern Ireland,Ukraine,1729.7,1784.2
+2026-11-14,Ukraine,Northern Ireland,1784.2,1729.7
+2026-11-14,Georgia,Hungary,1684.2,1782.4
+2026-11-14,Hungary,Georgia,1782.4,1684.2
+2026-11-14,Kosovo,Israel,1768.0,1673.7
+2026-11-14,Israel,Kosovo,1673.7,1768.0
+2026-11-14,Austria,Republic of Ireland,1907.2,1772.0
+2026-11-14,Republic of Ireland,Austria,1772.0,1907.2
+2026-11-14,Sweden,Bosnia and Herzegovina,1840.7,1741.1
+2026-11-14,Bosnia and Herzegovina,Sweden,1741.1,1840.7
+2026-11-14,Romania,Poland,1615.9,1747.2
+2026-11-14,Poland,Romania,1747.2,1615.9
+2026-11-14,Angola,South Sudan,1615.1,1236.2
+2026-11-14,South Sudan,Angola,1236.2,1615.1
+2026-11-14,Uganda,Botswana,1569.7,1413.8
+2026-11-14,Botswana,Uganda,1413.8,1569.7
+2026-11-14,Algeria,Togo,1848.2,1487.7
+2026-11-14,Togo,Algeria,1487.7,1848.2
+2026-11-14,Bangladesh,Pakistan,1130.5,1125.3
+2026-11-14,Pakistan,Bangladesh,1125.3,1130.5
+2026-11-14,India,Bhutan,1263.0,861.9
+2026-11-14,Bhutan,India,861.9,1263.0
+2026-11-14,Oman,Tajikistan,1571.2,1432.9
+2026-11-14,Tajikistan,Oman,1432.9,1571.2
+2026-11-14,Thailand,Brunei,1533.2,866.0
+2026-11-14,Brunei,Thailand,866.0,1533.2
+2026-11-14,Taiwan,Kyrgyzstan,1058.3,1464.5
+2026-11-14,Kyrgyzstan,Taiwan,1464.5,1058.3
+2026-11-14,Iran,Palestine,1863.5,1622.6
+2026-11-14,Palestine,Iran,1622.6,1863.5
+2026-11-14,Basque Country,Venezuela,1799.0,1822.8
+2026-11-14,Venezuela,Basque Country,1822.8,1799.0
+2026-11-15,Panama,Curaçao,1768.8,1651.2
+2026-11-15,Curaçao,Panama,1651.2,1768.8
+2026-11-15,New Zealand,India,1691.7,1265.7
+2026-11-15,India,New Zealand,1265.7,1691.7
+2026-11-15,Suriname,Eswatini,1606.6,1252.7
+2026-11-15,Eswatini,Suriname,1252.7,1606.6
+2026-11-15,Belgium,Italy,2047.0,2011.2
+2026-11-15,Italy,Belgium,2011.2,2047.0
+2026-11-15,France,Turkey,2136.6,1822.5
+2026-11-15,Turkey,France,1822.5,2136.6
+2026-11-15,Croatia,Czech Republic,1919.1,1726.4
+2026-11-15,Czech Republic,Croatia,1726.4,1919.1
+2026-11-15,Spain,England,2358.1,2222.1
+2026-11-15,England,Spain,2222.1,2358.1
+2026-11-15,Belarus,Albania,1602.0,1686.0
+2026-11-15,Albania,Belarus,1686.0,1602.0
+2026-11-15,Finland,San Marino,1576.2,900.1
+2026-11-15,San Marino,Finland,900.1,1576.2
+2026-11-15,Cyprus,Montenegro,1408.1,1550.8
+2026-11-15,Montenegro,Cyprus,1550.8,1408.1
+2026-11-15,Latvia,Armenia,1286.3,1402.7
+2026-11-15,Armenia,Latvia,1402.7,1286.3
+2026-11-16,Tahiti,Cook Islands,1498.5,1154.5
+2026-11-16,Cook Islands,Tahiti,1154.5,1498.5
+2026-11-16,Guyana,Puerto Rico,1525.2,1381.8
+2026-11-16,Puerto Rico,Guyana,1381.8,1525.2
+2026-11-16,Guadeloupe,Bermuda,1434.0,1216.1
+2026-11-16,Bermuda,Guadeloupe,1216.1,1434.0
+2026-11-16,Cuba,Grenada,1435.6,1226.0
+2026-11-16,Grenada,Cuba,1226.0,1435.6
+2026-11-16,Canada,Guatemala,1865.1,1653.4
+2026-11-16,Guatemala,Canada,1653.4,1865.1
+2026-11-16,Andorra,Azerbaijan,1147.5,1401.4
+2026-11-16,Azerbaijan,Andorra,1401.4,1147.5
+2026-11-16,Germany,Netherlands,1992.8,2061.8
+2026-11-16,Netherlands,Germany,2061.8,1992.8
+2026-11-16,Greece,Serbia,1851.6,1731.6
+2026-11-16,Serbia,Greece,1731.6,1851.6
+2026-11-16,North Macedonia,Slovenia,1588.8,1785.9
+2026-11-16,Slovenia,North Macedonia,1785.9,1588.8
+2026-11-16,Switzerland,Scotland,2039.3,1796.9
+2026-11-16,Scotland,Switzerland,1796.9,2039.3
+2026-11-16,Faroe Islands,Moldova,1471.5,1362.6
+2026-11-16,Moldova,Faroe Islands,1362.6,1471.5
+2026-11-16,Kazakhstan,Slovakia,1441.6,1720.3
+2026-11-16,Slovakia,Kazakhstan,1720.3,1441.6
+2026-11-16,Iceland,Luxembourg,1691.2,1384.4
+2026-11-16,Luxembourg,Iceland,1384.4,1691.2
+2026-11-16,Estonia,Bulgaria,1489.7,1483.9
+2026-11-16,Bulgaria,Estonia,1483.9,1489.7
+2026-11-16,Gibraltar,Malta,1124.5,1350.5
+2026-11-16,Malta,Gibraltar,1350.5,1124.5
+2026-11-16,Lithuania,Liechtenstein,1339.5,962.3
+2026-11-16,Liechtenstein,Lithuania,962.3,1339.5
+2026-11-16,Ghana,Somalia,1624.7,1075.6
+2026-11-16,Somalia,Ghana,1075.6,1624.7
+2026-11-16,Eritrea,Guinea,1268.1,1580.5
+2026-11-16,Guinea,Eritrea,1580.5,1268.1
+2026-11-16,Zimbabwe,Equatorial Guinea,1484.5,1462.0
+2026-11-16,Equatorial Guinea,Zimbabwe,1462.0,1484.5
+2026-11-16,Central African Republic,Benin,1323.4,1573.6
+2026-11-16,Benin,Central African Republic,1573.6,1323.4
+2026-11-16,Namibia,Cameroon,1418.2,1737.6
+2026-11-16,Cameroon,Namibia,1737.6,1418.2
+2026-11-16,Sudan,Senegal,1463.7,1876.1
+2026-11-16,Senegal,Sudan,1876.1,1463.7
+2026-11-17,Russia,Venezuela,1862.4,1815.0
+2026-11-17,Venezuela,Russia,1815.0,1862.4
+2026-11-17,Singapore,Brazil,1307.0,2067.6
+2026-11-17,Brazil,Singapore,2067.6,1307.0
+2026-11-17,Japan,Paraguay,1993.5,1925.3
+2026-11-17,Paraguay,Japan,1925.3,1993.5
+2026-11-17,United Arab Emirates,Syria,1689.0,1578.0
+2026-11-17,Syria,United Arab Emirates,1578.0,1689.0
+2026-11-17,Dominica,Cayman Islands,1102.3,1032.1
+2026-11-17,Cayman Islands,Dominica,1032.1,1102.3
+2026-11-17,Saint Lucia,Barbados,1314.6,1221.2
+2026-11-17,Barbados,Saint Lucia,1221.2,1314.6
+2026-11-17,Saint Kitts and Nevis,Bonaire,1284.2,1128.4
+2026-11-17,Bonaire,Saint Kitts and Nevis,1128.4,1284.2
+2026-11-17,Belize,Sint Maarten,1230.1,1211.0
+2026-11-17,Sint Maarten,Belize,1211.0,1230.1
+2026-11-17,Saint Vincent and the Grenadines,French Guiana,1442.3,1467.8
+2026-11-17,French Guiana,Saint Vincent and the Grenadines,1467.8,1442.3
+2026-11-17,Mexico,Jamaica,1936.0,1708.0
+2026-11-17,Jamaica,Mexico,1708.0,1936.0
+2026-11-17,United States,Haiti,1898.9,1696.9
+2026-11-17,Haiti,United States,1696.9,1898.9
+2026-11-17,Argentina,Costa Rica,2234.1,1719.3
+2026-11-17,Costa Rica,Argentina,1719.3,2234.1
+2026-11-17,Chile,Colombia,1808.6,2076.0
+2026-11-17,Colombia,Chile,2076.0,1808.6
+2026-11-17,Uruguay,Dominican Republic,1963.4,1514.3
+2026-11-17,Dominican Republic,Uruguay,1514.3,1963.4
+2026-11-17,China,Bahrain,1506.1,1471.4
+2026-11-17,Bahrain,China,1471.4,1506.1
+2026-11-17,Ecuador,Bolivia,1946.9,1698.5
+2026-11-17,Bolivia,Ecuador,1698.5,1946.9
+2026-11-17,Jordan,Australia,1713.3,1903.8
+2026-11-17,Australia,Jordan,1903.8,1713.3
+2026-11-17,Kuwait,Honduras,1467.9,1659.7
+2026-11-17,Honduras,Kuwait,1659.7,1467.9
+2026-11-17,Malaysia,Yemen,1480.9,1324.4
+2026-11-17,Yemen,Malaysia,1324.4,1480.9
+2026-11-17,Qatar,South Korea,1576.5,1831.3
+2026-11-17,South Korea,Qatar,1831.3,1576.5
+2026-11-17,Saudi Arabia,Uzbekistan,1751.2,1739.3
+2026-11-17,Uzbekistan,Saudi Arabia,1739.3,1751.2
+2026-11-17,Wales,Portugal,1733.5,2060.9
+2026-11-17,Portugal,Wales,2060.9,1733.5
+2026-11-17,Denmark,Norway,1980.2,1976.8
+2026-11-17,Norway,Denmark,1976.8,1980.2
+2026-11-17,Hungary,Northern Ireland,1812.6,1747.1
+2026-11-17,Northern Ireland,Hungary,1747.1,1812.6
+2026-11-17,Ukraine,Georgia,1766.8,1654.0
+2026-11-17,Georgia,Ukraine,1654.0,1766.8
+2026-11-17,Republic of Ireland,Kosovo,1763.8,1757.9
+2026-11-17,Kosovo,Republic of Ireland,1757.9,1763.8
+2026-11-17,Israel,Austria,1683.9,1915.4
+2026-11-17,Austria,Israel,1915.4,1683.9
+2026-11-17,Bosnia and Herzegovina,Romania,1731.5,1637.7
+2026-11-17,Romania,Bosnia and Herzegovina,1637.7,1731.5
+2026-11-17,Poland,Sweden,1725.4,1850.4
+2026-11-17,Sweden,Poland,1850.4,1725.4
+2026-11-17,Lesotho,Gabon,1377.7,1552.1
+2026-11-17,Gabon,Lesotho,1552.1,1377.7
+2026-11-17,Morocco,Niger,2026.0,1488.4
+2026-11-17,Niger,Morocco,1488.4,2026.0
+2026-11-17,Malawi,Egypt,1429.4,1833.8
+2026-11-17,Egypt,Malawi,1833.8,1429.4
+2026-11-17,South Sudan,Angola,1232.6,1618.7
+2026-11-17,Angola,South Sudan,1618.7,1232.6
+2026-11-17,Gambia,Ivory Coast,1583.3,1842.8
+2026-11-17,Ivory Coast,Gambia,1842.8,1583.3
+2026-11-17,Kenya,South Africa,1467.2,1709.4
+2026-11-17,South Africa,Kenya,1709.4,1467.2
+2026-11-17,Sierra Leone,DR Congo,1425.7,1795.4
+2026-11-17,DR Congo,Sierra Leone,1795.4,1425.7
+2026-11-17,Mauritania,Burkina Faso,1445.7,1652.1
+2026-11-17,Burkina Faso,Mauritania,1652.1,1445.7
+2026-11-17,Congo,Comoros,1341.2,1475.5
+2026-11-17,Comoros,Congo,1475.5,1341.2
+2026-11-17,Libya,Tunisia,1551.3,1585.7
+2026-11-17,Tunisia,Libya,1585.7,1551.3
+2026-11-17,Botswana,Uganda,1426.4,1557.2
+2026-11-17,Uganda,Botswana,1557.2,1426.4
+2026-11-17,Burundi,Zambia,1448.0,1551.5
+2026-11-17,Zambia,Burundi,1551.5,1448.0
+2026-11-17,Togo,Algeria,1485.1,1850.8
+2026-11-17,Algeria,Togo,1850.8,1485.1
+2026-11-17,Ethiopia,Mozambique,1423.1,1499.0
+2026-11-17,Mozambique,Ethiopia,1499.0,1423.1
+2026-11-17,Liberia,Cape Verde,1399.3,1650.8
+2026-11-17,Cape Verde,Liberia,1650.8,1399.3
+2026-11-17,Rwanda,Mali,1493.2,1750.8
+2026-11-17,Mali,Rwanda,1750.8,1493.2
+2026-11-17,Tanzania,Nigeria,1383.3,1828.3
+2026-11-17,Nigeria,Tanzania,1828.3,1383.3
+2026-11-17,Guinea-Bissau,Madagascar,1470.5,1493.9
+2026-11-17,Madagascar,Guinea-Bissau,1493.9,1470.5
+2026-11-17,Oman,Brunei,1550.6,865.2
+2026-11-17,Brunei,Oman,865.2,1550.6
+2026-11-17,Thailand,Tajikistan,1534.0,1453.5
+2026-11-17,Tajikistan,Thailand,1453.5,1534.0
+2026-11-17,Vietnam,Kyrgyzstan,1531.5,1469.2
+2026-11-17,Kyrgyzstan,Vietnam,1469.2,1531.5
+2026-11-17,Lebanon,Palestine,1445.1,1613.6
+2026-11-17,Palestine,Lebanon,1613.6,1445.1
+2026-11-17,Iraq,Iran,1652.1,1872.5
+2026-11-17,Iran,Iraq,1872.5,1652.1

@@ -383,3 +383,189 @@ snapshot_at,model_version,data_asof,league,kickoff_date,home,away,home_key,away_
 2026-11-15T01:57:36Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-23,Levante,Elche,levante,elche,0.4047,0.3267,0.2687,,
 2026-11-15T01:57:36Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-23,Brentford,Everton,brentford,everton,0.4432,0.3084,0.2483,,
 2026-11-15T01:57:36Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-23,Monza,Fiorentina,monza,fiorentina,0.2679,0.2948,0.4374,,
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-21,Manchester City FC,Fulham FC,manchester city,fulham,0.6589,0.2093,0.1318,1.987,0.761
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-21,Chelsea FC,Leeds United FC,chelsea,leeds united,0.5891,0.2182,0.1927,2.001,1.06
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-21,Aston Villa FC,Sunderland AFC,aston villa,sunderland,0.6434,0.2201,0.1365,1.882,0.735
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-21,AFC Bournemouth,Nottingham Forest FC,bournemouth,nottingham forest,0.5664,0.2303,0.2033,1.866,1.03
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-21,Tottenham Hotspur FC,Ipswich Town FC,tottenham hotspur,ipswich town,0.7926,0.1231,0.0843,3.186,1.023
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-21,Coventry City FC,Crystal Palace FC,coventry,crystal palace,0.1854,0.2068,0.6078,1.107,2.143
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-21,Newcastle United FC,Arsenal FC,newcastle united,arsenal,0.2413,0.2633,0.4955,0.989,1.531
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-22,Liverpool FC,Manchester United FC,liverpool,manchester united,0.5653,0.207,0.2277,2.201,1.352
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-22,Hull City AFC,Brighton & Hove Albion FC,hull city,brighton hove albion,0.138,0.2271,0.6348,0.711,1.814
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-23,Brentford FC,Everton FC,brentford,everton,0.502,0.2562,0.2418,1.597,1.031
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-27,Nottingham Forest FC,Chelsea FC,nottingham forest,chelsea,0.3581,0.2504,0.3915,1.444,1.519
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-28,Leeds United FC,Coventry City FC,leeds united,coventry,0.7342,0.1633,0.1025,2.495,0.833
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-28,Manchester United FC,Brentford FC,manchester united,brentford,0.4594,0.2219,0.3187,1.958,1.61
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-28,Ipswich Town FC,Aston Villa FC,ipswich town,aston villa,0.1572,0.1713,0.6715,1.249,2.655
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-29,Crystal Palace FC,Hull City AFC,crystal palace,hull city,0.6169,0.2396,0.1436,1.707,0.686
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-29,Arsenal FC,Manchester City FC,arsenal,manchester city,0.5054,0.2794,0.2153,1.408,0.82
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-29,Sunderland AFC,Tottenham Hotspur FC,sunderland,tottenham hotspur,0.2715,0.2802,0.4483,0.998,1.362
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-29,Brighton & Hove Albion FC,Newcastle United FC,brighton hove albion,newcastle united,0.5865,0.2078,0.2057,2.163,1.219
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-29,Fulham FC,AFC Bournemouth,fulham,bournemouth,0.3094,0.2641,0.4265,1.205,1.458
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Premier League,2026-11-29,Everton FC,Liverpool FC,everton,liverpool,0.3296,0.2761,0.3943,1.18,1.316
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-20,Athletic Club,RCD Espanyol de Barcelona,athletic club,espanyol,0.56,0.2499,0.1901,1.655,0.855
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-21,Deportivo Alavés,RC Deportivo La Coruña,alaves,deportivo a coruna,0.5425,0.2557,0.2018,1.605,0.876
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-21,Rayo Vallecano de Madrid,Valencia CF,rayo vallecano,valencia,0.4875,0.2516,0.2609,1.634,1.132
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-21,Sevilla FC,Real Betis Balompié,sevilla,real betis,0.371,0.2396,0.3895,1.579,1.622
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-21,Real Madrid CF,RC Celta de Vigo,real madrid,celta vigo,0.6448,0.1954,0.1598,2.247,1.036
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-22,FC Barcelona,Villarreal CF,barcelona,villarreal,0.7692,0.1247,0.1061,3.429,1.323
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-22,Real Racing Club de Santander,Real Sociedad de Fútbol,real racing,real sociedad,0.1832,0.1757,0.6412,1.412,2.673
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-22,CA Osasuna,Málaga CF,osasuna,malaga,0.7487,0.1575,0.0938,2.531,0.794
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-22,Getafe CF,Club Atlético de Madrid,getafe,atletico madrid,0.2014,0.2794,0.5192,0.771,1.412
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-23,Levante UD,Elche CF,levante,elche,0.4153,0.238,0.3467,1.69,1.529
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-27,Levante UD,Real Racing Club de Santander,levante,real racing,0.6614,0.175,0.1637,2.61,1.261
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-28,Real Betis Balompié,Rayo Vallecano de Madrid,real betis,rayo vallecano,0.5112,0.2317,0.2571,1.863,1.266
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-28,Málaga CF,Athletic Club,malaga,athletic club,0.1639,0.2302,0.6059,0.832,1.825
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-28,Elche CF,Club Atlético de Madrid,elche,atletico madrid,0.2418,0.2349,0.5233,1.174,1.825
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-28,Real Madrid CF,Deportivo Alavés,real madrid,alaves,0.682,0.1844,0.1336,2.32,0.933
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-29,RC Celta de Vigo,Villarreal CF,celta vigo,villarreal,0.4354,0.2283,0.3363,1.84,1.599
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-29,Real Sociedad de Fútbol,Sevilla FC,real sociedad,sevilla,0.5725,0.2089,0.2186,2.162,1.282
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-29,Valencia CF,CA Osasuna,valencia,osasuna,0.4389,0.2456,0.3155,1.647,1.365
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,La Liga,2026-11-29,RC Deportivo La Coruña,FC Barcelona,deportivo a coruna,barcelona,0.1074,0.1603,0.7322,0.904,2.579
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-20,FC Bayern München,1. FC Köln,bayern munich,cologne,0.9233,0.0523,0.0244,4.386,0.793
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-21,Bayer 04 Leverkusen,SC Paderborn 07,bayer leverkusen,paderborn,0.6956,0.1995,0.1049,2.013,0.638
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-21,1. FC Union Berlin,RB Leipzig,union berlin,leipzig,0.2116,0.2146,0.5738,1.192,2.072
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-21,SV 07 Elversberg,SC Freiburg,elversberg,freiburg,0.3276,0.2072,0.4652,1.833,2.192
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-21,Borussia Mönchengladbach,Borussia Dortmund,borussia monchengladbach,borussia dortmund,0.14,0.1572,0.7029,1.26,2.862
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-21,Eintracht Frankfurt,TSG 1899 Hoffenheim,eintracht frankfurt,tsg hoffenheim,0.5513,0.1878,0.2608,2.59,1.789
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-21,FC Schalke 04,VfB Stuttgart,schalke,stuttgart,0.218,0.2578,0.5242,0.931,1.587
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-22,FC Augsburg,1. FSV Mainz 05,augsburg,mainz 05,0.4246,0.2316,0.3438,1.781,1.587
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-22,SV Werder Bremen,Hamburger SV,werder bremen,hamburger,0.5377,0.2374,0.225,1.795,1.083
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-27,SV Werder Bremen,Borussia Mönchengladbach,werder bremen,borussia monchengladbach,0.6476,0.1737,0.1787,2.697,1.401
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-28,VfB Stuttgart,Eintracht Frankfurt,stuttgart,eintracht frankfurt,0.5332,0.1983,0.2685,2.382,1.68
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-28,SC Paderborn 07,FC Schalke 04,paderborn,schalke,0.4107,0.3499,0.2394,0.966,0.663
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-28,Hamburger SV,FC Bayern München,hamburger,bayern munich,0.0618,0.11,0.8282,0.83,3.199
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-28,1. FC Köln,SV 07 Elversberg,cologne,elversberg,0.5037,0.2017,0.2946,2.319,1.766
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-28,1. FSV Mainz 05,1. FC Union Berlin,mainz 05,union berlin,0.6211,0.2076,0.1714,2.105,1.016
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-29,SC Freiburg,RB Leipzig,freiburg,leipzig,0.4064,0.2243,0.3693,1.838,1.746
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-29,TSG 1899 Hoffenheim,FC Augsburg,tsg hoffenheim,augsburg,0.5266,0.2058,0.2676,2.246,1.579
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Bundesliga,2026-11-29,Borussia Dortmund,Bayer 04 Leverkusen,borussia dortmund,bayer leverkusen,0.4947,0.2351,0.2701,1.816,1.291
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-21,Como 1907,Cagliari Calcio,como,cagliari,0.7613,0.1602,0.0784,2.376,0.63
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-21,SS Lazio,US Lecce,lazio,lecce,0.7477,0.1746,0.0777,2.178,0.552
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-21,Parma Calcio 1913,AS Roma,parma,roma,0.1444,0.2442,0.6115,0.672,1.668
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-21,SSC Napoli,Torino FC,napoli,torino,0.6912,0.1859,0.123,2.255,0.842
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-22,Juventus FC,Venezia FC,juventus,venezia,0.8081,0.1338,0.0581,2.616,0.576
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-22,Bologna FC 1909,Udinese Calcio,bologna,udinese,0.6309,0.2073,0.1618,2.087,0.959
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-22,US Sassuolo Calcio,Genoa CFC,sassuolo,genoa,0.4414,0.2507,0.3079,1.598,1.299
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-22,AC Milan,Frosinone Calcio,milan,frosinone,0.4801,0.2197,0.3002,2.009,1.563
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-22,Atalanta BC,FC Internazionale Milano,atalanta,inter,0.3356,0.2461,0.4183,1.421,1.61
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-23,AC Monza,ACF Fiorentina,monza,fiorentina,0.2067,0.1896,0.6037,1.414,2.466
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-27,Venezia FC,Bologna FC 1909,venezia,bologna,0.1803,0.2336,0.5861,0.896,1.808
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-28,Frosinone Calcio,Parma Calcio 1913,frosinone,parma,0.7344,0.1679,0.0977,2.39,0.757
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-28,Torino FC,SS Lazio,torino,lazio,0.2531,0.2513,0.4956,1.104,1.641
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-28,FC Internazionale Milano,Genoa CFC,inter,genoa,0.7313,0.172,0.0967,2.323,0.722
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-29,Como 1907,Juventus FC,como,juventus,0.5176,0.2457,0.2367,1.704,1.077
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-29,AS Roma,AC Monza,roma,monza,0.8808,0.0808,0.0384,3.596,0.732
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-29,US Sassuolo Calcio,SSC Napoli,sassuolo,napoli,0.2523,0.2226,0.5251,1.325,1.984
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Serie A,2026-11-29,Udinese Calcio,ACF Fiorentina,udinese,fiorentina,0.3188,0.2372,0.4441,1.451,1.745
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-20,ES Troyes AC,Le Havre AC,troyes,le havre,0.4283,0.2964,0.2753,1.234,0.931
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-21,OGC Nice,Paris Saint-Germain FC,nice,paris saint germain,0.134,0.1929,0.6731,0.875,2.199
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-21,AS Monaco FC,AJ Auxerre,monaco,auxerre,0.7096,0.1705,0.1199,2.479,0.933
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-21,Racing Club de Lens,Toulouse FC,lens,toulouse,0.5229,0.2232,0.2539,1.976,1.327
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-21,Lille OSC,Olympique Lyonnais,lille,lyon,0.4365,0.2699,0.2936,1.425,1.122
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-21,RC Strasbourg Alsace,Stade Brestois 29,strasbourg,brest,0.5873,0.1966,0.2161,2.359,1.395
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-22,Paris FC,Angers SCO,paris fc,angers,0.7065,0.1951,0.0984,2.037,0.613
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-22,FC Lorient,Stade Rennais FC 1901,lorient,rennes,0.3878,0.2442,0.368,1.572,1.526
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-22,Olympique de Marseille,Le Mans FC,marseille,le mans,0.7329,0.1553,0.1118,2.707,0.994
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-27,Stade Brestois 29,Paris FC,brest,paris fc,0.3753,0.2447,0.38,1.538,1.549
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-28,Paris Saint-Germain FC,FC Lorient,paris saint germain,lorient,0.7556,0.1666,0.0778,2.281,0.59
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-28,Le Havre AC,RC Strasbourg Alsace,le havre,strasbourg,0.2149,0.2224,0.5627,1.145,1.971
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-28,OGC Nice,ES Troyes AC,nice,troyes,0.5707,0.2421,0.1873,1.728,0.883
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-28,Le Mans FC,Lille OSC,le mans,lille,0.2148,0.2545,0.5307,0.936,1.618
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-28,Angers SCO,Racing Club de Lens,angers,lens,0.1826,0.2295,0.5879,0.932,1.855
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-29,AJ Auxerre,Olympique de Marseille,auxerre,marseille,0.2475,0.2211,0.5314,1.316,2.004
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-29,Toulouse FC,Stade Rennais FC 1901,toulouse,rennes,0.4356,0.2272,0.3372,1.854,1.615
+2026-11-19T16:34:28Z,0e0672de05,2026-11-14,Ligue 1,2026-11-29,Olympique Lyonnais,AS Monaco FC,lyon,monaco,0.4726,0.2348,0.2926,1.805,1.381
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-20,ES Troyes AC,Le Havre AC,troyes,le havre,0.3207,0.3191,0.3602,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-20,Athletic Club,RCD Espanyol de Barcelona,athletic club,espanyol,0.6341,0.2156,0.1503,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-20,FC Bayern München,1. FC Köln,bayern munich,cologne,0.8316,0.1213,0.0471,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-21,Deportivo Alavés,RC Deportivo La Coruña,alaves,deportivo a coruna,0.5026,0.286,0.2114,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-21,Rayo Vallecano de Madrid,Valencia CF,rayo vallecano,valencia,0.3978,0.3003,0.3019,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-21,Sevilla FC,Real Betis Balompié,sevilla,real betis,0.2545,0.3335,0.412,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-21,Real Madrid CF,RC Celta de Vigo,real madrid,celta vigo,0.7895,0.1457,0.0649,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-21,Borussia Mönchengladbach,Borussia Dortmund,borussia monchengladbach,borussia dortmund,0.2223,0.2825,0.4952,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-21,SV 07 Elversberg,SC Freiburg,elversberg,freiburg,0.2218,0.2985,0.4797,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-21,1. FC Union Berlin,RB Leipzig,union berlin,leipzig,0.4383,0.3096,0.2521,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-21,Bayer 04 Leverkusen,SC Paderborn 07,bayer leverkusen,paderborn,0.768,0.1621,0.0699,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-21,RC Strasbourg Alsace,Stade Brestois 29,strasbourg,brest,0.4277,0.3445,0.2277,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-21,Lille OSC,Olympique Lyonnais,lille,lyon,0.3953,0.323,0.2817,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-21,Racing Club de Lens,Toulouse FC,lens,toulouse,0.4607,0.2905,0.2488,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-21,AS Monaco FC,AJ Auxerre,monaco,auxerre,0.6437,0.234,0.1223,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-21,Eintracht Frankfurt,TSG 1899 Hoffenheim,eintracht frankfurt,tsg hoffenheim,0.3363,0.3173,0.3464,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-21,OGC Nice,Paris Saint-Germain FC,nice,paris saint germain,0.1367,0.1636,0.6996,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-21,Manchester City FC,Fulham FC,manchester city,fulham,0.6683,0.2162,0.1155,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-21,FC Schalke 04,VfB Stuttgart,schalke,stuttgart,0.3594,0.2935,0.347,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-21,Como 1907,Cagliari Calcio,como,cagliari,0.7144,0.1951,0.0905,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-21,SS Lazio,US Lecce,lazio,lecce,0.6241,0.2419,0.134,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-21,Parma Calcio 1913,AS Roma,parma,roma,0.1649,0.245,0.5901,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-21,SSC Napoli,Torino FC,napoli,torino,0.5883,0.2626,0.1491,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-21,Chelsea FC,Leeds United FC,chelsea,leeds united,0.5263,0.2706,0.2031,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-21,Aston Villa FC,Sunderland AFC,aston villa,sunderland,0.4465,0.3105,0.2431,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-21,AFC Bournemouth,Nottingham Forest FC,bournemouth,nottingham forest,0.7045,0.1977,0.0978,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-21,Tottenham Hotspur FC,Ipswich Town FC,tottenham hotspur,ipswich town,0.6488,0.229,0.1222,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-21,Newcastle United FC,Arsenal FC,newcastle united,arsenal,0.1302,0.2214,0.6483,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-21,Coventry City FC,Crystal Palace FC,coventry,crystal palace,0.2948,0.2896,0.4156,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-22,Paris FC,Angers SCO,paris fc,angers,0.6438,0.2264,0.1298,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-22,SV Werder Bremen,Hamburger SV,werder bremen,hamburger,0.4308,0.321,0.2481,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-22,FC Augsburg,1. FSV Mainz 05,augsburg,mainz 05,0.3398,0.2874,0.3728,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-22,AC Milan,Frosinone Calcio,milan,frosinone,0.6202,0.2431,0.1368,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-22,US Sassuolo Calcio,Genoa CFC,sassuolo,genoa,0.3106,0.3617,0.3277,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-22,Bologna FC 1909,Udinese Calcio,bologna,udinese,0.5825,0.2598,0.1576,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-22,Juventus FC,Venezia FC,juventus,venezia,0.7356,0.1828,0.0816,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-22,Olympique de Marseille,Le Mans FC,marseille,le mans,0.5972,0.2691,0.1338,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-22,Atalanta BC,FC Internazionale Milano,atalanta,inter,0.2767,0.2713,0.452,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-22,FC Lorient,Stade Rennais FC 1901,lorient,rennes,0.3071,0.2753,0.4176,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-22,Getafe CF,Club Atlético de Madrid,getafe,atletico madrid,0.1858,0.2851,0.5291,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-22,Real Racing Club de Santander,Real Sociedad de Fútbol,real racing,real sociedad,0.2204,0.2945,0.4852,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-22,FC Barcelona,Villarreal CF,barcelona,villarreal,0.7308,0.183,0.0862,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-22,Hull City AFC,Brighton & Hove Albion FC,hull city,brighton hove albion,0.1618,0.2551,0.583,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-22,Liverpool FC,Manchester United FC,liverpool,manchester united,0.4971,0.296,0.2069,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-22,CA Osasuna,Málaga CF,osasuna,malaga,0.6125,0.2397,0.1479,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-23,AC Monza,ACF Fiorentina,monza,fiorentina,0.2612,0.2898,0.449,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-23,Brentford FC,Everton FC,brentford,everton,0.4393,0.3034,0.2573,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-23,Levante UD,Elche CF,levante,elche,0.3987,0.3293,0.272,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-27,SV Werder Bremen,Borussia Mönchengladbach,werder bremen,borussia monchengladbach,0.4174,0.2849,0.2977,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-27,Nottingham Forest FC,Chelsea FC,nottingham forest,chelsea,0.2205,0.2561,0.5234,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-27,Venezia FC,Bologna FC 1909,venezia,bologna,0.267,0.3108,0.4223,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-27,Levante UD,Real Racing Club de Santander,levante,real racing,0.5851,0.2622,0.1527,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-27,Stade Brestois 29,Paris FC,brest,paris fc,0.3646,0.2923,0.3431,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-28,1. FC Köln,SV 07 Elversberg,cologne,elversberg,0.6526,0.2095,0.1379,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-28,1. FSV Mainz 05,1. FC Union Berlin,mainz 05,union berlin,0.5546,0.2617,0.1838,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-28,SC Paderborn 07,FC Schalke 04,paderborn,schalke,0.3683,0.3087,0.323,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-28,Hamburger SV,FC Bayern München,hamburger,bayern munich,0.0945,0.1456,0.7599,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-28,VfB Stuttgart,Eintracht Frankfurt,stuttgart,eintracht frankfurt,0.3834,0.2893,0.3272,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-28,Leeds United FC,Coventry City FC,leeds united,coventry,0.6563,0.2233,0.1204,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-28,Ipswich Town FC,Aston Villa FC,ipswich town,aston villa,0.2942,0.339,0.3668,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-28,Frosinone Calcio,Parma Calcio 1913,frosinone,parma,0.4658,0.3031,0.2311,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-28,Torino FC,SS Lazio,torino,lazio,0.2949,0.3209,0.3841,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-28,Paris Saint-Germain FC,FC Lorient,paris saint germain,lorient,0.7766,0.1654,0.058,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-28,Le Havre AC,RC Strasbourg Alsace,le havre,strasbourg,0.2724,0.2431,0.4845,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-28,OGC Nice,ES Troyes AC,nice,troyes,0.5839,0.2697,0.1464,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-28,Le Mans FC,Lille OSC,le mans,lille,0.2177,0.2934,0.4889,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-28,Angers SCO,Racing Club de Lens,angers,lens,0.2492,0.2978,0.453,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-28,FC Internazionale Milano,Genoa CFC,inter,genoa,0.7663,0.1644,0.0693,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-28,Real Betis Balompié,Rayo Vallecano de Madrid,real betis,rayo vallecano,0.5395,0.2642,0.1963,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-28,Málaga CF,Athletic Club,malaga,athletic club,0.1343,0.245,0.6207,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-28,Elche CF,Club Atlético de Madrid,elche,atletico madrid,0.1809,0.2851,0.534,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-28,Real Madrid CF,Deportivo Alavés,real madrid,alaves,0.8516,0.1032,0.0451,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-28,Manchester United FC,Brentford FC,manchester united,brentford,0.4987,0.2919,0.2094,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-29,Udinese Calcio,ACF Fiorentina,udinese,fiorentina,0.2882,0.314,0.3978,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-29,US Sassuolo Calcio,SSC Napoli,sassuolo,napoli,0.2274,0.2873,0.4853,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-29,RC Celta de Vigo,Villarreal CF,celta vigo,villarreal,0.3569,0.286,0.3571,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-29,Brighton & Hove Albion FC,Newcastle United FC,brighton hove albion,newcastle united,0.7128,0.1867,0.1004,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-29,Fulham FC,AFC Bournemouth,fulham,bournemouth,0.3374,0.3183,0.3443,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-29,Borussia Dortmund,Bayer 04 Leverkusen,borussia dortmund,bayer leverkusen,0.4507,0.3025,0.2467,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-29,TSG 1899 Hoffenheim,FC Augsburg,tsg hoffenheim,augsburg,0.5391,0.2643,0.1966,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Bundesliga,2026-11-29,SC Freiburg,RB Leipzig,freiburg,leipzig,0.6248,0.235,0.1402,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-29,Real Sociedad de Fútbol,Sevilla FC,real sociedad,sevilla,0.5331,0.2934,0.1735,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-29,Sunderland AFC,Tottenham Hotspur FC,sunderland,tottenham hotspur,0.3229,0.3001,0.377,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-29,Crystal Palace FC,Hull City AFC,crystal palace,hull city,0.577,0.2578,0.1652,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-29,Arsenal FC,Manchester City FC,arsenal,manchester city,0.3965,0.3031,0.3004,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-29,Olympique Lyonnais,AS Monaco FC,lyon,monaco,0.4283,0.313,0.2587,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-29,Toulouse FC,Stade Rennais FC 1901,toulouse,rennes,0.4337,0.2656,0.3007,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Ligue 1,2026-11-29,AJ Auxerre,Olympique de Marseille,auxerre,marseille,0.322,0.3119,0.3661,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-29,AS Roma,AC Monza,roma,monza,0.7789,0.1501,0.071,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-29,Valencia CF,CA Osasuna,valencia,osasuna,0.4256,0.3084,0.266,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,La Liga,2026-11-29,RC Deportivo La Coruña,FC Barcelona,deportivo a coruna,barcelona,0.1064,0.119,0.7746,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Premier League,2026-11-29,Everton FC,Liverpool FC,everton,liverpool,0.2808,0.3023,0.417,,
+2026-11-19T16:34:28Z,clf-87f2c3e09f,2026-11-14,Serie A,2026-11-29,Como 1907,Juventus FC,como,juventus,0.4635,0.2739,0.2625,,
