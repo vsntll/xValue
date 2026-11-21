@@ -1,0 +1,4 @@
+snapshot_at,model_version,xi_version,kickoff_utc,league,fotmob_id,home,away,home_key,away_key,home_missing_share,away_missing_share,home_missing,away_missing,p_home_base,p_draw_base,p_away_base,p_home,p_draw,p_away
+2026-11-21T17:48:07Z,0e0672de05,67aa594b42,2026-11-21T19:45,Ligue 1,5802991,Lens,Toulouse,lens,toulouse,1.0,1.0,Jean-Clair Todibo; Odsonne Édouard; Matthieu Udol,Rasmus Nicolaisen; Niklas Schmidt,0.5229,0.2232,0.2539,0.5174,0.2288,0.2538
+2026-11-21T17:48:07Z,0e0672de05,67aa594b42,2026-11-21T19:45,Ligue 1,5802995,Monaco,Auxerre,monaco,auxerre,1.0,1.0,Folarin Balogun; Denis Zakaria; Matthis Abline,Kévin Danois; Cameron Archer; Sinaly Diomandé,0.7096,0.1705,0.1199,0.7015,0.1768,0.1217
+2026-11-21T17:48:07Z,0e0672de05,67aa594b42,2026-11-21T19:45,Ligue 1,5802998,Strasbourg,Brest,strasbourg,brest,1.0,1.0,Karim Coulibaly; Martial Godo; Ismaël Doukouré,Kamory Doumbia; Joris Chotard; Bradley Locko,0.5873,0.1966,0.2161,0.5811,0.202,0.2169
