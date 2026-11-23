@@ -377,7 +377,7 @@ match_id,verified,date,competition,home,away,home_score,away_score,fetched
 4422062,agree,2024-10-15,UEFA Nations League C,Kosovo,Cyprus,3,0,1
 4422063,agree,2024-10-15,UEFA Nations League C,Lithuania,Romania,1,2,1
 4422064,agree,2024-11-15,UEFA Nations League C,Cyprus,Lithuania,2,1,1
-4422065,conflict,2024-11-15,UEFA Nations League C,Romania,Kosovo,3,0,1
+4422065,agree,2024-11-15,UEFA Nations League C,Romania,Kosovo,3,0,1
 4422066,agree,2024-11-18,UEFA Nations League C,Kosovo,Lithuania,1,0,1
 4422067,agree,2024-11-18,UEFA Nations League C,Romania,Cyprus,4,1,1
 4422068,agree,2024-09-06,UEFA Nations League B,Iceland,Montenegro,2,0,1
@@ -1579,7 +1579,7 @@ match_id,verified,date,competition,home,away,home_score,away_score,fetched
 5344896,agree,2026-06-08,Friendlies,France,Northern Ireland,3,1,1
 5349852,agree,2026-06-07,Friendlies,Ecuador,Guatemala,3,0,1
 5406266,agree,2026-06-06,Friendlies,Qatar,El Salvador,0,0,1
-5406267,conflict,2026-06-05,Friendlies,Czech Republic,Guatemala,3,1,1
+5406267,agree,2026-06-05,Friendlies,Czech Republic,Guatemala,3,1,1
 5418293,agree,2026-05-31,Friendlies,Japan,Iceland,1,0,1
 5418294,agree,2026-05-31,Friendlies,Switzerland,Jordan,4,1,1
 5418295,agree,2026-06-04,Friendlies,Slovenia,Cyprus,1,1,1
@@ -1677,7 +1677,7 @@ match_id,verified,date,competition,home,away,home_score,away_score,fetched
 5737563,agree,2026-06-09,Friendlies,Ethiopia,Malawi,1,1,1
 5737566,agree,2026-06-06,Friendlies,Sierra Leone,Liberia,1,0,1
 5737567,agree,2026-06-09,Friendlies,Liberia,Sierra Leone,3,1,1
-5737568,conflict,2026-06-06,Friendlies,Cape Verde,Bermuda,3,0,1
+5737568,agree,2026-06-06,Friendlies,Cape Verde,Bermuda,3,0,1
 5737596,agree,2026-06-07,Friendlies,Curaçao,Aruba,4,0,1
 5737597,fotmob_only,2026-06-07,Friendlies,Oman,Mozambique,4,1,1
 5737634,agree,2026-06-09,Friendlies,China,Thailand,0,0,1
@@ -1686,7 +1686,7 @@ match_id,verified,date,competition,home,away,home_score,away_score,fetched
 5737640,agree,2026-06-10,Friendlies,Iraq,Venezuela,0,2,1
 5739432,agree,2026-06-04,Friendlies,Iran,Mali,2,0,1
 5744890,agree,2026-06-05,Friendlies,Benin,Niger,1,1,1
-5745231,agree,2026-06-06,Friendlies,Jamaica,South Africa,0,1,1
+5745231,conflict,2026-06-06,Friendlies,Jamaica,South Africa,0,1,1
 5747553,agree,2026-06-09,Friendlies,Indonesia,Mozambique,1,0,1
 5748881,agree,2026-06-06,Friendlies,British Virgin Islands,Bonaire,2,0,1
 5751716,fotmob_only,2026-06-08,Friendlies,Sri Lanka,Bhutan,4,1,1
@@ -1930,7 +1930,7 @@ match_id,verified,date,competition,home,away,home_score,away_score,fetched
 6299699,agree,2026-09-28,Friendlies,Kyrgyzstan,Maldives,5,0,1
 6299700,agree,2026-10-04,Friendlies,Egypt,South Africa,0,1,1
 6299702,agree,2026-10-05,Friendlies,Uganda,DR Congo,1,1,1
-6299703,conflict,2026-10-05,Friendlies,Sri Lanka,Mauritius,3,2,1
+6299703,agree,2026-10-05,Friendlies,Sri Lanka,Mauritius,3,2,1
 6309723,agree,2026-09-28,Friendlies,Tajikistan,Palestine,2,4,1
 6315013,agree,2026-09-28,Friendlies,Japan,Venezuela,2,1,1
 6315046,agree,2026-10-01,Friendlies,Panama,New Zealand,1,1,1
