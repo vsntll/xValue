@@ -4,45 +4,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>xValue</title>
-<meta name="description" content="Big-five-league player stats, value model, match odds, Elo ratings and games.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 5l10 9 10-9' stroke='%231ee68c' stroke-width='3.5'/%3E%3Crect x='4' y='14' width='56' height='46' rx='12' fill='%23010a06' stroke='%231ee68c' stroke-width='4'/%3E%3Cpath d='M19 27l22 22M19 49L44 24M33 24h11v11' stroke='%23f0c24a' stroke-width='6'/%3E%3C/g%3E%3C/svg%3E">
+<meta name="description" content="Every player has a price. xValue prices every footballer in Europe's big five leagues and calls every match before kickoff, with the record kept in public.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' rx='14' fill='%2308090a'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='serif' font-size='44' fill='%23f5f4fa'%3Ex%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Doto:wght@700;900&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=UnifrakturMaguntia&family=EB+Garamond:ital,wght@0,500;1,400&display=swap">
 <style>
-  /* Retro stadium scoreboard on a studio layout: black hero card, LED amber, kit-stripe accents. */
-  /* Dark CRT broadcast: emerald phosphor, gold LED, scanlines over everything. */
+  /* Night match: a floodlit tunnel arch on black, the product shown in dark windows. */
   :root{
     color-scheme:dark;
-    --bg:#020c08; --surface:#071a12; --surface-2:#0b2419; --surface-3:#123324;
-    --border:#163a2a; --border-strong:#24553f;
-    --text:#e6f6ec; --text-dim:#9fc2b0; --text-faint:#6a8f7d; --muted:#8fb3a2;
-    --screen:#010a06; --glow:rgba(30,230,140,.18);
-    --emerald:#1ee68c; --emerald-hi:#7dffc2; --gold:#f0c24a;
-    --led:#f0c24a; --led-glow:rgba(240,194,74,.55);
-    --accent:#1ee68c; --accent-ink:#00140b; --accent-2:#f0c24a; --accent-2-ink:#1a1200;
-    --win:#1ec97c; --draw:#e8b53a; --loss:#ff5f57;
-    --chip-bg:#0f2c20; --shadow:none;
-    --radius-xl:32px; --radius-lg:22px; --radius-md:14px; --radius-sm:10px;
-    --font-display:'Archivo', 'Arial Black', sans-serif;
-    --font-body:'Inter', -apple-system, 'Segoe UI', sans-serif;
-    --font-mono:'Inter', sans-serif;
-    --font-led:'Doto', 'Courier New', monospace;
+    --bg:#08090a; --bg-2:#0c0d10; --panel:#121317; --panel-2:#17181d; --panel-3:#1d1e24;
+    --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+    --ink:#f5f4fa; --ink-2:#b6b8c4; --ink-3:#868996;
+    --cool:#8b9cff; --cool-deep:#4b63ff; --ember:#b8462a; --ember-hi:#ff8f66; --gold:#c9cbd6;
+    --band:var(--cool);
+    --hit:#8b9cff; --hit-ink:#8b9cff; --miss:#ff8f66; --miss-ink:#ff8f66;
+    --ln-model:#8b9cff; --ln-dc:#c9d1ff; --ln-close:#f5f4fa; --ln-open:#6b6e7a;
+    --ln-home:#8b9cff; --ln-draw:#9a9daa; --ln-away:#ff8f66;
+    /* names the script still uses */
+    --text:var(--ink); --text-dim:var(--ink-2); --text-faint:var(--ink-3); --muted:var(--ink-3);
+    --border:var(--line-2); --surface:var(--panel); --surface-2:var(--panel-2); --surface-3:var(--panel-3);
+    --accent:var(--cool); --accent-2:var(--cool); --win:var(--hit); --draw:var(--gold); --loss:var(--miss);
+    --font-black:'UnifrakturMaguntia', 'Old English Text MT', serif;
+    --font-serif:'EB Garamond', Garamond, Georgia, serif;
+    --font-body:'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono:'Geist Mono', ui-monospace, Consolas, monospace;
+    --r:14px; --r-sm:8px;
+    --depth:0 1px 0 rgba(255,255,255,.04) inset, 0 30px 60px -30px rgba(0,0,0,.8);
+    --ease:cubic-bezier(.16,1,.3,1);
   }
 
   *{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
-  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--font-body);
-        font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased; }
-  ::selection{ background:var(--led); color:#000; }
-  h1,h2,h3,h4{ font-family:var(--font-display); font-weight:800; font-stretch:112%; text-wrap:balance;
-               margin:0; letter-spacing:-.01em; }
-  .num{ font-variant-numeric:tabular-nums; }
+  html{ scrollbar-color:#2a2c33 var(--bg);
+        background:
+          linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px) 0 0/64px 64px,
+          linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px) 0 0/64px 64px,
+          var(--bg); background-attachment:fixed; }
+  @media (prefers-reduced-motion: no-preference){ html{ scroll-behavior:smooth; } }
+  body{ margin:0; color:var(--ink); font-family:var(--font-body); font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased; }
+  /* strands of floodlight that run behind the landing, blue from the left and ember from the right */
+  .field{ position:fixed; inset:0; z-index:-1; width:100%; height:100%; pointer-events:none; transition:opacity .8s var(--ease); }
+  ::selection{ background:rgba(139,156,255,.35); color:#fff; }
+  ::-webkit-scrollbar{ width:10px; height:10px; }
+  ::-webkit-scrollbar-thumb{ background:#2a2c33; border-radius:10px; border:2px solid var(--bg); }
+  ::-webkit-scrollbar-track{ background:var(--bg); }
+  input{ caret-color:var(--ember-hi); }
+  h1,h2,h3,h4{ margin:0; font-weight:500; line-height:1.1; letter-spacing:-.02em; text-wrap:balance; color:var(--ink); }
+  .num, table, .wrow .wv, .ratio-badge, .elo-tag{ font-variant-numeric:tabular-nums; }
   button{ font-family:inherit; }
   a{ color:inherit; }
-  :focus-visible{ outline:3px solid var(--led); outline-offset:2px; border-radius:6px; }
+  :focus-visible{ outline:2px solid var(--cool); outline-offset:3px; border-radius:6px; }
   [hidden]{ display:none !important; }
   .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .wx{ font-family:var(--font-serif); font-style:italic; font-weight:400; margin-right:.04em; }   /* a blackletter x reads as r */
+  @keyframes settle{ from{ opacity:0; transform:translateY(8px); } }
+  @keyframes grow{ from{ transform:scaleX(0); } }
 
   /* ---------- floating nav ---------- */
   .nav{ position:fixed; top:14px; left:0; right:0; z-index:50; display:flex; align-items:center;
