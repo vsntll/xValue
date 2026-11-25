@@ -2543,7 +2543,7 @@
       '<path d="M78 130 h34 l-8 16 h-18 Z" fill="#0b1512"/>' +
       '<g stroke="#0b1512" stroke-width="6" opacity="0.55">' +
         '<line x1="70" y1="140" x2="62" y2="210"/><line x1="95" y1="140" x2="95" y2="210"/><line x1="120" y1="140" x2="128" y2="210"/></g>' +
-      '<text x="95" y="192" text-anchor="middle" font-family="Arial Narrow, sans-serif" font-weight="700" font-size="30" fill="#fff">16</text>' +
+      '<text x="95" y="192" text-anchor="middle" font-family="Geist, sans-serif" font-weight="700" font-size="32" fill="#fff">16</text>' +
       // head
       '<circle cx="95" cy="86" r="40" fill="#e8b58c"/>' +
       '<path d="M55 78 C58 40 132 40 135 78 C135 60 120 44 95 44 C70 44 55 60 55 78 Z" fill="#2a1a12"/>' +
@@ -2552,7 +2552,7 @@
       // ball
       '<circle cx="150" cy="150" r="15" fill="#fff" stroke="#0b1512" stroke-width="2"/>' +
       '<path d="M150 140 l6 5 -2 8 -8 0 -2 -8 Z" fill="#0b1512"/>' +
-      '<text x="95" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" letter-spacing="1" fill="#fff">FERMÍN LÓPEZ</text>' +
+      '<text x="95" y="222" text-anchor="middle" font-family="Geist, sans-serif" font-weight="700" font-size="16" fill="#fff">FERMÍN LÓPEZ</text>' +
     '</svg>';
   // the real photo if one was baked in (site/fermin.png at export time), else the SVG above
   var _ferminSrc = (document.getElementById('ferminImg') || {}).src || '';
@@ -2600,7 +2600,7 @@
     var bsq = GAMES.sim && GAMES.sim.squads[FERMIN_KEY];
     if(bsq) bsq.forEach(function(x){ x.w = (x.p.toLowerCase().indexOf('fermin l')===0) ? 40 : 0.02; });
 
-    try { renderTiles(); renderPlayers(); renderFixtures(); renderLeaderboard(); } catch(e){}
+    try { renderTiles(); renderPlayers(); renderFixtures(); renderLeaderboard(); renderStars(); } catch(e){}
     ['sim','streak'].forEach(function(name){
       var wasVisible = !document.getElementById('tab-'+name).hidden;
       if(name==='sim') simInited = false; else streakInited = false;
@@ -2633,6 +2633,16 @@
     if(_fbuf.indexOf('fermin') >= 0) ferminEgg();
   });
   if(/fermin/i.test(location.hash) || /fermin/i.test(location.search)){ ferminEgg(); }
+  // in-page links like <a href="#track"> switch tabs instead of jumping to nothing
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    var btn = a && document.querySelector('.tab-btn[data-tab="' + a.getAttribute('href').slice(1).replace(/^tab-/, '') + '"]');
+    if(btn){ e.preventDefault(); btn.click(); }
+  });
+  // open the tab a shared link points at, e.g. index.html#track
+  var linked = /^#\w+$/.test(location.hash) && document.querySelector('.tab-btn[data-tab="' + location.hash.slice(1) + '"]');
+  showTab(document.querySelector('.tab-btn[data-tab="track"]'), false);
+  if(linked) setTimeout(function(){ linked.click(); }, BOOT_MS + 1050);   // after the startup flight lands and scrolling unlocks
 })();
 </script>
 </body>
