@@ -2336,72 +2336,166 @@
     }
   }
 
-  // ================= HERO: stats, scoreboard, marquees, reveals =================
+  // ================= cover, stars, reveals =================
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // startup screen: hold ~2.5s from first paint, then "switch the set off" and let the hero power on
-  var BOOT_LEFT = Math.max(0, 2500 - performance.now());
-  setTimeout(function(){
-    var boot = document.getElementById('boot');
-    if(boot) boot.classList.add('out');
-    document.documentElement.classList.remove('booting');
-    setTimeout(function(){ if(boot) boot.remove(); moveInd(); }, 600);
-  }, BOOT_LEFT);
-  var upcoming = fixtures.slice().sort(function(a,b){ return a.date<b.date?-1:1; });
-
-  (function heroStats(){
-    var items = [[players.length,'players tracked'],[fixtures.length,'fixtures priced'],
-                 [teamsList.length,'clubs'],[leagues.length,'leagues']];
-    var el = document.getElementById('heroStats');
-    el.innerHTML = items.map(function(it){ return '<div class="stat"><b data-n="'+it[0]+'">'+(reduceMotion?it[0].toLocaleString():'0')+'</b><span>'+it[1]+'</span></div>'; }).join('');
-    if(reduceMotion) return;
-    var t0 = null, nums = el.querySelectorAll('b');
-    function step(t){
-      if(t0===null) t0 = t;
-      var k = Math.min(1, (t-t0)/1400), e = 1 - Math.pow(1-k, 3);
-      nums.forEach(function(b){ b.textContent = Math.round(+b.dataset.n * e).toLocaleString(); });
-      if(k<1) requestAnimationFrame(step);
+  // startup screen: count to 100 on the crosshair, then the wordmark flies to its corner and the arch opens out of the line
+  var BOOT_MS = 1700, bootT0 = performance.now(), booted = false;
+  var bootEl = document.getElementById('boot'), bootCount = document.getElementById('bootCount');
+  (function count(){
+    if(booted) return;
+    var k = Math.min(1, (performance.now() - bootT0) / (BOOT_MS - 150));
+    bootCount.textContent = String(Math.round(100 * (1 - Math.pow(1 - k, 3)))).padStart(3, '0') + '%';
+    if(k < 1) requestAnimationFrame(count);
+  })();
+  function endBoot(){
+    if(booted) return; booted = true;
+    bootCount.textContent = '100%';
+    bootEl.classList.add('out');
+    document.getElementById('top').classList.add('go');
+    var word = document.getElementById('bootWord'), logo = document.querySelector('.hero-logo');
+    function land(){
+      document.documentElement.classList.remove('booting');
+      bootEl.remove(); moveInd();
     }
-    setTimeout(function(){ requestAnimationFrame(step); }, BOOT_LEFT + 900);
+    if(reduceMotion || !word.animate){ land(); return; }
+    var a = word.getBoundingClientRect(), b = logo.getBoundingClientRect(), k = b.width / a.width;
+    word.style.animation = 'none';
+    var fly = word.animate([
+      { transform:'translate(-50%,-50%)' },
+      { transform:'translate(calc(-50% + ' + ((b.left + b.width/2) - (a.left + a.width/2)) + 'px), calc(-50% + ' +
+          ((b.top + b.height/2) - (a.top + a.height/2)) + 'px)) scale(' + k + ')' }
+    ], { duration:1000, easing:'cubic-bezier(.7,0,.2,1)', fill:'forwards' });
+    fly.onfinish = land;
+  }
+  setTimeout(endBoot, Math.max(0, BOOT_MS - performance.now()));
+  // a click or any key skips the startup screen
+  bootEl.addEventListener('click', endBoot);
+  window.addEventListener('keydown', function(){ if(!booted) endBoot(); });
+
+  // the strand field: thin trails steered by a slow wave field, cool on the left, ember on the right
+  (function strands(){
+    var cv = document.getElementById('field'), cx = cv.getContext && cv.getContext('2d');
+    if(!cx) return;
+    var W, H, dpr, ps = [], t = 0, running = false, nav = document.querySelector('.nav');
+    function spawn(p, anywhere){
+      var r = Math.random(), u = r < .5 ? Math.pow(r * 2, 1.6) * .5 : 1 - Math.pow((1 - r) * 2, 1.6) * .5;   // denser toward the sides
+      p.x = u * W; p.y = anywhere ? Math.random() * H : -10;
+      p.life = 200 + Math.random() * 380;
+      var side = Math.abs(u - .5) * 2;   // the centre stays dark so the words read
+      p.a = (.06 + Math.random() * .16) * (.12 + side * .88);
+      p.c = u < .5 ? (Math.random() < .85 ? '96,116,255,' : '190,200,255,') : (Math.random() < .85 ? '255,104,58,' : '255,190,150,');
+    }
+    function size(){
+      dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      W = innerWidth; H = innerHeight;
+      cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      cx.lineWidth = .7; cx.lineCap = 'round';
+      var n = Math.round(Math.min(1600, W * H / 800));
+      ps = []; for(var i = 0; i < n; i++){ var p = {}; spawn(p, true); ps.push(p); }
+    }
+    function step(){
+      cx.globalCompositeOperation = 'destination-out';
+      cx.fillStyle = 'rgba(0,0,0,.022)'; cx.fillRect(0, 0, W, H);
+      cx.globalCompositeOperation = 'lighter';
+      t += .0012;
+      for(var i = 0; i < ps.length; i++){
+        var p = ps[i];
+        // a falling sheet bent into long, slow waves: strands of floodlight
+        var ang = 1.5708 + Math.sin(p.x * .0019 + t * 2.4) * .62 + Math.sin(p.y * .0026 + p.x * .0011 - t * 1.7) * .34;
+        var nx = p.x + Math.cos(ang) * 1.3, ny = p.y + Math.sin(ang) * 1.3;
+        cx.strokeStyle = 'rgba(' + p.c + p.a + ')';
+        cx.beginPath(); cx.moveTo(p.x, p.y); cx.lineTo(nx, ny); cx.stroke();
+        p.x = nx; p.y = ny;
+        if(--p.life < 0 || ny > H + 10 || nx < -10 || nx > W + 10) spawn(p, Math.random() < .7);
+      }
+    }
+    function loop(){ if(!running) return; step(); requestAnimationFrame(loop); }
+    function setRun(on){ if(on === running) return; running = on; if(on) requestAnimationFrame(loop); }
+    // dims as the landing scrolls away and stops once the pages below are in use, so it never moves behind data
+    function onScroll(){
+      var stop = nav ? nav.getBoundingClientRect().top < 120 : scrollY > H * 2;
+      cv.style.opacity = stop ? 0 : Math.max(.35, 1 - scrollY / (H * 1.2));
+      if(!reduceMotion) setRun(!stop && !document.hidden);
+    }
+    size();
+    if(reduceMotion){ for(var i = 0; i < 400; i++) step(); }   // one still frame
+    addEventListener('resize', function(){ var r = running; size(); if(reduceMotion || !r) for(var i = 0; i < 400; i++) step(); });
+    addEventListener('scroll', onScroll, { passive:true });
+    document.addEventListener('visibilitychange', onScroll);
+    onScroll();
   })();
 
-  (function scoreboard(){
-    var board = document.getElementById('board');
-    if(!upcoming.length){ board.hidden = true; return; }
-    var i = 0;
-    function flaps(s){ return '<span class="flap">'+esc(s)+'</span>'; }
-    function show(){
-      var fx = upcoming[i % upcoming.length];
-      document.getElementById('boardMeta').textContent = fx.date.slice(0,10) + ', ' + fx.league;
-      document.getElementById('bHome').innerHTML = flaps(teamShort(fx.home));
-      document.getElementById('bAway').innerHTML = flaps(teamShort(fx.away));
-      document.getElementById('bHomeP').innerHTML = flaps(pct(fx.p_home_win));
-      document.getElementById('bAwayP').innerHTML = flaps(pct(fx.p_away_win));
-      document.getElementById('bDraw').textContent = pct(fx.p_draw);
-      board.classList.remove('flip'); void board.offsetWidth; board.classList.add('flip');
-      i++;
+  // ---------- the stars window and the proof ----------
+  function starPool(){   // the priciest players with a real listing: the names a casual fan knows
+    var pool = players.filter(function(p){ return p.value && p.value.listed_value_eur > 0 && !p.value.listed_is_estimate && p.fotmob_id; })
+      .sort(function(a,b){ return b.value.listed_value_eur - a.value.listed_value_eur; });
+    if(FERMIN){ var fp = players.filter(isFermin)[0]; if(fp) pool = [fp].concat(pool.filter(function(p){ return !isFermin(p); })); }
+    return pool;
+  }
+  function verdictHtml(r){
+    // r = model worth / price tag, so the gap reads as a share of the price tag
+    if(r >= 1.1) return '<span class="verdict up">Worth '+Math.round((r-1)*100)+'% more</span>';
+    if(r <= 0.9) return '<span class="verdict down">Worth '+Math.round((1-r)*100)+'% less</span>';
+    return '<span class="verdict even">Fair price</span>';
+  }
+  function renderStars(){
+    var stars = starPool().slice(0,10);
+    document.getElementById('starRows').innerHTML = stars.map(function(p, i){
+      var v = p.value;
+      return '<tr style="animation-delay:'+(0.25 + i*0.06).toFixed(2)+'s" data-player="'+esc(p.player)+'" data-team="'+esc(p.team_key)+'" tabindex="0" aria-label="'+esc(p.player)+': open his full season">' +
+        '<td><div class="star-id">'+playerPhoto(p.fotmob_id, 34).replace(' loading="lazy"','')+'<b>'+esc(p.player)+'</b></div></td>' +
+        '<td class="col-club"><span class="star-club">'+crest(p.team_key, p.squad, 18)+esc(teamShort(p.squad))+'</span></td>' +
+        '<td class="num star-worth">'+eur(v.predicted_eur)+'</td><td class="num col-tag">'+eur(v.listed_value_eur)+'</td>' +
+        '<td>'+verdictHtml(v.ratio)+'</td></tr>';
+    }).join('');
+    document.getElementById('starsAsof').textContent = 'Updated ' + DATA.generated_asof + ' · ' + stars.length + ' of ' + players.length.toLocaleString('en-GB');
+    renderProof(stars);
+  }
+  function renderProof(stars){
+    var V = (DATA.metrics || {}).value || {};
+    if(V.within_2x != null && V.n_test){
+      document.getElementById('proofQuote').innerHTML = 'Tested on <b>' + Number(V.n_test).toLocaleString('en-GB') +
+        ' players it had never seen</b>, the model landed within double or half of the real price <b>' + Math.round(V.within_2x*100) + '% of the time</b>.';
+      document.getElementById('proofCite').innerHTML = '<b>Value model</b> &middot; held-out seasons ' + esc((V.test_seasons||[]).join(' and '));
     }
-    show();
-    if(!reduceMotion) setInterval(function(){ if(!document.hidden) show(); }, 4200);
-  })();
+    var pts = players.filter(function(p){ return p.value && p.value.predicted_eur > 0 && p.value.listed_value_eur > 0 && !p.value.listed_is_estimate; });
+    if(pts.length < 50) return;
+    var W = 560, H = 360, L = 48, R = 12, T = 12, B = 34, lo = 5.7, hi = 8.3;   // log10 euros: 500k to 200M
+    function sx(v){ return L + (Math.log10(v)-lo)/(hi-lo)*(W-L-R); }
+    function sy(v){ return T + (1-(Math.log10(v)-lo)/(hi-lo))*(H-T-B); }
+    function inR(v){ var g = Math.log10(v); return g >= lo && g <= hi; }
+    var g = '';
+    [[1e6,'€1M'],[1e7,'€10M'],[1e8,'€100M']].forEach(function(t){
+      g += '<line x1="'+L+'" x2="'+(W-R)+'" y1="'+sy(t[0]).toFixed(1)+'" y2="'+sy(t[0]).toFixed(1)+'" stroke="rgba(255,255,255,.06)"/>' +
+           '<text x="'+(L-8)+'" y="'+(sy(t[0])+4).toFixed(1)+'" text-anchor="end">'+t[1]+'</text>' +
+           '<text x="'+sx(t[0]).toFixed(1)+'" y="'+(H-10)+'" text-anchor="middle">'+t[1]+'</text>';
+    });
+    var dots = pts.filter(function(p){ return inR(p.value.listed_value_eur) && inR(p.value.predicted_eur); });
+    dots.forEach(function(p){
+      g += '<circle cx="'+sx(p.value.listed_value_eur).toFixed(1)+'" cy="'+sy(p.value.predicted_eur).toFixed(1)+'" r="2.3" fill="rgba(139,156,255,.5)" style="animation-delay:'+(0.1 + (sx(p.value.listed_value_eur)-L)/(W-L)*1.1).toFixed(2)+'s"/>';
+    });
+    g += '<line x1="'+sx(Math.pow(10,lo))+'" y1="'+sy(Math.pow(10,lo))+'" x2="'+sx(Math.pow(10,hi))+'" y2="'+sy(Math.pow(10,hi))+'" stroke="#ff8f66" stroke-width="1.5" class="fair"/>';
+    (stars||[]).forEach(function(p){ if(inR(p.value.listed_value_eur) && inR(p.value.predicted_eur))
+      g += '<circle cx="'+sx(p.value.listed_value_eur).toFixed(1)+'" cy="'+sy(p.value.predicted_eur).toFixed(1)+'" r="4" fill="#fff" style="animation-delay:1.5s"/>'; });
+    document.getElementById('proofChart').innerHTML =
+      '<div class="cap">This season &middot; model value (up) against price tag (across)</div>' +
+      '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Model value against price tag for '+dots.length.toLocaleString('en-GB')+' players; most dots sit close to the fair-price line">'+g+'</svg>' +
+      '<div class="proof-legend"><span><i style="background:#8b9cff"></i>'+dots.length.toLocaleString('en-GB')+' players with a real market listing</span>' +
+      '<span><i style="background:#fff"></i>The ten stars above</span><span><i style="background:#ff8f66"></i>Model agrees with the market</span></div>';
+    document.getElementById('proofNote').textContent = 'The chart shows this season’s values, so it illustrates the claim rather than proving it: the headline figure is measured only on seasons the model never trained on. Above the line, the model thinks a player is worth more than his price tag; below it, less.';
+  }
+  renderStars();
+  function openStar(tr){ if(tr) goToPlayer(tr.getAttribute('data-player'), tr.getAttribute('data-team')); }
+  document.getElementById('starRows').addEventListener('click', function(e){ openStar(e.target.closest('tr')); });
+  document.getElementById('starRows').addEventListener('keydown', function(e){ if(e.key==='Enter') openStar(e.target.closest('tr')); });
+  document.getElementById('starsAll').addEventListener('click', function(){ document.querySelector('.tab-btn[data-tab="players"]').click(); });
 
-  (function marquees(){
-    function fill(id, html){
-      var el = document.getElementById(id);
-      el.innerHTML = html;
-      var clone = el.cloneNode(true);   // second copy makes the loop seamless; hidden from screen readers
-      clone.removeAttribute('id'); clone.setAttribute('aria-hidden','true');
-      el.parentNode.appendChild(clone);
-    }
-    fill('mqFix', upcoming.slice(0, 24).map(function(fx){
-      return '<span class="mq-item">'+esc(teamShort(fx.home))+' <span class="led">'+pct(fx.p_home_win)+'</span>' +
-        '<span class="mq-sep">/</span><span class="led">'+pct(fx.p_draw)+'</span><span class="mq-sep">/</span>' +
-        '<span class="led">'+pct(fx.p_away_win)+'</span> '+esc(teamShort(fx.away))+'</span>';
-    }).join(''));
-    var scorers = players.slice().sort(function(a,b){ return (b.current.gls||0)-(a.current.gls||0); }).slice(0, 16);
-    fill('mqGoals', scorers.map(function(p){
-      return '<span class="mq-item"><span class="g">'+num(p.current.gls)+'</span>'+esc(p.player)+
-        ' <span style="opacity:.6">'+esc(teamShort(p.squad))+'</span></span>';
-    }).join(''));
+  (function pauseOffscreen(){
+    if(!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ en.target.classList.toggle('off', !en.isIntersecting); });
+    });
+    document.querySelectorAll('.hero').forEach(function(e){ io.observe(e); });
   })();
 
   (function reveals(){
@@ -2414,6 +2508,13 @@
   })();
 
   // ---------- footer ----------
+  var footKey = document.getElementById('footReveal');
+  footKey.addEventListener('click', function(){
+    var open = footKey.getAttribute('aria-expanded') !== 'true';
+    footKey.setAttribute('aria-expanded', open);
+    document.getElementById('footerNotes').hidden = !open;
+    footKey.textContent = open ? 'Hide the model notes' : 'Show the model notes';
+  });
   document.getElementById('footerNotes').innerHTML =
     '<div style="margin-bottom:8px;">The full arithmetic behind every number here, worked on real fixtures and '+
     'players, lives on the <b>How It Works</b> tab.</div>' +
