@@ -1023,48 +1023,59 @@
     var a = document.querySelector('.tab-btn.active');
     if(a && tabInd){ tabInd.style.width = a.offsetWidth+'px'; tabInd.style.transform = 'translateX('+a.offsetLeft+'px)';
       a.parentNode.scrollLeft = a.offsetLeft - (a.parentNode.clientWidth - a.offsetWidth)/2; }
+    tabFades();
   }
+  // edge fades tell you the tab strip scrolls when it's wider than the nav (phones, narrow laptops)
+  var tabsEl = document.querySelector('.tabs');
+  function tabFades(){
+    var max = tabsEl.scrollWidth - tabsEl.clientWidth;
+    tabsEl.classList.toggle('more-l', tabsEl.scrollLeft > 4);
+    tabsEl.classList.toggle('more-r', tabsEl.scrollLeft < max - 4);
+  }
+  tabsEl.addEventListener('scroll', tabFades, {passive:true});
+  window.addEventListener('resize', tabFades);
   window.addEventListener('resize', moveInd);
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(moveInd);
   moveInd();
-  tabBtns.forEach(function(b){
-    b.addEventListener('click', function(){
-      tabBtns.forEach(function(x){x.classList.remove('active');});
-      b.classList.add('active');
-      moveInd();
-      b.scrollIntoView({block:'nearest', inline:'center'});
-      // channel change: a burst of static and an on-screen channel number, like flipping a CRT
-      var stc = document.getElementById('crtStatic'), osd = document.getElementById('osd');
-      var ch = Array.prototype.indexOf.call(tabBtns, b) + 1;
-      osd.textContent = 'CH ' + (ch<10?'0':'') + ch + ' ' + b.textContent;
-      [stc, osd].forEach(function(el){ el.classList.remove('on'); void el.offsetWidth; el.classList.add('on'); });
-      var t = b.getAttribute('data-tab');
-      ['players','fixtures','teams','screen','rankings','sim','streak','track','method'].forEach(function(name){
-        var sec = document.getElementById('tab-'+name);
-        sec.hidden = t!==name;
-        if(t===name){   // bars grow on the first render after the tab is shown, not on every re-render
-          sec.classList.add('enter'); clearTimeout(sec._et);
-          sec._et = setTimeout(function(){ sec.classList.remove('enter'); }, 1200);
-          var top = sec.getBoundingClientRect().top + window.scrollY - 90;
-          if(window.scrollY > top) window.scrollTo({top: top});
-        }
-      });
-      if(t==='sim' && !simInited){ simInited = true; initSim(); }
-      if(t==='streak' && !streakInited){ streakInited = true; initStreak(); }
-      if(t==='rankings' && !rankingsInited){ rankingsInited = true; initRankings(); }
-      if(t==='screen' && !screenInited){ screenInited = true; initScreen(); }
-      if(t==='track' && !trackInited){ trackInited = true; renderTrack(); }
+  var SECTIONS = ['track','players','fixtures','teams','screen','rankings','method','sim','streak'];
+  function showTab(b, scroll){
+    tabBtns.forEach(function(x){x.classList.remove('active'); x.removeAttribute('aria-current');});
+    b.classList.add('active'); b.setAttribute('aria-current', 'page');
+    moveInd();
+    var t = b.getAttribute('data-tab');
+    if(scroll && !/fermin/i.test(location.hash)) history.replaceState(null, '', '#' + t);   // shareable link to this tab
+    SECTIONS.forEach(function(name){
+      var sec = document.getElementById('tab-'+name);
+      sec.hidden = t!==name;
+      if(t===name && scroll){   // bars grow on the first render after the tab is shown, not on every re-render
+        sec.classList.add('enter'); clearTimeout(sec._et);
+        sec._et = setTimeout(function(){ sec.classList.remove('enter'); }, 1200);
+        // bring the new page into view under the sticky tabs
+        var nav = document.querySelector('.nav');
+        var anchor = document.querySelector('.toolbar') || sec;   // keep the league filter in view above the page
+        var top = anchor.getBoundingClientRect().top + window.scrollY - (nav ? nav.offsetHeight : 0) - 8;
+        if(window.scrollY > top || window.scrollY < top - 40)
+          window.scrollTo({top: top, behavior:'auto'});
+      }
     });
-  });
+    if(t==='sim' && !simInited){ simInited = true; initSim(); }
+    if(t==='streak' && !streakInited){ streakInited = true; initStreak(); }
+    if(t==='rankings' && !rankingsInited){ rankingsInited = true; initRankings(); }
+    if(t==='screen' && !screenInited){ screenInited = true; initScreen(); }
+    if(t==='track' && !trackInited){ trackInited = true; renderTrack(); }
+  }
+  tabBtns.forEach(function(b){ b.addEventListener('click', function(){ showTab(b, true); }); });
 
   // ---------- summary tiles ----------
   function renderTiles(){
     var tiles = document.getElementById('tiles');
     var pl = players.filter(inLeague), fl = fixtures.filter(inLeague);
     var topScorer = pl.slice().sort(function(a,b){return (b.current.gls||0)-(a.current.gls||0);})[0];
-    var withVal = pl.filter(function(p){return p.value && !p.value.listed_is_estimate && (p.current.min||0) >= 180;});
+    // same guards as the leaderboard and Value Screen, so the tile can't show an outlier they exclude
+    var withVal = pl.filter(function(p){return p.value && !p.value.listed_is_estimate && (p.current.min||0) >= LB_MIN_MIN && (p.value.listed_value_eur||0) >= LB_MIN_LISTED;});
     var bargain = withVal.slice().sort(function(a,b){return (b.value.ratio||0)-(a.value.ratio||0);})[0];
-    var nextFx = fl.slice().sort(function(a,b){return a.date<b.date?-1:1;})[0];
+    var today = new Date().toISOString().slice(0,10), ahead = fl.filter(function(f){ return f.date.slice(0,10) >= today; });
+    var nextFx = (ahead.length ? ahead : fl).slice().sort(function(a,b){return a.date<b.date?-1:1;})[0];
     var items = [];
     if(FERMIN){
       var fp = players.filter(isFermin)[0];
@@ -1074,7 +1085,7 @@
       items.push({k:'Top scorer', v:topScorer.player, d:topScorer.squad + ' — ' + num(topScorer.current.gls) + ' goals in ' + num(topScorer.current.min) + ' min' + (tsE!=null?' · Elo ' + Math.round(tsE):'')}); }
     if(bargain){ var bgE = eloRating(bargain.player, bargain.team_key);
       items.push({k:'Biggest value gap', v:bargain.player, d:'Model: ' + eur(bargain.value.predicted_eur) + ' vs listed ' + eur(bargain.value.listed_value_eur) + (bgE!=null?' · Elo ' + Math.round(bgE):'')}); }
-    if(nextFx) items.push({k:'Next up', v: teamShort(nextFx.home) + ' vs ' + teamShort(nextFx.away), d: nextFx.date.slice(0,10) + ' (' + nextFx.league + ') — ' + pct(nextFx.p_home_win) + ' / ' + pct(nextFx.p_draw) + ' / ' + pct(nextFx.p_away_win)});
+    if(nextFx) items.push({k: ahead.length ? 'Next up' : 'Next up as of ' + DATA.generated_asof, v: teamShort(nextFx.home) + ' vs ' + teamShort(nextFx.away), d: nextFx.date.slice(0,10) + ' (' + nextFx.league + ') — ' + pct(nextFx.p_home_win) + ' / ' + pct(nextFx.p_draw) + ' / ' + pct(nextFx.p_away_win)});
     items.push({k:'Coverage', v: pl.length + ' players', d: fl.length + ' upcoming fixtures modelled'});
     tiles.innerHTML = items.map(function(it){
       return '<div class="tile"><div class="k">'+esc(it.k)+'</div><div class="v">'+esc(it.v)+'</div><div class="d">'+esc(it.d)+'</div></div>';
@@ -1121,7 +1132,7 @@
     var v = p.value;
     var ratioClass = 'fair', ratioTxt = '—';
     if(v && v.ratio!=null){
-      ratioTxt = (v.ratio>=1?'+':'') + Math.round((v.ratio-1)*100) + '%';
+      ratioTxt = vsListed(v.ratio);
       if(v.ratio>=1.15) ratioClass='bargain'; else if(v.ratio<=0.85) ratioClass='rich';
     }
     var ferm = FERMIN && isFermin(p);
@@ -1225,6 +1236,7 @@
 
   // ---------- value leaderboard ----------
   var LB_MIN_MIN = 180, LB_MIN_LISTED = 1500000;
+  function vsListed(r){ return (r>=1?'+':'') + Math.round((r-1)*100) + '%'; }
   function computeLeaderboard(){
     var pool = players.filter(inLeague).filter(function(p){
       return p.value && (p.current.min||0) >= LB_MIN_MIN && (p.value.listed_value_eur||0) >= LB_MIN_LISTED
@@ -1240,11 +1252,13 @@
     }
     return lb;
   }
+  // the gap in eighths of the bar: +300% or more fills a bargain bar, -100% fills an overpriced one
+  function gapCells(r){ var f = r>=1 ? (r-1)/3 : (1-r); return Math.max(1, Math.min(8, Math.round(f*8))); }
   function lbRowHtml(p, i){
-    var pct2 = (p.value.ratio>=1?'+':'') + Math.round((p.value.ratio-1)*100) + '%';
+    var pct2 = vsListed(p.value.ratio);
     return '<div class="lb-row"><span class="lb-rank">'+(i+1)+'</span>'+playerPhoto(p.fotmob_id,26)+crest(p.team_key,p.squad,20)+
       '<div class="lb-name"><span class="p">'+esc(p.player)+eloTag(p.player,p.team_key)+'</span><span class="s">'+esc(p.squad)+' &middot; '+esc(p.league)+'</span></div>' +
-      '<span class="lb-ratio">'+pct2+'</span></div>';
+      '<span class="lb-bar" aria-hidden="true"><b style="width:'+gapCells(p.value.ratio)*12.5+'%"></b></span><span class="lb-ratio">'+pct2+'</span></div>';
   }
   function renderLeaderboard(){
     var lb = computeLeaderboard();
@@ -1370,7 +1384,7 @@
           '<div class="a" style="width:'+ap+'%">'+(ap>=10?ap+'%':'')+'</div>' +
         '</div>' +
         '<div class="oddslabels"><span>Home win</span><span>Draw</span><span>Away win</span></div>' +
-        '<button type="button" class="fx-toggle" data-key="'+esc(key)+'">'+(isOpen?'Hide':'Show')+' anytime goalscorer &amp; assist odds ' +
+        '<button type="button" class="fx-toggle" data-key="'+esc(key)+'">'+(isOpen?'Hide':'Show')+' each player\'s chance to score or assist ' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>' +
       '</div>'
     );
@@ -1397,7 +1411,7 @@
         if(!wasOpen){
           requestAnimationFrame(function(){
             var el = document.querySelector('.fx-expand');
-            if(el) el.scrollIntoView({behavior:'smooth', block:'nearest'});
+            if(el) el.scrollIntoView({block:'nearest'});
           });
         }
       });
@@ -1425,7 +1439,7 @@
     renderPlayers();
     requestAnimationFrame(function(){
       var row = document.querySelector('#playerBody tr.prow.open');
-      if(row) row.scrollIntoView({behavior:'smooth', block:'center'});
+      if(row) row.scrollIntoView({block:'center'});
     });
   }
 
@@ -1597,8 +1611,9 @@
 
     if(methodEx){
       var fx = methodEx.fixture, pe = methodEx.prop_example, ve = methodEx.value_example;
+      var pub = fixtures.filter(function(f){ return f.home===fx.home && f.away===fx.away && f.date===fx.date; })[0];
       html += '<div class="method-card">' +
-        '<h3><span class="num-tag">1</span>Next-match win odds</h3>' +
+        '<h3><span class="num-tag">1</span>Expected goals &amp; Dixon-Coles odds</h3>' +
         '<p>Every club gets an <b>attack</b> and a <b>defence</b> rating from a Dixon-Coles model, fit on every league, cup '+
         'and European result across all five leagues from the last ~900 days (recency-weighted, so last month counts '+
         'more than two years ago). A fixture\'s expected goals: <code>exp(attack_home + defence_away + home_advantage)</code> '+
@@ -1613,12 +1628,17 @@
         wrow('Low-score correction (&rho;)', num(fx.rho,3)) +
         wrowHl(esc(fx.home)+' expected goals', num(fx.lambda_home,2)) +
         wrowHl(esc(fx.away)+' expected goals', num(fx.lambda_away,2)) +
-        wrowResult('Home win / Draw / Away win', pct(fx.p_home)+' / '+pct(fx.p_draw)+' / '+pct(fx.p_away)) +
-        '</div></div>';
+        wrowResult('Dixon-Coles: home win / draw / away win', pct(fx.p_home)+' / '+pct(fx.p_draw)+' / '+pct(fx.p_away)) +
+        (pub && pub.odds_model==='classifier' ? wrow('Published odds (outcome model)', pct(pub.p_home_win)+' / '+pct(pub.p_draw)+' / '+pct(pub.p_away_win)) : '') +
+        '</div>' +
+        (pub && pub.odds_model==='classifier' ? '<div class="method-note">The win odds on Fixtures, the scoreboard and the ticker come from a separate '+
+          'outcome model, scored against the market on the Track Record tab, so they differ from this working. '+
+          'Dixon-Coles supplies the expected goals behind the player odds, Match Sim and the projected table.</div>' : '') +
+        '</div>';
 
       if(pe){
         html += '<div class="method-card">' +
-          '<h3><span class="num-tag">2</span>Anytime goalscorer &amp; assist odds</h3>' +
+          '<h3><span class="num-tag">2</span>Each player\'s chance to score or assist</h3>' +
           '<p>The fixture\'s expected goals (above) gets split across the matchday squad by attacking output: each '+
           'player\'s blended non-penalty xG per 90 (their current-season rate, shrunk toward last season\'s while the '+
           'sample is small) times their share of the team\'s minutes this season. Bigger share of the team\'s attacking '+
@@ -1650,7 +1670,7 @@
           wrow('npxG / xA', num(ve.current.npxg,2)+' / '+num(ve.current.xag,2)) +
           wrow('Listed value', eur(ve.listed_value_eur)) +
           wrowResult('Model-predicted value', eur(ve.predicted_eur)) +
-          '</div><div class="method-note">Ratio '+num(ve.ratio,2)+'&times; listed &mdash; below 1&times; means the model '+
+          '</div><div class="method-note">Model is '+vsListed(ve.ratio)+' vs listed &mdash; below 0% means the model '+
           'thinks the market is paying a premium (reputation, marketability, potential) over what this season\'s output '+
           'alone would suggest. The biggest tail cases (global superstars, teenage prospects) are exactly where the '+
           'model is least calibrated.</div></div>';
