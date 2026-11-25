@@ -477,43 +477,45 @@
   .elo-note{ font-size:13px; color:var(--ink-3); margin:0 0 10px; }
   .spark{ display:block; } .spark-empty{ color:var(--ink-3); }
 
-  /* ---------- track record ---------- */
-  .tr-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr)); gap:8px; margin-bottom:8px; align-items:start; }
+  /* ---------- track record: frozen predictions sit in solid panels ---------- */
+  .tr-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr)); gap:16px; margin-bottom:16px; align-items:start; }
   .tr-grid > *, .rk-layout > *, .lb-grid > *, .team-grid > *, .fx-grid > *{ min-width:0; }
-  .tr-card{ background:var(--surface); border-radius:var(--radius-lg); padding:22px 24px; }
-  .tr-card h3{ font-size:22px; font-weight:900; font-stretch:115%; margin-bottom:4px; letter-spacing:-.02em; }
+  .tr-card{ padding:0 20px 20px; }
   .tr-card .rk-sub{ margin-bottom:12px; }
-  .tr-card .tile{ background:var(--surface-2); min-height:0; padding:14px 16px; }
-  .tr-card .tile:first-child{ background:var(--screen); }
-  .tr-card .tile .v{ padding-top:8px; }
+  .tr-card .tiles{ padding:4px 16px; background:var(--bg-2); box-shadow:0 0 0 1px var(--line) inset; }
+  .tr-card .tile .v{ font-size:22px; letter-spacing:-.02em; }
+  .tr-card .tile:first-child .v{ color:var(--cool); }
   .tr-chart{ width:100%; height:auto; display:block; }
-  .tr-chart text{ font-family:var(--font-body); font-size:10px; fill:var(--text-faint); }
-  .tr-legend{ display:flex; gap:14px; font-size:12.5px; color:var(--text-dim); margin-top:8px; flex-wrap:wrap; }
-  .tr-legend i{ display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:-1px; }
-  .tr-table th, .tr-table td{ padding:8px 7px; font-size:12.5px; }
+  .tr-chart text{ font-family:var(--font-body); font-size:14px; fill:var(--ink-3); }
+  .tr-chart line{ stroke:rgba(255,255,255,.08); }
+  .tr-grid > .tr-card:last-child:nth-child(odd){ grid-column:1/-1; }
+  .tr-grid > .tr-card:last-child:nth-child(odd) .tr-chart{ max-width:760px; }
+  .tr-grid > .tr-card:last-child:nth-child(odd) .tr-chart text{ font-size:12px; }
+  .tr-legend{ display:flex; gap:14px; font-size:13px; color:var(--ink-2); margin-top:10px; flex-wrap:wrap; }
+  .tr-legend i{ display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:1px; }
+  .tr-table th, .tr-table td{ padding:9px 8px; font-size:13px; }
   .tr-table td.m{ white-space:normal; min-width:120px; }
-  .tr-note{ font-size:13px; color:var(--text-dim); margin-top:12px; max-width:75ch; }
+  .tr-card .table-wrap{ box-shadow:none; background:none; }
+  .tr-card thead th{ background:var(--panel); }
+  .tr-note{ font-size:13.5px; color:var(--ink-3); margin-top:12px; max-width:75ch; }
 
   /* ---------- how it works ---------- */
-  #methodBody{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr)); gap:8px; }
-  .method-card{ background:var(--surface); border-radius:var(--radius-lg); padding:26px 28px; }
-  .method-card .num-tag{ display:inline-grid; place-items:center; width:44px; height:44px; border-radius:50%;
-                         background:var(--led); color:#000; font-family:var(--font-led); font-weight:900;
-                         font-size:20px; margin-right:14px; flex:none; }
-  .method-card h3{ display:flex; align-items:center; font-size:23px; font-weight:900; font-stretch:115%; letter-spacing:-.02em; }
-  .method-card p{ color:var(--text-dim); font-size:14px; max-width:72ch; margin:12px 0 0; line-height:1.65; }
-  .method-card p code{ font-family:ui-monospace, Consolas, monospace; background:var(--chip-bg); padding:1px 6px;
-                       border-radius:6px; font-size:12.5px; color:var(--text); }
-  .worked{ margin-top:16px; background:var(--screen); color:var(--text); border-radius:var(--radius-md); padding:16px 18px; }
-  .worked .wt{ font-size:12.5px; color:var(--muted); font-weight:600; margin-bottom:10px; }
-  .wrow{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; padding:5px 0;
-         font-size:13px; border-bottom:1px dashed var(--border); }
+  #methodBody{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr)); gap:16px; }
+  .method-card{ padding:0 22px 24px; }
+  .method-card h3{ display:flex; align-items:center; gap:12px; }
+  .method-card .num-tag{ display:inline-grid; place-items:center; width:28px; height:28px; border-radius:7px; background:var(--panel-3);
+                         color:var(--ink-2); font-family:var(--font-mono); font-size:13px; flex:none; box-shadow:0 0 0 1px var(--line-2) inset; }
+  .method-card p{ color:var(--ink-2); font-size:15px; max-width:70ch; margin-top:12px; margin-bottom:0; line-height:1.65; }
+  .method-card p code{ font-family:var(--font-mono); background:var(--panel-3); padding:1px 6px; border-radius:5px; font-size:12.5px; color:var(--ink); }
+  .worked{ margin-top:16px; background:var(--bg-2); padding:16px 18px; border-radius:10px; box-shadow:0 0 0 1px var(--line) inset; }
+  .worked .wt{ font-size:13.5px; font-weight:600; color:var(--cool); margin-bottom:10px; }
+  .wrow{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; padding:6px 0; font-size:13.5px; border-bottom:1px solid var(--line); }
   .wrow:last-child{ border-bottom:none; }
-  .wrow .wl{ color:var(--muted); }
-  .wrow .wv{ font-weight:700; white-space:nowrap; font-variant-numeric:tabular-nums; }
-  .wrow.hl .wv{ color:var(--emerald-hi); font-size:15px; }
-  .wrow.result .wv{ color:var(--led); font-family:var(--font-led); font-size:20px; text-shadow:0 0 10px rgba(240,194,74,.5); }
-  .method-note{ font-size:12.5px; color:var(--text-faint); margin-top:12px; }
+  .wrow .wl{ color:var(--ink-3); }
+  .wrow .wv{ font-weight:600; white-space:nowrap; }
+  .wrow.hl .wv{ color:var(--cool); }
+  .wrow.result .wv{ color:var(--ember-hi); font-size:22px; letter-spacing:-.02em; line-height:1; }
+  .method-note{ font-size:13px; color:var(--ink-3); margin-top:12px; }
 
   /* ---------- games ---------- */
   .game-wrap{ background:var(--surface); border-radius:var(--radius-lg); padding:22px; }
