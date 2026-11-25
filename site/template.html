@@ -1769,7 +1769,7 @@
     }).join(' ');
     var up = vals[vals.length-1] >= vals[0];
     return '<svg class="spark" viewBox="0 0 '+w+' '+h+'" width="'+w+'" height="'+h+'" aria-hidden="true">' +
-      '<polyline points="'+pts+'" fill="none" stroke="'+(up?'#1f9d55':'#d64545')+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      '<polyline points="'+pts+'" fill="none" stroke="'+(up?'var(--hit-ink)':'var(--miss-ink)')+'" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/></svg>';
   }
 
   var LG_SHORT = { 'Premier League':'PL', 'La Liga':'LL', 'Bundesliga':'BL', 'Serie A':'SA', 'Ligue 1':'L1' };
@@ -1814,12 +1814,13 @@
     var body = document.getElementById('screenBody');
     document.getElementById('screenEmpty').hidden = rows.length>0;
     body.innerHTML = rows.map(function(p){
-      var cls = p.ratio>=1 ? 'won' : 'runnerup';
-      return '<tr><td>'+esc(p.player)+' <span class="pos-badge">'+esc(p.pos)+'</span><br><span class="meta">'+esc(p.squad)+'</span></td>' +
+      var cls = p.ratio>=1.15 ? 'bargain' : p.ratio<=0.85 ? 'rich' : 'fair';
+      return '<tr><td>'+esc(p.player)+' <span class="pos-badge">'+esc(p.pos)+'</span><br><span class="meta">'+esc(p.squad)+'</span>' +
+        '<span class="meta phone-vals">Model '+eur(p.predicted_eur)+' &middot; listed '+eur(p.listed_value_eur)+'</span></td>' +
         '<td>'+lgShort(p.league)+'</td>' +
         '<td class="num num-col">'+eur(p.predicted_eur)+'</td>' +
         '<td class="num num-col">'+eur(p.listed_value_eur)+'</td>' +
-        '<td class="num num-col"><span class="trophy-outcome '+cls+'">'+num(p.ratio,2)+'x</span></td></tr>';
+        '<td class="num num-col"><span class="ratio-badge '+cls+'">'+vsListed(p.ratio)+'</span></td></tr>';
     }).join('');
   }
 
@@ -1828,7 +1829,7 @@
   var trackInited = false;
   function svgLines(series, opts){
     // series: [{name, color, pts:[[x,y],...]}] with x,y already in data units
-    var W = 520, H = 240, L = 44, R = 12, T = 12, B = 30;
+    var W = 520, H = 240, L = 58, R = 12, T = 12, B = 30;
     var xs = [], ys = [];
     series.forEach(function(s){ s.pts.forEach(function(p){ xs.push(p[0]); ys.push(p[1]); }); });
     var x0 = opts.x0!=null ? opts.x0 : Math.min.apply(null, xs), x1 = opts.x1!=null ? opts.x1 : Math.max.apply(null, xs);
@@ -1847,7 +1848,7 @@
     if(opts.diag) g += '<line x1="'+sx(x0)+'" y1="'+sy(y0)+'" x2="'+sx(x1)+'" y2="'+sy(y1)+'" stroke="var(--text-faint)" stroke-dasharray="4 4"/>';
     series.forEach(function(s){
       var d = s.pts.map(function(p,i){ return (i?'L':'M')+sx(p[0]).toFixed(1)+','+sy(p[1]).toFixed(1); }).join(' ');
-      g += '<path d="'+d+'" fill="none" stroke="'+s.color+'" stroke-width="2.2" stroke-linejoin="round"/>';
+      g += '<path d="'+d+'" fill="none" stroke="'+s.color+'" stroke-width="4" stroke-linejoin="miter"/>';
       if(opts.dots) s.pts.forEach(function(p){ g += '<circle cx="'+sx(p[0])+'" cy="'+sy(p[1])+'" r="3.2" fill="'+s.color+'"/>'; });
     });
     var leg = '<div class="tr-legend">' + series.map(function(s){
@@ -1859,7 +1860,7 @@
     var L = DATA.ledger, C = DATA.calibration, out = '';
     // --- forward-test ledger: two models, frozen pre-kickoff, vs the market ---
     var LBL = {classifier:'Outcome model', dixon_coles:'Dixon-Coles', close:'Closing market', open:'Opening market'};
-    var COL = {classifier:'var(--accent)', dixon_coles:'var(--draw)', close:'var(--text-faint)', open:'var(--loss)'};
+    var COL = {classifier:'var(--ln-model)', dixon_coles:'var(--ln-dc)', close:'var(--ln-close)', open:'var(--ln-open)'};
     out += '<div class="tr-grid"><div class="tr-card"><h3>Forward test: two models, frozen pre-match, vs the market' +
            '<span class="rk-sub">' + (L ? 'Ledger running since ' + esc(String(L.since).slice(0,10)) +
            ' &middot; head to head on the fixtures both models priced' : 'No ledger yet') + '</span></h3>';
@@ -1869,7 +1870,7 @@
              'The first snapshot is taken on the next refresh.') + '</div>';
     } else {
       var keys = ['classifier','dixon_coles','close','open'].filter(function(k){ return L.ll[k]!=null; });
-      out += '<div class="tiles" style="margin:6px 0 12px; grid-template-columns:repeat(2,minmax(0,1fr));">' +
+      out += '<div class="tiles" style="margin:6px 0 12px;">' +
         keys.map(function(k){
           var d = k==='open' ? (L.n_open + ' with an opening price') : (L.acc && L.acc[k]!=null ? 'accuracy ' + pct(L.acc[k]) : '');
           return '<div class="tile"><div class="k">'+LBL[k]+'</div><div class="v num">'+L.ll[k].toFixed(3)+'</div><div class="d">'+d+'</div></div>';
@@ -1882,7 +1883,7 @@
         var vals = []; ser.forEach(function(r){ lines.forEach(function(k){ if(r[k]!=null) vals.push(r[k]); }); });
         var lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
         var step = (hi-lo) > .2 ? .1 : .05, ticks = [];
-        for(var v = Math.floor(lo/step)*step; v <= hi + 1e-9; v += step) ticks.push(v);
+        for(var v = Math.floor(lo/step)*step; v < hi + step - 1e-9; v += step) ticks.push(v);   // top tick clears the highest point
         var xt = [[0, ser[0].date.slice(5), 'start'], [ser.length-1, ser[ser.length-1].date.slice(5), 'end']];
         out += svgLines(lines.map(function(k){
                  return {name:LBL[k], color:COL[k], pts:ser.map(function(r,i){ return [i, r[k]]; }).filter(function(p){ return p[1]!=null; })};
@@ -1911,7 +1912,7 @@
 
     // --- calibration ---
     if(C && C.bins){
-      var cols = {home:'var(--win)', draw:'var(--draw)', away:'var(--loss)'};
+      var cols = {home:'var(--ln-home)', draw:'var(--ln-draw)', away:'var(--ln-away)'};
       var ser2 = ['home','draw','away'].map(function(k){
         return {name: {home:'Home win', draw:'Draw', away:'Away win'}[k], color: cols[k],
                 pts: C.bins[k].map(function(b){ return [b.pred, b.actual]; })};
@@ -2293,7 +2294,7 @@
           '<button class="pick-btn'+(v.modelPick==='D'?' model':'')+'" data-p="D">Draw</button>' +
           '<button class="pick-btn'+(v.modelPick==='L'?' model':'')+'" data-p="L">Loss</button>' +
         '</div>' +
-        '<div class="venue" style="text-align:center;font-size:11px;">gold outline = the model’s pick</div>' +
+        '<div class="venue" style="text-align:center;font-size:11px;">dashed outline = the model’s pick</div>' +
         historyHtml();
       out.querySelectorAll('.pick-btn').forEach(function(btn){
         btn.addEventListener('click', function(){ submitPick(btn.getAttribute('data-p'), v, btn); });
@@ -2302,7 +2303,7 @@
     function historyHtml(){
       if(!st.history.length) return '';
       return '<div class="streak-history">' + st.history.map(function(h){
-        return '<span class="pip '+(h.hit?'hit':'miss')+'" title="'+esc(h.label)+'">'+(h.hit?'✓':'✗')+'</span>';
+        return '<span class="pip '+(h.hit?'hit':'miss')+'" title="'+esc(h.label)+'">'+(h.hit?'<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>':'<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>')+'</span>';
       }).join('') + '</div>';
     }
     function submitPick(pick, v, btn){
@@ -2324,7 +2325,7 @@
           ' &mdash; '+(modelHit?'right':'wrong')+'</div>' +
         (hit
           ? '<div style="margin-top:10px;"><button class="game-btn" id="stkNext">Next match</button></div>'
-          : '<div style="margin-top:10px;color:var(--loss);font-weight:700;">Wrong call — run over at '+st.streak+'.</div>'+
+          : '<div style="margin-top:10px;color:var(--miss-ink);font-weight:700;">Wrong call — run over at '+st.streak+'.</div>'+
             '<div style="margin-top:8px;"><button class="game-btn" id="stkNext">See how it ends</button></div>');
       btn.closest('.pick-row').after(reveal);
       if(hit){ st.streak++; if(st.streak>st.best){ st.best=st.streak; saveBest(st.best); } }
