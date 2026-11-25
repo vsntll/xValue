@@ -1159,6 +1159,7 @@ def main() -> None:
         "ledger": ledger,
         "ledger_xi": prediction_ledger.scoreboard_xi(),
         "calibration": calibration,
+        "metrics": model_metrics.load(),   # headline holdout scores for the cold open
         "notes": {
             "current_stats": "2026-27 FBref season-to-date stats (min 45 minutes played).",
             "last_season": "2025-26 full-season stats for the same player, where available.",
