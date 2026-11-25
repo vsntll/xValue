@@ -724,51 +724,23 @@
   <p class="proof-note" id="proofNote"></p>
 </section>
 
-<nav class="nav" aria-label="Sections">
-  <a class="logo" href="#top" aria-label="xValue, back to top"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#xv-mark"/></svg></a>
+<nav class="nav" aria-label="Pages">
+  <a class="logo" href="#top" aria-label="xValue, back to the top"><span class="wx">x</span>Value</a>
   <div class="tabs" role="tablist">
     <span class="tab-ind" aria-hidden="true"></span>
-    <button class="tab-btn active" data-tab="players">Players</button>
-    <button class="tab-btn" data-tab="fixtures">Fixtures &amp; Odds</button>
+    <button class="tab-btn active" data-tab="track">Track Record</button>
+    <button class="tab-btn" data-tab="players">Players</button>
+    <button class="tab-btn" data-tab="fixtures">Fixtures</button>
     <button class="tab-btn" data-tab="teams">Teams</button>
     <button class="tab-btn" data-tab="screen">Value Screen</button>
     <button class="tab-btn" data-tab="rankings">Rankings</button>
-    <button class="tab-btn" data-tab="sim">Match Sim</button>
-    <button class="tab-btn" data-tab="streak">Streak</button>
-    <button class="tab-btn" data-tab="track">Track Record</button>
     <button class="tab-btn" data-tab="method">How It Works</button>
+    <span class="tab-play"><span class="pl" aria-hidden="true">Play</span>
+      <button class="tab-btn" data-tab="sim">Match Sim</button>
+      <button class="tab-btn" data-tab="streak">Streak</button></span>
   </div>
   <span class="asof" id="asofLabel"></span>
 </nav>
-
-<header class="hero" id="top">
-  <div class="sticker" aria-hidden="true">
-    <svg viewBox="0 0 132 132"><defs><path id="stk" d="M66,66 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs>
-      <text><textPath href="#stk" textLength="322" lengthAdjust="spacingAndGlyphs">BIG FIVE LEAGUES &#8226; MODELS ON THE RECORD &#8226;</textPath></text></svg>
-    <span class="ball">&#9917;</span>
-  </div>
-
-  <div class="board" id="board" aria-live="polite">
-    <div class="board-top"><span class="live"><i></i>Next up</span><span id="boardMeta"></span></div>
-    <div class="board-row"><span class="led board-team" id="bHome">&nbsp;</span><span class="led board-pct" id="bHomeP"></span></div>
-    <div class="board-row"><span class="led board-team" id="bAway">&nbsp;</span><span class="led board-pct" id="bAwayP"></span></div>
-    <div class="board-draw"><span>Draw</span><b id="bDraw"></b><span>Win chance, outcome model</span></div>
-  </div>
-
-  <h1 class="word" aria-label="xValue"><span>x</span><span>V</span><span>a</span><span>l</span><span>u</span><span>e</span></h1>
-
-  <div class="hero-foot">
-    <div class="stats" id="heroStats"></div>
-    <p class="hero-copy" id="heroText">Season stats for every player in the Premier League, La Liga, Bundesliga,
-      Serie A and Ligue 1, set against what the models expect next: <b>market value</b>, <b>match odds</b>,
-      <b>who scores</b>, and a <b>projected final table</b>. Every prediction is frozen before kickoff and graded
-      afterwards on the Track Record tab.</p>
-  </div>
-  <div class="stripes" aria-hidden="true"></div>
-</header>
-
-<div class="marquee" aria-label="Upcoming fixtures"><div class="mq-track" id="mqFix"></div></div>
-<div class="marquee rev" aria-label="Top scorers"><div class="mq-track" id="mqGoals"></div></div>
 
 <div class="shell">
   <div class="toolbar">
@@ -776,13 +748,12 @@
     <div class="chipset" id="leagueChips"></div>
   </div>
 
-  <div class="tiles rv" id="tiles"></div>
-
-  <section id="tab-players">
+  <section id="tab-players" hidden>
     <div class="sec-head"><h2>Players</h2>
       <p class="method-intro">Who the value model rates above and below their market listing, then every player's
         season so far. Click a row for last season, 38-game pace and the value forecast.</p></div>
-    <div class="lb-grid rv" id="lbGrid"></div>
+    <div class="tiles" id="tiles"></div>
+    <div class="lb-grid" id="lbGrid"></div>
     <div class="controls">
       <div class="search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
@@ -820,7 +791,7 @@
   </section>
 
   <section id="tab-fixtures" hidden>
-    <div class="sec-head"><h2>Fixtures &amp; odds</h2>
+    <div class="sec-head"><h2>Fixtures &amp; chances</h2>
       <p class="method-intro">Each club's next league match, priced by the outcome model, with expected goals and
         recent form. Open a fixture for every player's chance to score or assist.</p></div>
     <div class="fx-grid" id="fxGrid"></div>
@@ -866,7 +837,7 @@
             <th data-k="league">League</th>
             <th class="num-col" data-k="predicted_eur">Predicted value</th>
             <th class="num-col" data-k="listed_value_eur">Listed value</th>
-            <th class="num-col" data-k="ratio">Model / listed</th>
+            <th class="num-col" data-k="ratio">vs listed</th>
           </tr>
         </thead>
         <tbody id="screenBody"></tbody>
@@ -944,25 +915,37 @@
     <div id="streakBody"></div>
   </section>
 
-  <section id="tab-track" hidden>
+  <section id="tab-track">
     <div class="sec-head"><h2>Track record</h2>
       <p class="method-intro">Every refresh freezes pre-match odds from two models in an append-only ledger. Once a
         match is played they're scored against the result and the bookmakers' closing and opening lines; lower
-        log-loss is better. Calibration checks whether 60% really happens 60% of the time.</p></div>
+        log-loss is better. Calibration checks whether 60% really happens 60% of the time.
+        <span class="src-links"><a href="https://github.com/vsntll/xValue/blob/master/data/processed/predictions_ledger.csv">The full ledger</a>
+        is in the repo, one row per frozen prediction.</span></p></div>
     <div id="trackBody"></div>
   </section>
 
   <section id="tab-method" hidden>
     <div class="sec-head"><h2>How it works</h2>
       <p class="method-intro">Every number here comes from real matches and stats, with one fitted model per task.
-        Each card below runs the actual arithmetic on today's data.</p></div>
+        Each card below runs the actual arithmetic on today's data.
+        <span class="src-links">How each model is trained and tested is in the
+        <a href="https://github.com/vsntll/xValue/blob/master/docs/models.md">model write-up</a>.</span></p></div>
     <div id="methodBody"></div>
   </section>
 </div>
 
 <footer>
-  <div class="foot-notes" id="footerNotes"></div>
-  <div class="foot-word" aria-hidden="true">xValue</div>
+  <div class="foot-in">
+  <p class="foot-credit src-links">xValue is built by <a href="https://github.com/vsntll">Avie Vasantlal</a>.
+    Check the work: <a href="https://github.com/vsntll/xValue">source code</a> &middot;
+    <a href="https://github.com/vsntll/xValue/blob/master/docs/models.md">model write-up</a> &middot;
+    <a href="https://github.com/vsntll/xValue/blob/master/data/processed/predictions_ledger.csv">prediction ledger</a> &middot;
+    <a href="https://github.com/vsntll/xValue/blob/master/data/processed/model_metrics.json">headline metrics</a></p>
+  <button class="notes-btn" id="footReveal" type="button" aria-expanded="false" aria-controls="footerNotes">Show the model notes</button>
+  <div class="foot-notes" id="footerNotes" hidden></div>
+  <div class="foot-word" aria-hidden="true"><span class="wx">x</span>Value</div>
+  </div>
 </footer>
 
 <script id="site-data" type="application/json">__SITE_DATA_JSON__</script>
