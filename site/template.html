@@ -177,6 +177,69 @@
   }
   .arch-light{ position:absolute; inset:0; border-radius:inherit; }
 
+  /* ---------- section intros ---------- */
+  .band{ max-width:1200px; margin:0 auto; padding:clamp(80px, 11vw, 150px) clamp(16px, 3vw, 40px) 0; }
+  .band-head{ display:grid; grid-template-columns:minmax(0, 1.15fr) minmax(0, 1fr); gap:24px 48px; align-items:end; margin-bottom:clamp(28px, 4vw, 44px); }
+  .band-head h2{ font-size:clamp(36px, 4.6vw, 60px); line-height:1.02; letter-spacing:-.035em; }
+  .band-head h2 .soft{ color:rgba(255,143,102,.78); }
+  @media (prefers-reduced-motion: no-preference){
+    .rv{ opacity:0; filter:blur(10px); transform:translateY(14px); transition:opacity 1s var(--ease), filter 1s var(--ease), transform 1s var(--ease); }
+    .rv.in{ opacity:1; filter:none; transform:none; }
+    .rv.in .stars-table tbody tr{ animation:settle .7s var(--ease) backwards; }
+    .rv.in .proof-chart circle{ animation:dotIn .9s var(--ease) backwards; }
+    .rv.in .proof-chart .fair{ stroke-dasharray:800; animation:drawLine 1.6s .2s var(--ease) backwards; }
+  }
+  @keyframes dotIn{ from{ opacity:0; transform:scale(0); } }
+  @keyframes drawLine{ from{ stroke-dashoffset:800; } }
+  .proof-chart circle{ transform-box:fill-box; transform-origin:center; }
+  .band-head p{ margin:0; font-size:clamp(16px, 1.35vw, 18.5px); line-height:1.5; color:var(--ink-2); max-width:44ch; }
+
+  /* ---------- an app window ---------- */
+  .window{ background:linear-gradient(180deg, rgba(139,156,255,.06), transparent 120px), var(--panel); border-radius:var(--r);
+           box-shadow:0 0 0 1px var(--line-2), var(--depth); overflow:hidden; position:relative; }
+  .window::before{ content:""; position:absolute; left:10%; right:10%; top:0; height:1px;
+                   background:linear-gradient(90deg, transparent, var(--cool), #fff, var(--ember-hi), transparent); opacity:.7; }
+  .win-bar{ display:flex; align-items:center; gap:14px; padding:14px 18px; border-bottom:1px solid var(--line); }
+  .win-title{ font-weight:600; font-size:14px; }
+  .win-seg{ margin-left:auto; display:flex; gap:2px; padding:3px; border-radius:8px; background:var(--bg-2); box-shadow:0 0 0 1px var(--line) inset; }
+  .win-seg span{ font-size:13px; color:var(--ink-3); padding:5px 10px; border-radius:6px; }
+  .win-seg span.on{ background:var(--panel-3); color:var(--ink); }
+  .win-foot{ display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 18px; border-top:1px solid var(--line);
+             font-size:13px; color:var(--ink-3); }
+  .win-foot button{ border:0; background:none; color:var(--ink); font:inherit; font-weight:600; cursor:pointer; padding:0; }
+  .win-foot button:hover{ color:var(--cool); }
+  .stars-table{ width:100%; }
+  .stars-table th{ position:static; background:none; cursor:default; }
+  .stars-table td{ padding:12px 18px; }
+  .stars-table th{ padding:12px 18px 10px; }
+  .stars-table tbody tr{ cursor:pointer; transition:background-color .2s; }
+  .stars-table tbody tr:hover{ background:rgba(255,255,255,.03); }
+  .star-id{ display:flex; align-items:center; gap:12px; }
+  .star-id .player-photo{ border-radius:50%; background:var(--panel-3); }
+  .star-id b{ font-weight:600; }
+  .star-club{ display:flex; align-items:center; gap:8px; color:var(--ink-2); }
+  .star-worth{ font-weight:600; }
+  .verdict{ font-size:13.5px; font-weight:500; white-space:nowrap; }
+  .verdict.up{ color:var(--cool); } .verdict.down{ color:var(--ember-hi); } .verdict.even{ color:var(--ink-3); }
+  .verdict small{ font-size:12px; color:var(--ink-3); margin-left:6px; font-weight:400; }
+
+  /* ---------- proof: one sentence beside the scatter ---------- */
+  .proof{ display:grid; grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr); background:var(--panel); border-radius:var(--r);
+          box-shadow:0 0 0 1px var(--line-2), var(--depth); overflow:hidden; }
+  .proof-quote{ padding:clamp(24px, 3.4vw, 40px); display:flex; flex-direction:column; justify-content:center; gap:22px;
+                border-right:1px solid var(--line); }
+  .proof-quote blockquote{ margin:0; font-size:clamp(22px, 2.3vw, 30px); line-height:1.3; letter-spacing:-.02em; font-weight:500; }
+  .proof-quote blockquote b{ font-weight:600; color:var(--cool); }
+  .proof-quote cite{ font-style:normal; font-size:13px; color:var(--ink-3); }
+  .proof-quote cite b{ color:var(--ink); font-weight:600; }
+  .proof-chart{ margin:0; padding:clamp(20px, 3vw, 32px); background:radial-gradient(80% 70% at 80% 0%, rgba(75,99,255,.08), transparent 70%); }
+  .proof-chart .cap{ font-size:13px; color:var(--ink-3); margin-bottom:12px; }
+  .proof-chart svg{ display:block; width:100%; height:auto; overflow:visible; }
+  .proof-chart svg text{ font-family:var(--font-body); font-size:12px; fill:var(--ink-3); }
+  .proof-legend{ display:flex; flex-wrap:wrap; gap:6px 18px; font-size:12.5px; color:var(--ink-3); margin-top:12px; }
+  .proof-legend i{ display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:1px; }
+  .proof-note{ max-width:72ch; margin:14px 0 0; font-size:12.5px; line-height:1.55; color:var(--ink-3); }
+
   /* ---------- shell + section heads ---------- */
   .shell{ max-width:1260px; margin:0 auto; padding:0 26px 40px; }
   .toolbar{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding:34px 0 8px; }
