@@ -256,31 +256,34 @@
   .tab-play .pl{ font-size:12.5px; font-weight:500; color:var(--ink-3); margin-right:4px; }
   .asof{ display:none; }
 
-  /* ---------- shell + section heads ---------- */
-  .shell{ max-width:1260px; margin:0 auto; padding:0 26px 40px; }
-  .toolbar{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding:34px 0 8px; }
-  .toolbar-label{ font-weight:600; color:var(--text-dim); font-size:13px; }
-  .sec-head{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,46ch); gap:16px 48px; align-items:end;
-             margin:34px 0 24px; }
-  .sec-head h2{ font-size:clamp(44px, 7vw, 92px); font-weight:900; font-stretch:125%; line-height:.86;
-                letter-spacing:-.05em; }
-  .sec-head h2 em{ font-style:normal; color:var(--text-faint); font-weight:500; font-stretch:100%;
-                   font-size:.32em; letter-spacing:0; vertical-align:top; margin-left:.3em; }
-  .method-intro{ color:var(--text-dim); font-size:14.5px; line-height:1.6; margin:0; max-width:70ch; }
-  .sec-head .method-intro{ max-width:none; }
-  section{ margin-top:0; }
+  /* ---------- shell + page heads ---------- */
+  .shell{ max-width:1240px; margin:0 auto; padding:0 clamp(14px,2.4vw,32px) 80px; }
+  .toolbar{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding:28px 0 0; }
+  .toolbar-label, .rk-tb-label{ font-size:13px; font-weight:500; color:var(--ink-3); }
+  .sec-head{ margin:36px 0 26px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px 48px; align-items:end; }
+  .sec-head h2{ font-size:clamp(36px,4.4vw,56px); line-height:1.02; letter-spacing:-.035em; }
+  .method-intro{ color:var(--ink-2); font-size:15.5px; line-height:1.6; margin:0; max-width:62ch; }
+  .method-intro a, .src-links a{ color:var(--ink); font-weight:500; text-decoration-color:rgba(255,255,255,.3); text-underline-offset:3px; }
+  .method-intro a:hover, .src-links a:hover{ color:var(--cool); }
+  .method-intro .src-links{ display:block; margin-top:10px; font-size:13.5px; color:var(--ink-3); }
+  section.enter{ animation:settle .5s var(--ease) backwards; }
+  #screenTitle2{ font-size:clamp(28px,3.4vw,40px); }
 
-  /* ---------- tiles ---------- */
-  .tiles{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:8px; margin:14px 0 8px; }
-  .tile{ background:var(--surface); border-radius:var(--radius-lg); padding:20px 22px 22px; min-height:150px;
-         display:flex; flex-direction:column; }
-  .tile .k{ font-size:13px; color:var(--text-dim); font-weight:600; }
-  .tile .v{ font-family:var(--font-display); font-weight:800; font-stretch:110%; font-size:24px; line-height:1.05;
-            margin-top:auto; padding-top:18px; letter-spacing:-.02em; }
-  .tile .d{ font-size:12.5px; color:var(--text-dim); margin-top:6px; }
-  .tiles .tile:first-child{ background:var(--screen); color:var(--text); }
-  .tiles .tile:first-child .k, .tiles .tile:first-child .d{ color:var(--muted); }
-  .tiles .tile:first-child .v{ color:var(--led); }
+  /* ---------- modules ---------- */
+  .lb-card, .rk-col, .tr-card, .team-card, .method-card, .game-wrap, .fx-card, .table-wrap, .fx-expand, .tiles{
+    background:var(--panel); border-radius:var(--r); box-shadow:0 0 0 1px var(--line-2), var(--depth); }
+  .lb-card h3, .rk-col h3, .tr-card h3, .team-card h3, .method-card h3, .sim-scorers .col h4{
+    font-size:17px; font-weight:600; letter-spacing:-.01em; line-height:1.3; padding:18px 0 4px; }
+  .lb-card h3{ padding:18px 18px 0; }
+
+  .tiles{ display:block; margin:0 0 18px; padding:4px 20px; }
+  .tile{ display:grid; grid-template-columns:auto minmax(24px,1fr) auto; align-items:baseline; gap:2px 14px;
+         padding:13px 0 12px; border-bottom:1px solid var(--line); }
+  .tile:last-child{ border-bottom:none; }
+  .tile::before{ content:""; grid-column:2; grid-row:1; align-self:center; border-bottom:1px dashed var(--line-2); }
+  .tile .k{ grid-column:1; grid-row:1; font-size:13.5px; font-weight:500; color:var(--ink-3); }
+  .tile .v{ grid-column:3; grid-row:1; font-size:16px; font-weight:600; text-align:right; }
+  .tile .d{ grid-column:1/-1; font-size:13.5px; color:var(--ink-2); }
 
   /* ---------- controls ---------- */
   .controls{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:12px; }
