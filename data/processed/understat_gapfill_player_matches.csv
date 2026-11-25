@@ -2092,6 +2092,37 @@ season,src_league,date,game_id,team,team_id,player,player_id,position,minutes,go
 2026-27,ITA1,2026-11-22 14:00:00,31679,Lazio,96,Reda Belahyane,11049,MC,83,0.0,0.0,0.01,0.02,0.0,1.0,reda belahyane,lazio,fotmob
 2026-27,ITA1,2026-11-22 14:00:00,31679,Lecce,243,Paco Esteban,14886,Sub,31,0.0,0.0,0.04,0.0,0.0,1.0,paco esteban,lecce,fotmob
 2026-27,ITA1,2026-11-22 14:00:00,31679,Lecce,243,Tiago Gabriel,13396,DC,90,0.0,0.0,0.15,0.0,0.0,3.0,tiago gabriel,lecce,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,David de Gea,546,GK,90,0.0,0.0,0.0,0.0,0.0,0.0,david de gea,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Matteo Pessina,7013,MC,85,0.0,1.0,0.04,0.21,3.0,1.0,matteo pessina,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Idrissa Touré,13938,Sub,5,0.0,0.0,0.0,0.0,0.0,0.0,idrissa toure,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Dany Mota,10895,Sub,23,0.0,0.0,0.07,0.02,0.0,2.0,dany mota,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Samuele Birindelli,10892,MC,85,0.0,0.0,0.1,0.02,0.0,2.0,samuele birindelli,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Ricardo Mangas,9806,MC,90,0.0,0.0,0.0,0.18,5.0,0.0,ricardo mangas,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Pote,15038,FW,45,0.0,0.0,0.11,0.03,0.0,1.0,pote,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Luca Ranieri,6696,Sub,63,0.0,0.0,0.0,0.01,0.0,0.0,luca ranieri,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Demba Thiam,6976,GK,90,0.0,0.0,0.0,0.0,0.0,0.0,demba thiam,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,João Mário,13946,DC,90,0.0,0.0,0.03,0.2,1.0,1.0,joao mario,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Beto,9983,Sub,23,0.0,0.0,0.58,0.0,0.0,3.0,beto,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Wilfried Gnonto,11155,FW,66,0.0,0.0,0.06,0.02,1.0,2.0,wilfried gnonto,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Andrea Carboni,8232,DC,90,0.0,0.0,0.0,0.02,0.0,0.0,andrea carboni,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Radu Dragusin,9105,DC,90,0.0,0.0,0.02,0.03,0.0,1.0,radu dragusin,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Mateo Pellegrino,13446,FW,90,0.0,0.0,0.36,0.01,1.0,2.0,mateo pellegrino,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Cher Ndour,11768,MC,90,0.0,0.0,0.0,0.05,2.0,0.0,cher ndour,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Leonardo Colombo,11283,MC,90,0.0,0.0,0.03,0.04,1.0,1.0,leonardo colombo,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Jay Robinson,13582,MC,67,1.0,0.0,0.07,0.05,0.0,2.0,jay robinson,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Ebenezer Akinsanmiro,11586,MC,74,0.0,0.0,0.0,0.04,0.0,0.0,ebenezer akinsanmiro,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Viery,14920,DC,27,0.0,0.0,0.0,0.0,0.0,0.0,viery,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Saba Goglichidze,12356,DC,90,0.0,0.0,0.0,0.0,0.0,0.0,saba goglichidze,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Jan Ziólkowski,14039,Sub,16,0.0,0.0,0.0,0.0,0.0,0.0,jan ziolkowski,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Lorenzo Lucchesi,12877,Sub,5,0.0,0.0,0.05,0.0,0.0,1.0,lorenzo lucchesi,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Alejandro Jiménez,12168,DC,90,0.0,0.0,0.04,0.55,5.0,1.0,alejandro jimenez,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Manga Foe Ondoa,14792,Sub,16,0.0,0.0,0.0,0.03,1.0,0.0,manga foe ondoa,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Gustavo Varela,14794,FW,90,2.0,0.0,1.27,0.06,1.0,4.0,gustavo varela,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Alieu Njie,12365,Sub,45,0.0,0.0,0.47,0.16,1.0,2.0,alieu njie,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Franco Mastantuono,13847,FW,67,0.0,0.0,0.1,0.09,1.0,2.0,franco mastantuono,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Christ Inao Oulaï,14919,MC,90,0.0,0.0,0.03,0.04,1.0,2.0,christ inao oulai,fiorentina,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Monza,271,Eddy Kouadio,13045,DC,74,0.0,0.0,0.0,0.01,0.0,0.0,eddy kouadio,monza,fotmob
+2026-27,ITA1,2026-11-22 14:00:00,31677,Fiorentina,110,Valde,13543,Sub,24,0.0,0.0,0.0,0.01,0.0,0.0,valde,fiorentina,fotmob
 2026-27,ITA1,2026-11-22 14:00:00,31676,Torino,113,Duván Zapata,1148,Sub,18,0.0,0.0,0.09,0.0,0.0,2.0,duvan zapata,torino,fotmob
 2026-27,ITA1,2026-11-22 14:00:00,31676,Napoli,105,Kevin De Bruyne,447,Sub,77,0.0,0.0,0.32,0.48,5.0,3.0,kevin de bruyne,napoli,fotmob
 2026-27,ITA1,2026-11-22 14:00:00,31676,Napoli,105,Leonardo Spinazzola,1500,MC,58,0.0,0.0,0.04,0.26,1.0,1.0,leonardo spinazzola,napoli,fotmob
@@ -3793,6 +3824,38 @@ season,src_league,date,game_id,team,team_id,player,player_id,position,minutes,go
 2026-27,ENG1,2026-11-21 15:00:00,31281,Aston Villa,71,Alysson Edward,14446,FW,90,0.0,0.0,0.08,0.07,2.0,2.0,alysson edward,aston villa,fotmob
 2026-27,ENG1,2026-11-21 15:00:00,31281,Aston Villa,71,Brian Madjo,13810,Sub,17,0.0,0.0,0.0,0.0,0.0,0.0,brian madjo,aston villa,fotmob
 2026-27,ENG1,2026-11-21 15:00:00,31281,Sunderland,77,Jules Ahoka,-1811265,MC,90,0.0,0.0,0.01,0.01,0.0,1.0,jules ahoka,sunderland,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Callum Wilson,468,FW,90,0.0,0.0,0.21,0.12,2.0,2.0,callum wilson,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,James Tarkowski,1665,DC,40,0.0,0.0,0.0,0.0,0.0,0.0,james tarkowski,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Christian Nørgaard,7083,Sub,5,0.0,0.0,0.0,0.0,0.0,0.0,christian norgaard,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Michael Keane,1653,Sub,21,0.0,0.0,0.0,0.0,0.0,0.0,michael keane,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Jordan Pickford,741,GK,90,0.0,0.0,0.0,0.0,0.0,0.0,jordan pickford,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Jack Grealish,675,Sub,45,0.0,0.0,0.0,0.0,1.0,0.0,jack grealish,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Kristoffer Ajer,9677,DC,90,0.0,0.0,0.0,0.02,0.0,0.0,kristoffer ajer,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Mathias Jensen,7166,Sub,16,0.0,1.0,0.0,0.21,1.0,0.0,mathias jensen,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Vitaly Janelt,9680,MC,82,1.0,0.0,0.02,0.17,1.0,1.0,vitaly janelt,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Caoimhin Kelleher,7904,GK,90,0.0,0.0,0.0,0.0,0.0,0.0,caoimhin kelleher,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Vitalii Mykolenko,10291,DC,90,0.0,0.0,0.0,0.0,0.0,0.0,vitalii mykolenko,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Kiernan Dewsbury-Hall,9739,MC,69,0.0,0.0,0.02,0.0,0.0,1.0,kiernan dewsbury hall,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Mikkel Damsgaard,8859,MC,90,0.0,0.0,0.06,0.77,4.0,2.0,mikkel damsgaard,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Sepp van den Berg,10721,DC,90,0.0,0.0,0.0,0.01,0.0,0.0,sepp van den berg,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,James Garner,7438,MC,85,0.0,0.0,0.0,0.02,1.0,0.0,james garner,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Fabio Carvalho,9501,Sub,9,1.0,0.0,0.75,0.07,0.0,2.0,fabio carvalho,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Hayden Hackney,14769,Sub,21,0.0,0.0,0.0,0.0,0.0,0.0,hayden hackney,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Keane Lewis-Potter,10809,DC,74,2.0,0.0,0.8,0.05,2.0,7.0,keane lewis potter,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Jarrad Branthwaite,8476,DC,90,0.0,0.0,0.0,0.0,0.0,0.0,jarrad branthwaite,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Brennan Johnson,10760,Sub,21,0.0,0.0,0.08,0.0,0.0,1.0,brennan johnson,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Kevin Schade,9156,Sub,24,0.0,0.0,0.1,0.01,0.0,2.0,kevin schade,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Jake O'Brien,12014,DC,90,0.0,0.0,0.0,0.0,0.0,0.0,jake obrien,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Yehor Yarmolyuk,11772,MC,74,0.0,0.0,0.0,0.54,1.0,0.0,yehor yarmolyuk,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Jaidon Anthony,10746,FW,81,0.0,2.0,0.04,0.17,3.0,1.0,jaidon anthony,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Mamadou Sangaré,13917,Sub,8,0.0,0.0,0.0,0.03,0.0,0.0,mamadou sangare,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Merlin Röhl,11331,DC,69,0.0,0.0,0.0,0.0,0.0,0.0,merlin rohl,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Dango Ouattara,9662,FW,66,0.0,0.0,0.17,0.02,0.0,2.0,dango ouattara,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Thierno Barry,12916,FW,69,0.0,0.0,0.12,0.0,0.0,1.0,thierno barry,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Tyrique George,12573,FW,45,0.0,0.0,0.0,0.0,1.0,0.0,tyrique george,everton,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,Michael Kayode,11281,DC,90,0.0,0.0,0.41,0.02,0.0,2.0,michael kayode,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Brentford,244,El Hadji Malick Diouf,13723,Sub,16,0.0,0.0,0.0,0.03,1.0,0.0,el hadji malick diouf,brentford,fotmob
+2026-27,ENG1,2026-11-21 15:00:00,31282,Everton,72,Harrison Armstrong,12757,MC,90,0.0,0.0,0.02,0.0,0.0,1.0,harrison armstrong,everton,fotmob
 2026-27,ENG1,2026-11-21 15:00:00,31283,Chelsea,80,Danny Welbeck,501,Sub,26,0.0,0.0,0.07,0.0,0.0,1.0,danny welbeck,chelsea,fotmob
 2026-27,ENG1,2026-11-21 15:00:00,31283,Chelsea,80,Jordan Henderson,605,Sub,68,0.0,0.0,0.0,0.01,1.0,0.0,jordan henderson,chelsea,fotmob
 2026-27,ENG1,2026-11-21 15:00:00,31283,Chelsea,80,Emiliano Martinez,4401,GK,90,0.0,0.0,0.0,0.02,0.0,0.0,emiliano martinez,chelsea,fotmob
@@ -7402,6 +7465,37 @@ season,src_league,date,game_id,team,team_id,player,player_id,position,minutes,go
 2026-27,ESP1,2026-11-22 16:00:00,30893,Getafe,142,Andrés García,13392,MC,85,0.0,0.0,0.0,0.07,2.0,0.0,andres garcia,getafe,fotmob
 2026-27,ESP1,2026-11-22 16:00:00,30893,Getafe,142,Davinchi,13788,Sub,5,0.0,0.0,0.0,0.0,0.0,0.0,davinchi,getafe,fotmob
 2026-27,ESP1,2026-11-22 16:00:00,30893,Getafe,142,Jean Valou,13696,DC,45,0.0,0.0,0.0,0.0,0.0,0.0,jean valou,getafe,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Mat Ryan,2385,GK,90,0.0,0.0,0.0,0.0,0.0,0.0,mat ryan,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Aissa Mandi,3237,DC,90,0.0,0.0,0.0,0.02,0.0,0.0,aissa mandi,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Jeremy Toljan,257,DC,22,0.0,0.0,0.0,0.01,0.0,0.0,jeremy toljan,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Thomas Lemar,3425,Sub,44,0.0,0.0,0.0,0.01,0.0,0.0,thomas lemar,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Matías Dituro,9793,GK,90,0.0,0.0,0.0,0.0,0.0,0.0,matias dituro,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Grady Diangana,6651,Sub,1,0.0,0.0,0.0,0.0,1.0,0.0,grady diangana,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Tete Morente,8895,Sub,9,0.0,0.0,0.0,0.0,0.0,0.0,tete morente,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Gonzalo Villar,6750,MC,66,0.0,0.0,0.0,0.0,0.0,0.0,gonzalo villar,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Oriol Rey,8764,MC,78,0.0,0.0,0.03,0.01,0.0,1.0,oriol rey,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Adrián De la Fuente,10319,DC,90,0.0,0.0,0.11,0.12,0.0,5.0,adrian de la fuente,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Manuel Sánchez,7605,DC,56,0.0,0.0,0.0,0.01,0.0,0.0,manuel sanchez,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,German Valera,8230,MC,90,0.0,1.0,0.0,0.02,1.0,0.0,german valera,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Fernando Niño,8271,FW,90,0.0,0.0,0.0,0.03,2.0,0.0,fernando nino,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Jon Ander Olasagasti,9466,MC,90,0.0,1.0,0.06,0.13,3.0,2.0,jon ander olasagasti,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Victor Chust,8972,DC,90,0.0,0.0,0.0,0.01,0.0,0.0,victor chust,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Iván Romero,9275,FW,78,0.0,0.0,0.06,0.03,1.0,1.0,ivan romero,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Martim Neto,13840,Sub,24,0.0,0.0,0.0,0.0,0.0,0.0,martim neto,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Federico Redondo,13841,DC,90,0.0,0.0,0.26,0.01,0.0,1.0,federico redondo,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Lucas Cepeda,14400,MC,81,0.0,0.0,0.03,0.13,0.0,1.0,lucas cepeda,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Roger Brugué,13767,FW,90,0.0,0.0,0.27,0.06,2.0,3.0,roger brugue,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Petar Ratkov,14342,Sub,12,0.0,0.0,0.0,0.01,0.0,0.0,petar ratkov,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Roy Revivo,15066,DC,81,1.0,0.0,0.09,0.0,0.0,2.0,roy revivo,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Abiel Osorio,14931,FW,45,0.0,0.0,0.0,0.0,0.0,0.0,abiel osorio,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Etta Eyong,10930,Sub,12,0.0,0.0,0.02,0.0,0.0,1.0,etta eyong,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Thiago Fernández,14393,FW,90,0.0,0.0,0.06,0.05,2.0,2.0,thiago fernandez,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Daniel Requena,13035,MC,90,1.0,0.0,0.15,0.09,2.0,2.0,daniel requena,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Buba Sangaré,12870,DC,90,0.0,0.0,0.0,0.01,0.0,0.0,buba sangare,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Matia Barzic,14719,Sub,9,0.0,0.0,0.0,0.0,0.0,0.0,matia barzic,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Elche,207,Javier Morcillo,14555,MC,90,0.0,0.0,0.0,0.01,0.0,0.0,javier morcillo,elche,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Nacho Pérez,13772,Sub,68,0.0,0.0,0.0,0.01,0.0,0.0,nacho perez,levante,fotmob
+2026-27,ESP1,2026-11-22 16:00:00,30894,Levante,151,Marc Santos,14702,Sub,34,0.0,0.0,0.02,0.0,0.0,1.0,marc santos,levante,fotmob
 2026-27,ESP1,2026-11-22 16:00:00,30895,Osasuna,157,Ante Budimir,1235,FW,86,1.0,0.0,0.57,0.08,0.0,5.0,ante budimir,osasuna,fotmob
 2026-27,ESP1,2026-11-22 16:00:00,30895,Osasuna,157,Moi Gómez,2198,MC,76,0.0,0.0,0.03,0.07,0.0,1.0,moi gomez,osasuna,fotmob
 2026-27,ESP1,2026-11-22 16:00:00,30895,Osasuna,157,Lucas Torró,7050,Sub,14,0.0,0.0,0.0,0.0,0.0,0.0,lucas torro,osasuna,fotmob

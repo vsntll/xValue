@@ -108,6 +108,7 @@ fotmob,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Tottenham Hotspur,I
 fotmob,2026-27,Premier League,1,league,ENG1,2026-11-21,17:30,Newcastle United,Arsenal,FT,2,2,D,,,,12.0,13.0,3.0,4.0,6.0,3.0,,,3.0,3.0,,,34.0,66.0,1.71,1.49,fotmob:5795523
 fotmob,2026-27,Premier League,1,league,ENG1,2026-11-22,14:00,Hull City,Brighton & Hove Albion,FT,2,0,H,,,,11.0,15.0,5.0,8.0,3.0,4.0,,,2.0,2.0,,,30.0,70.0,1.83,2.23,fotmob:5795520
 fotmob,2026-27,Premier League,1,league,ENG1,2026-11-22,16:30,Liverpool,Manchester United,FT,4,0,H,,,,28.0,10.0,11.0,3.0,15.0,5.0,,,1.0,0.0,,,63.0,37.0,4.35,0.65,fotmob:5795521
+fotmob,2026-27,Premier League,1,league,ENG1,2026-11-23,20:00,Brentford,Everton,FT,4,0,H,,,,21.0,4.0,7.0,2.0,6.0,3.0,,,0.0,1.0,,,72.0,28.0,2.57,0.23,fotmob:5795517
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-08-28,18:30,Bayern München,VfB Stuttgart,FT,5,1,H,,,,21.0,11.0,9.0,4.0,9.0,3.0,,,1.0,3.0,,,59.0,41.0,4.06,0.79,fotmob:5881143
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,1. FC Köln,Hoffenheim,FT,3,2,H,,,,18.0,15.0,6.0,4.0,6.0,7.0,,,0.0,2.0,,,41.0,59.0,1.95,1.88,fotmob:5881147
 fotmob,2026-27,Bundesliga,1,league,GER1,2026-08-29,13:30,Elversberg,Bayer Leverkusen,FT,3,2,H,,,,11.0,21.0,6.0,4.0,4.0,3.0,,,3.0,2.0,,,33.0,67.0,1.27,1.88,fotmob:5881146
@@ -326,6 +327,7 @@ fotmob,2026-27,La Liga,1,league,ESP1,2026-11-22,13:00,Barcelona,Villarreal,FT,3,
 fotmob,2026-27,La Liga,1,league,ESP1,2026-11-22,15:15,Racing Santander,Real Sociedad,FT,3,2,H,,,,12.0,31.0,8.0,7.0,7.0,14.0,,,2.0,2.0,,,37.0,63.0,3.05,3.69,fotmob:5868137
 fotmob,2026-27,La Liga,1,league,ESP1,2026-11-22,17:30,Osasuna,Málaga,FT,1,0,H,,,,11.0,5.0,2.0,0.0,4.0,1.0,,,2.0,0.0,,,47.0,53.0,1.23,0.64,fotmob:5868136
 fotmob,2026-27,La Liga,1,league,ESP1,2026-11-22,20:00,Getafe,Atlético Madrid,FT,0,3,A,,,,11.0,20.0,1.0,10.0,2.0,7.0,,,2.0,2.0,,,31.0,69.0,0.5,4.14,fotmob:5868134
+fotmob,2026-27,La Liga,1,league,ESP1,2026-11-23,20:00,Levante,Elche,FT,1,1,D,,,,18.0,4.0,2.0,2.0,5.0,1.0,,,4.0,1.0,,,51.0,49.0,0.77,0.38,fotmob:5868135
 fotmob,2026-27,Serie A,1,league,ITA1,2026-08-22,16:30,Inter,Monza,FT,4,1,H,,,,13.0,7.0,5.0,3.0,3.0,3.0,,,2.0,2.0,,,70.0,30.0,1.05,1.23,fotmob:5749645
 fotmob,2026-27,Serie A,1,league,ITA1,2026-08-22,16:30,Udinese,Como,FT,1,1,D,,,,17.0,20.0,3.0,6.0,1.0,10.0,,,3.0,0.0,,,41.0,59.0,2.14,1.5,fotmob:5749648
 fotmob,2026-27,Serie A,1,league,ITA1,2026-08-22,18:45,Genoa,Napoli,FT,0,2,A,,,,11.0,13.0,2.0,4.0,5.0,5.0,,,2.0,1.0,,,46.0,54.0,0.67,0.77,fotmob:5749644
@@ -445,6 +447,7 @@ fotmob,2026-27,Serie A,1,league,ITA1,2026-11-22,14:00,Bologna,Udinese,FT,1,1,D,,
 fotmob,2026-27,Serie A,1,league,ITA1,2026-11-22,14:00,Sassuolo,Genoa,FT,0,2,A,,,,25.0,11.0,7.0,5.0,5.0,3.0,,,1.0,0.0,,,65.0,35.0,1.66,2.11,fotmob:5749759
 fotmob,2026-27,Serie A,1,league,ITA1,2026-11-22,17:00,Milan,Frosinone,FT,5,1,H,,,,12.0,15.0,8.0,3.0,2.0,9.0,,,1.0,4.0,,,54.0,46.0,2.85,1.09,fotmob:5749750
 fotmob,2026-27,Serie A,1,league,ITA1,2026-11-22,19:45,Atalanta,Inter,FT,4,4,D,,,,15.0,16.0,10.0,6.0,5.0,6.0,,,2.0,1.0,,,41.0,59.0,2.92,3.33,fotmob:5749751
+fotmob,2026-27,Serie A,1,league,ITA1,2026-11-23,19:45,Monza,Fiorentina,FT,3,0,H,,,,13.0,17.0,5.0,8.0,3.0,7.0,,,0.0,1.0,,,44.0,56.0,1.62,1.77,fotmob:5749756
 fotmob,2026-27,Ligue 1,1,league,FRA1,2026-08-21,18:45,Marseille,Strasbourg,FT,4,0,H,,,,14.0,5.0,8.0,2.0,3.0,4.0,,,1.0,3.0,,,67.0,33.0,1.86,0.18,fotmob:5802905
 fotmob,2026-27,Ligue 1,1,league,FRA1,2026-08-22,15:15,Lens,Auxerre,FT,5,2,H,,,,12.0,10.0,9.0,4.0,4.0,7.0,,,0.0,1.0,,,53.0,47.0,4.41,1.84,fotmob:5802904
 fotmob,2026-27,Ligue 1,1,league,FRA1,2026-08-22,18:45,Le Mans,Brest,FT,2,2,D,,,,8.0,26.0,5.0,7.0,1.0,10.0,,,1.0,1.0,,,50.0,50.0,0.67,2.72,fotmob:5802903
@@ -616,6 +619,15 @@ fotmob,2026-27,Champions League,1,european,UCL,2026-11-04,20:00,PSV Eindhoven,Cl
 fotmob,2026-27,Champions League,1,european,UCL,2026-11-04,20:00,RB Leipzig,Manchester City,FT,2,3,A,,,,14.0,12.0,6.0,5.0,5.0,3.0,,,4.0,2.0,,,35.0,65.0,0.87,2.23,fotmob:6106322
 fotmob,2026-27,Champions League,1,european,UCL,2026-11-04,20:00,Slavia Prague,Arsenal,FT,1,2,A,,,,18.0,12.0,6.0,5.0,4.0,2.0,,,1.0,2.0,,,44.0,56.0,2.11,1.49,fotmob:6106389
 fotmob,2026-27,Champions League,1,european,UCL,2026-11-04,20:00,Viking,Sabah FK,FT,4,1,H,,,,21.0,16.0,8.0,4.0,10.0,6.0,,,2.0,2.0,,,50.0,50.0,2.59,1.59,fotmob:6106420
+fotmob,2026-27,Champions League,1,european,UCL,2026-11-24,17:45,Bodø/Glimt,LASK,FT,1,0,H,,,,9.0,5.0,2.0,0.0,4.0,0.0,,,1.0,1.0,,,66.0,34.0,1.22,0.33,fotmob:6106317
+fotmob,2026-27,Champions League,1,european,UCL,2026-11-24,17:45,Galatasaray,Aston Villa,FT,1,0,H,,,,9.0,4.0,2.0,0.0,5.0,1.0,,,2.0,4.0,,,45.0,55.0,0.49,0.59,fotmob:6106339
+fotmob,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Arsenal,Borussia Dortmund,FT,1,1,D,,,,30.0,13.0,4.0,4.0,8.0,5.0,,,0.0,0.0,,,63.0,37.0,2.83,1.15,fotmob:6106259
+fotmob,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Como,AEK Athens,FT,1,0,H,,,,19.0,7.0,4.0,3.0,2.0,1.0,,,2.0,3.0,,,61.0,39.0,1.83,0.54,fotmob:6106412
+fotmob,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Feyenoord,FC Porto,FT,0,1,A,,,,21.0,9.0,7.0,3.0,8.0,4.0,,,2.0,4.0,,,57.0,43.0,1.07,0.85,fotmob:6106307
+fotmob,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Manchester City,Napoli,FT,2,2,D,,,,18.0,9.0,7.0,3.0,9.0,3.0,,,2.0,0.0,,,63.0,37.0,1.34,0.71,fotmob:6106256
+fotmob,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,RB Leipzig,Lens,FT,3,1,H,,,,16.0,11.0,7.0,3.0,10.0,4.0,,,2.0,4.0,,,59.0,41.0,1.86,1.05,fotmob:6106325
+fotmob,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Real Madrid,PSV Eindhoven,FT,5,1,H,,,,24.0,10.0,9.0,1.0,4.0,1.0,,,3.0,1.0,,,62.0,38.0,4.89,1.75,fotmob:6106243
+fotmob,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Slovan Bratislava,Real Betis,FT,0,2,A,,,,12.0,18.0,2.0,6.0,1.0,4.0,,,1.0,1.0,,,31.0,69.0,0.65,1.56,fotmob:6106394
 fotmob,2026-27,Europa League,1,european,UEL,2026-09-16,16:45,Ararat Armenia,Sparta Prague,FT,1,4,A,,,,13.0,23.0,2.0,8.0,2.0,13.0,,,3.0,0.0,,,41.0,59.0,1.92,2.62,fotmob:6112383
 fotmob,2026-27,Europa League,1,european,UEL,2026-09-16,16:45,Omonia Nicosia,Celta Vigo,FT,1,0,H,,,,10.0,19.0,4.0,5.0,3.0,11.0,,,0.0,1.0,,,46.0,54.0,0.3,1.46,fotmob:6112344
 fotmob,2026-27,Europa League,1,european,UEL,2026-09-16,19:00,Milan,Benfica,FT,0,2,A,,,,17.0,11.0,4.0,4.0,10.0,1.0,,,1.0,5.0,,,60.0,40.0,0.99,0.62,fotmob:6112254

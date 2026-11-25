@@ -17162,39 +17162,39 @@ fotmob_id,player,team,team_id,date,match_id,position,minutes,goals,assists,shots
 1272436,Ibrahim Adel,Egypt,10255,2026-01-17,fotmob:5073477,3.0,17,0.0,0.0,,,,,0.01,0,,1,0,0.0,0,1,11,0.0,0.0,0.0,0.0,,,7,9,Nigeria,1,Africa Cup of Nations,competitive,agree,
 1287837,Bruno Onyemaechi,Nigeria,6346,2026-01-17,fotmob:5073477,1.0,90,0.0,0.0,,,,,0.02,2,2.0,1,2,0.0,0,6,57,1.0,0.0,0.0,1.0,,,34,39,Egypt,0,Africa Cup of Nations,competitive,agree,
 1291391,Mahmoud Saber,Egypt,10255,2026-01-17,fotmob:5073477,2.0,30,0.0,0.0,,,,,0.01,2,,0,0,0.0,0,0,21,1.0,0.0,0.0,0.0,,,14,14,Nigeria,1,Africa Cup of Nations,competitive,agree,
-179410,Idrissa Gana Gueye,Senegal,6395,2026-01-18,fotmob:5073478,2.0,120,0.0,1.0,1.0,0.0,0.01,0.01,0.01,2,,3,0,2.0,0,3,65,0.0,0.0,3.0,1.0,,,47,54,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-303339,Sadio Mané,Senegal,6395,2026-01-18,fotmob:5073478,3.0,120,0.0,0.0,,,,,0.01,5,5.0,4,2,0.0,1,7,62,5.0,4.0,2.0,1.0,,,17,23,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-340020,Yassine Bounou,Morocco,6262,2026-01-18,fotmob:5073478,0.0,120,,,,,,,,0,,0,0,,1,4,33,,,,,6.0,1.0,17,25,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-500502,Adam Masina,Morocco,6262,2026-01-18,fotmob:5073478,1.0,89,0.0,0.0,,,,,,0,2.0,1,0,0.0,3,2,50,2.0,0.0,1.0,0.0,,,33,39,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-588626,Abdoulaye Seck,Senegal,6395,2026-01-18,fotmob:5073478,1.0,43,0.0,0.0,,,,,,1,2.0,3,0,2.0,1,0,20,0.0,0.0,1.0,0.0,,,7,10,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-592102,Moussa Niakhaté,Senegal,6395,2026-01-18,fotmob:5073478,1.0,120,0.0,0.0,,,,,0.01,1,,2,0,1.0,5,4,104,0.0,0.0,2.0,0.0,,,90,96,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-617310,Nayef Aguerd,Morocco,6262,2026-01-18,fotmob:5073478,1.0,120,0.0,0.0,2.0,0.0,0.2,0.2,,2,1.0,3,0,0.0,11,0,85,3.0,0.0,6.0,1.0,,,51,62,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-750027,Brahim Díaz,Morocco,6262,2026-01-18,fotmob:5073478,3.0,98,0.0,0.0,2.0,2.0,0.88,0.09,0.06,0,1.0,1,0,0.0,0,3,29,3.0,0.0,1.0,1.0,,,17,20,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-770881,Achraf Hakimi,Morocco,6262,2026-01-18,fotmob:5073478,1.0,120,0.0,0.0,1.0,0.0,0.04,0.04,0.25,2,5.0,2,1,1.0,4,5,96,1.0,3.0,1.0,3.0,,,36,45,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-771294,Ismaïla Sarr,Senegal,6395,2026-01-18,fotmob:5073478,2.0,43,0.0,0.0,1.0,0.0,0.02,0.02,0.08,0,1.0,0,0,0.0,0,2,32,3.0,0.0,1.0,2.0,,,9,15,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-773229,Édouard Mendy,Senegal,6395,2026-01-18,fotmob:5073478,0.0,120,,,,,,,,0,2.0,0,0,,1,11,47,,,,,4.0,0.0,24,37,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-775539,Noussair Mazraoui,Morocco,6262,2026-01-18,fotmob:5073478,1.0,98,0.0,0.0,,,,,0.03,0,3.0,5,2,2.0,3,3,66,0.0,0.0,1.0,1.0,,,36,43,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-788555,Youssef En-Nesyri,Morocco,6262,2026-01-18,fotmob:5073478,3.0,40,0.0,0.0,1.0,0.0,0.07,0.07,,4,,0,0,0.0,0,1,10,1.0,0.0,1.0,0.0,,,1,5,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-798736,Jawad El Yamiq,Morocco,6262,2026-01-18,fotmob:5073478,1.0,31,0.0,0.0,2.0,0.0,0.17,0.17,,0,1.0,1,0,0.0,5,1,29,2.0,0.0,4.0,0.0,,,13,20,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-819972,Cherif Ndiaye,Senegal,6395,2026-01-18,fotmob:5073478,3.0,31,0.0,0.0,2.0,1.0,0.83,0.83,0.01,3,1.0,2,0,0.0,0,2,19,2.0,4.0,2.0,0.0,,,4,7,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-844544,Pape Gueye,Senegal,6395,2026-01-18,fotmob:5073478,2.0,120,1.0,0.0,5.0,4.0,0.37,0.37,0.02,1,3.0,1,1,0.0,0,6,57,4.0,0.0,4.0,0.0,,,31,42,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-884382,Ayoub El Kaabi,Morocco,6262,2026-01-18,fotmob:5073478,3.0,80,0.0,0.0,3.0,0.0,0.24,0.24,,1,1.0,0,0,0.0,4,2,16,3.0,0.0,0.0,0.0,,,3,4,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-906945,Ismail Jakobs,Senegal,6395,2026-01-18,fotmob:5073478,1.0,15,0.0,0.0,,,,,,1,,1,0,0.0,0,1,8,0.0,0.0,0.0,0.0,,,3,6,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-965764,Iliman Ndiaye,Senegal,6395,2026-01-18,fotmob:5073478,3.0,77,0.0,0.0,1.0,1.0,0.29,0.29,0.03,2,,0,0,2.0,0,1,27,1.0,2.0,1.0,1.0,,,10,10,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-1050838,Anass Salah-Eddine,Morocco,6262,2026-01-18,fotmob:5073478,1.0,31,0.0,0.0,,,,,0.02,1,1.0,5,1,0.0,2,4,35,0.0,0.0,1.0,0.0,,,15,18,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-1180288,Ismael Saibari,Morocco,6262,2026-01-18,fotmob:5073478,2.0,89,0.0,0.0,3.0,0.0,0.14,0.14,0.01,0,,2,1,0.0,0,1,34,4.0,1.0,0.0,0.0,,,17,21,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-1197347,Nicolas Jackson,Senegal,6395,2026-01-18,fotmob:5073478,3.0,89,0.0,0.0,,,,,0.02,4,,0,0,0.0,2,1,26,2.0,2.0,3.0,2.0,,,12,15,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-1209399,Abdessamad Ezzalzouli,Morocco,6262,2026-01-18,fotmob:5073478,3.0,120,0.0,0.0,3.0,1.0,0.22,0.22,0.15,1,2.0,4,1,0.0,0,6,77,9.0,1.0,1.0,2.0,,,32,44,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-1228273,Oussama Targhalline,Morocco,6262,2026-01-18,fotmob:5073478,2.0,40,0.0,0.0,,,,,0.19,1,1.0,2,0,0.0,2,1,36,0.0,0.0,1.0,0.0,,,22,27,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-1254147,Antoine Mendy,Senegal,6395,2026-01-18,fotmob:5073478,1.0,77,0.0,0.0,,,,,,1,,1,0,0.0,4,5,44,0.0,1.0,0.0,0.0,,,18,27,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-1274060,Neil El Aynaoui,Morocco,6262,2026-01-18,fotmob:5073478,2.0,120,0.0,0.0,3.0,0.0,0.17,0.17,0.03,3,6.0,3,1,0.0,1,5,70,2.0,4.0,1.0,1.0,,,47,50,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-1311915,Ilias Akhomach,Morocco,6262,2026-01-18,fotmob:5073478,3.0,22,0.0,0.0,1.0,1.0,0.04,0.04,0.18,0,1.0,0,0,0.0,0,2,21,1.0,1.0,0.0,1.0,,,10,11,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-1340895,Bilal El Khannouss,Morocco,6262,2026-01-18,fotmob:5073478,2.0,80,0.0,0.0,,,,,0.13,2,,2,1,0.0,1,3,35,0.0,0.0,1.0,1.0,,,24,28,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-1421275,Hamza Igamane,Morocco,6262,2026-01-18,fotmob:5073478,3.0,8,0.0,0.0,,,,,,0,,0,0,0.0,0,0,2,0.0,0.0,1.0,0.0,,,0,1,Senegal,0,Africa Cup of Nations,competitive,conflict,goals
-1426170,Mamadou Sarr,Senegal,6395,2026-01-18,fotmob:5073478,1.0,120,0.0,0.0,1.0,0.0,0.04,0.04,,1,,0,1,2.0,5,1,86,1.0,1.0,2.0,0.0,,,67,71,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-1436305,Lamine Camara,Senegal,6395,2026-01-18,fotmob:5073478,2.0,77,0.0,0.0,1.0,0.0,0.05,0.05,0.07,1,2.0,3,0,0.0,0,2,46,0.0,1.0,0.0,1.0,,,26,31,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-1451265,Malick Diouf,Senegal,6395,2026-01-18,fotmob:5073478,1.0,105,0.0,0.0,,,,,0.19,2,1.0,3,1,1.0,7,1,58,0.0,1.0,2.0,1.0,,,17,26,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
-1593857,Ibrahim Mbaye,Senegal,6395,2026-01-18,fotmob:5073478,3.0,43,0.0,0.0,2.0,1.0,0.11,0.11,,0,,0,0,0.0,0,2,19,3.0,0.0,1.0,0.0,,,4,8,Morocco,1,Africa Cup of Nations,competitive,conflict,goals
+179410,Idrissa Gana Gueye,Senegal,6395,2026-01-18,fotmob:5073478,2.0,120,0.0,1.0,1.0,0.0,0.01,0.01,0.01,2,,3,0,2.0,0,3,65,0.0,0.0,3.0,1.0,,,47,54,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+303339,Sadio Mané,Senegal,6395,2026-01-18,fotmob:5073478,3.0,120,0.0,0.0,,,,,0.01,5,5.0,4,2,0.0,1,7,62,5.0,4.0,2.0,1.0,,,17,23,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+340020,Yassine Bounou,Morocco,6262,2026-01-18,fotmob:5073478,0.0,120,,,,,,,,0,,0,0,,1,4,33,,,,,6.0,1.0,17,25,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+500502,Adam Masina,Morocco,6262,2026-01-18,fotmob:5073478,1.0,89,0.0,0.0,,,,,,0,2.0,1,0,0.0,3,2,50,2.0,0.0,1.0,0.0,,,33,39,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+588626,Abdoulaye Seck,Senegal,6395,2026-01-18,fotmob:5073478,1.0,43,0.0,0.0,,,,,,1,2.0,3,0,2.0,1,0,20,0.0,0.0,1.0,0.0,,,7,10,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+592102,Moussa Niakhaté,Senegal,6395,2026-01-18,fotmob:5073478,1.0,120,0.0,0.0,,,,,0.01,1,,2,0,1.0,5,4,104,0.0,0.0,2.0,0.0,,,90,96,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+617310,Nayef Aguerd,Morocco,6262,2026-01-18,fotmob:5073478,1.0,120,0.0,0.0,2.0,0.0,0.2,0.2,,2,1.0,3,0,0.0,11,0,85,3.0,0.0,6.0,1.0,,,51,62,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+750027,Brahim Díaz,Morocco,6262,2026-01-18,fotmob:5073478,3.0,98,0.0,0.0,2.0,2.0,0.88,0.09,0.06,0,1.0,1,0,0.0,0,3,29,3.0,0.0,1.0,1.0,,,17,20,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+770881,Achraf Hakimi,Morocco,6262,2026-01-18,fotmob:5073478,1.0,120,0.0,0.0,1.0,0.0,0.04,0.04,0.25,2,5.0,2,1,1.0,4,5,96,1.0,3.0,1.0,3.0,,,36,45,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+771294,Ismaïla Sarr,Senegal,6395,2026-01-18,fotmob:5073478,2.0,43,0.0,0.0,1.0,0.0,0.02,0.02,0.08,0,1.0,0,0,0.0,0,2,32,3.0,0.0,1.0,2.0,,,9,15,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+773229,Édouard Mendy,Senegal,6395,2026-01-18,fotmob:5073478,0.0,120,,,,,,,,0,2.0,0,0,,1,11,47,,,,,4.0,0.0,24,37,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+775539,Noussair Mazraoui,Morocco,6262,2026-01-18,fotmob:5073478,1.0,98,0.0,0.0,,,,,0.03,0,3.0,5,2,2.0,3,3,66,0.0,0.0,1.0,1.0,,,36,43,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+788555,Youssef En-Nesyri,Morocco,6262,2026-01-18,fotmob:5073478,3.0,40,0.0,0.0,1.0,0.0,0.07,0.07,,4,,0,0,0.0,0,1,10,1.0,0.0,1.0,0.0,,,1,5,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+798736,Jawad El Yamiq,Morocco,6262,2026-01-18,fotmob:5073478,1.0,31,0.0,0.0,2.0,0.0,0.17,0.17,,0,1.0,1,0,0.0,5,1,29,2.0,0.0,4.0,0.0,,,13,20,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+819972,Cherif Ndiaye,Senegal,6395,2026-01-18,fotmob:5073478,3.0,31,0.0,0.0,2.0,1.0,0.83,0.83,0.01,3,1.0,2,0,0.0,0,2,19,2.0,4.0,2.0,0.0,,,4,7,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+844544,Pape Gueye,Senegal,6395,2026-01-18,fotmob:5073478,2.0,120,1.0,0.0,5.0,4.0,0.37,0.37,0.02,1,3.0,1,1,0.0,0,6,57,4.0,0.0,4.0,0.0,,,31,42,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+884382,Ayoub El Kaabi,Morocco,6262,2026-01-18,fotmob:5073478,3.0,80,0.0,0.0,3.0,0.0,0.24,0.24,,1,1.0,0,0,0.0,4,2,16,3.0,0.0,0.0,0.0,,,3,4,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+906945,Ismail Jakobs,Senegal,6395,2026-01-18,fotmob:5073478,1.0,15,0.0,0.0,,,,,,1,,1,0,0.0,0,1,8,0.0,0.0,0.0,0.0,,,3,6,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+965764,Iliman Ndiaye,Senegal,6395,2026-01-18,fotmob:5073478,3.0,77,0.0,0.0,1.0,1.0,0.29,0.29,0.03,2,,0,0,2.0,0,1,27,1.0,2.0,1.0,1.0,,,10,10,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+1050838,Anass Salah-Eddine,Morocco,6262,2026-01-18,fotmob:5073478,1.0,31,0.0,0.0,,,,,0.02,1,1.0,5,1,0.0,2,4,35,0.0,0.0,1.0,0.0,,,15,18,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+1180288,Ismael Saibari,Morocco,6262,2026-01-18,fotmob:5073478,2.0,89,0.0,0.0,3.0,0.0,0.14,0.14,0.01,0,,2,1,0.0,0,1,34,4.0,1.0,0.0,0.0,,,17,21,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+1197347,Nicolas Jackson,Senegal,6395,2026-01-18,fotmob:5073478,3.0,89,0.0,0.0,,,,,0.02,4,,0,0,0.0,2,1,26,2.0,2.0,3.0,2.0,,,12,15,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+1209399,Abdessamad Ezzalzouli,Morocco,6262,2026-01-18,fotmob:5073478,3.0,120,0.0,0.0,3.0,1.0,0.22,0.22,0.15,1,2.0,4,1,0.0,0,6,77,9.0,1.0,1.0,2.0,,,32,44,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+1228273,Oussama Targhalline,Morocco,6262,2026-01-18,fotmob:5073478,2.0,40,0.0,0.0,,,,,0.19,1,1.0,2,0,0.0,2,1,36,0.0,0.0,1.0,0.0,,,22,27,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+1254147,Antoine Mendy,Senegal,6395,2026-01-18,fotmob:5073478,1.0,77,0.0,0.0,,,,,,1,,1,0,0.0,4,5,44,0.0,1.0,0.0,0.0,,,18,27,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+1274060,Neil El Aynaoui,Morocco,6262,2026-01-18,fotmob:5073478,2.0,120,0.0,0.0,3.0,0.0,0.17,0.17,0.03,3,6.0,3,1,0.0,1,5,70,2.0,4.0,1.0,1.0,,,47,50,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+1311915,Ilias Akhomach,Morocco,6262,2026-01-18,fotmob:5073478,3.0,22,0.0,0.0,1.0,1.0,0.04,0.04,0.18,0,1.0,0,0,0.0,0,2,21,1.0,1.0,0.0,1.0,,,10,11,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+1340895,Bilal El Khannouss,Morocco,6262,2026-01-18,fotmob:5073478,2.0,80,0.0,0.0,,,,,0.13,2,,2,1,0.0,1,3,35,0.0,0.0,1.0,1.0,,,24,28,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+1421275,Hamza Igamane,Morocco,6262,2026-01-18,fotmob:5073478,3.0,8,0.0,0.0,,,,,,0,,0,0,0.0,0,0,2,0.0,0.0,1.0,0.0,,,0,1,Senegal,0,Africa Cup of Nations,competitive,conflict,score
+1426170,Mamadou Sarr,Senegal,6395,2026-01-18,fotmob:5073478,1.0,120,0.0,0.0,1.0,0.0,0.04,0.04,,1,,0,1,2.0,5,1,86,1.0,1.0,2.0,0.0,,,67,71,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+1436305,Lamine Camara,Senegal,6395,2026-01-18,fotmob:5073478,2.0,77,0.0,0.0,1.0,0.0,0.05,0.05,0.07,1,2.0,3,0,0.0,0,2,46,0.0,1.0,0.0,1.0,,,26,31,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+1451265,Malick Diouf,Senegal,6395,2026-01-18,fotmob:5073478,1.0,105,0.0,0.0,,,,,0.19,2,1.0,3,1,1.0,7,1,58,0.0,1.0,2.0,1.0,,,17,26,Morocco,1,Africa Cup of Nations,competitive,conflict,score
+1593857,Ibrahim Mbaye,Senegal,6395,2026-01-18,fotmob:5073478,3.0,43,0.0,0.0,2.0,1.0,0.11,0.11,,0,,0,0,0.0,0,2,19,3.0,0.0,1.0,0.0,,,4,8,Morocco,1,Africa Cup of Nations,competitive,conflict,score
 292313,Raul Jiménez,Mexico,6710,2025-06-15,fotmob:4772410,3.0,83,1.0,0.0,4.0,2.0,0.63,0.63,0.03,1,1.0,3,0,0.0,0,3,34,4.0,0.0,1.0,1.0,,,9,21,Dominican Republic,1,CONCACAF Gold Cup,competitive,agree,
 559986,Orbelin Pineda,Mexico,6710,2025-06-15,fotmob:4772410,2.0,45,0.0,1.0,,,,,0.13,1,1.0,1,1,0.0,1,0,24,2.0,0.0,0.0,1.0,,,14,15,Dominican Republic,1,CONCACAF Gold Cup,competitive,agree,
 597976,Jesus Gallardo,Mexico,6710,2025-06-15,fotmob:4772410,1.0,90,0.0,0.0,,,,,0.08,0,,4,0,1.0,2,4,77,1.0,1.0,0.0,1.0,,,48,56,Dominican Republic,1,CONCACAF Gold Cup,competitive,agree,

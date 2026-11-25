@@ -5555,6 +5555,53 @@ match_id,is_home,team,team_id,fotmob_id,player,age,position_id,is_starter
 5749755,0,Lecce,9888,1395728,Medon Berisha,23.0,,0
 5749755,0,Lecce,9888,1414124,Olaf Gorter,21.0,,0
 5749755,0,Lecce,9888,1202114,Omri Gandelman,26.0,,0
+5749756,1,Monza,6504,955947,Demba Thiam,28.0,11.0,1
+5749756,1,Monza,6504,1676901,Eddy Kouadio,20.0,33.0,1
+5749756,1,Monza,6504,1507697,Saba Goglichidze,22.0,35.0,1
+5749756,1,Monza,6504,1123969,Andrea Carboni,25.0,37.0,1
+5749756,1,Monza,6504,799497,Samuele Birindelli,27.0,71.0,1
+5749756,1,Monza,6504,1481909,Ebenezer Akinsanmiro,21.0,73.0,1
+5749756,1,Monza,6504,1415623,Leonardo Colombo,21.0,75.0,1
+5749756,1,Monza,6504,566654,Matteo Pessina,29.0,77.0,1
+5749756,1,Monza,6504,824655,Ricardo Mangas,28.0,79.0,1
+5749756,1,Monza,6504,1585676,Gustavo Varela,21.0,104.0,1
+5749756,1,Monza,6504,1453338,Jay Robinson,19.0,106.0,1
+5749756,1,Monza,6504,737339,Dany Mota,28.0,,0
+5749756,1,Monza,6504,1511063,Jan Ziólkowski,21.0,,0
+5749756,1,Monza,6504,1577900,Foe Ondoa,20.0,,0
+5749756,1,Monza,6504,731600,Idrissa Touré,28.0,,0
+5749756,1,Monza,6504,1524139,Lorenzo Lucchesi,23.0,,0
+5749756,1,Monza,6504,1804416,Aljaž Strajnar,19.0,,0
+5749756,1,Monza,6504,1122424,Noel Törnqvist,24.0,,0
+5749756,1,Monza,6504,899649,Valentin Antov,26.0,,0
+5749756,1,Monza,6504,1425693,Adam Bakoune,20.0,,0
+5749756,1,Monza,6504,937462,Andrea Colpani,27.0,,0
+5749756,1,Monza,6504,1879542,Mathis Mout,19.0,,0
+5749756,1,Monza,6504,1190023,Omari Forson,22.0,,0
+5749756,1,Monza,6504,1110044,Exequiel Zeballos,24.0,,0
+5749756,1,Monza,6504,639671,Patrick Cutrone,28.0,,0
+5749756,0,Fiorentina,8535,182917,David de Gea,36.0,11.0,1
+5749756,0,Fiorentina,8535,1526689,Álex Jiménez,21.0,32.0,1
+5749756,0,Fiorentina,8535,1203661,Radu Drăgușin,24.0,34.0,1
+5749756,0,Fiorentina,8535,1501917,Viery,21.0,36.0,1
+5749756,0,Fiorentina,8535,958421,João Mário,26.0,38.0,1
+5749756,0,Fiorentina,8535,1246009,Cher Ndour,22.0,64.0,1
+5749756,0,Fiorentina,8535,1666494,Christ Inao Oulaï,20.0,66.0,1
+5749756,0,Fiorentina,8535,1607566,Franco Mastantuono,19.0,83.0,1
+5749756,0,Fiorentina,8535,875133,Pote,28.0,85.0,1
+5749756,0,Fiorentina,8535,1107286,Wilfried Gnonto,23.0,87.0,1
+5749756,0,Fiorentina,8535,1224237,Mateo Pellegrino,25.0,115.0,1
+5749756,0,Fiorentina,8535,935406,Luca Ranieri,27.0,,0
+5749756,0,Fiorentina,8535,1607014,Alieu Njie,21.0,,0
+5749756,0,Fiorentina,8535,1712399,Valde,20.0,,0
+5749756,0,Fiorentina,8535,1079485,Beto,28.0,,0
+5749756,0,Fiorentina,8535,282059,Luca Lezzerini,31.0,,0
+5749756,0,Fiorentina,8535,806972,Oliver Christensen,27.0,,0
+5749756,0,Fiorentina,8535,750734,Dodô,28.0,,0
+5749756,0,Fiorentina,8535,1428426,Arthur Atta,23.0,,0
+5749756,0,Fiorentina,8535,950596,Marco Brescianini,26.0,,0
+5749756,0,Fiorentina,8535,951712,Nicolò Fagioli,25.0,,0
+5749756,0,Fiorentina,8535,1835436,Brando Mazzeo,19.0,,0
 5749757,1,Napoli,9875,543021,Vanja Milinković-Savić,29.0,11.0,1
 5749757,1,Napoli,9875,873573,Sam Beukema,28.0,33.0,1
 5749757,1,Napoli,9875,544693,Amir Rrahmani,32.0,35.0,1
@@ -9777,6 +9824,46 @@ match_id,is_home,team,team_id,fotmob_id,player,age,position_id,is_starter
 5795516,0,Sunderland,8472,1327319,Chris Rigg,19.0,,0
 5795516,0,Sunderland,8472,1364069,Malick Fofana,21.0,,0
 5795516,0,Sunderland,8472,1421003,Timur Tuterov,21.0,,0
+5795517,1,Brentford,9937,776689,Caoimhín Kelleher,28.0,11.0,1
+5795517,1,Brentford,9937,1429912,Michael Kayode,22.0,32.0,1
+5795517,1,Brentford,9937,552718,Kristoffer Ajer,28.0,34.0,1
+5795517,1,Brentford,9937,919435,Sepp van den Berg,24.0,36.0,1
+5795517,1,Brentford,9937,1010426,Keane Lewis-Potter,25.0,38.0,1
+5795517,1,Brentford,9937,1157236,Yehor Yarmoliuk,22.0,64.0,1
+5795517,1,Brentford,9937,688273,Vitaly Janelt,28.0,66.0,1
+5795517,1,Brentford,9937,1250253,Dango Ouattara,24.0,83.0,1
+5795517,1,Brentford,9937,888912,Mikkel Damsgaard,26.0,85.0,1
+5795517,1,Brentford,9937,1171140,Jaidon Anthony,26.0,87.0,1
+5795517,1,Brentford,9937,184321,Callum Wilson,34.0,115.0,1
+5795517,1,Brentford,9937,1083796,Kevin Schade,24.0,,0
+5795517,1,Brentford,9937,1451265,Malick Diouf,21.0,,0
+5795517,1,Brentford,9937,650616,Mathias Jensen,30.0,,0
+5795517,1,Brentford,9937,963965,Fábio Carvalho,24.0,,0
+5795517,1,Brentford,9937,1185211,Mamadou Sangaré,24.0,,0
+5795517,1,Brentford,9937,850962,Hákon Rafn Valdimarsson,25.0,,0
+5795517,1,Brentford,9937,1478706,Benjamin Fredrick,21.0,,0
+5795517,1,Brentford,9937,1572340,Jannik Schuster,20.0,,0
+5795517,1,Brentford,9937,1516030,Gustavo Nunes,21.0,,0
+5795517,0,Everton,8668,303919,Jordan Pickford,32.0,11.0,1
+5795517,0,Everton,8668,1098607,Jake O'Brien,25.0,32.0,1
+5795517,0,Everton,8668,243138,James Tarkowski,34.0,34.0,1
+5795517,0,Everton,8668,1030829,Jarrad Branthwaite,24.0,36.0,1
+5795517,0,Everton,8668,874025,Vitaliy Mykolenko,27.0,38.0,1
+5795517,0,Everton,8668,1559637,Harrison Armstrong,19.0,64.0,1
+5795517,0,Everton,8668,950474,James Garner,25.0,66.0,1
+5795517,0,Everton,8668,1210384,Merlin Röhl,24.0,83.0,1
+5795517,0,Everton,8668,886016,Kiernan Dewsbury-Hall,28.0,85.0,1
+5795517,0,Everton,8668,1424875,Tyrique George,20.0,87.0,1
+5795517,0,Everton,8668,1398392,Thierno Barry,24.0,115.0,1
+5795517,0,Everton,8668,312765,Jack Grealish,31.0,,0
+5795517,0,Everton,8668,290410,Michael Keane,33.0,,0
+5795517,0,Everton,8668,1076756,Brennan Johnson,25.0,,0
+5795517,0,Everton,8668,982394,Hayden Hackney,24.0,,0
+5795517,0,Everton,8668,266520,Christian Nørgaard,32.0,,0
+5795517,0,Everton,8668,731855,Mark Travers,27.0,,0
+5795517,0,Everton,8668,604089,Ainsley Maitland-Niles,29.0,,0
+5795517,0,Everton,8668,1128965,Charly Alcaraz,23.0,,0
+5795517,0,Everton,8668,1292833,Tyler Dibling,20.0,,0
 5795518,1,Chelsea,8455,268375,Emiliano Martínez,34.0,11.0,1
 5795518,1,Chelsea,8455,1400216,Josh Acheampong,20.0,32.0,1
 5795518,1,Chelsea,8455,917802,Wesley Fofana,25.0,34.0,1
@@ -19666,6 +19753,52 @@ match_id,is_home,team,team_id,fotmob_id,player,age,position_id,is_starter
 5868134,0,Atlético Madrid,9906,1254394,Obed Vargas,21.0,,0
 5868134,0,Atlético Madrid,9906,1297989,Arnau Ortiz,25.0,,0
 5868134,0,Atlético Madrid,9906,939569,Jonathan David,26.0,,0
+5868135,1,Levante,8581,185644,Mathew Ryan,34.0,11.0,1
+5868135,1,Levante,8581,443966,Jeremy Toljan,32.0,32.0,1
+5868135,1,Levante,8581,210683,Aïssa Mandi,35.0,34.0,1
+5868135,1,Levante,8581,952528,Adrián De La Fuente,27.0,36.0,1
+5868135,1,Levante,8581,1052330,Manuel Sánchez,26.0,38.0,1
+5868135,1,Levante,8581,914401,Oriol Rey,28.0,65.0,1
+5868135,1,Levante,8581,1286471,Roger Brugué,30.0,82.0,1
+5868135,1,Levante,8581,1481503,Dani Requena,22.0,84.0,1
+5868135,1,Levante,8581,1131957,Jon Olasagasti,26.0,86.0,1
+5868135,1,Levante,8581,1460063,Thiago Fernández,22.0,88.0,1
+5868135,1,Levante,8581,1209441,Iván Romero,25.0,115.0,1
+5868135,1,Levante,8581,1800611,Nacho Pérez,18.0,,0
+5868135,1,Levante,8581,2141146,Marc Santos,16.0,,0
+5868135,1,Levante,8581,1392779,Etta Eyong,23.0,,0
+5868135,1,Levante,8581,1302821,Petar Ratkov,23.0,,0
+5868135,1,Levante,8581,1237455,Pablo Campos,24.0,,0
+5868135,1,Levante,8581,1780239,Ifeanyi Ndukwe,18.0,,0
+5868135,1,Levante,8581,1617146,Jorge Cabello,22.0,,0
+5868135,1,Levante,8581,1332540,Enzo Bardeli,25.0,,0
+5868135,1,Levante,8581,1254218,Hugo Sotelo,22.0,,0
+5868135,1,Levante,8581,1649293,Paco Cortés,19.0,,0
+5868135,1,Levante,8581,977618,Víctor García,29.0,,0
+5868135,1,Levante,8581,1836083,Yanis Musuayi,19.0,,0
+5868135,0,Elche,10268,592412,Matías Dituro,39.0,11.0,1
+5868135,0,Elche,10268,1583872,Buba Sangaré,19.0,32.0,1
+5868135,0,Elche,10268,1277343,Federico Redondo,23.0,34.0,1
+5868135,0,Elche,10268,1192393,Víctor Chust,26.0,36.0,1
+5868135,0,Elche,10268,1337914,Roy Revivo,23.0,38.0,1
+5868135,0,Elche,10268,1280756,Lucas Cepeda,24.0,72.0,1
+5868135,0,Elche,10268,1732412,Javi Morcillo,20.0,74.0,1
+5868135,0,Elche,10268,881773,Gonzalo Villar,28.0,76.0,1
+5868135,0,Elche,10268,1102708,Germán Valera,24.0,78.0,1
+5868135,0,Elche,10268,1343195,Abiel Osorio,24.0,104.0,1
+5868135,0,Elche,10268,1127224,Fer Niño,26.0,106.0,1
+5868135,0,Elche,10268,468931,Thomas Lemar,31.0,,0
+5868135,0,Elche,10268,1226189,Martim Neto,23.0,,0
+5868135,0,Elche,10268,1670276,Matia Barzić,22.0,,0
+5868135,0,Elche,10268,801213,Tete Morente,29.0,,0
+5868135,0,Elche,10268,654091,Grady Diangana,28.0,,0
+5868135,0,Elche,10268,1311126,Alejandro Iturbe,23.0,,0
+5868135,0,Elche,10268,1206583,Kevin Lomónaco,24.0,,0
+5868135,0,Elche,10268,291635,Pedro Bigas,36.0,,0
+5868135,0,Elche,10268,1336566,Facundo Buonanotte,21.0,,0
+5868135,0,Elche,10268,623982,Josan,36.0,,0
+5868135,0,Elche,10268,1959218,Álvaro Padilla,20.0,,0
+5868135,0,Elche,10268,493216,Ezequiel Ponce,29.0,,0
 5868136,1,Osasuna,8371,683762,Sergio Herrera,33.0,11.0,1
 5868136,1,Osasuna,8371,763970,Valentin Rosier,30.0,32.0,1
 5868136,1,Osasuna,8371,814663,Alejandro Catena,32.0,34.0,1

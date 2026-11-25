@@ -108,7 +108,7 @@ espn,2026-27,Premier League,1,league,ENG1,2026-11-21,15:00,Tottenham Hotspur,Ips
 espn,2026-27,Premier League,1,league,ENG1,2026-11-21,17:30,Newcastle United,Arsenal,FULL_TIME,2.0,2.0,D,,,,12.0,13.0,3.0,4.0,6.0,3.0,19.0,7.0,3.0,3.0,0.0,0.0,33.6,66.4,,,espn:401879232
 espn,2026-27,Premier League,1,league,ENG1,2026-11-22,14:00,Hull City,Brighton & Hove Albion,FULL_TIME,2.0,0.0,H,,,,11.0,15.0,5.0,8.0,3.0,5.0,7.0,17.0,2.0,2.0,0.0,1.0,29.8,70.2,,,espn:401879234
 espn,2026-27,Premier League,1,league,ENG1,2026-11-22,16:30,Liverpool,Manchester United,FULL_TIME,4.0,0.0,H,,,,28.0,10.0,11.0,3.0,15.0,5.0,15.0,7.0,1.0,0.0,0.0,1.0,63.8,36.2,,,espn:401878755
-espn,2026-27,Premier League,1,league,ENG1,2026-11-23,20:00,Brentford,Everton,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879237
+espn,2026-27,Premier League,1,league,ENG1,2026-11-23,20:00,Brentford,Everton,FULL_TIME,4.0,0.0,H,,,,21.0,4.0,7.0,2.0,6.0,3.0,8.0,9.0,0.0,1.0,0.0,1.0,72.1,27.9,,,espn:401879237
 espn,2026-27,Premier League,1,league,ENG1,2026-11-27,20:00,Nottingham Forest,Chelsea,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879225
 espn,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Leeds United,Coventry City,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879227
 espn,2026-27,Premier League,1,league,ENG1,2026-11-28,15:00,Manchester United,Brentford,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401879226
@@ -813,7 +813,7 @@ espn,2026-27,La Liga,1,league,ESP1,2026-11-22,13:00,Barcelona,Villarreal,FULL_TI
 espn,2026-27,La Liga,1,league,ESP1,2026-11-22,15:15,Racing Santander,Real Sociedad,FULL_TIME,3.0,2.0,H,,,,12.0,31.0,8.0,7.0,7.0,14.0,10.0,10.0,2.0,2.0,0.0,0.0,37.2,62.8,,,espn:401882800
 espn,2026-27,La Liga,1,league,ESP1,2026-11-22,17:30,Osasuna,Málaga,FULL_TIME,1.0,0.0,H,,,,11.0,5.0,2.0,0.0,4.0,1.0,15.0,11.0,2.0,0.0,1.0,0.0,47.2,52.8,,,espn:401882801
 espn,2026-27,La Liga,1,league,ESP1,2026-11-22,20:00,Getafe,Atlético Madrid,FULL_TIME,0.0,3.0,A,,,,11.0,20.0,1.0,10.0,2.0,7.0,11.0,11.0,2.0,2.0,1.0,0.0,31.3,68.7,,,espn:401882803
-espn,2026-27,La Liga,1,league,ESP1,2026-11-23,20:00,Levante,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401882802
+espn,2026-27,La Liga,1,league,ESP1,2026-11-23,20:00,Levante,Elche,FULL_TIME,1.0,1.0,D,,,,18.0,4.0,2.0,2.0,5.0,1.0,14.0,12.0,4.0,1.0,0.0,0.0,50.7,49.3,,,espn:401882802
 espn,2026-27,La Liga,1,league,ESP1,2026-11-27,20:00,Levante,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401882791
 espn,2026-27,La Liga,1,league,ESP1,2026-11-28,13:00,Real Betis,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401882796
 espn,2026-27,La Liga,1,league,ESP1,2026-11-28,15:15,Málaga,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401882790
@@ -1184,7 +1184,7 @@ espn,2026-27,Serie A,1,league,ITA1,2026-11-22,14:00,Bologna,Udinese,FULL_TIME,1.
 espn,2026-27,Serie A,1,league,ITA1,2026-11-22,14:00,Sassuolo,Genoa,FULL_TIME,0.0,2.0,A,,,,25.0,11.0,7.0,5.0,5.0,3.0,11.0,9.0,1.0,0.0,0.0,0.0,64.7,35.3,,,espn:401874960
 espn,2026-27,Serie A,1,league,ITA1,2026-11-22,17:00,AC Milan,Frosinone,FULL_TIME,5.0,1.0,H,,,,12.0,15.0,8.0,3.0,2.0,9.0,6.0,17.0,1.0,4.0,0.0,0.0,53.7,46.3,,,espn:401874989
 espn,2026-27,Serie A,1,league,ITA1,2026-11-22,19:45,Atalanta,Internazionale,FULL_TIME,4.0,4.0,D,,,,15.0,16.0,10.0,6.0,5.0,6.0,9.0,10.0,2.0,1.0,0.0,0.0,40.6,59.4,,,espn:401875001
-espn,2026-27,Serie A,1,league,ITA1,2026-11-23,19:45,Monza,Fiorentina,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401875009
+espn,2026-27,Serie A,1,league,ITA1,2026-11-23,19:45,Monza,Fiorentina,FULL_TIME,3.0,0.0,H,,,,13.0,17.0,5.0,8.0,3.0,7.0,8.0,13.0,0.0,1.0,0.0,0.0,44.6,55.4,,,espn:401875009
 espn,2026-27,Serie A,1,league,ITA1,2026-11-27,19:45,Venezia,Bologna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401875004
 espn,2026-27,Serie A,1,league,ITA1,2026-11-28,14:00,Frosinone,Parma,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401875081
 espn,2026-27,Serie A,1,league,ITA1,2026-11-28,17:00,Torino,Lazio,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401874826
@@ -1574,11 +1574,11 @@ espn,2026-27,Ligue 1,1,league,FRA1,2026-12-13,19:45,Lyon,Marseille,SCHEDULED,,,,
 espn,2026-27,Ligue 1,1,league,FRA1,2027-01-02,16:00,Brest,Marseille,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401876367
 espn,2026-27,Ligue 1,1,league,FRA1,2027-01-02,20:00,AS Monaco,Nice,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401876363
 espn,2026-27,Ligue 1,1,league,FRA1,2027-01-02,20:00,Lorient,AJ Auxerre,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401876364
-espn,2026-27,Ligue 1,1,league,FRA1,2027-01-02,20:00,Paris FC,Le Havre AC,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401876362
 espn,2026-27,Ligue 1,1,league,FRA1,2027-01-02,20:00,Toulouse,Angers,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401876361
 espn,2026-27,Ligue 1,1,league,FRA1,2027-01-02,20:00,Troyes,Stade Rennais,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401876360
 espn,2026-27,Ligue 1,1,league,FRA1,2027-01-03,14:00,Le Mans,Lyon,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401876366
 espn,2026-27,Ligue 1,1,league,FRA1,2027-01-03,16:15,Lille,Strasbourg,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401876365
+espn,2026-27,Ligue 1,1,league,FRA1,2027-01-03,16:15,Paris FC,Le Havre AC,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401876362
 espn,2026-27,Ligue 1,1,league,FRA1,2027-01-03,19:45,Lens,Paris Saint-Germain,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401876359
 espn,2026-27,Ligue 1,1,league,FRA1,2027-01-15,19:45,Marseille,Lille,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401876355
 espn,2026-27,Ligue 1,1,league,FRA1,2027-01-16,16:15,Angers,Paris Saint-Germain,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401876358
@@ -1823,15 +1823,15 @@ espn,2026-27,Champions League,1,european,UCL,2026-11-04,20:00,PSV Eindhoven,Club
 espn,2026-27,Champions League,1,european,UCL,2026-11-04,20:00,RB Leipzig,Manchester City,FULL_TIME,2.0,3.0,A,,,,14.0,12.0,6.0,5.0,5.0,3.0,20.0,7.0,4.0,2.0,0.0,0.0,35.4,64.6,,,espn:401915306
 espn,2026-27,Champions League,1,european,UCL,2026-11-04,20:00,Slavia Prague,Arsenal,FULL_TIME,1.0,2.0,A,,,,18.0,12.0,6.0,5.0,4.0,2.0,15.0,10.0,1.0,2.0,0.0,0.0,43.5,56.5,,,espn:401915381
 espn,2026-27,Champions League,1,european,UCL,2026-11-04,20:00,Viking FK,Sabah FK,FULL_TIME,4.0,1.0,H,,,,21.0,16.0,8.0,4.0,10.0,6.0,5.0,9.0,2.0,2.0,0.0,1.0,50.5,49.5,,,espn:401915302
-espn,2026-27,Champions League,1,european,UCL,2026-11-24,17:45,Bodo/Glimt,LASK Linz,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915380
-espn,2026-27,Champions League,1,european,UCL,2026-11-24,17:45,Galatasaray,Aston Villa,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915300
-espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Arsenal,Borussia Dortmund,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915295
-espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Como,AEK Athens,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915296
-espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Feyenoord Rotterdam,FC Porto,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915294
-espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Manchester City,Napoli,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915379
-espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,RB Leipzig,Lens,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915299
-espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Real Madrid,PSV Eindhoven,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915298
-espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Slovan Bratislava,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915297
+espn,2026-27,Champions League,1,european,UCL,2026-11-24,17:45,Bodo/Glimt,LASK Linz,FULL_TIME,1.0,0.0,H,,,,9.0,5.0,2.0,0.0,4.0,0.0,5.0,14.0,1.0,1.0,0.0,0.0,65.8,34.2,,,espn:401915380
+espn,2026-27,Champions League,1,european,UCL,2026-11-24,17:45,Galatasaray,Aston Villa,FULL_TIME,1.0,0.0,H,,,,9.0,4.0,2.0,0.0,5.0,1.0,13.0,12.0,2.0,4.0,0.0,0.0,45.4,54.6,,,espn:401915300
+espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Arsenal,Borussia Dortmund,FULL_TIME,1.0,1.0,D,,,,30.0,13.0,4.0,4.0,8.0,5.0,7.0,13.0,0.0,0.0,0.0,0.0,63.2,36.8,,,espn:401915295
+espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Como,AEK Athens,FULL_TIME,1.0,0.0,H,,,,19.0,7.0,4.0,3.0,2.0,1.0,15.0,17.0,2.0,3.0,0.0,0.0,60.9,39.1,,,espn:401915296
+espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Feyenoord Rotterdam,FC Porto,FULL_TIME,0.0,1.0,A,,,,21.0,9.0,7.0,3.0,8.0,4.0,10.0,13.0,2.0,4.0,0.0,0.0,56.6,43.4,,,espn:401915294
+espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Manchester City,Napoli,FULL_TIME,2.0,2.0,D,,,,18.0,9.0,7.0,3.0,9.0,3.0,9.0,9.0,1.0,0.0,0.0,0.0,62.7,37.3,,,espn:401915379
+espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,RB Leipzig,Lens,FULL_TIME,3.0,1.0,H,,,,16.0,11.0,7.0,3.0,10.0,4.0,12.0,13.0,2.0,4.0,0.0,0.0,58.6,41.4,,,espn:401915299
+espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Real Madrid,PSV Eindhoven,FULL_TIME,5.0,1.0,H,,,,24.0,10.0,9.0,1.0,4.0,1.0,6.0,11.0,3.0,1.0,0.0,0.0,61.5,38.5,,,espn:401915298
+espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Slovan Bratislava,Real Betis,FULL_TIME,0.0,2.0,A,,,,12.0,18.0,2.0,6.0,1.0,4.0,12.0,6.0,1.0,1.0,0.0,0.0,31.6,68.4,,,espn:401915297
 espn,2026-27,Champions League,1,european,UCL,2026-11-25,17:45,Sabah FK,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915378
 espn,2026-27,Champions League,1,european,UCL,2026-11-25,17:45,Slavia Prague,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915293
 espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Atlético Madrid,Viking FK,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915291
@@ -2427,34 +2427,34 @@ espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-18,19:00,Alcoyano,Mallorca,
 espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-18,19:00,Badajoz,Tenerife,FULL_TIME,2.0,5.0,A,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3.0,1.0,0.0,1.0,0.0,0.0,,,espn:401928532
 espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-18,19:30,CD Minera,FC Cartagena,FINAL_AET,1.0,2.0,A,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3.0,2.0,1.0,0.0,0.0,0.0,,,espn:401928524
 espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-11-18,19:30,Reus FC Reddis,Barakaldo,FINAL_PEN,1.0,1.0,D,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3.0,4.0,0.0,0.0,0.0,0.0,,,espn:401928500
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Albacete,Las Palmas,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936424
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Almería,Granada,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936425
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Amorebieta,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936418
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Antequera CF,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936411
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-01,18:00,Antequera CF,Levante,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936411
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-01,18:00,Reus FC Reddis,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936401
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-01,18:30,Huesca,Girona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936417
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-01,19:00,Albacete,Las Palmas,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936424
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-01,19:00,Ponferradina,FC Andorra,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936422
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-01,20:00,CD Extremadura,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936406
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-01,20:00,CE Europa,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936400
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-01,20:00,FC Cartagena,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936408
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-01,20:00,Gimnástica Torrelavega,Alavés,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936397
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-01,20:00,Numancia,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936399
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,17:30,Ceuta,Cádiz,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936412
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,18:00,Portugalete,Deportivo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936415
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,18:00,Sant Andreu,Eibar,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936423
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,19:00,Almería,Granada,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936425
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,19:00,CD Sabadell,Sporting Gijón,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936402
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,19:00,Cultural Leonesa,Castellón,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936405
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,19:00,Eldense,Tenerife,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936433
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,19:00,Mirandés,Leganés,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936403
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,19:00,Zamora CF,Real Valladolid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936404
 espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Arosa,Celta Vigo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936416
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Atlético Paso,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936409
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,CD Extremadura,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936406
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,CD Sabadell,Sporting Gijón,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936402
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,CE Europa,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936400
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Ceuta,Cádiz,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936412
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Coria,Málaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936407
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Cultural Leonesa,Castellón,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936405
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Eldense,Tenerife,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936433
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,FC Cartagena,Elche,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936408
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Gimnástica Torrelavega,Alavés,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936397
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Huesca,Girona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936417
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Mirandés,Leganés,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936403
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Numancia,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936399
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Ponferradina,FC Andorra,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936422
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Portugalete,Deportivo,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936415
 espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Rayo Majadahonda,Mallorca,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936421
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Real Ávila,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936420
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Real Jaen CF,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936410
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Real Zaragoza,Burgos,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936419
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Reus FC Reddis,Racing Santander,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936401
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Sant Andreu,Eibar,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936423
 espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Sestao,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936398
-espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-02,20:00,Zamora CF,Real Valladolid,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936404
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-03,18:00,Atlético Paso,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936409
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-03,18:00,Real Ávila,Getafe,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936420
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-03,20:00,Amorebieta,Osasuna,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936418
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-03,20:00,Coria,Málaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936407
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-03,20:00,Real Jaen CF,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936410
+espn,2026-27,Copa del Rey,1,domestic_cup,CDR,2026-12-03,20:00,Real Zaragoza,Burgos,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401936419
 espn,2026-27,Coppa Italia,1,domestic_cup,CI,2026-08-08,18:00,Vicenza,Catania,FINAL_PEN,1.0,1.0,D,,,,,,,,,,,,,,,,,,,,espn:401881688
 espn,2026-27,Coppa Italia,1,domestic_cup,CI,2026-08-08,18:30,Ascoli,Potenza,FULL_TIME,3.0,1.0,H,,,,,,,,,,,,,,,,,,,,espn:401881689
 espn,2026-27,Coppa Italia,1,domestic_cup,CI,2026-08-09,17:45,Arezzo,Union Brescia,FULL_TIME,2.0,0.0,H,,,,,,,,,,,,,,,,,,,,espn:401881690

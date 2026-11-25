@@ -255,6 +255,9 @@ match_id,time,type,isHome,home_score,away_score
 5749755,25,Goal,True,1.0,0.0
 5749755,68,Goal,True,2.0,0.0
 5749755,90,Goal,True,3.0,0.0
+5749756,45,Goal,True,1.0,0.0
+5749756,51,Goal,True,2.0,0.0
+5749756,59,Goal,True,3.0,0.0
 5749757,73,Goal,True,1.0,0.0
 5749758,39,Goal,False,0.0,1.0
 5749758,54,Goal,True,1.0,1.0
@@ -439,6 +442,11 @@ match_id,time,type,isHome,home_score,away_score
 5795514,36,Goal,True,1.0,0.0
 5795515,19,Goal,True,1.0,0.0
 5795515,45,Goal,True,2.0,0.0
+5795517,23,Goal,True,1.0,0.0
+5795517,25,Goal,True,2.0,0.0
+5795517,40,Red,False,,
+5795517,67,Goal,True,3.0,0.0
+5795517,90,Goal,True,4.0,0.0
 5795518,25,Goal,True,1.0,0.0
 5795518,28,Goal,False,1.0,1.0
 5795518,53,Goal,False,1.0,2.0
@@ -870,6 +878,8 @@ match_id,time,type,isHome,home_score,away_score
 5868134,30,Goal,False,0.0,2.0
 5868134,90,Red,True,,
 5868134,90,Goal,False,0.0,3.0
+5868135,62,Goal,False,0.0,1.0
+5868135,88,Goal,True,1.0,1.0
 5868136,20,Goal,True,1.0,0.0
 5868136,90,Red,True,,
 5868137,6,Goal,True,1.0,0.0
