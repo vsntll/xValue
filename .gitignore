@@ -71,3 +71,9 @@ data/processed/match_lineup_players.csv
 site/index.html
 # src/sync_build.py pack output
 build/
+
+# Local design tooling: browser logs and Impeccable working captures (third-party reference shots stay local)
+.playwright-mcp/
+.impeccable/*
+!.impeccable/design.json
+!.impeccable/surfaces/
