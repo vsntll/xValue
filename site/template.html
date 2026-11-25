@@ -657,37 +657,72 @@
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="xv-mark" viewBox="0 0 64 64">
-    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 5l10 9 10-9" stroke="#1ee68c" stroke-width="3"/>
-      <rect x="4" y="14" width="56" height="46" rx="12" fill="#010a06" stroke="#1ee68c" stroke-width="3.5"/>
-      <path class="xs" d="M19 27l22 22" stroke="#f0c24a" stroke-width="6"/>
-      <path class="xs" d="M19 49L44 24" stroke="#f0c24a" stroke-width="6"/>
-      <path class="xs" d="M33 24h11v11" stroke="#f0c24a" stroke-width="6"/>
-    </g>
-    <circle cx="22" cy="5" r="2.6" fill="#1ee68c"/><circle cx="42" cy="5" r="2.6" fill="#1ee68c"/>
-  </symbol>
-</svg>
+<canvas class="field" id="field" aria-hidden="true"></canvas>
 <div class="boot" id="boot" role="status" aria-label="Loading xValue">
-  <div class="boot-inner">
-    <div class="boot-mark" aria-hidden="true"><svg viewBox="0 0 64 64">
-      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 5l10 9 10-9" stroke="#1ee68c" stroke-width="3"/>
-        <rect x="4" y="14" width="56" height="46" rx="12" fill="#010a06" stroke="#1ee68c" stroke-width="3.5"/>
-        <path class="xs" d="M19 27l22 22" stroke="#f0c24a" stroke-width="6"/>
-        <path class="xs" d="M19 49L44 24" stroke="#f0c24a" stroke-width="6"/>
-        <path class="xs" d="M33 24h11v11" stroke="#f0c24a" stroke-width="6"/>
-      </g>
-      <circle cx="22" cy="5" r="2.6" fill="#1ee68c"/><circle cx="42" cy="5" r="2.6" fill="#1ee68c"/></svg></div>
-    <div class="boot-word" aria-hidden="true"><span>x</span><span>V</span><span>a</span><span>l</span><span>u</span><span>e</span></div>
-    <div class="boot-bar" aria-hidden="true"><b></b></div>
-    <div class="boot-cap" aria-hidden="true">Tuning in</div>
-  </div>
+  <div class="boot-word" id="bootWord" aria-hidden="true"><span class="wx">x</span>Value</div>
+  <div class="boot-count" id="bootCount" aria-hidden="true">000%</div>
+  <div class="boot-skip">Click or press any key to skip</div>
 </div>
-<div class="crt-roll" aria-hidden="true"></div>
-<div class="crt-static" id="crtStatic" aria-hidden="true"></div>
-<div class="osd" id="osd" aria-hidden="true"></div>
+
+<header class="hero" id="top">
+  <a class="hero-logo" href="#top" aria-label="xValue"><span class="wx">x</span>Value</a>
+  <div class="arch-wrap">
+  <div class="cross" aria-hidden="true"><i class="h"></i><i class="v"></i><i class="run l"></i><i class="run r"></i></div>
+  <div class="arch">
+    <div class="arch-light" aria-hidden="true">
+      <div class="arch-walls"></div>
+      <div class="pitch"></div>
+      <div class="floor-light"></div>
+    </div>
+    <div class="arch-in">
+      <h1><span class="it">Every</span><span class="bl">Player</span><span class="sc">has a</span><span class="bl">Price</span></h1>
+      <p class="hero-sub">xValue prices every footballer in Europe's big five leagues and calls every match before kickoff, then keeps score in public.</p>
+      <div class="hero-cta">
+        <a class="btn btn-ember" href="#tab-track">See the track record</a>
+        <a class="hero-link" href="#stars">Meet the stars<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+      </div>
+    </div>
+  </div>
+  </div>
+  <p class="hero-credit src-links">Built by <a href="https://github.com/vsntll">Avie Vasantlal</a> &middot;
+    <a href="https://github.com/vsntll/xValue">Source</a> &middot;
+    <a href="https://github.com/vsntll/xValue/blob/master/docs/models.md">Model write-up</a></p>
+</header>
+<script>(function(){   // centre the startup wordmark on the arch before the first paint, so it lands where the crosshair meets
+  var a = document.querySelector('.arch').getBoundingClientRect();
+  document.getElementById('boot').style.setProperty('--cy', Math.round(a.top + a.height/2) + 'px');
+})();</script>
+
+<section class="band" id="stars" aria-labelledby="starsTitle">
+  <div class="band-head">
+    <h2 id="starsTitle">What the biggest stars <span class="soft">are really worth</span></h2>
+    <p>The model prices each player from how he plays, never from his price tag. Here are Europe's ten most expensive players beside its verdict.</p>
+  </div>
+  <div class="window rv">
+    <div class="win-bar"><span class="win-title">Players</span>
+      <span class="win-seg" aria-hidden="true"><span class="on">Most expensive</span><span>Bargains</span><span>Overpriced</span></span></div>
+    <table class="stars-table">
+      <thead><tr><th>Player</th><th class="col-club">Club</th><th class="num">Model says</th><th class="num col-tag">Price tag</th><th>Verdict</th></tr></thead>
+      <tbody id="starRows"></tbody>
+    </table>
+    <div class="win-foot"><span id="starsAsof"></span><button type="button" id="starsAll">Open all players &rarr;</button></div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="proofTitle">
+  <div class="band-head">
+    <h2 id="proofTitle">Can you trust <span class="soft">the price?</span></h2>
+    <p>Before it priced anyone on this page, the model was scored on whole seasons it was never shown.</p>
+  </div>
+  <div class="proof rv">
+    <div class="proof-quote">
+      <blockquote id="proofQuote">The model learns a player's worth from how he plays, never from his price tag.</blockquote>
+      <cite id="proofCite"><b>Value model</b> &middot; scored on held-out seasons</cite>
+    </div>
+    <figure class="proof-chart" id="proofChart"></figure>
+  </div>
+  <p class="proof-note" id="proofNote"></p>
+</section>
 
 <nav class="nav" aria-label="Sections">
   <a class="logo" href="#top" aria-label="xValue, back to top"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#xv-mark"/></svg></a>
