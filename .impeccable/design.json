@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-25T12:00:00+00:00",
+  "title": "Design System: xValue",
+  "extensions": {
+    "colorMeta": {
+      "night": { "role": "neutral", "displayName": "Night", "canonical": "#08090a", "tonalRamp": ["#08090a", "#0c0d10", "#121317", "#17181d", "#1d1e24", "#2a2c33", "#868996", "#f5f4fa"] },
+      "night-2": { "role": "neutral", "displayName": "Night Inset", "canonical": "#0c0d10", "tonalRamp": ["#08090a", "#0c0d10", "#121317", "#17181d", "#1d1e24", "#2a2c33", "#868996", "#f5f4fa"] },
+      "panel": { "role": "neutral", "displayName": "Panel", "canonical": "#121317", "tonalRamp": ["#08090a", "#0c0d10", "#121317", "#17181d", "#1d1e24", "#26272e", "#868996", "#f5f4fa"] },
+      "panel-2": { "role": "neutral", "displayName": "Panel Raised", "canonical": "#17181d", "tonalRamp": ["#08090a", "#0c0d10", "#121317", "#17181d", "#1d1e24", "#26272e", "#868996", "#f5f4fa"] },
+      "panel-3": { "role": "neutral", "displayName": "Panel Top", "canonical": "#1d1e24", "tonalRamp": ["#08090a", "#0c0d10", "#121317", "#17181d", "#1d1e24", "#26272e", "#868996", "#f5f4fa"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(255,255,255,.08)" },
+      "hairline-2": { "role": "neutral", "displayName": "Hairline Strong", "canonical": "rgba(255,255,255,.14)" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#f5f4fa", "tonalRamp": ["#1d1e24", "#3a3c45", "#6b6e7a", "#868996", "#9a9daa", "#b6b8c4", "#e6e6ee", "#f5f4fa"] },
+      "ink-2": { "role": "neutral", "displayName": "Ink Soft", "canonical": "#b6b8c4", "tonalRamp": ["#1d1e24", "#3a3c45", "#6b6e7a", "#868996", "#9a9daa", "#b6b8c4", "#e6e6ee", "#f5f4fa"] },
+      "ink-3": { "role": "neutral", "displayName": "Ink Quiet", "canonical": "#868996", "tonalRamp": ["#1d1e24", "#3a3c45", "#6b6e7a", "#868996", "#9a9daa", "#b6b8c4", "#e6e6ee", "#f5f4fa"] },
+      "cool": { "role": "primary", "displayName": "Floodlight Blue", "canonical": "#8b9cff", "tonalRamp": ["#0e1340", "#1c2a8a", "#2f45d6", "#4b63ff", "#6b80ff", "#8b9cff", "#b9c3ff", "#dfe4ff"] },
+      "cool-deep": { "role": "primary", "displayName": "Deep Floodlight", "canonical": "#4b63ff", "tonalRamp": ["#0e1340", "#1c2a8a", "#2f45d6", "#4b63ff", "#6b80ff", "#8b9cff", "#b9c3ff", "#dfe4ff"] },
+      "cool-pale": { "role": "primary", "displayName": "Pale Floodlight", "canonical": "#c9d1ff", "tonalRamp": ["#0e1340", "#1c2a8a", "#2f45d6", "#4b63ff", "#6b80ff", "#8b9cff", "#c9d1ff", "#dfe4ff"] },
+      "ember": { "role": "secondary", "displayName": "Ember", "canonical": "#b8462a", "tonalRamp": ["#2a0d06", "#5a1d10", "#8a301b", "#b8462a", "#c24e30", "#ff8f66", "#ffb79c", "#ffd2c0"] },
+      "ember-press": { "role": "secondary", "displayName": "Ember Press", "canonical": "#c24e30", "tonalRamp": ["#2a0d06", "#5a1d10", "#8a301b", "#b8462a", "#c24e30", "#ff8f66", "#ffb79c", "#ffd2c0"] },
+      "ember-hi": { "role": "secondary", "displayName": "Ember Glow", "canonical": "#ff8f66", "tonalRamp": ["#2a0d06", "#5a1d10", "#8a301b", "#b8462a", "#c24e30", "#ff8f66", "#ffb79c", "#ffd2c0"] },
+      "pitch": { "role": "tertiary", "displayName": "Floodlit Pitch", "canonical": "#1d5a3a", "tonalRamp": ["#071a10", "#0e2e1e", "#15452c", "#1d5a3a", "#237046", "#2f8a58", "#6fb48e", "#cfe8da"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Blackletter Display", "purpose": "Single display words only: hero 'Player' and 'Price', 'Value' in the wordmark, team names, the sim score, the footer word." },
+      "display-link": { "displayName": "Garamond Italic", "purpose": "Linking words between display words ('Every'), the wordmark x, the fixture 'v'." },
+      "display-caps": { "displayName": "Garamond Caps", "purpose": "Small-caps linking phrase in the hero ('HAS A')." },
+      "headline": { "displayName": "Headline", "purpose": "Section intros and page heads in Geist." },
+      "title": { "displayName": "Title", "purpose": "Card, panel and window headings." },
+      "body": { "displayName": "Body", "purpose": "All running copy; tabular numerals for figures." },
+      "label": { "displayName": "Label", "purpose": "Table heads, captions, tile keys, chips; sentence case, ink-3." },
+      "mono": { "displayName": "Mono", "purpose": "Dates, xG, minutes, ranks, seasons and codes only." }
+    },
+    "shadows": [
+      { "name": "panel-depth", "value": "0 0 0 1px rgba(255,255,255,.14), 0 1px 0 rgba(255,255,255,.04) inset, 0 30px 60px -30px rgba(0,0,0,.8)", "purpose": "Every window, card, table wrap and fixture card." },
+      { "name": "arch-glow", "value": "0 0 0 1px rgba(255,255,255,.06), 0 0 80px -10px rgba(75,99,255,.35), 0 0 120px -20px rgba(255,120,70,.25)", "purpose": "The tunnel arch only." },
+      { "name": "ember-lift", "value": "0 0 0 1px rgba(255,160,120,.25) inset, 0 10px 30px -10px rgba(201,80,47,.7)", "purpose": "The ember action button." },
+      { "name": "floating-nav", "value": "0 0 0 1px rgba(255,255,255,.14), 0 20px 40px -20px rgba(0,0,0,.9)", "purpose": "Floating nav pill, over backdrop-filter blur(14px) saturate(1.3) on rgba(18,19,23,.78)." },
+      { "name": "focus-cool", "value": "0 0 0 1px #8b9cff inset, 0 0 0 4px rgba(139,156,255,.15)", "purpose": "Focused search input." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "Exponential ease-out for every entrance and state change." },
+      { "name": "focusIn", "value": "from { opacity: 0; filter: blur(14px); transform: scale(1.04) } 1s", "purpose": "Blur-to-sharp entrance: hero lines staggered at .25s/.4s/.55s/.7s, sentence .9s, CTA 1.05s; boot word; sim score." },
+      { "name": "rimUp", "value": "from { filter: brightness(.4); box-shadow: none } 1.4s", "purpose": "The arch rim and glow light up on arrival." },
+      { "name": "settle", "value": "from { opacity: 0; transform: translateY(8px) } .4-.5s", "purpose": "Sections, detail rows, reveals, fixture expansions." },
+      { "name": "grow", "value": "from { transform: scaleX(0) } .6-.7s", "purpose": "Value bars, leaderboard bars, prop bars, boot line." },
+      { "name": "archAway", "value": "opacity to 0 over scroll(root) 0 to 70vh", "purpose": "Scroll dims the arch light away, leaving the words on black." },
+      { "name": "reduced-motion", "value": "animation: none; transition: none", "purpose": "Everything still under prefers-reduced-motion: reduce." }
+    ],
+    "breakpoints": [
+      { "name": "stack", "value": "860px" },
+      { "name": "phone", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ember Action Button",
+      "kind": "button",
+      "refersTo": "button-ember",
+      "description": "The one action: see the track record.",
+      "html": "<a class=\"ds-btn-ember\" href=\"#\">See the track record</a>",
+      "css": ".ds-btn-ember { display: inline-flex; align-items: center; gap: 8px; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: 14.5px; line-height: 1; text-decoration: none; padding: 13px 20px; border-radius: 6px; background: #b8462a; color: #fff; box-shadow: 0 0 0 1px rgba(255,160,120,.25) inset, 0 10px 30px -10px rgba(201,80,47,.7); transition: background-color .25s, transform .25s cubic-bezier(.16,1,.3,1); } .ds-btn-ember:hover { background: #c24e30; transform: translateY(-1px); } .ds-btn-ember:focus-visible { outline: 2px solid #8b9cff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary actions on dark panels.",
+      "html": "<button class=\"ds-btn-ghost\">Show notes</button>",
+      "css": ".ds-btn-ghost { font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: 14.5px; line-height: 1; padding: 13px 20px; border-radius: 6px; border: 0; cursor: pointer; background: rgba(255,255,255,.04); color: #f5f4fa; box-shadow: 0 0 0 1px rgba(255,255,255,.14) inset; transition: background-color .25s; } .ds-btn-ghost:hover { background: rgba(255,255,255,.08); } .ds-btn-ghost:focus-visible { outline: 2px solid #8b9cff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Floating Nav",
+      "kind": "nav",
+      "refersTo": "nav-tab",
+      "description": "Frosted pill with wordmark, tabs and the ember Track Record tab at the end.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-logo\" href=\"#\"><span class=\"ds-wx\">x</span>Value</a><button class=\"ds-tab ds-on\">Players</button><button class=\"ds-tab\">Fixtures</button><button class=\"ds-tab\">Teams</button><button class=\"ds-tab ds-track\">Track Record</button></nav>",
+      "css": ".ds-nav { display: inline-flex; align-items: center; gap: 2px; padding: 6px 6px 6px 14px; border-radius: 12px; background: rgba(18,19,23,.78); backdrop-filter: blur(14px) saturate(1.3); box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 20px 40px -20px rgba(0,0,0,.9); } .ds-logo { font-family: 'UnifrakturMaguntia', serif; font-size: 22px; line-height: 1; color: #f5f4fa; text-decoration: none; padding-right: 10px; } .ds-wx { font-family: 'EB Garamond', Georgia, serif; font-style: italic; margin-right: .04em; } .ds-tab { border: 0; background: transparent; color: #b6b8c4; padding: 9px 12px; border-radius: 8px; cursor: pointer; font-family: 'Geist', system-ui, sans-serif; font-size: 14px; font-weight: 500; transition: background-color .2s, color .2s; } .ds-tab:hover { color: #f5f4fa; background: rgba(255,255,255,.05); } .ds-tab.ds-on { color: #f5f4fa; background: #1d1e24; box-shadow: 0 0 0 1px rgba(255,255,255,.14) inset; } .ds-tab.ds-track { color: #fff; background: #b8462a; margin-left: 6px; } .ds-tab.ds-track:hover { background: #c24e30; } .ds-tab:focus-visible { outline: 2px solid #8b9cff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Segmented Chips",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "League and position filters in a night-inset track.",
+      "html": "<div class=\"ds-chipset\"><button class=\"ds-chip ds-active\">All leagues</button><button class=\"ds-chip\">Premier League</button><button class=\"ds-chip\">La Liga</button></div>",
+      "css": ".ds-chipset { display: inline-flex; gap: 4px; padding: 3px; border-radius: 9px; background: #0c0d10; box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset; } .ds-chip { border: 0; border-radius: 6px; background: transparent; color: #868996; font-family: 'Geist', system-ui, sans-serif; font-size: 13.5px; font-weight: 500; padding: 6px 11px; cursor: pointer; transition: background-color .2s, color .2s; } .ds-chip:hover { color: #f5f4fa; } .ds-chip.ds-active { background: #1d1e24; color: #f5f4fa; box-shadow: 0 0 0 1px rgba(255,255,255,.14) inset; } .ds-chip:focus-visible { outline: 2px solid #8b9cff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "Panel field with a cool focus halo and ember caret.",
+      "html": "<label class=\"ds-search\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.3-4.3\"/></svg><input placeholder=\"Search player or club\"></label>",
+      "css": ".ds-search { position: relative; display: block; width: 280px; } .ds-search svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; color: #868996; } .ds-search input { width: 100%; box-sizing: border-box; background: #121317; border: 0; box-shadow: 0 0 0 1px rgba(255,255,255,.14) inset; border-radius: 8px; padding: 11px 14px 11px 38px; font-family: 'Geist', system-ui, sans-serif; font-size: 14.5px; color: #f5f4fa; caret-color: #ff8f66; transition: box-shadow .2s; } .ds-search input::placeholder { color: #868996; } .ds-search input:focus { outline: none; box-shadow: 0 0 0 1px #8b9cff inset, 0 0 0 4px rgba(139,156,255,.15); }"
+    },
+    {
+      "name": "App Window",
+      "kind": "card",
+      "refersTo": "window",
+      "description": "The product shown as itself: lit top edge, title bar with segmented control, table rows with cool/ember verdicts.",
+      "html": "<div class=\"ds-window\"><div class=\"ds-bar\"><span class=\"ds-title\">Players</span><span class=\"ds-seg\"><span class=\"ds-on\">Most expensive</span><span>Bargains</span></span></div><div class=\"ds-row\"><b>Player A</b><span class=\"ds-up\">Worth more</span></div><div class=\"ds-row\"><b>Player B</b><span class=\"ds-down\">Overpriced</span></div><div class=\"ds-row\"><b>Player C</b><span class=\"ds-even\">About right</span></div></div>",
+      "css": ".ds-window { position: relative; width: 420px; overflow: hidden; border-radius: 14px; font-family: 'Geist', system-ui, sans-serif; color: #f5f4fa; background: linear-gradient(180deg, rgba(139,156,255,.06), transparent 120px), #121317; box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 1px 0 rgba(255,255,255,.04) inset, 0 30px 60px -30px rgba(0,0,0,.8); } .ds-window::before { content: ''; position: absolute; left: 10%; right: 10%; top: 0; height: 1px; background: linear-gradient(90deg, transparent, #8b9cff, #fff, #ff8f66, transparent); opacity: .7; } .ds-bar { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,.08); } .ds-title { font-weight: 600; font-size: 14px; } .ds-seg { margin-left: auto; display: flex; gap: 2px; padding: 3px; border-radius: 8px; background: #0c0d10; box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset; } .ds-seg span { font-size: 13px; color: #868996; padding: 5px 10px; border-radius: 6px; } .ds-seg .ds-on { background: #1d1e24; color: #f5f4fa; } .ds-row { display: flex; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid rgba(255,255,255,.08); font-size: 14px; transition: background-color .2s; } .ds-row:last-child { border-bottom: 0; } .ds-row:hover { background: rgba(255,255,255,.03); } .ds-up { color: #8b9cff; font-weight: 500; } .ds-down { color: #ff8f66; font-weight: 500; } .ds-even { color: #868996; font-weight: 500; }"
+    },
+    {
+      "name": "Live Fixture Card",
+      "kind": "card",
+      "refersTo": "window",
+      "description": "A fixture whose odds can still move: dashed inset edge, mono date, cool/neutral/ember odds bar.",
+      "html": "<div class=\"ds-fx\"><div class=\"ds-fx-date\">Sat 29 Nov · 15:00</div><div class=\"ds-fx-teams\"><b>Home FC</b><i>v</i><b>Away United</b></div><div class=\"ds-odds\"><div class=\"ds-h\" style=\"flex:48\">48%</div><div class=\"ds-d\" style=\"flex:27\">27%</div><div class=\"ds-a\" style=\"flex:25\">25%</div></div></div>",
+      "css": ".ds-fx { width: 360px; padding: 18px 20px; border-radius: 14px; background: #121317; color: #f5f4fa; font-family: 'Geist', system-ui, sans-serif; box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 30px 60px -30px rgba(0,0,0,.8); outline: 1px dashed rgba(255,255,255,.12); outline-offset: -7px; } .ds-fx-date { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12.5px; color: #868996; } .ds-fx-teams { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; margin: 10px 0 14px; font-size: 16.5px; } .ds-fx-teams b { font-weight: 600; } .ds-fx-teams b:last-child { text-align: right; } .ds-fx-teams i { font-family: 'EB Garamond', Georgia, serif; color: #868996; font-size: 16px; } .ds-odds { display: flex; gap: 2px; height: 30px; } .ds-odds div { display: flex; align-items: center; justify-content: center; font-size: 12.5px; font-weight: 600; border-radius: 5px; font-variant-numeric: tabular-nums; } .ds-h { background: rgba(139,156,255,.22); color: #dfe4ff; box-shadow: 0 0 0 1px rgba(139,156,255,.4) inset; } .ds-d { background: rgba(255,255,255,.07); color: #b6b8c4; box-shadow: 0 0 0 1px rgba(255,255,255,.14) inset; } .ds-a { background: rgba(255,143,102,.18); color: #ffd2c0; box-shadow: 0 0 0 1px rgba(255,143,102,.4) inset; }"
+    },
+    {
+      "name": "Proof Panel",
+      "kind": "custom",
+      "refersTo": "window",
+      "description": "One held-out sentence with its key figure in cool, beside the chart on a faint cool wash.",
+      "html": "<div class=\"ds-proof\"><div class=\"ds-quote\"><blockquote>On seasons it never saw, the model's prices tracked the market at <b>0.81</b>.</blockquote><cite><b>Value model</b> · scored on held-out seasons</cite></div><div class=\"ds-chart\">chart</div></div>",
+      "css": ".ds-proof { display: grid; grid-template-columns: .9fr 1.1fr; width: 640px; overflow: hidden; border-radius: 14px; background: #121317; color: #f5f4fa; font-family: 'Geist', system-ui, sans-serif; box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 30px 60px -30px rgba(0,0,0,.8); } .ds-quote { padding: 32px; display: flex; flex-direction: column; justify-content: center; gap: 22px; border-right: 1px solid rgba(255,255,255,.08); } .ds-quote blockquote { margin: 0; font-size: 24px; line-height: 1.3; letter-spacing: -.02em; font-weight: 500; } .ds-quote blockquote b { color: #8b9cff; font-weight: 600; } .ds-quote cite { font-style: normal; font-size: 13px; color: #868996; } .ds-quote cite b { color: #f5f4fa; } .ds-chart { padding: 28px; color: #868996; font-size: 13px; background: radial-gradient(80% 70% at 80% 0%, rgba(75,99,255,.08), transparent 70%); }"
+    },
+    {
+      "name": "Tunnel Arch",
+      "kind": "custom",
+      "refersTo": "window",
+      "description": "The hero object: blue-to-ember rim, side lights, perspective pitch, floor light, blackletter words inside.",
+      "html": "<div class=\"ds-arch\"><div class=\"ds-pitch\"></div><div class=\"ds-floor\"></div><div class=\"ds-words\"><span class=\"ds-it\">Every</span><span class=\"ds-bl\">Player</span><span class=\"ds-sc\">has a</span><span class=\"ds-bl\">Price</span></div></div>",
+      "css": ".ds-arch { position: relative; width: 340px; height: 420px; overflow: hidden; isolation: isolate; border-radius: 170px 170px 10px 10px; color: #f5f4fa; background: radial-gradient(60% 55% at 0% 58%, rgba(75,99,255,.42), transparent 70%), radial-gradient(60% 55% at 100% 58%, rgba(255,120,70,.38), transparent 70%), radial-gradient(70% 40% at 50% 100%, rgba(190,200,255,.18), transparent 70%), linear-gradient(#0b0d16, #0d0c12 60%, #120d0d); box-shadow: 0 0 0 1px rgba(255,255,255,.06), 0 0 80px -10px rgba(75,99,255,.35), 0 0 120px -20px rgba(255,120,70,.25); animation: ds-rimUp 1.4s cubic-bezier(.16,1,.3,1) both; } .ds-arch::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 2px; z-index: 3; pointer-events: none; background: linear-gradient(90deg, #7f93ff, rgba(255,255,255,.15) 50%, #ff9a6b); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); } .ds-pitch { position: absolute; left: -30%; right: -30%; bottom: -6%; height: 46%; transform-origin: 50% 100%; transform: perspective(520px) rotateX(64deg); background: repeating-linear-gradient(90deg, #1d5a3a 0 9%, #237046 9% 18%); -webkit-mask: linear-gradient(to top, #000 15%, transparent 95%); mask: linear-gradient(to top, #000 15%, transparent 95%); opacity: .75; } .ds-floor { position: absolute; left: 8%; right: 8%; bottom: 7%; height: 2px; background: linear-gradient(90deg, transparent, #8b9cff 25%, #fff 50%, #ff8f66 75%, transparent); box-shadow: 0 0 30px 6px rgba(200,210,255,.35); } .ds-words { position: relative; z-index: 4; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: .86; text-shadow: 0 4px 30px rgba(0,0,0,.6); } .ds-it { font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 26px; line-height: 1; } .ds-bl { font-family: 'UnifrakturMaguntia', serif; font-size: 72px; } .ds-sc { font-family: 'EB Garamond', Georgia, serif; font-weight: 500; text-transform: uppercase; letter-spacing: .12em; font-size: 18px; line-height: 1; margin: 6px 0 4px; } .ds-words > span { animation: ds-focusIn 1s cubic-bezier(.16,1,.3,1) both; } .ds-words > span:nth-child(2) { animation-delay: .25s; } .ds-words > span:nth-child(3) { animation-delay: .4s; } .ds-words > span:nth-child(4) { animation-delay: .55s; } @keyframes ds-focusIn { from { opacity: 0; filter: blur(14px); transform: scale(1.04); } } @keyframes ds-rimUp { from { filter: brightness(.4); box-shadow: none; } } @media (prefers-reduced-motion: reduce) { .ds-arch, .ds-words > span { animation: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Night Match",
+    "overview": "xValue is a floodlit match night seen from the players' tunnel. The page is black (#08090a) with a faint 64px chalk grid and a few pinprick stars fixed behind everything. One lit object owns the first viewport: a tall tunnel arch whose rim burns blue on the left and ember on the right, a perspective pitch glowing at its foot, and terrace lettering stacked inside it. Below the arch the product is shown as itself, in dark app windows lit along their top edge by the same blue-white-ember line.\n\nThe system runs on light rather than colour. Surfaces are near-black panels separated by hairlines, not fills; the only hues are a cool floodlight blue and a warm ember, and they carry meaning: cool is the model being right or a player being underpriced, ember is the miss or the overprice, and the solid ember fill is reserved for the one action the page wants pressed. Type is three voices: a blackletter for the few display words, an italic and small-caps Garamond for the linking words between them, and Geist for every working line of the product.\n\nMotion is light coming up and focus resolving, never things flying in. Everything enters on a slow exponential ease-out; nothing bounces; reduced motion gets the still page.",
+    "keyCharacteristics": [
+      "Black ground, near-black panels, white hairlines at 8% and 14%.",
+      "Two hues only, cool and ember, each with a fixed meaning.",
+      "Blackletter for display words only; Garamond links them; Geist does the work.",
+      "The blue-white-ember line: arch rim, floor light, window top edge, boot line.",
+      "Dashed edges for anything still live, solid panels for anything frozen.",
+      "Blur-to-sharp focus and rising light on one exponential ease-out."
+    ],
+    "rules": [
+      { "name": "The One Ember Action Rule", "body": "A solid ember fill marks the one action the page wants: see the track record. The hero button and the nav's Track Record tab are the same action, so they share it. Everything else is ghost, panel or text.", "section": "colors" },
+      { "name": "The Two Signals Rule", "body": "Data is cool, ember or neutral, nothing else. Cool means the model was right or the player is worth more than his price; ember-hi means the miss or the overprice; ink-3 means neither. The hit/miss, win/loss and home/away aliases all resolve to these.", "section": "colors" },
+      { "name": "The Light Not Paint Rule", "body": "Cool-deep and ember appear on surfaces only as low-alpha radial light (12 to 42%), never as flat fills behind content.", "section": "colors" },
+      { "name": "The Display Words Rule", "body": "Blackletter sets single display words and the wordmark, never a sentence, a label or a number in a table. The wordmark x is always the italic Garamond x, because a blackletter x reads as r.", "section": "typography" },
+      { "name": "The Mono Is For Codes Rule", "body": "Geist Mono sets dates, xG, match minutes, ranks, seasons and codes. Prose, names and headline figures stay in Geist.", "section": "typography" },
+      { "name": "The Lit Edge Rule", "body": "A window is lit along its top edge by a 1px blue-white-ember line inset 10% each side at 70% opacity, with a 120px cool wash fading down from it. The same three-stop line is the arch rim, the floor light and the boot line.", "section": "elevation" },
+      { "name": "The Dashed Is Live Rule", "body": "A dashed edge means the numbers can still move: live fixture cards carry a 1px dashed outline inset 7px inside their solid edge. Track-record panels are frozen predictions and stay solid. Dashes elsewhere are only the dotted leaders between a tile's key and value.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do keep the solid ember fill for the track-record action alone (hero button and Track Record tab).",
+      "Do colour data with cool for right or underpriced, ember-hi for miss or overpriced, ink-3 for neither.",
+      "Do set display words in UnifrakturMaguntia, link them with italic or caps EB Garamond, and set everything else in Geist.",
+      "Do draw panels with the 1px hairline-2 ring and panel depth, and light window tops with the blue-white-ember line.",
+      "Do give live, still-moving cards a dashed inset outline and keep frozen records solid.",
+      "Do bring things in with focusIn, rimUp, settle or grow on cubic-bezier(.16, 1, .3, 1), and stop all of it under reduced motion.",
+      "Do keep Geist Mono to dates, xG, minutes, ranks, seasons and codes."
+    ],
+    "donts": [
+      "Don't fill text with a gradient; the three-stop line is light on edges, never in letters.",
+      "Don't introduce a third data hue, or use cool or ember for decoration where they would read as a verdict.",
+      "Don't set sentences, labels or table figures in blackletter, or use a blackletter x in the wordmark.",
+      "Don't use flat cool or ember fills behind content; they appear as low-alpha light.",
+      "Don't add bounce, overshoot or travel to motion; light rises and focus resolves."
+    ]
+  }
+}
