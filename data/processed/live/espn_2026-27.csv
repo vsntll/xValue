@@ -836,7 +836,7 @@ espn,2026-27,La Liga,1,league,ESP1,2026-12-06,15:15,Athletic Club,Real Madrid,SC
 espn,2026-27,La Liga,1,league,ESP1,2026-12-06,17:30,Getafe,Valencia,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401882782
 espn,2026-27,La Liga,1,league,ESP1,2026-12-06,20:00,Atlético Madrid,Real Betis,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401882784
 espn,2026-27,La Liga,1,league,ESP1,2026-12-07,20:00,Sevilla,Málaga,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401882778
-espn,2026-27,La Liga,1,league,ESP1,2026-12-09,19:00,Rayo Vallecano,Athletic Club,SUSPENDED,,,,,,,,,,,,,,,,,,,,,,,espn:401882849
+espn,2026-27,La Liga,1,league,ESP1,2026-12-09,19:00,Rayo Vallecano,Athletic Club,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401882849
 espn,2026-27,La Liga,1,league,ESP1,2026-12-11,20:00,Elche,Sevilla,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401882773
 espn,2026-27,La Liga,1,league,ESP1,2026-12-12,13:00,Levante,Alavés,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401882771
 espn,2026-27,La Liga,1,league,ESP1,2026-12-12,15:15,Villarreal,Rayo Vallecano,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401882767
@@ -1832,15 +1832,15 @@ espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Manchester City,Na
 espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,RB Leipzig,Lens,FULL_TIME,3.0,1.0,H,,,,16.0,11.0,7.0,3.0,10.0,4.0,12.0,13.0,2.0,4.0,0.0,0.0,58.6,41.4,,,espn:401915299
 espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Real Madrid,PSV Eindhoven,FULL_TIME,5.0,1.0,H,,,,24.0,10.0,9.0,1.0,4.0,1.0,6.0,11.0,3.0,1.0,0.0,0.0,61.5,38.5,,,espn:401915298
 espn,2026-27,Champions League,1,european,UCL,2026-11-24,20:00,Slovan Bratislava,Real Betis,FULL_TIME,0.0,2.0,A,,,,12.0,18.0,2.0,6.0,1.0,4.0,12.0,6.0,1.0,1.0,0.0,0.0,31.6,68.4,,,espn:401915297
-espn,2026-27,Champions League,1,european,UCL,2026-11-25,17:45,Sabah FK,Barcelona,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915378
-espn,2026-27,Champions League,1,european,UCL,2026-11-25,17:45,Slavia Prague,Villarreal,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915293
-espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Atlético Madrid,Viking FK,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915291
-espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Club Brugge,Liverpool,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915292
-espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Internazionale,VfB Stuttgart,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915376
-espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Lille,Bayern Munich,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915377
-espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Paris Saint-Germain,AS Roma,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915374
-espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Shakhtar Donetsk,Fenerbahce,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915375
-espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Sporting CP,Manchester United,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915373
+espn,2026-27,Champions League,1,european,UCL,2026-11-25,17:45,Sabah FK,Barcelona,FULL_TIME,1.0,4.0,A,,,,8.0,25.0,3.0,14.0,4.0,6.0,9.0,8.0,1.0,0.0,0.0,0.0,28.6,71.4,,,espn:401915378
+espn,2026-27,Champions League,1,european,UCL,2026-11-25,17:45,Slavia Prague,Villarreal,FULL_TIME,0.0,1.0,A,,,,13.0,7.0,1.0,5.0,13.0,0.0,12.0,15.0,2.0,4.0,0.0,0.0,51.9,48.1,,,espn:401915293
+espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Atlético Madrid,Viking FK,FULL_TIME,2.0,0.0,H,,,,20.0,9.0,9.0,1.0,6.0,1.0,7.0,9.0,0.0,1.0,0.0,1.0,48.4,51.6,,,espn:401915291
+espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Club Brugge,Liverpool,FULL_TIME,0.0,3.0,A,,,,17.0,13.0,5.0,4.0,8.0,4.0,9.0,13.0,0.0,0.0,0.0,0.0,53.5,46.5,,,espn:401915292
+espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Internazionale,VfB Stuttgart,FULL_TIME,2.0,0.0,H,,,,20.0,13.0,5.0,2.0,11.0,6.0,9.0,10.0,2.0,1.0,0.0,0.0,50.8,49.2,,,espn:401915376
+espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Lille,Bayern Munich,FULL_TIME,2.0,1.0,H,,,,15.0,12.0,3.0,7.0,3.0,4.0,2.0,11.0,0.0,1.0,0.0,0.0,35.2,64.8,,,espn:401915377
+espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Paris Saint-Germain,AS Roma,FULL_TIME,2.0,2.0,D,,,,15.0,13.0,4.0,4.0,3.0,4.0,5.0,18.0,0.0,2.0,0.0,0.0,66.0,34.0,,,espn:401915374
+espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Shakhtar Donetsk,Fenerbahce,FULL_TIME,0.0,1.0,A,,,,8.0,13.0,2.0,5.0,3.0,5.0,12.0,14.0,2.0,1.0,0.0,0.0,54.2,45.8,,,espn:401915375
+espn,2026-27,Champions League,1,european,UCL,2026-11-25,20:00,Sporting CP,Manchester United,FULL_TIME,2.0,2.0,D,,,,11.0,7.0,4.0,2.0,3.0,2.0,18.0,13.0,2.0,1.0,0.0,1.0,50.8,49.2,,,espn:401915373
 espn,2026-27,Champions League,1,european,UCL,2026-12-08,17:45,Viking FK,Feyenoord Rotterdam,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915290
 espn,2026-27,Champions League,1,european,UCL,2026-12-08,17:45,Villarreal,Sabah FK,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915372
 espn,2026-27,Champions League,1,european,UCL,2026-12-08,20:00,AEK Athens,Galatasaray,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915289
@@ -2093,7 +2093,7 @@ espn,2026-27,Europa Conference League,1,european,UECL,2026-11-05,20:00,Getafe,Br
 espn,2026-27,Europa Conference League,1,european,UECL,2026-11-05,20:00,Panathinaikos,CSKA Sofia,FULL_TIME,2.0,1.0,H,,,,24.0,9.0,12.0,5.0,12.0,4.0,12.0,16.0,4.0,0.0,0.0,0.0,62.6,37.4,,,espn:401915819
 espn,2026-27,Europa Conference League,1,european,UECL,2026-11-05,20:00,Riga FC,Jablonec,FULL_TIME,1.0,1.0,D,,,,13.0,11.0,2.0,3.0,5.0,5.0,17.0,7.0,1.0,2.0,0.0,0.0,59.4,40.6,,,espn:401915818
 espn,2026-27,Europa Conference League,1,european,UECL,2026-11-05,20:00,Sint-Truidense,SK Brann,FULL_TIME,1.0,1.0,D,,,,17.0,9.0,5.0,5.0,4.0,7.0,13.0,10.0,1.0,1.0,0.0,0.0,43.1,56.9,,,espn:401915820
-espn,2026-27,Europa Conference League,1,european,UECL,2026-11-26,15:30,Kairat Almaty,Mjällby AIF,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915816
+espn,2026-27,Europa Conference League,1,european,UECL,2026-11-26,15:30,Kairat Almaty,Mjällby AIF,FULL_TIME,1.0,0.0,H,,,,16.0,14.0,6.0,6.0,3.0,5.0,19.0,9.0,2.0,1.0,0.0,0.0,44.3,55.7,,,espn:401915816
 espn,2026-27,Europa Conference League,1,european,UECL,2026-11-26,17:45,Ajax Amsterdam,FC Thun,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915815
 espn,2026-27,Europa Conference League,1,european,UECL,2026-11-26,17:45,Brighton & Hove Albion,CSU Craiova,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915814
 espn,2026-27,Europa Conference League,1,european,UECL,2026-11-26,17:45,Egnatia,Lincoln Red Imps,SCHEDULED,,,,,,,,,,,,,,,,,,,,,,,espn:401915810
